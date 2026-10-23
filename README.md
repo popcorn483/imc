@@ -22,7 +22,7 @@ A web app for planning, designing, captioning and tracking social media ads for 
 | **Upcoming releases** | UK release dates to January 2027 with a viral angle for each film. Mark *Showing / Maybe / Not showing* and build an announcement or opening-day ad in one click. |
 | **Posts** | Every ad from idea → draft → scheduled → posted. Add reach, reactions, comments and shares from Facebook Insights. |
 | **Go-viral playbook** | 11 tactics, each opening a ready-made ad |
-| **Photo editor** (`editor.html`) | Frame a real photo or official poster with an IMC border, then drag on badges like Coming Soon, New Release, LUXX, Premier, Book Now and release dates. Export PNG/JPG at full size. |
+| **Photo editor** (`editor.html`) | Frame a real photo or official poster with an IMC border, then drag on badges like Coming Soon, New Release, LUXX, Premier, Book Now and release dates. Add animated effects and export PNG, JPG or GIF. |
 
 ## Photo editor
 
@@ -34,6 +34,23 @@ Open **Photo editor ↗** from the Ad Studio menu, or go straight to `https://po
 4. **Frame tab:** Premiere, Clean, Film strip, Marquee lights, Photo border or none, in any colour, with a caption.
 5. **Add tab:** badges, text and the logo. Drag to move, drag a corner to resize, drag the top dot to rotate (hold Shift to snap). Items snap to the centre lines.
 6. **Download PNG** for Facebook and Instagram, or **Copy image** and paste straight into a post.
+
+### Animated posts and GIFs
+
+The **Motion** tab adds animated effects you can mix:
+
+- Slow zoom
+- Premiere spotlights
+- Bokeh lights
+- Marquee chase
+- Gold sparkle
+- Gold confetti
+- Snowfall
+- Old projector
+
+Select any badge or text and pick an **Animation** in the right-hand panel: Shine, Pulse, Pop in, Swing, Float or Blink. Four ready-made animated layouts are in **Layouts**: Premiere night, Christmas release, Opening night lights and LUXX gold.
+
+Click **GIF** to export. Choose a size (Small 540px, Medium 800px or Full) and a smoothness (10, 16 or 20 frames a second). Everything loops seamlessly. GIFs play on Facebook, WhatsApp, X and websites. Instagram posts don't play GIFs, so post the PNG there. Keep GIFs under about 8 MB. The *Old projector* effect makes bigger files, so use Small or 10 fps with it.
 
 Shortcuts: Ctrl+Z undo, Ctrl+Shift+Z redo, Delete to remove, Ctrl+D to duplicate, arrow keys to nudge (Shift for bigger steps).
 

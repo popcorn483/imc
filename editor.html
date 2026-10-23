@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Frame photos with IMC borders and badges for IMC Cinema Enniskillen social posts.">
+<meta name="description" content="Frame photos with IMC borders, badges and animated effects for IMC Cinema Enniskillen social posts.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>IMC Photo Editor</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -47,8 +47,8 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .left,.right{background:var(--panel);overflow:auto;min-height:0}
 .left{border-right:1px solid var(--line);padding-left:env(safe-area-inset-left,0px)}
 .right{border-left:1px solid var(--line);padding-right:env(safe-area-inset-right,0px)}
-.tabs{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:2}
-.tabs button{all:unset;cursor:pointer;text-align:center;padding:12px 0 10px;font-size:12px;font-weight:700;color:var(--muted);border-bottom:2px solid transparent;letter-spacing:.02em}
+.tabs{display:grid;grid-template-columns:repeat(6,1fr);border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:2}
+.tabs button{all:unset;cursor:pointer;text-align:center;padding:12px 0 10px;font-size:11.5px;font-weight:700;color:var(--muted);border-bottom:2px solid transparent;letter-spacing:.02em}
 .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--gold)}
 .sec{padding:16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
 .sec h3{margin:0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
@@ -112,6 +112,16 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .layer .eye{all:unset;cursor:pointer;color:var(--muted);font-size:13px;width:22px;text-align:center}
 .layer.off .nm{opacity:.45}
 .toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);font-weight:600;padding:10px 16px;border-radius:8px;z-index:50;max-width:calc(100% - 32px);text-align:center}
+.tile em.anim{font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(224,180,80,.45);border-radius:99px;padding:0 5px;margin-left:4px;vertical-align:1px}
+.tile.fx canvas{aspect-ratio:1/1}
+.gifbtn{position:relative}
+.gifbtn.live{border-color:rgba(224,180,80,.7);color:var(--gold)}
+.gifbtn.live::after{content:"";position:absolute;top:-3px;right:-3px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 2px var(--panel)}
+.modal{position:fixed;inset:0;background:rgba(5,6,9,.7);display:grid;place-items:center;z-index:40;padding:16px}
+.dlg{background:var(--panel);border:1px solid var(--line);border-radius:14px;width:min(460px,100%);padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.dlg h2{margin:0;font-family:var(--f-display);font-weight:900;font-size:28px;text-transform:uppercase;letter-spacing:.02em}
+.bar{height:8px;border-radius:99px;background:var(--bg);overflow:hidden;border:1px solid var(--line)}
+.bar div{height:100%;width:0;background:linear-gradient(90deg,#b8862b,var(--gold),#f6e39b);transition:width .15s}
 @media (max-width:1100px){.app{grid-template-columns:270px minmax(0,1fr) 260px}}
 @media (max-width:900px){
   html,body{height:auto}
@@ -136,6 +146,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
       <button class="btn icon" id="redo" title="Redo (Ctrl+Shift+Z)" aria-label="Redo">↷</button>
       <button class="btn" id="copy">Copy image</button>
       <button class="btn" id="jpg">JPG</button>
+      <button class="btn gifbtn" id="gif" title="Export an animated GIF">GIF</button>
       <button class="btn primary" id="png">Download PNG</button>
     </div>
   </header>
@@ -144,6 +155,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
     <div class="tabs" role="tablist" id="tabs">
       <button role="tab" data-tab="photo" aria-selected="true">Photo</button>
       <button role="tab" data-tab="frame" aria-selected="false">Frame</button>
+      <button role="tab" data-tab="motion" aria-selected="false">Motion</button>
       <button role="tab" data-tab="add" aria-selected="false">Add</button>
       <button role="tab" data-tab="layouts" aria-selected="false">Layouts</button>
       <button role="tab" data-tab="logo" aria-selected="false">Logo</button>
@@ -191,6 +203,12 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
       </div>
     </div>
 
+    <div data-panel="motion" hidden>
+      <div class="sec"><h3>Animated effects</h3><p class="note">Tap to switch on. Mix a few, then export as a GIF.</p><div class="tiles" id="fxTiles"></div></div>
+      <div class="sec"><h3>Loop length</h3><div class="seg" id="durSeg" style="width:max-content"></div></div>
+      <div class="sec"><h3>Animate badges</h3><p class="note">Select a badge or text on the canvas and choose an animation in the panel on the right: Shine, Pulse, Pop in, Swing, Float or Blink.</p><button class="btn wide" id="shineAll">Make every badge shine</button><button class="btn wide" id="stillAll">Stop all badge animations</button></div>
+    </div>
+
     <div data-panel="add" hidden>
       <div class="sec"><h3>Badges</h3><div class="tiles" id="badges"></div></div>
       <div class="sec"><h3>Text</h3>
@@ -225,13 +243,25 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 
   <section class="stage" id="stage">
     <div class="canvaswrap" id="wrap"><canvas id="cv" width="1080" height="1080" aria-label="Design canvas"></canvas></div>
-    <div class="stagebar"><span class="dims" id="dims"></span><span class="hint">Drag to move · corners resize · top dot rotates · <span class="kbd">Del</span> removes · <span class="kbd">Ctrl</span>+<span class="kbd">D</span> duplicates</span></div>
+    <div class="stagebar"><span class="row" style="gap:10px"><button class="btn" id="play" hidden>Pause</button><span class="dims" id="dims"></span></span><span class="hint">Drag to move · corners resize · top dot rotates · <span class="kbd">Del</span> removes · <span class="kbd">Ctrl</span>+<span class="kbd">D</span> duplicates</span></div>
   </section>
 
   <aside class="right">
     <div id="props"></div>
     <div class="sec"><h3>Layers</h3><div class="layers" id="layerList"></div></div>
   </aside>
+</div>
+<div class="modal" id="gifModal" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="gifTitle">
+    <h2 id="gifTitle">Export GIF</h2>
+    <p class="note" id="gifHint"></p>
+    <div class="lbl">Size</div><div class="seg" id="gifSize" style="width:max-content"></div>
+    <div class="lbl">Smoothness</div><div class="seg" id="gifFps" style="width:max-content"></div>
+    <label class="check"><input type="checkbox" id="gifDither" checked> Smoother gradients (slightly bigger file)</label>
+    <div class="bar" id="gifBarWrap" hidden><div id="gifBar"></div></div>
+    <p class="note" id="gifStatus" aria-live="polite"></p>
+    <div class="row" style="justify-content:flex-end"><button class="btn" id="gifCancel">Close</button><button class="btn primary" id="gifGo">Create GIF</button></div>
+  </div>
 </div>
 <div class="toast" id="toast" hidden></div>
 
@@ -285,11 +315,15 @@ const LAYOUTS=[
   {n:"LUXX",frame:{style:"premiere",accent:"#e0b450"},layers:()=>[mk("badge","luxx",{y:.44,s:1.15}),mk("text","sub",{text:"Recline in style",font:"serif",size:66,y:.62})]},
   {n:"Now showing",frame:{style:"filmstrip",accent:"#c8102e"},layers:()=>[mk("badge","now",{x:.35,y:.17,s:.8}),mk("text","title",{y:.66})]},
   {n:"Opening night",frame:{style:"gallery",accent:"#c8102e",matte:"#ffffff"},layers:()=>[mk("badge","tonight",{x:.8,y:.2,s:.8})]},
-  {n:"Countdown",frame:{style:"marquee",accent:"#c8102e"},layers:()=>[mk("badge","price",{text:"3 DAYS",sub:"TO GO",y:.3,s:1.05,r:-.1}),mk("text","title",{y:.58}),mk("badge","book",{y:.7,s:.85})]}
+  {n:"Countdown",frame:{style:"marquee",accent:"#c8102e"},layers:()=>[mk("badge","price",{text:"3 DAYS",sub:"TO GO",y:.3,s:1.05,r:-.1}),mk("text","title",{y:.58}),mk("badge","book",{y:.7,s:.85})]},
+  {n:"Premiere night",fx:{spotlights:true,sparkle:true},frame:{style:"premiere",accent:"#e0b450"},layers:()=>[mk("badge","coming",{y:.15,anim:"shine"}),mk("text","title",{y:.6}),mk("badge","date",{y:.735,s:.85,anim:"pop"})]},
+  {n:"Christmas release",fx:{snow:true,bokeh:true},frame:{style:"vignette",accent:"#c8102e"},layers:()=>[mk("badge","newrel",{y:.12,anim:"shine"}),mk("text","title",{y:.6}),mk("badge","book",{y:.725,s:.85,anim:"pulse"})]},
+  {n:"Opening night lights",fx:{chase:true,confetti:true},frame:{style:"marquee",accent:"#c8102e"},layers:()=>[mk("badge","tonight",{y:.3,anim:"swing"}),mk("text","title",{y:.6})]},
+  {n:"LUXX gold",fx:{sparkle:true,kenburns:true},frame:{style:"premiere",accent:"#e0b450"},layers:()=>[mk("badge","luxx",{y:.44,s:1.15,anim:"shine"}),mk("text","sub",{text:"Recline in style",font:"serif",size:66,y:.62})]}
 ];
 
 /* ---------- state ---------- */
-let S={fmt:"square",frame:{...DEFAULT_FRAME},photo:{zoom:1,ox:0,oy:0,b:100,c:100,s:100,shade:0},layers:[]};
+let S={fmt:"square",frame:{...DEFAULT_FRAME},photo:{zoom:1,ox:0,oy:0,b:100,c:100,s:100,shade:0},layers:[],motion:{fx:{},dur:3}};
 let photoImg=null,logoImg=null,selId=null,drag=null,hist=[],hi=-1,downloads=null;
 const cv=$("#cv"),ctx=cv.getContext("2d"),mctx=document.createElement("canvas").getContext("2d");
 const getSel=()=>S.layers.find(l=>l.id===selId)||null;
@@ -389,16 +423,16 @@ function drawLayer(c,L){c.save();c.textBaseline="alphabetic";const d=L.kind==="b
 
 /* ---------- frames ---------- */
 function frameRect(F,W,H,u){if(F.style==="gallery"){const side=44*u,bot=(W>H?150:190)*u;return{x:side,y:side,w:W-2*side,h:H-side-bot}}return{x:0,y:0,w:W,h:H}}
-function drawPhoto(c,R,st,noPhoto){const img=noPhoto?null:photoImg;
+function drawPhoto(c,R,st,noPhoto,zk){const img=noPhoto?null:photoImg;
   if(!img){const g=c.createLinearGradient(R.x,R.y,R.x+R.w,R.y+R.h);g.addColorStop(0,"#3a3f4f");g.addColorStop(.55,"#1b1e27");g.addColorStop(1,"#101218");c.fillStyle=g;c.fillRect(R.x,R.y,R.w,R.h);return}
-  const P=st.photo,iw=img.naturalWidth||img.width,ih=img.naturalHeight||img.height,sc=Math.max(R.w/iw,R.h/ih)*P.zoom,dw=iw*sc,dh=ih*sc;
+  const P=st.photo,iw=img.naturalWidth||img.width,ih=img.naturalHeight||img.height,sc=Math.max(R.w/iw,R.h/ih)*P.zoom*(zk||1),dw=iw*sc,dh=ih*sc;
   const mx=(dw-R.w)/2,my=(dh-R.h)/2,cx=R.x+R.w/2+clamp(P.ox*R.w,-mx,mx),cy=R.y+R.h/2+clamp(P.oy*R.h,-my,my);
   c.save();c.beginPath();c.rect(R.x,R.y,R.w,R.h);c.clip();
   if(P.b!==100||P.c!==100||P.s!==100)c.filter=`brightness(${P.b}%) contrast(${P.c}%) saturate(${P.s}%)`;
   c.drawImage(img,cx-dw/2,cy-dh/2,dw,dh);c.filter="none";
   if(P.shade>0){c.fillStyle=`rgba(0,0,0,${P.shade/100})`;c.fillRect(R.x,R.y,R.w,R.h)}c.restore()}
 function grad(c,y0,y1,a0,a1){const g=c.createLinearGradient(0,y0,0,y1);g.addColorStop(0,`rgba(0,0,0,${a0})`);g.addColorStop(1,`rgba(0,0,0,${a1})`);return g}
-function drawFrame(c,W,H,u,F,R){const A=F.accent;c.save();c.textBaseline="alphabetic";
+function drawFrame(c,W,H,u,F,R,chaseT){const A=F.accent;c.save();c.textBaseline="alphabetic";
   if(F.style==="premiere"){
     const gh=Math.min(H*.45,480*u);c.fillStyle=grad(c,H-gh,H,0,.84);c.fillRect(0,H-gh,W,gh);c.fillStyle=grad(c,0,210*u,.38,0);c.fillRect(0,0,W,210*u);
     const i=30*u;c.strokeStyle=A;c.lineWidth=2.5*u;c.strokeRect(i,i,W-2*i,H-2*i);
@@ -428,8 +462,8 @@ function drawFrame(c,W,H,u,F,R){const A=F.accent;c.save();c.textBaseline="alphab
     c.beginPath();c.rect(0,0,W,H);c.rect(t,t,W-2*t,H-2*t);c.fill("evenodd");
     c.strokeStyle=shade(A,25);c.lineWidth=3*u;c.strokeRect(t,t,W-2*t,H-2*t);
     c.fillStyle=grad(c,H*.6,H-t,0,.7);c.fillRect(t,H*.6,W-2*t,H*.4-t);
-    const m=t/2,step=58*u,bulb=(x,y)=>{const r=18*u,q=c.createRadialGradient(x,y,0,x,y,r);q.addColorStop(0,"rgba(255,250,228,1)");q.addColorStop(.38,"rgba(255,212,118,.95)");q.addColorStop(1,"rgba(255,180,70,0)");c.fillStyle=q;c.beginPath();c.arc(x,y,r,0,7);c.fill();c.fillStyle="#fffdf3";c.beginPath();c.arc(x,y,5.5*u,0,7);c.fill()};
-    const nx=Math.max(2,Math.round((W-2*m)/step)),ny=Math.max(2,Math.round((H-2*m)/step));for(let i=0;i<=nx;i++){const x=m+i*(W-2*m)/nx;bulb(x,m);bulb(x,H-m)}for(let j=1;j<ny;j++){const y=m+j*(H-2*m)/ny;bulb(m,y);bulb(W-m,y)}
+    const m=t/2,step=58*u,bulb=(x,y,on)=>{if(on===false){c.fillStyle="rgba(150,118,70,.85)";c.beginPath();c.arc(x,y,5.5*u,0,7);c.fill();return}const r=18*u,q=c.createRadialGradient(x,y,0,x,y,r);q.addColorStop(0,"rgba(255,250,228,1)");q.addColorStop(.38,"rgba(255,212,118,.95)");q.addColorStop(1,"rgba(255,180,70,0)");c.fillStyle=q;c.beginPath();c.arc(x,y,r,0,7);c.fill();c.fillStyle="#fffdf3";c.beginPath();c.arc(x,y,5.5*u,0,7);c.fill()};
+    const nx=Math.max(2,Math.round((W-2*m)/step)),ny=Math.max(2,Math.round((H-2*m)/step)),pts=[];for(let i=0;i<nx;i++)pts.push([m+i*(W-2*m)/nx,m]);for(let j=0;j<ny;j++)pts.push([W-m,m+j*(H-2*m)/ny]);for(let i=nx;i>0;i--)pts.push([m+i*(W-2*m)/nx,H-m]);for(let j=ny;j>0;j--)pts.push([m,m+j*(H-2*m)/ny]);const st=chaseT==null?-1:Math.floor(chaseT*12);pts.forEach(([x,y],i)=>bulb(x,y,st<0||(i+st)%3!==0))
     const plate=(cx,cy,w,h)=>{rr(c,cx-w/2,cy-h/2,w,h,10*u);c.fillStyle="#0b0b0e";c.fill();c.strokeStyle=A;c.lineWidth=3*u;c.stroke();c.strokeStyle="rgba(255,255,255,.12)";c.lineWidth=1*u;rr(c,cx-w/2+7*u,cy-h/2+7*u,w-14*u,h-14*u,6*u);c.stroke()};
     if(F.logo){const lh=70*u,d=logoDims(lh);plate(W/2,H-t,d.w+90*u,lh+44*u);drawLogo(c,W/2-d.w/2,H-t-lh/2,lh,"#fff")}
     if(F.caption){c.font=`600 ${24*u}px ${FONTS.mono}`;const cw=tw(c,F.caption.toUpperCase(),5*u);plate(W/2,t,cw+80*u,64*u);c.fillStyle="#fff";ft(c,F.caption.toUpperCase(),W/2,t+8*u,5*u,"center")}
@@ -442,13 +476,66 @@ function drawFrame(c,W,H,u,F,R){const A=F.accent;c.save();c.textBaseline="alphab
   }
   c.restore()}
 
+/* ---------- motion: effects + badge animations (t runs 0→1 once per loop, so every effect loops seamlessly) ---------- */
+const TAU=Math.PI*2,fr=x=>x-Math.floor(x);
+function rng(seed){return()=>{seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const dens=(W,H,u,k)=>Math.round(k*W*H/Math.pow(1080*u,2));
+let grain=null;
+function grainTiles(){if(grain)return grain;grain=[];for(let g=0;g<4;g++){const e=document.createElement("canvas");e.width=e.height=180;const x=e.getContext("2d"),id=x.createImageData(180,180),r=rng(100+g);for(let i=0;i<id.data.length;i+=4){const v=r()<.5?0:255;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=r()*50}x.putImageData(id,0,0);grain.push(e)}return grain}
+const FX={
+  kenburns:{n:"Slow zoom",z:"photo",draw(){}},
+  spotlights:{n:"Premiere spotlights",z:"under",draw(c,W,H,u,t){c.save();c.globalCompositeOperation="screen";const L=Math.hypot(W,H)*1.15;
+    [[.18,1,0],[.82,-1,.5]].forEach(([fx,dir,ph])=>{const ox=W*fx,oy=H+30*u,a=-Math.PI/2+dir*(.12+.3*Math.sin(TAU*(t+ph))),hw=.085,ex=Math.cos(a)*L,ey=Math.sin(a)*L;
+      const g=c.createLinearGradient(ox,oy,ox+ex,oy+ey);g.addColorStop(0,"rgba(255,244,214,.6)");g.addColorStop(.55,"rgba(255,236,190,.18)");g.addColorStop(1,"rgba(255,236,190,0)");
+      c.fillStyle=g;c.beginPath();c.moveTo(ox-16*u,oy);c.lineTo(ox+Math.cos(a-hw)*L,oy+Math.sin(a-hw)*L);c.lineTo(ox+Math.cos(a+hw)*L,oy+Math.sin(a+hw)*L);c.lineTo(ox+16*u,oy);c.closePath();c.fill()});c.restore()}},
+  bokeh:{n:"Bokeh lights",z:"under",draw(c,W,H,u,t){const r=rng(5),n=dens(W,H,u,16);c.save();c.globalCompositeOperation="screen";
+    for(let i=0;i<n;i++){const x0=r()*W,y0=r(),rad=(24+r()*60)*u,ph=r(),hue=r(),al=.1+r()*.18,y=(1-fr(y0+t))*(H+rad*2)-rad,x=x0+Math.sin(TAU*(t+ph))*24*u;
+      const col=hue<.5?"255,196,92":hue<.8?"255,120,90":"255,240,210",g=c.createRadialGradient(x,y,0,x,y,rad);g.addColorStop(0,`rgba(${col},${al})`);g.addColorStop(.7,`rgba(${col},${al*.7})`);g.addColorStop(1,`rgba(${col},0)`);c.fillStyle=g;c.beginPath();c.arc(x,y,rad,0,TAU);c.fill()}c.restore()}},
+  chase:{n:"Marquee chase",z:"frame",draw(){}},
+  sparkle:{n:"Gold sparkle",z:"over",draw(c,W,H,u,t){const r=rng(11),n=dens(W,H,u,30);c.save();c.globalCompositeOperation="lighter";
+    for(let i=0;i<n;i++){const x=r()*W,y=r()*H,s=(10+r()*26)*u,ph=r(),sp=r()<.5?1:2,rot=r()*.6,a=Math.pow(Math.max(0,Math.sin(Math.PI*fr(t*sp+ph))),6);if(a<.02)continue;
+      c.globalAlpha=a;const g=c.createRadialGradient(x,y,0,x,y,s*1.4);g.addColorStop(0,"rgba(255,226,150,.85)");g.addColorStop(1,"rgba(255,200,90,0)");c.fillStyle=g;c.beginPath();c.arc(x,y,s*1.4,0,TAU);c.fill();
+      c.save();c.translate(x,y);c.rotate(rot);c.fillStyle="#fffaf0";const q=s*.13;c.beginPath();[[0,-s],[q,-q],[s,0],[q,q],[0,s],[-q,q],[-s,0],[-q,-q]].forEach(([px,py],j)=>j?c.lineTo(px,py):c.moveTo(px,py));c.closePath();c.fill();c.restore()}c.restore()}},
+  confetti:{n:"Gold confetti",z:"over",draw(c,W,H,u,t){const r=rng(21),n=dens(W,H,u,70),cols=["#e0b450","#f6e39b","#c8102e","#ffffff","#b8862b"];c.save();
+    for(let i=0;i<n;i++){const x0=r()*W,y0=r(),k=r()<.6?1:2,ph=r(),col=cols[Math.floor(r()*cols.length)],w=(10+r()*8)*u,h=(5+r()*4)*u,y=fr(y0+t*k)*(H+80*u)-40*u,x=x0+Math.sin(TAU*(t*k+ph))*34*u;
+      c.save();c.translate(x,y);c.rotate(TAU*(t*k+ph));c.scale(1,Math.cos(TAU*(t*k*2+ph)));c.fillStyle=col;c.globalAlpha=.94;c.fillRect(-w/2,-h/2,w,h);c.restore()}c.restore()}},
+  snow:{n:"Snowfall",z:"over",draw(c,W,H,u,t){const r=rng(31),n=dens(W,H,u,110);c.save();c.fillStyle="#ffffff";
+    for(let i=0;i<n;i++){const x0=r()*W,y0=r(),rad=(2+r()*5)*u,ph=r(),al=.45+r()*.5,k=rad>4.6*u?2:1,y=fr(y0+t*k)*(H+20*u)-10*u,x=x0+Math.sin(TAU*(t+ph))*18*u;c.globalAlpha=al;c.beginPath();c.arc(x,y,rad,0,TAU);c.fill()}c.restore()}},
+  projector:{n:"Old projector",z:"over",draw(c,W,H,u,t){const f=Math.floor(t*24),r=rng(500+f),G=grainTiles();c.save();
+    c.fillStyle=`rgba(0,0,0,${.03+r()*.08})`;c.fillRect(0,0,W,H);
+    const sc=Math.max(1,u*1.4),ox=r()*180*sc,oy=r()*180*sc;c.save();c.translate(ox,oy);c.scale(sc,sc);c.fillStyle=c.createPattern(G[f%4],"repeat");c.globalAlpha=.6;c.fillRect(-ox/sc,-oy/sc,W/sc,H/sc);c.restore();
+    const vg=c.createRadialGradient(W/2,H/2,Math.min(W,H)*.35,W/2,H/2,Math.hypot(W,H)*.6);vg.addColorStop(0,"rgba(0,0,0,0)");vg.addColorStop(1,"rgba(20,10,0,.35)");c.fillStyle=vg;c.fillRect(0,0,W,H);
+    c.strokeStyle="rgba(255,250,235,.28)";c.lineWidth=1.6*u;for(let i=0;i<2;i++){if(r()<.55){const x=r()*W;c.beginPath();c.moveTo(x,0);c.lineTo(x+(r()-.5)*20*u,H);c.stroke()}}
+    c.fillStyle="rgba(10,8,5,.55)";for(let i=0;i<3;i++){if(r()<.5){c.beginPath();c.arc(r()*W,r()*H,(2+r()*5)*u,0,TAU);c.fill()}}c.restore()}}
+};
+const FX_ORDER=["kenburns","spotlights","bokeh","chase","sparkle","confetti","snow","projector"];
+const ANIMS={none:"None",shine:"Shine",pulse:"Pulse",pop:"Pop in",swing:"Swing",float:"Float",blink:"Blink"};
+function animOf(L,t){const o={ds:1,dr:0,dy:0,da:1},a=L.anim;
+  if(a==="pulse")o.ds=1+.055*Math.sin(TAU*t*2);
+  else if(a==="swing")o.dr=.075*Math.sin(TAU*t);
+  else if(a==="float")o.dy=.014*Math.sin(TAU*t);
+  else if(a==="blink")o.da=.35+.65*(.5+.5*Math.cos(TAU*t*2));
+  else if(a==="pop"){const p=Math.min(1,t/.3),c1=1.70158,c3=c1+1;o.ds=p>=1?1:Math.max(.04,1+c3*Math.pow(p-1,3)+c1*Math.pow(p-1,2));o.da=Math.min(1,p*2.5)}
+  return o}
+const offC=document.createElement("canvas");
+function drawLayerAt(c,L,W,H,u,t){const A=animOf(L,t),sc=L.s*u*A.ds;c.save();c.translate(L.x*W,(L.y+A.dy)*H);c.rotate((L.r||0)+A.dr);c.globalAlpha=(L.o??1)*A.da;
+  if(L.anim==="shine"){if(!L._w){const d=drawLayer(mctx,L);L._w=d.w;L._h=d.h}const m=40,ow=Math.ceil((L._w+m*2)*sc),oh=Math.ceil((L._h+m*2)*sc);
+    if(ow>0&&oh>0&&ow<6000&&oh<6000){if(offC.width!==ow||offC.height!==oh){offC.width=ow;offC.height=oh}const ox=offC.getContext("2d");ox.setTransform(1,0,0,1,0,0);ox.globalCompositeOperation="source-over";ox.clearRect(0,0,ow,oh);ox.translate(ow/2,oh/2);ox.scale(sc,sc);const d=drawLayer(ox,L);
+      const p=t/.5;if(p<1){ox.setTransform(1,0,0,1,0,0);ox.globalCompositeOperation="source-atop";const x=-ow*.35+p*ow*1.7,g=ox.createLinearGradient(x-ow*.16,0,x+ow*.16,oh*.3);g.addColorStop(0,"rgba(255,255,255,0)");g.addColorStop(.5,"rgba(255,250,232,.7)");g.addColorStop(1,"rgba(255,255,255,0)");ox.fillStyle=g;ox.fillRect(0,0,ow,oh);ox.globalCompositeOperation="source-over"}
+      c.drawImage(offC,-ow/2,-oh/2);c.restore();L._w=d.w;L._h=d.h;return}}
+  c.scale(sc,sc);const d=drawLayer(c,L);c.restore();L._w=d.w;L._h=d.h}
+
 /* ---------- render ---------- */
-function render(c,W,H,opts={},st=S){const F=st.frame,u=Math.min(W,H)/1080;c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,W,H);
+const STILL=.35;
+function render(c,W,H,opts={},st=S){const F=st.frame,u=Math.min(W,H)/1080,t=opts.t??STILL,fx=(st.motion&&st.motion.fx)||{};c.setTransform(1,0,0,1,0,0);c.globalCompositeOperation="source-over";c.globalAlpha=1;c.clearRect(0,0,W,H);
   c.fillStyle=F.style==="gallery"?F.matte:"#0c0d12";c.fillRect(0,0,W,H);
-  const R=frameRect(F,W,H,u);drawPhoto(c,R,st,opts.noPhoto);drawFrame(c,W,H,u,F,R);
-  for(const L of st.layers){if(L.hidden)continue;c.save();c.translate(L.x*W,L.y*H);c.rotate(L.r||0);c.scale(L.s*u,L.s*u);c.globalAlpha=L.o??1;const d=drawLayer(c,L);c.restore();L._w=d.w;L._h=d.h}
+  const R=frameRect(F,W,H,u);drawPhoto(c,R,st,opts.noPhoto,fx.kenburns?1+.08*(1-Math.cos(TAU*t))/2:1);
+  c.save();c.beginPath();c.rect(R.x,R.y,R.w,R.h);c.clip();for(const k of FX_ORDER)if(fx[k]&&FX[k].z==="under")FX[k].draw(c,W,H,u,t);c.restore();
+  drawFrame(c,W,H,u,F,R,fx.chase?t:null);
+  for(const L of st.layers){if(!L.hidden)drawLayerAt(c,L,W,H,u,t)}
+  for(const k of FX_ORDER)if(fx[k]&&FX[k].z==="over")FX[k].draw(c,W,H,u,t);
   if(opts.overlay)drawOverlay(c,W,H,u);return R}
-let raf=0;function draw(){if(raf)return;raf=requestAnimationFrame(()=>{raf=0;render(ctx,cv.width,cv.height,{overlay:true})})}
+let raf=0;function draw(){if(raf||loopOn)return;raf=requestAnimationFrame(()=>{raf=0;render(ctx,cv.width,cv.height,{overlay:true,t:playing?STILL:pausedT})})}
 function kpx(){const r=cv.getBoundingClientRect();return r.width?cv.width/r.width:1}
 function corners(L,W,H,u,k){const co=Math.cos(L.r||0),si=Math.sin(L.r||0),sc=L.s*u,hw=(L._w||0)/2*sc,hh=(L._h||0)/2*sc,cx=L.x*W,cy=L.y*H;
   const P=(lx,ly)=>({x:cx+lx*co-ly*si,y:cy+lx*si+ly*co});return{c:{x:cx,y:cy},tl:P(-hw,-hh),tr:P(hw,-hh),br:P(hw,hh),bl:P(-hw,hh),top:P(0,-hh),rot:P(0,-hh-46*k)}}
@@ -471,7 +558,7 @@ new ResizeObserver(fit).observe($("#wrap"));
 
 /* ---------- history + persistence ---------- */
 const clean=st=>JSON.stringify(st,(k,v)=>k.startsWith("_")?undefined:v);
-function commit(){const j=clean(S);if(hist[hi]===j)return;hist=hist.slice(0,hi+1);hist.push(j);if(hist.length>80)hist.shift();hi=hist.length-1;updUndo();save()}
+function commit(){const j=clean(S);if(hist[hi]===j)return;hist=hist.slice(0,hi+1);hist.push(j);if(hist.length>80)hist.shift();hi=hist.length-1;updUndo();save();syncMotion();ensureLoop()}
 let commitT=0;function commitSoon(){clearTimeout(commitT);commitT=setTimeout(commit,350)}
 function restore(j){S=JSON.parse(j);if(!S.layers.find(l=>l.id===selId))selId=null;syncAll()}
 function undo(){if(hi>0){hi--;restore(hist[hi]);updUndo();save()}}
@@ -517,7 +604,7 @@ $("#fmts").innerHTML=Object.entries(FORMATS).map(([k,f])=>`<button data-fmt="${k
 $("#fmts").addEventListener("click",e=>{const b=e.target.closest("[data-fmt]");if(!b)return;S.fmt=b.dataset.fmt;syncFmt();clampPhoto();fit();commit()});
 function syncFmt(){$$("#fmts button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.fmt===S.fmt))}
 $("#tabs").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(!b)return;$$("#tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));$$("[data-panel]").forEach(p=>p.hidden=p.dataset.panel!==b.dataset.tab);
-  try{localStorage.setItem("imc-editor-tab",b.dataset.tab)}catch(e){}});
+  try{localStorage.setItem("imc-editor-tab",b.dataset.tab)}catch(e){}if(b.dataset.tab==="motion")startFxLoop()});
 
 /* ---------- frame panel ---------- */
 function swatchRow(el,key,get,set){el.innerHTML=SWATCHES.map(c=>`<button class="sw" data-c="${c}" style="background:${c}" aria-label="${c}" aria-pressed="${get()===c}"></button>`).join("")+`<input type="color" value="${get()}" aria-label="Custom colour">`;
@@ -548,19 +635,19 @@ function renderThumbs(){
   $$("#badges .tile").forEach(t=>thumbBadge(t.querySelector("canvas"),mk("badge",t.dataset.badge)));
   $("#frames").innerHTML=Object.entries(FRAMES).map(([k,n])=>`<button class="tile" data-frame="${k}" aria-pressed="${S.frame.style===k}"><canvas width="320" height="320"></canvas><span>${n}</span></button>`).join("");
   $$("#frames .tile").forEach(t=>{const c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,style:t.dataset.frame},photo:S.photo,layers:[]})});
-  $("#layouts").innerHTML=LAYOUTS.map((l,i)=>`<button class="tile" data-layout="${i}"><canvas width="320" height="320"></canvas><span>${l.n}</span></button>`).join("");
-  $$("#layouts .tile").forEach(t=>{const l=LAYOUTS[+t.dataset.layout],c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,...l.frame},photo:S.photo,layers:l.layers()})});
+  $("#layouts").innerHTML=LAYOUTS.map((l,i)=>`<button class="tile" data-layout="${i}"><canvas width="320" height="320"></canvas><span>${l.n}${l.fx?' <em class="anim">Animated</em>':""}</span></button>`).join("");
+  $$("#layouts .tile").forEach(t=>{const l=LAYOUTS[+t.dataset.layout],c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,...l.frame},photo:S.photo,layers:l.layers(),motion:{fx:l.fx||{}}})});
 }
 let thumbT=0;function thumbsSoon(){clearTimeout(thumbT);thumbT=setTimeout(renderThumbs,600)}
 
 /* ---------- layouts ---------- */
-$("#layouts").addEventListener("click",e=>{const t=e.target.closest("[data-layout]");if(!t)return;const l=LAYOUTS[+t.dataset.layout];S.frame={...S.frame,...l.frame};S.layers=l.layers();selId=null;clampPhoto();syncAll();commit();toast(l.n+" layout applied")});
+$("#layouts").addEventListener("click",e=>{const t=e.target.closest("[data-layout]");if(!t)return;const l=LAYOUTS[+t.dataset.layout];S.frame={...S.frame,...l.frame};S.layers=l.layers();S.motion={...S.motion,fx:{...(l.fx||{})}};selId=null;clampPhoto();syncAll();commit();toast(l.n+" layout applied")});
 function getSaved(){try{return JSON.parse(localStorage.getItem("imc-editor-layouts")||"[]")}catch(e){return[]}}
 function putSaved(a){try{localStorage.setItem("imc-editor-layouts",JSON.stringify(a))}catch(e){toast("Couldn't save. Browser storage is full or blocked.")}}
 function syncSaved(){const a=getSaved();$("#saved").innerHTML=a.length?a.map((s,i)=>`<div class="it"><span title="${esc(s.n)}">${esc(s.n)}</span><button class="btn" data-apply="${i}">Use</button><button class="btn danger" data-del="${i}" aria-label="Delete ${esc(s.n)}">✕</button></div>`).join(""):`<p class="note">Save a layout to reuse the same frame, badges and positions every week.</p>`}
-$("#saveLayout").onclick=()=>{const n=$("#saveName").value.trim()||("Layout "+(getSaved().length+1));const a=getSaved();a.push({n,fmt:S.fmt,frame:S.frame,layers:JSON.parse(clean(S.layers))});putSaved(a);$("#saveName").value="";syncSaved();toast("Saved “"+n+"”")};
+$("#saveLayout").onclick=()=>{const n=$("#saveName").value.trim()||("Layout "+(getSaved().length+1));const a=getSaved();a.push({n,fmt:S.fmt,frame:S.frame,motion:S.motion,layers:JSON.parse(clean(S.layers))});putSaved(a);$("#saveName").value="";syncSaved();toast("Saved “"+n+"”")};
 $("#saved").addEventListener("click",e=>{const a=getSaved();const ap=e.target.closest("[data-apply]"),dl=e.target.closest("[data-del]");
-  if(ap){const s=a[+ap.dataset.apply];S.fmt=s.fmt;S.frame={...DEFAULT_FRAME,...s.frame};S.layers=s.layers.map(l=>({...l,id:uid()}));selId=null;clampPhoto();syncAll();commit();toast("“"+s.n+"” applied")}
+  if(ap){const s=a[+ap.dataset.apply];S.fmt=s.fmt;S.frame={...DEFAULT_FRAME,...s.frame};S.layers=s.layers.map(l=>({...l,id:uid()}));S.motion={fx:{},dur:3,...(s.motion||{})};selId=null;clampPhoto();syncAll();commit();toast("“"+s.n+"” applied")}
   if(dl){a.splice(+dl.dataset.del,1);putSaved(a);syncSaved()}});
 
 /* ---------- properties ---------- */
@@ -582,7 +669,7 @@ function renderProps(){const L=getSel(),P=$("#props");
     <label class="check"><input type="checkbox" id="pp-box" ${L.box?"checked":""}> Background panel</label>
     ${L.box?colourBlock("Panel colour","c2",L):""}`}
   if(L.kind==="logo"){h+=`<label class="lbl" for="pp-plate">Backing</label><select id="pp-plate"><option value="none">None</option><option value="light">White panel</option><option value="dark">Dark panel</option></select>${logoImg?"":colourBlock("Text logo colour","c1",L)}`}
-  h+=`</div><div class="sec"><h3>Position</h3>${sliderRow("pp-s","Size",10,400,Math.round(L.s*100),"%")}${sliderRow("pp-r","Rotate",-180,180,Math.round((L.r||0)*180/Math.PI),"°")}${sliderRow("pp-o","Opacity",10,100,Math.round((L.o??1)*100),"%")}
+  h+=`</div><div class="sec"><h3>Position</h3>${sliderRow("pp-s","Size",10,400,Math.round(L.s*100),"%")}${sliderRow("pp-r","Rotate",-180,180,Math.round((L.r||0)*180/Math.PI),"°")}${sliderRow("pp-o","Opacity",10,100,Math.round((L.o??1)*100),"%")}<label class="lbl" for="pp-anim">Animation</label><select id="pp-anim">${Object.entries(ANIMS).map(([k,n])=>`<option value="${k}" ${(L.anim||"none")===k?"selected":""}>${n}</option>`).join("")}</select>
     <div class="acts"><button class="btn" data-act="centre">Centre</button><button class="btn" data-act="fwd">Forward</button><button class="btn" data-act="back">Back</button><button class="btn" data-act="dup">Duplicate</button><button class="btn" data-act="flat">Straighten</button><button class="btn danger" data-act="del">Delete</button></div></div>`;
   P.innerHTML=h;if(L.kind==="logo")$("#pp-plate").value=L.plate||"none"}
 function syncPropNums(){const L=getSel();if(!L)return;const set=(id,v,u)=>{const el=$("#"+id);if(el&&document.activeElement!==el){el.value=v;$("#o"+id).textContent=v+u}};
@@ -597,7 +684,7 @@ $("#props").addEventListener("input",e=>{const L=getSel();if(!L)return;const id=
   else return;draw();if(id==="pp-text"||id==="pp-sub"){syncLayers();commitSoon()}});
 $("#props").addEventListener("change",e=>{const L=getSel();if(!L)return;const id=e.target.id;
   if(id==="pp-font")L.font=e.target.value;else if(id==="pp-upper")L.upper=e.target.checked;else if(id==="pp-shadow")L.shadow=e.target.checked;
-  else if(id==="pp-box"){L.box=e.target.checked;renderProps()}else if(id==="pp-plate")L.plate=e.target.value;
+  else if(id==="pp-box"){L.box=e.target.checked;renderProps()}else if(id==="pp-plate")L.plate=e.target.value;else if(id==="pp-anim")L.anim=e.target.value;
   draw();commit()});
 $("#props").addEventListener("click",e=>{const L=getSel();if(!L)return;
   const sw=e.target.closest("[data-c]");if(sw){const k=sw.closest("[data-colour]").dataset.colour;L[k]=sw.dataset.c;sw.parentElement.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b===sw));sw.parentElement.querySelector("input").value=sw.dataset.c;draw();commit();return}
@@ -667,12 +754,93 @@ $("#png").onclick=async()=>{select(null);saveBlob(await exportBlob("image/png"),
 $("#jpg").onclick=async()=>{select(null);saveBlob(await exportBlob("image/jpeg",.92),fileName("jpg"))};
 $("#copy").onclick=async()=>{try{if(!window.ClipboardItem)throw 0;await navigator.clipboard.write([new ClipboardItem({"image/png":exportBlob("image/png")})]);toast("Copied. Paste it straight into Facebook or Instagram.")}catch(e){toast("This browser won't copy images. Use Download PNG instead.")}};
 
+/* ---------- motion UI + preview loop ---------- */
+let playing=true,pausedT=STILL,loopOn=false,lastF=0;
+const hasMotion=(st=S)=>Object.values(st.motion?.fx||{}).some(Boolean)||st.layers.some(l=>!l.hidden&&l.anim&&l.anim!=="none");
+const curT=()=>fr(performance.now()/1000/(S.motion.dur||3));
+function ensureLoop(){if(hasMotion()&&playing&&!loopOn){loopOn=true;requestAnimationFrame(loop)}else if(!hasMotion()||!playing){draw()}}
+function loop(now){if(!(hasMotion()&&playing)){loopOn=false;draw();return}if(now-lastF>=32){lastF=now;render(ctx,cv.width,cv.height,{overlay:true,t:curT()})}requestAnimationFrame(loop)}
+function buildMotionUI(){
+  $("#fxTiles").innerHTML=FX_ORDER.map(k=>`<button class="tile fx" data-fx="${k}" aria-pressed="false"><canvas width="200" height="200" data-fx="${k}"></canvas><span>${FX[k].n}${k==="chase"?' <em class="anim">Marquee</em>':""}</span></button>`).join("");
+  $("#durSeg").innerHTML=[2,3,4,6].map(d=>`<button data-dur="${d}">${d} sec</button>`).join("");
+}
+function syncMotion(){const fx=S.motion.fx||{};$$("#fxTiles .tile").forEach(t=>t.setAttribute("aria-pressed",!!fx[t.dataset.fx]));$$("#durSeg button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.dur===S.motion.dur));
+  const on=hasMotion();$("#play").hidden=!on;$("#play").textContent=playing?"Pause":"Play";$("#gif").classList.toggle("live",on)}
+$("#fxTiles").addEventListener("click",e=>{const t=e.target.closest("[data-fx]");if(!t)return;const k=t.dataset.fx;S.motion.fx={...S.motion.fx,[k]:!S.motion.fx[k]};
+  if(k==="chase"&&S.motion.fx.chase&&S.frame.style!=="marquee"){S.frame.style="marquee";syncFrame();toast("Switched to the Marquee frame so the lights can chase")}
+  commit();draw()});
+$("#durSeg").addEventListener("click",e=>{const b=e.target.closest("[data-dur]");if(b){S.motion.dur=+b.dataset.dur;commit()}});
+$("#shineAll").onclick=()=>{let n=0;S.layers.forEach(l=>{if(l.kind==="badge"){l.anim="shine";n++}});renderProps();commit();toast(n?"Every badge now shines":"Add a badge first")};
+$("#stillAll").onclick=()=>{S.layers.forEach(l=>l.anim="none");renderProps();commit()};
+$("#play").onclick=()=>{if(playing){pausedT=curT();playing=false}else playing=true;syncMotion();ensureLoop();draw()};
+let fxLoopOn=false;function startFxLoop(){if(fxLoopOn)return;fxLoopOn=true;const step=()=>{if($('[data-panel="motion"]').hidden||document.hidden){fxLoopOn=false;return}
+  const t=curT();$$("#fxTiles canvas").forEach(cn=>{const k=cn.dataset.fx;render(cn.getContext("2d"),cn.width,cn.height,{t,noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,style:k==="chase"?"marquee":(S.frame.style==="gallery"?"vignette":S.frame.style),logo:false,caption:""},photo:S.photo,layers:[],motion:{fx:{[k]:true}}})});
+  setTimeout(()=>requestAnimationFrame(step),55)};step()}
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&!$('[data-panel="motion"]').hidden)startFxLoop()});
+
+/* ---------- GIF encoder (median-cut palette, ordered dither, LZW, unchanged pixels left transparent) ---------- */
+const GIF={
+  palette(sm,n){const cnt=sm.length/3|0,idx=new Uint32Array(cnt);for(let i=0;i<cnt;i++)idx[i]=i;
+    const stats=b=>{const mn=[255,255,255],mx=[0,0,0];for(let i=b.a;i<b.b;i++){const p=idx[i]*3;for(let k=0;k<3;k++){const v=sm[p+k];if(v<mn[k])mn[k]=v;if(v>mx[k])mx[k]=v}}const r=[mx[0]-mn[0],mx[1]-mn[1],mx[2]-mn[2]],m=Math.max(...r);b.ch=r.indexOf(m);b.score=m*Math.sqrt(b.b-b.a)};
+    const boxes=[{a:0,b:cnt}];stats(boxes[0]);
+    while(boxes.length<n){let bi=-1,bs=0;for(let i=0;i<boxes.length;i++){const b=boxes[i];if(b.b-b.a>1&&b.score>bs){bs=b.score;bi=i}}if(bi<0)break;
+      const b=boxes[bi],ch=b.ch,seg=Array.from(idx.subarray(b.a,b.b)).sort((x,y)=>sm[x*3+ch]-sm[y*3+ch]);idx.set(seg,b.a);const m=b.a+(seg.length>>1),b1={a:b.a,b:m},b2={a:m,b:b.b};stats(b1);stats(b2);boxes.splice(bi,1,b1,b2)}
+    const pal=new Uint8Array(768);boxes.forEach((b,i)=>{let r=0,g=0,bl=0;for(let j=b.a;j<b.b;j++){const p=idx[j]*3;r+=sm[p];g+=sm[p+1];bl+=sm[p+2]}const k=Math.max(1,b.b-b.a);pal[i*3]=Math.round(r/k);pal[i*3+1]=Math.round(g/k);pal[i*3+2]=Math.round(bl/k)});
+    return{pal,count:Math.max(1,boxes.length)}},
+  mapper(pal,count){const cache=new Int16Array(262144).fill(-1);return(r,g,b)=>{const key=(r>>2)<<12|(g>>2)<<6|(b>>2);let v=cache[key];if(v>=0)return v;const R=(r&252)+2,G=(g&252)+2,B=(b&252)+2;let best=0,bd=1e12;
+    for(let i=0;i<count;i++){const dr=pal[i*3]-R,dg=pal[i*3+1]-G,db=pal[i*3+2]-B,d=dr*dr*3+dg*dg*4+db*db*2;if(d<bd){bd=d;best=i}}cache[key]=best;return best}},
+  HT:null,HC:null,gen:0,
+  lzw(px){if(!this.HT){this.HT=new Int32Array(1<<20);this.HC=new Int16Array(1<<20)}const HT=this.HT,HC=this.HC,gen=++this.gen&&this.gen;const out=[];let cur=0,nb=0,cs=9,next=258,g=gen;
+    const w=c=>{cur|=c<<nb;nb+=cs;while(nb>=8){out.push(cur&255);cur>>>=8;nb-=8}};
+    w(256);let pre=px[0];
+    for(let i=1;i<px.length;i++){const k=px[i],key=pre<<8|k;if(HT[key]===g){pre=HC[key];continue}
+      w(pre);if(next>=(1<<cs)&&cs<12)cs++;
+      if(next<4096){HT[key]=g;HC[key]=next++}else{w(256);g=++this.gen;next=258;cs=9}
+      pre=k}
+    w(pre);if(next>=(1<<cs)&&cs<12)cs++;w(257);if(nb>0)out.push(cur&255);
+    const n=out.length,res=new Uint8Array(n+Math.ceil(n/255)+1);let o=0;for(let i=0;i<n;i+=255){const l=Math.min(255,n-i);res[o++]=l;for(let j=0;j<l;j++)res[o++]=out[i+j]}res[o++]=0;return res.subarray(0,o)}
+};
+const tick=()=>new Promise(r=>setTimeout(r,0));
+async function makeGif(opt,prog,cancelled){
+  const f=FORMATS[S.fmt],k=Math.min(1,opt.long/Math.max(f.w,f.h)),W=Math.round(f.w*k),H=Math.round(f.h*k),delay=opt.delay,frames=hasMotion()?Math.max(2,Math.round((S.motion.dur||3)*100/delay)):1;
+  const c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d",{willReadFrequently:true});
+  const sf=[];for(let i=0;i<frames;i+=Math.max(1,Math.floor(frames/10)))sf.push(i);
+  const per=Math.ceil(100000/sf.length),step=Math.max(1,Math.floor(W*H/per)),sm=new Uint8Array(sf.length*(per+2)*3);let sn=0;
+  for(let j=0;j<sf.length;j++){render(x,W,H,{t:sf[j]/frames});const d=x.getImageData(0,0,W,H).data;for(let p=(j*7)%step;p<W*H&&sn+3<=sm.length;p+=step){sm[sn++]=d[p*4];sm[sn++]=d[p*4+1];sm[sn++]=d[p*4+2]}prog(.12*(j+1)/sf.length,"Picking colours…");await tick();if(cancelled())return null}
+  const{pal,count}=GIF.palette(sm.subarray(0,sn),255),map=GIF.mapper(pal,count);await tick();
+  const BAY=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5],ds=opt.dither?7:0,TR=255,enc=new TextEncoder(),le=v=>[v&255,v>>8&255];
+  const parts=[new Uint8Array([...enc.encode("GIF89a"),...le(W),...le(H),0xF7,0,0]),pal,new Uint8Array([0x21,0xFF,0x0B,...enc.encode("NETSCAPE2.0"),3,1,0,0,0])];
+  const N=W*H,prev=new Uint8Array(N),out=new Uint8Array(N);
+  for(let i=0;i<frames;i++){render(x,W,H,{t:i/frames});const d=x.getImageData(0,0,W,H).data;
+    for(let yy=0,p=0;yy<H;yy++){const by=(yy&3)<<2;for(let xx=0;xx<W;xx++,p++){const q=p*4,o=ds?(BAY[by|(xx&3)]-7.5)*ds/7.5:0;let r=d[q]+o,g=d[q+1]+o,b=d[q+2]+o;r=r<0?0:r>255?255:r|0;g=g<0?0:g>255?255:g|0;b=b<0?0:b>255?255:b|0;
+      const ix=map(r,g,b);if(i&&prev[p]===ix)out[p]=TR;else{out[p]=ix;prev[p]=ix}}}
+    parts.push(new Uint8Array([0x21,0xF9,4,i?5:4,...le(delay),i?TR:0,0,0x2C,0,0,0,0,...le(W),...le(H),0,8]),GIF.lzw(out));
+    prog(.12+.88*(i+1)/frames,`Frame ${i+1} of ${frames}`);await tick();if(cancelled())return null}
+  parts.push(new Uint8Array([0x3B]));return{blob:new Blob(parts,{type:"image/gif"}),frames,W,H}}
+
+/* ---------- GIF dialog ---------- */
+const GSIZES=[["s",540,"Small"],["m",800,"Medium"],["l",99999,"Full size"]],GFPS=[["10",10,"10 fps · smallest"],["16",6,"16 fps"],["20",5,"20 fps · smoothest"]];
+let gOpt={size:"m",fps:"16"},gBusy=false,gCancel=false;
+function gSeg(el,items,key){el.innerHTML=items.map(([k,,n])=>`<button data-k="${k}" aria-pressed="${gOpt[key]===k}">${n}</button>`).join("");el.onclick=e=>{const b=e.target.closest("[data-k]");if(b&&!gBusy){gOpt[key]=b.dataset.k;gSeg(el,items,key)}}}
+$("#gif").onclick=()=>{select(null);gSeg($("#gifSize"),GSIZES,"size");gSeg($("#gifFps"),GFPS,"fps");$("#gifBarWrap").hidden=true;$("#gifStatus").textContent="";$("#gifGo").disabled=false;$("#gifCancel").textContent="Close";
+  $("#gifHint").textContent=hasMotion()?"Plays on Facebook, WhatsApp, X and websites. Instagram posts don't play GIFs, so use the PNG there.":"Nothing is animated yet, so this will be a still GIF. Switch on an effect in the Motion tab, or give a badge an animation.";
+  $("#gifModal").hidden=false;$("#gifGo").focus()};
+$("#gifCancel").onclick=()=>{if(gBusy){gCancel=true;return}$("#gifModal").hidden=true};
+$("#gifModal").addEventListener("keydown",e=>{if(e.key==="Escape")$("#gifCancel").click()});
+$("#gifGo").onclick=async()=>{if(gBusy)return;gBusy=true;gCancel=false;$("#gifGo").disabled=true;$("#gifCancel").textContent="Cancel";$("#gifBarWrap").hidden=false;
+  const opt={long:GSIZES.find(s=>s[0]===gOpt.size)[1],delay:GFPS.find(s=>s[0]===gOpt.fps)[1],dither:$("#gifDither").checked};
+  let res=null;try{res=await makeGif(opt,(p,m)=>{$("#gifBar").style.width=Math.round(p*100)+"%";$("#gifStatus").textContent=m},()=>gCancel)}catch(e){$("#gifStatus").textContent="Something went wrong making the GIF. Try the Small size."}
+  gBusy=false;$("#gifGo").disabled=false;$("#gifCancel").textContent="Close";
+  if(!res){if(gCancel)$("#gifStatus").textContent="Cancelled.";return}
+  const mb=res.blob.size/1048576;$("#gifStatus").textContent=`Done: ${res.W}×${res.H}, ${res.frames} frames, ${mb.toFixed(1)} MB.`+(mb>8?" That's big for social media. Try Small or 10 fps.":"");
+  saveBlob(res.blob,fileName("gif"));draw()};
+
 /* ---------- sync + boot ---------- */
-function syncAll(){syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
-async function boot(){
+function syncAll(){syncMotion();ensureLoop();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
+async function boot(){buildMotionUI();
   try{const t=localStorage.getItem("imc-editor-tab");if(t){const b=$(`#tabs [data-tab="${t}"]`);if(b)b.click()}}catch(e){}
   let saved=null;try{saved=JSON.parse(localStorage.getItem("imc-editor-state")||"null")}catch(e){}
-  if(saved&&saved.layers){S={...S,...saved,frame:{...DEFAULT_FRAME,...saved.frame},photo:{...S.photo,...saved.photo}}}else{const l=LAYOUTS[0];S.frame={...S.frame,...l.frame};S.layers=l.layers()}
+  if(saved&&saved.layers){S={...S,...saved,frame:{...DEFAULT_FRAME,...saved.frame},photo:{...S.photo,...saved.photo},motion:{fx:{},dur:3,...(saved.motion||{})}}}else{const l=LAYOUTS[0];S.frame={...S.frame,...l.frame};S.layers=l.layers()}
   const [pb,lb]=await Promise.all([idbGet("photo"),idbGet("logo")]);
   if(pb)try{photoImg=await blobToImg(pb)}catch(e){}
   if(lb)try{logoImg=await blobToImg(lb)}catch(e){}
