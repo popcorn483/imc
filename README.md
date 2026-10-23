@@ -22,6 +22,21 @@ A web app for planning, designing, captioning and tracking social media ads for 
 | **Upcoming releases** | UK release dates to January 2027 with a viral angle for each film. Mark *Showing / Maybe / Not showing* and build an announcement or opening-day ad in one click. |
 | **Posts** | Every ad from idea → draft → scheduled → posted. Add reach, reactions, comments and shares from Facebook Insights. |
 | **Go-viral playbook** | 11 tactics, each opening a ready-made ad |
+| **Photo editor** (`editor.html`) | Frame a real photo or official poster with an IMC border, then drag on badges like Coming Soon, New Release, LUXX, Premier, Book Now and release dates. Export PNG/JPG at full size. |
+
+## Photo editor
+
+Open **Photo editor ↗** from the Ad Studio menu, or go straight to `https://popcorn483.github.io/imc/editor.html`.
+
+1. **Logo tab:** upload the official IMC logo once (PNG or SVG with a transparent background). It's remembered in your browser and appears on every frame.
+2. **Photo tab:** upload a photo, drag one onto the canvas, paste one with Ctrl+V, or paste a link.
+3. **Layouts tab:** start from Coming soon, New release, LUXX, Now showing, Opening night or Countdown. You can also save your own layouts.
+4. **Frame tab:** Premiere, Clean, Film strip, Marquee lights, Photo border or none, in any colour, with a caption.
+5. **Add tab:** badges, text and the logo. Drag to move, drag a corner to resize, drag the top dot to rotate (hold Shift to snap). Items snap to the centre lines.
+6. **Download PNG** for Facebook and Instagram, or **Copy image** and paste straight into a post.
+
+Shortcuts: Ctrl+Z undo, Ctrl+Shift+Z redo, Delete to remove, Ctrl+D to duplicate, arrow keys to nudge (Shift for bigger steps).
+
 
 ## Where your posts are saved
 

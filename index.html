@@ -39,6 +39,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1
 nav{display:flex;flex-direction:column;gap:4px}
 nav button{all:unset;cursor:pointer;padding:9px 12px;border-radius:8px;font-weight:600;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
 nav button:hover{background:var(--chip);color:var(--ink)}
+nav .navlink{padding:9px 12px;border-radius:8px;font-weight:600;color:var(--velvet);text-decoration:none;border:1px dashed var(--line)}
+nav .navlink:hover{border-color:var(--velvet)}
 nav button[aria-current="true"]{background:var(--velvet);color:var(--velvet-ink)}
 nav button:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .count{font-family:var(--f-mono);font-size:11px;opacity:.8}
@@ -197,6 +199,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <button data-view="releases">Upcoming releases</button>
       <button data-view="library">Posts <span class="count" id="cnt"></span></button>
       <button data-view="playbook">Go-viral playbook</button>
+      <a class="navlink" href="editor.html">Photo editor ↗</a>
     </nav>
     <div class="railfoot"><span class="sync"><span class="dot" id="syncdot"></span><span id="synctxt">Connecting…</span></span></div>
   </aside>
@@ -263,7 +266,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <div class="stage">
           <div class="bar2" id="sizes"></div>
           <div class="frame"><canvas id="poster" width="1080" height="1080" aria-label="Poster preview"></canvas></div>
-          <div class="bar2"><button class="btn" id="dl">Download poster (PNG)</button></div>
+          <div class="bar2"><button class="btn" id="dl">Download poster (PNG)</button><a class="btn" href="editor.html" style="text-decoration:none">Frame a photo instead ↗</a></div>
           <div class="panel caption-box">
             <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2>Caption</h2>
               <div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn small" id="capgen">Fill from template</button><button class="btn small" id="capai" hidden>Write with Claude</button><button class="btn small" id="capcopy">Copy</button></div></div>
