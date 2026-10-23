@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Plan, design, caption and track social media ads for IMC Cinema Enniskillen.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>IMC Enniskillen Ad Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: projection-booth console. Left rail navigation, working area right; studio = form | live poster | virality. */
+:root{
+  --bg:#f3f4f7; --panel:#ffffff; --ink:#1b2130; --muted:#5e6678; --line:#dde1e9;
+  --velvet:#7a1f3d; --velvet-ink:#ffffff; --amber:#c98a12; --amber-soft:#fbf1dc;
+  --good:#1f7a4d; --warn:#a86a00; --bad:#b0303b; --chip:#eceff4;
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12151d; --panel:#1a1f2a; --ink:#e8ebf2; --muted:#9aa2b4; --line:#2b3242;
+  --velvet:#c4486f; --velvet-ink:#ffffff; --amber:#e9ae3c; --amber-soft:#2e2717;
+  --good:#4cc38a; --warn:#e9ae3c; --bad:#ef6b75; --chip:#242b39; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151d; --panel:#1a1f2a; --ink:#e8ebf2; --muted:#9aa2b4; --line:#2b3242;
+  --velvet:#c4486f; --velvet-ink:#ffffff; --amber:#e9ae3c; --amber-soft:#2e2717;
+  --good:#4cc38a; --warn:#e9ae3c; --bad:#ef6b75; --chip:#242b39; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.app{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:100vh}
+.rail{background:var(--panel);border-right:1px solid var(--line);padding-block:20px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:16px;display:flex;flex-direction:column;gap:22px;position:sticky;top:0;height:100vh}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand b{font-family:var(--f-display);font-weight:900;font-size:30px;letter-spacing:.02em;line-height:.95;text-transform:uppercase}
+.brand b span{color:var(--velvet)}
+.brand small{font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+nav{display:flex;flex-direction:column;gap:4px}
+nav button{all:unset;cursor:pointer;padding:9px 12px;border-radius:8px;font-weight:600;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+nav button:hover{background:var(--chip);color:var(--ink)}
+nav button[aria-current="true"]{background:var(--velvet);color:var(--velvet-ink)}
+nav button:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.count{font-family:var(--f-mono);font-size:11px;opacity:.8}
+.railfoot{margin-top:auto;font-size:12px;color:var(--muted)}
+.sync{display:inline-flex;align-items:center;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--warn)}
+.dot.on{background:var(--good)}
+main{padding-block:24px 60px;padding-left:24px;padding-right:max(24px,env(safe-area-inset-right,0px));min-width:0}
+h1{font-family:var(--f-display);font-weight:800;font-size:38px;line-height:1;text-transform:uppercase;letter-spacing:.01em;margin:0;text-wrap:balance}
+h2{font-family:var(--f-display);font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.02em;margin:0;text-wrap:balance}
+h3{font-size:15px;margin:0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.head p{margin:6px 0 0;color:var(--muted);max-width:62ch}
+.btn{font:600 14px var(--f-body);border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:9px 14px;border-radius:8px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--velvet);border-color:var(--velvet);color:var(--velvet-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.small{padding:5px 10px;font-size:13px}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--bad)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;min-width:0}
+.grid{display:grid;gap:16px}
+.stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+.stat .n{font-family:var(--f-display);font-weight:800;font-size:40px;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.two{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+.label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700}
+/* week strip */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-top:12px}
+.day{border:1px solid var(--line);border-radius:8px;padding:8px;min-height:92px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.day.today{border-color:var(--amber);background:var(--amber-soft)}
+.day .dn{font-family:var(--f-mono);font-size:11px;color:var(--muted);display:flex;justify-content:space-between}
+.day .dn b{font-family:var(--f-display);font-size:20px;color:var(--ink);font-weight:800}
+.mini{all:unset;cursor:pointer;font-size:12px;line-height:1.25;padding:3px 6px;border-radius:5px;background:var(--chip);border-left:3px solid var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mini.scheduled{border-left-color:var(--amber)}.mini.posted{border-left-color:var(--good)}.mini.draft{border-left-color:var(--velvet)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:99px;background:var(--chip);color:var(--muted);white-space:nowrap}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.pill.idea{color:var(--muted)}.pill.draft{color:var(--velvet)}.pill.scheduled{color:var(--warn)}.pill.posted{color:var(--good)}
+.example{font-size:10px;font-family:var(--f-mono);color:var(--amber);border:1px solid var(--amber);border-radius:4px;padding:0 4px;text-transform:uppercase}
+/* list */
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.thumb{width:64px;height:64px;border-radius:6px;background:var(--chip);object-fit:cover;display:block}
+.row .t{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .m{font-size:13px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.row .act{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.bars{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.bar{display:grid;grid-template-columns:96px minmax(0,1fr) 52px;gap:8px;align-items:center;font-size:13px}
+.bar .tr{height:10px;background:var(--chip);border-radius:5px;overflow:hidden}
+.bar .fi{height:100%;background:var(--velvet);border-radius:5px}
+.bar .v{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+/* studio */
+.studio{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr) minmax(0,280px);gap:16px;align-items:start}
+.form{display:flex;flex-direction:column;gap:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field label{font-size:12px;font-weight:700;color:var(--muted)}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:8px 10px;width:100%;min-width:0}
+textarea{resize:vertical;min-height:70px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tpls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.tpls button{all:unset;cursor:pointer;text-align:center;font-size:12px;font-weight:700;padding:8px 4px;border-radius:7px;border:1px solid var(--line);line-height:1.2}
+.tpls button[aria-pressed="true"]{border-color:var(--velvet);background:var(--velvet);color:var(--velvet-ink)}
+.swatches{display:flex;gap:8px;flex-wrap:wrap}
+.sw{all:unset;cursor:pointer;width:34px;height:34px;border-radius:50%;border:2px solid transparent;box-shadow:inset 0 0 0 2px var(--panel)}
+.sw[aria-pressed="true"]{border-color:var(--ink)}
+.stage{display:flex;flex-direction:column;gap:12px;align-items:center;position:sticky;top:16px}
+.stage .bar2{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.frame{width:100%;display:flex;justify-content:center;background:repeating-conic-gradient(var(--chip) 0 25%,transparent 0 50%) 0 0/18px 18px;border-radius:var(--r);padding:16px}
+canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.caption-box{width:100%}
+.score{display:flex;align-items:center;gap:14px}
+.ring{--p:0;width:74px;height:74px;border-radius:50%;background:conic-gradient(var(--c,var(--velvet)) calc(var(--p)*1%),var(--chip) 0);display:grid;place-items:center;flex:none}
+.ring span{width:58px;height:58px;border-radius:50%;background:var(--panel);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:26px;font-variant-numeric:tabular-nums}
+.checks{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:8px;font-size:13px}
+.checks li{display:grid;grid-template-columns:18px 1fr;gap:8px;align-items:start}
+.checks .ok{color:var(--good);font-weight:800}.checks .no{color:var(--muted);font-weight:800}
+.checks small{display:block;color:var(--muted)}
+.tip{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:12px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-weight:600;font-size:14px;z-index:20;transition:opacity .2s}
+/* releases */
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.links a{font-weight:600;color:var(--velvet);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:var(--panel)}
+.links a:hover{border-color:var(--velvet)}
+.rel-month{margin:22px 0 10px;display:flex;align-items:baseline;gap:10px}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.rel{display:flex;flex-direction:column;gap:8px}
+.rel .top{display:flex;gap:12px;align-items:flex-start}
+.date{flex:none;width:56px;text-align:center;border:1px solid var(--line);border-radius:8px;padding:6px 0;line-height:1}
+.date b{display:block;font-family:var(--f-display);font-size:28px;font-weight:800}
+.date span{font-family:var(--f-mono);font-size:10.5px;text-transform:uppercase;color:var(--muted)}
+.rel h3{font-family:var(--f-display);font-size:22px;font-weight:800;text-transform:uppercase;line-height:1.05;text-wrap:balance}
+.rel .meta{font-size:12.5px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.cert{font-family:var(--f-mono);font-weight:500;border:1px solid currentColor;border-radius:4px;padding:0 4px}
+.rel .angle{font-size:13.5px;margin:0}
+.rel .angle b{color:var(--velvet)}
+.rel .acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.rel .acts a{font-size:13px;font-weight:600;color:var(--muted);align-self:center;margin-left:auto}
+.prog{display:flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;width:max-content}
+.prog button{all:unset;cursor:pointer;font-size:12px;font-weight:700;padding:4px 10px;color:var(--muted)}
+.prog button+button{border-left:1px solid var(--line)}
+.prog button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.rel.showing{border-color:var(--good)}
+.rel.not{opacity:.55}
+.note{font-size:12.5px;color:var(--warn)}
+.warnbox{border:1px solid var(--bad);color:var(--bad);border-radius:7px;padding:8px 10px;font-size:13px}
+/* playbook */
+.plays{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.play h3{font-family:var(--f-display);font-size:20px;text-transform:uppercase;font-weight:800;letter-spacing:.02em}
+.play p{margin:6px 0 10px;color:var(--muted);max-width:60ch}
+.play .ex{font-family:var(--f-mono);font-size:12.5px;background:var(--bg);border:1px dashed var(--line);border-radius:7px;padding:10px;white-space:pre-wrap}
+.play .use{margin-top:10px}
+.mix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.mix div{border:1px solid var(--line);border-radius:8px;padding:12px}
+.mix b{font-family:var(--f-display);font-size:26px;font-weight:800;display:block}
+.empty{color:var(--muted);padding:24px 0;text-align:center}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
+.modal{position:fixed;inset:0;background:rgba(10,12,18,.55);display:grid;place-items:center;z-index:30;padding:16px}
+.modal .panel{width:min(460px,100%)}
+@media (max-width:1180px){.studio{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.studio .side{grid-column:1/-1}}
+@media (max-width:820px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .rail>*{min-width:0}
+  .rail{position:sticky;top:env(safe-area-inset-top,0px);height:auto;flex-direction:row;align-items:center;flex-wrap:wrap;gap:10px;padding-block:10px;padding-right:max(16px,env(safe-area-inset-right,0px));border-right:0;border-bottom:1px solid var(--line);z-index:5}
+  .brand b{font-size:22px}.brand small{display:none}
+  nav{flex-direction:row;overflow-x:auto;width:100%}
+  nav button{padding:7px 10px;white-space:nowrap}
+  nav .count{display:none}
+  .railfoot{display:none}
+  main{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 60px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two,.plays,.studio{grid-template-columns:minmax(0,1fr)}
+  .week{grid-template-columns:repeat(7,minmax(84px,1fr))}
+  .weekwrap{overflow-x:auto}
+  .mix{grid-template-columns:1fr}
+  .stage{position:static}
+  .row{grid-template-columns:48px minmax(0,1fr)}.row .act{grid-column:1/-1;justify-content:flex-start}.thumb{width:48px;height:48px}
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand"><b>IMC <span>Ad</span> Studio</b><small>Enniskillen · 7 screens</small></div>
+    <nav id="nav">
+      <button data-view="dashboard">Dashboard</button>
+      <button data-view="studio">Create ad</button>
+      <button data-view="releases">Upcoming releases</button>
+      <button data-view="library">Posts <span class="count" id="cnt"></span></button>
+      <button data-view="playbook">Go-viral playbook</button>
+    </nav>
+    <div class="railfoot"><span class="sync"><span class="dot" id="syncdot"></span><span id="synctxt">Connecting…</span></span></div>
+  </aside>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section id="v-dashboard">
+      <div class="head">
+        <div><h1>This week at the IMC</h1><p>Your content plan for IMC Enniskillen. Ideas, drafts, scheduled posts and results, all in one place.</p></div>
+        <button class="btn primary" data-go="studio">+ New ad</button>
+      </div>
+      <div class="grid stats" id="stats"></div>
+      <div class="grid two" style="margin-top:16px">
+        <div class="panel">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h2>Posting calendar</h2>
+            <div style="display:flex;gap:6px"><button class="btn small" id="wkprev" aria-label="Previous week">←</button><button class="btn small" id="wknow">Today</button><button class="btn small" id="wknext" aria-label="Next week">→</button></div></div>
+          <div class="weekwrap"><div class="week" id="week"></div></div>
+          <p class="tip">Aim for one post a day on Facebook and a Story most days. Lock in Thursday (weekend plans) and Sunday evening (week ahead) every week.</p>
+        </div>
+        <div class="panel">
+          <h2>What's working</h2>
+          <p class="label" style="margin:10px 0 0">Engagement rate by ad type · posted ads</p>
+          <div class="bars" id="bytype"></div>
+          <p class="label" style="margin:18px 0 6px">Top posts</p>
+          <div class="rows" id="top"></div>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:16px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h2>Next up</h2><button class="btn small ghost" data-go="library">All posts →</button></div>
+        <div class="rows" id="upnext" style="margin-top:8px"></div>
+      </div>
+    </section>
+
+    <!-- STUDIO -->
+    <section id="v-studio" hidden>
+      <div class="head">
+        <div><h1 id="studio-title">Create an ad</h1><p>Pick a format, fill in the details and the poster builds itself. Sizes for Facebook feed, Stories and Reels, and the foyer screens.</p></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="newblank">Start fresh</button><button class="btn primary" id="save">Save post</button></div>
+      </div>
+      <div class="studio">
+        <div class="panel form">
+          <div class="field"><label>Ad type</label><div class="tpls" id="tpls"></div></div>
+          <div class="field"><label for="f-headline">Headline (film or event name)</label><input id="f-headline" maxlength="60"></div>
+          <div class="field"><label for="f-kicker">Top label</label><input id="f-kicker" maxlength="28"></div>
+          <div class="field"><label for="f-sub">Supporting line</label><input id="f-sub" maxlength="90"></div>
+          <div class="field"><label for="f-details">Dates and times</label><input id="f-details" maxlength="70" placeholder="Sat 11am · Screen 3"></div>
+          <div class="pair">
+            <div class="field"><label for="f-price">Price badge</label><input id="f-price" maxlength="10" placeholder="£3.50"></div>
+            <div class="field"><label for="f-cta">Call to action</label><input id="f-cta" maxlength="40"></div>
+          </div>
+          <div class="field"><label>Colour theme</label><div class="swatches" id="themes"></div></div>
+          <div class="field"><label for="f-img">Background photo (still or poster art you have rights to)</label><input id="f-img" type="file" accept="image/*"><small style="color:var(--muted);font-size:12px">Photos stay in this browser for the poster preview and download. They aren't saved with the post.</small></div>
+          <div class="field"><label for="f-imgsrc">Image source</label><select id="f-imgsrc"><option value="text">Type-only design (no image)</option><option value="official">Official distributor artwork or trailer still</option><option value="own">Our own photo or video</option><option value="ai">AI-generated image</option></select><div class="warnbox" id="aiwarn" hidden>Followers have called out AI images before. Swap for official artwork, a real photo from the cinema, or the type-only design.</div></div>
+          <div class="pair">
+            <div class="field"><label for="f-date">Post date</label><input id="f-date" type="date"></div>
+            <div class="field"><label for="f-time">Post time</label><input id="f-time" type="time"></div>
+          </div>
+          <div class="pair">
+            <div class="field"><label for="f-status">Status</label><select id="f-status"><option value="idea">Idea</option><option value="draft">Draft</option><option value="scheduled">Scheduled</option><option value="posted">Posted</option></select></div>
+            <div class="field"><label for="f-platform">Where</label><select id="f-platform"><option>Facebook</option><option>Instagram</option><option>Facebook + Instagram</option><option>TikTok</option><option>Foyer screens</option></select></div>
+          </div>
+        </div>
+
+        <div class="stage">
+          <div class="bar2" id="sizes"></div>
+          <div class="frame"><canvas id="poster" width="1080" height="1080" aria-label="Poster preview"></canvas></div>
+          <div class="bar2"><button class="btn" id="dl">Download poster (PNG)</button></div>
+          <div class="panel caption-box">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2>Caption</h2>
+              <div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn small" id="capgen">Fill from template</button><button class="btn small" id="capai" hidden>Write with Claude</button><button class="btn small" id="capcopy">Copy</button></div></div>
+            <textarea id="f-caption" rows="8" style="margin-top:10px"></textarea>
+            <div class="field" style="margin-top:8px"><label for="f-tags">Hashtags</label><input id="f-tags"></div>
+          </div>
+        </div>
+
+        <div class="panel side">
+          <h2>Share-ability</h2>
+          <div class="score" style="margin-top:12px"><div class="ring" id="ring"><span id="scoreN">0</span></div><div><b id="scoreL">Needs work</b><div style="font-size:13px;color:var(--muted)">Checks your caption and plan against habits that get local posts shared.</div></div></div>
+          <ul class="checks" id="checks"></ul>
+          <p class="tip" id="slottip"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELEASES -->
+    <section id="v-releases" hidden>
+      <div class="head">
+        <div><h1>Upcoming releases</h1><p>UK release dates for the next three months, from the Film Distributors' Association schedule (checked 18 Oct 2026). Mark what you're showing, then build an announcement ad and an opening-day ad for each.</p></div>
+        <div class="links"><a href="https://www.imccinemas.co.uk" target="_blank" rel="noopener">Our website ↗</a><a href="https://www.imdb.com/calendar/?region=GB" target="_blank" rel="noopener">IMDb UK calendar ↗</a><a href="https://filmdistributorsassociation.com/release-schedule/all-future-releases/" target="_blank" rel="noopener">FDA schedule ↗</a></div>
+      </div>
+      <div class="panel" style="display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center">
+        <div class="filters" id="relfilters"></div>
+        <div class="filters" id="relprog"></div>
+      </div>
+      <div id="rellist"></div>
+      <p class="tip">Dates move, sometimes by weeks. Check the date with your booker before posting, especially for the titles marked with a date note.</p>
+    </section>
+
+    <!-- LIBRARY -->
+    <section id="v-library" hidden>
+      <div class="head">
+        <div><h1>Posts</h1><p>Every ad from first idea to results. Add the numbers from Facebook once an ad has run so the dashboard can show what works.</p></div>
+        <button class="btn primary" data-go="studio">+ New ad</button>
+      </div>
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
+          <div class="filters" id="filters"></div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><input id="search" placeholder="Search posts" style="max-width:220px"><button class="btn small" id="bk-out">Export backup</button><label class="btn small" for="bk-in" style="cursor:pointer">Import backup</label><input id="bk-in" type="file" accept="application/json,.json" hidden></div>
+        </div>
+        <div class="rows" id="list" style="margin-top:10px"></div>
+      </div>
+    </section>
+
+    <!-- PLAYBOOK -->
+    <section id="v-playbook" hidden>
+      <div class="head"><div><h1>Go-viral playbook</h1><p>Tactics a 7-screen town cinema can run week to week. Each one opens a ready-made ad in the studio.</p></div></div>
+      <div class="panel" style="margin-bottom:16px">
+        <h2>A healthy weekly mix</h2>
+        <p style="color:var(--muted);margin:6px 0 0;max-width:70ch">Pages that only post showtimes get scrolled past. Blend selling with fun and community so people want to follow the page, not just check it.</p>
+        <div class="mix">
+          <div><b>40%</b><span class="label">Sell</span><p style="margin:4px 0 0;font-size:13.5px">New releases, offers, Kids Club, Premier screen, event nights, gift vouchers.</p></div>
+          <div><b>35%</b><span class="label">Play</span><p style="margin:4px 0 0;font-size:13.5px">Polls, guess-the-film, this-or-that, quote fill-ins, popcorn debates.</p></div>
+          <div><b>25%</b><span class="label">Belong</span><p style="margin:4px 0 0;font-size:13.5px">Staff picks, behind the projector, local schools and clubs, autism-friendly and subtitled screenings.</p></div>
+        </div>
+      </div>
+      <div class="plays" id="plays"></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal" id="mmodal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+    <h2 id="mtitle">Add results</h2>
+    <p style="color:var(--muted);font-size:13.5px;margin:6px 0 0">Copy these from the post's insights on Facebook or Instagram.</p>
+    <div class="metrics">
+      <div class="field"><label for="m-reach">Reach</label><input id="m-reach" type="number" min="0" inputmode="numeric"></div>
+      <div class="field"><label for="m-react">Reactions</label><input id="m-react" type="number" min="0" inputmode="numeric"></div>
+      <div class="field"><label for="m-comm">Comments</label><input id="m-comm" type="number" min="0" inputmode="numeric"></div>
+      <div class="field"><label for="m-share">Shares</label><input id="m-share" type="number" min="0" inputmode="numeric"></div>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px"><button class="btn" id="mcancel">Cancel</button><button class="btn primary" id="msave">Save results</button></div>
+  </div>
+</div>
+<div class="modal" id="dmodal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="dtitle">
+    <h2 id="dtitle">Delete this post?</h2>
+    <p style="color:var(--muted);font-size:14px" id="dtext"></p>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button class="btn" id="dcancel">Keep it</button><button class="btn primary" id="dok">Delete</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ---------- templates ---------- */
+const TPL={
+  now:{name:"Now showing",kicker:"NOW SHOWING",cta:"Book at imccinemas.co.uk",theme:"velvet"},
+  soon:{name:"Coming soon",kicker:"COMING SOON",cta:"Tickets on sale now",theme:"projector"},
+  offer:{name:"Offer",kicker:"THIS WEEK ONLY",cta:"Show this post at the kiosk",theme:"projector"},
+  kids:{name:"Kids Club",kicker:"KIDS CLUB",cta:"Book at imccinemas.co.uk",theme:"pop"},
+  event:{name:"Event night",kicker:"ONE NIGHT ONLY",cta:"Limited seats · book now",theme:"fright"},
+  access:{name:"Inclusive",kicker:"RELAXED SCREENING",cta:"Book at imccinemas.co.uk",theme:"lakeland"},
+  poll:{name:"Poll",kicker:"YOU DECIDE",cta:"Vote in the comments",theme:"lakeland"},
+  quiz:{name:"Guess it",kicker:"GUESS THE FILM",cta:"Answer in the comments",theme:"velvet"}
+};
+const THEMES={
+  velvet:{name:"Velvet",bg:["#4a0f24","#14060c"],accent:"#f3b23a",ink:"#ffffff"},
+  projector:{name:"Projector",bg:["#1d2433","#0b0e15"],accent:"#ffc23d",ink:"#ffffff"},
+  lakeland:{name:"Lakeland",bg:["#0f5560","#062328"],accent:"#9be3d6",ink:"#ffffff"},
+  fright:{name:"Fright night",bg:["#3b1458","#120617"],accent:"#ff8a1f",ink:"#ffffff"},
+  pop:{name:"Pop",bg:["#ffd23f","#ff7a59"],accent:"#2a1a6e",ink:"#2a1a6e"},
+  screen:{name:"Screen white",bg:["#ffffff","#e7e9ef"],accent:"#7a1f3d",ink:"#1b2130"}
+};
+const SIZES={square:{name:"Feed 1:1",w:1080,h:1080},portrait:{name:"Feed 4:5",w:1080,h:1350},story:{name:"Story / Reel 9:16",w:1080,h:1920},foyer:{name:"Foyer screen 16:9",w:1920,h:1080}};
+const BASE_TAGS="#IMCEnniskillen #Enniskillen #Fermanagh #CinemaNI";
+
+/* ---------- state ---------- */
+let posts=[], db=null, col=null, sample=null, downloads=null, editingId=null, img=null, size="square", view="dashboard", filter="all", weekOffset=0, metricId=null, delId=null;
+const blank=()=>({type:"now",headline:"",kicker:TPL.now.kicker,sub:"",details:"",price:"",cta:TPL.now.cta,theme:"velvet",caption:"",tags:BASE_TAGS,date:isoDay(new Date()),time:"18:30",status:"draft",platform:"Facebook + Instagram",imgsrc:"text",metrics:null});
+let cur=blank();
+
+function isoDay(d){const z=new Date(d);z.setMinutes(z.getMinutes()-z.getTimezoneOffset());return z.toISOString().slice(0,10)}
+function fmtDay(s){if(!s)return"No date";const d=new Date(s+"T12:00");return d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})}
+function toast(t){const el=$("#toast");el.textContent=t;el.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>el.hidden=true,2200)}
+function eng(p){const m=p.metrics;if(!m||!m.reach)return null;return ((+m.react||0)+(+m.comm||0)+(+m.share||0))/m.reach}
+
+/* ---------- storage: shared db when available, else this browser ---------- */
+const LS="imc-ad-studio-posts";
+function lsLoad(){try{return JSON.parse(localStorage.getItem(LS)||"[]")}catch(e){return[]}}
+function lsSave(){try{localStorage.setItem(LS,JSON.stringify(posts))}catch(e){}}
+function setSync(on,txt){$("#syncdot").classList.toggle("on",on);$("#synctxt").textContent=txt}
+posts=lsLoad();
+async function connect(){
+  const use=window.claude&&window.claude.use?window.claude.use.bind(window.claude):null;
+  if(!use){seedExamples();setSync(false,"Saved in this browser");renderAll();return}
+  use("sample").then(s=>{sample=s;$("#capai").hidden=!s}).catch(()=>{});
+  use("downloads").then(d=>{downloads=d}).catch(()=>{});
+  try{db=await use("db")}catch(e){db=null}
+  if(!db){seedExamples();setSync(false,"Saved in this browser");renderAll();return}
+  col=db.collection("posts");
+  progCol=db.collection("programme");
+  progCol.onSnapshot(snap=>{const m={};snap.docs.forEach(d=>{m[d.id]=(d.data()||{}).state||""});programme=m;renderReleases()},()=>{});
+  col.onSnapshot(snap=>{posts=snap.docs.map(d=>({id:d.id,...d.data()}));setSync(true,"Synced for your team");renderAll()},
+    e=>{setSync(false,"Sync paused: "+(e&&e.code||"error"))});
+}
+function seedExamples(){
+  let seeded=false;try{seeded=localStorage.getItem(LS+"-seeded")==="1"}catch(e){}
+  if(seeded||posts.length)return;
+  const ex=(id,o)=>({...blank(),id,example:true,createdAt:Date.now(),updatedAt:Date.now(),...o});
+  posts=[
+    ex("ex1",{type:"event",theme:"fright",headline:"Halloween Fright Night",kicker:"ONE NIGHT ONLY",sub:"Horror double bill · best costume wins a prize",details:"Fri 30 Oct · 8pm",price:"£6",cta:"Limited seats · book now",date:addDays(isoDay(new Date()),2),time:"19:00",status:"scheduled",tags:BASE_TAGS+" #Halloween"}),
+    ex("ex2",{type:"kids",theme:"pop",headline:"Midterm Kids Club",kicker:"KIDS CLUB",sub:"A different family film every morning",details:"Mon–Fri · 11am",price:"£3",cta:"Book at imccinemas.co.uk",date:addDays(isoDay(new Date()),1),time:"15:30",status:"draft",platform:"Facebook",tags:BASE_TAGS+" #KidsClub"}),
+    ex("ex3",{type:"quiz",headline:"🦖 🏝️ 🚙",kicker:"GUESS THE FILM",sub:"Three emoji, one film. Answer below!",cta:"Answer in the comments",date:addDays(isoDay(new Date()),-4),time:"19:00",status:"posted",platform:"Facebook",metrics:{reach:4200,react:310,comm:185,share:22},tags:BASE_TAGS+" #GuessTheFilm"}),
+    ex("ex4",{type:"now",theme:"projector",headline:"Staff pick of the week",kicker:"NOW SHOWING",sub:"Our team's favourite film showing right now",details:"Daily · Screen 2",cta:"Book at imccinemas.co.uk",date:addDays(isoDay(new Date()),-2),time:"18:00",status:"posted",metrics:{reach:2600,react:120,comm:14,share:6}})
+  ];
+  posts.forEach(p=>p.caption=capFor(p));
+  lsSave();try{localStorage.setItem(LS+"-seeded","1")}catch(e){}
+}
+async function persist(p){
+  p.updatedAt=Date.now();
+  if(col){const {id,...body}=p;await col.doc(id).set(JSON.parse(JSON.stringify(body)));}
+  else{const i=posts.findIndex(x=>x.id===p.id);if(i<0)posts.push(p);else posts[i]=p;lsSave();renderAll()}
+}
+async function remove(id){
+  if(col)await col.doc(id).delete();
+  else{posts=posts.filter(p=>p.id!==id);lsSave();renderAll()}
+}
+const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+
+/* ---------- navigation ---------- */
+function go(v){view=v;$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));if(v==="studio")drawPoster();window.scrollTo(0,0)}
+$("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view)});
+document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g){if(g.dataset.go==="studio"&&!g.dataset.keep)startNew();go(g.dataset.go)}});
+
+/* ---------- dashboard ---------- */
+function renderStats(){
+  const c=s=>posts.filter(p=>p.status===s).length;
+  const now=isoDay(new Date()), in7=isoDay(new Date(Date.now()+6*864e5));
+  const thisWeek=posts.filter(p=>p.date>=now&&p.date<=in7&&p.status!=="posted").length;
+  const er=posts.map(eng).filter(x=>x!=null);
+  const avg=er.length?(er.reduce((a,b)=>a+b,0)/er.length*100).toFixed(1)+"%":"–";
+  $("#stats").innerHTML=[["Planned next 7 days",thisWeek],["Drafts and ideas",c("draft")+c("idea")],["Scheduled",c("scheduled")],["Avg engagement",avg]]
+    .map(([l,n])=>`<div class="panel stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join("");
+  $("#cnt").textContent=posts.length||"";
+}
+function renderWeek(){
+  const start=new Date();start.setDate(start.getDate()-((start.getDay()+6)%7)+weekOffset*7);
+  const today=isoDay(new Date());let h="";
+  for(let i=0;i<7;i++){const d=new Date(start);d.setDate(start.getDate()+i);const k=isoDay(d);
+    const items=posts.filter(p=>p.date===k).sort((a,b)=>(a.time||"").localeCompare(b.time||""));
+    h+=`<div class="day ${k===today?"today":""}"><div class="dn">${d.toLocaleDateString("en-GB",{weekday:"short"})}<b>${d.getDate()}</b></div>${items.map(p=>`<button class="mini ${p.status}" data-edit="${p.id}" title="${esc(p.headline)}">${esc(p.time||"")} ${esc(p.headline||TPL[p.type]?.name)}</button>`).join("")}</div>`}
+  $("#week").innerHTML=h;
+}
+function renderPerf(){
+  const by={};posts.forEach(p=>{const e=eng(p);if(e==null)return;(by[p.type]=by[p.type]||[]).push(e)});
+  const arr=Object.entries(by).map(([t,v])=>[t,v.reduce((a,b)=>a+b,0)/v.length]).sort((a,b)=>b[1]-a[1]);
+  const max=Math.max(...arr.map(a=>a[1]),.0001);
+  $("#bytype").innerHTML=arr.length?arr.map(([t,v])=>`<div class="bar"><span>${TPL[t]?.name||t}</span><div class="tr"><div class="fi" style="width:${v/max*100}%"></div></div><span class="v">${(v*100).toFixed(1)}%</span></div>`).join(""):`<p class="empty" style="padding:8px 0;text-align:left">Add results to posted ads to see which types land best.</p>`;
+  const top=posts.filter(p=>eng(p)!=null).sort((a,b)=>eng(b)-eng(a)).slice(0,3);
+  $("#top").innerHTML=top.length?top.map(rowHtml).join(""):"";
+}
+function rowHtml(p){
+  const e=eng(p);
+  return `<div class="row"><canvas class="thumb" data-thumb="${p.id}" width="128" height="128"></canvas>
+  <div style="min-width:0"><div class="t">${esc(p.headline||"Untitled")} ${p.example?'<span class="example">example</span>':""}</div>
+  <div class="m"><span class="pill ${p.status}">${p.status}</span><span>${TPL[p.type]?.name||""}</span><span>${fmtDay(p.date)}${p.time?" · "+p.time:""}</span><span>${esc(p.platform||"")}</span>${e!=null?`<span style="font-family:var(--f-mono)">${(e*100).toFixed(1)}% eng · ${(+p.metrics.share||0)} shares</span>`:""}</div></div>
+  <div class="act"><button class="btn small" data-edit="${p.id}">Open</button>${p.status!=="posted"?`<button class="btn small" data-posted="${p.id}">Mark posted</button>`:`<button class="btn small" data-metrics="${p.id}">Results</button>`}<button class="btn small" data-dup="${p.id}">Duplicate</button><button class="btn small danger" data-del="${p.id}">Delete</button></div></div>`;
+}
+function renderUpnext(){
+  const now=isoDay(new Date());
+  const up=posts.filter(p=>p.status!=="posted"&&(p.date||"9")>=now).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).slice(0,5);
+  $("#upnext").innerHTML=up.length?up.map(rowHtml).join(""):`<p class="empty">Nothing planned yet. Open the playbook for a quick idea, or create an ad.</p>`;
+}
+/* ---------- library ---------- */
+const FILTERS=[["all","All"],["idea","Ideas"],["draft","Drafts"],["scheduled","Scheduled"],["posted","Posted"]];
+function renderLib(){
+  $("#filters").innerHTML=FILTERS.map(([k,l])=>`<button aria-pressed="${filter===k}" data-f="${k}">${l} <span class="count">${k==="all"?posts.length:posts.filter(p=>p.status===k).length}</span></button>`).join("");
+  const q=($("#search").value||"").toLowerCase();
+  const list=posts.filter(p=>(filter==="all"||p.status===filter)&&(!q||[p.headline,p.sub,p.caption,p.kicker].join(" ").toLowerCase().includes(q))).sort((a,b)=>(b.date||"").localeCompare(a.date||""));
+  $("#list").innerHTML=list.length?list.map(rowHtml).join(""):`<p class="empty">${posts.length?"No posts match.":"No posts yet. Create your first ad and save it here."}</p>`;
+}
+$("#filters").addEventListener("click",e=>{const b=e.target.closest("[data-f]");if(b){filter=b.dataset.f;renderLib();drawThumbs()}});
+$("#search").addEventListener("input",()=>{renderLib();drawThumbs()});
+
+function renderAll(){if(typeof renderReleases==="function")renderReleases();renderStats();renderWeek();renderPerf();renderUpnext();renderLib();drawThumbs()}
+function drawThumbs(){$$("canvas[data-thumb]").forEach(c=>{const p=posts.find(x=>x.id===c.dataset.thumb);if(p)paint(c.getContext("2d"),128,128,p,null,true)})}
+
+/* row actions */
+document.addEventListener("click",async e=>{
+  const t=e.target.closest("[data-edit],[data-posted],[data-metrics],[data-dup],[data-del]");if(!t)return;
+  const id=t.dataset.edit||t.dataset.posted||t.dataset.metrics||t.dataset.dup||t.dataset.del;const p=posts.find(x=>x.id===id);if(!p)return;
+  if(t.dataset.edit){openPost(p)}
+  else if(t.dataset.posted){await persist({...p,status:"posted"});toast("Marked as posted");openMetrics(p)}
+  else if(t.dataset.metrics){openMetrics(p)}
+  else if(t.dataset.dup){const c={...JSON.parse(JSON.stringify(p)),id:newId(),status:"draft",metrics:null,example:false,headline:p.headline+" (copy)"};await persist(c);toast("Duplicated as a draft")}
+  else if(t.dataset.del){delId=id;$("#dtext").textContent=`“${p.headline||"Untitled"}” will be removed for everyone.`;$("#dmodal").hidden=false}
+});
+$("#dcancel").onclick=()=>$("#dmodal").hidden=true;
+$("#dok").onclick=async()=>{$("#dmodal").hidden=true;try{await remove(delId);toast("Post deleted")}catch(e){toast("Couldn't delete. Check your access and try again.")}};
+function openMetrics(p){metricId=p.id;const m=p.metrics||{};$("#m-reach").value=m.reach||"";$("#m-react").value=m.react||"";$("#m-comm").value=m.comm||"";$("#m-share").value=m.share||"";$("#mtitle").textContent="Results: "+(p.headline||"post");$("#mmodal").hidden=false}
+$("#mcancel").onclick=()=>$("#mmodal").hidden=true;
+$("#msave").onclick=async()=>{const p=posts.find(x=>x.id===metricId);if(!p)return;const m={reach:+$("#m-reach").value||0,react:+$("#m-react").value||0,comm:+$("#m-comm").value||0,share:+$("#m-share").value||0};$("#mmodal").hidden=true;await persist({...p,metrics:m,status:"posted"});toast("Results saved")};
+$("#wkprev").onclick=()=>{weekOffset--;renderWeek()};$("#wknext").onclick=()=>{weekOffset++;renderWeek()};$("#wknow").onclick=()=>{weekOffset=0;renderWeek()};
+
+/* ---------- studio ---------- */
+const F=["imgsrc","headline","kicker","sub","details","price","cta","caption","tags","date","time","status","platform"];
+function fillForm(){F.forEach(k=>{$("#f-"+k).value=cur[k]??""});renderTpls();renderThemes();renderSizes();$("#studio-title").textContent=editingId?"Edit ad":"Create an ad";drawPoster();score()}
+function readForm(){F.forEach(k=>cur[k]=$("#f-"+k).value)}
+function renderTpls(){$("#tpls").innerHTML=Object.entries(TPL).map(([k,t])=>`<button data-t="${k}" aria-pressed="${cur.type===k}">${t.name}</button>`).join("")}
+function renderThemes(){$("#themes").innerHTML=Object.entries(THEMES).map(([k,t])=>`<button class="sw" data-th="${k}" aria-pressed="${cur.theme===k}" title="${t.name}" aria-label="${t.name}" style="background:linear-gradient(135deg,${t.bg[0]},${t.bg[1]})"></button>`).join("")}
+function renderSizes(){$("#sizes").innerHTML=Object.entries(SIZES).map(([k,s])=>`<button class="btn small ${size===k?"primary":""}" data-sz="${k}">${s.name}</button>`).join("")}
+$("#tpls").addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(!b)return;readForm();const t=TPL[b.dataset.t];
+  const old=TPL[cur.type];if(!cur.kicker||cur.kicker===old.kicker)cur.kicker=t.kicker;if(!cur.cta||cur.cta===old.cta)cur.cta=t.cta;if(cur.theme===old.theme)cur.theme=t.theme;cur.type=b.dataset.t;fillForm()});
+$("#themes").addEventListener("click",e=>{const b=e.target.closest("[data-th]");if(!b)return;cur.theme=b.dataset.th;renderThemes();drawPoster()});
+$("#sizes").addEventListener("click",e=>{const b=e.target.closest("[data-sz]");if(!b)return;size=b.dataset.sz;renderSizes();drawPoster()});
+$(".form").addEventListener("change",e=>{if(e.target.id==="f-imgsrc"){readForm();score()}});
+$(".form").addEventListener("input",e=>{if(e.target.id==="f-img")return;readForm();drawPoster();score()});
+$("#f-caption").addEventListener("input",()=>{readForm();score()});$("#f-tags").addEventListener("input",()=>{readForm();score()});
+$("#f-img").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;if(cur.imgsrc==="text"){cur.imgsrc="official";$("#f-imgsrc").value="official";score()}const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{img=im;drawPoster()};im.src=r.result};r.readAsDataURL(f)});
+function startNew(){editingId=null;cur=blank();img=null;$("#f-img").value="";fillForm()}
+$("#newblank").onclick=()=>{startNew();toast("New blank ad")};
+function openPost(p){editingId=p.id;cur={...blank(),...JSON.parse(JSON.stringify(p))};img=null;$("#f-img").value="";go("studio");fillForm()}
+$("#save").onclick=async()=>{readForm();if(!cur.headline.trim()){toast("Add a headline first");$("#f-headline").focus();return}
+  const p={...cur,id:editingId||newId(),example:false,createdAt:cur.createdAt||Date.now()};
+  try{await persist(p);editingId=p.id;cur=p;$("#studio-title").textContent="Edit ad";toast(editingId?"Saved":"Saved")}catch(e){toast("Couldn't save. You may only have view access.")}};
+
+/* ---------- poster drawing ---------- */
+function wrap(ctx,text,maxW){const words=String(text).split(/\s+/);const lines=[];let line="";for(const w of words){const t=line?line+" "+w:w;if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w}else line=t}if(line)lines.push(line);return lines}
+function paint(ctx,W,H,d,image,thumb){
+  const th=THEMES[d.theme]||THEMES.velvet, u=Math.min(W,H)/1080;
+  ctx.clearRect(0,0,W,H);
+  const g=ctx.createLinearGradient(0,0,W*.4,H);g.addColorStop(0,th.bg[0]);g.addColorStop(1,th.bg[1]);ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  if(image){const r=Math.max(W/image.width,H/image.height),iw=image.width*r,ih=image.height*r;ctx.drawImage(image,(W-iw)/2,(H-ih)/2,iw,ih);
+    const o=ctx.createLinearGradient(0,H*.25,0,H);o.addColorStop(0,"rgba(0,0,0,0)");o.addColorStop(1,"rgba(0,0,0,.85)");ctx.fillStyle=o;ctx.fillRect(0,0,W,H)}
+  const ink=image?"#ffffff":th.ink, acc=th.accent;
+  // projector beam
+  if(!image){ctx.save();ctx.globalAlpha=.10;ctx.fillStyle=acc;ctx.beginPath();ctx.moveTo(W*.92,0);ctx.lineTo(W*1.05,0);ctx.lineTo(W*.35,H);ctx.lineTo(W*.05,H);ctx.closePath();ctx.fill();ctx.restore()}
+  // film sprockets
+  const sp=34*u, sh=20*u;ctx.fillStyle=image?"rgba(255,255,255,.18)":(th.ink==="#ffffff"?"rgba(255,255,255,.14)":"rgba(0,0,0,.12)");
+  for(let x=sp*.6;x<W;x+=sp*1.6){rr(ctx,x,14*u,sp*.8,sh,4*u);ctx.fill();rr(ctx,x,H-14*u-sh,sp*.8,sh,4*u);ctx.fill()}
+  if(thumb){ctx.fillStyle=ink;ctx.font=`900 ${Math.round(W*.2)}px ${getComputedStyle(document.documentElement).getPropertyValue("--f-display")}`;ctx.textBaseline="top";const l=wrap(ctx,(d.headline||"?").toUpperCase(),W*.84).slice(0,3);l.forEach((s,i)=>ctx.fillText(s,W*.08,H*.22+i*W*.2));return}
+  const pad=80*u, maxW=W-pad*2-(d.price?220*u:0);
+  const disp=`"Big Shoulders Display","Arial Narrow",Impact,sans-serif`, body=`"Figtree",system-ui,sans-serif`, mono=`"IBM Plex Mono",monospace`;
+  ctx.textBaseline="alphabetic";
+  // kicker
+  let y=pad+60*u;
+  if(d.kicker){ctx.font=`800 ${34*u}px ${disp}`;const kw=ctx.measureText(d.kicker.toUpperCase()).width;ctx.fillStyle=acc;rr(ctx,pad,y-38*u,kw+36*u,52*u,26*u);ctx.fill();ctx.fillStyle=th.name==="Pop"?"#ffffff":(isLight(acc)?"#14060c":"#ffffff");ctx.letterSpacing=(2*u)+"px";ctx.fillText(d.kicker.toUpperCase(),pad+18*u,y);ctx.letterSpacing="0px"}
+  // price badge
+  if(d.price){const r=96*u,cx=W-pad-r+10*u,cy=pad+r-10*u;ctx.save();ctx.translate(cx,cy);ctx.rotate(-.12);ctx.fillStyle=acc;ctx.beginPath();for(let i=0;i<24;i++){const a=i/24*Math.PI*2,rad=i%2?r*.9:r;ctx.lineTo(Math.cos(a)*rad,Math.sin(a)*rad)}ctx.closePath();ctx.fill();ctx.fillStyle=isLight(acc)?"#14060c":"#ffffff";ctx.textAlign="center";ctx.font=`900 ${Math.min(62,560/d.price.length)*u}px ${disp}`;ctx.fillText(d.price,0,16*u);ctx.restore();ctx.textAlign="left"}
+  // footer
+  const fh=120*u, fy=H-fh-46*u;
+  ctx.fillStyle=image?"rgba(255,255,255,.95)":(th.ink==="#ffffff"?"rgba(255,255,255,.95)":"rgba(255,255,255,.75)");rr(ctx,pad*.6,fy,W-pad*1.2,fh,16*u);ctx.fill();
+  ctx.fillStyle="#14060c";ctx.font=`900 ${44*u}px ${disp}`;ctx.fillText("IMC",pad*.6+32*u,fy+fh/2+6*u);const imcw=ctx.measureText("IMC").width;
+  ctx.font=`600 ${20*u}px ${mono}`;ctx.fillStyle="#5e6678";ctx.fillText("ENNISKILLEN",pad*.6+40*u+imcw,fy+fh/2+4*u);
+  if(d.cta){ctx.textAlign="right";ctx.fillStyle="#7a1f3d";let fs=30*u;ctx.font=`700 ${fs}px ${body}`;while(ctx.measureText(d.cta).width>W*.55&&fs>16*u){fs-=2*u;ctx.font=`700 ${fs}px ${body}`}ctx.fillText(d.cta,W-pad*.6-32*u,fy+fh/2+10*u);ctx.textAlign="left"}
+  // headline block bottom-up
+  let by=fy-50*u;
+  if(d.details){ctx.font=`500 ${32*u}px ${mono}`;ctx.fillStyle=acc;const dl=wrap(ctx,d.details,W-pad*2).slice(0,2);for(let i=dl.length-1;i>=0;i--){ctx.fillText(dl[i],pad,by);by-=46*u}by-=12*u}
+  if(d.sub){ctx.font=`500 ${38*u}px ${body}`;ctx.fillStyle=ink;ctx.globalAlpha=.92;const sl=wrap(ctx,d.sub,W-pad*2).slice(0,3);for(let i=sl.length-1;i>=0;i--){ctx.fillText(sl[i],pad,by);by-=52*u}ctx.globalAlpha=1;by-=18*u}
+  const hl=(d.headline||"Your film here").toUpperCase();
+  const avail=by-(y+40*u);let fs=Math.min(230*u,(W>H?200:260)*u),lines;
+  for(;fs>50*u;fs-=6*u){ctx.font=`900 ${fs}px ${disp}`;lines=wrap(ctx,hl,W-pad*2);if(lines.length*fs*.92<=avail&&lines.length<=4&&lines.every(l=>ctx.measureText(l).width<=W-pad*2))break}
+  ctx.fillStyle=ink;ctx.font=`900 ${fs}px ${disp}`;for(let i=lines.length-1;i>=0;i--){ctx.fillText(lines[i],pad,by);by-=fs*.92}
+}
+function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect?ctx.roundRect(x,y,w,h,r):ctx.rect(x,y,w,h)}
+function isLight(hex){const n=parseInt(hex.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;return (r*299+g*587+b*114)/1000>150}
+function drawPoster(){const s=SIZES[size],c=$("#poster");c.width=s.w;c.height=s.h;paint(c.getContext("2d"),s.w,s.h,cur,img,false)}
+$("#dl").onclick=async()=>{const c=$("#poster");const name=(cur.headline||"imc-ad").toLowerCase().replace(/[^a-z0-9]+/g,"-")+"-"+size+".png";
+  c.toBlob(async b=>{
+    if(downloads){try{await downloads.save({filename:name,data:b})}catch(e){toast("Download cancelled")}return}
+    const u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast("Poster downloaded")},"image/png")};
+
+/* ---------- captions ---------- */
+function capFor(d){
+  const h=d.headline||"[Film]",s=d.sub?"\n"+d.sub:"",dt=d.details?"\n🗓️ "+d.details:"",pr=d.price?" for just "+d.price:"",cta=d.cta?"\n🎟️ "+d.cta:"";
+  const m={
+    now:`🎬 ${h} is now showing at IMC Enniskillen!${s}${dt}\n\nWho's coming with you? Tag them below 👇${cta}`,
+    soon:`👀 It's nearly here… ${h} lands at IMC Enniskillen soon.${s}${dt}\n\nDrop a 🍿 if you're already counting the days, and tag the friend you're bringing.${cta}`,
+    offer:`💥 Fermanagh, this one's for you. ${h}${pr}.${s}${dt}\n\nSave this post and tag the person who owes you a cinema trip 😅${cta}`,
+    kids:`🧸 Kids Club at IMC Enniskillen! This week: ${h}${pr}.${s}${dt}\n\nPerfect for the weekend or school holidays. Which wee film fan is coming? 👇${cta}`,
+    event:`🔥 ONE NIGHT ONLY in Enniskillen: ${h}.${s}${dt}\n\nSeats are limited, so tag your crew before it sells out.${cta}`,
+    access:`💙 ${h}: a relaxed screening at IMC Enniskillen.${s}${dt}\n\nLights up a little, sound down a little, and no one minds if you move about. Please share with families who'd love to know.${cta}`,
+    poll:`🗳️ YOU DECIDE: ${h}\n${d.sub||"❤️ for option one or 😂 for option two"}\n\nVote with a reaction. Most votes wins a spot on our screens!${cta}`,
+    quiz:`🤔 GUESS THE FILM! ${h}\n${d.sub||"Three emojis, one film."}\n\nFirst correct answer in the comments gets a shout-out 🏆 No Googling!${cta}`
+  };return m[d.type]||m.now}
+$("#capgen").onclick=()=>{readForm();cur.caption=capFor(cur);$("#f-caption").value=cur.caption;score();toast("Caption filled")};
+$("#capcopy").onclick=()=>{const t=$("#f-caption").value+"\n\n"+$("#f-tags").value;navigator.clipboard?.writeText(t).then(()=>toast("Caption copied"),()=>{$("#f-caption").select();toast("Press Ctrl+C to copy")})};
+$("#capai").onclick=async()=>{if(!sample)return;readForm();const b=$("#capai");b.disabled=true;b.textContent="Writing…";
+  const prompt=`Write one Facebook/Instagram caption for IMC Enniskillen, a 7-screen cinema on Factory Road, Enniskillen, Co. Fermanagh, Northern Ireland. Friendly, local, a bit playful, Northern Irish English (e.g. "wee" is fine sparingly). Under 70 words. Open with a hook in the first line, include a question or tag-a-friend prompt, end with the call to action. 2-4 emojis max. No hashtags. Return only the caption.\n\nAd type: ${TPL[cur.type].name}\nHeadline: ${cur.headline}\nTop label: ${cur.kicker}\nSupporting line: ${cur.sub}\nDates/times: ${cur.details}\nPrice: ${cur.price}\nCall to action: ${cur.cta}`;
+  try{const r=await sample(prompt,{modelTier:"quick",cache:false,onText:({text})=>{$("#f-caption").value=text}});cur.caption=r.text.trim();$("#f-caption").value=cur.caption;score()}
+  catch(e){toast(e&&e.code==="rate_limited"?"Claude is busy. Try again in a minute.":"Claude couldn't write a caption here.")}
+  b.disabled=false;b.textContent="Write with Claude"};
+
+/* ---------- share-ability score ---------- */
+function score(){
+  const c=cur.caption||"",tags=(cur.tags||"").match(/#\w+/g)||[],first=c.split("\n")[0]||"";
+  const d=cur.date?new Date(cur.date+"T"+(cur.time||"12:00")):null,dow=d?d.getDay():-1,hr=d?d.getHours():-1;
+  const emo=(c.match(/\p{Extended_Pictographic}/gu)||[]).length;
+  const goodSlot=d&&((dow===4||dow===5)&&hr>=17&&hr<=21||dow===0&&hr>=17&&hr<=21||(cur.type==="kids"&&hr>=15&&hr<=17)||(dow===3&&hr>=12&&hr<=13));
+  const checks=[
+    [/\?|👇|tag|comment|vote|react/i.test(c),"Asks people to do something","A question, a vote or ‘tag a friend’ turns viewers into sharers."],
+    [/enniskillen|fermanagh|lough|erne|local|townland|kesh|irvinestown|lisnaskea/i.test(c+cur.sub),"Feels local","Name the town or county so it reads as yours, not a chain post."],
+    [first.length>0&&first.length<=90,"Strong first line","Keep the hook under 90 characters so it shows before ‘See more’."],
+    [c.length>0&&c.length<=420,"Short enough to read","Under about 400 characters gets read to the end."],
+    [/now|tonight|this week|only|limited|soon|today|weekend|sell/i.test(c+cur.kicker),"Gives a reason to act now","Time limits and ‘one night only’ get people booking, not just liking."],
+    [tags.length>=3&&tags.length<=6,"3 to 6 hashtags","Enough to be found on Instagram without looking spammy."],
+    [emo>=1&&emo<=6,"A few emoji","One to six helps scanning. More looks like spam."],
+    [!!cur.cta,"Clear call to action","Tell people exactly where to book or what to do."],
+    [!!goodSlot,"Posted at a busy time","Thu–Fri and Sun 5–9pm suit cinema plans. Kids posts do well around school pick-up."],
+    [cur.platform!=="Foyer screens"&&(size==="story"||size==="portrait"||/Instagram|TikTok/.test(cur.platform)),"Uses a tall format","4:5 and 9:16 take up more of the phone screen than square."]
+  ];
+  checks.unshift([cur.imgsrc!=="ai","Real image, or none","Official artwork, your own photos or a type-only design. AI images cost you trust."]);
+  $("#aiwarn").hidden=cur.imgsrc!=="ai";
+  const n=Math.round(checks.filter(x=>x[0]).length/checks.length*100);
+  const ring=$("#ring");ring.style.setProperty("--p",n);ring.style.setProperty("--c",n>=80?"var(--good)":n>=50?"var(--warn)":"var(--bad)");
+  $("#scoreN").textContent=n;$("#scoreL").textContent=n>=80?"Ready to share":n>=50?"Nearly there":"Needs work";
+  $("#checks").innerHTML=checks.map(([ok,t,h])=>`<li><span class="${ok?"ok":"no"}">${ok?"✓":"○"}</span><span>${t}${ok?"":`<small>${h}</small>`}</span></li>`).join("");
+  $("#slottip").textContent=d?`Planned for ${d.toLocaleDateString("en-GB",{weekday:"long"})} at ${cur.time||"—"}. ${goodSlot?"Good slot.":"Try Thursday or Friday evening for weekend films."}`:"Pick a date and time to check the slot.";
+}
+
+/* ---------- playbook ---------- */
+const PLAYS=[
+ {t:"Keep it real",p:"People trust a local cinema that looks like itself. Use the official poster and trailer from the distributor or IMC head office, real photos of your foyer, screens and staff, or this studio's type-only designs. Never post AI-generated film art: it can misrepresent the film, it breaks distributor rules on artwork, and followers spot it fast.",ex:"Photo ideas: the queue on opening night, staff in costume, a packed Premier screen, the popcorn machine at 10am.",pre:{type:"now",theme:"screen",headline:"Opening night at the IMC",sub:"Real photos from Factory Road, Enniskillen",imgsrc:"own"}},
+ {t:"Tag-a-friend trailer drops",p:"Post the trailer or a still the day tickets go on sale and ask who they're bringing. Tags put your post in front of people who don't follow the page yet.",ex:"Who are you bringing to this? 👇 Tag them.",pre:{type:"soon",headline:"Big release title",sub:"Tickets on sale now",details:"Opens Friday · all screens"}},
+ {t:"Guess the film in emoji",p:"Three emoji, one film. Comment-driven posts get pushed further by Facebook, and people love proving they know the answer. Reveal it the next day for a second post.",ex:"🦖🏝️🚙 = ?\nFirst right answer gets a shout-out!",pre:{type:"quiz",headline:"🦖 🏝️ 🚙",sub:"Three emoji, one film. Answer below!"}},
+ {t:"You choose the throwback",p:"Let followers vote between two classics for a one-off screening. Voters feel they own the night and share it to win. Then sell the winner as an event.",ex:"❤️ for Jurassic Park\n😂 for Home Alone\nWinner screens next Friday!",pre:{type:"poll",headline:"Throwback Friday: you pick",sub:"❤️ for one classic · 😂 for the other",details:"Winner screens next Friday 8pm"}},
+ {t:"Halloween fright night",p:"With Halloween next week, a horror double bill or costume screening is the most shareable post of the month. Offer a prize for best costume and ask for photos tagged at the cinema.",ex:"Best costume wins free tickets for a month 🎃",pre:{type:"event",theme:"fright",headline:"Halloween Fright Night",sub:"Horror double bill · best costume wins a prize",details:"Fri 30 Oct · 8pm",price:"£6"}},
+ {t:"Midterm Kids Club push",p:"Northern Ireland schools break for Halloween midterm soon. Parents plan days out in advance, so post the Kids Club line-up a week early and again the morning of.",ex:"Midterm sorted 🙌 Kids Club every morning this break.",pre:{type:"kids",headline:"Midterm Kids Club",sub:"A different family film every morning",details:"Mon–Fri · 11am",price:"£3"}},
+ {t:"Relaxed and subtitled screenings",p:"IMC Enniskillen runs autism-friendly and subtitled screenings. These posts get shared through parent groups and community pages far beyond your followers. Post the dates clearly and ask people to pass them on.",ex:"Please share with anyone who'd love to know 💙",pre:{type:"access",headline:"Relaxed Screening",sub:"Lights up, sound down, move about freely",details:"Sunday 10:30am"}},
+ {t:"Behind the projector",p:"A 15-second Reel of the projection room, the popcorn machine at opening or staff picks for the weekend. People follow pages with faces and personality, not only posters.",ex:"POV: you're first in on a Saturday 🍿",pre:{type:"now",theme:"projector",headline:"Staff pick of the week",sub:"Our team's favourite film showing right now"}},
+ {t:"Win it, share it",p:"Run a simple giveaway for a pair of tickets or a Premier screen night. Ask people to like the page, comment and tag one friend. Keep the rules short and pick a winner on the date you say.",ex:"WIN 2 tickets + popcorn 🎟️\n1) Like the page 2) Tag a friend 3) Done!",pre:{type:"offer",headline:"Win 2 Premier tickets",sub:"Like, comment and tag a friend to enter",details:"Winner picked Friday 6pm",price:"FREE"}},
+ {t:"Local tie-ins",p:"Shout out local schools, GAA and rugby clubs, and businesses for group bookings and team nights. Their members share anything that mentions them.",ex:"Congrats to the U14s! Team night is on us 🏉",pre:{type:"offer",theme:"lakeland",headline:"Team night at the IMC",sub:"Group bookings for Fermanagh clubs and schools",details:"Any night · groups of 10+"}},
+ {t:"Popcorn debates",p:"Sweet or salted? Best seat in the house? Low-effort questions get the most comments of any post type, which keeps the page active between big releases.",ex:"Settle it once and for all: sweet 🍯 or salted 🧂?",pre:{type:"poll",theme:"pop",headline:"Sweet or salted?",sub:"🍯 for sweet · 🧂 for salted"}}
+];
+$("#plays").innerHTML=PLAYS.map((p,i)=>`<div class="panel play"><h3>${p.t}</h3><p>${p.p}</p><div class="ex">${esc(p.ex)}</div><button class="btn small use" data-play="${i}">Build this ad →</button></div>`).join("");
+$("#plays").addEventListener("click",e=>{const b=e.target.closest("[data-play]");if(!b)return;const pr=PLAYS[+b.dataset.play].pre;editingId=null;img=null;
+  const t=TPL[pr.type];cur={...blank(),kicker:t.kicker,cta:t.cta,theme:t.theme,...pr,status:"idea"};cur.caption=capFor(cur);go("studio");fillForm()});
+
+/* ---------- backup ---------- */
+$("#bk-out").onclick=()=>{const data=JSON.stringify({app:"imc-ad-studio",version:1,exported:new Date().toISOString(),posts,programme},null,2);
+  const b=new Blob([data],{type:"application/json"}),name="imc-ad-studio-backup-"+isoDay(new Date())+".json";
+  if(downloads){downloads.save({filename:name,data:b}).catch(()=>toast("Export cancelled"));return}
+  const u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast("Backup exported")};
+$("#bk-in").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=async()=>{
+  try{const d=JSON.parse(r.result);if(!Array.isArray(d.posts))throw 0;
+    let n=0;for(const p of d.posts){if(p&&p.id){await persist(p);n++}}
+    if(d.programme&&typeof d.programme==="object"){programme={...programme,...d.programme};
+      if(progCol){for(const[k,v] of Object.entries(d.programme))await progCol.doc(k).set({state:v,updatedAt:Date.now()})}
+      else{try{localStorage.setItem(PROG_LS,JSON.stringify(programme))}catch(err){}}}
+    renderAll();toast("Imported "+n+" posts")}
+  catch(err){toast("That file isn't an IMC Ad Studio backup.")}
+  e.target.value=""};r.readAsText(f)});
+
+/* ---------- upcoming releases (FDA UK schedule, checked 18 Oct 2026) ---------- */
+const AUD={family:{n:"Family",th:"pop"},blockbuster:{n:"Blockbuster",th:"projector"},horror:{n:"Horror / Halloween",th:"fright"},comedy:{n:"Comedy",th:"velvet"},classic:{n:"Classic re-release",th:"screen"},event:{n:"Event cinema",th:"lakeland"},drama:{n:"Drama",th:"velvet"}};
+const RELEASES=[
+ {id:"ghosts",t:"Ghosts: The Possession of Button House",d:"2026-10-23",dist:"Lionsgate",cert:"PG",aud:"comedy",sub:"The ghosts of Button House hit the big screen",angle:"Huge with BBC fans of every age. Ask followers which ghost they'd be and to tag the friend who's ‘definitely the Captain’.",tag:"#GhostsMovie"},
+ {id:"clayface",t:"Clayface",d:"2026-10-23",dist:"Warner Bros",cert:"",aud:"horror",sub:"DC's horror for Halloween week",angle:"A DC villain horror film landing Halloween week. Pair it with a late Friday screening and a ‘bring a brave friend’ tag post.",tag:"#Clayface"},
+ {id:"tad",t:"Tad and the Magic Lamp",d:"2026-10-23",dist:"Paramount",cert:"",aud:"family",sub:"A family adventure for the midterm break",angle:"Opens right as NI schools break for Halloween midterm. Post the morning showtimes to parents' groups and ask ‘what would your three wishes be?’",tag:"#TadAndTheMagicLamp"},
+ {id:"alig",t:"Ali G: Who Iz I?",d:"2026-10-23",dist:"Amazon MGM",cert:"",aud:"comedy",sub:"Booyakasha. He's back.",angle:"Nostalgia gold for 30-somethings. A ‘quote the best Ali G line’ comment thread will run itself.",tag:"#AliG"},
+ {id:"scream",t:"Scream (30th Anniversary 4K)",d:"2026-10-23",dist:"Park Circus",cert:"18",aud:"classic",sub:"The original slasher, restored in 4K",angle:"Make it a Halloween event night. Ask: ‘What's your favourite scary movie?’ The film's own catchphrase is the post.",tag:"#Scream"},
+ {id:"sabbath",t:"Ozzy & Black Sabbath: Back to the Beginning",d:"2026-10-28",dist:"Trafalgar Releasing",cert:"",aud:"event",sub:"The final concert on the big screen",angle:"A one-off for local rock fans. Ask people to share where they first saw Sabbath or Ozzy live, and push it as a one-night event.",tag:"#BlackSabbath"},
+ {id:"pans",t:"Pan's Labyrinth (20th Anniversary 4K)",d:"2026-10-30",dist:"StudioCanal",cert:"",aud:"classic",sub:"Guillermo del Toro's dark fairy tale returns",angle:"Halloween weekend classic for film fans. Run a ‘horror double bill’ vote between this and Donnie Darko.",tag:"#PansLabyrinth"},
+ {id:"donnie",t:"Donnie Darko (25th Anniversary 4K)",d:"2026-10-30",dist:"Arrow Films",cert:"15",aud:"classic",sub:"28 days, 6 hours, 42 minutes, 12 seconds",angle:"Cult favourite for Halloween night. The countdown in the film makes a perfect countdown post to the screening.",tag:"#DonnieDarko"},
+ {id:"rocky",t:"Rocky (50th Anniversary 4K)",d:"2026-11-06",dist:"Park Circus",cert:"12A",aud:"classic",sub:"50 years of the Italian Stallion",angle:"Team up with local boxing and fitness clubs. Challenge: post your best ‘Rocky steps’ photo for free tickets.",tag:"#Rocky50"},
+ {id:"georgemichael",t:"George Michael: The Faith Tour",d:"2026-11-06",dist:"Universal",cert:"",aud:"event",sub:"The tour, on the big screen",angle:"Strong for girls' nights out. Ask ‘Which George Michael song is your karaoke go-to?’ and sell group bookings.",tag:"#GeorgeMichael"},
+ {id:"ebenezer",t:"Ebenezer",d:"2026-11-13",dist:"Paramount",cert:"",aud:"drama",sub:"A Christmas Carol, told again",angle:"The first Christmas film of the season. ‘Bah humbug or Christmas already?’ is an easy poll to start the festive programme.",tag:"#Ebenezer",note:"Screen Daily lists this as ‘Ebenezer: A Christmas Carol’."},
+ {id:"robbank",t:"How to Rob a Bank",d:"2026-11-13",dist:"Sony",cert:"",aud:"blockbuster",sub:"A heist for a Friday night",angle:"Adult date-night pick. A playful ‘plan your getaway car’ comment prompt suits the heist theme.",tag:"#HowToRobABank"},
+ {id:"hungergames",t:"The Hunger Games: Sunrise on the Reaping",d:"2026-11-20",dist:"Lionsgate",cert:"",aud:"blockbuster",sub:"The 50th Hunger Games. The second Quarter Quell.",angle:"Biggest teen release of the autumn. Run a ‘Which District are you from?’ quiz and a ‘tribute’ tag-two-friends post on the day tickets go on sale.",tag:"#SunriseOnTheReaping"},
+ {id:"arthurxmas",t:"Arthur Christmas (15th Anniversary)",d:"2026-11-20",dist:"Park Circus",cert:"PG",aud:"family",sub:"Every child matters. Even one in Fermanagh.",angle:"Cheap family festive outing. Ideal for a Kids Club price and a primary school group booking push.",tag:"#ArthurChristmas"},
+ {id:"focker",t:"Focker-In-Law",d:"2026-11-25",dist:"Paramount",cert:"",aud:"comedy",sub:"Meet the Parents. Again.",angle:"Ask followers for their worst ‘meeting the in-laws’ story. Comments will fly. Distributors disagree on the date, so confirm it.",tag:"#FockerInLaw",note:"Screen Daily lists Universal as distributor."},
+ {id:"hexed",t:"Disney's Hexed",d:"2026-11-27",dist:"Disney",cert:"",aud:"family",sub:"Disney's new animated adventure",angle:"Christmas-run family hit. Run a colouring sheet competition with entries displayed in the foyer and shared on the page.",tag:"#Hexed"},
+ {id:"catinhat",t:"The Cat in the Hat",d:"2026-12-04",dist:"Warner Bros",cert:"",aud:"family",sub:"Dr. Seuss, animated for the big screen",angle:"Pre-school and P1–P3 favourite. ‘Which Dr. Seuss book did you read most as a child?’ gets parents talking.",tag:"#TheCatInTheHat",note:"Screen Daily lists 6 Nov; FDA lists 4 Dec. Confirm with your booker."},
+ {id:"violentnight2",t:"Violent Night 2",d:"2026-12-04",dist:"Universal",cert:"",aud:"blockbuster",sub:"Santa's back. And he's still not jolly.",angle:"Perfect for work Christmas nights out. Push group bookings and a ‘naughty list’ tag-your-colleague post.",tag:"#ViolentNight2"},
+ {id:"holiday",t:"The Holiday (20th Anniversary)",d:"2026-12-04",dist:"Park Circus",cert:"",aud:"classic",sub:"The cosiest Christmas film, back on the big screen",angle:"Galentine's-style festive night. Pair with a mulled drink or sweet deal and ask ‘Iris or Amanda?’",tag:"#TheHoliday"},
+ {id:"rieu",t:"André Rieu's Christmas Concert: Let It Snow",d:"2026-12-05",dist:"Piece of Magic",cert:"",aud:"event",sub:"A Christmas concert on the big screen",angle:"Reaches older audiences who rarely follow cinema pages. Ask followers to share it with a parent or grandparent.",tag:"#AndreRieu"},
+ {id:"wonderful",t:"It's a Wonderful Life (80th Anniversary)",d:"2026-12-11",dist:"Paramount",cert:"",aud:"classic",sub:"The Christmas classic, 80 years on",angle:"A family tradition night. Ask people to share who they first watched it with.",tag:"#ItsAWonderfulLife"},
+ {id:"doomsday",t:"Avengers: Doomsday",d:"2026-12-18",dist:"Disney",cert:"",aud:"blockbuster",sub:"Doom is coming",angle:"Your biggest film of the year. Run a countdown series from four weeks out, a midnight or first-showing event, and a ‘Which Avenger are you bringing?’ tag post.",tag:"#AvengersDoomsday"},
+ {id:"dune3",t:"Dune: Part Three",d:"2026-12-18",dist:"Warner Bros",cert:"",aud:"blockbuster",sub:"The saga continues",angle:"Same weekend as Avengers. A ‘Doomsday or Dune?’ poll will be one of your most-commented posts of the year, then sell both as a double.",tag:"#DunePartThree"},
+ {id:"jumanji",t:"Jumanji: Open World",d:"2026-12-23",dist:"Sony",cert:"",aud:"family",sub:"The game isn't over",angle:"Christmas holiday family pick. Ask ‘Which avatar would you be?’ and push Boxing Day showtimes.",tag:"#Jumanji",note:"Screen Daily lists ‘Jumanji 3’ on 11 Dec. Confirm the date."},
+ {id:"angrybirds",t:"The Angry Birds Movie 3",d:"2026-12-25",dist:"Paramount",cert:"",aud:"family",sub:"The birds are back",angle:"Holiday matinee filler with strong kid appeal. Post Boxing Day and Twixmas times early.",tag:"#AngryBirdsMovie3",note:"Screen Daily lists 23 Dec."},
+ {id:"beekeeper2",t:"The Beekeeper 2",d:"2027-01-19",dist:"Amazon MGM",cert:"",aud:"blockbuster",sub:"Action for January nights",angle:"Beat the January blues with an action night and a ‘cheap Tuesday’ style offer.",tag:"#TheBeekeeper2"},
+ {id:"animalfriends",t:"Animal Friends",d:"2027-01-22",dist:"Warner Bros",cert:"",aud:"family",sub:"A new family adventure",angle:"Weekend family pick for January. Ask followers to share a photo of their own animal friend.",tag:"#AnimalFriends"}
+];
+let relAud="all", relProg="all", programme={};
+const PROG_LS="imc-ad-studio-programme";
+try{programme=JSON.parse(localStorage.getItem(PROG_LS)||"{}")}catch(e){}
+let progCol=null;
+function daysTo(s){return Math.round((new Date(s+"T12:00")-new Date(isoDay(new Date())+"T12:00"))/864e5)}
+function addDays(s,n){const d=new Date(s+"T12:00");d.setDate(d.getDate()+n);return isoDay(d)}
+function imdbUrl(t){return "https://www.imdb.com/find/?q="+encodeURIComponent(t.replace(/\s*\(.*\)$/,""))+"&s=tt"}
+function renderReleases(){
+  const audKeys=["all",...Object.keys(AUD)];
+  $("#relfilters").innerHTML=audKeys.map(k=>`<button data-ra="${k}" aria-pressed="${relAud===k}">${k==="all"?"All":AUD[k].n}</button>`).join("");
+  $("#relprog").innerHTML=[["all","Any"],["yes","Showing"],["maybe","Maybe"],["unset","Not decided"]].map(([k,l])=>`<button data-rp="${k}" aria-pressed="${relProg===k}">${l}</button>`).join("");
+  const today=isoDay(new Date());
+  const list=RELEASES.filter(r=>r.d>=addDays(today,-7)&&(relAud==="all"||r.aud===relAud)&&(relProg==="all"||(relProg==="unset"?!programme[r.id]:programme[r.id]===relProg)));
+  let h="",month="";
+  list.forEach(r=>{const dt=new Date(r.d+"T12:00"),m=dt.toLocaleDateString("en-GB",{month:"long",year:"numeric"});
+    if(m!==month){if(month)h+="</div>";month=m;h+=`<div class="rel-month"><h2>${m}</h2></div><div class="rel-grid">`}
+    const p=programme[r.id]||"",dd=daysTo(r.d),ads=posts.filter(x=>x.releaseId===r.id).length;
+    h+=`<div class="panel rel ${p==="yes"?"showing":p==="no"?"not":""}">
+      <div class="top"><div class="date"><b>${dt.getDate()}</b><span>${dt.toLocaleDateString("en-GB",{weekday:"short"})}</span></div>
+      <div style="min-width:0"><h3>${esc(r.t)}</h3><div class="meta">${r.cert?`<span class="cert">${r.cert}</span>`:""}<span>${AUD[r.aud].n}</span><span>${esc(r.dist)}</span><span>${dd>0?"in "+dd+" days":dd===0?"out today":"out now"}</span>${ads?`<span style="color:var(--good);font-weight:700">${ads} ad${ads>1?"s":""} made</span>`:""}</div></div></div>
+      <p class="angle"><b>Viral angle:</b> ${esc(r.angle)}</p>
+      ${r.note?`<p class="note">Date note: ${esc(r.note)}</p>`:""}
+      <div class="prog" role="group" aria-label="Are we showing it?">${[["yes","Showing"],["maybe","Maybe"],["no","Not showing"]].map(([k,l])=>`<button data-prog="${r.id}" data-v="${k}" aria-pressed="${p===k}">${l}</button>`).join("")}</div>
+      <div class="acts"><button class="btn small primary" data-relad="${r.id}" data-k="announce">Announce ad</button><button class="btn small" data-relad="${r.id}" data-k="open">Opening-day ad</button><a href="${imdbUrl(r.t)}" target="_blank" rel="noopener">IMDb ↗</a></div>
+    </div>`});
+  if(month)h+="</div>";
+  $("#rellist").innerHTML=h||`<p class="empty">No releases match these filters.</p>`;
+}
+$("#relfilters").addEventListener("click",e=>{const b=e.target.closest("[data-ra]");if(b){relAud=b.dataset.ra;renderReleases()}});
+$("#relprog").addEventListener("click",e=>{const b=e.target.closest("[data-rp]");if(b){relProg=b.dataset.rp;renderReleases()}});
+$("#rellist").addEventListener("click",async e=>{
+  const pb=e.target.closest("[data-prog]");
+  if(pb){const id=pb.dataset.prog,v=programme[id]===pb.dataset.v?"":pb.dataset.v;programme={...programme,[id]:v};renderReleases();
+    if(progCol){try{await progCol.doc(id).set({state:v,updatedAt:Date.now()})}catch(err){toast("Couldn't save. You may only have view access.")}}
+    else{try{localStorage.setItem(PROG_LS,JSON.stringify(programme))}catch(err){}}return}
+  const ab=e.target.closest("[data-relad]");if(!ab)return;
+  const r=RELEASES.find(x=>x.id===ab.dataset.relad),announce=ab.dataset.k==="announce";
+  const t=announce?"soon":"now",T=TPL[t];
+  // announce: the Thursday at least a week before release; opening: release day 5:30pm
+  let pd=addDays(r.d,-7);while(new Date(pd+"T12:00").getDay()!==4)pd=addDays(pd,-1);
+  if(announce&&pd<isoDay(new Date()))pd=isoDay(new Date());
+  const day=new Date(r.d+"T12:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"});
+  editingId=null;img=null;$("#f-img").value="";
+  cur={...blank(),type:t,kicker:announce?T.kicker:(r.aud==="event"||r.aud==="classic"?"ON THE BIG SCREEN":"OUT NOW"),headline:r.t,sub:r.sub,
+    details:(announce?"In cinemas "+day:"Showing from "+day)+(r.cert?" · "+r.cert:""),cta:announce?"Tickets on sale now":T.cta,theme:AUD[r.aud].th,
+    tags:BASE_TAGS+" "+r.tag,date:announce?pd:r.d,time:announce?"19:00":"17:30",status:"idea",releaseId:r.id,imgsrc:"official"};
+  cur.caption=capFor(cur);
+  go("studio");fillForm();toast(announce?"Announcement ad ready. Add the official poster.":"Opening-day ad ready. Add the official poster.");
+});
+
+/* ---------- boot ---------- */
+go("dashboard");fillForm();renderAll();
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>{drawPoster();drawThumbs()});
+Promise.all(["900 40px 'Big Shoulders Display'","500 20px 'IBM Plex Mono'","600 20px Figtree"].map(f=>document.fonts?.load(f).catch(()=>{}))).then(()=>{drawPoster();drawThumbs()});
+connect();
+})();
+</script>
+
+</body>
+</html>
