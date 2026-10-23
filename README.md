@@ -28,7 +28,7 @@ A web app for planning, designing, captioning and tracking social media ads for 
 
 Open **Photo editor ↗** from the Ad Studio menu, or go straight to `https://popcorn483.github.io/imc/editor.html`.
 
-1. **Logo tab:** upload the official IMC logo once (PNG or SVG with a transparent background). It's remembered in your browser and appears on every frame.
+1. **Logo:** put the official logo in this repo as `imc-logo.svg` or `imc-logo.png` (transparent background) and both apps use it automatically for everyone. To try a different logo on your own computer, use the editor's **Logo** tab.
 2. **Photo tab:** upload a photo, drag one onto the canvas, paste one with Ctrl+V, or paste a link.
 3. **Layouts tab:** start from Coming soon, New release, LUXX, Now showing, Opening night or Countdown. You can also save your own layouts.
 4. **Frame tab:** Premiere, Clean, Film strip, Marquee lights, Photo border or none, in any colour, with a caption.

@@ -325,7 +325,7 @@ const LAYOUTS=[
 
 /* ---------- state ---------- */
 let S={fmt:"square",frame:{...DEFAULT_FRAME},photo:{zoom:1,ox:0,oy:0,b:100,c:100,s:100,shade:0},layers:[],motion:{fx:{},dur:3}};
-let photoImg=null,logoImg=null,selId=null,drag=null,hist=[],hi=-1,downloads=null;
+let siteLogo=false,photoImg=null,logoImg=null,selId=null,drag=null,hist=[],hi=-1,downloads=null;
 const cv=$("#cv"),ctx=cv.getContext("2d"),mctx=document.createElement("canvas").getContext("2d");
 const getSel=()=>S.layers.find(l=>l.id===selId)||null;
 
@@ -593,12 +593,12 @@ function clampPhoto(){if(!photoImg)return;const f=FORMATS[S.fmt],u=Math.min(f.w,
   const mx=(iw*sc-R.w)/2/R.w,my=(ih*sc-R.h)/2/R.h;S.photo.ox=clamp(S.photo.ox,-mx,mx);S.photo.oy=clamp(S.photo.oy,-my,my)}
 
 /* ---------- logo in ---------- */
-async function setLogo(b){try{logoImg=b?await blobToImg(b):null}catch(e){toast("Couldn't open that logo file. Try a PNG.");return}idbSet("logo",b||null);syncLogo();renderThumbs();draw();if(b)toast("Logo saved. It's now on every frame.")}
+async function setLogo(b){siteLogo=false;try{logoImg=b?await blobToImg(b):null}catch(e){toast("Couldn't open that logo file. Try a PNG.");return}idbSet("logo",b||null);syncLogo();renderThumbs();draw();if(b)toast("Logo saved. It's now on every frame.")}
 $("#logoBtn").onclick=()=>$("#logoFile").click();
 $("#logoFile").addEventListener("change",e=>{const f=e.target.files[0];if(f)setLogo(f);e.target.value=""});
 $("#logoRemove").onclick=()=>setLogo(null);
 function syncLogo(){const box=$("#logoBox");box.innerHTML="";if(logoImg){const i=new Image();i.src=logoImg.src;i.alt="IMC logo";box.appendChild(i)}else{const c=document.createElement("canvas");c.width=320;c.height=130;const x=c.getContext("2d"),d=logoDims(90);drawLogo(x,160-d.w/2,20,90,"#fff");c.style.maxWidth="100%";box.appendChild(c)}
-  $("#logoRemove").hidden=!logoImg;$("#logoBtn").textContent=logoImg?"Replace logo":"Upload the official logo"}
+  $("#logoRemove").hidden=!logoImg||siteLogo;$("#logoBtn").textContent=logoImg?(siteLogo?"Use a different logo":"Replace logo"):"Upload the official logo"}
 
 /* ---------- formats + tabs ---------- */
 $("#fmts").innerHTML=Object.entries(FORMATS).map(([k,f])=>`<button data-fmt="${k}">${f.n}</button>`).join("");
@@ -845,6 +845,7 @@ async function boot(){buildMotionUI();
   const [pb,lb]=await Promise.all([idbGet("photo"),idbGet("logo")]);
   if(pb)try{photoImg=await blobToImg(pb)}catch(e){}
   if(lb)try{logoImg=await blobToImg(lb)}catch(e){}
+  if(!logoImg&&location.protocol.startsWith("http"))for(const f of["imc-logo.svg","imc-logo.png"]){try{const r=await fetch(f,{cache:"no-cache"});if(r.ok&&/image/.test(r.headers.get("content-type")||"")){logoImg=await blobToImg(await r.blob());siteLogo=true;break}}catch(e){}}
   syncLogo();syncSaved();syncAll();commit();
   const faces=["900 40px 'Big Shoulders Display'","800 40px Figtree","700 40px Figtree","700 40px 'Playfair Display'","400 40px 'Bebas Neue'","500 20px 'IBM Plex Mono'","600 20px 'IBM Plex Mono'"];
   if(document.fonts)Promise.all(faces.map(f=>document.fonts.load(f).catch(()=>{}))).then(()=>{draw();renderThumbs();syncLogo()});
