@@ -288,7 +288,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <section id="v-releases" hidden>
       <div class="head">
         <div><h1>Upcoming releases</h1><p>UK release dates for the next three months, from the Film Distributors' Association schedule (checked 18 Oct 2026). Mark what you're showing, then build an announcement ad and an opening-day ad for each.</p></div>
-        <div class="links"><a href="https://www.imccinemas.co.uk" target="_blank" rel="noopener">Our website ↗</a><a href="https://www.imdb.com/calendar/?region=GB" target="_blank" rel="noopener">IMDb UK calendar ↗</a><a href="https://filmdistributorsassociation.com/release-schedule/all-future-releases/" target="_blank" rel="noopener">FDA schedule ↗</a></div>
+        <div class="links"><a href="https://www.imc.ie" target="_blank" rel="noopener">Our website ↗</a><a href="https://www.imdb.com/calendar/?region=GB" target="_blank" rel="noopener">IMDb UK calendar ↗</a><a href="https://filmdistributorsassociation.com/release-schedule/all-future-releases/" target="_blank" rel="noopener">FDA schedule ↗</a></div>
       </div>
       <div class="panel" style="display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center">
         <div class="filters" id="relfilters"></div>
@@ -359,12 +359,12 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 
 /* ---------- templates ---------- */
 const TPL={
-  now:{name:"Now showing",kicker:"NOW SHOWING",cta:"Book at imccinemas.co.uk",theme:"velvet"},
+  now:{name:"Now showing",kicker:"NOW SHOWING",cta:"Book at imc.ie",theme:"velvet"},
   soon:{name:"Coming soon",kicker:"COMING SOON",cta:"Tickets on sale now",theme:"projector"},
   offer:{name:"Offer",kicker:"THIS WEEK ONLY",cta:"Show this post at the kiosk",theme:"projector"},
-  kids:{name:"Kids Club",kicker:"KIDS CLUB",cta:"Book at imccinemas.co.uk",theme:"pop"},
+  kids:{name:"Kids Club",kicker:"KIDS CLUB",cta:"Book at imc.ie",theme:"pop"},
   event:{name:"Event night",kicker:"ONE NIGHT ONLY",cta:"Limited seats · book now",theme:"fright"},
-  access:{name:"Inclusive",kicker:"RELAXED SCREENING",cta:"Book at imccinemas.co.uk",theme:"lakeland"},
+  access:{name:"Inclusive",kicker:"RELAXED SCREENING",cta:"Book at imc.ie",theme:"lakeland"},
   poll:{name:"Poll",kicker:"YOU DECIDE",cta:"Vote in the comments",theme:"lakeland"},
   quiz:{name:"Guess it",kicker:"GUESS THE FILM",cta:"Answer in the comments",theme:"velvet"}
 };
@@ -391,7 +391,8 @@ function eng(p){const m=p.metrics;if(!m||!m.reach)return null;return ((+m.react|
 
 /* ---------- storage: shared db when available, else this browser ---------- */
 const LS="imc-ad-studio-posts";
-function lsLoad(){try{return JSON.parse(localStorage.getItem(LS)||"[]")}catch(e){return[]}}
+const fixSite=s=>String(s).replace(/https?:\/\/www\.imccinemas\.co\.uk/gi,"https://www.imc.ie").replace(/IMCCINEMAS\.CO\.UK/g,"IMC.IE").replace(/imccinemas\.co\.uk/gi,"imc.ie");
+function lsLoad(){try{return JSON.parse(fixSite(localStorage.getItem(LS)||"[]"))}catch(e){return[]}}
 function lsSave(){try{localStorage.setItem(LS,JSON.stringify(posts))}catch(e){}}
 function setSync(on,txt){$("#syncdot").classList.toggle("on",on);$("#synctxt").textContent=txt}
 posts=lsLoad();
@@ -414,9 +415,9 @@ function seedExamples(){
   const ex=(id,o)=>({...blank(),id,example:true,createdAt:Date.now(),updatedAt:Date.now(),...o});
   posts=[
     ex("ex1",{type:"event",theme:"fright",headline:"Halloween Fright Night",kicker:"ONE NIGHT ONLY",sub:"Horror double bill · best costume wins a prize",details:"Fri 30 Oct · 8pm",price:"£6",cta:"Limited seats · book now",date:addDays(isoDay(new Date()),2),time:"19:00",status:"scheduled",tags:BASE_TAGS+" #Halloween"}),
-    ex("ex2",{type:"kids",theme:"pop",headline:"Midterm Kids Club",kicker:"KIDS CLUB",sub:"A different family film every morning",details:"Mon–Fri · 11am",price:"£3",cta:"Book at imccinemas.co.uk",date:addDays(isoDay(new Date()),1),time:"15:30",status:"draft",platform:"Facebook",tags:BASE_TAGS+" #KidsClub"}),
+    ex("ex2",{type:"kids",theme:"pop",headline:"Midterm Kids Club",kicker:"KIDS CLUB",sub:"A different family film every morning",details:"Mon–Fri · 11am",price:"£3",cta:"Book at imc.ie",date:addDays(isoDay(new Date()),1),time:"15:30",status:"draft",platform:"Facebook",tags:BASE_TAGS+" #KidsClub"}),
     ex("ex3",{type:"quiz",headline:"🦖 🏝️ 🚙",kicker:"GUESS THE FILM",sub:"Three emoji, one film. Answer below!",cta:"Answer in the comments",date:addDays(isoDay(new Date()),-4),time:"19:00",status:"posted",platform:"Facebook",metrics:{reach:4200,react:310,comm:185,share:22},tags:BASE_TAGS+" #GuessTheFilm"}),
-    ex("ex4",{type:"now",theme:"projector",headline:"Staff pick of the week",kicker:"NOW SHOWING",sub:"Our team's favourite film showing right now",details:"Daily · Screen 2",cta:"Book at imccinemas.co.uk",date:addDays(isoDay(new Date()),-2),time:"18:00",status:"posted",metrics:{reach:2600,react:120,comm:14,share:6}})
+    ex("ex4",{type:"now",theme:"projector",headline:"Staff pick of the week",kicker:"NOW SHOWING",sub:"Our team's favourite film showing right now",details:"Daily · Screen 2",cta:"Book at imc.ie",date:addDays(isoDay(new Date()),-2),time:"18:00",status:"posted",metrics:{reach:2600,react:120,comm:14,share:6}})
   ];
   posts.forEach(p=>p.caption=capFor(p));
   lsSave();try{localStorage.setItem(LS+"-seeded","1")}catch(e){}

@@ -78,5 +78,5 @@ The release list is in `index.html`. Search for `const RELEASES=[`. Each film is
 `aud` sets the poster colours. It can be `family`, `blockbuster`, `horror`, `comedy`, `classic`, `event` or `drama`. Dates came from the [Film Distributors' Association schedule](https://filmdistributorsassociation.com/release-schedule/all-future-releases/) on 18 Oct 2026. Always confirm dates with your booker.
 
 Useful links:
-- [IMC Cinemas](https://www.imccinemas.co.uk)
+- [IMC Cinemas](https://www.imc.ie)
 - [IMDb UK release calendar](https://www.imdb.com/calendar/?region=GB)

@@ -196,7 +196,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
       <div class="sec">
         <h3>Frame details</h3>
         <label class="lbl" for="f-cap">Caption</label>
-        <input id="f-cap" type="text" maxlength="40" placeholder="imccinemas.co.uk">
+        <input id="f-cap" type="text" maxlength="40" placeholder="imc.ie">
         <label class="check"><input type="checkbox" id="f-logo"> Show IMC logo on the frame</label>
         <label class="lbl" for="f-plate">Logo backing</label>
         <select id="f-plate"><option value="none">None</option><option value="light">White panel</option><option value="dark">Dark panel</option></select>
@@ -271,6 +271,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const fixSite=s=>String(s).replace(/https?:\/\/www\.imccinemas\.co\.uk/gi,"https://www.imc.ie").replace(/IMCCINEMAS\.CO\.UK/g,"IMC.IE").replace(/imccinemas\.co\.uk/gi,"imc.ie");
 const uid=()=>"l"+Math.random().toString(36).slice(2,9);
 function toast(t){const el=$("#toast");el.textContent=t;el.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>el.hidden=true,2600)}
 if(document.body.dataset.standalone)$("#back").hidden=false;
@@ -286,7 +287,7 @@ const BADGES={
   newrel:{n:"New release",style:"pill",text:"NEW RELEASE",sub:"",c1:"#e0b450",c2:"#0e1424"},
   luxx:{n:"LUXX",style:"luxx",text:"LUXX",sub:"LUXURY RECLINER SEATING",c1:"#0b0b0d",c2:"#e0b450"},
   now:{n:"Now showing",style:"stack",text:"SHOWING",sub:"NOW",c1:"#c8102e",c2:"#ffffff"},
-  book:{n:"Book now",style:"button",text:"BOOK NOW",sub:"imccinemas.co.uk",c1:"#ffffff",c2:"#0e1424"},
+  book:{n:"Book now",style:"button",text:"BOOK NOW",sub:"imc.ie",c1:"#ffffff",c2:"#0e1424"},
   date:{n:"Release date",style:"dateline",text:"18 DEC",sub:"IN CINEMAS",c1:"#0e1424",c2:"#e0b450"},
   tonight:{n:"Tonight",style:"stamp",text:"TONIGHT",sub:"ONE NIGHT ONLY",c1:"#e0b450",c2:"#0e1424",r:-.17},
   sash:{n:"Corner sash",style:"sash",text:"NEW RELEASE",sub:"",c1:"#c8102e",c2:"#ffffff",r:Math.PI/4,x:.86,y:.14},
@@ -299,10 +300,10 @@ const NO_SUB={pill:1,sash:1};
 const TEXT_PRESETS={
   title:{text:"FILM TITLE",font:"display",size:130,sp:2,upper:true,shadow:true},
   sub:{text:"Opens Friday at IMC Enniskillen",font:"body",size:46,sp:0,upper:false,shadow:true},
-  small:{text:"BOOK AT IMCCINEMAS.CO.UK",font:"mono",size:26,sp:6,upper:true,shadow:false}
+  small:{text:"BOOK AT IMC.IE",font:"mono",size:26,sp:6,upper:true,shadow:false}
 };
 const FRAMES={premiere:"Premiere",vignette:"Clean",filmstrip:"Film strip",marquee:"Marquee lights",gallery:"Photo border",none:"No frame"};
-const DEFAULT_FRAME={style:"premiere",accent:"#e0b450",caption:"imccinemas.co.uk",logo:true,plate:"none",matte:"#ffffff"};
+const DEFAULT_FRAME={style:"premiere",accent:"#e0b450",caption:"imc.ie",logo:true,plate:"none",matte:"#ffffff"};
 
 function mk(kind,key,o){
   if(kind==="badge"){const b=BADGES[key];return{id:uid(),kind,key,style:b.style,text:b.text,sub:b.sub,c1:b.c1,c2:b.c2,x:b.x??.5,y:b.y??.5,s:1,r:b.r||0,o:1,...o}}
@@ -642,7 +643,7 @@ let thumbT=0;function thumbsSoon(){clearTimeout(thumbT);thumbT=setTimeout(render
 
 /* ---------- layouts ---------- */
 $("#layouts").addEventListener("click",e=>{const t=e.target.closest("[data-layout]");if(!t)return;const l=LAYOUTS[+t.dataset.layout];S.frame={...S.frame,...l.frame};S.layers=l.layers();S.motion={...S.motion,fx:{...(l.fx||{})}};selId=null;clampPhoto();syncAll();commit();toast(l.n+" layout applied")});
-function getSaved(){try{return JSON.parse(localStorage.getItem("imc-editor-layouts")||"[]")}catch(e){return[]}}
+function getSaved(){try{return JSON.parse(fixSite(localStorage.getItem("imc-editor-layouts")||"[]"))}catch(e){return[]}}
 function putSaved(a){try{localStorage.setItem("imc-editor-layouts",JSON.stringify(a))}catch(e){toast("Couldn't save. Browser storage is full or blocked.")}}
 function syncSaved(){const a=getSaved();$("#saved").innerHTML=a.length?a.map((s,i)=>`<div class="it"><span title="${esc(s.n)}">${esc(s.n)}</span><button class="btn" data-apply="${i}">Use</button><button class="btn danger" data-del="${i}" aria-label="Delete ${esc(s.n)}">✕</button></div>`).join(""):`<p class="note">Save a layout to reuse the same frame, badges and positions every week.</p>`}
 $("#saveLayout").onclick=()=>{const n=$("#saveName").value.trim()||("Layout "+(getSaved().length+1));const a=getSaved();a.push({n,fmt:S.fmt,frame:S.frame,motion:S.motion,layers:JSON.parse(clean(S.layers))});putSaved(a);$("#saveName").value="";syncSaved();toast("Saved “"+n+"”")};
@@ -839,7 +840,7 @@ $("#gifGo").onclick=async()=>{if(gBusy)return;gBusy=true;gCancel=false;$("#gifGo
 function syncAll(){syncMotion();ensureLoop();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
 async function boot(){buildMotionUI();
   try{const t=localStorage.getItem("imc-editor-tab");if(t){const b=$(`#tabs [data-tab="${t}"]`);if(b)b.click()}}catch(e){}
-  let saved=null;try{saved=JSON.parse(localStorage.getItem("imc-editor-state")||"null")}catch(e){}
+  let saved=null;try{saved=JSON.parse(fixSite(localStorage.getItem("imc-editor-state")||"null"))}catch(e){}
   if(saved&&saved.layers){S={...S,...saved,frame:{...DEFAULT_FRAME,...saved.frame},photo:{...S.photo,...saved.photo},motion:{fx:{},dur:3,...(saved.motion||{})}}}else{const l=LAYOUTS[0];S.frame={...S.frame,...l.frame};S.layers=l.layers()}
   const [pb,lb]=await Promise.all([idbGet("photo"),idbGet("logo")]);
   if(pb)try{photoImg=await blobToImg(pb)}catch(e){}
