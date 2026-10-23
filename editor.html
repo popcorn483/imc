@@ -12,8 +12,10 @@
 <style>
 /* Layout: dark editing suite. Tools left, canvas centre, properties + layers right. Single dark theme so photos read true. */
 :root{
-  --bg:#0d0e12; --panel:#15171d; --panel2:#1c1f27; --line:#2a2e39; --ink:#eceef3; --muted:#8e94a4;
-  --gold:#e0b450; --gold-ink:#17130a; --sel:#4da3ff; --danger:#ef6461;
+  /* IMC logo palette: sky #1fa0de, IMC blue #0b6bb8, indigo #3a2560, stripes #ffd84a → #f39a2b → #e2452e */
+  --bg:#0b0d1e; --panel:#13162e; --panel2:#1a1e3b; --line:#272d52; --ink:#eaeef9; --muted:#929bbd;
+  --gold:#ffb43c; --gold-ink:#1a1030; --sel:#3ba8e8; --danger:#ff6b5a;
+  --stripe:linear-gradient(90deg,#ffd84a,#f39a2b 55%,#e2452e);
   --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
   --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -27,7 +29,10 @@ button,input,select,textarea{font:inherit;color:inherit}
 .top{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:var(--panel);border-bottom:1px solid var(--line)}
 .brandmark{display:flex;align-items:center;gap:14px;min-width:0}
 .brandmark b{font-family:var(--f-display);font-weight:900;font-size:26px;letter-spacing:.03em;text-transform:uppercase;line-height:1;white-space:nowrap}
-.brandmark b span{color:var(--gold)}
+.brandmark b span{color:#3ba8e8}
+.brandmark img{width:38px;height:38px;display:block}
+.top{position:relative}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--stripe);opacity:.9}
 .brandmark a{color:var(--muted);text-decoration:none;font-weight:600;font-size:13px;white-space:nowrap}
 .brandmark a:hover{color:var(--ink)}
 .seg{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:3px;gap:2px;flex-wrap:wrap}
@@ -36,7 +41,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .topact{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .btn{border:1px solid var(--line);background:var(--panel2);padding:8px 13px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
 .btn:hover{border-color:#3d4352}
-.btn.primary{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.btn.primary{background:var(--stripe);border-color:transparent;color:var(--gold-ink)}
 .btn.primary:hover{filter:brightness(1.07)}
 .btn.icon{width:36px;padding:8px 0;font-size:16px}
 .btn.wide{width:100%}
@@ -62,7 +67,7 @@ textarea{resize:vertical;min-height:64px}
 .slider output{font-family:var(--f-mono);font-size:11.5px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
 input[type=range]{width:100%;accent-color:var(--gold)}
 .note{font-size:12px;color:var(--muted);margin:0}
-.real{font-size:12.5px;color:var(--ink);background:rgba(224,180,80,.08);border:1px solid rgba(224,180,80,.35);border-radius:8px;padding:10px 12px}
+.real{font-size:12.5px;color:var(--ink);background:rgba(255,180,60,.08);border:1px solid rgba(255,180,60,.35);border-radius:8px;padding:10px 12px}
 .real b{color:var(--gold)}
 .drop{border:1.5px dashed var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px;text-align:center}
 .drop p{margin:0;font-size:12px;color:var(--muted)}
@@ -91,7 +96,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .saved .it{display:flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:6px 6px 6px 10px}
 .saved .it span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
 /* stage */
-.stage{display:flex;flex-direction:column;min-height:0;min-width:0;background:radial-gradient(circle at 50% 40%,#171a21,#0b0c10 70%)}
+.stage{display:flex;flex-direction:column;min-height:0;min-width:0;background:radial-gradient(circle at 50% 35%,#1a2150,#0b0d1e 72%)}
 .canvaswrap{flex:1;min-height:0;min-width:0;display:grid;place-items:center;padding:28px}
 #cv{display:block;touch-action:none;box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);border-radius:2px;cursor:default;max-width:100%}
 .stage.dragover .canvaswrap{outline:2px dashed var(--gold);outline-offset:-14px}
@@ -102,7 +107,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .empty b{color:var(--ink);font-size:14px}
 .kbd{font-family:var(--f-mono);font-size:11px;border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--ink)}
 .acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.chip{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(224,180,80,.4);border-radius:99px;padding:2px 8px}
+.chip{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,180,60,.4);border-radius:99px;padding:2px 8px}
 .layers{display:flex;flex-direction:column;gap:2px}
 .layer{all:unset;cursor:pointer;display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:center;padding:7px 8px;border-radius:7px;font-size:13px}
 .layer:hover{background:var(--panel2)}
@@ -112,16 +117,16 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .layer .eye{all:unset;cursor:pointer;color:var(--muted);font-size:13px;width:22px;text-align:center}
 .layer.off .nm{opacity:.45}
 .toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);font-weight:600;padding:10px 16px;border-radius:8px;z-index:50;max-width:calc(100% - 32px);text-align:center}
-.tile em.anim{font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(224,180,80,.45);border-radius:99px;padding:0 5px;margin-left:4px;vertical-align:1px}
+.tile em.anim{font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,180,60,.45);border-radius:99px;padding:0 5px;margin-left:4px;vertical-align:1px}
 .tile.fx canvas{aspect-ratio:1/1}
 .gifbtn{position:relative}
-.gifbtn.live{border-color:rgba(224,180,80,.7);color:var(--gold)}
+.gifbtn.live{border-color:rgba(255,180,60,.7);color:var(--gold)}
 .gifbtn.live::after{content:"";position:absolute;top:-3px;right:-3px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 2px var(--panel)}
 .modal{position:fixed;inset:0;background:rgba(5,6,9,.7);display:grid;place-items:center;z-index:40;padding:16px}
 .dlg{background:var(--panel);border:1px solid var(--line);border-radius:14px;width:min(460px,100%);padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .dlg h2{margin:0;font-family:var(--f-display);font-weight:900;font-size:28px;text-transform:uppercase;letter-spacing:.02em}
 .bar{height:8px;border-radius:99px;background:var(--bg);overflow:hidden;border:1px solid var(--line)}
-.bar div{height:100%;width:0;background:linear-gradient(90deg,#b8862b,var(--gold),#f6e39b);transition:width .15s}
+.bar div{height:100%;width:0;background:var(--stripe);transition:width .15s}
 @media (max-width:1100px){.app{grid-template-columns:270px minmax(0,1fr) 260px}}
 @media (max-width:900px){
   html,body{height:auto}
@@ -139,7 +144,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 <body data-standalone="1">
 <div class="app">
   <header class="top">
-    <div class="brandmark"><a id="back" href="index.html" hidden>← Ad Studio</a><b>IMC <span>Photo</span> Editor</b></div>
+    <div class="brandmark"><a id="back" href="index.html" hidden>← Ad Studio</a><img id="brandLogo" src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Photo</span> Editor</b></div>
     <div class="seg" id="fmts" aria-label="Size"></div>
     <div class="topact">
       <button class="btn icon" id="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
@@ -236,7 +241,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
         <input type="file" id="logoFile" accept="image/png,image/svg+xml,image/webp,image/jpeg" hidden>
         <button class="btn primary wide" id="logoBtn">Upload the official logo</button>
         <button class="btn danger wide" id="logoRemove" hidden>Remove logo</button>
-        <p class="note">Upload the official IMC logo once, ideally a PNG or SVG with a transparent background. It's saved in this browser and used on every frame and logo layer. Until then, a plain text logo is used.</p>
+        <p class="note">The official IMC logo is built in and used on every frame and logo layer. Only upload a file here if you need a different version, such as an all-white logo. It's saved in this browser.</p>
       </div>
     </div>
   </aside>
@@ -281,20 +286,20 @@ const FORMATS={square:{n:"Feed 1:1",w:1080,h:1080},portrait:{n:"Feed 4:5",w:1080
 const FONTS={display:'"Big Shoulders Display","Arial Narrow",Impact,sans-serif',poster:'"Bebas Neue","Big Shoulders Display",Impact,sans-serif',serif:'"Playfair Display",Georgia,serif',body:'"Figtree",system-ui,sans-serif',mono:'"IBM Plex Mono",ui-monospace,monospace'};
 const FONT_NAMES={display:"Big Shoulders (bold condensed)",poster:"Bebas Neue (poster)",serif:"Playfair (elegant)",body:"Figtree (clean)",mono:"Plex Mono (small print)"};
 const WEIGHT={display:900,poster:400,serif:700,body:800,mono:500};
-const SWATCHES=["#c8102e","#e0b450","#ffffff","#0a0a0c","#0e1424","#0f7c86","#ff7a1a","#5b2a86","#1e5bd8"];
+const SWATCHES=["#1fa0de","#0b6bb8","#3a2560","#ffd84a","#f39a2b","#e2452e","#ffffff","#0b0a1e","#1a1440"];
 const BADGES={
-  coming:{n:"Coming soon",style:"ribbon",text:"COMING SOON",sub:"",c1:"#c8102e",c2:"#ffffff"},
-  newrel:{n:"New release",style:"pill",text:"NEW RELEASE",sub:"",c1:"#e0b450",c2:"#0e1424"},
-  luxx:{n:"LUXX",style:"luxx",text:"LUXX",sub:"LUXURY RECLINER SEATING",c1:"#0b0b0d",c2:"#e0b450"},
-  now:{n:"Now showing",style:"stack",text:"SHOWING",sub:"NOW",c1:"#c8102e",c2:"#ffffff"},
-  book:{n:"Book now",style:"button",text:"BOOK NOW",sub:"imc.ie",c1:"#ffffff",c2:"#0e1424"},
-  date:{n:"Release date",style:"dateline",text:"18 DEC",sub:"IN CINEMAS",c1:"#0e1424",c2:"#e0b450"},
-  tonight:{n:"Tonight",style:"stamp",text:"TONIGHT",sub:"ONE NIGHT ONLY",c1:"#e0b450",c2:"#0e1424",r:-.17},
-  sash:{n:"Corner sash",style:"sash",text:"NEW RELEASE",sub:"",c1:"#c8102e",c2:"#ffffff",r:Math.PI/4,x:.86,y:.14},
-  premier:{n:"Premier screen",style:"luxx",text:"PREMIER",sub:"SCREEN",c1:"#0e1424",c2:"#c9ced8"},
-  kids:{n:"Kids Club",style:"stamp",text:"KIDS CLUB",sub:"£3 TICKETS",c1:"#ff7a1a",c2:"#ffffff",r:.12},
-  price:{n:"Price burst",style:"stamp",text:"£5",sub:"ALL DAY TUESDAY",c1:"#c8102e",c2:"#ffffff",r:-.12},
-  fast:{n:"Selling fast",style:"pill",text:"SELLING FAST",sub:"",c1:"#ffffff",c2:"#c8102e"}
+  coming:{n:"Coming soon",style:"ribbon",text:"COMING SOON",sub:"",c1:"#0b6bb8",c2:"#ffffff"},
+  newrel:{n:"New release",style:"pill",text:"NEW RELEASE",sub:"",c1:"#ffd84a",c2:"#1a1440"},
+  luxx:{n:"LUXX",style:"luxx",text:"LUXX",sub:"LUXURY RECLINER SEATING",c1:"#0d0b20",c2:"#ffc23d"},
+  now:{n:"Now showing",style:"stack",text:"SHOWING",sub:"NOW",c1:"#0b6bb8",c2:"#ffffff"},
+  book:{n:"Book now",style:"button",text:"BOOK NOW",sub:"imc.ie",c1:"#ffffff",c2:"#1a1440"},
+  date:{n:"Release date",style:"dateline",text:"18 DEC",sub:"IN CINEMAS",c1:"#1a1440",c2:"#ffd84a"},
+  tonight:{n:"Tonight",style:"stamp",text:"TONIGHT",sub:"ONE NIGHT ONLY",c1:"#ffc23d",c2:"#1a1440",r:-.17},
+  sash:{n:"Corner sash",style:"sash",text:"NEW RELEASE",sub:"",c1:"#e2452e",c2:"#ffffff",r:Math.PI/4,x:.86,y:.14},
+  premier:{n:"Premier screen",style:"luxx",text:"PREMIER",sub:"SCREEN",c1:"#1a1440",c2:"#cdd8ee"},
+  kids:{n:"Kids Club",style:"stamp",text:"KIDS CLUB",sub:"£3 TICKETS",c1:"#f39a2b",c2:"#ffffff",r:.12},
+  price:{n:"Price burst",style:"stamp",text:"£5",sub:"ALL DAY TUESDAY",c1:"#e2452e",c2:"#ffffff",r:-.12},
+  fast:{n:"Selling fast",style:"pill",text:"SELLING FAST",sub:"",c1:"#ffffff",c2:"#e2452e"}
 };
 const NO_SUB={pill:1,sash:1};
 const TEXT_PRESETS={
@@ -303,24 +308,24 @@ const TEXT_PRESETS={
   small:{text:"BOOK AT IMC.IE",font:"mono",size:26,sp:6,upper:true,shadow:false}
 };
 const FRAMES={premiere:"Premiere",vignette:"Clean",filmstrip:"Film strip",marquee:"Marquee lights",gallery:"Photo border",none:"No frame"};
-const DEFAULT_FRAME={style:"premiere",accent:"#e0b450",caption:"imc.ie",logo:true,plate:"none",matte:"#ffffff"};
+const DEFAULT_FRAME={style:"premiere",accent:"#ffc23d",caption:"imc.ie",logo:true,plate:"none",matte:"#ffffff"};
 
 function mk(kind,key,o){
   if(kind==="badge"){const b=BADGES[key];return{id:uid(),kind,key,style:b.style,text:b.text,sub:b.sub,c1:b.c1,c2:b.c2,x:b.x??.5,y:b.y??.5,s:1,r:b.r||0,o:1,...o}}
-  if(kind==="text"){const p=TEXT_PRESETS[key||"title"];return{id:uid(),kind,c1:"#ffffff",c2:"#c8102e",x:.5,y:.5,s:1,r:0,o:1,align:"center",box:false,...p,...o}}
+  if(kind==="text"){const p=TEXT_PRESETS[key||"title"];return{id:uid(),kind,c1:"#ffffff",c2:"#0b6bb8",x:.5,y:.5,s:1,r:0,o:1,align:"center",box:false,...p,...o}}
   return{id:uid(),kind:"logo",c1:"#ffffff",plate:"none",size:150,x:.5,y:.5,s:1,r:0,o:1,...o};
 }
 const LAYOUTS=[
-  {n:"Coming soon",frame:{style:"premiere",accent:"#e0b450"},layers:()=>[mk("badge","coming",{y:.15}),mk("text","title",{y:.6}),mk("badge","date",{y:.735,s:.85})]},
-  {n:"New release",frame:{style:"vignette",accent:"#c8102e"},layers:()=>[mk("badge","newrel",{y:.12}),mk("text","title",{y:.6}),mk("badge","book",{y:.725,s:.85})]},
-  {n:"LUXX",frame:{style:"premiere",accent:"#e0b450"},layers:()=>[mk("badge","luxx",{y:.44,s:1.15}),mk("text","sub",{text:"Recline in style",font:"serif",size:66,y:.62})]},
-  {n:"Now showing",frame:{style:"filmstrip",accent:"#c8102e"},layers:()=>[mk("badge","now",{x:.35,y:.17,s:.8}),mk("text","title",{y:.66})]},
-  {n:"Opening night",frame:{style:"gallery",accent:"#c8102e",matte:"#ffffff"},layers:()=>[mk("badge","tonight",{x:.8,y:.2,s:.8})]},
-  {n:"Countdown",frame:{style:"marquee",accent:"#c8102e"},layers:()=>[mk("badge","price",{text:"3 DAYS",sub:"TO GO",y:.3,s:1.05,r:-.1}),mk("text","title",{y:.58}),mk("badge","book",{y:.7,s:.85})]},
-  {n:"Premiere night",fx:{spotlights:true,sparkle:true},frame:{style:"premiere",accent:"#e0b450"},layers:()=>[mk("badge","coming",{y:.15,anim:"shine"}),mk("text","title",{y:.6}),mk("badge","date",{y:.735,s:.85,anim:"pop"})]},
-  {n:"Christmas release",fx:{snow:true,bokeh:true},frame:{style:"vignette",accent:"#c8102e"},layers:()=>[mk("badge","newrel",{y:.12,anim:"shine"}),mk("text","title",{y:.6}),mk("badge","book",{y:.725,s:.85,anim:"pulse"})]},
-  {n:"Opening night lights",fx:{chase:true,confetti:true},frame:{style:"marquee",accent:"#c8102e"},layers:()=>[mk("badge","tonight",{y:.3,anim:"swing"}),mk("text","title",{y:.6})]},
-  {n:"LUXX gold",fx:{sparkle:true,kenburns:true},frame:{style:"premiere",accent:"#e0b450"},layers:()=>[mk("badge","luxx",{y:.44,s:1.15,anim:"shine"}),mk("text","sub",{text:"Recline in style",font:"serif",size:66,y:.62})]}
+  {n:"Coming soon",frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.15}),mk("text","title",{y:.6}),mk("badge","date",{y:.735,s:.85})]},
+  {n:"New release",frame:{style:"vignette",accent:"#f39a2b"},layers:()=>[mk("badge","newrel",{y:.12}),mk("text","title",{y:.6}),mk("badge","book",{y:.725,s:.85})]},
+  {n:"LUXX",frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","luxx",{y:.44,s:1.15}),mk("text","sub",{text:"Recline in style",font:"serif",size:66,y:.62})]},
+  {n:"Now showing",frame:{style:"filmstrip",accent:"#1fa0de"},layers:()=>[mk("badge","now",{x:.35,y:.17,s:.8}),mk("text","title",{y:.66})]},
+  {n:"Opening night",frame:{style:"gallery",accent:"#0b6bb8",matte:"#ffffff"},layers:()=>[mk("badge","tonight",{x:.8,y:.2,s:.8})]},
+  {n:"Countdown",frame:{style:"marquee",accent:"#3a2560"},layers:()=>[mk("badge","price",{text:"3 DAYS",sub:"TO GO",y:.3,s:1.05,r:-.1}),mk("text","title",{y:.58}),mk("badge","book",{y:.7,s:.85})]},
+  {n:"Premiere night",fx:{spotlights:true,sparkle:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.15,anim:"shine"}),mk("text","title",{y:.6}),mk("badge","date",{y:.735,s:.85,anim:"pop"})]},
+  {n:"Christmas release",fx:{snow:true,bokeh:true},frame:{style:"vignette",accent:"#f39a2b"},layers:()=>[mk("badge","newrel",{y:.12,anim:"shine"}),mk("text","title",{y:.6}),mk("badge","book",{y:.725,s:.85,anim:"pulse"})]},
+  {n:"Opening night lights",fx:{chase:true,confetti:true},frame:{style:"marquee",accent:"#3a2560"},layers:()=>[mk("badge","tonight",{y:.3,anim:"swing"}),mk("text","title",{y:.6})]},
+  {n:"LUXX gold",fx:{sparkle:true,kenburns:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","luxx",{y:.44,s:1.15,anim:"shine"}),mk("text","sub",{text:"Recline in style",font:"serif",size:66,y:.62})]}
 ];
 
 /* ---------- state ---------- */
@@ -425,7 +430,7 @@ function drawLayer(c,L){c.save();c.textBaseline="alphabetic";const d=L.kind==="b
 /* ---------- frames ---------- */
 function frameRect(F,W,H,u){if(F.style==="gallery"){const side=44*u,bot=(W>H?150:190)*u;return{x:side,y:side,w:W-2*side,h:H-side-bot}}return{x:0,y:0,w:W,h:H}}
 function drawPhoto(c,R,st,noPhoto,zk){const img=noPhoto?null:photoImg;
-  if(!img){const g=c.createLinearGradient(R.x,R.y,R.x+R.w,R.y+R.h);g.addColorStop(0,"#3a3f4f");g.addColorStop(.55,"#1b1e27");g.addColorStop(1,"#101218");c.fillStyle=g;c.fillRect(R.x,R.y,R.w,R.h);return}
+  if(!img){const g=c.createLinearGradient(R.x,R.y,R.x+R.w,R.y+R.h);g.addColorStop(0,"#1f6fb3");g.addColorStop(.55,"#2a2360");g.addColorStop(1,"#100d26");c.fillStyle=g;c.fillRect(R.x,R.y,R.w,R.h);return}
   const P=st.photo,iw=img.naturalWidth||img.width,ih=img.naturalHeight||img.height,sc=Math.max(R.w/iw,R.h/ih)*P.zoom*(zk||1),dw=iw*sc,dh=ih*sc;
   const mx=(dw-R.w)/2,my=(dh-R.h)/2,cx=R.x+R.w/2+clamp(P.ox*R.w,-mx,mx),cy=R.y+R.h/2+clamp(P.oy*R.h,-my,my);
   c.save();c.beginPath();c.rect(R.x,R.y,R.w,R.h);c.clip();
@@ -497,7 +502,7 @@ const FX={
     for(let i=0;i<n;i++){const x=r()*W,y=r()*H,s=(10+r()*26)*u,ph=r(),sp=r()<.5?1:2,rot=r()*.6,a=Math.pow(Math.max(0,Math.sin(Math.PI*fr(t*sp+ph))),6);if(a<.02)continue;
       c.globalAlpha=a;const g=c.createRadialGradient(x,y,0,x,y,s*1.4);g.addColorStop(0,"rgba(255,226,150,.85)");g.addColorStop(1,"rgba(255,200,90,0)");c.fillStyle=g;c.beginPath();c.arc(x,y,s*1.4,0,TAU);c.fill();
       c.save();c.translate(x,y);c.rotate(rot);c.fillStyle="#fffaf0";const q=s*.13;c.beginPath();[[0,-s],[q,-q],[s,0],[q,q],[0,s],[-q,q],[-s,0],[-q,-q]].forEach(([px,py],j)=>j?c.lineTo(px,py):c.moveTo(px,py));c.closePath();c.fill();c.restore()}c.restore()}},
-  confetti:{n:"Gold confetti",z:"over",draw(c,W,H,u,t){const r=rng(21),n=dens(W,H,u,70),cols=["#e0b450","#f6e39b","#c8102e","#ffffff","#b8862b"];c.save();
+  confetti:{n:"Gold confetti",z:"over",draw(c,W,H,u,t){const r=rng(21),n=dens(W,H,u,70),cols=["#ffd84a","#f39a2b","#e2452e","#ffffff","#1fa0de"];c.save();
     for(let i=0;i<n;i++){const x0=r()*W,y0=r(),k=r()<.6?1:2,ph=r(),col=cols[Math.floor(r()*cols.length)],w=(10+r()*8)*u,h=(5+r()*4)*u,y=fr(y0+t*k)*(H+80*u)-40*u,x=x0+Math.sin(TAU*(t*k+ph))*34*u;
       c.save();c.translate(x,y);c.rotate(TAU*(t*k+ph));c.scale(1,Math.cos(TAU*(t*k*2+ph)));c.fillStyle=col;c.globalAlpha=.94;c.fillRect(-w/2,-h/2,w,h);c.restore()}c.restore()}},
   snow:{n:"Snowfall",z:"over",draw(c,W,H,u,t){const r=rng(31),n=dens(W,H,u,110);c.save();c.fillStyle="#ffffff";
@@ -529,7 +534,7 @@ function drawLayerAt(c,L,W,H,u,t){const A=animOf(L,t),sc=L.s*u*A.ds;c.save();c.t
 /* ---------- render ---------- */
 const STILL=.35;
 function render(c,W,H,opts={},st=S){const F=st.frame,u=Math.min(W,H)/1080,t=opts.t??STILL,fx=(st.motion&&st.motion.fx)||{};c.setTransform(1,0,0,1,0,0);c.globalCompositeOperation="source-over";c.globalAlpha=1;c.clearRect(0,0,W,H);
-  c.fillStyle=F.style==="gallery"?F.matte:"#0c0d12";c.fillRect(0,0,W,H);
+  c.fillStyle=F.style==="gallery"?F.matte:"#0b0c1c";c.fillRect(0,0,W,H);
   const R=frameRect(F,W,H,u);drawPhoto(c,R,st,opts.noPhoto,fx.kenburns?1+.08*(1-Math.cos(TAU*t))/2:1);
   c.save();c.beginPath();c.rect(R.x,R.y,R.w,R.h);c.clip();for(const k of FX_ORDER)if(fx[k]&&FX[k].z==="under")FX[k].draw(c,W,H,u,t);c.restore();
   drawFrame(c,W,H,u,F,R,fx.chase?t:null);

@@ -12,27 +12,31 @@
 <style>
 /* Layout: projection-booth console. Left rail navigation, working area right; studio = form | live poster | virality. */
 :root{
-  --bg:#f3f4f7; --panel:#ffffff; --ink:#1b2130; --muted:#5e6678; --line:#dde1e9;
-  --velvet:#7a1f3d; --velvet-ink:#ffffff; --amber:#c98a12; --amber-soft:#fbf1dc;
-  --good:#1f7a4d; --warn:#a86a00; --bad:#b0303b; --chip:#eceff4;
+  /* IMC logo palette: sky #1fa0de, IMC blue #0b6bb8, indigo #3a2560, stripes #ffd84a → #f39a2b → #e2452e */
+  --bg:#f2f5fb; --panel:#ffffff; --ink:#141a33; --muted:#59627e; --line:#d9e1ef;
+  --velvet:#0b6bb8; --velvet-ink:#ffffff; --amber:#e8891c; --amber-soft:#fff2df;
+  --indigo:#3a2560; --stripe:linear-gradient(90deg,#ffd84a,#f39a2b 55%,#e2452e);
+  --good:#1f7a4d; --warn:#b06a00; --bad:#c23a2b; --chip:#e8eef8;
   --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
   --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --r:10px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#12151d; --panel:#1a1f2a; --ink:#e8ebf2; --muted:#9aa2b4; --line:#2b3242;
-  --velvet:#c4486f; --velvet-ink:#ffffff; --amber:#e9ae3c; --amber-soft:#2e2717;
-  --good:#4cc38a; --warn:#e9ae3c; --bad:#ef6b75; --chip:#242b39; color-scheme:dark}}
+  --bg:#0d1024; --panel:#161a35; --ink:#e9edf8; --muted:#9ba5c6; --line:#29305a;
+  --velvet:#3ba8e8; --velvet-ink:#0a0e22; --amber:#ffb648; --amber-soft:#2c2414; --indigo:#8f7ad1;
+  --good:#4cc38a; --warn:#ffb648; --bad:#ff7a66; --chip:#21274a; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#12151d; --panel:#1a1f2a; --ink:#e8ebf2; --muted:#9aa2b4; --line:#2b3242;
-  --velvet:#c4486f; --velvet-ink:#ffffff; --amber:#e9ae3c; --amber-soft:#2e2717;
-  --good:#4cc38a; --warn:#e9ae3c; --bad:#ef6b75; --chip:#242b39; color-scheme:dark}
+  --bg:#0d1024; --panel:#161a35; --ink:#e9edf8; --muted:#9ba5c6; --line:#29305a;
+  --velvet:#3ba8e8; --velvet-ink:#0a0e22; --amber:#ffb648; --amber-soft:#2c2414; --indigo:#8f7ad1;
+  --good:#4cc38a; --warn:#ffb648; --bad:#ff7a66; --chip:#21274a; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
 .app{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:100vh}
 .rail{background:var(--panel);border-right:1px solid var(--line);padding-block:20px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:16px;display:flex;flex-direction:column;gap:22px;position:sticky;top:0;height:100vh}
-.brand{display:flex;flex-direction:column;gap:2px}
+.brand{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:center}
+.brand img{grid-row:span 2;width:46px;height:46px;display:block}
+.brand::after{content:"";grid-column:1/-1;height:4px;border-radius:2px;background:var(--stripe);margin-top:12px}
 .brand b{font-family:var(--f-display);font-weight:900;font-size:30px;letter-spacing:.02em;line-height:.95;text-transform:uppercase}
 .brand b span{color:var(--velvet)}
 .brand small{font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
@@ -95,7 +99,7 @@ h3{font-size:15px;margin:0}
 .bars{display:flex;flex-direction:column;gap:8px;margin-top:10px}
 .bar{display:grid;grid-template-columns:96px minmax(0,1fr) 52px;gap:8px;align-items:center;font-size:13px}
 .bar .tr{height:10px;background:var(--chip);border-radius:5px;overflow:hidden}
-.bar .fi{height:100%;background:var(--velvet);border-radius:5px}
+.bar .fi{height:100%;background:linear-gradient(90deg,var(--velvet),var(--indigo));border-radius:5px}
 .bar .v{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
 /* studio */
 .studio{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr) minmax(0,280px);gap:16px;align-items:start}
@@ -161,6 +165,7 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .mix div{border:1px solid var(--line);border-radius:8px;padding:12px}
 .mix b{font-family:var(--f-display);font-size:26px;font-weight:800;display:block}
 .empty{color:var(--muted);padding:24px 0;text-align:center}
+#top .row{grid-template-columns:48px minmax(0,1fr)}#top .thumb{width:48px;height:48px}#top .act{grid-column:1/-1;justify-content:flex-start}
 .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
 .modal{position:fixed;inset:0;background:rgba(10,12,18,.55);display:grid;place-items:center;z-index:30;padding:16px}
 .modal .panel{width:min(460px,100%)}
@@ -192,7 +197,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <body>
 <div class="app">
   <aside class="rail">
-    <div class="brand"><b>IMC <span>Ad</span> Studio</b><small>Enniskillen · 7 screens</small></div>
+    <div class="brand"><img src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Ad</span> Studio</b><small>Enniskillen · 7 screens</small></div>
     <nav id="nav">
       <button data-view="dashboard">Dashboard</button>
       <button data-view="studio">Create ad</button>
@@ -369,12 +374,12 @@ const TPL={
   quiz:{name:"Guess it",kicker:"GUESS THE FILM",cta:"Answer in the comments",theme:"velvet"}
 };
 const THEMES={
-  velvet:{name:"Velvet",bg:["#4a0f24","#14060c"],accent:"#f3b23a",ink:"#ffffff"},
-  projector:{name:"Projector",bg:["#1d2433","#0b0e15"],accent:"#ffc23d",ink:"#ffffff"},
-  lakeland:{name:"Lakeland",bg:["#0f5560","#062328"],accent:"#9be3d6",ink:"#ffffff"},
+  velvet:{name:"IMC blue",bg:["#1fa0de","#3a2560"],accent:"#ffd84a",ink:"#ffffff"},
+  projector:{name:"Midnight",bg:["#23286b","#0b0a20"],accent:"#ffb648",ink:"#ffffff"},
+  lakeland:{name:"Sky",bg:["#0b6bb8","#0d2a55"],accent:"#ffd84a",ink:"#ffffff"},
   fright:{name:"Fright night",bg:["#3b1458","#120617"],accent:"#ff8a1f",ink:"#ffffff"},
   pop:{name:"Pop",bg:["#ffd23f","#ff7a59"],accent:"#2a1a6e",ink:"#2a1a6e"},
-  screen:{name:"Screen white",bg:["#ffffff","#e7e9ef"],accent:"#7a1f3d",ink:"#1b2130"}
+  screen:{name:"Screen white",bg:["#ffffff","#e6edf8"],accent:"#0b6bb8",ink:"#141a33"}
 };
 const SIZES={square:{name:"Feed 1:1",w:1080,h:1080},portrait:{name:"Feed 4:5",w:1080,h:1350},story:{name:"Story / Reel 9:16",w:1080,h:1920},foyer:{name:"Foyer screen 16:9",w:1920,h:1080}};
 const BASE_TAGS="#IMCEnniskillen #Enniskillen #Fermanagh #CinemaNI";
@@ -556,10 +561,11 @@ function paint(ctx,W,H,d,image,thumb){
   // footer
   const fh=120*u, fy=H-fh-46*u;
   ctx.fillStyle=image?"rgba(255,255,255,.95)":(th.ink==="#ffffff"?"rgba(255,255,255,.95)":"rgba(255,255,255,.75)");rr(ctx,pad*.6,fy,W-pad*1.2,fh,16*u);ctx.fill();
-  if(siteLogo){const lh=fh*.56,lw=lh*siteLogo.naturalWidth/siteLogo.naturalHeight;ctx.drawImage(siteLogo,pad*.6+32*u,fy+(fh-lh)/2,lw,lh)}else{
+  {const sg=ctx.createLinearGradient(pad*.6,0,W-pad*.6,0);sg.addColorStop(0,"#ffd84a");sg.addColorStop(.55,"#f39a2b");sg.addColorStop(1,"#e2452e");ctx.fillStyle=sg;ctx.fillRect(pad*.6+16*u,fy+fh-6*u,W-pad*1.2-32*u,6*u)}
+  if(siteLogo){const lh=fh*.7,lw=lh*siteLogo.naturalWidth/siteLogo.naturalHeight;ctx.drawImage(siteLogo,pad*.6+32*u,fy+(fh-lh)/2,lw,lh)}else{
   ctx.fillStyle="#14060c";ctx.font=`900 ${44*u}px ${disp}`;ctx.fillText("IMC",pad*.6+32*u,fy+fh/2+6*u);const imcw=ctx.measureText("IMC").width;
   ctx.font=`600 ${20*u}px ${mono}`;ctx.fillStyle="#5e6678";ctx.fillText("ENNISKILLEN",pad*.6+40*u+imcw,fy+fh/2+4*u)}
-  if(d.cta){ctx.textAlign="right";ctx.fillStyle="#7a1f3d";let fs=30*u;ctx.font=`700 ${fs}px ${body}`;while(ctx.measureText(d.cta).width>W*.55&&fs>16*u){fs-=2*u;ctx.font=`700 ${fs}px ${body}`}ctx.fillText(d.cta,W-pad*.6-32*u,fy+fh/2+10*u);ctx.textAlign="left"}
+  if(d.cta){ctx.textAlign="right";ctx.fillStyle="#0b6bb8";let fs=30*u;ctx.font=`700 ${fs}px ${body}`;while(ctx.measureText(d.cta).width>W*.55&&fs>16*u){fs-=2*u;ctx.font=`700 ${fs}px ${body}`}ctx.fillText(d.cta,W-pad*.6-32*u,fy+fh/2+10*u);ctx.textAlign="left"}
   // headline block bottom-up
   let by=fy-50*u;
   if(d.details){ctx.font=`500 ${32*u}px ${mono}`;ctx.fillStyle=acc;const dl=wrap(ctx,d.details,W-pad*2).slice(0,2);for(let i=dl.length-1;i>=0;i--){ctx.fillText(dl[i],pad,by);by-=46*u}by-=12*u}
