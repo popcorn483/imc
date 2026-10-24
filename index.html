@@ -176,6 +176,7 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .fbody{min-width:0;display:flex;flex-direction:column;gap:8px}
 .fbody h3{font-family:var(--f-display);font-weight:800;font-size:22px;line-height:1.05;text-transform:uppercase;text-wrap:balance;margin:0}
 .fmeta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--muted)}
+.ratingsw{display:inline-flex;gap:4px}.ratingsw button{padding:4px 10px!important;font-size:12px!important}.sw-gap{flex:1}
 .fmeta .certimg{width:24px;height:24px;object-fit:contain;display:block}
 .fmeta .cert{font-family:var(--f-mono);font-weight:600;border:1.5px solid currentColor;border-radius:5px;padding:0 5px;color:var(--ink)}
 .fmeta .lux{font-family:"Playfair Display",Georgia,serif;font-weight:700;letter-spacing:.18em;color:#b8860b}
@@ -851,11 +852,17 @@ function writeFilmPost(f,mode){startNew();const d=firstDate(f);
 function filmCard(f,mode){const d=firstDate(f),poster=asset(f.posterFile)||f.poster;
   const when=mode==="soon"?`<span class="opens">Opens ${esc(fmtShort(d))}</span>`:`<div class="ftimes">${(f.times||[]).map(t=>`<span>${t}</span>`).join("")}</div>`;
   return`<article class="film"><div class="fposter">${poster?`<img src="${esc(poster)}" alt="${esc(f.title)} poster" loading="lazy">`:""}</div>
-  <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${f.certIcon?`<img class="certimg" data-svg="${esc(f.certIcon)}" alt="Rated ${esc(f.cert||"")}" width="24" height="24">`:f.cert?`<span class="cert">${esc(f.cert)}</span>`:""}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
+  <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${(()=>{const r=certShown(f);return r&&r.src?`<img class="certimg" data-svg="${esc(r.src)}" alt="Rated ${esc(r.cert)}" width="24" height="24">`:r?`<span class="cert">${esc(r.cert)}</span>`:""})()}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
   ${when}
   <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button><button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
   ${(f.book||f.sessions?.[0]?.book)?`<a class="btn small ghost" href="${esc(f.book||f.sessions[0].book)}" target="_blank" rel="noopener">Book ↗</a>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="_blank" rel="noopener">Trailer ↗</a>`:""}</div></div></article>`}
 const SVGURL={};
+let ratingSys=(()=>{try{return localStorage.getItem("imc-rating-system")==="ifco"?"ifco":"bbfc"}catch(e){return"bbfc"}})();
+const TO_IFCO={U:"G",PG:"PG","12A":"12A","12":"12A","15":"15A","18":"18",R18:"18",TBC:"TBC"},TO_BBFC={G:"U",PG:"PG","12A":"12A","12":"12A","15A":"15","16":"15","18":"18",TBC:"TBC"};
+function certShown(f){const R=(IMC&&IMC.ratings)||{},from=f.certSystem||"bbfc";let c=String(f.cert||"").toUpperCase();if(!c)return null;if(from!==ratingSys)c=(ratingSys==="ifco"?TO_IFCO:TO_BBFC)[c]||c;return{cert:c,src:(R[ratingSys]&&R[ratingSys][c])||null}}
+function ratingSwitch(){return`<div class="filters ratingsw" role="group" aria-label="Rating symbols"><button data-hrsys="bbfc" aria-pressed="${ratingSys==="bbfc"}">BBFC</button><button data-hrsys="ifco" aria-pressed="${ratingSys==="ifco"}">IFCO</button></div>`}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-hrsys]");if(!b)return;ratingSys=b.dataset.hrsys;try{localStorage.setItem("imc-rating-system",ratingSys)}catch(err){}renderToday();renderWhatsOn();toast(ratingSys==="ifco"?"Showing IFCO ratings. IFCO certificates can differ from BBFC, so check each film":"Showing BBFC ratings")});
+addEventListener("storage",e=>{if(e.key==="imc-rating-system"){ratingSys=e.newValue==="ifco"?"ifco":"bbfc";renderToday();renderWhatsOn()}});
 async function hydrateSvgs(root){for(const im of (root||document).querySelectorAll("img[data-svg]")){const p=im.dataset.svg;try{if(!SVGURL[p]){SVGURL[p]=(async()=>{const r=await fetch(asset(p));if(!r.ok)throw 0;return URL.createObjectURL(new Blob([await r.text()],{type:"image/svg+xml"}))})()}im.src=await SVGURL[p]}catch(e){im.replaceWith(Object.assign(document.createElement("span"),{className:"cert",textContent:im.alt.replace("Rated ","")}))}}}
 let FILMKEYS=new Map();
 function keyed(list){return list.map(f=>{const k=(f.title+"|"+(f.luxx?1:0)).toLowerCase();FILMKEYS.set(k,f);return{...f,_k:k}})}
@@ -869,7 +876,7 @@ function stamp(){if(!IMC||!IMC.updated)return"";const f=d=>new Date(d).toLocaleS
 function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").textContent=fmtLong(todayIso());$("#todayStamp").textContent=stamp();
   if(!IMC){el.innerHTML=noData();return}
   const films=keyed(filmsOn(todayIso())),soon=keyed(allFilms().filter(f=>{const d=firstDate(f);return d&&d>todayIso()}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))).slice(0,6));
-  el.innerHTML=`<div class="panel"><div class="ph"><h2>Showing today</h2><div class="row-btns"><button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button></div></div>
+  el.innerHTML=`<div class="panel"><div class="ph"><h2>Showing today</h2><div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button></div></div>
     ${films.length?`<div class="films">${films.map(f=>filmCard(f,f.sources?.has("kids")&&!f.sources?.has("today")?"kids":f.luxx?"luxx":"now")).join("")}</div>`:`<p class="tip">No times for today in the latest import. ${IMC.today&&IMC.today.length===0?"The imc.ie film-times page may have been unavailable; the next import runs within 3 hours.":""}</p>`}</div>
     <div class="grid two" style="margin-top:16px"><div class="panel"><div class="ph"><h2>Opening soon</h2><button class="btn small ghost" data-wo="soon">All coming soon →</button></div><div class="films compact">${soon.map(f=>filmCard(f,"soon")).join("")||'<p class="tip">Nothing announced yet.</p>'}</div></div>
     <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
@@ -881,7 +888,7 @@ document.addEventListener("click",e=>{const t=e.target.closest("[data-times]");i
 /* ---------- What's on ---------- */
 const WOTABS=[["today","Today"],["week","Next 7 days"],["soon","Coming soon"],["kids","Kids Club"],["luxx","LUXX"],["relaxed","Relaxed screenings"]];
 function renderWhatsOn(){const el=$("#woBody");if(!el)return;$("#woStamp").textContent=stamp();
-  $("#woTabs").innerHTML=WOTABS.map(([k,n])=>`<button data-wot="${k}" aria-pressed="${woTab===k}">${n}</button>`).join("");
+  $("#woTabs").innerHTML=WOTABS.map(([k,n])=>`<button data-wot="${k}" aria-pressed="${woTab===k}">${n}</button>`).join("")+`<span class="sw-gap"></span>`+ratingSwitch();
   if(!IMC){el.innerHTML=noData();return}
   const all=allFilms(),T=todayIso();let html="";
   if(woTab==="today"){const f=keyed(filmsOn(T));html=f.length?`<div class="films">${f.map(x=>filmCard(x,x.luxx?"luxx":"now")).join("")}</div>`:'<p class="tip">No times for today in the latest import.</p>'}

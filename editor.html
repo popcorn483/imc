@@ -233,7 +233,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
       <div class="sec"><h3>Badges</h3><div class="tiles" id="badges"></div></div>
       <div class="sec"><h3>Food &amp; drink</h3><p class="note">Drawn in IMC colours. Select one to recolour it.</p><div class="tiles" id="products"></div></div>
       <div class="sec"><h3>Deal pieces</h3><div class="tiles" id="dealBadges"></div></div>
-      <div class="sec"><h3>Film rating</h3><p class="note" id="ratingNote">Official BBFC and IFCO symbols, as used on imc.ie.</p><div class="media ratings" id="ratingGrid"></div></div>
+      <div class="sec"><h3>Film rating</h3><div class="seg" id="ratingSysSeg" style="width:max-content"><button data-rsys="bbfc">BBFC (UK)</button><button data-rsys="ifco">IFCO (Ireland)</button></div><p class="note" id="ratingNote">Official symbols, as used on imc.ie. Your choice is used on every new film graphic.</p><div class="media ratings" id="ratingGrid"></div></div>
       <div class="sec"><h3>Film times</h3><button class="btn wide" id="addListing">Add today's film times</button><p class="note">Pulled from imc.ie when available. Edit rows in the panel on the right.</p></div>
       <div class="sec"><h3>Text</h3>
         <div class="textbtns">
@@ -348,7 +348,7 @@ const FRAME_MOVES={brandbar:1,premiere:1,neon:1,vignette:1,ticket:1,filmstrip:1,
 function mk(kind,key,o){
   if(kind==="badge"){const b=BADGES[key];return{id:uid(),kind,key,style:b.style,text:b.text,sub:b.sub,items:b.items,c1:b.c1,c2:b.c2,x:b.x??.5,y:b.y??.5,s:1,r:b.r||0,o:1,...o}}
   if(kind==="product"){const p=PRODUCTS[key]||PRODUCTS.popcorn;return{id:uid(),kind,key,c1:p.c1,c2:p.c2,text:key==="tray"?"KIDS":"",x:.5,y:.55,s:1,r:0,o:1,...o}}
-  if(kind==="rating")return{id:uid(),kind,cert:"12A",system:"bbfc",src:null,x:.86,y:.84,s:.6,r:0,o:1,...o};
+  if(kind==="rating")return{id:uid(),kind,cert:"12A",system:ratingSys,src:null,x:.86,y:.84,s:.6,r:0,o:1,...o};
   if(kind==="listing")return{id:uid(),kind,text:"Today at IMC Enniskillen",sub:"",rows:[],x:.5,y:.47,s:1,r:0,o:1,...o};
   if(kind==="text"){const p=TEXT_PRESETS[key||"title"];return{id:uid(),kind,c1:"#ffffff",c2:"#0b6bb8",x:.5,y:.5,s:1,r:0,o:1,align:"center",box:false,...p,...o}}
   return{id:uid(),kind:"logo",c1:"#ffffff",plate:"none",size:150,x:.5,y:.5,s:1,r:0,o:1,...o};
@@ -577,7 +577,7 @@ function drawListing(c,L){const rows=(L.rows||[]).slice(0,12),w=940,pad=46,h=lis
     for(let i=times.length-1;i>=0;i--){const pw=c.measureText(times[i]).width+26;if(used+pw+10>w*.5){pills.unshift("+"+(i+1));break}pills.unshift(times[i]);used+=pw+10}
     for(let i=pills.length-1;i>=0;i--){const t=pills[i],pw=c.measureText(t).width+26;tx-=pw;rr(c,tx,cy-22,pw,44,22);c.fillStyle=t.startsWith("+")?"rgba(255,216,74,.18)":"rgba(255,255,255,.12)";c.fill();c.fillStyle=t.startsWith("+")?"#ffd84a":"#ffffff";c.fillText(t,tx+13,cy+9);tx-=10}
     let lx=X+pad;c.font=`800 33px ${FONTS.body}`;const extra=(r.cert?70:0)+(r.luxx?90:0);const title=fitText(c,r.t||"",tx-lx-extra-16);c.fillStyle="#ffffff";c.fillText(title,lx,cy+12);lx+=c.measureText(title).width+14;
-    const ri=r.cert&&ratingImg(ratingFor(r.cert,r.system));
+    const ri=r.cert&&ratingImg(ratingFor(r.cert,r.system||"bbfc",L.rsys||ratingSys));
     if(ri){const ih=40,iw=ih*(ri.naturalWidth||ih)/(ri.naturalHeight||ih);c.drawImage(ri,lx,cy-ih/2,iw,ih);lx+=iw+10}
     else if(r.cert){c.font=`700 19px ${FONTS.mono}`;const cw=c.measureText(r.cert).width+16;rr(c,lx,cy-16,cw,32,6);c.strokeStyle="rgba(255,255,255,.55)";c.lineWidth=2;c.stroke();c.fillStyle="#fff";c.fillText(r.cert,lx+8,cy+7);lx+=cw+10}
     if(r.luxx){c.font=`700 22px ${FONTS.serif}`;c.fillStyle="#ffc23d";ft(c,"LUXX",lx,cy+8,4,"left")}
@@ -588,19 +588,25 @@ function rowsText(rows){return(rows||[]).map(r=>[r.t,(r.times||[]).join(" "),r.c
 
 /* ---------- official rating symbols (BBFC / IFCO), imported from imc.ie ---------- */
 const RATING_IMG={};
-function ratingFor(cert,sys){const R=IMC&&IMC.ratings;if(!R||!cert)return null;const c=String(cert).toUpperCase();return(sys&&R[sys]&&R[sys][c])||(R.bbfc&&R.bbfc[c])||(R.ifco&&R.ifco[c])||null}
-function ratingList(){const R=(IMC&&IMC.ratings)||{},out=[];for(const sys of["bbfc","ifco"])for(const[cert,src]of Object.entries(R[sys]||{}))out.push({system:sys,cert,src});return out}
+let ratingSys=(()=>{try{return localStorage.getItem("imc-rating-system")==="ifco"?"ifco":"bbfc"}catch(e){return"bbfc"}})();
+const TO_IFCO={U:"G",PG:"PG","12A":"12A","12":"12A","15":"15A","18":"18",R18:"18",TBC:"TBC"},TO_BBFC={G:"U",PG:"PG","12A":"12A","12":"12A","15A":"15","16":"15","18":"18",TBC:"TBC"};
+function ratingPick(cert,fromSys,want){const R=(IMC&&IMC.ratings)||{};let c=String(cert||"").toUpperCase();if(!c)return null;fromSys=fromSys||"bbfc";want=want||ratingSys;
+  if(fromSys!==want)c=(want==="ifco"?TO_IFCO:TO_BBFC)[c]||c;return{system:want,cert:c,src:(R[want]&&R[want][c])||null}}
+function ratingFor(cert,sys,want){const p=ratingPick(cert,sys,want);return p&&p.src}
+function setRatingSys(v){ratingSys=v==="ifco"?"ifco":"bbfc";try{localStorage.setItem("imc-rating-system",ratingSys)}catch(e){}ratingsRendered="";renderRatings();draw()}
+function ratingList(only){const R=(IMC&&IMC.ratings)||{},out=[];for(const sys of(only?[only]:["bbfc","ifco"]))for(const[cert,src]of Object.entries(R[sys]||{}))out.push({system:sys,cert,src});return out}
 function ratingImg(p){const i=p&&RATING_IMG[p];if(i instanceof HTMLImageElement&&i.complete)return i;if(p&&!i)loadRating(p);return null}
 async function loadRating(p){if(!p||RATING_IMG[p])return;RATING_IMG[p]="loading";try{const r=await fetch(asset(p));if(!r.ok)throw 0;const txt=await r.text();const u=URL.createObjectURL(new Blob([txt],{type:"image/svg+xml"}));const i=new Image();await new Promise((res,rej)=>{i.onload=res;i.onerror=rej;i.src=u});RATING_IMG[p]=i;draw();renderRatings()}catch(e){delete RATING_IMG[p]}}
 function drawRating(c,L){const p=L.src||ratingFor(L.cert,L.system),im=ratingImg(p),h=150;
   if(im){const w=h*(im.naturalWidth||h)/(im.naturalHeight||h);c.drawImage(im,-w/2,-h/2,w,h);return{w,h}}
   rr(c,-70,-70,140,140,22);c.fillStyle="#ffffff";c.fill();c.fillStyle="#111";c.font=`900 ${String(L.cert||"?").length>2?58:76}px ${FONTS.display}`;ft(c,String(L.cert||"?"),0,27,0,"center");return{w:140,h:140}}
 let ratingsRendered="";
-function renderRatings(){const g=$("#ratingGrid");if(!g)return;const list=ratingList();
+function renderRatings(){const g=$("#ratingGrid");if(!g)return;$$("#ratingSysSeg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.rsys===ratingSys));const list=ratingList(ratingSys);
   if(!list.length){$("#ratingNote").textContent="The official BBFC and IFCO symbols load from imc.ie on the live site.";g.innerHTML="";return}
-  const ready=list.filter(o=>RATING_IMG[o.src] instanceof HTMLImageElement),key=ready.map(o=>o.src).join();if(key===ratingsRendered)return;ratingsRendered=key;
+  const ready=list.filter(o=>RATING_IMG[o.src] instanceof HTMLImageElement&&o.cert!==o.system.toUpperCase()),key=ratingSys+ready.map(o=>o.src).join();if(key===ratingsRendered)return;ratingsRendered=key;
   list.forEach(o=>loadRating(o.src));
   g.innerHTML=ready.map(o=>`<button data-rsrc="${esc(o.src)}" title="${o.system.toUpperCase()} ${esc(o.cert)}" aria-label="Add ${o.system.toUpperCase()} ${esc(o.cert)} rating"><img src="${RATING_IMG[o.src].src}" alt=""></button>`).join("")}
+$("#ratingSysSeg").addEventListener("click",e=>{const b=e.target.closest("[data-rsys]");if(b){setRatingSys(b.dataset.rsys);toast(b.dataset.rsys==="ifco"?"IFCO symbols selected. Check each film's IFCO certificate, as it can differ from the BBFC one":"BBFC symbols selected")}});
 $("#ratingGrid").addEventListener("click",e=>{const b=e.target.closest("[data-rsrc]");if(!b)return;const o=ratingList().find(x=>x.src===b.dataset.rsrc);if(o)addLayer(mk("rating",null,{src:o.src,cert:o.cert,system:o.system}))});
 
 /* ---------- brand backgrounds ---------- */
@@ -918,8 +924,8 @@ function renderProps(){const L=getSel(),P=$("#props");
     ${L.box?colourBlock("Panel colour","c2",L):""}`}
   if(L.kind==="badge"&&L.style==="menu"){h+=`<label class="lbl" for="pp-items">What's included (one per line)</label><textarea id="pp-items" rows="4">${esc(L.items||"")}</textarea>`}
   if(L.kind==="product"){if(L.key==="tray")h+=`<label class="lbl" for="pp-text">Tray label</label><input id="pp-text" type="text" value="${esc(L.text||"")}">`;h+=colourBlock(L.key==="hotdog"?"Sausage colour":L.key==="nachos"?"Tray colour":"Main colour","c1",L)+colourBlock(L.key==="popcorn"?"Rim colour":L.key==="drink"?"Straw colour":L.key==="hotdog"?"Mustard colour":L.key==="nachos"?"Cheese colour":"Second colour","c2",L)}
-  if(L.kind==="listing"){h+=`<label class="lbl" for="pp-text">Heading</label><input id="pp-text" type="text" value="${esc(L.text||"")}"><label class="lbl" for="pp-sub">Date line</label><input id="pp-sub" type="text" value="${esc(L.sub||"")}"><label class="lbl" for="pp-rows">Films: Title | times | cert | LUXX</label><textarea id="pp-rows" rows="7" style="font-family:var(--f-mono);font-size:12px">${esc(rowsText(L.rows))}</textarea>${IMC&&IMC.today&&IMC.today.length?'<button class="btn wide" data-act="reloadrows">Refresh from imc.ie</button>':""}`}
-  if(L.kind==="rating"){const opts=ratingList();h+=opts.length?`<label class="lbl" for="pp-rating">Rating</label><select id="pp-rating">${opts.map(o=>`<option value="${esc(o.src)}" ${o.src===L.src?"selected":""}>${o.system.toUpperCase()} ${esc(o.cert)}</option>`).join("")}</select>`:`<p class="note">Rating symbols load from imc.ie on the live site.</p>`}
+  if(L.kind==="listing"){const ls=L.rsys||ratingSys;h+=`<div class="lbl">Rating symbols</div><div class="seg" id="pp-lsys" style="width:max-content"><button data-pls="bbfc" aria-pressed="${ls==="bbfc"}">BBFC</button><button data-pls="ifco" aria-pressed="${ls==="ifco"}">IFCO</button></div>`;h+=`<label class="lbl" for="pp-text">Heading</label><input id="pp-text" type="text" value="${esc(L.text||"")}"><label class="lbl" for="pp-sub">Date line</label><input id="pp-sub" type="text" value="${esc(L.sub||"")}"><label class="lbl" for="pp-rows">Films: Title | times | cert | LUXX</label><textarea id="pp-rows" rows="7" style="font-family:var(--f-mono);font-size:12px">${esc(rowsText(L.rows))}</textarea>${IMC&&IMC.today&&IMC.today.length?'<button class="btn wide" data-act="reloadrows">Refresh from imc.ie</button>':""}`}
+  if(L.kind==="rating"){const sys=L.system||"bbfc",opts=ratingList(sys).filter(o=>o.cert!==sys.toUpperCase());h+=`<div class="seg" id="pp-rsys" style="width:max-content"><button data-prs="bbfc" aria-pressed="${sys==="bbfc"}">BBFC</button><button data-prs="ifco" aria-pressed="${sys==="ifco"}">IFCO</button></div>`+(opts.length?`<label class="lbl" for="pp-rating">Certificate</label><select id="pp-rating">${!L.src?`<option value="" selected>${esc(L.cert||"Choose")}</option>`:""}${opts.map(o=>`<option value="${esc(o.src)}" ${o.src===L.src?"selected":""}>${esc(o.cert)}</option>`).join("")}</select>`:`<p class="note">Rating symbols load from imc.ie on the live site.</p>`)+(sys==="ifco"?`<p class="note">IFCO certificates can differ from BBFC ones. Check the film's IFCO rating.</p>`:"")}
   if(L.kind==="logo"){h+=`<label class="lbl" for="pp-plate">Backing</label><select id="pp-plate"><option value="none">None</option><option value="light">White panel</option><option value="dark">Dark panel</option></select>${logoImg?"":colourBlock("Text logo colour","c1",L)}`}
   h+=`</div><div class="sec"><h3>Position</h3>${sliderRow("pp-s","Size",10,400,Math.round(L.s*100),"%")}${sliderRow("pp-r","Rotate",-180,180,Math.round((L.r||0)*180/Math.PI),"°")}${sliderRow("pp-o","Opacity",10,100,Math.round((L.o??1)*100),"%")}<label class="lbl" for="pp-anim">Animation</label><select id="pp-anim">${Object.entries(ANIMS).map(([k,n])=>`<option value="${k}" ${(L.anim||"none")===k?"selected":""}>${n}</option>`).join("")}</select>${L.anim&&L.anim!=="none"?sliderRow("pp-delay","Starts at",0,50,Math.round((L.delay||0)*100),"%"):""}
     <div class="acts"><button class="btn" data-act="centre">Centre</button><button class="btn" data-act="fwd">Forward</button><button class="btn" data-act="back">Back</button><button class="btn" data-act="dup">Duplicate</button><button class="btn" data-act="flat">Straighten</button><button class="btn danger" data-act="del">Delete</button></div></div>`;
@@ -943,6 +949,8 @@ $("#props").addEventListener("change",e=>{const L=getSel();if(!L)return;const id
   draw();commit()});
 $("#props").addEventListener("click",e=>{const L=getSel();if(!L)return;
   const sw=e.target.closest("[data-c]");if(sw){const k=sw.closest("[data-colour]").dataset.colour;L[k]=sw.dataset.c;sw.parentElement.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b===sw));sw.parentElement.querySelector("input").value=sw.dataset.c;draw();commit();return}
+  const pls=e.target.closest("[data-pls]");if(pls&&L.kind==="listing"){L.rsys=pls.dataset.pls;(L.rows||[]).forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",L.rsys);if(p&&p.src)loadRating(p.src)});renderProps();draw();commit();return}
+  const prs=e.target.closest("[data-prs]");if(prs&&L.kind==="rating"){const p=ratingPick(L.cert,L.system,prs.dataset.prs);if(p){L.system=p.system;L.cert=p.cert;L.src=p.src;if(p.src)loadRating(p.src);else toast(`imc.ie has no ${p.system.toUpperCase()} ${p.cert} symbol, so a plain certificate is shown`)}renderProps();syncLayers();draw();commit();return}
   const al=e.target.closest("[data-al]");if(al){L.align=al.dataset.al;$$("#pp-align button").forEach(b=>b.setAttribute("aria-pressed",b===al));draw();commit();return}
   const a=e.target.closest("[data-act]");if(!a)return;act(a.dataset.act)});
 function act(n){const L=getSel();if(!L)return;const i=S.layers.indexOf(L);
@@ -1140,7 +1148,7 @@ $("#dealLayouts").addEventListener("click",e=>{const b=e.target.closest("[data-d
 
 /* ---------- listings ---------- */
 function todayRows(){const f=(IMC&&IMC.today)||[];return f.map(x=>({t:x.title,times:x.times||[],cert:x.cert||"",system:x.certSystem||"",luxx:!!x.luxx}))}
-function applyListing(h){S.label="film times "+(h.sub||"");const rows=h.rows||[];S.bg="stage";S.frame={...S.frame,style:"brandbar",logo:true};const f=FORMATS[S.fmt],u=Math.min(f.w,f.h)/1080,avail=(f.h-150*u)/u*.92,need=listingH(rows.length);
+function applyListing(h){S.label="film times "+(h.sub||"");const rows=h.rows||[];rows.forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src)});S.bg="stage";S.frame={...S.frame,style:"brandbar",logo:true};const f=FORMATS[S.fmt],u=Math.min(f.w,f.h)/1080,avail=(f.h-150*u)/u*.92,need=listingH(rows.length);
   S.layers=[mk("listing",null,{text:h.heading||"Today at IMC Enniskillen",sub:h.sub||new Date().toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"}),rows,y:(f.h-150*u)/2/f.h,s:Math.min(1,avail/need,(f.w/u*.92)/940)})];
   S.motion={...S.motion,fx:{}};selId=null;syncAll();commit()}
 $("#addListing").onclick=()=>{const rows=todayRows();if(rows.length){applyListing({rows});toast("Today's times added from imc.ie")}else{applyListing({rows:[{t:"Film title",times:["13:00","15:30","18:00"],cert:"12A"},{t:"Another film",times:["14:15","20:30"],cert:"15"}]});toast("Example rows added. Edit them in the panel on the right")}};
@@ -1155,8 +1163,8 @@ function filmLayers(fm,mode){const L=[];
   else L.push(mk("badge","coming",{y:.085,s:.82,anim:"shine"}));
   const dline=mode==="soon"?{text:fm.dateLabel||"SOON",sub:"IN CINEMAS"}:{text:(fm.times||[]).slice(0,4).join(" · ")||"BOOK NOW",sub:mode==="kids"?"KIDS CLUB":"TODAY"};
   L.push(mk("badge","date",{...dline,y:.835,s:Math.min(.85,6.2/Math.max(6,(dline.text||"").length)),anim:"pop",delay:.2}));
-  const rs=fm.certIcon||ratingFor(fm.cert,fm.certSystem);
-  if(rs){loadRating(rs);L.push(mk("rating",null,{src:rs,cert:fm.cert||"",system:fm.certSystem||"bbfc",x:.88,y:.83,s:.52}))}
+  const rp=fm.cert?ratingPick(fm.cert,fm.certSystem||"bbfc",ratingSys):null;
+  if(rp&&(rp.src||IMC&&IMC.ratings)){if(rp.src)loadRating(rp.src);L.push(mk("rating",null,{src:rp.src,cert:rp.cert,system:rp.system,x:.88,y:.83,s:.52}))}
   else if(fm.cert)L.push(mk("badge","fast",{text:"CERT "+fm.cert,x:.86,y:.84,s:.45}));
   return L}
 async function applyFilm(fm,mode){S.label=fm.title+(mode==="soon"?" coming soon":"");S.bg="photo";S.photo={...S.photo,fit:"poster",zoom:1,ox:0,oy:-.035};S.frame={...S.frame,style:"brandbar",logo:true};S.layers=filmLayers(fm,mode);S.motion={...S.motion,fx:mode==="soon"?{spotlights:true,sparkle:true}:mode==="luxx"?{sparkle:true}:{}};selId=null;syncAll();
@@ -1218,6 +1226,7 @@ async function boot(){buildMotionUI();
   if(document.fonts)Promise.all(faces.map(f=>document.fonts.load(f).catch(()=>{}))).then(()=>{draw();renderThumbs();syncLogo()});
   if(window.claude&&window.claude.use)window.claude.use("downloads").then(d=>{downloads=d}).catch(()=>{});
 }
+addEventListener("storage",e=>{if(e.key==="imc-rating-system")setRatingSys(e.newValue)});
 addEventListener("pagehide",()=>{try{localStorage.setItem("imc-editor-state",clean(S))}catch(e){}});
 boot();
 })();
