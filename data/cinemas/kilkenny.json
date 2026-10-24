@@ -1,0 +1,95 @@
+{
+  "id": "kilkenny",
+  "cinema": "IMC Kilkenny",
+  "source": "https://imc.ie/kilkenny",
+  "updated": "2026-10-24T17:53:55.814Z",
+  "today": [],
+  "days": [],
+  "comingSoon": [],
+  "kidsClub": [],
+  "luxx": [],
+  "banners": [
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/09/IMG_4868.webp",
+      "file": "data/banners/0af00f76ce.webp"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/10/IMG_5821.jpeg",
+      "file": "data/banners/5ccda3445a.jpg"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/10/IMG_5815.jpeg",
+      "file": "data/banners/d2c9eeb176.jpg"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/10/IMG_5544.webp",
+      "file": "data/banners/836055fe1b.webp"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/10/IMG_5822.jpeg",
+      "file": "data/banners/7e5e734a6d.jpg"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/06/imc-infinity.webp",
+      "file": "data/banners/bb4c56904b.webp"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/06/giftcard-banner3.webp",
+      "file": "data/banners/6629cc93d5.webp"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/06/Atlhone-0526.webp",
+      "file": "data/banners/c309f7b6e8.webp"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/06/balina.webp",
+      "file": "data/banners/ef3451874c.webp"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/09/ballymenav2.jpeg",
+      "file": "data/banners/179e70b15c.jpg"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/06/Banbridge-Cinema-Complex.webp",
+      "file": "data/banners/906d4ab768.webp"
+    },
+    {
+      "url": "https://imc.ie/wp-content/uploads/2026/06/Carlow-0526.webp",
+      "file": "data/banners/4ed2aa39d7.webp"
+    }
+  ],
+  "log": [
+    "home: 0 films parsed",
+    "today: 0 films parsed",
+    "advance: 0 films parsed",
+    "kids: 0 films parsed",
+    "luxx: 0 films parsed",
+    "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
+  ],
+  "checked": "2026-10-24T17:54:07.711Z",
+  "blocked": false,
+  "ratings": {
+    "bbfc": {
+      "12": "data/ratings/bbfc-12.svg",
+      "15": "data/ratings/bbfc-15.svg",
+      "18": "data/ratings/bbfc-18.svg",
+      "U": "data/ratings/bbfc-U.svg",
+      "PG": "data/ratings/bbfc-PG.svg",
+      "12A": "data/ratings/bbfc-12A.svg",
+      "R18": "data/ratings/bbfc-R18.svg",
+      "TBC": "data/ratings/bbfc-TBC.svg",
+      "BBFC": "data/ratings/bbfc-BBFC.svg"
+    },
+    "ifco": {
+      "16": "data/ratings/ifco-16.svg",
+      "18": "data/ratings/ifco-18.svg",
+      "G": "data/ratings/ifco-G.svg",
+      "PG": "data/ratings/ifco-PG.svg",
+      "12A": "data/ratings/ifco-12A.svg",
+      "15A": "data/ratings/ifco-15A.svg",
+      "TBC": "data/ratings/ifco-TBC.svg",
+      "IFCO": "data/ratings/ifco-IFCO.svg"
+    }
+  },
+  "slug": "kilkenny"
+}

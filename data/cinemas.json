@@ -1,0 +1,186 @@
+{
+  "updated": "2026-10-24T17:56:33.398Z",
+  "blocked": false,
+  "cinemas": [
+    {
+      "id": "enniskillen",
+      "name": "IMC Enniskillen",
+      "slug": "enniskillen",
+      "file": "data/imc.json",
+      "ok": true,
+      "films": 17,
+      "updated": "2026-10-24T17:47:57.542Z",
+      "checked": "2026-10-24T17:48:27.524Z"
+    },
+    {
+      "id": "ballymena",
+      "name": "IMC Ballymena",
+      "slug": "ballymena",
+      "file": "data/cinemas/ballymena.json",
+      "ok": true,
+      "films": 13,
+      "updated": "2026-10-24T17:48:29.258Z",
+      "checked": "2026-10-24T17:49:00.764Z"
+    },
+    {
+      "id": "banbridge",
+      "name": "IMC Banbridge",
+      "slug": "banbridge",
+      "file": "data/cinemas/banbridge.json",
+      "ok": true,
+      "films": 9,
+      "updated": "2026-10-24T17:49:00.767Z",
+      "checked": "2026-10-24T17:49:33.840Z"
+    },
+    {
+      "id": "newtownards",
+      "name": "IMC Newtownards",
+      "slug": "newtownards",
+      "file": "data/cinemas/newtownards.json",
+      "ok": true,
+      "films": 10,
+      "updated": "2026-10-24T17:49:34.313Z",
+      "checked": "2026-10-24T17:50:01.883Z"
+    },
+    {
+      "id": "athlone",
+      "name": "IMC Athlone",
+      "slug": "athlone",
+      "file": "data/cinemas/athlone.json",
+      "ok": true,
+      "films": 12,
+      "updated": "2026-10-24T17:50:01.886Z",
+      "checked": "2026-10-24T17:50:43.652Z"
+    },
+    {
+      "id": "ballina",
+      "name": "IMC Ballina",
+      "slug": "ballina",
+      "file": "data/cinemas/ballina.json",
+      "ok": true,
+      "films": 12,
+      "updated": "2026-10-24T17:50:43.654Z",
+      "checked": "2026-10-24T17:51:23.325Z"
+    },
+    {
+      "id": "carlow",
+      "name": "IMC Carlow",
+      "slug": "carlow",
+      "file": "data/cinemas/carlow.json",
+      "ok": true,
+      "films": 16,
+      "updated": "2026-10-24T17:51:23.327Z",
+      "checked": "2026-10-24T17:51:50.711Z"
+    },
+    {
+      "id": "clonmel",
+      "name": "IMC Clonmel",
+      "slug": "clonmel",
+      "file": "data/cinemas/clonmel.json",
+      "ok": true,
+      "films": 10,
+      "updated": "2026-10-24T17:51:50.722Z",
+      "checked": "2026-10-24T17:52:22.859Z"
+    },
+    {
+      "id": "dundalk",
+      "name": "IMC Dundalk",
+      "slug": "dundalk",
+      "file": "data/cinemas/dundalk.json",
+      "ok": true,
+      "films": 13,
+      "updated": "2026-10-24T17:52:22.861Z",
+      "checked": "2026-10-24T17:52:50.849Z"
+    },
+    {
+      "id": "dunlaoghaire",
+      "name": "IMC Dún Laoghaire",
+      "slug": "dun-laoghaire",
+      "file": "data/cinemas/dunlaoghaire.json",
+      "ok": true,
+      "films": 22,
+      "updated": "2026-10-24T17:52:50.852Z",
+      "checked": "2026-10-24T17:53:30.914Z"
+    },
+    {
+      "id": "galway",
+      "name": "IMC Galway",
+      "slug": "galway",
+      "file": "data/cinemas/galway.json",
+      "ok": false,
+      "films": 0,
+      "updated": "2026-10-24T17:53:30.918Z",
+      "checked": "2026-10-24T17:53:42.916Z"
+    },
+    {
+      "id": "oranmore",
+      "name": "IMC Oranmore",
+      "slug": "oranmore",
+      "file": "data/cinemas/oranmore.json",
+      "ok": false,
+      "films": 0,
+      "updated": "2026-10-24T17:53:42.917Z",
+      "checked": "2026-10-24T17:53:55.807Z"
+    },
+    {
+      "id": "kilkenny",
+      "name": "IMC Kilkenny",
+      "slug": "kilkenny",
+      "file": "data/cinemas/kilkenny.json",
+      "ok": false,
+      "films": 0,
+      "updated": "2026-10-24T17:53:55.814Z",
+      "checked": "2026-10-24T17:54:07.711Z"
+    },
+    {
+      "id": "mullingar",
+      "name": "IMC Mullingar",
+      "slug": "mullingar",
+      "file": "data/cinemas/mullingar.json",
+      "ok": true,
+      "films": 12,
+      "updated": "2026-10-24T17:54:07.712Z",
+      "checked": "2026-10-24T17:54:34.350Z"
+    },
+    {
+      "id": "santry",
+      "name": "IMC Santry",
+      "slug": "santry",
+      "file": "data/cinemas/santry.json",
+      "ok": true,
+      "films": 16,
+      "updated": "2026-10-24T17:54:34.352Z",
+      "checked": "2026-10-24T17:55:02.754Z"
+    },
+    {
+      "id": "savoy",
+      "name": "Savoy Cinema",
+      "slug": "savoy",
+      "file": "data/cinemas/savoy.json",
+      "ok": true,
+      "films": 17,
+      "updated": "2026-10-24T17:55:02.756Z",
+      "checked": "2026-10-24T17:55:30.116Z"
+    },
+    {
+      "id": "thurles",
+      "name": "IMC Thurles",
+      "slug": "thurles",
+      "file": "data/cinemas/thurles.json",
+      "ok": true,
+      "films": 13,
+      "updated": "2026-10-24T17:55:30.120Z",
+      "checked": "2026-10-24T17:56:00.186Z"
+    },
+    {
+      "id": "tullamore",
+      "name": "IMC Tullamore",
+      "slug": "tullamore",
+      "file": "data/cinemas/tullamore.json",
+      "ok": true,
+      "films": 12,
+      "updated": "2026-10-24T17:56:00.193Z",
+      "checked": "2026-10-24T17:56:33.395Z"
+    }
+  ]
+}
