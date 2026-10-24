@@ -386,7 +386,8 @@ for (const [key, url] of Object.entries(PAGES || {})) {
   if (key === "luxx") result.luxx = await withPosters(films);
 }
 // pages with no film cards: ask for the times directly, today and the next 7 days, plus advance bookings
-if (PAGES && !blocked && !result.today.length && !result.days.length) {
+if (PAGES && !blocked && !result.today.length && !result.days.some((d) => d.films.length)) {
+  result.days = [];
   const name = cin.ajaxName || CINEMA.replace(/-/g, " ");
   for (let i = 0; i < 8 && !blocked; i++) {
     try {
