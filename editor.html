@@ -690,12 +690,13 @@ function rowsText(rows){return(rows||[]).map(r=>[r.t,(r.times||[]).join(" "),r.c
 
 /* ---------- official rating symbols (BBFC / IFCO), imported from imc.ie ---------- */
 const RATING_IMG={};
-let ratingSys=(()=>{try{return localStorage.getItem("imc-rating-system")==="ifco"?"ifco":"bbfc"}catch(e){return"bbfc"}})();
+const RATING_KEY=(()=>{let k="enniskillen";try{k=localStorage.getItem("imc-hub-site")||k}catch(e){}return k==="enniskillen"?"imc-rating-system":"imc-rating-system-"+k})();
+let ratingSys=(()=>{let k="enniskillen",v=null;try{k=localStorage.getItem("imc-hub-site")||k;v=localStorage.getItem(RATING_KEY)}catch(e){}return v==="ifco"||v==="bbfc"?v:(["enniskillen","ballymena","banbridge","newtownards"].includes(k)?"bbfc":"ifco")})();
 const TO_IFCO={U:"G",PG:"PG","12A":"12A","12":"12A","15":"15A","18":"18",R18:"18",TBC:"TBC"},TO_BBFC={G:"U",PG:"PG","12A":"12A","12":"12A","15A":"15","16":"15","18":"18",TBC:"TBC"};
 function ratingPick(cert,fromSys,want){const R=(IMC&&IMC.ratings)||{};let c=String(cert||"").toUpperCase();if(!c)return null;fromSys=fromSys||"bbfc";want=want||ratingSys;
   if(fromSys!==want)c=(want==="ifco"?TO_IFCO:TO_BBFC)[c]||c;return{system:want,cert:c,src:(R[want]&&R[want][c])||null}}
 function ratingFor(cert,sys,want){const p=ratingPick(cert,sys,want);return p&&p.src}
-function setRatingSys(v){ratingSys=v==="ifco"?"ifco":"bbfc";try{localStorage.setItem("imc-rating-system",ratingSys)}catch(e){}ratingsRendered="";renderRatings();draw()}
+function setRatingSys(v){ratingSys=v==="ifco"?"ifco":"bbfc";try{localStorage.setItem(RATING_KEY,ratingSys)}catch(e){}ratingsRendered="";renderRatings();draw()}
 function ratingList(only){const R=(IMC&&IMC.ratings)||{},out=[];for(const sys of(only?[only]:["bbfc","ifco"]))for(const[cert,src]of Object.entries(R[sys]||{}))out.push({system:sys,cert,src});return out}
 function ratingImg(p){const i=p&&RATING_IMG[p];if(i instanceof HTMLImageElement&&i.complete)return i;if(p&&!i)loadRating(p);return null}
 async function loadRating(p){if(!p||RATING_IMG[p])return;RATING_IMG[p]="loading";try{const r=await fetch(asset(p));if(!r.ok)throw 0;const txt=await r.text();const u=URL.createObjectURL(new Blob([txt],{type:"image/svg+xml"}));const i=new Image();await new Promise((res,rej)=>{i.onload=res;i.onerror=rej;i.src=u});RATING_IMG[p]=i;draw();renderRatings()}catch(e){delete RATING_IMG[p]}}
@@ -1343,7 +1344,7 @@ async function boot(){buildMotionUI();
   if(document.fonts)Promise.all(faces.map(f=>document.fonts.load(f).catch(()=>{}))).then(()=>{draw();renderThumbs();syncLogo()});
   if(window.claude&&window.claude.use)window.claude.use("downloads").then(d=>{downloads=d}).catch(()=>{});
 }
-addEventListener("storage",e=>{if(e.key==="imc-rating-system")setRatingSys(e.newValue)});
+addEventListener("storage",e=>{if(e.key===RATING_KEY)setRatingSys(e.newValue)});
 addEventListener("pagehide",()=>{try{localStorage.setItem("imc-editor-state",clean(S))}catch(e){}});
 boot();
 })();

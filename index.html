@@ -908,12 +908,14 @@ function filmCard(f,mode){const d=firstDate(f),poster=asset(f.posterFile)||f.pos
   <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button><button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
   ${(f.book||f.sessions?.[0]?.book)?`<a class="btn small ghost" href="${esc(f.book||f.sessions[0].book)}" target="_blank" rel="noopener">Book ↗</a>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="_blank" rel="noopener">Trailer ↗</a>`:""}</div></div></article>`}
 const SVGURL={};
-let ratingSys=(()=>{try{return localStorage.getItem("imc-rating-system")==="ifco"?"ifco":"bbfc"}catch(e){return"bbfc"}})();
+let ratingSys=pickRating();
+/* BBFC or IFCO, remembered per cinema; Republic of Ireland cinemas default to IFCO */
+function pickRating(){let v=null;try{v=localStorage.getItem(sk("imc-rating-system"))}catch(e){}return v==="ifco"||v==="bbfc"?v:(S().ni?"bbfc":"ifco")}
 const TO_IFCO={U:"G",PG:"PG","12A":"12A","12":"12A","15":"15A","18":"18",R18:"18",TBC:"TBC"},TO_BBFC={G:"U",PG:"PG","12A":"12A","12":"12A","15A":"15","16":"15","18":"18",TBC:"TBC"};
 function certShown(f){const R=(IMC&&IMC.ratings)||{},from=f.certSystem||"bbfc";let c=String(f.cert||"").toUpperCase();if(!c)return null;if(from!==ratingSys)c=(ratingSys==="ifco"?TO_IFCO:TO_BBFC)[c]||c;return{cert:c,src:(R[ratingSys]&&R[ratingSys][c])||null}}
 function ratingSwitch(){return`<div class="filters ratingsw" role="group" aria-label="Rating symbols"><button data-hrsys="bbfc" aria-pressed="${ratingSys==="bbfc"}">BBFC</button><button data-hrsys="ifco" aria-pressed="${ratingSys==="ifco"}">IFCO</button></div>`}
-document.addEventListener("click",e=>{const b=e.target.closest("[data-hrsys]");if(!b)return;ratingSys=b.dataset.hrsys;try{localStorage.setItem("imc-rating-system",ratingSys)}catch(err){}renderToday();renderWhatsOn();toast(ratingSys==="ifco"?"Showing IFCO ratings. IFCO certificates can differ from BBFC, so check each film":"Showing BBFC ratings")});
-addEventListener("storage",e=>{if(e.key==="imc-rating-system"){ratingSys=e.newValue==="ifco"?"ifco":"bbfc";renderToday();renderWhatsOn()}});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-hrsys]");if(!b)return;ratingSys=b.dataset.hrsys;try{localStorage.setItem(sk("imc-rating-system"),ratingSys)}catch(err){}renderToday();renderWhatsOn();toast(ratingSys==="ifco"?"Showing IFCO ratings. IFCO certificates can differ from BBFC, so check each film":"Showing BBFC ratings")});
+addEventListener("storage",e=>{if(e.key===sk("imc-rating-system")){ratingSys=e.newValue==="ifco"?"ifco":"bbfc";renderToday();renderWhatsOn()}});
 async function hydrateSvgs(root){for(const im of (root||document).querySelectorAll("img[data-svg]")){const p=im.dataset.svg;try{if(!SVGURL[p]){SVGURL[p]=(async()=>{const r=await fetch(asset(p));if(!r.ok)throw 0;return URL.createObjectURL(new Blob([await r.text()],{type:"image/svg+xml"}))})()}im.src=await SVGURL[p]}catch(e){im.replaceWith(Object.assign(document.createElement("span"),{className:"cert",textContent:im.alt.replace("Rated ","")}))}}}
 let FILMKEYS=new Map();
 function keyed(list){return list.map(f=>{const k=(f.title+"|"+(f.luxx?1:0)).toLowerCase();FILMKEYS.set(k,f);return{...f,_k:k}})}
@@ -1005,7 +1007,7 @@ function fillSitePicker(){const sel=$("#sitesel");if(!sel)return;const have=new 
 function siteText(){const x=S();$$(".sitename").forEach(e=>e.textContent=x.name);$("#brandsite").textContent=x.name.startsWith("IMC ")?x.town:x.name;document.title=x.name+" Hub";
   const im=document.querySelector('a[href*="imdb.com/calendar"]');if(im){im.href="https://www.imdb.com/calendar/?region="+(x.ni?"GB":"IE");im.textContent="IMDb "+(x.ni?"UK":"Ireland")+" calendar ↗"}}
 $("#sitesel").addEventListener("change",async e=>{site=e.target.value;try{localStorage.setItem(SITE_LS,site)}catch(err){}
-  scope();siteText();renderPlays();startNew();IMC=null;imcTried=false;lastShowKey="";renderAll();renderToday();renderWhatsOn();if(view==="deals")renderDeals();toast("Switched to "+S().name);
+  scope();siteText();renderPlays();startNew();ratingSys=pickRating();IMC=null;imcTried=false;lastShowKey="";renderAll();renderToday();renderWhatsOn();if(view==="deals")renderDeals();toast("Switched to "+S().name);
   await loadImc();imcTried=true;renderToday();renderWhatsOn()});
 fillSitePicker();siteText();
 
