@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "17 6,12,17 * * *"   # three times a day (UTC); gentle on imc.ie
   workflow_dispatch:
+    inputs:
+      only:
+        description: "Cinemas to refresh, comma-separated (e.g. galway,santry). Leave empty for all."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -23,6 +28,8 @@ jobs:
           node-version: 20
       - run: npm install --no-save --no-package-lock cheerio@1.0.0
       - run: node tools/import-imc.mjs
+        env:
+          ONLY: ${{ github.event.inputs.only }}
       - name: Commit updated listings
         run: |
           git config user.name "imc-importer"
