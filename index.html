@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Plan, design, caption and track social media ads for IMC Cinema Enniskillen.">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>IMC Enniskillen Ad Studio</title>
+<title>IMC Enniskillen Hub</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -37,7 +37,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1
 .brand{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:center}
 .brand img{grid-row:span 2;width:46px;height:46px;display:block}
 .brand::after{content:"";grid-column:1/-1;height:4px;border-radius:2px;background:var(--stripe);margin-top:12px}
-.brand b{font-family:var(--f-display);font-weight:900;font-size:30px;letter-spacing:.02em;line-height:.95;text-transform:uppercase}
+.brand b{font-family:var(--f-display);font-weight:900;font-size:26px;letter-spacing:.02em;line-height:.95;text-transform:uppercase}
 .brand b span{color:var(--velvet)}
 .brand small{font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
 nav{display:flex;flex-direction:column;gap:4px}
@@ -165,6 +165,45 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .mix div{border:1px solid var(--line);border-radius:8px;padding:12px}
 .mix b{font-family:var(--f-display);font-size:26px;font-weight:800;display:block}
 .empty{color:var(--muted);padding:24px 0;text-align:center}
+/* hub: films, deals */
+.ph{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.row-btns{display:flex;gap:6px;flex-wrap:wrap}
+.films{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.films.compact{grid-template-columns:1fr}
+.film{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--panel)}
+.fposter{width:96px;aspect-ratio:2/3;border-radius:8px;overflow:hidden;background:linear-gradient(160deg,#1fa0de,#3a2560)}
+.fposter img{width:100%;height:100%;object-fit:cover;display:block}
+.fbody{min-width:0;display:flex;flex-direction:column;gap:8px}
+.fbody h3{font-family:var(--f-display);font-weight:800;font-size:22px;line-height:1.05;text-transform:uppercase;text-wrap:balance;margin:0}
+.fmeta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--muted)}
+.fmeta .cert{font-family:var(--f-mono);font-weight:600;border:1.5px solid currentColor;border-radius:5px;padding:0 5px;color:var(--ink)}
+.fmeta .lux{font-family:"Playfair Display",Georgia,serif;font-weight:700;letter-spacing:.18em;color:#b8860b}
+.fmeta .sens{color:var(--velvet);font-weight:700}
+.ftimes{display:flex;gap:6px;flex-wrap:wrap}
+.ftimes span{font-family:var(--f-mono);font-size:13px;font-weight:600;padding:3px 8px;border-radius:6px;background:var(--chip);font-variant-numeric:tabular-nums}
+.opens{font-weight:700;color:var(--velvet);font-size:14px}
+.facts{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.facts .btn{text-decoration:none}
+.dayhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:22px 0 10px}
+.nodata p{color:var(--muted);max-width:64ch}
+.dealquick{display:flex;flex-direction:column}
+.dq{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:8px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.dq:first-child{border-top:0}
+.dq span{font-family:var(--f-mono);font-size:13px}.dq em{color:var(--warn);font-style:normal;font-family:var(--f-body)}
+.banners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.banners button{all:unset;cursor:pointer;border-radius:8px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10}
+.banners img{width:100%;height:100%;object-fit:cover;display:block}
+.deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
+.deal{display:flex;flex-direction:column;gap:12px;border-top:4px solid transparent;border-image:var(--stripe) 1}
+.dealgrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr);gap:10px}
+.flabel{font-size:12px;font-weight:700;color:var(--muted)}
+.steppers{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px;overflow:hidden;font-size:13px}
+.stepper b{padding:0 8px;font-weight:600}
+.stepper button{all:unset;cursor:pointer;width:28px;height:28px;display:grid;place-items:center;font-weight:700;color:var(--velvet)}
+.stepper button:hover{background:var(--chip)}
+.warnline{margin:0;font-size:13px;color:var(--warn);font-weight:600}
+@media (max-width:820px){.film{grid-template-columns:72px minmax(0,1fr)}.fposter{width:72px}.deals{grid-template-columns:1fr}.dealgrid{grid-template-columns:1fr 1fr}.dealgrid .field:first-child{grid-column:1/-1}.dq{grid-template-columns:minmax(0,1fr) auto;}.banners{grid-template-columns:repeat(2,minmax(0,1fr))}}
 #top .row{grid-template-columns:48px minmax(0,1fr)}#top .thumb{width:48px;height:48px}#top .act{grid-column:1/-1;justify-content:flex-start}
 .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
 .modal{position:fixed;inset:0;background:rgba(10,12,18,.55);display:grid;place-items:center;z-index:30;padding:16px}
@@ -197,23 +236,51 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <body>
 <div class="app">
   <aside class="rail">
-    <div class="brand"><img src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Ad</span> Studio</b><small>Enniskillen · 7 screens</small></div>
+    <div class="brand"><img src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Enniskillen</span></b><small>Marketing hub · 7 screens</small></div>
     <nav id="nav">
-      <button data-view="dashboard">Dashboard</button>
+      <button data-view="today">Today</button>
+      <button data-view="whatson">What's on</button>
+      <button data-view="deals">Deals</button>
+      <button data-view="dashboard">Planner</button>
       <button data-view="studio">Create ad</button>
       <button data-view="releases">Upcoming releases</button>
       <button data-view="library">Posts <span class="count" id="cnt"></span></button>
       <button data-view="playbook">Go-viral playbook</button>
-      <a class="navlink" href="editor.html">Photo editor ↗</a>
+      <a class="navlink" href="editor.html" target="_blank" rel="noopener">Photo &amp; video editor ↗</a>
     </nav>
     <div class="railfoot"><span class="sync"><span class="dot" id="syncdot"></span><span id="synctxt">Connecting…</span></span></div>
   </aside>
 
   <main>
-    <!-- DASHBOARD -->
-    <section id="v-dashboard">
+    <!-- TODAY -->
+    <section id="v-today">
       <div class="head">
-        <div><h1>This week at the IMC</h1><p>Your content plan for IMC Enniskillen. Ideas, drafts, scheduled posts and results, all in one place.</p></div>
+        <div><h1>Today at IMC Enniskillen</h1><p><span id="todayDate"></span> · <span id="todayStamp"></span></p></div>
+        <a class="btn primary" href="editor.html" target="_blank" rel="noopener" style="text-decoration:none">Open the editor ↗</a>
+      </div>
+      <div id="todayBody"></div>
+    </section>
+
+    <!-- WHAT'S ON -->
+    <section id="v-whatson" hidden>
+      <div class="head"><div><h1>What's on</h1><p>Straight from imc.ie. Every film can become a post, a Story or a caption in one click. <span id="woStamp"></span></p></div></div>
+      <div class="filters" id="woTabs" style="margin-bottom:14px"></div>
+      <div id="woBody"></div>
+    </section>
+
+    <!-- DEALS -->
+    <section id="v-deals" hidden>
+      <div class="head">
+        <div><h1>Deals</h1><p>Your kiosk deals. Set the name, what's included and the price, then make a still or animated graphic. Contents start as placeholders, so check them against the kiosk menu.</p></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="resetDeals">Reset to defaults</button><button class="btn primary" id="addDeal">+ Add a deal</button></div>
+      </div>
+      <div id="dealList" class="deals"></div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="v-dashboard" hidden>
+      <div class="head">
+        <div><h1>Planner</h1><p>Your content plan for IMC Enniskillen. Ideas, drafts, scheduled posts and results, all in one place.</p></div>
         <button class="btn primary" data-go="studio">+ New ad</button>
       </div>
       <div class="grid stats" id="stats"></div>
@@ -439,7 +506,7 @@ async function remove(id){
 const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
 /* ---------- navigation ---------- */
-function go(v){view=v;$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));if(v==="studio")drawPoster();window.scrollTo(0,0)}
+function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="deals")renderDeals();if(v==="today")renderToday();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));if(v==="studio")drawPoster();window.scrollTo(0,0)}
 $("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view)});
 document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g){if(g.dataset.go==="studio"&&!g.dataset.keep)startNew();go(g.dataset.go)}});
 
@@ -650,13 +717,14 @@ $("#plays").addEventListener("click",e=>{const b=e.target.closest("[data-play]")
   const t=TPL[pr.type];cur={...blank(),kicker:t.kicker,cta:t.cta,theme:t.theme,...pr,status:"idea"};cur.caption=capFor(cur);go("studio");fillForm()});
 
 /* ---------- backup ---------- */
-$("#bk-out").onclick=()=>{const data=JSON.stringify({app:"imc-ad-studio",version:1,exported:new Date().toISOString(),posts,programme},null,2);
+$("#bk-out").onclick=()=>{const data=JSON.stringify({app:"imc-ad-studio",version:2,exported:new Date().toISOString(),posts,programme,deals:getDeals()},null,2);
   const b=new Blob([data],{type:"application/json"}),name="imc-ad-studio-backup-"+isoDay(new Date())+".json";
   if(downloads){downloads.save({filename:name,data:b}).catch(()=>toast("Export cancelled"));return}
   const u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast("Backup exported")};
 $("#bk-in").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=async()=>{
   try{const d=JSON.parse(r.result);if(!Array.isArray(d.posts))throw 0;
     let n=0;for(const p of d.posts){if(p&&p.id){await persist(p);n++}}
+    if(Array.isArray(d.deals)&&d.deals.length){putDeals(d.deals);renderDeals()}
     if(d.programme&&typeof d.programme==="object"){programme={...programme,...d.programme};
       if(progCol){for(const[k,v] of Object.entries(d.programme))await progCol.doc(k).set({state:v,updatedAt:Date.now()})}
       else{try{localStorage.setItem(PROG_LS,JSON.stringify(programme))}catch(err){}}}
@@ -749,8 +817,114 @@ $("#rellist").addEventListener("click",async e=>{
 let siteLogo=null;
 (async()=>{if(!location.protocol.startsWith("http"))return;for(const f of["imc-logo.svg","imc-logo.png"]){try{const r=await fetch(f,{cache:"no-cache"});if(r.ok&&/image/.test(r.headers.get("content-type")||"")){const u=URL.createObjectURL(await r.blob()),i=new Image();i.onload=()=>{siteLogo=i;drawPoster();drawThumbs()};i.src=u;return}}catch(e){}}})();
 
+/* ---------- imc.ie data (imported by the GitHub Action into data/imc.json) ---------- */
+const RAW="https://raw.githubusercontent.com/popcorn483/imc/main/";
+let IMC=null,woTab="today",imcTried=false;
+async function loadImc(){for(const u of[RAW+"data/imc.json?ts="+Date.now(),"data/imc.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();j._base=u.startsWith(RAW)?RAW:"";IMC=j;return j}}catch(e){}}return null}
+const asset=p=>!p?null:/^https?:/.test(p)?p:((IMC&&IMC._base)||"")+p;
+const todayIso=()=>isoDay(new Date());
+function allFilms(){if(!IMC)return[];const m=new Map();
+  for(const [src,list] of [["today",IMC.today||[]],["soon",IMC.comingSoon||[]],["kids",IMC.kidsClub||[]],["luxx",IMC.luxx||[]],...(IMC.days||[]).map(d=>["day",d.films||[]])])
+    for(const f of list){const k=(f.title||"").toLowerCase()+(f.luxx?"|luxx":"");if(!f.title)continue;const p=m.get(k)||{...f,sources:new Set(),sessions:[]};p.sources.add(src);for(const s of f.sessions||[])if(!p.sessions.some(x=>x.date===s.date&&x.time===s.time))p.sessions.push(s);for(const key of["poster","posterFile","cert","runtime","trailer","synopsis","releaseDate","release"])p[key]=p[key]||f[key];m.set(k,p)}
+  return[...m.values()]}
+function filmsOn(date){const out=[];for(const f of allFilms()){const t=f.sessions.filter(s=>s.date===date).map(s=>s.time).sort();if(t.length)out.push({...f,times:t})}
+  if(date===todayIso())for(const f of IMC?.today||[]){if(!out.some(o=>o.title===f.title&&!!o.luxx===!!f.luxx)&&(f.times||[]).length)out.push({...f})}
+  return out.sort((a,b)=>(a.times[0]||"").localeCompare(b.times[0]||""))}
+const fmtLong=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"});
+const fmtShort=d=>d?new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}):"";
+function firstDate(f){const ds=f.sessions.map(s=>s.date).filter(Boolean).sort();return f.releaseDate&&(!ds[0]||f.releaseDate<ds[0])?f.releaseDate:ds[0]||f.releaseDate||f.date||null}
+
+/* ---------- open the photo editor with something ready ---------- */
+function openEditor(h){try{localStorage.setItem("imc-handoff",JSON.stringify({...h,at:Date.now()}))}catch(e){toast("Couldn't pass this to the editor. Browser storage is blocked.");return}
+  const a=document.createElement("a");a.href="editor.html";a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove()}
+function filmPayload(f,mode){const d=firstDate(f);return{title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert&&f.cert!=="TBC"?f.cert:"",times:mode==="soon"?[]:(f.times||[]),dateLabel:d?new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}).toUpperCase():"SOON",luxx:!!f.luxx}}
+function makeFilm(f,mode,fmt){openEditor({kind:"film",mode,fmt,film:filmPayload(f,mode)})}
+function makeTimes(date,fmt){const films=filmsOn(date);if(!films.length){toast("No film times for that day yet");return}
+  openEditor({kind:"listing",fmt,heading:date===todayIso()?"Today at IMC Enniskillen":"At IMC Enniskillen",sub:fmtLong(date),rows:films.map(f=>({t:f.title,times:f.times,cert:f.cert&&f.cert!=="TBC"?f.cert:"",luxx:!!f.luxx}))})}
+function writeFilmPost(f,mode){startNew();const d=firstDate(f);
+  Object.assign(cur,{type:mode==="soon"?"soon":mode==="kids"?"kids":"now",kicker:TPL[mode==="soon"?"soon":mode==="kids"?"kids":"now"].kicker,headline:f.title,sub:f.luxx?"In LUXX luxury recliners":(f.synopsis||"").split(/(?<=\.)\s/)[0].slice(0,88),
+    details:mode==="soon"?("Opens "+fmtShort(d)):((f.times||[]).slice(0,5).join(" · ")),cta:"Book at imc.ie",status:"draft",tags:BASE_TAGS+" #"+f.title.replace(/[^A-Za-z0-9]/g,"")});
+  cur.caption=capFor(cur);fillForm();go("studio");toast("Post drafted. Check it, then save")}
+
+/* ---------- film cards ---------- */
+function filmCard(f,mode){const d=firstDate(f),poster=asset(f.posterFile)||f.poster;
+  const when=mode==="soon"?`<span class="opens">Opens ${esc(fmtShort(d))}</span>`:`<div class="ftimes">${(f.times||[]).map(t=>`<span>${t}</span>`).join("")}</div>`;
+  return`<article class="film"><div class="fposter">${poster?`<img src="${esc(poster)}" alt="${esc(f.title)} poster" loading="lazy">`:""}</div>
+  <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${f.cert?`<span class="cert">${esc(f.cert)}</span>`:""}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
+  ${when}
+  <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button><button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
+  ${(f.book||f.sessions?.[0]?.book)?`<a class="btn small ghost" href="${esc(f.book||f.sessions[0].book)}" target="_blank" rel="noopener">Book ↗</a>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="_blank" rel="noopener">Trailer ↗</a>`:""}</div></div></article>`}
+let FILMKEYS=new Map();
+function keyed(list){return list.map(f=>{const k=(f.title+"|"+(f.luxx?1:0)).toLowerCase();FILMKEYS.set(k,f);return{...f,_k:k}})}
+document.addEventListener("click",e=>{const m=e.target.closest("[data-film]");if(m){const f=FILMKEYS.get(m.dataset.film);if(f)makeFilm(f,m.dataset.mode,m.dataset.fmt);return}
+  const w=e.target.closest("[data-write]");if(w){const f=FILMKEYS.get(w.dataset.write);if(f)writeFilmPost(f,w.dataset.mode)}});
+
+function noData(){if(!imcTried)return`<div class="panel nodata"><p>Loading the latest listings from imc.ie…</p></div>`;return`<div class="panel nodata"><h2>Waiting for imc.ie</h2><p>Listings are imported from imc.ie every 3 hours by this site's GitHub importer. If this message stays, the importer hasn't run yet or imc.ie was down. Open the repo's <b>Actions</b> tab to run "Import imc.ie listings" now.</p></div>`}
+function stamp(){return IMC&&IMC.updated?`Updated from imc.ie ${new Date(IMC.updated).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"})}`:""}
+
+/* ---------- Today ---------- */
+function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").textContent=fmtLong(todayIso());$("#todayStamp").textContent=stamp();
+  if(!IMC){el.innerHTML=noData();return}
+  const films=keyed(filmsOn(todayIso())),soon=keyed(allFilms().filter(f=>{const d=firstDate(f);return d&&d>todayIso()}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))).slice(0,6));
+  el.innerHTML=`<div class="panel"><div class="ph"><h2>Showing today</h2><div class="row-btns"><button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button></div></div>
+    ${films.length?`<div class="films">${films.map(f=>filmCard(f,f.sources?.has("kids")&&!f.sources?.has("today")?"kids":f.luxx?"luxx":"now")).join("")}</div>`:`<p class="tip">No times for today in the latest import. ${IMC.today&&IMC.today.length===0?"The imc.ie film-times page may have been unavailable; the next import runs within 3 hours.":""}</p>`}</div>
+    <div class="grid two" style="margin-top:16px"><div class="panel"><div class="ph"><h2>Opening soon</h2><button class="btn small ghost" data-wo="soon">All coming soon →</button></div><div class="films compact">${soon.map(f=>filmCard(f,"soon")).join("")||'<p class="tip">Nothing announced yet.</p>'}</div></div>
+    <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
+    ${(IMC.banners||[]).length?`<h2 style="margin-top:18px">imc.ie graphics</h2><div class="banners">${IMC.banners.slice(0,6).map(b=>`<button data-banner="${esc(asset(b.file))}" title="Open in the photo editor"><img src="${esc(asset(b.file))}" alt="imc.ie banner" loading="lazy"></button>`).join("")}</div>`:""}</div></div>`}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-times]");if(t){makeTimes(todayIso(),t.dataset.times);return}
+  const b=e.target.closest("[data-banner]");if(b){openEditor({kind:"image",url:b.dataset.banner});return}
+  const w=e.target.closest("[data-wo]");if(w){woTab=w.dataset.wo;go("whatson")}});
+
+/* ---------- What's on ---------- */
+const WOTABS=[["today","Today"],["week","Next 7 days"],["soon","Coming soon"],["kids","Kids Club"],["luxx","LUXX"],["relaxed","Relaxed screenings"]];
+function renderWhatsOn(){const el=$("#woBody");if(!el)return;$("#woStamp").textContent=stamp();
+  $("#woTabs").innerHTML=WOTABS.map(([k,n])=>`<button data-wot="${k}" aria-pressed="${woTab===k}">${n}</button>`).join("");
+  if(!IMC){el.innerHTML=noData();return}
+  const all=allFilms(),T=todayIso();let html="";
+  if(woTab==="today"){const f=keyed(filmsOn(T));html=f.length?`<div class="films">${f.map(x=>filmCard(x,x.luxx?"luxx":"now")).join("")}</div>`:'<p class="tip">No times for today in the latest import.</p>'}
+  else if(woTab==="week"){for(let i=0;i<7;i++){const d=addDays(T,i),f=keyed(filmsOn(d));if(!f.length)continue;html+=`<div class="dayhead"><h2>${esc(fmtLong(d))}</h2><div class="row-btns"><button class="btn small" data-daytimes="${d}" data-fmt="square">Times graphic</button><button class="btn small" data-daytimes="${d}" data-fmt="story">Story</button></div></div><div class="films">${f.map(x=>filmCard(x,x.luxx?"luxx":"now")).join("")}</div>`}html=html||'<p class="tip">No sessions found for the next 7 days.</p>'}
+  else if(woTab==="soon"){const f=keyed(all.filter(x=>{const d=firstDate(x);return d&&d>T}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))));html=f.length?`<div class="films">${f.map(x=>filmCard(x,"soon")).join("")}</div>`:'<p class="tip">Nothing announced yet.</p>'}
+  else{const pick=woTab==="kids"?x=>x.sources.has("kids"):woTab==="luxx"?x=>x.luxx:x=>x.sensory;const f=keyed(all.filter(pick).map(x=>{const up=x.sessions.filter(s=>s.date>=T).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));return{...x,times:up.filter(s=>s.date===up[0]?.date).map(s=>s.time),nextDate:up[0]?.date}}));
+    html=f.length?`<div class="films">${f.map(x=>filmCard({...x,times:x.times.length?[fmtShort(x.nextDate),...x.times]:[]},woTab==="kids"?"kids":woTab==="luxx"?"luxx":"now")).join("")}</div>`:'<p class="tip">None listed right now.</p>'}
+  el.innerHTML=html}
+$("#woTabs").addEventListener("click",e=>{const b=e.target.closest("[data-wot]");if(b){woTab=b.dataset.wot;renderWhatsOn()}});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-daytimes]");if(b)makeTimes(b.dataset.daytimes,b.dataset.fmt)});
+
+/* ---------- Deals ---------- */
+const DEFAULT_DEALS=[
+  {id:"kids",name:"Kids Tray",items:["Kids popcorn","Kids drink","Sweet treat"],price:"",was:"",small:"",products:["tray"]},
+  {id:"share",name:"Share Combo",items:["Large sharing popcorn","2 regular drinks"],price:"",was:"",small:"",products:["popcorn","drink","drink"]},
+  {id:"large",name:"Large Combo",items:["Large popcorn","Large drink"],price:"",was:"",small:"",products:["popcorn","drink"]},
+  {id:"medium",name:"Medium Combo",items:["Medium popcorn","Medium drink"],price:"",was:"",small:"",products:["popcorn","drink"]}];
+const PRODUCT_NAMES={popcorn:"Popcorn",drink:"Drink",nachos:"Nachos",hotdog:"Hot dog",sweets:"Sweets",tray:"Kids tray"};
+function getDeals(){try{const d=JSON.parse(localStorage.getItem("imc-deals")||"null");if(Array.isArray(d)&&d.length)return d}catch(e){}return JSON.parse(JSON.stringify(DEFAULT_DEALS))}
+function putDeals(d){try{localStorage.setItem("imc-deals",JSON.stringify(d))}catch(e){toast("Couldn't save deals. Browser storage is blocked.")}}
+function renderDeals(){const el=$("#dealList");if(!el)return;const ds=getDeals();
+  el.innerHTML=ds.map((d,i)=>{const cnt=k=>(d.products||[]).filter(p=>p===k).length;return`<div class="panel deal" data-di="${i}">
+    <div class="dealgrid"><div class="field"><label for="dn${i}">Deal name</label><input id="dn${i}" data-df="name" value="${esc(d.name)}"></div>
+    <div class="field"><label for="dp${i}">Price</label><input id="dp${i}" data-df="price" value="${esc(d.price)}" placeholder="£0.00"></div>
+    <div class="field"><label for="dw${i}">Was (optional)</label><input id="dw${i}" data-df="was" value="${esc(d.was)}" placeholder="£0.00"></div></div>
+    <div class="field"><label for="di${i}">What's included (one per line)</label><textarea id="di${i}" data-df="items" rows="3">${esc((d.items||[]).join("\n"))}</textarea></div>
+    <div class="field"><label for="ds${i}">Small print (optional)</label><input id="ds${i}" data-df="small" value="${esc(d.small||"")}" placeholder="e.g. Available every day · while stocks last"></div>
+    <div class="field"><span class="flabel">Pictures on the graphic</span><div class="steppers">${Object.entries(PRODUCT_NAMES).map(([k,n])=>`<span class="stepper"><button data-pm="${k}" aria-label="Remove ${n}">−</button><b>${n}${cnt(k)?` ×${cnt(k)}`:""}</b><button data-pp="${k}" aria-label="Add ${n}">+</button></span>`).join("")}</div></div>
+    ${d.price?"":'<p class="warnline">Set the price before posting. The graphic shows £X.XX until you do.</p>'}
+    <div class="facts"><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated post</button><button class="btn small" data-dealmake="${i}" data-anim="0">Still post</button><button class="btn small" data-dealmake="${i}" data-anim="1" data-fmt="story">Animated Story</button><button class="btn small" data-dealpost="${i}">Write caption</button><button class="btn small danger" data-dealdel="${i}">Delete</button></div></div>`}).join("")}
+$("#dealList").addEventListener("input",e=>{const f=e.target.closest("[data-df]"),card=e.target.closest("[data-di]");if(!f||!card)return;const ds=getDeals(),d=ds[+card.dataset.di],k=f.dataset.df;d[k]=k==="items"?f.value.split("\n").map(x=>x.trim()).filter(Boolean):f.value;putDeals(ds)});
+$("#dealList").addEventListener("change",()=>{renderDeals();renderToday()});
+$("#dealList").addEventListener("click",e=>{const card=e.target.closest("[data-di]");if(!card)return;const ds=getDeals(),i=+card.dataset.di,d=ds[i];
+  const pp=e.target.closest("[data-pp]"),pm=e.target.closest("[data-pm]");
+  if(pp){d.products=[...(d.products||[]),pp.dataset.pp].slice(0,4);putDeals(ds);renderDeals();return}
+  if(pm){const a=d.products||[],j=a.lastIndexOf(pm.dataset.pm);if(j>=0)a.splice(j,1);d.products=a;putDeals(ds);renderDeals();return}
+  const del=e.target.closest("[data-dealdel]");if(del){ds.splice(i,1);putDeals(ds.length?ds:[]);if(!ds.length)localStorage.removeItem("imc-deals");renderDeals();renderToday();toast("Deal deleted")}
+  const wp=e.target.closest("[data-dealpost]");if(wp){startNew();Object.assign(cur,{type:"offer",kicker:"THIS WEEK AT THE IMC",headline:d.name,sub:(d.items||[]).join(" + "),price:d.price||"",details:d.small||"",cta:"Grab it at the kiosk",theme:"velvet",status:"draft",tags:BASE_TAGS+" #CinemaSnacks"});cur.caption=capFor(cur);fillForm();go("studio");toast("Caption drafted")}});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-dealmake]");if(!b)return;const d=getDeals()[+b.dataset.dealmake];if(d)openEditor({kind:"deal",deal:d,animated:b.dataset.anim==="1",fmt:b.dataset.fmt||"square"})});
+$("#addDeal").onclick=()=>{const ds=getDeals();ds.push({id:newId(),name:"New deal",items:["Popcorn","Drink"],price:"",was:"",small:"",products:["popcorn","drink"]});putDeals(ds);renderDeals();toast("Deal added")};
+$("#resetDeals").onclick=()=>{try{localStorage.removeItem("imc-deals")}catch(e){}renderDeals();renderToday();toast("Deals reset")};
+
+loadImc().finally(()=>{imcTried=true;renderToday();renderWhatsOn()});
+
 /* ---------- boot ---------- */
-go("dashboard");fillForm();renderAll();
+go("today");fillForm();renderAll();renderDeals();
 (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>{drawPoster();drawThumbs()});
 Promise.all(["900 40px 'Big Shoulders Display'","500 20px 'IBM Plex Mono'","600 20px Figtree"].map(f=>document.fonts?.load(f).catch(()=>{}))).then(()=>{drawPoster();drawThumbs()});
 connect();
