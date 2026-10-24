@@ -1,1 +1,509 @@
-{"cinema":"IMC Enniskillen","updated":null,"today":[],"days":[],"comingSoon":[],"kidsClub":[],"luxx":[],"banners":[],"log":["Waiting for the first import from imc.ie"]}
+{
+  "cinema": "IMC Enniskillen",
+  "source": "https://imc.ie/enniskillen",
+  "updated": "2026-10-24T07:03:31.003Z",
+  "today": [],
+  "days": [],
+  "comingSoon": [
+    {
+      "title": "Facebook",
+      "poster": null,
+      "cert": null,
+      "runtime": null,
+      "times": [],
+      "url": "https://imc.ie/film-times/enniskillen/today/",
+      "book": "https://imc.ie/advance-bookings/enniskillen/",
+      "luxx": false,
+      "date": null,
+      "slug": "facebook",
+      "posterFile": null
+    },
+    {
+      "title": "IMC Logo",
+      "poster": null,
+      "cert": null,
+      "runtime": null,
+      "times": [],
+      "url": "https://imc.ie/home/enniskillen/",
+      "book": "https://imc.ie/advance-bookings/enniskillen/",
+      "luxx": true,
+      "date": null,
+      "slug": "imc-logo",
+      "posterFile": null
+    },
+    {
+      "title": "André Rieu's Christmas Concert: Let It Snow",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112259.jpg",
+      "cert": null,
+      "runtime": 165,
+      "times": [
+        "15:00",
+        "19:30"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=117711",
+      "luxx": false,
+      "date": "2026-12-05",
+      "slug": "andr-rieu-s-christmas-concert-let-it-snow",
+      "posterFile": "data/posters/andr-rieu-s-christmas-concert-let-it-snow.jpg"
+    },
+    {
+      "title": "poster",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112259.jpg",
+      "cert": null,
+      "runtime": null,
+      "times": [],
+      "url": null,
+      "book": null,
+      "luxx": false,
+      "date": null,
+      "slug": "poster",
+      "posterFile": "data/posters/poster.jpg"
+    },
+    {
+      "title": "Arnie and Barney",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": null,
+      "runtime": 77,
+      "times": [
+        "12:45",
+        "13:30",
+        "15:15",
+        "15:45"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120801",
+      "luxx": false,
+      "date": "2026-10-24",
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg"
+    },
+    {
+      "title": "Avengers: Doomsday",
+      "poster": "https://imc.ie/wp-content/uploads/posters/105952.jpg",
+      "cert": null,
+      "runtime": 165,
+      "times": [
+        "12:30",
+        "16:00",
+        "19:30"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120365",
+      "luxx": false,
+      "date": "2026-12-16",
+      "slug": "avengers-doomsday",
+      "posterFile": "data/posters/avengers-doomsday.jpg"
+    },
+    {
+      "title": "Avengers: Doomsday LUXX",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115392.jpg",
+      "cert": null,
+      "runtime": 165,
+      "times": [
+        "12:30",
+        "13:15",
+        "16:45",
+        "20:15"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120364",
+      "luxx": true,
+      "date": "2026-12-16",
+      "slug": "avengers-doomsday-luxx",
+      "posterFile": "data/posters/avengers-doomsday-luxx.jpg"
+    },
+    {
+      "title": "Dune: Part Three",
+      "poster": "https://imc.ie/wp-content/uploads/posters/105951.jpg",
+      "cert": null,
+      "runtime": 150,
+      "times": [
+        "13:40",
+        "16:55",
+        "19:10",
+        "20:10"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120814",
+      "luxx": false,
+      "date": "2026-12-15",
+      "slug": "dune-part-three",
+      "posterFile": "data/posters/dune-part-three.jpg"
+    },
+    {
+      "title": "EBENEZER",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+      "cert": null,
+      "runtime": 120,
+      "times": [
+        "13:00",
+        "15:30",
+        "18:00",
+        "20:30"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120820",
+      "luxx": false,
+      "date": "2026-11-13",
+      "slug": "ebenezer",
+      "posterFile": "data/posters/ebenezer.jpg"
+    },
+    {
+      "title": "Elf - 2003",
+      "poster": "https://imc.ie/wp-content/uploads/posters/44796.jpg",
+      "cert": null,
+      "runtime": 92,
+      "times": [
+        "17:00"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120603",
+      "luxx": false,
+      "date": "2026-12-19",
+      "slug": "elf-2003",
+      "posterFile": "data/posters/elf-2003.jpg"
+    },
+    {
+      "title": "Focker-In-Law",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+      "cert": null,
+      "runtime": 106,
+      "times": [
+        "18:15",
+        "20:45"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120874",
+      "luxx": false,
+      "date": "2026-11-25",
+      "slug": "focker-in-law",
+      "posterFile": "data/posters/focker-in-law.jpg"
+    },
+    {
+      "title": "Forgotten Island - Fancy Dress",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115998.jpg",
+      "cert": null,
+      "runtime": 109,
+      "times": [
+        "10:30"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120604",
+      "luxx": false,
+      "date": "2026-10-31",
+      "slug": "forgotten-island-fancy-dress",
+      "posterFile": "data/posters/forgotten-island-fancy-dress.jpg"
+    },
+    {
+      "title": "Godzilla Minus Zero",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
+      "cert": null,
+      "runtime": 135,
+      "times": [
+        "17:30",
+        "20:15",
+        "20:30"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120837",
+      "luxx": false,
+      "date": "2026-11-05",
+      "slug": "godzilla-minus-zero",
+      "posterFile": "data/posters/godzilla-minus-zero.jpg"
+    },
+    {
+      "title": "Home Alone",
+      "poster": "https://imc.ie/wp-content/uploads/posters/568.jpg",
+      "cert": null,
+      "runtime": 103,
+      "times": [
+        "17:00"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120601",
+      "luxx": false,
+      "date": "2026-12-05",
+      "slug": "home-alone",
+      "posterFile": "data/posters/home-alone.jpg"
+    },
+    {
+      "title": "Home Alone 2: Lost In New York",
+      "poster": "https://imc.ie/wp-content/uploads/posters/585.jpg",
+      "cert": null,
+      "runtime": 120,
+      "times": [
+        "17:00"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120602",
+      "luxx": false,
+      "date": "2026-12-12",
+      "slug": "home-alone-2-lost-in-new-york",
+      "posterFile": "data/posters/home-alone-2-lost-in-new-york.jpg"
+    },
+    {
+      "title": "Ramayana: Rise of a Legend",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
+      "cert": null,
+      "runtime": 165,
+      "times": [
+        "20:00"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120815",
+      "luxx": false,
+      "date": "2026-11-05",
+      "slug": "ramayana-rise-of-a-legend",
+      "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg"
+    },
+    {
+      "title": "Sensory Coyote vs Acme",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114034.jpg",
+      "cert": null,
+      "runtime": 103,
+      "times": [
+        "12:15"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120792",
+      "luxx": false,
+      "date": "2026-10-29",
+      "slug": "sensory-coyote-vs-acme",
+      "posterFile": "data/posters/sensory-coyote-vs-acme.jpg"
+    },
+    {
+      "title": "Wild Horse Nine",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+      "cert": null,
+      "runtime": 117,
+      "times": [
+        "18:00",
+        "20:30"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120597",
+      "luxx": false,
+      "date": "2026-11-04",
+      "slug": "wild-horse-nine",
+      "posterFile": "data/posters/wild-horse-nine.jpg"
+    },
+    {
+      "title": "You can see everything",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+      "cert": null,
+      "runtime": 176,
+      "times": [
+        "16:00",
+        "19:45"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120864",
+      "luxx": false,
+      "date": "2026-11-20",
+      "slug": "you-can-see-everything",
+      "posterFile": "data/posters/you-can-see-everything.jpg"
+    }
+  ],
+  "kidsClub": [
+    {
+      "title": "Facebook",
+      "poster": null,
+      "cert": null,
+      "runtime": null,
+      "times": [],
+      "url": "https://imc.ie/film-times/enniskillen/today/",
+      "book": "https://imc.ie/advance-bookings/enniskillen/",
+      "luxx": false,
+      "date": null,
+      "slug": "facebook",
+      "posterFile": null
+    },
+    {
+      "title": "IMC Logo",
+      "poster": null,
+      "cert": null,
+      "runtime": null,
+      "times": [],
+      "url": "https://imc.ie/home/enniskillen/",
+      "book": "https://imc.ie/advance-bookings/enniskillen/",
+      "luxx": true,
+      "date": null,
+      "slug": "imc-logo",
+      "posterFile": null
+    },
+    {
+      "title": "Coyote vs Acme",
+      "poster": "https://imc.ie/wp-content/uploads/posters/110457.jpg",
+      "cert": null,
+      "runtime": 103,
+      "times": [
+        "12:15"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120634",
+      "luxx": false,
+      "date": "2026-10-24",
+      "slug": "coyote-vs-acme",
+      "posterFile": "data/posters/coyote-vs-acme.jpg"
+    },
+    {
+      "title": "poster",
+      "poster": "https://imc.ie/wp-content/uploads/posters/110457.jpg",
+      "cert": null,
+      "runtime": null,
+      "times": [],
+      "url": null,
+      "book": null,
+      "luxx": false,
+      "date": null,
+      "slug": "poster",
+      "posterFile": "data/posters/poster.jpg"
+    },
+    {
+      "title": "Sensory Coyote vs Acme",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114034.jpg",
+      "cert": null,
+      "runtime": 103,
+      "times": [
+        "12:15"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120792",
+      "luxx": false,
+      "date": "2026-10-29",
+      "slug": "sensory-coyote-vs-acme",
+      "posterFile": "data/posters/sensory-coyote-vs-acme.jpg"
+    },
+    {
+      "title": "Sensory Shaun The Sheep: The Beast of Mossy Bottom",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114446.jpg",
+      "cert": null,
+      "runtime": 81,
+      "times": [
+        "12:15"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120775",
+      "luxx": false,
+      "date": "2026-10-26",
+      "slug": "sensory-shaun-the-sheep-the-beast-of-mossy-bottom",
+      "posterFile": "data/posters/sensory-shaun-the-sheep-the-beast-of-mossy-bottom.jpg"
+    },
+    {
+      "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+      "cert": null,
+      "runtime": 81,
+      "times": [
+        "12:15"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120650",
+      "luxx": false,
+      "date": "2026-10-24",
+      "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+      "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg"
+    }
+  ],
+  "luxx": [
+    {
+      "title": "Facebook",
+      "poster": null,
+      "cert": null,
+      "runtime": null,
+      "times": [],
+      "url": "https://imc.ie/film-times/enniskillen/today/",
+      "book": "https://imc.ie/advance-bookings/enniskillen/",
+      "luxx": false,
+      "date": null,
+      "slug": "facebook",
+      "posterFile": null
+    },
+    {
+      "title": "IMC Logo",
+      "poster": null,
+      "cert": null,
+      "runtime": null,
+      "times": [],
+      "url": "https://imc.ie/home/enniskillen/",
+      "book": "https://imc.ie/advance-bookings/enniskillen/",
+      "luxx": true,
+      "date": null,
+      "slug": "imc-logo",
+      "posterFile": null
+    },
+    {
+      "title": "Avengers: Doomsday LUXX",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115392.jpg",
+      "cert": null,
+      "runtime": 165,
+      "times": [
+        "12:30",
+        "13:15",
+        "16:45",
+        "20:15"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120364",
+      "luxx": true,
+      "date": "2026-12-16",
+      "slug": "avengers-doomsday-luxx",
+      "posterFile": "data/posters/avengers-doomsday-luxx.jpg"
+    },
+    {
+      "title": "poster",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115392.jpg",
+      "cert": null,
+      "runtime": null,
+      "times": [],
+      "url": null,
+      "book": null,
+      "luxx": false,
+      "date": null,
+      "slug": "poster",
+      "posterFile": "data/posters/poster.jpg"
+    },
+    {
+      "title": "Clayface Luxx",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115573.jpg",
+      "cert": null,
+      "runtime": 120,
+      "times": [
+        "13:15",
+        "15:45",
+        "18:15",
+        "20:45"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120654",
+      "luxx": true,
+      "date": "2026-10-24",
+      "slug": "clayface-luxx",
+      "posterFile": "data/posters/clayface-luxx.jpg"
+    },
+    {
+      "title": "Street Fighter Luxx",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115929.jpg",
+      "cert": null,
+      "runtime": 119,
+      "times": [
+        "13:00"
+      ],
+      "url": null,
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120800",
+      "luxx": true,
+      "date": "2026-10-26",
+      "slug": "street-fighter-luxx",
+      "posterFile": "data/posters/street-fighter-luxx.jpg"
+    }
+  ],
+  "banners": [],
+  "log": [
+    "page failed: home 502 https://imc.ie/enniskillen",
+    "page failed: today 502 https://imc.ie/film-times/enniskillen/today/",
+    "advance: 19 films parsed",
+    "kids: 7 films parsed",
+    "luxx: 6 films parsed"
+  ]
+}
