@@ -624,7 +624,7 @@ function paint(ctx,W,H,d,image,thumb){
   ctx.textBaseline="alphabetic";
   // kicker
   let y=pad+60*u;
-  if(d.kicker){ctx.font=`800 ${34*u}px ${disp}`;const kw=ctx.measureText(d.kicker.toUpperCase()).width;ctx.fillStyle=acc;rr(ctx,pad,y-38*u,kw+36*u,52*u,26*u);ctx.fill();ctx.fillStyle=th.name==="Pop"?"#ffffff":(isLight(acc)?"#14060c":"#ffffff");ctx.letterSpacing=(2*u)+"px";ctx.fillText(d.kicker.toUpperCase(),pad+18*u,y);ctx.letterSpacing="0px"}
+  if(d.kicker){ctx.font=`800 ${34*u}px ${disp}`;ctx.letterSpacing=(2*u)+"px";const kw=ctx.measureText(d.kicker.toUpperCase()).width;ctx.letterSpacing="0px";ctx.fillStyle=acc;rr(ctx,pad,y-38*u,kw+36*u,52*u,26*u);ctx.fill();ctx.fillStyle=th.name==="Pop"?"#ffffff":(isLight(acc)?"#14060c":"#ffffff");ctx.letterSpacing=(2*u)+"px";ctx.fillText(d.kicker.toUpperCase(),pad+18*u,y);ctx.letterSpacing="0px"}
   // price badge
   if(d.price){const r=96*u,cx=W-pad-r+10*u,cy=pad+r-10*u;ctx.save();ctx.translate(cx,cy);ctx.rotate(-.12);ctx.fillStyle=acc;ctx.beginPath();for(let i=0;i<24;i++){const a=i/24*Math.PI*2,rad=i%2?r*.9:r;ctx.lineTo(Math.cos(a)*rad,Math.sin(a)*rad)}ctx.closePath();ctx.fill();ctx.fillStyle=isLight(acc)?"#14060c":"#ffffff";ctx.textAlign="center";ctx.font=`900 ${Math.min(62,560/d.price.length)*u}px ${disp}`;ctx.fillText(d.price,0,16*u);ctx.restore();ctx.textAlign="left"}
   // footer
