@@ -13,7 +13,7 @@ There's no account or server to run. GitHub Pages hosts the site, and a GitHub A
 |---|---|
 | **Today** | Every film showing today, with certificate, runtime and times from imc.ie. One click makes today's times as a post or a Story. Also shows films opening soon, your deals, and the current banners from imc.ie. |
 | **What's on** | Today, the next 7 days, Coming soon, Kids Club, LUXX and Relaxed (sensory) screenings. Each film has **Make post**, **Story**, **Write caption**, **Book ↗** and **Trailer ↗**. |
-| **Deals** | Kids Tray, Share Combo, Large Combo, Medium Combo and any deals you add. Set the name, what's included, price, "was" price, small print and which food pictures to show. Then make an **Animated post**, **Still post** or **Animated Story**. |
+| **Deals** | Family Combo, Kids Tray, Share Combo, Large Combo, Medium Combo and any deals you add. One-click buttons add tickets (adult, child, family), popcorn, drinks, kids trays, nachos, hot dogs, sweet bags, pick 'n' mix and ice cream (scooped or tub) to what's included, with the counts kept up to date. Set the name, what's included, price, "was" price, small print and which food pictures to show. Then make an **Animated post**, **Still post** or **Animated Story**. |
 | **Planner** | Week calendar, what's due next, and engagement by post type once you add results. |
 | **Create ad** | Quick text-led posters with a caption writer and a share-ability score. |
 | **Upcoming releases** | UK release schedule to January 2027 with a viral angle for each film. |
@@ -28,7 +28,7 @@ There's no account or server to run. GitHub Pages hosts the site, and a GitHub A
 - **Frames:** IMC brand bar, Premiere, Neon glow, Clean, Cinema ticket, Film strip, Marquee lights, Photo border.
 - **Badges:** Coming Soon, New Release, LUXX, Premier, Now Showing, Book Now, release date, Tonight, corner sash, Kids Club, price burst, Selling Fast.
 - **Deal pieces:** price ticket, "What's included" card, Save ribbon.
-- **Food & drink:** popcorn bucket, drink, nachos, hot dog, sweets and kids tray. They're drawn in IMC colours with the logo, and every colour can be changed.
+- **Food, drink & tickets:** the IMC ♥ movies popcorn box, drink, the red kids tray with popcorn and a juice bottle, nachos, hot dog, sweet bag, pick 'n' mix, scooped ice cream, ice cream tub and a cinema ticket that shows how many tickets the deal includes. They're drawn in code, and every colour and label can be changed.
 - **Film times:** a panel listing films and times, filled from imc.ie and editable.
 - **Motion:** slow zoom, light rays, spotlights, bokeh, marquee chase, gold sparkle, popcorn burst, fizz bubbles, confetti, snow, old projector.
 - **Per-item animation:** Shine, Pulse, Pop in, Slam in, Slide up, Swing, Wiggle, Float or Blink, each with a start time so items arrive in sequence.

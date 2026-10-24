@@ -196,6 +196,7 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .banners button{all:unset;cursor:pointer;border-radius:8px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10}
 .banners img{width:100%;height:100%;object-fit:cover;display:block}
 .deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
+.addchips{display:flex;flex-wrap:wrap;gap:6px}
 .deal{display:flex;flex-direction:column;gap:12px;border-top:4px solid transparent;border-image:var(--stripe) 1}
 .dealgrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr);gap:10px}
 .flabel{font-size:12px;font-weight:700;color:var(--muted)}
@@ -957,32 +958,42 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-daytimes]"
 
 /* ---------- Deals ---------- */
 const DEFAULT_DEALS=[
+  {id:"family",name:"Family Combo Deal",items:["2X Adult tickets","2X Child tickets","1X Share combo","2X Kids combo"],price:"",was:"",small:"",products:["popcorn","drink","drink","ticket","tray","tray"]},
   {id:"kids",name:"Kids Tray",items:["Kids popcorn","Kids drink","Sweet treat"],price:"",was:"",small:"",products:["tray"]},
   {id:"share",name:"Share Combo",items:["Large sharing popcorn","2 regular drinks"],price:"",was:"",small:"",products:["popcorn","drink","drink"]},
   {id:"large",name:"Large Combo",items:["Large popcorn","Large drink"],price:"",was:"",small:"",products:["popcorn","drink"]},
   {id:"medium",name:"Medium Combo",items:["Medium popcorn","Medium drink"],price:"",was:"",small:"",products:["popcorn","drink"]}];
-const PRODUCT_NAMES={popcorn:"Popcorn",drink:"Drink",nachos:"Nachos",hotdog:"Hot dog",sweets:"Sweets",tray:"Kids tray"};
+const PRODUCT_NAMES={popcorn:"Popcorn box",drink:"Drink",tray:"Kids tray",ticket:"Ticket",nachos:"Nachos",hotdog:"Hot dog",sweets:"Sweet bag",pickmix:"Pick 'n' mix",icescoop:"Ice cream (scooped)",icetub:"Ice cream tub"};
+/* one-click lines for "What's included": [label, plural, picture] */
+const DEAL_ITEMS=[["Adult ticket","Adult tickets","ticket"],["Child ticket","Child tickets","ticket"],["Family ticket","Family tickets","ticket"],["Popcorn","Popcorn","popcorn"],["Drink","Drinks","drink"],["Share combo","Share combos","popcorn"],["Kids combo","Kids combos","tray"],["Kids tray","Kids trays","tray"],["Nachos","Nachos","nachos"],["Hot dog","Hot dogs","hotdog"],["Sweet bag","Sweet bags","sweets"],["Pick 'n' mix","Pick 'n' mix","pickmix"],["Scoop of ice cream","Scoops of ice cream","icescoop"],["Ice cream tub","Ice cream tubs","icetub"]];
+const curSym=()=>S().ni?"£":"€";
+function addDealItem(d,i){const[one,many,pic]=DEAL_ITEMS[i],items=d.items||[],low=x=>x.toLowerCase();
+  const j=items.findIndex(l=>{const m=/^(\d+)\s*[x×]\s*(.+)$/i.exec(l.trim());const name=low(m?m[2]:l.trim());return name===low(one)||name===low(many)});
+  if(j>=0){const m=/^(\d+)\s*[x×]/i.exec(items[j]),n=(m?+m[1]:1)+1;items[j]=`${n}X ${n>1?many:one}`}else items.push(`1X ${one}`);
+  d.items=items;const P=d.products||[];if(pic&&!P.includes(pic)&&P.length<6)P.push(pic);d.products=P}
 function getDeals(){try{const d=JSON.parse(localStorage.getItem(sk("imc-deals"))||"null");if(Array.isArray(d)&&d.length)return d}catch(e){}return JSON.parse(JSON.stringify(DEFAULT_DEALS))}
 function putDeals(d){try{localStorage.setItem(sk("imc-deals"),JSON.stringify(d))}catch(e){toast("Couldn't save deals. Browser storage is blocked.")}}
 function renderDeals(){const el=$("#dealList");if(!el)return;const ds=getDeals();
   el.innerHTML=ds.map((d,i)=>{const cnt=k=>(d.products||[]).filter(p=>p===k).length;return`<div class="panel deal" data-di="${i}">
     <div class="dealgrid"><div class="field"><label for="dn${i}">Deal name</label><input id="dn${i}" data-df="name" value="${esc(d.name)}"></div>
-    <div class="field"><label for="dp${i}">Price</label><input id="dp${i}" data-df="price" value="${esc(d.price)}" placeholder="£0.00"></div>
-    <div class="field"><label for="dw${i}">Was (optional)</label><input id="dw${i}" data-df="was" value="${esc(d.was)}" placeholder="£0.00"></div></div>
+    <div class="field"><label for="dp${i}">Price</label><input id="dp${i}" data-df="price" value="${esc(d.price)}" placeholder="${curSym()}0.00"></div>
+    <div class="field"><label for="dw${i}">Was (optional)</label><input id="dw${i}" data-df="was" value="${esc(d.was)}" placeholder="${curSym()}0.00"></div></div>
     <div class="field"><label for="di${i}">What's included (one per line)</label><textarea id="di${i}" data-df="items" rows="3">${esc((d.items||[]).join("\n"))}</textarea></div>
     <div class="field"><label for="ds${i}">Small print (optional)</label><input id="ds${i}" data-df="small" value="${esc(d.small||"")}" placeholder="e.g. Available every day · while stocks last"></div>
-    <div class="field"><span class="flabel">Pictures on the graphic</span><div class="steppers">${Object.entries(PRODUCT_NAMES).map(([k,n])=>`<span class="stepper"><button data-pm="${k}" aria-label="Remove ${n}">−</button><b>${n}${cnt(k)?` ×${cnt(k)}`:""}</b><button data-pp="${k}" aria-label="Add ${n}">+</button></span>`).join("")}</div></div>
-    ${d.price?"":'<p class="warnline">Set the price before posting. The graphic shows £X.XX until you do.</p>'}
+    <div class="field"><span class="flabel">Add to the deal</span><div class="addchips">${DEAL_ITEMS.map(([n],k)=>`<button class="btn small" data-additem="${k}">+ ${esc(n)}</button>`).join("")}</div></div>
+    <div class="field"><span class="flabel">Pictures on the graphic (up to 6)</span><div class="steppers">${Object.entries(PRODUCT_NAMES).map(([k,n])=>`<span class="stepper"><button data-pm="${k}" aria-label="Remove ${n}">−</button><b>${n}${cnt(k)?` ×${cnt(k)}`:""}</b><button data-pp="${k}" aria-label="Add ${n}">+</button></span>`).join("")}</div></div>
+    ${d.price?"":`<p class="warnline">Set the price before posting. The graphic shows ${curSym()}X until you do.</p>`}
     <div class="facts"><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated post</button><button class="btn small" data-dealmake="${i}" data-anim="0">Still post</button><button class="btn small" data-dealmake="${i}" data-anim="1" data-fmt="story">Animated Story</button><button class="btn small" data-dealpost="${i}">Write caption</button><button class="btn small danger" data-dealdel="${i}">Delete</button></div></div>`}).join("")}
 $("#dealList").addEventListener("input",e=>{const f=e.target.closest("[data-df]"),card=e.target.closest("[data-di]");if(!f||!card)return;const ds=getDeals(),d=ds[+card.dataset.di],k=f.dataset.df;d[k]=k==="items"?f.value.split("\n").map(x=>x.trim()).filter(Boolean):f.value;putDeals(ds)});
 $("#dealList").addEventListener("change",()=>{renderDeals();renderToday()});
 $("#dealList").addEventListener("click",e=>{const card=e.target.closest("[data-di]");if(!card)return;const ds=getDeals(),i=+card.dataset.di,d=ds[i];
   const pp=e.target.closest("[data-pp]"),pm=e.target.closest("[data-pm]");
-  if(pp){d.products=[...(d.products||[]),pp.dataset.pp].slice(0,4);putDeals(ds);renderDeals();return}
+  if(pp){d.products=[...(d.products||[]),pp.dataset.pp].slice(0,6);putDeals(ds);renderDeals();return}
+  const ai=e.target.closest("[data-additem]");if(ai){addDealItem(d,+ai.dataset.additem);putDeals(ds);renderDeals();renderToday();return}
   if(pm){const a=d.products||[],j=a.lastIndexOf(pm.dataset.pm);if(j>=0)a.splice(j,1);d.products=a;putDeals(ds);renderDeals();return}
   const del=e.target.closest("[data-dealdel]");if(del){ds.splice(i,1);putDeals(ds.length?ds:[]);if(!ds.length)localStorage.removeItem(sk("imc-deals"));renderDeals();renderToday();toast("Deal deleted")}
   const wp=e.target.closest("[data-dealpost]");if(wp){startNew();Object.assign(cur,{type:"offer",kicker:"THIS WEEK AT THE IMC",headline:d.name,sub:(d.items||[]).join(" + "),price:d.price||"",details:d.small||"",cta:"Grab it at the kiosk",theme:"velvet",status:"draft",tags:S().tags+" #CinemaSnacks"});cur.caption=capFor(cur);fillForm();go("studio");toast("Caption drafted")}});
-document.addEventListener("click",e=>{const b=e.target.closest("[data-dealmake]");if(!b)return;const d=getDeals()[+b.dataset.dealmake];if(d)openEditor({kind:"deal",deal:d,animated:b.dataset.anim==="1",fmt:b.dataset.fmt||"square"})});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-dealmake]");if(!b)return;const d=getDeals()[+b.dataset.dealmake];if(d)openEditor({kind:"deal",deal:{...d,cur:curSym()},animated:b.dataset.anim==="1",fmt:b.dataset.fmt||"square"})});
 $("#addDeal").onclick=()=>{const ds=getDeals();ds.push({id:newId(),name:"New deal",items:["Popcorn","Drink"],price:"",was:"",small:"",products:["popcorn","drink"]});putDeals(ds);renderDeals();toast("Deal added")};
 $("#resetDeals").onclick=()=>{try{localStorage.removeItem(sk("imc-deals"))}catch(e){}renderDeals();renderToday();toast("Deals reset")};
 
