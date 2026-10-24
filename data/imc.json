@@ -1,7 +1,7 @@
 {
   "cinema": "IMC Enniskillen",
   "source": "https://imc.ie/enniskillen",
-  "updated": "2026-10-24T07:15:21.075Z",
+  "updated": "2026-10-24T15:56:39.096Z",
   "today": [
     {
       "title": "ALI G: WHO IZ I?",
@@ -5607,7 +5607,7 @@
   ],
   "comingSoon": [
     {
-      "title": "Andr\u00e9 Rieu's Christmas Concert: Let It Snow",
+      "title": "André Rieu's Christmas Concert: Let It Snow",
       "luxx": false,
       "sensory": false,
       "status": "Coming Soon",
@@ -5617,7 +5617,7 @@
       "release": "December 5, 2026",
       "releaseDate": "2026-12-05",
       "director": null,
-      "synopsis": "Andr\u00e9 Rieu and his Johann Strauss Orchestra return with a brand-new Christmas concert, bringing a premium festive event to cinemas. Featuring the extraordinary voice of Emma Kok, renowned tenors and special guests, this production is designed to delight audiences and drive seasonal attendance.",
+      "synopsis": "André Rieu and his Johann Strauss Orchestra return with a brand-new Christmas concert, bringing a premium festive event to cinemas. Featuring the extraordinary voice of Emma Kok, renowned tenors and special guests, this production is designed to delight audiences and drive seasonal attendance.",
       "trailer": null,
       "date": "2026-12-05",
       "times": [
@@ -9082,39 +9082,39 @@
     }
   ],
   "log": [
-    "home: 1 films parsed",
-    "today: 14 films parsed",
-    "day-24-10-2026-dated: 14 films parsed",
-    "day-25-10-2026-dated: 14 films parsed",
-    "day-26-10-2026-dated: 15 films parsed",
-    "day-27-10-2026-dated: 15 films parsed",
-    "day-28-10-2026-dated: 15 films parsed",
-    "day-29-10-2026-dated: 15 films parsed",
-    "day-30-10-2026-dated: 0 films parsed",
-    "day-31-10-2026-dated: 1 films parsed",
-    "advance: 16 films parsed",
-    "kids: 4 films parsed",
-    "luxx: 3 films parsed",
-    "rating symbols added to restored listings"
+    "home: 0 films parsed",
+    "today: 0 films parsed",
+    "advance: 0 films parsed",
+    "kids: 0 films parsed",
+    "luxx: 0 films parsed",
+    "kept previous today",
+    "kept previous days",
+    "kept previous comingSoon",
+    "kept previous kidsClub",
+    "kept previous luxx",
+    "kept previous banners",
+    "ratings: bbfc 15,18,U,PG,12A,TBC,BBFC · ifco 16,G,PG,12A,15A,TBC,IFCO"
   ],
+  "checked": "2026-10-24T15:56:48.489Z",
+  "blocked": false,
   "ratings": {
     "bbfc": {
-      "12A": "data/ratings/bbfc-12A.svg",
       "15": "data/ratings/bbfc-15.svg",
       "18": "data/ratings/bbfc-18.svg",
-      "BBFC": "data/ratings/bbfc-BBFC.svg",
+      "U": "data/ratings/bbfc-U.svg",
       "PG": "data/ratings/bbfc-PG.svg",
+      "12A": "data/ratings/bbfc-12A.svg",
       "TBC": "data/ratings/bbfc-TBC.svg",
-      "U": "data/ratings/bbfc-U.svg"
+      "BBFC": "data/ratings/bbfc-BBFC.svg"
     },
     "ifco": {
-      "12A": "data/ratings/ifco-12A.svg",
-      "15A": "data/ratings/ifco-15A.svg",
       "16": "data/ratings/ifco-16.svg",
       "G": "data/ratings/ifco-G.svg",
-      "IFCO": "data/ratings/ifco-IFCO.svg",
       "PG": "data/ratings/ifco-PG.svg",
-      "TBC": "data/ratings/ifco-TBC.svg"
+      "12A": "data/ratings/ifco-12A.svg",
+      "15A": "data/ratings/ifco-15A.svg",
+      "TBC": "data/ratings/ifco-TBC.svg",
+      "IFCO": "data/ratings/ifco-IFCO.svg"
     }
   }
 }
