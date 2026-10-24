@@ -210,6 +210,7 @@ function fromFilmCards($) {
     const title = raw.replace(/\s+luxx$/i, "").trim();
     const icons = $c.find(".ratings img").map((_, i) => $(i).attr("src") || "").get().filter((u) => !/BBFC\.svg|IFCO\.svg/i.test(u));
     const certFile = icons.map((u) => (/\/([^/]+)\.svg/i.exec(u) || [])[1]).find(Boolean);
+    const certSystem = (icons.map((u) => (/rating\/([a-z]+)\//i.exec(u) || [])[1]).find(Boolean) || "").toLowerCase() || null;
     const details = {};
     $c.find(".film_card_details b").each((_, b) => { const k = clean($(b).text()).replace(/:$/, "").toLowerCase(); const v = clean(($(b)[0].nextSibling && $(b)[0].nextSibling.data) || ""); if (k) details[k] = v; });
     const sessions = [];
@@ -225,6 +226,7 @@ function fromFilmCards($) {
     });
     const first = sessions.find((x) => x.date) || null;
     out.push({
+      certSystem, certFile: certFile || null,
       title, luxx, sensory: /^sensory\b/i.test(title), status: clean($c.find(".poster_header").first().text()) || null,
       poster: abs($c.find("img.poster_image").attr("src")), cert: certFile && !/tbc/i.test(certFile) ? certFile.toUpperCase().replace("_", "") : certFile ? "TBC" : null,
       runtime: runtimeOf(details["runtime"] || ""), release: details["release date"] || null, releaseDate: details["release date"] ? dateOf(details["release date"]) : null,
@@ -318,6 +320,33 @@ for (const [key, url] of Object.entries(PAGES)) {
   if (key === "kids") result.kidsClub = await withPosters(films);
   if (key === "luxx") result.luxx = await withPosters(films);
 }
+// official rating symbols, as used on imc.ie (BBFC for Northern Ireland, IFCO for the Republic)
+const RATING_BASE = `${BASE}/wp-content/themes/A1cinemachain/img/rating`;
+const RATING_SETS = { bbfc: ["U", "PG", "12A", "12", "15", "18", "R18", "TBC", "BBFC"], ifco: ["G", "PG", "12A", "15A", "16", "18", "TBC", "IFCO"] };
+result.ratings = { bbfc: {}, ifco: {} };
+const seenFiles = new Set();
+for (const list of [result.today, result.comingSoon, result.kidsClub, result.luxx, ...result.days.map((d) => d.films)]) for (const f of list) if (f.certSystem && f.certFile) { (RATING_SETS[f.certSystem] ||= []); if (!RATING_SETS[f.certSystem].includes(f.certFile)) RATING_SETS[f.certSystem].push(f.certFile); }
+for (const [sys, certs] of Object.entries(RATING_SETS)) {
+  for (const cert of certs) {
+    const file = path.join(OUT, "ratings", `${sys}-${cert}.svg`);
+    try {
+      try { await fs.access(file); } catch {
+        const buf = await get(`${RATING_BASE}/${sys}/${cert}.svg`, true);
+        if (!/<svg/i.test(buf.toString("utf8", 0, 2000))) throw new Error("not an svg");
+        await fs.mkdir(path.join(OUT, "ratings"), { recursive: true });
+        await fs.writeFile(file, buf);
+      }
+      (result.ratings[sys] ||= {})[cert.toUpperCase()] = `${OUT}/ratings/${sys}-${cert}.svg`;
+      seenFiles.add(cert);
+    } catch (e) { /* not every symbol exists for every system */ }
+  }
+}
+for (const list of [result.today, result.comingSoon, result.kidsClub, result.luxx, ...result.days.map((d) => d.films)]) for (const f of list) {
+  const sys = f.certSystem, c = (f.certFile || "").toUpperCase();
+  f.certIcon = (sys && result.ratings[sys] && result.ratings[sys][c]) || null;
+  f.certLogo = (sys && result.ratings[sys] && result.ratings[sys][sys.toUpperCase()]) || null;
+}
+note(`ratings: bbfc ${Object.keys(result.ratings.bbfc || {}).join(",")} · ifco ${Object.keys(result.ratings.ifco || {}).join(",")}`);
 for (const list of [result.today, result.comingSoon, result.kidsClub, result.luxx, ...result.days.map((d) => d.films)]) for (const f of list) if (f.posterFile) used.add(f.posterFile);
 // prune old images no longer listed
 for (const dir of ["posters", "banners"]) {
