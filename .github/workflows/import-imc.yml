@@ -2,13 +2,8 @@ name: Import imc.ie listings
 
 on:
   schedule:
-    - cron: "17 */3 * * *"   # every 3 hours
+    - cron: "17 6,12,17 * * *"   # three times a day (UTC); gentle on imc.ie
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "tools/**"
-      - ".github/workflows/import-imc.yml"
 
 permissions:
   contents: write

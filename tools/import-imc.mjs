@@ -19,6 +19,8 @@ const PAGES = {
   luxx: `${BASE}/luxx/${CINEMA}/`,
 };
 const log = [];
+let blocked = false;
+const isBotCheck = (html) => /sgcaptcha|captcha|cf-challenge|are you a human/i.test(html) && html.length < 20000;
 const note = (m) => { log.push(m); console.log(m); };
 
 async function get(url, binary = false) {
@@ -294,10 +296,16 @@ async function withPosters(films) {
 
 const result = { cinema: "IMC Enniskillen", source: `${BASE}/${CINEMA}`, updated: new Date().toISOString(), today: [], days: [], comingSoon: [], kidsClub: [], luxx: [], banners: [], log };
 const used = new Set();
+const prev = await fs.readFile(path.join(OUT, "imc.json"), "utf8").then(JSON.parse).catch(() => null);
+const fresh = new Set();
 for (const [key, url] of Object.entries(PAGES)) {
+  if (blocked) break;
   let html;
   try { html = await get(url); } catch (e) { note(`page failed: ${key} ${e.message}`); continue; }
+  if (isBotCheck(html)) { blocked = true; note(`imc.ie showed a browser check on ${key}; stopping this run and keeping the previous listings`); break; }
+  fresh.add(key);
   await saveRaw(key, html);
+  await new Promise((r) => setTimeout(r, 1500));
   const { films, $ } = parseFilms(html);
   note(`${key}: ${films.length} films parsed`);
   if (key === "home") {
@@ -306,8 +314,11 @@ for (const [key, url] of Object.entries(PAGES)) {
   if (key === "today") {
     result.today = await withPosters(films);
     for (const [href, label] of dayLinks($)) {
+      if (blocked) break;
       try {
+        await new Promise((r) => setTimeout(r, 1500));
         const h = await get(href);
+        if (isBotCheck(h)) { blocked = true; note("imc.ie showed a browser check; stopping"); break; }
         const name = "day-" + slug(href.split(`/${CINEMA}/`)[1] || label || "x");
         await saveRaw(name, h);
         const d = parseFilms(h).films;
@@ -320,6 +331,19 @@ for (const [key, url] of Object.entries(PAGES)) {
   if (key === "kids") result.kidsClub = await withPosters(films);
   if (key === "luxx") result.luxx = await withPosters(films);
 }
+// keep the last good data for anything this run couldn't refresh
+if (prev) {
+  const keep = (k, ok) => { if (!ok && Array.isArray(prev[k]) && prev[k].length) { result[k] = prev[k]; note(`kept previous ${k}`); } };
+  keep("today", fresh.has("today") && result.today.length);
+  keep("days", fresh.has("today") && result.days.length);
+  keep("comingSoon", fresh.has("advance") && result.comingSoon.length);
+  keep("kidsClub", fresh.has("kids") && result.kidsClub.length);
+  keep("luxx", fresh.has("luxx") && result.luxx.length);
+  keep("banners", fresh.has("home") && result.banners.length);
+  if (!fresh.size) result.updated = prev.updated || null;
+}
+result.checked = new Date().toISOString();
+result.blocked = blocked;
 // official rating symbols, as used on imc.ie (BBFC for Northern Ireland, IFCO for the Republic)
 const RATING_BASE = `${BASE}/wp-content/themes/A1cinemachain/img/rating`;
 const RATING_SETS = { bbfc: ["U", "PG", "12A", "12", "15", "18", "R18", "TBC", "BBFC"], ifco: ["G", "PG", "12A", "15A", "16", "18", "TBC", "IFCO"] };
@@ -331,6 +355,7 @@ for (const [sys, certs] of Object.entries(RATING_SETS)) {
     const file = path.join(OUT, "ratings", `${sys}-${cert}.svg`);
     try {
       try { await fs.access(file); } catch {
+        if (blocked) throw new Error("skipped");
         const buf = await get(`${RATING_BASE}/${sys}/${cert}.svg`, true);
         if (!/<svg/i.test(buf.toString("utf8", 0, 2000))) throw new Error("not an svg");
         await fs.mkdir(path.join(OUT, "ratings"), { recursive: true });
@@ -342,7 +367,7 @@ for (const [sys, certs] of Object.entries(RATING_SETS)) {
   }
 }
 for (const list of [result.today, result.comingSoon, result.kidsClub, result.luxx, ...result.days.map((d) => d.films)]) for (const f of list) {
-  const sys = f.certSystem, c = (f.certFile || "").toUpperCase();
+  const sys = f.certSystem || "bbfc", c = (f.certFile || f.cert || "").toUpperCase();
   f.certIcon = (sys && result.ratings[sys] && result.ratings[sys][c]) || null;
   f.certLogo = (sys && result.ratings[sys] && result.ratings[sys][sys.toUpperCase()]) || null;
 }

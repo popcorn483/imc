@@ -176,6 +176,7 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .fbody{min-width:0;display:flex;flex-direction:column;gap:8px}
 .fbody h3{font-family:var(--f-display);font-weight:800;font-size:22px;line-height:1.05;text-transform:uppercase;text-wrap:balance;margin:0}
 .fmeta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--muted)}
+.fmeta .certimg{width:24px;height:24px;object-fit:contain;display:block}
 .fmeta .cert{font-family:var(--f-mono);font-weight:600;border:1.5px solid currentColor;border-radius:5px;padding:0 5px;color:var(--ink)}
 .fmeta .lux{font-family:"Playfair Display",Georgia,serif;font-weight:700;letter-spacing:.18em;color:#b8860b}
 .fmeta .sens{color:var(--velvet);font-weight:700}
@@ -825,7 +826,7 @@ const asset=p=>!p?null:/^https?:/.test(p)?p:((IMC&&IMC._base)||"")+p;
 const todayIso=()=>isoDay(new Date());
 function allFilms(){if(!IMC)return[];const m=new Map();
   for(const [src,list] of [["today",IMC.today||[]],["soon",IMC.comingSoon||[]],["kids",IMC.kidsClub||[]],["luxx",IMC.luxx||[]],...(IMC.days||[]).map(d=>["day",d.films||[]])])
-    for(const f of list){const k=(f.title||"").toLowerCase()+(f.luxx?"|luxx":"");if(!f.title)continue;const p=m.get(k)||{...f,sources:new Set(),sessions:[]};p.sources.add(src);for(const s of f.sessions||[])if(!p.sessions.some(x=>x.date===s.date&&x.time===s.time))p.sessions.push(s);for(const key of["poster","posterFile","cert","runtime","trailer","synopsis","releaseDate","release"])p[key]=p[key]||f[key];m.set(k,p)}
+    for(const f of list){const k=(f.title||"").toLowerCase()+(f.luxx?"|luxx":"");if(!f.title)continue;const p=m.get(k)||{...f,sources:new Set(),sessions:[]};p.sources.add(src);for(const s of f.sessions||[])if(!p.sessions.some(x=>x.date===s.date&&x.time===s.time))p.sessions.push(s);for(const key of["poster","posterFile","cert","certIcon","certSystem","runtime","trailer","synopsis","releaseDate","release"])p[key]=p[key]||f[key];m.set(k,p)}
   return[...m.values()]}
 function filmsOn(date){const out=[];for(const f of allFilms()){const t=f.sessions.filter(s=>s.date===date).map(s=>s.time).sort();if(t.length)out.push({...f,times:t})}
   if(date===todayIso())for(const f of IMC?.today||[]){if(!out.some(o=>o.title===f.title&&!!o.luxx===!!f.luxx)&&(f.times||[]).length)out.push({...f})}
@@ -837,10 +838,10 @@ function firstDate(f){const ds=f.sessions.map(s=>s.date).filter(Boolean).sort();
 /* ---------- open the photo editor with something ready ---------- */
 function openEditor(h){try{localStorage.setItem("imc-handoff",JSON.stringify({...h,at:Date.now()}))}catch(e){toast("Couldn't pass this to the editor. Browser storage is blocked.");return}
   const a=document.createElement("a");a.href="editor.html";a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove()}
-function filmPayload(f,mode){const d=firstDate(f);return{title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert&&f.cert!=="TBC"?f.cert:"",times:mode==="soon"?[]:(f.times||[]),dateLabel:d?new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}).toUpperCase():"SOON",luxx:!!f.luxx}}
+function filmPayload(f,mode){const d=firstDate(f);return{title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert||"",certIcon:f.certIcon||null,certSystem:f.certSystem||null,times:mode==="soon"?[]:(f.times||[]),dateLabel:d?new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}).toUpperCase():"SOON",luxx:!!f.luxx}}
 function makeFilm(f,mode,fmt){openEditor({kind:"film",mode,fmt,film:filmPayload(f,mode)})}
 function makeTimes(date,fmt){const films=filmsOn(date);if(!films.length){toast("No film times for that day yet");return}
-  openEditor({kind:"listing",fmt,heading:date===todayIso()?"Today at IMC Enniskillen":"At IMC Enniskillen",sub:fmtLong(date),rows:films.map(f=>({t:f.title,times:f.times,cert:f.cert&&f.cert!=="TBC"?f.cert:"",luxx:!!f.luxx}))})}
+  openEditor({kind:"listing",fmt,heading:date===todayIso()?"Today at IMC Enniskillen":"At IMC Enniskillen",sub:fmtLong(date),rows:films.map(f=>({t:f.title,times:f.times,cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||"",luxx:!!f.luxx}))})}
 function writeFilmPost(f,mode){startNew();const d=firstDate(f);
   Object.assign(cur,{type:mode==="soon"?"soon":mode==="kids"?"kids":"now",kicker:TPL[mode==="soon"?"soon":mode==="kids"?"kids":"now"].kicker,headline:f.title,sub:f.luxx?"In LUXX luxury recliners":(f.synopsis||"").split(/(?<=\.)\s/)[0].slice(0,88),
     details:mode==="soon"?("Opens "+fmtShort(d)):((f.times||[]).slice(0,5).join(" · ")),cta:"Book at imc.ie",status:"draft",tags:BASE_TAGS+" #"+f.title.replace(/[^A-Za-z0-9]/g,"")});
@@ -850,17 +851,19 @@ function writeFilmPost(f,mode){startNew();const d=firstDate(f);
 function filmCard(f,mode){const d=firstDate(f),poster=asset(f.posterFile)||f.poster;
   const when=mode==="soon"?`<span class="opens">Opens ${esc(fmtShort(d))}</span>`:`<div class="ftimes">${(f.times||[]).map(t=>`<span>${t}</span>`).join("")}</div>`;
   return`<article class="film"><div class="fposter">${poster?`<img src="${esc(poster)}" alt="${esc(f.title)} poster" loading="lazy">`:""}</div>
-  <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${f.cert?`<span class="cert">${esc(f.cert)}</span>`:""}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
+  <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${f.certIcon?`<img class="certimg" data-svg="${esc(f.certIcon)}" alt="Rated ${esc(f.cert||"")}" width="24" height="24">`:f.cert?`<span class="cert">${esc(f.cert)}</span>`:""}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
   ${when}
   <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button><button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
   ${(f.book||f.sessions?.[0]?.book)?`<a class="btn small ghost" href="${esc(f.book||f.sessions[0].book)}" target="_blank" rel="noopener">Book ↗</a>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="_blank" rel="noopener">Trailer ↗</a>`:""}</div></div></article>`}
+const SVGURL={};
+async function hydrateSvgs(root){for(const im of (root||document).querySelectorAll("img[data-svg]")){const p=im.dataset.svg;try{if(!SVGURL[p]){SVGURL[p]=(async()=>{const r=await fetch(asset(p));if(!r.ok)throw 0;return URL.createObjectURL(new Blob([await r.text()],{type:"image/svg+xml"}))})()}im.src=await SVGURL[p]}catch(e){im.replaceWith(Object.assign(document.createElement("span"),{className:"cert",textContent:im.alt.replace("Rated ","")}))}}}
 let FILMKEYS=new Map();
 function keyed(list){return list.map(f=>{const k=(f.title+"|"+(f.luxx?1:0)).toLowerCase();FILMKEYS.set(k,f);return{...f,_k:k}})}
 document.addEventListener("click",e=>{const m=e.target.closest("[data-film]");if(m){const f=FILMKEYS.get(m.dataset.film);if(f)makeFilm(f,m.dataset.mode,m.dataset.fmt);return}
   const w=e.target.closest("[data-write]");if(w){const f=FILMKEYS.get(w.dataset.write);if(f)writeFilmPost(f,w.dataset.mode)}});
 
 function noData(){if(!imcTried)return`<div class="panel nodata"><p>Loading the latest listings from imc.ie…</p></div>`;return`<div class="panel nodata"><h2>Waiting for imc.ie</h2><p>Listings are imported from imc.ie every 3 hours by this site's GitHub importer. If this message stays, the importer hasn't run yet or imc.ie was down. Open the repo's <b>Actions</b> tab to run "Import imc.ie listings" now.</p></div>`}
-function stamp(){return IMC&&IMC.updated?`Updated from imc.ie ${new Date(IMC.updated).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"})}`:""}
+function stamp(){if(!IMC||!IMC.updated)return"";const f=d=>new Date(d).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"});return`Updated from imc.ie ${f(IMC.updated)}`+(IMC.blocked&&IMC.checked?` · imc.ie paused updates at ${f(IMC.checked)}, so these are the latest listings we have`:"")}
 
 /* ---------- Today ---------- */
 function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").textContent=fmtLong(todayIso());$("#todayStamp").textContent=stamp();
@@ -870,7 +873,7 @@ function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").te
     ${films.length?`<div class="films">${films.map(f=>filmCard(f,f.sources?.has("kids")&&!f.sources?.has("today")?"kids":f.luxx?"luxx":"now")).join("")}</div>`:`<p class="tip">No times for today in the latest import. ${IMC.today&&IMC.today.length===0?"The imc.ie film-times page may have been unavailable; the next import runs within 3 hours.":""}</p>`}</div>
     <div class="grid two" style="margin-top:16px"><div class="panel"><div class="ph"><h2>Opening soon</h2><button class="btn small ghost" data-wo="soon">All coming soon →</button></div><div class="films compact">${soon.map(f=>filmCard(f,"soon")).join("")||'<p class="tip">Nothing announced yet.</p>'}</div></div>
     <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
-    ${(IMC.banners||[]).length?`<h2 style="margin-top:18px">imc.ie graphics</h2><div class="banners">${IMC.banners.slice(0,6).map(b=>`<button data-banner="${esc(asset(b.file))}" title="Open in the photo editor"><img src="${esc(asset(b.file))}" alt="imc.ie banner" loading="lazy"></button>`).join("")}</div>`:""}</div></div>`}
+    ${(IMC.banners||[]).length?`<h2 style="margin-top:18px">imc.ie graphics</h2><div class="banners">${IMC.banners.slice(0,6).map(b=>`<button data-banner="${esc(asset(b.file))}" title="Open in the photo editor"><img src="${esc(asset(b.file))}" alt="imc.ie banner" loading="lazy"></button>`).join("")}</div>`:""}</div></div>`;hydrateSvgs(el)}
 document.addEventListener("click",e=>{const t=e.target.closest("[data-times]");if(t){makeTimes(todayIso(),t.dataset.times);return}
   const b=e.target.closest("[data-banner]");if(b){openEditor({kind:"image",url:b.dataset.banner});return}
   const w=e.target.closest("[data-wo]");if(w){woTab=w.dataset.wo;go("whatson")}});
@@ -886,7 +889,7 @@ function renderWhatsOn(){const el=$("#woBody");if(!el)return;$("#woStamp").textC
   else if(woTab==="soon"){const f=keyed(all.filter(x=>{const d=firstDate(x);return d&&d>T}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))));html=f.length?`<div class="films">${f.map(x=>filmCard(x,"soon")).join("")}</div>`:'<p class="tip">Nothing announced yet.</p>'}
   else{const pick=woTab==="kids"?x=>x.sources.has("kids"):woTab==="luxx"?x=>x.luxx:x=>x.sensory;const f=keyed(all.filter(pick).map(x=>{const up=x.sessions.filter(s=>s.date>=T).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));return{...x,times:up.filter(s=>s.date===up[0]?.date).map(s=>s.time),nextDate:up[0]?.date}}));
     html=f.length?`<div class="films">${f.map(x=>filmCard({...x,times:x.times.length?[fmtShort(x.nextDate),...x.times]:[]},woTab==="kids"?"kids":woTab==="luxx"?"luxx":"now")).join("")}</div>`:'<p class="tip">None listed right now.</p>'}
-  el.innerHTML=html}
+  el.innerHTML=html;hydrateSvgs(el)}
 $("#woTabs").addEventListener("click",e=>{const b=e.target.closest("[data-wot]");if(b){woTab=b.dataset.wot;renderWhatsOn()}});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-daytimes]");if(b)makeTimes(b.dataset.daytimes,b.dataset.fmt)});
 
