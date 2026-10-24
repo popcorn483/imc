@@ -22,9 +22,17 @@ const log = [];
 const note = (m) => { log.push(m); console.log(m); };
 
 async function get(url, binary = false) {
-  const r = await fetch(url, { headers: { "user-agent": UA, accept: binary ? "image/*,*/*" : "text/html,application/xhtml+xml" }, redirect: "follow" });
-  if (!r.ok) throw new Error(`${r.status} ${url}`);
-  return binary ? Buffer.from(await r.arrayBuffer()) : await r.text();
+  let last;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    if (attempt) await new Promise((r) => setTimeout(r, 4000 * attempt));
+    try {
+      const r = await fetch(url, { headers: { "user-agent": UA, accept: binary ? "image/*,*/*" : "text/html,application/xhtml+xml" }, redirect: "follow" });
+      if (r.ok) return binary ? Buffer.from(await r.arrayBuffer()) : await r.text();
+      last = new Error(`${r.status} ${url}`);
+      if (r.status < 500 && r.status !== 429) break;
+    } catch (e) { last = e; }
+  }
+  throw last;
 }
 const abs = (u) => { if (!u || u.startsWith("data:")) return null; try { return new URL(u.trim(), BASE).href; } catch { return null; } };
 const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
@@ -100,8 +108,10 @@ function runtimeOf(text) {
   m = /(\d{2,3})\s*(?:mins?|minutes)\b/i.exec(text);
   return m ? parseInt(m[1]) : null;
 }
+const DATE_US = new RegExp(`\\b(${MONTHS})[a-z]*\\.?\\s+(\\d{1,2})(?:st|nd|rd|th)?,?\\s*(\\d{4})?`, "i");
 function dateOf(text) {
-  const m = DATE_RE.exec(text);
+  const us = DATE_US.exec(text || "");
+  const m = DATE_RE.exec(text) || (us ? [us[0], us[2], us[1], us[3]] : null);
   if (!m) return null;
   const mon = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"].indexOf(m[2].toLowerCase().slice(0, 3));
   const now = new Date();
@@ -178,9 +188,58 @@ function fromBlocks($) {
   }
   return [...films.values()];
 }
+// Strategy 0: imc.ie's own film cards (.film_card)
+function dayToIso(label) {
+  const m = /(\d{1,2})\s+([A-Za-z]+)(?:\s+(\d{4}))?/.exec(label || "");
+  if (!m) return null;
+  const mon = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"].indexOf(m[2].toLowerCase().slice(0, 3));
+  if (mon < 0) return null;
+  const now = new Date();
+  let y = m[3] ? parseInt(m[3]) : now.getUTCFullYear();
+  let d = new Date(Date.UTC(y, mon, parseInt(m[1])));
+  if (!m[3] && d < new Date(now.getTime() - 45 * 864e5)) d = new Date(Date.UTC(y + 1, mon, parseInt(m[1])));
+  return d.toISOString().slice(0, 10);
+}
+function fromFilmCards($) {
+  const out = [];
+  $(".film_card").each((_, card) => {
+    const $c = $(card);
+    const raw = clean($c.find(".film_card_content h2, .film_card_content h1").first().text());
+    if (!raw) return;
+    const luxx = /\bluxx$/i.test(raw);
+    const title = raw.replace(/\s+luxx$/i, "").trim();
+    const icons = $c.find(".ratings img").map((_, i) => $(i).attr("src") || "").get().filter((u) => !/BBFC\.svg|IFCO\.svg/i.test(u));
+    const certFile = icons.map((u) => (/\/([^/]+)\.svg/i.exec(u) || [])[1]).find(Boolean);
+    const details = {};
+    $c.find(".film_card_details b").each((_, b) => { const k = clean($(b).text()).replace(/:$/, "").toLowerCase(); const v = clean(($(b)[0].nextSibling && $(b)[0].nextSibling.data) || ""); if (k) details[k] = v; });
+    const sessions = [];
+    let day = null;
+    $c.find(".film_card_times").children().each((_, el) => {
+      const $el = $(el);
+      if (/^h\d$/i.test(el.name || el.tagName || "")) { day = clean($el.text()); return; }
+      if ($el.is("a")) {
+        const cls = $el.attr("class") || "", time = clean($el.text());
+        if (!/^\d{1,2}[:.]\d{2}$/.test(time)) return;
+        sessions.push({ day, date: dayToIso(day), time: time.replace(".", ":"), book: clean($el.attr("href")), luxx: luxx || /f_seating-lux/i.test(cls), screen: (/f_hallCode-(\d+)/.exec(cls) || [])[1] || null, threeD: /f_3D\b/i.test(cls), tags: cls.split(/\s+/).filter((c) => /^f_/.test(c) && !/f_hallCode|f_allocated|f_screen-standard|f_2D/.test(c)).map((c) => c.slice(2)) });
+      }
+    });
+    const first = sessions.find((x) => x.date) || null;
+    out.push({
+      title, luxx, sensory: /^sensory\b/i.test(title), status: clean($c.find(".poster_header").first().text()) || null,
+      poster: abs($c.find("img.poster_image").attr("src")), cert: certFile && !/tbc/i.test(certFile) ? certFile.toUpperCase().replace("_", "") : certFile ? "TBC" : null,
+      runtime: runtimeOf(details["runtime"] || ""), release: details["release date"] || null, releaseDate: details["release date"] ? dateOf(details["release date"]) : null,
+      director: details["director"] || null, synopsis: clean($c.find(".film_card_text").first().text()).slice(0, 600) || null,
+      trailer: (() => { const t = $c.find("iframe[src*='youtube']").attr("src"); const id = t && (/embed\/([\w-]{6,})/.exec(t) || [])[1]; return id ? `https://www.youtube.com/watch?v=${id}` : null; })(),
+      date: first ? first.date : null, times: first ? sessions.filter((x) => x.date === first.date).map((x) => x.time) : [], book: first ? first.book : null, sessions,
+    });
+  });
+  return out;
+}
+const JUNK = /^(facebook|instagram|tiktok|x|twitter|imc logo|logo|poster|menu|close|book now|view showtimes)$/i;
 function parseFilms(html) {
   const $ = cheerio.load(html);
-  const a = fromJsonLd($), b = fromBlocks($);
+  if ($(".film_card").length) return { films: fromFilmCards($), $ };
+  const a = fromJsonLd($), b = fromBlocks($).filter((f) => !JUNK.test(f.title) && (f.poster || f.times.length));
   const byTitle = new Map();
   for (const f of [...a, ...b]) {
     const k = f.title.toLowerCase();
