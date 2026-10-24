@@ -1614,4 +1614,52 @@ https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120797
   	dropdowns_cinema();
 	  });
 /*
-  docume
+  document.addEventListener('DOMContentLoaded', (event) => {
+    // Sliders
+    const copyContent = (from, to) => {
+        document.getElementById(to).innerHTML = document.getElementById(from).innerHTML;
+    };
+    copyContent('slide01', 'movie01');
+    copyContent('slide02', 'movie02');
+    copyContent('slide03', 'movie03');
+    copyContent('slide04', 'movie04');
+  });
+*/
+
+</script>
+
+
+<script>
+  // jQuery for toggling the slide-out mobile menus
+  $(document).ready(function(){
+    $('.navbar-toggler').click(function(){
+      $('.menu-slide-out').toggleClass('show');
+    });
+    $('.close').click(function(){
+      $('.menu-slide-out').removeClass('show');
+    });
+
+    // jQuery for toggling the purple slide-out menu
+    $('.quick-book-bar').click(function(){
+      $('.quick-book-slide-out').toggleClass('show');
+    });
+    $('.quick-book-slide-out .close').click(function(){
+      $('.quick-book-slide-out').removeClass('show');
+    });
+  });
+
+  setScrollPosition();
+  
+</script>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/A1cinemachain/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script defer id="siteground-optimizer-lazy-sizes-js-js" src="https://imc.ie/wp-content/plugins/sg-cachepress/assets/js/lazysizes.min.js"></script>
+<script defer id="popperJS-js" src="https://imc.ie/wp-content/themes/A1cinemachain/popper.min.js"></script>
+<script defer id="bootstrapJS-js" src="https://imc.ie/wp-content/themes/A1cinemachain/bootstrap.min.js"></script>
+<script defer id="owl-carousel-js-js" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js?&ver=2.3.4"></script>
+
+
+</BODY>
+</HTML>
