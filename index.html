@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Plan, design, caption and track social media ads for IMC Cinema Enniskillen.">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>IMC Enniskillen Hub</title>
+<title>IMC Hub</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -232,13 +232,19 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 }
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.sitepick{display:flex;flex-direction:column;gap:4px;min-width:min(250px,100%)}
+.sitepick label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700}
+.sitepick select{font:700 16px var(--f-body);color:var(--ink);background-color:var(--panel);border:2px solid var(--velvet);border-radius:9px;padding:9px 36px 9px 12px;appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--velvet) 50%),linear-gradient(135deg,var(--velvet) 50%,transparent 50%);background-position:calc(100% - 18px) 55%,calc(100% - 12px) 55%;background-size:6px 6px;background-repeat:no-repeat}
+.headacts{display:flex;gap:10px;align-items:flex-end;flex:none;max-width:100%}
+@media (max-width:560px){.headacts{flex-wrap:wrap;flex:1 1 100%}.sitepick{flex:1 1 100%}}
 </style>
 
 </head>
 <body>
 <div class="app">
   <aside class="rail">
-    <div class="brand"><img src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Enniskillen</span></b><small>Marketing hub · 7 screens</small></div>
+    <div class="brand"><img src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span id="brandsite">Enniskillen</span></b><small>Marketing hub</small></div>
     <nav id="nav">
       <button data-view="today">Today</button>
       <button data-view="whatson">What's on</button>
@@ -257,8 +263,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <!-- TODAY -->
     <section id="v-today">
       <div class="head">
-        <div><h1>Today at IMC Enniskillen</h1><p><span id="todayDate"></span> · <span id="todayStamp"></span></p></div>
-        <a class="btn primary" href="editor.html" target="_blank" rel="noopener" style="text-decoration:none">Open the editor ↗</a>
+        <div><h1>Today at <span class="sitename">IMC Enniskillen</span></h1><p><span id="todayDate"></span> · <span id="todayStamp"></span></p></div>
+        <div class="headacts"><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary" href="editor.html" target="_blank" rel="noopener" style="text-decoration:none">Open the editor ↗</a></div>
       </div>
       <div id="todayBody"></div>
     </section>
@@ -282,7 +288,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <!-- DASHBOARD -->
     <section id="v-dashboard" hidden>
       <div class="head">
-        <div><h1>Planner</h1><p>Your content plan for IMC Enniskillen. Ideas, drafts, scheduled posts and results, all in one place.</p></div>
+        <div><h1>Planner</h1><p>Your content plan for <span class="sitename">IMC Enniskillen</span>. Ideas, drafts, scheduled posts and results, all in one place.</p></div>
         <button class="btn primary" data-go="studio">+ New ad</button>
       </div>
       <div class="grid stats" id="stats"></div>
@@ -451,11 +457,40 @@ const THEMES={
   screen:{name:"Screen white",bg:["#ffffff","#e6edf8"],accent:"#0b6bb8",ink:"#141a33"}
 };
 const SIZES={square:{name:"Feed 1:1",w:1080,h:1080},portrait:{name:"Feed 4:5",w:1080,h:1350},story:{name:"Story / Reel 9:16",w:1080,h:1920},foyer:{name:"Foyer screen 16:9",w:1920,h:1080}};
-const BASE_TAGS="#IMCEnniskillen #Enniskillen #Fermanagh #CinemaNI";
+/* ---------- cinemas: ids match tools/import-imc.mjs ---------- */
+const SITES={
+ enniskillen:{name:"IMC Enniskillen",town:"Enniskillen",county:"Fermanagh",ni:1,tags:"#IMCEnniskillen #Enniskillen #Fermanagh #CinemaNI",local:"enniskillen|fermanagh|lough|erne|local|townland|kesh|irvinestown|lisnaskea",about:"a 7-screen cinema on Factory Road, Enniskillen, Co. Fermanagh, Northern Ireland"},
+ ballymena:{name:"IMC Ballymena",town:"Ballymena",county:"Antrim",ni:1,tags:"#IMCBallymena #Ballymena #CoAntrim #CinemaNI",local:"ballymena|antrim|braid|slemish|local"},
+ banbridge:{name:"IMC Banbridge",town:"Banbridge",county:"Down",ni:1,tags:"#IMCBanbridge #Banbridge #CoDown #CinemaNI",local:"banbridge|down|bann|local"},
+ newtownards:{name:"IMC Newtownards",town:"Newtownards",county:"Down",ni:1,tags:"#IMCNewtownards #Newtownards #Ards #CinemaNI",local:"newtownards|ards|strangford|down|local"},
+ athlone:{name:"IMC Athlone",town:"Athlone",county:"Westmeath",tags:"#IMCAthlone #Athlone #Westmeath #CinemaIreland",local:"athlone|westmeath|shannon|midlands|local"},
+ ballina:{name:"IMC Ballina",town:"Ballina",county:"Mayo",tags:"#IMCBallina #Ballina #Mayo #CinemaIreland",local:"ballina|mayo|moy|local"},
+ carlow:{name:"IMC Carlow",town:"Carlow",county:"Carlow",tags:"#IMCCarlow #Carlow #CinemaIreland",local:"carlow|barrow|local"},
+ clonmel:{name:"IMC Clonmel",town:"Clonmel",county:"Tipperary",tags:"#IMCClonmel #Clonmel #Tipperary #CinemaIreland",local:"clonmel|tipp|suir|local"},
+ dundalk:{name:"IMC Dundalk",town:"Dundalk",county:"Louth",tags:"#IMCDundalk #Dundalk #Louth #CinemaIreland",local:"dundalk|louth|wee county|local"},
+ dunlaoghaire:{name:"IMC Dún Laoghaire",town:"Dún Laoghaire",county:"Dublin",tags:"#IMCDunLaoghaire #DunLaoghaire #Dublin #CinemaIreland",local:"d[uú]n laoghaire|dublin|southside|pier|local"},
+ galway:{name:"IMC Galway",town:"Galway",county:"Galway",tags:"#IMCGalway #Galway #CinemaIreland",local:"galway|connemara|salthill|local"},
+ oranmore:{name:"IMC Oranmore",town:"Oranmore",county:"Galway",tags:"#IMCOranmore #Oranmore #Galway #CinemaIreland",local:"oranmore|galway|local"},
+ kilkenny:{name:"IMC Kilkenny",town:"Kilkenny",county:"Kilkenny",tags:"#IMCKilkenny #Kilkenny #CinemaIreland",local:"kilkenny|cats|local"},
+ mullingar:{name:"IMC Mullingar",town:"Mullingar",county:"Westmeath",tags:"#IMCMullingar #Mullingar #Westmeath #CinemaIreland",local:"mullingar|westmeath|midlands|local"},
+ santry:{name:"IMC Santry",town:"Santry",county:"Dublin",tags:"#IMCSantry #Santry #Dublin #CinemaIreland",local:"santry|dublin|northside|omni|local"},
+ savoy:{name:"Savoy Cinema",town:"Dublin",county:"Dublin",tags:"#SavoyCinema #Dublin #OConnellStreet #CinemaIreland",local:"savoy|o.?connell|dublin|local",about:"the historic Savoy Cinema on O'Connell Street, Dublin, Ireland"},
+ thurles:{name:"IMC Thurles",town:"Thurles",county:"Tipperary",tags:"#IMCThurles #Thurles #Tipperary #CinemaIreland",local:"thurles|tipp|local"},
+ tullamore:{name:"IMC Tullamore",town:"Tullamore",county:"Offaly",tags:"#IMCTullamore #Tullamore #Offaly #CinemaIreland",local:"tullamore|offaly|midlands|local"}
+};
+const S=k=>SITES[k||site]||SITES.enniskillen;
+const aboutOf=x=>x.about||`a cinema in ${x.town}, Co. ${x.county}, ${x.ni?"Northern Ireland":"Ireland"}`;
+/* rewrite Enniskillen wording for another cinema */
+function loc(t,k){const x=S(k);if(!t||x===SITES.enniskillen)return t;
+  return String(t).replace(/Factory Road, Enniskillen/g,x.town).replace(/IMC Enniskillen/g,x.name).replace(/Enniskillen/g,x.town).replace(/Co\. Fermanagh/g,"Co. "+x.county).replace(/Fermanagh/g,x.county)
+    .replace(/Northern Ireland schools|NI schools/g,x.ni?"$&":"Schools").replace(/\bwee\b/g,x.ni?"wee":"little").replace(/£/g,x.ni?"£":"€")}
+const SITE_LS="imc-hub-site";
+let site=(()=>{try{const k=localStorage.getItem(SITE_LS);return SITES[k]?k:"enniskillen"}catch(e){return"enniskillen"}})();
+const sk=k=>site==="enniskillen"?k:k+"-"+site;  /* per-cinema storage key; Enniskillen keeps the original keys */
 
 /* ---------- state ---------- */
-let posts=[], db=null, col=null, sample=null, downloads=null, editingId=null, img=null, size="square", view="dashboard", filter="all", weekOffset=0, metricId=null, delId=null;
-const blank=()=>({type:"now",headline:"",kicker:TPL.now.kicker,sub:"",details:"",price:"",cta:TPL.now.cta,theme:"velvet",caption:"",tags:BASE_TAGS,date:isoDay(new Date()),time:"18:30",status:"draft",platform:"Facebook + Instagram",imgsrc:"text",metrics:null});
+let allPosts=[], posts=[], db=null, col=null, sample=null, downloads=null, editingId=null, img=null, size="square", view="dashboard", filter="all", weekOffset=0, metricId=null, delId=null;
+const blank=()=>({site,type:"now",headline:"",kicker:TPL.now.kicker,sub:"",details:"",price:"",cta:TPL.now.cta,theme:"velvet",caption:"",tags:S().tags,date:isoDay(new Date()),time:"18:30",status:"draft",platform:"Facebook + Instagram",imgsrc:"text",metrics:null});
 let cur=blank();
 
 function isoDay(d){const z=new Date(d);z.setMinutes(z.getMinutes()-z.getTimezoneOffset());return z.toISOString().slice(0,10)}
@@ -467,9 +502,11 @@ function eng(p){const m=p.metrics;if(!m||!m.reach)return null;return ((+m.react|
 const LS="imc-ad-studio-posts";
 const fixSite=s=>String(s).replace(/https?:\/\/www\.imccinemas\.co\.uk/gi,"https://www.imc.ie").replace(/IMCCINEMAS\.CO\.UK/g,"IMC.IE").replace(/imccinemas\.co\.uk/gi,"imc.ie");
 function lsLoad(){try{return JSON.parse(fixSite(localStorage.getItem(LS)||"[]"))}catch(e){return[]}}
-function lsSave(){try{localStorage.setItem(LS,JSON.stringify(posts))}catch(e){}}
+function lsSave(){try{localStorage.setItem(LS,JSON.stringify(allPosts))}catch(e){}}
+const siteOf=p=>p.site||"enniskillen";
+function scope(){posts=allPosts.filter(p=>siteOf(p)===site)}
 function setSync(on,txt){$("#syncdot").classList.toggle("on",on);$("#synctxt").textContent=txt}
-posts=lsLoad();
+allPosts=lsLoad();scope();
 async function connect(){
   const use=window.claude&&window.claude.use?window.claude.use.bind(window.claude):null;
   if(!use){seedExamples();setSync(false,"Saved in this browser");renderAll();return}
@@ -480,30 +517,30 @@ async function connect(){
   col=db.collection("posts");
   progCol=db.collection("programme");
   progCol.onSnapshot(snap=>{const m={};snap.docs.forEach(d=>{m[d.id]=(d.data()||{}).state||""});programme=m;renderReleases()},()=>{});
-  col.onSnapshot(snap=>{posts=snap.docs.map(d=>({id:d.id,...d.data()}));setSync(true,"Synced for your team");renderAll()},
+  col.onSnapshot(snap=>{allPosts=snap.docs.map(d=>({id:d.id,...d.data()}));scope();setSync(true,"Synced for your team");renderAll()},
     e=>{setSync(false,"Sync paused: "+(e&&e.code||"error"))});
 }
 function seedExamples(){
   let seeded=false;try{seeded=localStorage.getItem(LS+"-seeded")==="1"}catch(e){}
-  if(seeded||posts.length)return;
+  if(seeded||allPosts.length)return;
   const ex=(id,o)=>({...blank(),id,example:true,createdAt:Date.now(),updatedAt:Date.now(),...o});
-  posts=[
-    ex("ex1",{type:"event",theme:"fright",headline:"Halloween Fright Night",kicker:"ONE NIGHT ONLY",sub:"Horror double bill · best costume wins a prize",details:"Fri 30 Oct · 8pm",price:"£6",cta:"Limited seats · book now",date:addDays(isoDay(new Date()),2),time:"19:00",status:"scheduled",tags:BASE_TAGS+" #Halloween"}),
-    ex("ex2",{type:"kids",theme:"pop",headline:"Midterm Kids Club",kicker:"KIDS CLUB",sub:"A different family film every morning",details:"Mon–Fri · 11am",price:"£3",cta:"Book at imc.ie",date:addDays(isoDay(new Date()),1),time:"15:30",status:"draft",platform:"Facebook",tags:BASE_TAGS+" #KidsClub"}),
-    ex("ex3",{type:"quiz",headline:"🦖 🏝️ 🚙",kicker:"GUESS THE FILM",sub:"Three emoji, one film. Answer below!",cta:"Answer in the comments",date:addDays(isoDay(new Date()),-4),time:"19:00",status:"posted",platform:"Facebook",metrics:{reach:4200,react:310,comm:185,share:22},tags:BASE_TAGS+" #GuessTheFilm"}),
+  allPosts=[
+    ex("ex1",{type:"event",theme:"fright",headline:"Halloween Fright Night",kicker:"ONE NIGHT ONLY",sub:"Horror double bill · best costume wins a prize",details:"Fri 30 Oct · 8pm",price:"£6",cta:"Limited seats · book now",date:addDays(isoDay(new Date()),2),time:"19:00",status:"scheduled",tags:SITES.enniskillen.tags+" #Halloween"}),
+    ex("ex2",{type:"kids",theme:"pop",headline:"Midterm Kids Club",kicker:"KIDS CLUB",sub:"A different family film every morning",details:"Mon–Fri · 11am",price:"£3",cta:"Book at imc.ie",date:addDays(isoDay(new Date()),1),time:"15:30",status:"draft",platform:"Facebook",tags:SITES.enniskillen.tags+" #KidsClub"}),
+    ex("ex3",{type:"quiz",headline:"🦖 🏝️ 🚙",kicker:"GUESS THE FILM",sub:"Three emoji, one film. Answer below!",cta:"Answer in the comments",date:addDays(isoDay(new Date()),-4),time:"19:00",status:"posted",platform:"Facebook",metrics:{reach:4200,react:310,comm:185,share:22},tags:SITES.enniskillen.tags+" #GuessTheFilm"}),
     ex("ex4",{type:"now",theme:"projector",headline:"Staff pick of the week",kicker:"NOW SHOWING",sub:"Our team's favourite film showing right now",details:"Daily · Screen 2",cta:"Book at imc.ie",date:addDays(isoDay(new Date()),-2),time:"18:00",status:"posted",metrics:{reach:2600,react:120,comm:14,share:6}})
   ];
-  posts.forEach(p=>p.caption=capFor(p));
+  allPosts.forEach(p=>{p.site="enniskillen";p.caption=capFor(p)});scope();
   lsSave();try{localStorage.setItem(LS+"-seeded","1")}catch(e){}
 }
 async function persist(p){
-  p.updatedAt=Date.now();
+  p.updatedAt=Date.now();p.site=siteOf(p);
   if(col){const {id,...body}=p;await col.doc(id).set(JSON.parse(JSON.stringify(body)));}
-  else{const i=posts.findIndex(x=>x.id===p.id);if(i<0)posts.push(p);else posts[i]=p;lsSave();renderAll()}
+  else{const i=allPosts.findIndex(x=>x.id===p.id);if(i<0)allPosts.push(p);else allPosts[i]=p;scope();lsSave();renderAll()}
 }
 async function remove(id){
   if(col)await col.doc(id).delete();
-  else{posts=posts.filter(p=>p.id!==id);lsSave();renderAll()}
+  else{allPosts=allPosts.filter(p=>p.id!==id);scope();lsSave();renderAll()}
 }
 const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
@@ -633,7 +670,7 @@ function paint(ctx,W,H,d,image,thumb){
   {const sg=ctx.createLinearGradient(pad*.6,0,W-pad*.6,0);sg.addColorStop(0,"#ffd84a");sg.addColorStop(.55,"#f39a2b");sg.addColorStop(1,"#e2452e");ctx.fillStyle=sg;ctx.fillRect(pad*.6+16*u,fy+fh-6*u,W-pad*1.2-32*u,6*u)}
   if(siteLogo){const lh=fh*.7,lw=lh*siteLogo.naturalWidth/siteLogo.naturalHeight;ctx.drawImage(siteLogo,pad*.6+32*u,fy+(fh-lh)/2,lw,lh)}else{
   ctx.fillStyle="#14060c";ctx.font=`900 ${44*u}px ${disp}`;ctx.fillText("IMC",pad*.6+32*u,fy+fh/2+6*u);const imcw=ctx.measureText("IMC").width;
-  ctx.font=`600 ${20*u}px ${mono}`;ctx.fillStyle="#5e6678";ctx.fillText("ENNISKILLEN",pad*.6+40*u+imcw,fy+fh/2+4*u)}
+  ctx.font=`600 ${20*u}px ${mono}`;ctx.fillStyle="#5e6678";ctx.fillText(S(siteOf(d)).town.toUpperCase(),pad*.6+40*u+imcw,fy+fh/2+4*u)}
   if(d.cta){ctx.textAlign="right";ctx.fillStyle="#0b6bb8";let fs=30*u;ctx.font=`700 ${fs}px ${body}`;while(ctx.measureText(d.cta).width>W*.55&&fs>16*u){fs-=2*u;ctx.font=`700 ${fs}px ${body}`}ctx.fillText(d.cta,W-pad*.6-32*u,fy+fh/2+10*u);ctx.textAlign="left"}
   // headline block bottom-up
   let by=fy-50*u;
@@ -664,11 +701,11 @@ function capFor(d){
     access:`💙 ${h}: a relaxed screening at IMC Enniskillen.${s}${dt}\n\nLights up a little, sound down a little, and no one minds if you move about. Please share with families who'd love to know.${cta}`,
     poll:`🗳️ YOU DECIDE: ${h}\n${d.sub||"❤️ for option one or 😂 for option two"}\n\nVote with a reaction. Most votes wins a spot on our screens!${cta}`,
     quiz:`🤔 GUESS THE FILM! ${h}\n${d.sub||"Three emojis, one film."}\n\nFirst correct answer in the comments gets a shout-out 🏆 No Googling!${cta}`
-  };return m[d.type]||m.now}
+  };return loc(m[d.type]||m.now,siteOf(d))}
 $("#capgen").onclick=()=>{readForm();cur.caption=capFor(cur);$("#f-caption").value=cur.caption;score();toast("Caption filled")};
 $("#capcopy").onclick=()=>{const t=$("#f-caption").value+"\n\n"+$("#f-tags").value;navigator.clipboard?.writeText(t).then(()=>toast("Caption copied"),()=>{$("#f-caption").select();toast("Press Ctrl+C to copy")})};
 $("#capai").onclick=async()=>{if(!sample)return;readForm();const b=$("#capai");b.disabled=true;b.textContent="Writing…";
-  const prompt=`Write one Facebook/Instagram caption for IMC Enniskillen, a 7-screen cinema on Factory Road, Enniskillen, Co. Fermanagh, Northern Ireland. Friendly, local, a bit playful, Northern Irish English (e.g. "wee" is fine sparingly). Under 70 words. Open with a hook in the first line, include a question or tag-a-friend prompt, end with the call to action. 2-4 emojis max. No hashtags. Return only the caption.\n\nAd type: ${TPL[cur.type].name}\nHeadline: ${cur.headline}\nTop label: ${cur.kicker}\nSupporting line: ${cur.sub}\nDates/times: ${cur.details}\nPrice: ${cur.price}\nCall to action: ${cur.cta}`;
+  const prompt=`Write one Facebook/Instagram caption for ${S().name}, ${aboutOf(S())}. Friendly, local, a bit playful, ${S().ni?'Northern Irish English (e.g. "wee" is fine sparingly)':"Irish English"}. Under 70 words. Open with a hook in the first line, include a question or tag-a-friend prompt, end with the call to action. 2-4 emojis max. No hashtags. Return only the caption.\n\nAd type: ${TPL[cur.type].name}\nHeadline: ${cur.headline}\nTop label: ${cur.kicker}\nSupporting line: ${cur.sub}\nDates/times: ${cur.details}\nPrice: ${cur.price}\nCall to action: ${cur.cta}`;
   try{const r=await sample(prompt,{modelTier:"quick",cache:false,onText:({text})=>{$("#f-caption").value=text}});cur.caption=r.text.trim();$("#f-caption").value=cur.caption;score()}
   catch(e){toast(e&&e.code==="rate_limited"?"Claude is busy. Try again in a minute.":"Claude couldn't write a caption here.")}
   b.disabled=false;b.textContent="Write with Claude"};
@@ -681,7 +718,7 @@ function score(){
   const goodSlot=d&&((dow===4||dow===5)&&hr>=17&&hr<=21||dow===0&&hr>=17&&hr<=21||(cur.type==="kids"&&hr>=15&&hr<=17)||(dow===3&&hr>=12&&hr<=13));
   const checks=[
     [/\?|👇|tag|comment|vote|react/i.test(c),"Asks people to do something","A question, a vote or ‘tag a friend’ turns viewers into sharers."],
-    [/enniskillen|fermanagh|lough|erne|local|townland|kesh|irvinestown|lisnaskea/i.test(c+cur.sub),"Feels local","Name the town or county so it reads as yours, not a chain post."],
+    [new RegExp(S().local,"i").test(c+cur.sub),"Feels local","Name the town or county so it reads as yours, not a chain post."],
     [first.length>0&&first.length<=90,"Strong first line","Keep the hook under 90 characters so it shows before ‘See more’."],
     [c.length>0&&c.length<=420,"Short enough to read","Under about 400 characters gets read to the end."],
     [/now|tonight|this week|only|limited|soon|today|weekend|sell/i.test(c+cur.kicker),"Gives a reason to act now","Time limits and ‘one night only’ get people booking, not just liking."],
@@ -714,12 +751,13 @@ const PLAYS=[
  {t:"Local tie-ins",p:"Shout out local schools, GAA and rugby clubs, and businesses for group bookings and team nights. Their members share anything that mentions them.",ex:"Congrats to the U14s! Team night is on us 🏉",pre:{type:"offer",theme:"lakeland",headline:"Team night at the IMC",sub:"Group bookings for Fermanagh clubs and schools",details:"Any night · groups of 10+"}},
  {t:"Popcorn debates",p:"Sweet or salted? Best seat in the house? Low-effort questions get the most comments of any post type, which keeps the page active between big releases.",ex:"Settle it once and for all: sweet 🍯 or salted 🧂?",pre:{type:"poll",theme:"pop",headline:"Sweet or salted?",sub:"🍯 for sweet · 🧂 for salted"}}
 ];
-$("#plays").innerHTML=PLAYS.map((p,i)=>`<div class="panel play"><h3>${p.t}</h3><p>${p.p}</p><div class="ex">${esc(p.ex)}</div><button class="btn small use" data-play="${i}">Build this ad →</button></div>`).join("");
+function renderPlays(){$("#plays").innerHTML=PLAYS.map((p,i)=>`<div class="panel play"><h3>${loc(p.t)}</h3><p>${loc(p.p)}</p><div class="ex">${esc(loc(p.ex))}</div><button class="btn small use" data-play="${i}">Build this ad →</button></div>`).join("");}
+renderPlays();
 $("#plays").addEventListener("click",e=>{const b=e.target.closest("[data-play]");if(!b)return;const pr=PLAYS[+b.dataset.play].pre;editingId=null;img=null;
-  const t=TPL[pr.type];cur={...blank(),kicker:t.kicker,cta:t.cta,theme:t.theme,...pr,status:"idea"};cur.caption=capFor(cur);go("studio");fillForm()});
+  const t=TPL[pr.type];const lp=Object.fromEntries(Object.entries(pr).map(([k,v])=>[k,typeof v==="string"?loc(v):v]));cur={...blank(),kicker:t.kicker,cta:t.cta,theme:t.theme,...lp,status:"idea"};cur.caption=capFor(cur);go("studio");fillForm()});
 
 /* ---------- backup ---------- */
-$("#bk-out").onclick=()=>{const data=JSON.stringify({app:"imc-ad-studio",version:2,exported:new Date().toISOString(),posts,programme,deals:getDeals()},null,2);
+$("#bk-out").onclick=()=>{const data=JSON.stringify({app:"imc-ad-studio",version:2,exported:new Date().toISOString(),posts:allPosts,programme,deals:getDeals()},null,2);
   const b=new Blob([data],{type:"application/json"}),name="imc-ad-studio-backup-"+isoDay(new Date())+".json";
   if(downloads){downloads.save({filename:name,data:b}).catch(()=>toast("Export cancelled"));return}
   const u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast("Backup exported")};
@@ -771,21 +809,22 @@ try{programme=JSON.parse(localStorage.getItem(PROG_LS)||"{}")}catch(e){}
 let progCol=null;
 function daysTo(s){return Math.round((new Date(s+"T12:00")-new Date(isoDay(new Date())+"T12:00"))/864e5)}
 function addDays(s,n){const d=new Date(s+"T12:00");d.setDate(d.getDate()+n);return isoDay(d)}
+const pk=id=>site==="enniskillen"?id:site+"__"+id;
 function imdbUrl(t){return "https://www.imdb.com/find/?q="+encodeURIComponent(t.replace(/\s*\(.*\)$/,""))+"&s=tt"}
 function renderReleases(){
   const audKeys=["all",...Object.keys(AUD)];
   $("#relfilters").innerHTML=audKeys.map(k=>`<button data-ra="${k}" aria-pressed="${relAud===k}">${k==="all"?"All":AUD[k].n}</button>`).join("");
   $("#relprog").innerHTML=[["all","Any"],["yes","Showing"],["maybe","Maybe"],["unset","Not decided"]].map(([k,l])=>`<button data-rp="${k}" aria-pressed="${relProg===k}">${l}</button>`).join("");
   const today=isoDay(new Date());
-  const list=RELEASES.filter(r=>r.d>=addDays(today,-7)&&(relAud==="all"||r.aud===relAud)&&(relProg==="all"||(relProg==="unset"?!programme[r.id]:programme[r.id]===relProg)));
+  const list=RELEASES.filter(r=>r.d>=addDays(today,-7)&&(relAud==="all"||r.aud===relAud)&&(relProg==="all"||(relProg==="unset"?!programme[pk(r.id)]:programme[pk(r.id)]===relProg)));
   let h="",month="";
   list.forEach(r=>{const dt=new Date(r.d+"T12:00"),m=dt.toLocaleDateString("en-GB",{month:"long",year:"numeric"});
     if(m!==month){if(month)h+="</div>";month=m;h+=`<div class="rel-month"><h2>${m}</h2></div><div class="rel-grid">`}
-    const p=programme[r.id]||"",dd=daysTo(r.d),ads=posts.filter(x=>x.releaseId===r.id).length;
+    const p=programme[pk(r.id)]||"",dd=daysTo(r.d),ads=posts.filter(x=>x.releaseId===r.id).length;
     h+=`<div class="panel rel ${p==="yes"?"showing":p==="no"?"not":""}">
       <div class="top"><div class="date"><b>${dt.getDate()}</b><span>${dt.toLocaleDateString("en-GB",{weekday:"short"})}</span></div>
       <div style="min-width:0"><h3>${esc(r.t)}</h3><div class="meta">${r.cert?`<span class="cert">${r.cert}</span>`:""}<span>${AUD[r.aud].n}</span><span>${esc(r.dist)}</span><span>${dd>0?"in "+dd+" days":dd===0?"out today":"out now"}</span>${ads?`<span style="color:var(--good);font-weight:700">${ads} ad${ads>1?"s":""} made</span>`:""}</div></div></div>
-      <p class="angle"><b>Viral angle:</b> ${esc(r.angle)}</p>
+      <p class="angle"><b>Viral angle:</b> ${esc(loc(r.angle))}</p>
       ${r.note?`<p class="note">Date note: ${esc(r.note)}</p>`:""}
       <div class="prog" role="group" aria-label="Are we showing it?">${[["yes","Showing"],["maybe","Maybe"],["no","Not showing"]].map(([k,l])=>`<button data-prog="${r.id}" data-v="${k}" aria-pressed="${p===k}">${l}</button>`).join("")}</div>
       <div class="acts"><button class="btn small primary" data-relad="${r.id}" data-k="announce">Announce ad</button><button class="btn small" data-relad="${r.id}" data-k="open">Opening-day ad</button><a href="${imdbUrl(r.t)}" target="_blank" rel="noopener">IMDb ↗</a></div>
@@ -797,7 +836,7 @@ $("#relfilters").addEventListener("click",e=>{const b=e.target.closest("[data-ra
 $("#relprog").addEventListener("click",e=>{const b=e.target.closest("[data-rp]");if(b){relProg=b.dataset.rp;renderReleases()}});
 $("#rellist").addEventListener("click",async e=>{
   const pb=e.target.closest("[data-prog]");
-  if(pb){const id=pb.dataset.prog,v=programme[id]===pb.dataset.v?"":pb.dataset.v;programme={...programme,[id]:v};renderReleases();
+  if(pb){const id=pk(pb.dataset.prog),v=programme[id]===pb.dataset.v?"":pb.dataset.v;programme={...programme,[id]:v};renderReleases();
     if(progCol){try{await progCol.doc(id).set({state:v,updatedAt:Date.now()})}catch(err){toast("Couldn't save. You may only have view access.")}}
     else{try{localStorage.setItem(PROG_LS,JSON.stringify(programme))}catch(err){}}return}
   const ab=e.target.closest("[data-relad]");if(!ab)return;
@@ -808,9 +847,9 @@ $("#rellist").addEventListener("click",async e=>{
   if(announce&&pd<isoDay(new Date()))pd=isoDay(new Date());
   const day=new Date(r.d+"T12:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"});
   editingId=null;img=null;$("#f-img").value="";
-  cur={...blank(),type:t,kicker:announce?T.kicker:(r.aud==="event"||r.aud==="classic"?"ON THE BIG SCREEN":"OUT NOW"),headline:r.t,sub:r.sub,
+  cur={...blank(),type:t,kicker:announce?T.kicker:(r.aud==="event"||r.aud==="classic"?"ON THE BIG SCREEN":"OUT NOW"),headline:r.t,sub:loc(r.sub),
     details:(announce?"In cinemas "+day:"Showing from "+day)+(r.cert?" · "+r.cert:""),cta:announce?"Tickets on sale now":T.cta,theme:AUD[r.aud].th,
-    tags:BASE_TAGS+" "+r.tag,date:announce?pd:r.d,time:announce?"19:00":"17:30",status:"idea",releaseId:r.id,imgsrc:"official"};
+    tags:S().tags+" "+r.tag,date:announce?pd:r.d,time:announce?"19:00":"17:30",status:"idea",releaseId:r.id,imgsrc:"official"};
   cur.caption=capFor(cur);
   go("studio");fillForm();toast(announce?"Announcement ad ready. Add the official poster.":"Opening-day ad ready. Add the official poster.");
 });
@@ -822,7 +861,10 @@ let siteLogo=null;
 /* ---------- imc.ie data (imported by the GitHub Action into data/imc.json) ---------- */
 const RAW="https://raw.githubusercontent.com/popcorn483/imc/main/";
 let IMC=null,woTab="today",imcTried=false;
-async function loadImc(){for(const u of[RAW+"data/imc.json?ts="+Date.now(),"data/imc.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();j._base=u.startsWith(RAW)?RAW:"";IMC=j;return j}}catch(e){}}return null}
+let CINEMAS=null;  /* data/cinemas.json: which cinemas the importer has listings for */
+const siteFile=k=>k==="enniskillen"?"data/imc.json":((CINEMAS&&CINEMAS.cinemas||[]).find(c=>c.id===k&&c.file)||{}).file||"data/cinemas/"+k+".json";
+async function getJson(path){for(const u of[RAW+path+"?ts="+Date.now(),path]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();j._base=u.startsWith(RAW)?RAW:"";return j}}catch(e){}}return null}
+async function loadImc(){const want=site;if(!CINEMAS)CINEMAS=await getJson("data/cinemas.json");const j=await getJson(siteFile(want));if(want!==site)return null;IMC=j;fillSitePicker();return j}
 const asset=p=>!p?null:/^https?:/.test(p)?p:((IMC&&IMC._base)||"")+p;
 /* the cinema's own clock (Europe/London; Dublin keeps the same time), so "today" and "already started" are right on any device */
 function cinemaNow(){const p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()))p[x.type]=x.value;
@@ -848,10 +890,10 @@ function openEditor(h){try{localStorage.setItem("imc-handoff",JSON.stringify({..
 function filmPayload(f,mode){const d=firstDate(f);return{title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert||"",certIcon:f.certIcon||null,certSystem:f.certSystem||null,times:mode==="soon"?[]:(f.times||[]),dateLabel:d?new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}).toUpperCase():"SOON",luxx:!!f.luxx}}
 function makeFilm(f,mode,fmt){openEditor({kind:"film",mode,fmt,film:filmPayload(f,mode)})}
 function makeTimes(date,fmt){const films=filmsOn(date);if(!films.length){toast("No film times for that day yet");return}
-  openEditor({kind:"listing",fmt,heading:date===todayIso()?"Today at IMC Enniskillen":"At IMC Enniskillen",sub:fmtLong(date),rows:films.map(f=>({t:f.title,times:f.times,cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||"",luxx:!!f.luxx}))})}
+  openEditor({kind:"listing",fmt,heading:date===todayIso()?"Today at "+S().name:"At "+S().name,sub:fmtLong(date),rows:films.map(f=>({t:f.title,times:f.times,cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||"",luxx:!!f.luxx}))})}
 function writeFilmPost(f,mode){startNew();const d=firstDate(f);
   Object.assign(cur,{type:mode==="soon"?"soon":mode==="kids"?"kids":"now",kicker:TPL[mode==="soon"?"soon":mode==="kids"?"kids":"now"].kicker,headline:f.title,sub:f.luxx?"In LUXX luxury recliners":(f.synopsis||"").split(/(?<=\.)\s/)[0].slice(0,88),
-    details:mode==="soon"?("Opens "+fmtShort(d)):((f.times||[]).slice(0,5).join(" · ")),cta:"Book at imc.ie",status:"draft",tags:BASE_TAGS+" #"+f.title.replace(/[^A-Za-z0-9]/g,"")});
+    details:mode==="soon"?("Opens "+fmtShort(d)):((f.times||[]).slice(0,5).join(" · ")),cta:"Book at imc.ie",status:"draft",tags:S().tags+" #"+f.title.replace(/[^A-Za-z0-9]/g,"")});
   cur.caption=capFor(cur);fillForm();go("studio");toast("Post drafted. Check it, then save")}
 
 /* ---------- film cards ---------- */
@@ -875,7 +917,7 @@ function keyed(list){return list.map(f=>{const k=(f.title+"|"+(f.luxx?1:0)).toLo
 document.addEventListener("click",e=>{const m=e.target.closest("[data-film]");if(m){const f=FILMKEYS.get(m.dataset.film);if(f)makeFilm(f,m.dataset.mode,m.dataset.fmt);return}
   const w=e.target.closest("[data-write]");if(w){const f=FILMKEYS.get(w.dataset.write);if(f)writeFilmPost(f,w.dataset.mode)}});
 
-function noData(){if(!imcTried)return`<div class="panel nodata"><p>Loading the latest listings from imc.ie…</p></div>`;return`<div class="panel nodata"><h2>Waiting for imc.ie</h2><p>Listings are imported from imc.ie every 3 hours by this site's GitHub importer. If this message stays, the importer hasn't run yet or imc.ie was down. Open the repo's <b>Actions</b> tab to run "Import imc.ie listings" now.</p></div>`}
+function noData(){if(!imcTried)return`<div class="panel nodata"><p>Loading the latest listings from imc.ie…</p></div>`;if(site!=="enniskillen")return`<div class="panel nodata"><h2>No ${esc(S().name)} listings yet</h2><p>The importer hasn't brought in this cinema's times from imc.ie yet. It runs three times a day; to run it now, open the repo's <b>Actions</b> tab and run "Import imc.ie listings". Posts, deals and captions for ${esc(S().name)} work in the meantime.</p></div>`;return`<div class="panel nodata"><h2>Waiting for imc.ie</h2><p>Listings are imported from imc.ie every 3 hours by this site's GitHub importer. If this message stays, the importer hasn't run yet or imc.ie was down. Open the repo's <b>Actions</b> tab to run "Import imc.ie listings" now.</p></div>`}
 function stamp(){if(!IMC||!IMC.updated)return"";const f=d=>new Date(d).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"});return`Updated from imc.ie ${f(IMC.updated)}`+(IMC.blocked&&IMC.checked?` · imc.ie paused updates at ${f(IMC.checked)}, so these are the latest listings we have`:"")}
 
 /* ---------- Today ---------- */
@@ -918,8 +960,8 @@ const DEFAULT_DEALS=[
   {id:"large",name:"Large Combo",items:["Large popcorn","Large drink"],price:"",was:"",small:"",products:["popcorn","drink"]},
   {id:"medium",name:"Medium Combo",items:["Medium popcorn","Medium drink"],price:"",was:"",small:"",products:["popcorn","drink"]}];
 const PRODUCT_NAMES={popcorn:"Popcorn",drink:"Drink",nachos:"Nachos",hotdog:"Hot dog",sweets:"Sweets",tray:"Kids tray"};
-function getDeals(){try{const d=JSON.parse(localStorage.getItem("imc-deals")||"null");if(Array.isArray(d)&&d.length)return d}catch(e){}return JSON.parse(JSON.stringify(DEFAULT_DEALS))}
-function putDeals(d){try{localStorage.setItem("imc-deals",JSON.stringify(d))}catch(e){toast("Couldn't save deals. Browser storage is blocked.")}}
+function getDeals(){try{const d=JSON.parse(localStorage.getItem(sk("imc-deals"))||"null");if(Array.isArray(d)&&d.length)return d}catch(e){}return JSON.parse(JSON.stringify(DEFAULT_DEALS))}
+function putDeals(d){try{localStorage.setItem(sk("imc-deals"),JSON.stringify(d))}catch(e){toast("Couldn't save deals. Browser storage is blocked.")}}
 function renderDeals(){const el=$("#dealList");if(!el)return;const ds=getDeals();
   el.innerHTML=ds.map((d,i)=>{const cnt=k=>(d.products||[]).filter(p=>p===k).length;return`<div class="panel deal" data-di="${i}">
     <div class="dealgrid"><div class="field"><label for="dn${i}">Deal name</label><input id="dn${i}" data-df="name" value="${esc(d.name)}"></div>
@@ -936,11 +978,23 @@ $("#dealList").addEventListener("click",e=>{const card=e.target.closest("[data-d
   const pp=e.target.closest("[data-pp]"),pm=e.target.closest("[data-pm]");
   if(pp){d.products=[...(d.products||[]),pp.dataset.pp].slice(0,4);putDeals(ds);renderDeals();return}
   if(pm){const a=d.products||[],j=a.lastIndexOf(pm.dataset.pm);if(j>=0)a.splice(j,1);d.products=a;putDeals(ds);renderDeals();return}
-  const del=e.target.closest("[data-dealdel]");if(del){ds.splice(i,1);putDeals(ds.length?ds:[]);if(!ds.length)localStorage.removeItem("imc-deals");renderDeals();renderToday();toast("Deal deleted")}
-  const wp=e.target.closest("[data-dealpost]");if(wp){startNew();Object.assign(cur,{type:"offer",kicker:"THIS WEEK AT THE IMC",headline:d.name,sub:(d.items||[]).join(" + "),price:d.price||"",details:d.small||"",cta:"Grab it at the kiosk",theme:"velvet",status:"draft",tags:BASE_TAGS+" #CinemaSnacks"});cur.caption=capFor(cur);fillForm();go("studio");toast("Caption drafted")}});
+  const del=e.target.closest("[data-dealdel]");if(del){ds.splice(i,1);putDeals(ds.length?ds:[]);if(!ds.length)localStorage.removeItem(sk("imc-deals"));renderDeals();renderToday();toast("Deal deleted")}
+  const wp=e.target.closest("[data-dealpost]");if(wp){startNew();Object.assign(cur,{type:"offer",kicker:"THIS WEEK AT THE IMC",headline:d.name,sub:(d.items||[]).join(" + "),price:d.price||"",details:d.small||"",cta:"Grab it at the kiosk",theme:"velvet",status:"draft",tags:S().tags+" #CinemaSnacks"});cur.caption=capFor(cur);fillForm();go("studio");toast("Caption drafted")}});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-dealmake]");if(!b)return;const d=getDeals()[+b.dataset.dealmake];if(d)openEditor({kind:"deal",deal:d,animated:b.dataset.anim==="1",fmt:b.dataset.fmt||"square"})});
 $("#addDeal").onclick=()=>{const ds=getDeals();ds.push({id:newId(),name:"New deal",items:["Popcorn","Drink"],price:"",was:"",small:"",products:["popcorn","drink"]});putDeals(ds);renderDeals();toast("Deal added")};
-$("#resetDeals").onclick=()=>{try{localStorage.removeItem("imc-deals")}catch(e){}renderDeals();renderToday();toast("Deals reset")};
+$("#resetDeals").onclick=()=>{try{localStorage.removeItem(sk("imc-deals"))}catch(e){}renderDeals();renderToday();toast("Deals reset")};
+
+/* ---------- cinema picker ---------- */
+function fillSitePicker(){const sel=$("#sitesel");if(!sel)return;const have=new Set(((CINEMAS&&CINEMAS.cinemas)||[]).filter(c=>c.ok).map(c=>c.id));have.add("enniskillen");
+  const opt=([k,x])=>`<option value="${k}">${esc(x.name)}${CINEMAS&&!have.has(k)?" · no listings yet":""}</option>`;
+  const grp=(lbl,ni)=>`<optgroup label="${lbl}">`+Object.entries(SITES).filter(([,x])=>!!x.ni===ni).map(opt).join("")+"</optgroup>";
+  sel.innerHTML=grp("Northern Ireland",true)+grp("Republic of Ireland",false);sel.value=site}
+function siteText(){const x=S();$$(".sitename").forEach(e=>e.textContent=x.name);$("#brandsite").textContent=x.name.startsWith("IMC ")?x.town:x.name;document.title=x.name+" Hub";
+  const im=document.querySelector('a[href*="imdb.com/calendar"]');if(im){im.href="https://www.imdb.com/calendar/?region="+(x.ni?"GB":"IE");im.textContent="IMDb "+(x.ni?"UK":"Ireland")+" calendar ↗"}}
+$("#sitesel").addEventListener("change",async e=>{site=e.target.value;try{localStorage.setItem(SITE_LS,site)}catch(err){}
+  scope();siteText();renderPlays();startNew();IMC=null;imcTried=false;lastShowKey="";renderAll();renderToday();renderWhatsOn();if(view==="deals")renderDeals();toast("Switched to "+S().name);
+  await loadImc();imcTried=true;renderToday();renderWhatsOn()});
+fillSitePicker();siteText();
 
 loadImc().finally(()=>{imcTried=true;renderToday();renderWhatsOn()});
 
