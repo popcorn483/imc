@@ -20,13 +20,15 @@ const CINEMAS = [
   { id: "newtownards", name: "IMC Newtownards", slugs: ["newtownards"] },
   { id: "athlone", name: "IMC Athlone", slugs: ["athlone"] },
   { id: "ballina", name: "IMC Ballina", slugs: ["ballina"] },
+  { id: "ballincollig", name: "IMC Ballincollig", slugs: ["ballincollig"] },
+  { id: "blackpool", name: "IMC Blackpool", slugs: ["blackpool"] },
   { id: "carlow", name: "IMC Carlow", slugs: ["carlow"] },
   { id: "clonmel", name: "IMC Clonmel", slugs: ["clonmel"] },
   { id: "dundalk", name: "IMC Dundalk", slugs: ["dundalk"] },
   { id: "dunlaoghaire", name: "IMC Dún Laoghaire", slugs: ["dun-laoghaire", "dunlaoghaire"] },
-  { id: "galway", name: "IMC Galway", slugs: ["galway", "galway-headford-road", "galwayheadfordroad"] },
-  { id: "oranmore", name: "IMC Oranmore", slugs: ["oranmore", "galway-oranmore", "galwayoranmore"] },
-  { id: "kilkenny", name: "IMC Kilkenny", slugs: ["kilkenny", "kilkenny-barrack-street", "kilkennybarrackstreet"] },
+  { id: "galway", name: "IMC Galway", slugs: ["galway-headford-road", "galway"] },
+  { id: "oranmore", name: "IMC Oranmore", slugs: ["galway-oranmore", "oranmore"] },
+  { id: "kilkenny", name: "IMC Kilkenny", slugs: ["kilkenny-barrack-street", "kilkenny"] },
   { id: "mullingar", name: "IMC Mullingar", slugs: ["mullingar"] },
   { id: "santry", name: "IMC Santry", slugs: ["santry"] },
   { id: "savoy", name: "Savoy Cinema", slugs: ["savoy", "savoy-cinema", "dublin-savoy"] },
@@ -329,13 +331,15 @@ const result = { id: cin.id, cinema: cin.name, source: null, updated: new Date()
 const fresh = new Set();
 // find this cinema's imc.ie address: the remembered one first, then each candidate
 let PAGES = null;
-for (const c of [...new Set([knownSlug, ...cin.slugs].filter(Boolean))]) {
+for (const c of [...new Set([...cin.slugs.slice(0, 1), knownSlug, ...cin.slugs].filter(Boolean))]) {
   if (blocked) break;
   let html;
   try { html = await get(pagesFor(c).today); } catch (e) { note(`${c}: ${e.message}`); await sleep(1500); continue; }
   await sleep(1500);
   if (isBotCheck(html)) { blocked = true; note(`imc.ie showed a browser check on ${cin.id}; stopping this run and keeping the previous listings`); break; }
   if (isPicker(html)) { note(`${c}: imc.ie showed its choose-a-cinema page`); continue; }
+  // a real film-times page lists films; a generic page for a wrong address doesn't
+  if (!parseFilms(html).films.length) { note(`${c}: no films on the film-times page`); if (!PAGES) { CINEMA = c; PAGES = pagesFor(c); result.source = `${BASE}/${c}`; } continue; }
   CINEMA = c; PAGES = pagesFor(c); result.source = `${BASE}/${c}`; break;
 }
 if (!PAGES) note(`no working imc.ie address for ${cin.id}`);
