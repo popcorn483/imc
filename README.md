@@ -44,14 +44,14 @@ Shortcuts: Ctrl+Z undo, Ctrl+Shift+Z redo, Delete removes, Ctrl+D duplicates, ar
 
 ## How the imc.ie import works
 
-`.github/workflows/import-imc.yml` runs `tools/import-imc.mjs` every 3 hours. It reads these imc.ie pages for Enniskillen:
+`.github/workflows/import-imc.yml` runs `tools/import-imc.mjs` three times a day. It reads these imc.ie pages for every IMC cinema (pick one with the **Cinema** menu on the Today page):
 - today's film times and the next week of dates
 - advance bookings
 - Kids Club
 - LUXX
 - the cinema page's banners
 
-It saves posters and banners into `data/` and writes `data/imc.json`, which the site reads. To refresh straight away, open **Actions → Import imc.ie listings → Run workflow**.
+It saves posters and banners into `data/` and writes `data/imc.json` for Enniskillen and `data/cinemas/<cinema>.json` for the others. `data/cinemas.json` lists which imc.ie address worked for each cinema and whether listings came in. To import one cinema only, run `ONLY=galway node tools/import-imc.mjs`. To refresh straight away, open **Actions → Import imc.ie listings → Run workflow**.
 
 The raw pages are kept in `data/raw/` so the importer can be adjusted if imc.ie changes its layout. Check `log` in `data/imc.json` to see what each run found.
 

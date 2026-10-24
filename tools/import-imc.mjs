@@ -1,4 +1,7 @@
-// Imports IMC Enniskillen listings from imc.ie into data/imc.json.
+// Imports IMC listings from imc.ie for every IMC cinema.
+// Enniskillen goes to data/imc.json (as before); the others to data/cinemas/<id>.json.
+// data/cinemas.json lists every cinema, which imc.ie address worked and whether listings came in.
+// Run one cinema with:  ONLY=galway node tools/import-imc.mjs
 // Runs in GitHub Actions (see .github/workflows/import-imc.yml). No secrets needed.
 // imc.ie's markup isn't documented, so each page is parsed with several strategies,
 // and the raw HTML is kept in data/raw/ so the parser can be checked and tuned.
@@ -8,19 +11,42 @@ import path from "node:path";
 import crypto from "node:crypto";
 
 const BASE = "https://imc.ie";
-const CINEMA = "enniskillen";
 const OUT = "data";
-const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 IMC-Enniskillen-Hub/1.0 (+https://github.com/popcorn483/imc)";
-const PAGES = {
-  home: `${BASE}/${CINEMA}`,
-  today: `${BASE}/film-times/${CINEMA}/today/`,
-  advance: `${BASE}/advance-bookings/${CINEMA}/`,
-  kids: `${BASE}/kids-club/${CINEMA}/`,
-  luxx: `${BASE}/luxx/${CINEMA}/`,
-};
-const log = [];
+// ids match SITES in index.html; slugs are the imc.ie addresses to try, first match is remembered
+const CINEMAS = [
+  { id: "enniskillen", name: "IMC Enniskillen", slugs: ["enniskillen"] },
+  { id: "ballymena", name: "IMC Ballymena", slugs: ["ballymena"] },
+  { id: "banbridge", name: "IMC Banbridge", slugs: ["banbridge"] },
+  { id: "newtownards", name: "IMC Newtownards", slugs: ["newtownards"] },
+  { id: "athlone", name: "IMC Athlone", slugs: ["athlone"] },
+  { id: "ballina", name: "IMC Ballina", slugs: ["ballina"] },
+  { id: "carlow", name: "IMC Carlow", slugs: ["carlow"] },
+  { id: "clonmel", name: "IMC Clonmel", slugs: ["clonmel"] },
+  { id: "dundalk", name: "IMC Dundalk", slugs: ["dundalk"] },
+  { id: "dunlaoghaire", name: "IMC Dún Laoghaire", slugs: ["dun-laoghaire", "dunlaoghaire"] },
+  { id: "galway", name: "IMC Galway", slugs: ["galway", "galway-headford-road", "galwayheadfordroad"] },
+  { id: "oranmore", name: "IMC Oranmore", slugs: ["oranmore", "galway-oranmore", "galwayoranmore"] },
+  { id: "kilkenny", name: "IMC Kilkenny", slugs: ["kilkenny", "kilkenny-barrack-street", "kilkennybarrackstreet"] },
+  { id: "mullingar", name: "IMC Mullingar", slugs: ["mullingar"] },
+  { id: "santry", name: "IMC Santry", slugs: ["santry"] },
+  { id: "savoy", name: "Savoy Cinema", slugs: ["savoy", "savoy-cinema", "dublin-savoy"] },
+  { id: "thurles", name: "IMC Thurles", slugs: ["thurles"] },
+  { id: "tullamore", name: "IMC Tullamore", slugs: ["tullamore"] },
+];
+let CINEMA = "enniskillen";
+const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 IMC-Hub/1.0 (+https://github.com/popcorn483/imc)";
+const pagesFor = (c) => ({
+  home: `${BASE}/${c}`,
+  today: `${BASE}/film-times/${c}/today/`,
+  advance: `${BASE}/advance-bookings/${c}/`,
+  kids: `${BASE}/kids-club/${c}/`,
+  luxx: `${BASE}/luxx/${c}/`,
+});
+let log = [];
 let blocked = false;
 const isBotCheck = (html) => /sgcaptcha|captcha|cf-challenge|are you a human/i.test(html) && html.length < 20000;
+// imc.ie answers an unknown or unavailable cinema address with its "choose your cinema" page
+const isPicker = (html) => html.length < 20000 && /booking\/\?cinema=ATHLONE/i.test(html) && /btn-block/i.test(html);
 const note = (m) => { log.push(m); console.log(m); };
 
 async function get(url, binary = false) {
@@ -269,9 +295,10 @@ function banners($) {
   return out;
 }
 
+let RAWDIR = path.join(OUT, "raw");
 async function saveRaw(name, html) {
-  await fs.mkdir(path.join(OUT, "raw"), { recursive: true });
-  await fs.writeFile(path.join(OUT, "raw", `${name}.html`), html);
+  await fs.mkdir(RAWDIR, { recursive: true });
+  await fs.writeFile(path.join(RAWDIR, `${name}.html`), html);
 }
 async function download(url, dir, base) {
   if (!url) return null;
@@ -294,15 +321,30 @@ async function withPosters(films) {
   return films;
 }
 
-const result = { cinema: "IMC Enniskillen", source: `${BASE}/${CINEMA}`, updated: new Date().toISOString(), today: [], days: [], comingSoon: [], kidsClub: [], luxx: [], banners: [], log };
 const used = new Set();
-const prev = await fs.readFile(path.join(OUT, "imc.json"), "utf8").then(JSON.parse).catch(() => null);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+async function importCinema(cin, file, prev, knownSlug) {
+log = [];
+const result = { id: cin.id, cinema: cin.name, source: null, updated: new Date().toISOString(), today: [], days: [], comingSoon: [], kidsClub: [], luxx: [], banners: [], log };
 const fresh = new Set();
-for (const [key, url] of Object.entries(PAGES)) {
+// find this cinema's imc.ie address: the remembered one first, then each candidate
+let PAGES = null;
+for (const c of [...new Set([knownSlug, ...cin.slugs].filter(Boolean))]) {
+  if (blocked) break;
+  let html;
+  try { html = await get(pagesFor(c).today); } catch (e) { note(`${c}: ${e.message}`); await sleep(1500); continue; }
+  await sleep(1500);
+  if (isBotCheck(html)) { blocked = true; note(`imc.ie showed a browser check on ${cin.id}; stopping this run and keeping the previous listings`); break; }
+  if (isPicker(html)) { note(`${c}: imc.ie showed its choose-a-cinema page`); continue; }
+  CINEMA = c; PAGES = pagesFor(c); result.source = `${BASE}/${c}`; break;
+}
+if (!PAGES) note(`no working imc.ie address for ${cin.id}`);
+for (const [key, url] of Object.entries(PAGES || {})) {
   if (blocked) break;
   let html;
   try { html = await get(url); } catch (e) { note(`page failed: ${key} ${e.message}`); continue; }
   if (isBotCheck(html)) { blocked = true; note(`imc.ie showed a browser check on ${key}; stopping this run and keeping the previous listings`); break; }
+  if (isPicker(html)) { note(`${key}: imc.ie showed its choose-a-cinema page; keeping the previous ${key}`); continue; }
   fresh.add(key);
   await saveRaw(key, html);
   await new Promise((r) => setTimeout(r, 1500));
@@ -319,6 +361,7 @@ for (const [key, url] of Object.entries(PAGES)) {
         await new Promise((r) => setTimeout(r, 1500));
         const h = await get(href);
         if (isBotCheck(h)) { blocked = true; note("imc.ie showed a browser check; stopping"); break; }
+        if (isPicker(h)) { note(`day skipped: ${href} showed the choose-a-cinema page`); continue; }
         const name = "day-" + slug(href.split(`/${CINEMA}/`)[1] || label || "x");
         await saveRaw(name, h);
         const d = parseFilms(h).films;
@@ -342,6 +385,8 @@ if (prev) {
   keep("banners", fresh.has("home") && result.banners.length);
   if (!fresh.size) result.updated = prev.updated || null;
 }
+// banners kept from the last run must not be pruned below
+for (const b of result.banners) if (b.file) used.add(b.file);
 result.checked = new Date().toISOString();
 result.blocked = blocked;
 // official rating symbols, as used on imc.ie (BBFC for Northern Ireland, IFCO for the Republic)
@@ -373,9 +418,39 @@ for (const list of [result.today, result.comingSoon, result.kidsClub, result.lux
 }
 note(`ratings: bbfc ${Object.keys(result.ratings.bbfc || {}).join(",")} · ifco ${Object.keys(result.ratings.ifco || {}).join(",")}`);
 for (const list of [result.today, result.comingSoon, result.kidsClub, result.luxx, ...result.days.map((d) => d.films)]) for (const f of list) if (f.posterFile) used.add(f.posterFile);
+result.slug = PAGES ? CINEMA : knownSlug || null;
+await fs.mkdir(path.dirname(file), { recursive: true });
+await fs.writeFile(file, JSON.stringify(result, null, 2));
+const n = new Set([...result.today, ...result.days.flatMap((d) => d.films)].map((f) => f.title)).size;
+note(`done: ${n} films`);
+return { id: cin.id, name: cin.name, slug: result.slug, file, ok: n + result.comingSoon.length > 0, films: n, updated: result.updated, checked: result.checked };
+}
+
+// ---------- run every cinema ----------
+const index = await fs.readFile(path.join(OUT, "cinemas.json"), "utf8").then(JSON.parse).catch(() => ({ cinemas: [] }));
+const only = (process.env.ONLY || "").split(",").map((x) => x.trim()).filter(Boolean);
+const summary = [];
+for (const cin of CINEMAS) {
+  const file = cin.id === "enniskillen" ? path.join(OUT, "imc.json") : path.join(OUT, "cinemas", `${cin.id}.json`);
+  const before = index.cinemas.find((c) => c.id === cin.id);
+  const prev = await fs.readFile(file, "utf8").then(JSON.parse).catch(() => null);
+  if ((only.length && !only.includes(cin.id)) || blocked) {
+    // not refreshed this run: keep its images and its row
+    if (prev) for (const list of [prev.today || [], prev.comingSoon || [], prev.kidsClub || [], prev.luxx || [], ...(prev.days || []).map((d) => d.films || [])]) for (const f of list) if (f.posterFile) used.add(f.posterFile);
+    if (prev) for (const b of prev.banners || []) used.add(b.file);
+    summary.push(before || { id: cin.id, name: cin.name, slug: null, file, ok: false, films: 0 });
+    continue;
+  }
+  console.log(`\n=== ${cin.name} ===`);
+  RAWDIR = cin.id === "enniskillen" ? path.join(OUT, "raw") : path.join(OUT, "raw", cin.id);
+  try { summary.push(await importCinema(cin, file, prev, before && before.slug)); }
+  catch (e) { console.log(`${cin.id} failed: ${e.message}`); summary.push(before || { id: cin.id, name: cin.name, slug: null, file, ok: false, films: 0 }); }
+}
+// files are written relative to the repo root; the site reads them the same way
+for (const c of summary) c.file = String(c.file).split(path.sep).join("/");
+await fs.writeFile(path.join(OUT, "cinemas.json"), JSON.stringify({ updated: new Date().toISOString(), blocked, cinemas: summary }, null, 2));
 // prune old images no longer listed
 for (const dir of ["posters", "banners"]) {
   try { for (const f of await fs.readdir(path.join(OUT, dir))) if (!used.has(`${OUT}/${dir}/${f}`)) await fs.unlink(path.join(OUT, dir, f)); } catch {}
 }
-await fs.writeFile(path.join(OUT, "imc.json"), JSON.stringify(result, null, 2));
-note("done");
+console.log("all done");
