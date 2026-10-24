@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T17:56:33.398Z",
+  "updated": "2026-10-24T18:00:59.622Z",
   "blocked": false,
   "cinemas": [
     {
@@ -63,6 +63,26 @@
       "checked": "2026-10-24T17:51:23.325Z"
     },
     {
+      "id": "ballincollig",
+      "name": "IMC Ballincollig",
+      "slug": "ballincollig",
+      "file": "data/cinemas/ballincollig.json",
+      "ok": false,
+      "films": 0,
+      "updated": "2026-10-24T17:58:00.566Z",
+      "checked": "2026-10-24T17:58:32.640Z"
+    },
+    {
+      "id": "blackpool",
+      "name": "IMC Blackpool",
+      "slug": "blackpool",
+      "file": "data/cinemas/blackpool.json",
+      "ok": false,
+      "films": 0,
+      "updated": "2026-10-24T17:58:32.645Z",
+      "checked": "2026-10-24T17:59:05.984Z"
+    },
+    {
       "id": "carlow",
       "name": "IMC Carlow",
       "slug": "carlow",
@@ -105,32 +125,32 @@
     {
       "id": "galway",
       "name": "IMC Galway",
-      "slug": "galway",
+      "slug": "galway-headford-road",
       "file": "data/cinemas/galway.json",
-      "ok": false,
-      "films": 0,
-      "updated": "2026-10-24T17:53:30.918Z",
-      "checked": "2026-10-24T17:53:42.916Z"
+      "ok": true,
+      "films": 20,
+      "updated": "2026-10-24T17:59:05.999Z",
+      "checked": "2026-10-24T18:00:00.841Z"
     },
     {
       "id": "oranmore",
       "name": "IMC Oranmore",
-      "slug": "oranmore",
+      "slug": "galway-oranmore",
       "file": "data/cinemas/oranmore.json",
-      "ok": false,
-      "films": 0,
-      "updated": "2026-10-24T17:53:42.917Z",
-      "checked": "2026-10-24T17:53:55.807Z"
+      "ok": true,
+      "films": 16,
+      "updated": "2026-10-24T18:00:00.846Z",
+      "checked": "2026-10-24T18:00:31.312Z"
     },
     {
       "id": "kilkenny",
       "name": "IMC Kilkenny",
-      "slug": "kilkenny",
+      "slug": "kilkenny-barrack-street",
       "file": "data/cinemas/kilkenny.json",
-      "ok": false,
-      "films": 0,
-      "updated": "2026-10-24T17:53:55.814Z",
-      "checked": "2026-10-24T17:54:07.711Z"
+      "ok": true,
+      "films": 20,
+      "updated": "2026-10-24T18:00:31.315Z",
+      "checked": "2026-10-24T18:00:59.606Z"
     },
     {
       "id": "mullingar",
