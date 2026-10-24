@@ -64,6 +64,13 @@ async function get(url, binary = false) {
   }
   throw last;
 }
+// some cinemas' pages load their times afterwards with this request (the same one the browser makes)
+async function schedules(cinemaName, daysAhead, extra = {}) {
+  const body = new URLSearchParams({ action: "fetch_movie_schedules", cinema: cinemaName, daysAhead: String(daysAhead), viewMode: "singleDay", ...extra });
+  const r = await fetch(`${BASE}/wp-admin/admin-ajax.php`, { method: "POST", headers: { "user-agent": UA, "content-type": "application/x-www-form-urlencoded; charset=UTF-8", "x-requested-with": "XMLHttpRequest" }, body });
+  if (!r.ok) throw new Error(`${r.status} schedules ${cinemaName}`);
+  return await r.text();
+}
 const abs = (u) => { if (!u || u.startsWith("data:")) return null; try { return new URL(u.trim(), BASE).href; } catch { return null; } };
 const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
 const slug = (s) => clean(s).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
@@ -377,6 +384,28 @@ for (const [key, url] of Object.entries(PAGES || {})) {
   if (key === "advance") result.comingSoon = await withPosters(films);
   if (key === "kids") result.kidsClub = await withPosters(films);
   if (key === "luxx") result.luxx = await withPosters(films);
+}
+// pages with no film cards: ask for the times directly, today and the next 7 days, plus advance bookings
+if (PAGES && !blocked && !result.today.length && !result.days.length) {
+  const name = cin.ajaxName || CINEMA.replace(/-/g, " ");
+  for (let i = 0; i < 8 && !blocked; i++) {
+    try {
+      await sleep(1500);
+      const h = await schedules(name, i);
+      if (isBotCheck(h)) { blocked = true; break; }
+      const d = parseFilms(`<html><body>${h}</body></html>`).films;
+      note(`schedules day +${i}: ${d.length} films`);
+      if (!d.length) continue;
+      await saveRaw(`ajax-day-${i}`, h);
+      const films = await withPosters(d), date = films.flatMap((f) => f.sessions || []).map((x) => x.date).find(Boolean) || null;
+      if (i === 0) result.today = films;
+      result.days.push({ label: date || `+${i}`, url: null, date, films });
+      fresh.add("today");
+    } catch (e) { note(`schedules failed: ${e.message}`); break; }
+  }
+  if (!result.comingSoon.length && !blocked) {
+    try { await sleep(1500); const h = await schedules(name, 0, { viewMode: "ALL", filterType: "advance-bookings" }); const d = parseFilms(`<html><body>${h}</body></html>`).films; note(`schedules advance: ${d.length} films`); if (d.length) { result.comingSoon = await withPosters(d); fresh.add("advance"); } } catch (e) { note(`schedules advance failed: ${e.message}`); }
+  }
 }
 // keep the last good data for anything this run couldn't refresh
 if (prev) {
