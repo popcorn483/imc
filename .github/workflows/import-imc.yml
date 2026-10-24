@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "17 6,12,17 * * *"   # three times a day (UTC); gentle on imc.ie
   workflow_dispatch:
+    inputs:
+      cinemas:
+        description: "Only these cinemas (space-separated ids, e.g. enniskillen galway). Leave blank for all."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -15,19 +20,20 @@ concurrency:
 jobs:
   import:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm install --no-save --no-package-lock cheerio@1.0.0
-      - run: node tools/import-imc.mjs
+      - run: node tools/import-imc.mjs ${{ inputs.cinemas }}
       - name: Commit updated listings
         run: |
           git config user.name "imc-importer"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
-          git commit -m "Update IMC Enniskillen listings from imc.ie"
+          git commit -m "Update IMC listings from imc.ie"
           git pull --rebase
           git push
