@@ -2,8 +2,64 @@
   "id": "clonmel",
   "cinema": "IMC Clonmel",
   "source": "https://imc.ie/clonmel",
-  "updated": "2026-10-24T17:51:50.722Z",
+  "updated": "2026-10-25T11:32:04.969Z",
   "today": [
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "G",
+      "runtime": 77,
+      "release": "October 24, 2026",
+      "releaseDate": "2026-10-24",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": null,
+      "date": "2026-10-25",
+      "times": [
+        "13:15",
+        "15:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74710",
+      "sessions": [
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "13:15",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74710",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "15:15",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74709",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
     {
       "certSystem": "ifco",
       "certFile": "16",
@@ -19,18 +75,19 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-10-24",
+      "date": "2026-10-25",
       "times": [
+        "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74457",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74462",
       "sessions": [
         {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74457",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74462",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -41,10 +98,24 @@
           ]
         },
         {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74460",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74458",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74461",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -75,17 +146,47 @@
       "director": "Joel Crawford",
       "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-10-24",
+      "date": "2026-10-25",
       "times": [
+        "13:05",
+        "15:35",
         "18:05"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74616",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74635",
       "sessions": [
         {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "13:05",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74635",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74634",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
           "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74616",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74632",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -116,18 +217,20 @@
       "director": "Simon Hynd",
       "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
       "trailer": null,
-      "date": "2026-10-24",
+      "date": "2026-10-25",
       "times": [
+        "13:50",
+        "16:10",
         "18:30",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74619",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74638",
       "sessions": [
         {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
-          "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74619",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "13:50",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74638",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -138,10 +241,38 @@
           ]
         },
         {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74639",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "18:30",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74637",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74618",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74636",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -172,18 +303,18 @@
       "director": "Rob Savage",
       "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
       "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-      "date": "2026-10-24",
+      "date": "2026-10-25",
       "times": [
         "18:30",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74622",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74642",
       "sessions": [
         {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
           "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74622",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74642",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -194,10 +325,10 @@
           ]
         },
         {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74623",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74643",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -215,6 +346,48 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+      "cert": "G",
+      "runtime": 81,
+      "release": "September 12, 2026",
+      "releaseDate": "2026-09-12",
+      "director": "Steve Cox, Matthew Walker",
+      "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+      "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+      "date": "2026-10-25",
+      "times": [
+        "12:10"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74646",
+      "sessions": [
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74646",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+      "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "12A",
       "title": "Street Fighter",
       "luxx": false,
@@ -228,17 +401,32 @@
       "director": "Kitao Sakurai",
       "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
       "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-      "date": "2026-10-24",
+      "date": "2026-10-25",
       "times": [
+        "17:15",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74617",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74641",
       "sessions": [
         {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74641",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74617",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74633",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -256,6 +444,77 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "G",
+      "runtime": 94,
+      "release": "October 17, 2026",
+      "releaseDate": "2026-10-17",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-10-25",
+      "times": [
+        "13:30",
+        "14:10",
+        "16:25"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74647",
+      "sessions": [
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "13:30",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74647",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "14:10",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74645",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "16:25",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74644",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "15A",
       "title": "Verity",
       "luxx": false,
@@ -269,17 +528,17 @@
       "director": "Michael Showalter",
       "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
       "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-      "date": "2026-10-24",
+      "date": "2026-10-25",
       "times": [
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74620",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74640",
       "sessions": [
         {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74620",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74640",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -297,248 +556,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Sat 24 Oct",
-      "url": "https://imc.ie/film-times/clonmel/24-10-2026#dateD",
-      "date": "2026-10-24",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
-          "cert": "16",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": null,
-          "date": "2026-10-24",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74458",
-          "sessions": [
-            {
-              "day": "Sat 24 October",
-              "date": "2026-10-24",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74458",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "PG",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-24",
-          "times": [
-            "18:30",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74619",
-          "sessions": [
-            {
-              "day": "Sat 24 October",
-              "date": "2026-10-24",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74619",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 24 October",
-              "date": "2026-10-24",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74618",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Other Mommy",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 9, 2026",
-          "releaseDate": "2026-10-09",
-          "director": "Rob Savage",
-          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
-          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-          "date": "2026-10-24",
-          "times": [
-            "18:30",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74622",
-          "sessions": [
-            {
-              "day": "Sat 24 October",
-              "date": "2026-10-24",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74622",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 24 October",
-              "date": "2026-10-24",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74623",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "other-mommy",
-          "posterFile": "data/posters/other-mommy.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Street Fighter",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
-          "cert": "12A",
-          "runtime": 119,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Kitao Sakurai",
-          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-          "date": "2026-10-24",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74617",
-          "sessions": [
-            {
-              "day": "Sat 24 October",
-              "date": "2026-10-24",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74617",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "street-fighter",
-          "posterFile": "data/posters/street-fighter.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Verity",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110405.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "October 2, 2026",
-          "releaseDate": "2026-10-02",
-          "director": "Michael Showalter",
-          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
-          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-          "date": "2026-10-24",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74620",
-          "sessions": [
-            {
-              "day": "Sat 24 October",
-              "date": "2026-10-24",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74620",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "verity",
-          "posterFile": "data/posters/verity.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
     {
       "label": "Sun 25 Oct",
       "url": "https://imc.ie/film-times/clonmel/25-10-2026#dateD",
@@ -3085,6 +3102,69 @@
               "date": "2026-10-31",
               "time": "20:40",
               "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74724",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-18.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sun 01 Nov",
+      "url": "https://imc.ie/film-times/clonmel/01-11-2026#dateD",
+      "date": "2026-11-01",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "18",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "18",
+          "runtime": 100,
+          "release": "October 28, 2026",
+          "releaseDate": "2026-10-28",
+          "director": null,
+          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-01",
+          "times": [
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74725",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74725",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74726",
               "luxx": false,
               "screen": "2",
               "threeD": false,
@@ -5928,8 +6008,7 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 6 films parsed",
-    "day-24-10-2026-dated: 5 films parsed",
+    "today: 9 films parsed",
     "day-25-10-2026-dated: 9 films parsed",
     "day-26-10-2026-dated: 8 films parsed",
     "day-27-10-2026-dated: 8 films parsed",
@@ -5937,12 +6016,13 @@
     "day-29-10-2026-dated: 8 films parsed",
     "day-30-10-2026-dated: 1 films parsed",
     "day-31-10-2026-dated: 1 films parsed",
+    "day-01-11-2026-dated: 1 films parsed",
     "advance: 10 films parsed",
     "kids: 1 films parsed",
     "luxx: 4 films parsed",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "checked": "2026-10-24T17:52:22.859Z",
+  "checked": "2026-10-25T11:32:29.547Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
