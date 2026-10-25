@@ -2,7 +2,7 @@
   "id": "mullingar",
   "cinema": "IMC Mullingar",
   "source": "https://imc.ie/mullingar",
-  "updated": "2026-10-25T16:25:39.136Z",
+  "updated": "2026-10-25T19:43:59.162Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -47,47 +47,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "G",
-      "title": "Arnie and Barney",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
-      "cert": "G",
-      "runtime": 77,
-      "release": "October 23, 2026",
-      "releaseDate": "2026-10-23",
-      "director": "Sean Heuston",
-      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-      "trailer": null,
-      "date": "2026-10-25",
-      "times": [
-        "16:15"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104485",
-      "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "16:15",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104485",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "arnie-and-barney",
-      "posterFile": "data/posters/arnie-and-barney.jpg",
-      "certIcon": "data/ratings/ifco-G.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "16",
       "title": "Clayface",
       "luxx": true,
@@ -103,40 +62,10 @@
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
       "date": "2026-10-25",
       "times": [
-        "15:45",
-        "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104346",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104347",
       "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104346",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104348",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
         {
           "day": "Sun 25 October",
           "date": "2026-10-25",
@@ -155,118 +84,6 @@
       "slug": "clayface",
       "posterFile": "data/posters/clayface.jpg",
       "certIcon": "data/ratings/ifco-16.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "PG",
-      "title": "Forgotten Island",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-      "cert": "PG",
-      "runtime": 108,
-      "release": "October 16, 2026",
-      "releaseDate": "2026-10-16",
-      "director": "Joel Crawford",
-      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-10-25",
-      "times": [
-        "15:40",
-        "17:10"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104363",
-      "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "15:40",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104363",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104343",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "forgotten-island",
-      "posterFile": "data/posters/forgotten-island.jpg",
-      "certIcon": "data/ratings/ifco-PG.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "PG",
-      "title": "Ghosts: The Possession Of Button House",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-      "cert": "PG",
-      "runtime": 100,
-      "release": "October 23, 2026",
-      "releaseDate": "2026-10-23",
-      "director": "Simon Hynd",
-      "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-      "trailer": null,
-      "date": "2026-10-25",
-      "times": [
-        "16:25",
-        "18:40"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104354",
-      "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "16:25",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104354",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "18:40",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104356",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "ghosts-the-possession-of-button-house",
-      "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-      "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -327,25 +144,10 @@
       "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
       "date": "2026-10-25",
       "times": [
-        "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104351",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104350",
       "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104351",
-          "luxx": true,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-lux"
-          ]
-        },
         {
           "day": "Sun 25 October",
           "date": "2026-10-25",
@@ -368,88 +170,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "G",
-      "title": "Tad and the Magic Lamp",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-      "cert": "G",
-      "runtime": 94,
-      "release": "October 17, 2026",
-      "releaseDate": "2026-10-17",
-      "director": "Enrique Gato",
-      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-      "trailer": null,
-      "date": "2026-10-25",
-      "times": [
-        "16:15"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104352",
-      "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "16:15",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104352",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "tad-and-the-magic-lamp",
-      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-      "certIcon": "data/ratings/ifco-G.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "12A",
-      "title": "THE LOST CHILDREN OF TUAM",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/114662.jpg",
-      "cert": "12A",
-      "runtime": 86,
-      "release": "October 2, 2026",
-      "releaseDate": "2026-10-02",
-      "director": "Frank Berry",
-      "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
-      "trailer": null,
-      "date": "2026-10-25",
-      "times": [
-        "18:15"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104364",
-      "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104364",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "the-lost-children-of-tuam",
-      "posterFile": "data/posters/the-lost-children-of-tuam.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "15A",
       "title": "Verity",
       "luxx": false,
@@ -465,25 +185,10 @@
       "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
       "date": "2026-10-25",
       "times": [
-        "18:05",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104360",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104361",
       "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104360",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sun 25 October",
           "date": "2026-10-25",
@@ -521,25 +226,10 @@
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
       "date": "2026-10-25",
       "times": [
-        "17:10",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104342",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104340",
       "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104342",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sun 25 October",
           "date": "2026-10-25",
@@ -610,47 +300,6 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Arnie and Barney",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
-          "cert": "G",
-          "runtime": 77,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Sean Heuston",
-          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
-          "date": "2026-10-25",
-          "times": [
-            "16:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104485",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "16:15",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104485",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "arnie-and-barney",
-          "posterFile": "data/posters/arnie-and-barney.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
           "certFile": "16",
           "title": "Clayface",
           "luxx": true,
@@ -666,40 +315,10 @@
           "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
           "date": "2026-10-25",
           "times": [
-            "15:45",
-            "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104346",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104347",
           "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104346",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104348",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Sun 25 October",
               "date": "2026-10-25",
@@ -718,118 +337,6 @@
           "slug": "clayface",
           "posterFile": "data/posters/clayface.jpg",
           "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-10-25",
-          "times": [
-            "15:40",
-            "17:10"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104363",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "15:40",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104363",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "17:10",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104343",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "PG",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-25",
-          "times": [
-            "16:25",
-            "18:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104354",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "16:25",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104354",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "18:40",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104356",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -890,25 +397,10 @@
           "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
           "date": "2026-10-25",
           "times": [
-            "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104351",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104350",
           "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104351",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Sun 25 October",
               "date": "2026-10-25",
@@ -931,88 +423,6 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Tad and the Magic Lamp",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-          "cert": "G",
-          "runtime": 94,
-          "release": "October 17, 2026",
-          "releaseDate": "2026-10-17",
-          "director": "Enrique Gato",
-          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-          "trailer": null,
-          "date": "2026-10-25",
-          "times": [
-            "16:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104352",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "16:15",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104352",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "tad-and-the-magic-lamp",
-          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "THE LOST CHILDREN OF TUAM",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/114662.jpg",
-          "cert": "12A",
-          "runtime": 86,
-          "release": "October 2, 2026",
-          "releaseDate": "2026-10-02",
-          "director": "Frank Berry",
-          "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
-          "trailer": null,
-          "date": "2026-10-25",
-          "times": [
-            "18:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104364",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104364",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-lost-children-of-tuam",
-          "posterFile": "data/posters/the-lost-children-of-tuam.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
           "certFile": "15A",
           "title": "Verity",
           "luxx": false,
@@ -1028,25 +438,10 @@
           "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
           "date": "2026-10-25",
           "times": [
-            "18:05",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104360",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104361",
           "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "18:05",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104360",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sun 25 October",
               "date": "2026-10-25",
@@ -1084,25 +479,10 @@
           "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
           "date": "2026-10-25",
           "times": [
-            "17:10",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104342",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104340",
           "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "17:10",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104342",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sun 25 October",
               "date": "2026-10-25",
@@ -6147,8 +5527,8 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 11 films parsed",
-    "day-25-10-2026-dated: 11 films parsed",
+    "today: 6 films parsed",
+    "day-25-10-2026-dated: 6 films parsed",
     "day-26-10-2026-dated: 11 films parsed",
     "day-27-10-2026-dated: 11 films parsed",
     "day-28-10-2026-dated: 11 films parsed",
@@ -6161,7 +5541,7 @@
     "luxx: 6 films parsed",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "checked": "2026-10-25T16:26:04.690Z",
+  "checked": "2026-10-25T19:44:24.503Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
