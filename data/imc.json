@@ -2,7 +2,7 @@
   "id": "enniskillen",
   "cinema": "IMC Enniskillen",
   "source": "https://imc.ie/enniskillen",
-  "updated": "2026-10-25T19:36:48.342Z",
+  "updated": "2026-10-26T13:01:33.500Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -19,17 +19,17 @@
       "director": "Sacha Baron Cohen",
       "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
       "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
         "20:10"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120676",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120700",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:10",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120676",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120700",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -47,6 +47,62 @@
     },
     {
       "certSystem": "bbfc",
+      "certFile": "PG",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "PG",
+      "runtime": 77,
+      "release": "October 24, 2026",
+      "releaseDate": "2026-10-24",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": null,
+      "date": "2026-10-26",
+      "times": [
+        "13:30",
+        "15:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120807",
+      "sessions": [
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "13:30",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120807",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120806",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
       "certFile": "18",
       "title": "Clayface",
       "luxx": true,
@@ -60,18 +116,33 @@
       "director": "James Watkins",
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
+        "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120427",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120701",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120701",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120427",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120429",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -82,10 +153,10 @@
           ]
         },
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120426",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120428",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -104,6 +175,48 @@
     {
       "certSystem": "bbfc",
       "certFile": "PG",
+      "title": "Coyote vs Acme",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/110457.jpg",
+      "cert": "PG",
+      "runtime": 103,
+      "release": "August 21, 2026",
+      "releaseDate": "2026-08-21",
+      "director": "Dave Green",
+      "synopsis": "After decades of being blown to bits by bombs, demolished by dynamite, mangled by magnets, battered by boulders, trampled by trains, tricked by tunnels, sprung by springs, steamrolled by steamrollers, maligned by misfires, bedeviled by bungees, rattled by rockets, backstabbed by bat suits, rocked by rocket skates, upended by unicycles, quaked by quake pills, rubberized by rogue bands, and hurled headlong off every cliff in the Southwest, Wile E. Coyote (Genius) finally fights back. Teaming up with billboard accident lawyer Kevin Avery (Will Forte), he takes on slick corporate counsel Buddy Cra",
+      "trailer": "https://www.youtube.com/watch?v=H-43VeYGiPM",
+      "date": "2026-10-26",
+      "times": [
+        "12:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120682",
+      "sessions": [
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120682",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "coyote-vs-acme",
+      "posterFile": "data/posters/coyote-vs-acme.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "PG",
       "title": "Forgotten Island",
       "luxx": false,
       "sensory": false,
@@ -116,23 +229,53 @@
       "director": "Joel Crawford",
       "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
+        "12:30",
+        "15:00",
         "17:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120670",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120696",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "17:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120670",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "12:30",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120696",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
             "released",
-            "evening",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120695",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "17:35",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120694",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
             "seating-standard"
           ]
         }
@@ -157,18 +300,48 @@
       "director": "Simon Hynd",
       "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
       "trailer": null,
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
+        "13:15",
+        "15:40",
         "18:00",
         "20:20"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120667",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120693",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "13:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120693",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "15:40",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120692",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120667",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120691",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -179,10 +352,10 @@
           ]
         },
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:20",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120666",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120690",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -213,17 +386,17 @@
       "director": "David Ayer",
       "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
       "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120655",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120679",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120655",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120679",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -254,32 +427,17 @@
       "director": "Rob Savage",
       "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
       "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
-        "18:20",
         "20:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120665",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120688",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "18:20",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120665",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120664",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120688",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -297,6 +455,48 @@
     },
     {
       "certSystem": "bbfc",
+      "certFile": "PG",
+      "title": "Sensory Shaun The Sheep: The Beast of Mossy Bottom",
+      "luxx": false,
+      "sensory": true,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/114446.jpg",
+      "cert": "PG",
+      "runtime": 81,
+      "release": "September 20, 2026",
+      "releaseDate": "2026-09-20",
+      "director": "Steve Cox, Matthew Walker",
+      "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+      "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+      "date": "2026-10-26",
+      "times": [
+        "12:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120775",
+      "sessions": [
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120775",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "sensory-shaun-the-sheep-the-beast-of-mossy-bottom",
+      "posterFile": "data/posters/sensory-shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
       "certFile": "12A",
       "title": "Street Fighter",
       "luxx": false,
@@ -310,17 +510,47 @@
       "director": "Kitao Sakurai",
       "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
       "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
+        "14:45",
+        "17:30",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120675",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120697",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120697",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120793",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120675",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120699",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -338,6 +568,103 @@
     },
     {
       "certSystem": "bbfc",
+      "certFile": "12A",
+      "title": "Street Fighter",
+      "luxx": true,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115929.jpg",
+      "cert": "12A",
+      "runtime": 119,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Kitao Sakurai",
+      "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
+      "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
+      "date": "2026-10-26",
+      "times": [
+        "13:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120800",
+      "sessions": [
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "13:00",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120800",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "street-fighter",
+      "posterFile": "data/posters/street-fighter.jpg",
+      "certIcon": "data/ratings/bbfc-12A.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "U",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "U",
+      "runtime": 94,
+      "release": "October 17, 2026",
+      "releaseDate": "2026-10-17",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-10-26",
+      "times": [
+        "13:00",
+        "15:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120687",
+      "sessions": [
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "13:00",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120687",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "15:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120686",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/bbfc-U.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
       "certFile": "TBC",
       "title": "THE LOST CHILDREN OF TUAM",
       "luxx": false,
@@ -351,23 +678,23 @@
       "director": "Frank Berry",
       "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
       "trailer": null,
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
         "17:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120657",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120681",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "17:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120657",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120681",
           "luxx": false,
           "screen": "2",
           "threeD": false,
           "tags": [
             "new",
-            "evening",
+            "matinee",
             "seating-standard"
           ]
         }
@@ -392,23 +719,23 @@
       "director": "Michael Showalter",
       "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
       "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
         "17:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120656",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120680",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "17:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120656",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120680",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
             "released",
-            "evening",
+            "matinee",
             "seating-standard"
           ]
         }
@@ -433,17 +760,47 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
+        "14:15",
+        "17:10",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120659",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120685",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120685",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "17:10",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120684",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120659",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120683",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -461,468 +818,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Sun 25 Oct",
-      "url": "https://imc.ie/film-times/enniskillen/25-10-2026#dateD",
-      "date": "2026-10-25",
-      "films": [
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "ALI G: WHO IZ I?",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114097.jpg",
-          "cert": "15",
-          "runtime": 89,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Sacha Baron Cohen",
-          "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
-          "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-          "date": "2026-10-25",
-          "times": [
-            "20:10"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120676",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:10",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120676",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ali-g-who-iz-i",
-          "posterFile": "data/posters/ali-g-who-iz-i.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "18",
-          "title": "Clayface",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115573.jpg",
-          "cert": "18",
-          "runtime": 120,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "James Watkins",
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-          "date": "2026-10-25",
-          "times": [
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120427",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120427",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120426",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/bbfc-18.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-10-25",
-          "times": [
-            "17:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120670",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "17:35",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120670",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "PG",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-25",
-          "times": [
-            "18:00",
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120667",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120667",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120666",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Heart Of The Beast",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
-          "cert": "12A",
-          "runtime": 102,
-          "release": "September 23, 2026",
-          "releaseDate": "2026-09-23",
-          "director": "David Ayer",
-          "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
-          "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-          "date": "2026-10-25",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120655",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120655",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "heart-of-the-beast",
-          "posterFile": "data/posters/heart-of-the-beast.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Other Mommy",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
-          "cert": "15",
-          "runtime": 100,
-          "release": "October 10, 2026",
-          "releaseDate": "2026-10-10",
-          "director": "Rob Savage",
-          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
-          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-          "date": "2026-10-25",
-          "times": [
-            "18:20",
-            "20:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120665",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "18:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120665",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120664",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "other-mommy",
-          "posterFile": "data/posters/other-mommy.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Street Fighter",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
-          "cert": "12A",
-          "runtime": 119,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Kitao Sakurai",
-          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-          "date": "2026-10-25",
-          "times": [
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120675",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120675",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "street-fighter",
-          "posterFile": "data/posters/street-fighter.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "TBC",
-          "title": "THE LOST CHILDREN OF TUAM",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114662.jpg",
-          "cert": "TBC",
-          "runtime": 86,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Frank Berry",
-          "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
-          "trailer": null,
-          "date": "2026-10-25",
-          "times": [
-            "17:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120657",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "17:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120657",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-lost-children-of-tuam",
-          "posterFile": "data/posters/the-lost-children-of-tuam.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Verity",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110405.jpg",
-          "cert": "15",
-          "runtime": 117,
-          "release": "October 2, 2026",
-          "releaseDate": "2026-10-02",
-          "director": "Michael Showalter",
-          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
-          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-          "date": "2026-10-25",
-          "times": [
-            "17:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120656",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "17:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120656",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "verity",
-          "posterFile": "data/posters/verity.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-25",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120659",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120659",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        }
-      ]
-    },
     {
       "label": "Mon 26 Oct",
       "url": "https://imc.ie/film-times/enniskillen/26-10-2026#dateD",
@@ -4203,13 +4098,864 @@
       "label": "Fri 30 Oct",
       "url": "https://imc.ie/film-times/enniskillen/30-10-2026#dateD",
       "date": "2026-10-30",
-      "films": []
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "PG",
+          "runtime": 77,
+          "release": "October 24, 2026",
+          "releaseDate": "2026-10-24",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "12:20",
+            "14:20",
+            "16:20"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120889",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "12:20",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120889",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120902",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "16:20",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120903",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "18",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "18",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "13:15",
+            "15:45",
+            "18:15",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120879",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120879",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120886",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120887",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120888",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/bbfc-18.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-10-30",
+          "times": [
+            "12:10",
+            "14:45",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120900",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "12:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120900",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120894",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120895",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "13:00",
+            "15:30",
+            "18:00",
+            "20:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120893",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120893",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120892",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120891",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:25",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120890",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Other Mommy",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+          "cert": "15",
+          "runtime": 100,
+          "release": "October 10, 2026",
+          "releaseDate": "2026-10-10",
+          "director": "Rob Savage",
+          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+          "date": "2026-10-30",
+          "times": [
+            "18:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120904",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120904",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "other-mommy",
+          "posterFile": "data/posters/other-mommy.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "16",
+          "title": "Pan's Labyrinth",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115976.jpg",
+          "cert": "16",
+          "runtime": 121,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Guillermo del Toro",
+          "synopsis": "2006 Spanish-language fantasy drama in which a young girl seeks to escape from the realities of Fascist Spain by entering a fantasy world.",
+          "trailer": "https://www.youtube.com/watch?v=jVZRnnVSQ8k",
+          "date": "2026-10-30",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120883",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120883",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "pan-s-labyrinth",
+          "posterFile": "data/posters/pan-s-labyrinth.jpg",
+          "certIcon": null,
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "18",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "18",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": null,
+          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-10-30",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120896",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120896",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/bbfc-18.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "U",
+          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+          "cert": "U",
+          "runtime": 81,
+          "release": "September 12, 2026",
+          "releaseDate": "2026-09-12",
+          "director": "Steve Cox, Matthew Walker",
+          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+          "date": "2026-10-30",
+          "times": [
+            "12:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120908",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "12:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120908",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+          "certIcon": "data/ratings/bbfc-U.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "U",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "U",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "12:30",
+            "15:00",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120882",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "12:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120882",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120885",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120884",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/bbfc-U.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-10-30",
+          "times": [
+            "14:10",
+            "17:05",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120909",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "14:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120909",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "17:05",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120907",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120906",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
     },
     {
       "label": "Sat 31 Oct",
       "url": "https://imc.ie/film-times/enniskillen/31-10-2026#dateD",
       "date": "2026-10-31",
       "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "PG",
+          "runtime": 77,
+          "release": "October 24, 2026",
+          "releaseDate": "2026-10-24",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "12:20",
+            "14:20",
+            "16:20"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120970",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:20",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120970",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120961",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "16:20",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120962",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "18",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "18",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "13:15",
+            "15:45",
+            "18:15",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120958",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120958",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120960",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120965",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120969",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/bbfc-18.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-10-31",
+          "times": [
+            "12:10",
+            "14:45",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120977",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120977",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120974",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120975",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
         {
           "certSystem": "bbfc",
           "certFile": "PG",
@@ -4250,6 +4996,398 @@
           "posterFile": "data/posters/forgotten-island-fancy-dress.jpg",
           "certIcon": "data/ratings/bbfc-PG.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "13:00",
+            "15:30",
+            "18:00",
+            "20:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120973",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120973",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120972",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120971",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:25",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120959",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Other Mommy",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+          "cert": "15",
+          "runtime": 100,
+          "release": "October 10, 2026",
+          "releaseDate": "2026-10-10",
+          "director": "Rob Savage",
+          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+          "date": "2026-10-31",
+          "times": [
+            "18:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120963",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120963",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "other-mommy",
+          "posterFile": "data/posters/other-mommy.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "16",
+          "title": "Pan's Labyrinth",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115976.jpg",
+          "cert": "16",
+          "runtime": 121,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Guillermo del Toro",
+          "synopsis": "2006 Spanish-language fantasy drama in which a young girl seeks to escape from the realities of Fascist Spain by entering a fantasy world.",
+          "trailer": "https://www.youtube.com/watch?v=jVZRnnVSQ8k",
+          "date": "2026-10-31",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120964",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120964",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "pan-s-labyrinth",
+          "posterFile": "data/posters/pan-s-labyrinth.jpg",
+          "certIcon": null,
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "18",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "18",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": null,
+          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-10-31",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120976",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120976",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/bbfc-18.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "U",
+          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+          "cert": "U",
+          "runtime": 81,
+          "release": "September 12, 2026",
+          "releaseDate": "2026-09-12",
+          "director": "Steve Cox, Matthew Walker",
+          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+          "date": "2026-10-31",
+          "times": [
+            "12:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120980",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120980",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+          "certIcon": "data/ratings/bbfc-U.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "U",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "U",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "12:30",
+            "15:00",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120966",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120966",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "15:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120968",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120967",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/bbfc-U.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-10-31",
+          "times": [
+            "14:10",
+            "17:05",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120981",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "14:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120981",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "17:05",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120978",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120979",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
     },
@@ -4257,7 +5395,972 @@
       "label": "Sun 01 Nov",
       "url": "https://imc.ie/film-times/enniskillen/01-11-2026#dateD",
       "date": "2026-11-01",
-      "films": []
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "PG",
+          "runtime": 77,
+          "release": "October 24, 2026",
+          "releaseDate": "2026-10-24",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "13:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121077",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121077",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "18",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "18",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121067",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121067",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121068",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121069",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/bbfc-18.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-01",
+          "times": [
+            "12:10",
+            "13:10",
+            "14:45",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121064",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121064",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "13:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121082",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121075",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121076",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "12:15",
+            "14:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121074",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121074",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "14:35",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121073",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Other Mommy",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+          "cert": "15",
+          "runtime": 100,
+          "release": "October 10, 2026",
+          "releaseDate": "2026-10-10",
+          "director": "Rob Savage",
+          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+          "date": "2026-11-01",
+          "times": [
+            "18:35",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121078",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121078",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121084",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "other-mommy",
+          "posterFile": "data/posters/other-mommy.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "16",
+          "title": "Pan's Labyrinth",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115976.jpg",
+          "cert": "16",
+          "runtime": 121,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Guillermo del Toro",
+          "synopsis": "2006 Spanish-language fantasy drama in which a young girl seeks to escape from the realities of Fascist Spain by entering a fantasy world.",
+          "trailer": "https://www.youtube.com/watch?v=jVZRnnVSQ8k",
+          "date": "2026-11-01",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121071",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121071",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "pan-s-labyrinth",
+          "posterFile": "data/posters/pan-s-labyrinth.jpg",
+          "certIcon": null,
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "18",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "18",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": null,
+          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-01",
+          "times": [
+            "17:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121083",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "17:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121083",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/bbfc-18.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "U",
+          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+          "cert": "U",
+          "runtime": 81,
+          "release": "September 12, 2026",
+          "releaseDate": "2026-09-12",
+          "director": "Steve Cox, Matthew Walker",
+          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+          "date": "2026-11-01",
+          "times": [
+            "12:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121080",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121080",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+          "certIcon": "data/ratings/bbfc-U.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "U",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "U",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "12:00",
+            "14:15",
+            "16:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121072",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121072",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121070",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "16:25",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121066",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/bbfc-U.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "TBC",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-01",
+          "times": [
+            "15:30",
+            "18:00",
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121087",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121087",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121086",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121085",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-11-01",
+          "times": [
+            "14:10",
+            "17:05",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121081",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "14:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121081",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "17:05",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121065",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121079",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
+    },
+    {
+      "label": "Mon 02 Nov",
+      "url": "https://imc.ie/film-times/enniskillen/02-11-2026#dateD",
+      "date": "2026-11-02",
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "18",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "18",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-02",
+          "times": [
+            "18:15",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121092",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121092",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121093",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/bbfc-18.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-02",
+          "times": [
+            "17:55"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121114",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "17:55",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121114",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Other Mommy",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+          "cert": "15",
+          "runtime": 100,
+          "release": "October 10, 2026",
+          "releaseDate": "2026-10-10",
+          "director": "Rob Savage",
+          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+          "date": "2026-11-02",
+          "times": [
+            "18:35",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121102",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121102",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121108",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "other-mommy",
+          "posterFile": "data/posters/other-mommy.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "TBC",
+          "title": "THE LOST CHILDREN OF TUAM",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114662.jpg",
+          "cert": "TBC",
+          "runtime": 86,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Frank Berry",
+          "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
+          "trailer": null,
+          "date": "2026-11-02",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121113",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121113",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-lost-children-of-tuam",
+          "posterFile": "data/posters/the-lost-children-of-tuam.jpg",
+          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "TBC",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-02",
+          "times": [
+            "18:00",
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121110",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121110",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121109",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-11-02",
+          "times": [
+            "17:45",
+            "20:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121112",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121112",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:25",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121103",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -7505,21 +9608,21 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 10 films parsed",
-    "day-25-10-2026-dated: 10 films parsed",
+    "today: 15 films parsed",
     "day-26-10-2026-dated: 15 films parsed",
     "day-27-10-2026-dated: 15 films parsed",
     "day-28-10-2026-dated: 15 films parsed",
     "day-29-10-2026-dated: 15 films parsed",
-    "day-30-10-2026-dated: 0 films parsed",
-    "day-31-10-2026-dated: 1 films parsed",
-    "day-01-11-2026-dated: 0 films parsed",
+    "day-30-10-2026-dated: 10 films parsed",
+    "day-31-10-2026-dated: 11 films parsed",
+    "day-01-11-2026-dated: 11 films parsed",
+    "day-02-11-2026-dated: 6 films parsed",
     "advance: 15 films parsed",
     "kids: 4 films parsed",
     "luxx: 3 films parsed",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "checked": "2026-10-25T19:37:13.951Z",
+  "checked": "2026-10-26T13:02:01.163Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

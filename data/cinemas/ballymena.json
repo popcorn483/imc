@@ -2,7 +2,7 @@
   "id": "ballymena",
   "cinema": "IMC Ballymena",
   "source": "https://imc.ie/ballymena",
-  "updated": "2026-10-25T19:37:14.906Z",
+  "updated": "2026-10-26T13:02:02.831Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -19,17 +19,17 @@
       "director": "Sacha Baron Cohen",
       "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
       "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106028",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106048",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106028",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106048",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -47,6 +47,62 @@
     },
     {
       "certSystem": "bbfc",
+      "certFile": "PG",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "PG",
+      "runtime": 77,
+      "release": "October 24, 2026",
+      "releaseDate": "2026-10-24",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": null,
+      "date": "2026-10-26",
+      "times": [
+        "14:30",
+        "16:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106127",
+      "sessions": [
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "14:30",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106127",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "16:30",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106128",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
       "certFile": "18",
       "title": "Clayface Galactic",
       "luxx": false,
@@ -60,18 +116,33 @@
       "director": "James Watkins",
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
+        "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=105806",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=105808",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=105808",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=105806",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=105809",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -82,10 +153,10 @@
           ]
         },
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=105807",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=105810",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -104,6 +175,62 @@
     {
       "certSystem": "bbfc",
       "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-10-26",
+      "times": [
+        "14:40",
+        "17:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106049",
+      "sessions": [
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "14:40",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106049",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "17:00",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106047",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "PG",
       "title": "Ghosts: The Possession Of Button House",
       "luxx": false,
       "sensory": false,
@@ -116,17 +243,47 @@
       "director": "Simon Hynd",
       "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
       "trailer": null,
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
+        "15:25",
+        "17:45",
         "20:05"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106026",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106045",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "15:25",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106045",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106044",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:05",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106026",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106046",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -157,18 +314,18 @@
       "director": "David Ayer",
       "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
       "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
         "18:20",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106037",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106055",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "18:20",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106037",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106055",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -179,10 +336,10 @@
           ]
         },
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106038",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106056",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -213,17 +370,17 @@
       "director": "Rob Savage",
       "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
       "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
         "18:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106033",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106051",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106033",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106051",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -254,17 +411,47 @@
       "director": "Kitao Sakurai",
       "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
       "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
+        "15:00",
+        "17:45",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106041",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106060",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106060",
+          "luxx": true,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106059",
+          "luxx": true,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106041",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106061",
           "luxx": true,
           "screen": "2",
           "threeD": false,
@@ -282,6 +469,62 @@
     },
     {
       "certSystem": "bbfc",
+      "certFile": "U",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "U",
+      "runtime": 94,
+      "release": "October 17, 2026",
+      "releaseDate": "2026-10-17",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-10-26",
+      "times": [
+        "14:05",
+        "16:10"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106057",
+      "sessions": [
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "14:05",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106057",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106058",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/bbfc-U.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
       "certFile": "15",
       "title": "Verity",
       "luxx": false,
@@ -295,17 +538,17 @@
       "director": "Michael Showalter",
       "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
       "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106032",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106050",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106032",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106050",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -336,17 +579,47 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
       "times": [
+        "14:20",
+        "17:10",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106034",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106053",
       "sessions": [
         {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "14:20",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106053",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "17:10",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106054",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106034",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106052",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -364,300 +637,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Sun 25 Oct",
-      "url": "https://imc.ie/film-times/ballymena/25-10-2026#dateD",
-      "date": "2026-10-25",
-      "films": [
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "ALI G: WHO IZ I?",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114097.jpg",
-          "cert": "15",
-          "runtime": 89,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Sacha Baron Cohen",
-          "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
-          "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-          "date": "2026-10-25",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106028",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106028",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ali-g-who-iz-i",
-          "posterFile": "data/posters/ali-g-who-iz-i.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "18",
-          "title": "Clayface Galactic",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
-          "cert": "18",
-          "runtime": 120,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "James Watkins",
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-          "date": "2026-10-25",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=105807",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=105807",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "clayface-galactic",
-          "posterFile": "data/posters/clayface-galactic.jpg",
-          "certIcon": "data/ratings/bbfc-18.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "PG",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-25",
-          "times": [
-            "20:05"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106026",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:05",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106026",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Heart Of The Beast",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
-          "cert": "12A",
-          "runtime": 102,
-          "release": "September 23, 2026",
-          "releaseDate": "2026-09-23",
-          "director": "David Ayer",
-          "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
-          "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-          "date": "2026-10-25",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106038",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106038",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "heart-of-the-beast",
-          "posterFile": "data/posters/heart-of-the-beast.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Street Fighter",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115929.jpg",
-          "cert": "12A",
-          "runtime": 119,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Kitao Sakurai",
-          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-          "date": "2026-10-25",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106041",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106041",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "street-fighter",
-          "posterFile": "data/posters/street-fighter.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Verity",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110405.jpg",
-          "cert": "15",
-          "runtime": 117,
-          "release": "October 2, 2026",
-          "releaseDate": "2026-10-02",
-          "director": "Michael Showalter",
-          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
-          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-          "date": "2026-10-25",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106032",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106032",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "verity",
-          "posterFile": "data/posters/verity.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-25",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106034",
-          "sessions": [
-            {
-              "day": "Sun 25 October",
-              "date": "2026-10-25",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106034",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        }
-      ]
-    },
     {
       "label": "Mon 26 Oct",
       "url": "https://imc.ie/film-times/ballymena/26-10-2026#dateD",
@@ -3212,6 +3191,12 @@
       "url": "https://imc.ie/film-times/ballymena/01-11-2026#dateD",
       "date": "2026-11-01",
       "films": []
+    },
+    {
+      "label": "Mon 02 Nov",
+      "url": "https://imc.ie/film-times/ballymena/02-11-2026#dateD",
+      "date": "2026-11-02",
+      "films": []
     }
   ],
   "comingSoon": [
@@ -4847,8 +4832,7 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 8 films parsed",
-    "day-25-10-2026-dated: 7 films parsed",
+    "today: 11 films parsed",
     "day-26-10-2026-dated: 11 films parsed",
     "day-27-10-2026-dated: 11 films parsed",
     "day-28-10-2026-dated: 11 films parsed",
@@ -4856,12 +4840,13 @@
     "day-30-10-2026-dated: 0 films parsed",
     "day-31-10-2026-dated: 0 films parsed",
     "day-01-11-2026-dated: 0 films parsed",
+    "day-02-11-2026-dated: 0 films parsed",
     "advance: 6 films parsed",
     "kids: 1 films parsed",
     "luxx: 3 films parsed",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "checked": "2026-10-25T19:37:41.196Z",
+  "checked": "2026-10-26T13:02:30.352Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
