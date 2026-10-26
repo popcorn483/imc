@@ -84,7 +84,7 @@ function pricesOf(html) {
       if (m) { price = m[1] + m[2]; return; }
       const img = $td.find("img").attr("src");
       if (img) { image = abs(new URL(img, "https://booking.imc.ie/").href); return; }
-      if (!name && t && t.length < 120) { const d = /^(.*?)\s*Bundle Details\s*(.*)$/i.exec(t); if (d) { name = d[1]; details = d[2]; } else name = t; }
+      if (!name && t && t.length < 120) { const d = /^(.*?)\s*Bundle\s*(Luxx)?\s*Details\s*(.*)$/i.exec(t); if (d) { name = d[1] + (d[2] ? " LUXX" : ""); details = d[3]; } else name = t; }
     });
     if (!price || !name) return;
     const item = { name, price, ...(details ? { details } : {}), ...(image ? { image } : {}) };

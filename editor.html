@@ -231,6 +231,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 
     <div data-panel="add" hidden>
       <div class="sec"><h3>Badges</h3><div class="tiles" id="badges"></div></div>
+      <div class="sec"><h3>Products from imc.ie</h3><p class="note" id="pphNote">Real product photos and prices from imc.ie for this cinema.</p><div class="tiles" id="pphotos"></div></div>
       <div class="sec"><h3>Food &amp; drink</h3><p class="note">Drawn in IMC colours. Select one to recolour it.</p><div class="tiles" id="products"></div></div>
       <div class="sec"><h3>Deal pieces</h3><div class="tiles" id="dealBadges"></div></div>
       <div class="sec"><h3>Film rating</h3><div class="seg" id="ratingSysSeg" style="width:max-content"><button data-rsys="bbfc">BBFC (UK)</button><button data-rsys="ifco">IFCO (Ireland)</button></div><p class="note" id="ratingNote">Official symbols, as used on imc.ie. Your choice is used on every new film graphic.</p><div class="media ratings" id="ratingGrid"></div></div>
@@ -485,7 +486,7 @@ function drawText(c,L){const f=L.font||"display",size=L.size||120,sp=L.sp||0;let
 function drawLogoLayer(c,L){const h=L.size||150,d=logoDims(h),pad=L.plate&&L.plate!=="none"?h*.24:0;
   if(pad){rr(c,-d.w/2-pad,-d.h/2-pad,d.w+pad*2,d.h+pad*2,pad*.55);sh(c,true);c.fillStyle=L.plate==="light"?"rgba(255,255,255,.95)":"rgba(8,9,12,.84)";c.fill();sh(c,false)}
   drawLogo(c,-d.w/2,-d.h/2,h,L.plate==="light"?"#15171d":L.c1);return{w:d.w+pad*2,h:d.h+pad*2}}
-function drawLayer(c,L){c.save();c.textBaseline="alphabetic";const d=L.kind==="badge"?(B[L.style]||B.pill)(c,L):L.kind==="text"?drawText(c,L):L.kind==="product"?drawProduct(c,L):L.kind==="listing"?drawListing(c,L):L.kind==="rating"?drawRating(c,L):drawLogoLayer(c,L);c.restore();return d}
+function drawLayer(c,L){c.save();c.textBaseline="alphabetic";const d=L.kind==="pphoto"?drawPPhoto(c,L):L.kind==="badge"?(B[L.style]||B.pill)(c,L):L.kind==="text"?drawText(c,L):L.kind==="product"?drawProduct(c,L):L.kind==="listing"?drawListing(c,L):L.kind==="rating"?drawRating(c,L):drawLogoLayer(c,L);c.restore();return d}
 
 /* ---------- food & drink illustrations (drawn in code, centred at 0,0 in 1080-frame units) ---------- */
 /* ---------- realistic popcorn: pre-rendered kernel sprites, each an irregular cluster of shaded puffs ---------- */
@@ -921,7 +922,7 @@ const FX={
 };
 const FX_ORDER=["kenburns","rays","spotlights","bokeh","chase","sparkle","popburst","fizz","confetti","snow","projector"];
 const ANIMS={none:"None",shine:"Shine",pulse:"Pulse",pop:"Pop in",slam:"Slam in",slide:"Slide up",swing:"Swing",wiggle:"Wiggle",float:"Float",blink:"Blink"};
-function animOf(L,t){const o={ds:1,dr:0,dy:0,da:1},a=L.anim,d=L.delay||0,tt=t-d,intro=len=>tt<0?-1:Math.min(1,tt/len),eo=p=>1-Math.pow(1-p,3);
+function animOf(L,t){const o={ds:1,dr:0,dy:0,da:1},a=L.anim,d=L.delay||0,tt=t-d,intro=len=>tt<0?-1:Math.min(1,tt/(len*(L.ilen||1))),eo=p=>1-Math.pow(1-p,3);
   if(a==="pulse")o.ds=1+.055*Math.sin(TAU*tt*2);
   else if(a==="swing")o.dr=.075*Math.sin(TAU*tt);
   else if(a==="wiggle")o.dr=.07*Math.sin(TAU*tt*5)*Math.max(0,Math.sin(TAU*tt));
@@ -930,6 +931,8 @@ function animOf(L,t){const o={ds:1,dr:0,dy:0,da:1},a=L.anim,d=L.delay||0,tt=t-d,
   else if(a==="pop"){const p=intro(.3),c1=1.70158,c3=c1+1;if(p<0){o.da=0;o.ds=.04}else{o.ds=p>=1?1:Math.max(.04,1+c3*Math.pow(p-1,3)+c1*Math.pow(p-1,2));o.da=Math.min(1,p*2.5)}}
   else if(a==="slam"){const p=intro(.2);if(p<0){o.da=0}else{o.ds=1+1.7*(1-eo(p));o.da=Math.min(1,p*3);const k=(tt-.2)/.3;if(k>0&&k<1)o.dr=.07*Math.sin(k*TAU*2)*(1-k)}}
   else if(a==="slide"){const p=intro(.35);if(p<0){o.da=0}else{o.dy=(1-eo(p))*.16;o.da=Math.min(1,p*2)}}
+  /* layers in a video sequence can leave at a set point in the loop */
+  if(L.until!=null){const k=(t-L.until)/.04;if(k>0){o.da*=Math.max(0,1-k);o.ds*=1+.15*Math.min(1,k)}}
   return o}
 const offC=document.createElement("canvas");
 function drawLayerAt(c,L,W,H,u,t){const A=animOf(L,t),sc=L.s*u*A.ds;c.save();c.translate(L.x*W,(L.y+A.dy)*H);c.rotate((L.r||0)+A.dr);c.globalAlpha=(L.o??1)*A.da;
@@ -1076,12 +1079,12 @@ $("#saved").addEventListener("click",e=>{const a=getSaved();const ap=e.target.cl
   if(dl){a.splice(+dl.dataset.del,1);putSaved(a);syncSaved()}});
 
 /* ---------- properties ---------- */
-function layerName(L){if(L.kind==="rating")return"Rating "+(L.cert||"");if(L.kind==="product")return(PRODUCTS[L.key]?.n||"Food");if(L.kind==="listing")return"Film times";if(L.kind==="badge")return(BADGES[L.key]?.n||"Badge")+(L.text&&L.text!==BADGES[L.key]?.text?" · "+L.text:"");if(L.kind==="logo")return"IMC logo";return(L.text||"Text").split("\n")[0].slice(0,28)}
+function layerName(L){if(L.kind==="pphoto")return L.label||"Product photo";if(L.kind==="rating")return"Rating "+(L.cert||"");if(L.kind==="product")return(PRODUCTS[L.key]?.n||"Food");if(L.kind==="listing")return"Film times";if(L.kind==="badge")return(BADGES[L.key]?.n||"Badge")+(L.text&&L.text!==BADGES[L.key]?.text?" · "+L.text:"");if(L.kind==="logo")return"IMC logo";return(L.text||"Text").split("\n")[0].slice(0,28)}
 function sliderRow(id,label,min,max,val,unit){return`<label class="slider"><span>${label}</span><input type="range" id="${id}" min="${min}" max="${max}" value="${val}"><output id="o${id}">${val}${unit}</output></label>`}
 function colourBlock(label,key,L){return`<div><div class="lbl" style="margin-bottom:6px">${label}</div><div class="swatches" data-colour="${key}">${SWATCHES.map(c=>`<button class="sw" data-c="${c}" style="background:${c}" aria-label="${c}" aria-pressed="${L[key]===c}"></button>`).join("")}<input type="color" value="${/^#[0-9a-f]{6}$/i.test(L[key])?L[key]:"#ffffff"}" aria-label="Custom colour"></div></div>`}
 function renderProps(){const L=getSel(),P=$("#props");
   if(!L){P.innerHTML=`<div class="empty"><b>Nothing selected</b><span>Click a badge, text or logo on the canvas to edit it. Click the photo and drag to reposition it.</span><span style="margin-top:6px">Add badges and text from the <b style="font-size:inherit">Add</b> tab.</span></div>`;return}
-  let h=`<div class="sec"><div class="row" style="justify-content:space-between"><h3>${L.kind==="badge"?"Badge":L.kind==="text"?"Text":"Logo"}</h3><span class="chip">${esc(L.kind==="badge"?BADGES[L.key]?.n||"":L.kind)}</span></div>`;
+  let h=`<div class="sec"><div class="row" style="justify-content:space-between"><h3>${L.kind==="badge"?"Badge":L.kind==="text"?"Text":L.kind==="pphoto"?"Product photo":L.kind==="product"?"Food & drink":L.kind==="listing"?"Film times":L.kind==="rating"?"Rating":"Logo"}</h3><span class="chip">${esc(L.kind==="badge"?BADGES[L.key]?.n||"":L.kind)}</span></div>`;
   if(L.kind==="badge"){h+=`<label class="lbl" for="pp-text">Text</label><input id="pp-text" type="text" value="${esc(L.text)}">`;if(!NO_SUB[L.style])h+=`<label class="lbl" for="pp-sub">Small line</label><input id="pp-sub" type="text" value="${esc(L.sub)}" placeholder="Optional">`;
     h+=colourBlock("Main colour","c1",L)+colourBlock(L.style==="luxx"?"Trim colour":"Text colour","c2",L)}
   if(L.kind==="text"){h+=`<label class="lbl" for="pp-text">Text</label><textarea id="pp-text" rows="2">${esc(L.text)}</textarea>
@@ -1293,6 +1296,35 @@ async function renderWeb(){const g=$("#webGrid"),n=$("#webNote");if(!g)return;
   g.innerHTML=items.map((it,i)=>`<button data-web="${i}" title="${esc(it.label)}"><img src="${esc(asset(it.src))}" alt="${esc(it.label)}" loading="lazy" crossorigin="anonymous"></button>`).join("");
   g.onclick=async e=>{const b=e.target.closest("[data-web]");if(!b)return;const it=items[+b.dataset.web];try{const r=await fetch(asset(it.src));if(!r.ok)throw 0;const bl=await r.blob();if(it.poster)S.photo.fit="poster";await setPhotoBlob(bl,false,{fromLib:true})}catch(err){toast("Couldn't load that image. Try again in a moment.")}}}
 
+
+/* ---------- real product photos from imc.ie: white background cut away, scaled up smoothly ---------- */
+const PPH={};
+function cutoutWhite(img){const w=img.naturalWidth||img.width,h=img.naturalHeight||img.height,k=Math.max(1,Math.min(5,760/Math.max(w,h))),W=Math.round(w*k),H=Math.round(h*k);
+  const cvs=document.createElement("canvas");cvs.width=W;cvs.height=H;const x=cvs.getContext("2d");x.imageSmoothingEnabled=true;x.imageSmoothingQuality="high";x.drawImage(img,0,0,W,H);
+  /* flood in from the edges through pale, grey pixels: pure white goes clear, the photo's soft grey shadow becomes a see-through shadow */
+  const d=x.getImageData(0,0,W,H),p=d.data,seen=new Uint8Array(W*H),q=[],sat=i=>Math.max(p[i*4],p[i*4+1],p[i*4+2])-Math.min(p[i*4],p[i*4+1],p[i*4+2]),bg=i=>Math.min(p[i*4],p[i*4+1],p[i*4+2])>186&&sat(i)<16;
+  for(let X=0;X<W;X++)q.push(X,(H-1)*W+X);for(let Y=0;Y<H;Y++)q.push(Y*W,Y*W+W-1);
+  while(q.length){const i=q.pop();if(seen[i])continue;seen[i]=1;if(!bg(i))continue;const mn=Math.min(p[i*4],p[i*4+1],p[i*4+2]);p[i*4]=p[i*4+1]=p[i*4+2]=20;p[i*4+3]=mn>247?0:Math.round(Math.min(150,(255-mn)*2.1));
+    const X=i%W;if(X>0)q.push(i-1);if(X<W-1)q.push(i+1);if(i>=W)q.push(i-W);if(i<W*(H-1))q.push(i+W)}
+  x.putImageData(d,0,0);
+  let x0=W,y0=H,x1=0,y1=0;for(let Y=0;Y<H;Y++)for(let X=0;X<W;X++)if(p[(Y*W+X)*4+3]>60){if(X<x0)x0=X;if(X>x1)x1=X;if(Y<y0)y0=Y;if(Y>y1)y1=Y}
+  if(x1<=x0||y1<=y0)return cvs;const t=document.createElement("canvas");t.width=x1-x0+1;t.height=y1-y0+1;t.getContext("2d").drawImage(cvs,-x0,-y0);return t}
+function ppLoad(src){if(PPH[src])return PPH[src];const e=PPH[src]={img:null};const im=new Image();im.crossOrigin="anonymous";im.onload=()=>{try{e.img=cutoutWhite(im)}catch(err){e.img=im}draw();renderThumbs&&renderThumbs()};im.onerror=()=>{e.err=true};im.src=asset(src);return e}
+function drawPPhoto(c,L){const e=ppLoad(L.src),H=440;if(!e.img){c.strokeStyle="rgba(255,255,255,.4)";c.setLineDash([10,8]);c.lineWidth=3;rr(c,-170,-H/2,340,H,24);c.stroke();c.setLineDash([]);return{w:340,h:H}}
+  const im=e.img,w=H*im.width/im.height;
+  if(L.shadow!==false){c.save();const g=c.createRadialGradient(0,H/2,0,0,H/2,w*.55);g.addColorStop(0,"rgba(0,0,0,.45)");g.addColorStop(1,"rgba(0,0,0,0)");c.translate(0,H/2);c.scale(1,.14);c.translate(0,-H/2);c.fillStyle=g;c.beginPath();c.arc(0,H/2,w*.55,0,TAU);c.fill();c.restore()}
+  c.imageSmoothingEnabled=true;c.imageSmoothingQuality="high";c.drawImage(im,-w/2,-H/2,w,H);return{w,h:H}}
+/* imc.ie items for this cinema: snacks and ticket bundles, each with a photo and price */
+function imcItems(){const P=(IMC&&IMC.prices)||{};return[...(P.products||[]),...(P.bundles||[])].filter(x=>x.file&&!/flexi/i.test(x.name))}
+const norm=t=>String(t||"").toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
+function imcMatch(name){const n=norm(name);if(!n)return null;const items=imcItems().filter(x=>!x.details);return items.find(x=>norm(x.name)===n)||items.find(x=>norm(x.name).startsWith(n)||n.startsWith(norm(x.name)))||null}
+
+function renderPPhotos(){const g=$("#pphotos"),n=$("#pphNote");if(!g)return;const items=imcItems();
+  if(!items.length){n.textContent="Product photos from imc.ie appear here once the importer has read this cinema's prices.";g.innerHTML="";return}
+  n.textContent="Real product photos and prices from imc.ie. Add the photo, or the photo with its price.";
+  g.innerHTML=items.map((x,i)=>`<div class="tile badge"><img src="${esc(asset(x.file))}" alt="" style="width:100%;aspect-ratio:3/2;object-fit:contain;background:#fff"><span>${esc(x.name)} · ${esc(x.price)}</span><div class="row" style="padding:0 8px 8px;gap:6px"><button class="btn" data-pph="${i}" style="flex:1">Add</button><button class="btn" data-pph="${i}" data-withprice="1" style="flex:1">+ Price</button></div></div>`).join("");
+  g.onclick=e=>{const b=e.target.closest("[data-pph]");if(!b)return;const x=items[+b.dataset.pph];addLayer({id:uid(),kind:"pphoto",src:x.file,label:x.name,x:.42,y:.55,s:.9,r:0,o:1});
+    if(b.dataset.withprice)addLayer(mk("badge","ticket",{text:x.price,sub:"ONLY",x:.76,y:.72,s:.8,r:-.07}))}}
 /* ---------- deals ---------- */
 const DEFAULT_DEALS=[
   {id:"family",name:"Family Combo Deal",items:["2X Adult tickets","2X Child tickets","1X Share combo","2X Kids combo"],price:"",was:"",small:"",products:["popcorn","drink","drink","ticket","tray","tray"]},
@@ -1308,7 +1340,7 @@ function getDeals(){try{const d=JSON.parse(localStorage.getItem(dealsKey())||"nu
 /* how many tickets a deal includes, from lines like "2X Adult tickets" or "Family ticket" */
 const PRODUCT_W={popcorn:400,drink:240,nachos:420,hotdog:440,sweets:300,pickmix:330,ticket:420,icescoop:330,icetub:360,tray:540};
 function dealTickets(d){let n=0;for(const l of d.items||[]){if(!/ticket/i.test(l))continue;const m=/(\d+)\s*[x×]?/i.exec(l);n+=m?+m[1]:/family/i.test(l)?4:1}return n}
-function dealLayers(d,anim){const P=(d.products&&d.products.length?d.products:["popcorn","drink"]).slice(0,6),L=[],n=P.length,cur=d.cur||siteCur(),items=d.items||[];
+function dealLayers(d,anim){const photos=d.real===false?[]:(d.photos&&d.photos.length?d.photos:(m=>m?[{src:m.file,label:m.name}]:[])(imcMatch(d.name)));if(photos.length)return dealPhotoLayers(d,anim,photos);const P=(d.products&&d.products.length?d.products:["popcorn","drink"]).slice(0,6),L=[],n=P.length,cur=d.cur||siteCur(),items=d.items||[];
   const list=items.length>=3||items.join("  +  ").length>46,tk=dealTickets(d);
   const title=String(d.name||"Deal").toUpperCase();let ts=list?112:124;mctx.font=`900 ${ts}px ${FONTS.display}`;while(tw(mctx,title,2)>960&&ts>56){ts-=4;mctx.font=`900 ${ts}px ${FONTS.display}`}
   L.push(mk("text","title",{text:title,y:.115,size:ts,anim:anim?"slide":"none",delay:0}));
@@ -1324,6 +1356,38 @@ function dealLayers(d,anim){const P=(d.products&&d.products.length?d.products:["
   if(!list)L.push(mk("badge","ticket",{text:d.price||cur+"X.XX",sub:d.was?("WAS "+d.was).toUpperCase():"ONLY",x:n===1?.79:.77,y:.71,s:.85,r:-.07,anim:anim?"slam":"none",delay:.42}));
   if(d.small)L.push(mk("text","small",{text:String(d.small).toUpperCase(),y:list?.875:.845,size:22,sp:3}));
   return L}
+function dealPhotoLayers(d,anim,photos){const L=[],cur=d.cur||siteCur(),items=d.items||[],title=String(d.name||"Deal").toUpperCase();let ts=118;mctx.font=`900 ${ts}px ${FONTS.display}`;while(tw(mctx,title,2)>960&&ts>56){ts-=4;mctx.font=`900 ${ts}px ${FONTS.display}`}
+  L.push(mk("text","title",{text:title,y:.11,size:ts,anim:anim?"slide":"none",delay:0}));
+  if(items.length)L.push(mk("text","sub",{text:items.slice(0,4).join("  +  "),y:.195,size:items.join("  +  ").length>50?32:40,c1:"#ffd84a",anim:anim?"slide":"none",delay:.06}));
+  const n=Math.min(3,photos.length),sc=n===1?.98:n===2?.78:.6;
+  photos.slice(0,3).forEach((ph,i)=>L.push({id:uid(),kind:"pphoto",src:ph.src,label:ph.label||"Product photo",x:n===1?.4:.22+i*(.5/(n-1||1)),y:.55,s:sc,r:0,o:1,anim:anim?"pop":"none",delay:.12+i*.07}));
+  L.push(mk("badge","ticket",{text:d.price||cur+"X.XX",sub:d.was?("WAS "+d.was).toUpperCase():"ONLY",x:.77,y:.72,s:.85,r:-.07,anim:anim?"slam":"none",delay:.42}));
+  if(d.small)L.push(mk("text","small",{text:String(d.small).toUpperCase(),y:.86,size:22,sp:3}));
+  return L}
+/* ---------- 6-second product video for Stories and Reels: hook, product, price, call to action ---------- */
+function applyClip(d){S.label=(d.name||"Product")+" clip";S.fmt="story";S.bg="stage";S.frame={...S.frame,style:"brandbar",accent:"#ffc23d",logo:true};
+  const cur=d.cur||siteCur(),photos=d.real===false?[]:(d.photos&&d.photos.length?d.photos:(m=>m?[{src:m.file,label:m.name}]:[])(imcMatch(d.name))),P=(d.products&&d.products.length?d.products:["popcorn","drink"]).slice(0,3),L=[];
+  const hook=d.hook||(/kid|tray/i.test(d.name)?"LITTLE ONES HUNGRY?":/ticket|bundle|family/i.test(d.name+(d.items||[]).join(" "))?"MOVIE NIGHT SORTED":"FEELING PECKISH?");
+  L.push(mk("text","title",{text:hook,y:.42,size:150,anim:"slam",delay:0,ilen:.5,until:.26}));
+  L.push(mk("text","title",{text:String(d.name||"").toUpperCase(),y:.17,size:120,anim:"slide",delay:.27,ilen:.5}));
+  if(photos.length)photos.slice(0,2).forEach((ph,i,a)=>L.push({id:uid(),kind:"pphoto",src:ph.src,label:ph.label,x:a.length===1?.5:.3+i*.4,y:.45,s:a.length===1?1.1:.85,r:0,o:1,anim:"pop",delay:.3+i*.05,ilen:.5}));
+  else P.forEach((k,i)=>L.push(mk("product",k,{x:P.length===1?.5:.22+i*(.56/(P.length-1)),y:.46,s:P.length===1?1.25:.85,anim:"pop",delay:.3+i*.05,ilen:.5})));
+  const its=(d.items||[]).filter(t=>norm(t)!==norm(d.name));if(its.length)L.push(mk("text","sub",{text:its.slice(0,4).join("\n"),y:.67,size:46,c1:"#ffd84a",anim:"slide",delay:.45,ilen:.5}));
+  L.push(mk("badge","price",{text:d.price||cur+"X",sub:"ONLY",x:.74,y:.78,s:1.15,r:-.08,anim:"slam",delay:.6,ilen:.5}));
+  L.push(mk("text","small",{text:"GRAB IT AT THE KIOSK",y:.885,size:40,sp:6,anim:"slide",delay:.72,ilen:.5}));
+  S.layers=L;S.motion={...S.motion,dur:6,fx:{rays:true,sparkle:true,...(P.includes("popcorn")||photos.length?{popburst:true}:{})}};selId=null;syncAll();commit();
+  toast("Product clip ready: press Play to preview, then Video to save it")}
+/* ---------- LUXX recliners ---------- */
+function applyLuxx(h){S.label="LUXX recliners";S.bg="stage";S.frame={...S.frame,style:"premiere",accent:"#ffc23d",logo:true};const f=FORMATS[S.fmt],tall=f.h>f.w*1.2,rows=(h.rows||[]).slice(0,tall?8:5),L=[];
+  rows.forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src)});
+  L.push(mk("badge","luxx",{y:tall?.09:.1,s:tall?1.1:.85,anim:"shine",delay:0}));
+  L.push(mk("text","title",{text:"KICK BACK IN LUXX",y:tall?.205:.255,size:tall?112:88,c1:"#ffd98a",anim:"slide",delay:.08}));
+  if(rows.length){const u=Math.min(f.w,f.h)/1080,need=listingH(rows.length),avail=(tall?.5:.4)*f.h/u;L.push(mk("listing",null,{text:h.heading||"In LUXX today",sub:h.sub||"",rows:rows.map(r=>({...r,luxx:true})),y:tall?.5:.58,s:Math.min(.9,avail/need,(f.w/u*.9)/940),anim:"slide",delay:.15}))}
+  else L.push(mk("text","sub",{text:"Luxury recliner seats at "+SITE_NAME,y:.5,size:48,anim:"slide",delay:.15}));
+  if(h.price)L.push(mk("badge","price",{text:h.price,sub:"LUXX SEATS FROM",x:.8,y:tall?.8:.84,s:tall?1:.8,r:-.1,c1:"#ffc23d",c2:"#1a1440",anim:"slam",delay:.4}));
+  L.push(mk("text","small",{text:"BOOK YOUR LUXX SEAT AT IMC.IE",y:tall?.9:.92,size:tall?30:24,sp:6,anim:"slide",delay:.5}));
+  S.layers=L;S.motion={...S.motion,fx:{spotlights:true,sparkle:true}};selId=null;syncAll();commit();
+  toast("LUXX ad ready. Tip: add a photo of your LUXX seats in the Photo tab to use it as the background")}
 function dealFx(d,anim){const p=d.products||[];return anim?{rays:true,sparkle:true,...(p.includes("popcorn")||p.includes("tray")?{popburst:true}:{}),...(p.includes("drink")?{fizz:true}:{})}:{rays:true}}
 function applyDeal(d,anim){S.label=d.name;S.bg="stage";S.frame={...S.frame,style:"brandbar",accent:"#ffc23d",logo:true};S.layers=dealLayers(d,anim);S.motion={...S.motion,fx:dealFx(d,anim)};selId=null;syncAll();commit();
   toast(d.price?(d.name+" ready"):"Add the price: click the price and type it in")}
@@ -1359,6 +1423,8 @@ function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-ha
   if(!h||Date.now()-(h.at||0)>10*60*1000)return false;
   if(h.fmt&&FORMATS[h.fmt])S.fmt=h.fmt;
   if(h.kind==="deal")applyDeal(h.deal,!!h.animated);
+  else if(h.kind==="clip")applyClip(h.deal);
+  else if(h.kind==="luxx")applyLuxx(h);
   else if(h.kind==="listing")applyListing(h);
   else if(h.kind==="film")applyFilm(h.film,h.mode);
   else if(h.kind==="image"&&h.url)loadUrlAsPhoto(h.url);
@@ -1405,7 +1471,7 @@ async function boot(){buildMotionUI();
   if(lb)try{logoImg=await blobToImg(lb)}catch(e){}
   if(!logoImg&&location.protocol.startsWith("http"))for(const f of["imc-logo.svg","imc-logo.png"]){try{const r=await fetch(f,{cache:"no-cache"});if(r.ok&&/image/.test(r.headers.get("content-type")||"")){logoImg=await blobToImg(await r.blob());siteLogo=true;break}}catch(e){}}
   syncLogo();syncSaved();renderMedia();
-  const imcP=loadImcData().then(()=>{renderWeb();ratingList().forEach(o=>loadRating(o.src));renderRatings();if(selId)renderProps()});
+  const imcP=loadImcData().then(()=>{renderWeb();renderPPhotos();ratingList().forEach(o=>loadRating(o.src));renderRatings();if(selId)renderProps()});
   let handed=null;try{handed=localStorage.getItem("imc-handoff")}catch(e){}if(handed){await imcP;applyHandoff()}
   syncAll();commit();
   const faces=["900 40px 'Big Shoulders Display'","800 40px Figtree","700 40px Figtree","700 40px 'Playfair Display'","400 40px 'Bebas Neue'","500 20px 'IBM Plex Mono'","600 20px 'IBM Plex Mono'"];

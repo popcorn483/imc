@@ -197,6 +197,14 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .banners img{width:100%;height:100%;object-fit:cover;display:block}
 .deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
 .addchips{display:flex;flex-wrap:wrap;gap:6px}
+.prices{margin-bottom:16px}.prices h3{margin:14px 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.tickrow{display:flex;flex-wrap:wrap;gap:6px}.tickrow span{border:1px solid var(--line);border-radius:99px;padding:4px 10px;font-size:13px}.tickrow b{font-variant-numeric:tabular-nums}
+.prodgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.prod{border:1px solid var(--line);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:6px;background:var(--panel)}
+.prod img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;border-radius:6px}
+.prod b{font-size:14px;line-height:1.25}.prod .pp{font-family:var(--f-display);font-size:24px;font-weight:800}
+.prod .row-btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.imcprice{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--good)}
 .deal{display:flex;flex-direction:column;gap:12px;border-top:4px solid transparent;border-image:var(--stripe) 1}
 .dealgrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr);gap:10px}
 .flabel{font-size:12px;font-weight:700;color:var(--muted)}
@@ -283,6 +291,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <div><h1>Deals</h1><p>Your kiosk deals. Set the name, what's included and the price, then make a still or animated graphic. Contents start as placeholders, so check them against the kiosk menu.</p></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="resetDeals">Reset to defaults</button><button class="btn primary" id="addDeal">+ Add a deal</button></div>
       </div>
+      <div id="imcPrices"></div>
       <div id="dealList" class="deals"></div>
     </section>
 
@@ -929,7 +938,7 @@ function stamp(){if(!IMC||!IMC.updated)return"";const f=d=>new Date(d).toLocaleS
 function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").textContent=fmtLong(todayIso());$("#todayStamp").textContent=stamp();
   if(!IMC){el.innerHTML=noData();return}
   const films=keyed(filmsOn(todayIso())),soon=keyed(allFilms().filter(f=>{const d=firstDate(f);return d&&d>todayIso()}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))).slice(0,6));
-  el.innerHTML=`<div class="panel"><div class="ph"><h2>Showing today</h2><div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button></div></div>
+  el.innerHTML=`<div class="panel"><div class="ph"><h2>Showing today</h2><div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
     ${films.length?`<div class="films">${films.map(f=>filmCard(f,f.sources?.has("kids")&&!f.sources?.has("today")?"kids":f.luxx?"luxx":"now")).join("")}</div>`:(filmsOn(todayIso(),true).length?`<p class="tip">Every show today has started. Tomorrow\'s times are under <button class="btn small ghost" data-wo="week">What\'s on → Next 7 days</button></p>`:`<p class="tip">No times for today in the latest import. ${IMC.today&&IMC.today.length===0?"The imc.ie film-times page may have been unavailable; the next import runs within 3 hours.":""}</p>`)}</div>
     <div class="grid two" style="margin-top:16px"><div class="panel"><div class="ph"><h2>Opening soon</h2><button class="btn small ghost" data-wo="soon">All coming soon →</button></div><div class="films compact">${soon.map(f=>filmCard(f,"soon")).join("")||'<p class="tip">Nothing announced yet.</p>'}</div></div>
     <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
@@ -954,7 +963,15 @@ function renderWhatsOn(){const el=$("#woBody");if(!el)return;$("#woStamp").textC
   else if(woTab==="soon"){const f=keyed(all.filter(x=>{const d=firstDate(x);return d&&d>T}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))));html=f.length?`<div class="films">${f.map(x=>filmCard(x,"soon")).join("")}</div>`:'<p class="tip">Nothing announced yet.</p>'}
   else{const pick=woTab==="kids"?x=>x.sources.has("kids"):woTab==="luxx"?x=>x.luxx:x=>x.sensory;const f=keyed(all.filter(pick).map(x=>{const up=x.sessions.filter(s=>notStarted(s.date,s.time)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));return{...x,times:up.filter(s=>s.date===up[0]?.date).map(s=>s.time),nextDate:up[0]?.date}}));
     html=f.length?`<div class="films">${f.map(x=>filmCard({...x,times:x.times.length?[fmtShort(x.nextDate),...x.times]:[]},woTab==="kids"?"kids":woTab==="luxx"?"luxx":"now")).join("")}</div>`:'<p class="tip">None listed right now.</p>'}
+  if(woTab==="luxx")html=`<div class="row-btns" style="margin-bottom:12px"><button class="btn small primary" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button><button class="btn small" data-luxxad="portrait">LUXX 4:5 post</button></div>`+html;
   el.innerHTML=html;hydrateSvgs(el)}
+/* LUXX recliner ad: today's LUXX showings (or the next day that has them) and the LUXX price from imc.ie */
+function luxxAd(fmt){const T=todayIso();let day=T,films=filmsOn(T).filter(f=>f.luxx);
+  for(let i=1;!films.length&&i<7;i++){day=addDays(T,i);films=filmsOn(day).filter(f=>f.luxx)}
+  const P=imcPrices(),lp=((P&&P.tickets)||[]).filter(t=>/luxx/i.test(t.name)&&!/voucher|meal/i.test(t.name)).map(t=>t.price).sort((a,b)=>parseFloat(a.slice(1))-parseFloat(b.slice(1)))[0]||"";
+  openEditor({kind:"luxx",fmt,price:lp,heading:films.length?(day===T?"In LUXX today":"In LUXX "+fmtShort(day)):"",sub:films.length?S().name:"",rows:films.map(f=>({t:f.title,times:f.times,cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||""}))});
+  if(!films.length)toast("No LUXX showings found this week, so the ad shows LUXX without times")}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-luxxad]");if(b)luxxAd(b.dataset.luxxad)});
 $("#woTabs").addEventListener("click",e=>{const b=e.target.closest("[data-wot]");if(b){woTab=b.dataset.wot;renderWhatsOn()}});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-daytimes]");if(b)makeTimes(b.dataset.daytimes,b.dataset.fmt)});
 
@@ -969,13 +986,33 @@ const PRODUCT_NAMES={popcorn:"Popcorn box",drink:"Drink",tray:"Kids tray",ticket
 /* one-click lines for "What's included": [label, plural, picture] */
 const DEAL_ITEMS=[["Adult ticket","Adult tickets","ticket"],["Child ticket","Child tickets","ticket"],["Family ticket","Family tickets","ticket"],["Popcorn","Popcorn","popcorn"],["Drink","Drinks","drink"],["Share combo","Share combos","popcorn"],["Kids combo","Kids combos","tray"],["Kids tray","Kids trays","tray"],["Nachos","Nachos","nachos"],["Hot dog","Hot dogs","hotdog"],["Sweet bag","Sweet bags","sweets"],["Pick 'n' mix","Pick 'n' mix","pickmix"],["Scoop of ice cream","Scoops of ice cream","icescoop"],["Ice cream tub","Ice cream tubs","icetub"]];
 const curSym=()=>S().ni?"£":"€";
+/* what the editor gets: the deal plus its photo addresses resolved for the editor page */
+function dealOut(d){const m=d.real===false?null:(d.photos&&d.photos.length?null:imcMatch(d.name));return{...d,cur:curSym(),photos:(d.photos&&d.photos.length?d.photos:m&&m.file?[{src:m.file,label:m.name}]:[]).map(p=>({...p,src:asset(p.src)}))}}
 function addDealItem(d,i){const[one,many,pic]=DEAL_ITEMS[i],items=d.items||[],low=x=>x.toLowerCase();
   const j=items.findIndex(l=>{const m=/^(\d+)\s*[x×]\s*(.+)$/i.exec(l.trim());const name=low(m?m[2]:l.trim());return name===low(one)||name===low(many)});
   if(j>=0){const m=/^(\d+)\s*[x×]/i.exec(items[j]),n=(m?+m[1]:1)+1;items[j]=`${n}X ${n>1?many:one}`}else items.push(`1X ${one}`);
   d.items=items;const P=d.products||[];if(pic&&!P.includes(pic)&&P.length<6)P.push(pic);d.products=P}
 function getDeals(){try{const d=JSON.parse(localStorage.getItem(sk("imc-deals"))||"null");if(Array.isArray(d)&&d.length)return d}catch(e){}return JSON.parse(JSON.stringify(DEFAULT_DEALS))}
 function putDeals(d){try{localStorage.setItem(sk("imc-deals"),JSON.stringify(d))}catch(e){toast("Couldn't save deals. Browser storage is blocked.")}}
-function renderDeals(){const el=$("#dealList");if(!el)return;const ds=getDeals();
+/* ---------- prices and product photos from imc.ie (read from the booking page by the importer) ---------- */
+const pnorm=t=>String(t||"").toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
+function imcPrices(){return(IMC&&IMC.prices&&!Array.isArray(IMC.prices))?IMC.prices:null}
+function imcMatch(name){const P=imcPrices(),n=pnorm(name);if(!P||!n)return null;const all=[...(P.products||[]),...(P.bundles||[])];return all.find(x=>pnorm(x.name)===n)||all.find(x=>!x.details&&(pnorm(x.name).startsWith(n)||n.startsWith(pnorm(x.name))))||null}
+function renderPrices(){const el=$("#imcPrices");if(!el)return;const P=imcPrices();
+  if(!P){el.innerHTML=IMC?`<div class="panel prices"><h2>Prices from imc.ie</h2><p class="tip">No prices imported for ${esc(S().name)} yet. The importer reads them from imc.ie's booking page on its next run.</p></div>`:"";return}
+  const card=(x,k,i)=>`<div class="prod">${x.file?`<img src="${esc(asset(x.file))}" alt="${esc(x.name)}" loading="lazy">`:""}<b>${esc(x.name)}</b>${x.details?`<span class="tip" style="margin:0">${esc(x.details)}</span>`:""}<span class="pp">${esc(x.price)}</span>
+    <div class="row-btns"><button class="btn small primary" data-pmake="${k}:${i}">Make a deal</button><button class="btn small" data-pclip="${k}:${i}">Video clip</button></div></div>`;
+  el.innerHTML=`<div class="panel prices"><div class="ph"><h2>Prices from imc.ie</h2><span class="tip" style="margin:0">${esc(S().name)} · checked ${P.checked?new Date(P.checked).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"}):""}</span></div>
+    ${(P.tickets||[]).length?`<h3>Tickets</h3><div class="tickrow">${P.tickets.map(t=>`<span>${esc(t.name)} <b>${esc(t.price)}</b></span>`).join("")}</div>`:""}
+    ${(P.bundles||[]).length?`<h3>Ticket + snack bundles</h3><div class="prodgrid">${P.bundles.map((x,i)=>card(x,"bundles",i)).join("")}</div>`:""}
+    ${(P.products||[]).length?`<h3>Snacks</h3><div class="prodgrid">${P.products.filter(x=>!/flexi/i.test(x.name)).map(x=>card(x,"products",P.products.indexOf(x))).join("")}</div>`:""}
+    <p class="tip">Prices are read from imc.ie's booking page and can change. Ticket prices depend on the showing (matinee or evening).</p></div>`}
+function dealFromImc(x){const nm=x.name.replace(/\s*\(.*?\)\s*/g," ").trim(),inc=(x.details||(/\((.*)\)/.exec(x.name)||[])[1]||"").split(/\s*(?:\+|,| and )\s*/).map(t=>t.trim()).filter(Boolean);
+  return{id:newId(),name:nm,items:inc.length?inc:[nm],price:x.price,was:"",small:"",products:/kids/i.test(nm)?["tray"]:/nacho/i.test(nm)?["nachos"]:["popcorn","drink"],photos:x.file?[{src:x.file,label:nm}]:[]}}
+document.addEventListener("click",e=>{const m=e.target.closest("[data-pmake],[data-pclip]");if(!m)return;const P=imcPrices();if(!P)return;const[k,i]=(m.dataset.pmake||m.dataset.pclip).split(":"),x=(P[k]||[])[+i];if(!x)return;const d=dealFromImc(x);
+  if(m.dataset.pmake){const ds=getDeals();ds.unshift(d);putDeals(ds);renderDeals();renderToday();toast(d.name+" added to your deals at "+d.price);$("#dealList").scrollIntoView({behavior:"smooth"})}
+  else openEditor({kind:"clip",deal:{...d,photos:(d.photos||[]).map(p=>({...p,src:asset(p.src)})),cur:curSym()},fmt:"story"})});
+function renderDeals(){renderPrices();const el=$("#dealList");if(!el)return;const ds=getDeals();
   el.innerHTML=ds.map((d,i)=>{const cnt=k=>(d.products||[]).filter(p=>p===k).length;return`<div class="panel deal" data-di="${i}">
     <div class="dealgrid"><div class="field"><label for="dn${i}">Deal name</label><input id="dn${i}" data-df="name" value="${esc(d.name)}"></div>
     <div class="field"><label for="dp${i}">Price</label><input id="dp${i}" data-df="price" value="${esc(d.price)}" placeholder="${curSym()}0.00"></div>
@@ -984,18 +1021,23 @@ function renderDeals(){const el=$("#dealList");if(!el)return;const ds=getDeals()
     <div class="field"><label for="ds${i}">Small print (optional)</label><input id="ds${i}" data-df="small" value="${esc(d.small||"")}" placeholder="e.g. Available every day · while stocks last"></div>
     <div class="field"><span class="flabel">Add to the deal</span><div class="addchips">${DEAL_ITEMS.map(([n],k)=>`<button class="btn small" data-additem="${k}">+ ${esc(n)}</button>`).join("")}</div></div>
     <div class="field"><span class="flabel">Pictures on the graphic (up to 6)</span><div class="steppers">${Object.entries(PRODUCT_NAMES).map(([k,n])=>`<span class="stepper"><button data-pm="${k}" aria-label="Remove ${n}">−</button><b>${n}${cnt(k)?` ×${cnt(k)}`:""}</b><button data-pp="${k}" aria-label="Add ${n}">+</button></span>`).join("")}</div></div>
+    ${(()=>{const m=imcMatch(d.name);return m?`<div class="imcprice">${m.file?`<img src="${esc(asset(m.file))}" alt="" style="width:44px;height:44px;object-fit:contain;background:#fff;border-radius:6px">`:""}imc.ie lists ${esc(m.name)} at <b>${esc(m.price)}</b>${d.price!==m.price?`<button class="btn small" data-useprice="${i}" data-p="${esc(m.price)}">Use this price</button>`:" ✓"}</div>`:""})()}
+    <label class="check" style="display:flex;gap:8px;align-items:center;font-size:13px"><input type="checkbox" data-dreal="${i}" ${d.real===false?"":"checked"}> Use real product photos from imc.ie when there's a match</label>
     ${d.price?"":`<p class="warnline">Set the price before posting. The graphic shows ${curSym()}X until you do.</p>`}
-    <div class="facts"><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated post</button><button class="btn small" data-dealmake="${i}" data-anim="0">Still post</button><button class="btn small" data-dealmake="${i}" data-anim="1" data-fmt="story">Animated Story</button><button class="btn small" data-dealpost="${i}">Write caption</button><button class="btn small danger" data-dealdel="${i}">Delete</button></div></div>`}).join("")}
+    <div class="facts"><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated post</button><button class="btn small" data-dealmake="${i}" data-anim="0">Still post</button><button class="btn small" data-dealmake="${i}" data-anim="1" data-fmt="story">Animated Story</button><button class="btn small" data-dealclip="${i}">Video clip</button><button class="btn small" data-dealpost="${i}">Write caption</button><button class="btn small danger" data-dealdel="${i}">Delete</button></div></div>`}).join("")}
 $("#dealList").addEventListener("input",e=>{const f=e.target.closest("[data-df]"),card=e.target.closest("[data-di]");if(!f||!card)return;const ds=getDeals(),d=ds[+card.dataset.di],k=f.dataset.df;d[k]=k==="items"?f.value.split("\n").map(x=>x.trim()).filter(Boolean):f.value;putDeals(ds)});
 $("#dealList").addEventListener("change",()=>{renderDeals();renderToday()});
 $("#dealList").addEventListener("click",e=>{const card=e.target.closest("[data-di]");if(!card)return;const ds=getDeals(),i=+card.dataset.di,d=ds[i];
   const pp=e.target.closest("[data-pp]"),pm=e.target.closest("[data-pm]");
   if(pp){d.products=[...(d.products||[]),pp.dataset.pp].slice(0,6);putDeals(ds);renderDeals();return}
+  const up=e.target.closest("[data-useprice]");if(up){d.price=up.dataset.p;putDeals(ds);renderDeals();renderToday();toast("Price set to "+d.price);return}
+  const dr=e.target.closest("[data-dreal]");if(dr){d.real=dr.checked;putDeals(ds);return}
+  const dc=e.target.closest("[data-dealclip]");if(dc){openEditor({kind:"clip",deal:dealOut(d),fmt:"story"});return}
   const ai=e.target.closest("[data-additem]");if(ai){addDealItem(d,+ai.dataset.additem);putDeals(ds);renderDeals();renderToday();return}
   if(pm){const a=d.products||[],j=a.lastIndexOf(pm.dataset.pm);if(j>=0)a.splice(j,1);d.products=a;putDeals(ds);renderDeals();return}
   const del=e.target.closest("[data-dealdel]");if(del){ds.splice(i,1);putDeals(ds.length?ds:[]);if(!ds.length)localStorage.removeItem(sk("imc-deals"));renderDeals();renderToday();toast("Deal deleted")}
   const wp=e.target.closest("[data-dealpost]");if(wp){startNew();Object.assign(cur,{type:"offer",kicker:"THIS WEEK AT THE IMC",headline:d.name,sub:(d.items||[]).join(" + "),price:d.price||"",details:d.small||"",cta:"Grab it at the kiosk",theme:"velvet",status:"draft",tags:S().tags+" #CinemaSnacks"});cur.caption=capFor(cur);fillForm();go("studio");toast("Caption drafted")}});
-document.addEventListener("click",e=>{const b=e.target.closest("[data-dealmake]");if(!b)return;const d=getDeals()[+b.dataset.dealmake];if(d)openEditor({kind:"deal",deal:{...d,cur:curSym()},animated:b.dataset.anim==="1",fmt:b.dataset.fmt||"square"})});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-dealmake]");if(!b)return;const d=getDeals()[+b.dataset.dealmake];if(d)openEditor({kind:"deal",deal:dealOut(d),animated:b.dataset.anim==="1",fmt:b.dataset.fmt||"square"})});
 $("#addDeal").onclick=()=>{const ds=getDeals();ds.push({id:newId(),name:"New deal",items:["Popcorn","Drink"],price:"",was:"",small:"",products:["popcorn","drink"]});putDeals(ds);renderDeals();toast("Deal added")};
 $("#resetDeals").onclick=()=>{try{localStorage.removeItem(sk("imc-deals"))}catch(e){}renderDeals();renderToday();toast("Deals reset")};
 
@@ -1008,7 +1050,7 @@ function siteText(){const x=S();$$(".sitename").forEach(e=>e.textContent=x.name)
   const im=document.querySelector('a[href*="imdb.com/calendar"]');if(im){im.href="https://www.imdb.com/calendar/?region="+(x.ni?"GB":"IE");im.textContent="IMDb "+(x.ni?"UK":"Ireland")+" calendar ↗"}}
 $("#sitesel").addEventListener("change",async e=>{site=e.target.value;try{localStorage.setItem(SITE_LS,site)}catch(err){}
   scope();siteText();renderPlays();startNew();ratingSys=pickRating();IMC=null;imcTried=false;lastShowKey="";renderAll();renderToday();renderWhatsOn();if(view==="deals")renderDeals();toast("Switched to "+S().name);
-  await loadImc();imcTried=true;renderToday();renderWhatsOn()});
+  await loadImc();imcTried=true;renderToday();renderWhatsOn();if(view==="deals")renderDeals()});
 fillSitePicker();siteText();
 
 loadImc().finally(()=>{imcTried=true;renderToday();renderWhatsOn()});
