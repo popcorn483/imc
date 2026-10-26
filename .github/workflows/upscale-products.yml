@@ -1,0 +1,48 @@
+name: Upscale product photos
+
+# IMC's product photos are small (160px). This enlarges new ones 4x with Real-ESRGAN so ads stay sharp.
+on:
+  schedule:
+    - cron: "41 7 * * *"   # once a day, after the morning import
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-imc
+  cancel-in-progress: false
+
+jobs:
+  upscale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Anything to do?
+        id: check
+        run: |
+          pip install --quiet pillow
+          echo "todo=$(python tools/upscale.py --check)" >> "$GITHUB_OUTPUT"
+      - name: Install Real-ESRGAN (CPU)
+        if: steps.check.outputs.todo != '0'
+        run: |
+          pip install --quiet torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet spandrel numpy pillow
+          curl -sSL -o RealESRGAN_x4plus.pth https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth
+      - name: Upscale
+        if: steps.check.outputs.todo != '0'
+        run: python tools/upscale.py
+      - name: Commit
+        if: steps.check.outputs.todo != '0'
+        run: |
+          git config user.name "imc-importer"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/products/hd
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Upscale product photos"
+          git pull --rebase
+          git push

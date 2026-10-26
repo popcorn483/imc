@@ -552,6 +552,34 @@ for (const cin of CINEMAS) {
   await fs.writeFile(file, JSON.stringify(known, null, 2));
   console.log(`trailers: ${urls.size} listed, ${n} newly checked`);
 }
+// photo library: free photos listed in data/library/sources.json. Each page is checked for "Free to use under the Unsplash
+// License" before downloading, so Unsplash+ (paid) photos are never used. Already-downloaded photos are skipped.
+{
+  const dir = path.join(OUT, "library"), srcs = await fs.readFile(path.join(dir, "sources.json"), "utf8").then(JSON.parse).catch(() => []);
+  const idx = await fs.readFile(path.join(dir, "index.json"), "utf8").then(JSON.parse).catch(() => []);
+  let added = 0;
+  for (const s of srcs) {
+    if (idx.some((x) => x.id === s.id) || (s.skip && s.checked && Date.now() - Date.parse(s.checked) < 30 * 864e5)) continue;
+    try {
+      await sleep(800);
+      const r = await fetch(s.page, { headers: { "user-agent": UA, accept: "text/html" }, redirect: "follow" });
+      const html = await r.text();
+      if (!/Free to use under the Unsplash License/i.test(html)) { console.log(`library: ${s.id} is not free to use, skipped`); s.skip = true; s.checked = new Date().toISOString(); continue; }
+      const og = /<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i.exec(html) || /<meta[^>]+content="([^"]+)"[^>]+property="og:image"/i.exec(html);
+      const credit = (/Photo by ([^<|]+?) on Unsplash/i.exec(html) || [])[1] || "";
+      if (!og) { console.log(`library: ${s.id} has no image link`); continue; }
+      const u = new URL(og[1].replace(/&amp;/g, "&")); for (const k of ["w", "h", "fit", "crop", "q", "fm", "auto", "ixlib", "mark", "blend", "txt"]) u.searchParams.delete(k);
+      u.searchParams.set("w", "1800"); u.searchParams.set("q", "82"); u.searchParams.set("fm", "jpg");
+      const buf = await get(u.href, true);
+      const file = `${OUT}/library/${s.cat}-${slug(s.id)}.jpg`;
+      await fs.writeFile(file, buf);
+      idx.push({ id: s.id, cat: s.cat, title: s.title, credit: credit.trim(), page: s.page, file, license: "Unsplash License" }); added++;
+    } catch (e) { console.log(`library: ${s.id} failed: ${e.message}`); }
+  }
+  await fs.writeFile(path.join(dir, "index.json"), JSON.stringify(idx, null, 2));
+  await fs.writeFile(path.join(dir, "sources.json"), JSON.stringify(srcs, null, 1));
+  console.log(`library: ${idx.length} photos (${added} new)`);
+}
 // files are written relative to the repo root; the site reads them the same way
 for (const c of summary) c.file = String(c.file).split(path.sep).join("/");
 await fs.writeFile(path.join(OUT, "cinemas.json"), JSON.stringify({ updated: new Date().toISOString(), blocked, cinemas: summary }, null, 2));
