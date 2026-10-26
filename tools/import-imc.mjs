@@ -71,6 +71,22 @@ async function schedules(cinemaName, daysAhead, extra = {}) {
   if (!r.ok) throw new Error(`${r.status} schedules ${cinemaName}`);
   return await r.text();
 }
+// "Adult £9.50", "Child (3-14) €7.20" … from a booking page; labels come from the same row or element
+function pricesOf(html) {
+  const $ = cheerio.load(html), out = [], seen = new Set();
+  $("script,style,noscript").remove();
+  $("tr, li, label, [class*='ticket'], [class*='price'], [class*='Ticket'], [class*='Price'], div, p").each((_, el) => {
+    const t = clean($(el).clone().children("tr,li,div").remove().end().text());
+    if (!t || t.length > 120) return;
+    const m = /([A-Za-z][A-Za-z0-9 '’&()+\/-]{1,40}?)\s*[:\-–]?\s*([£€]\s?\d{1,3}(?:[.,]\d{2})?)/.exec(t);
+    if (!m) return;
+    const label = clean(m[1]).replace(/\s*(ticket|tickets)$/i, ""), price = m[2].replace(/\s/g, "").replace(",", ".");
+    const key = label.toLowerCase() + price;
+    if (label.length < 2 || seen.has(key) || /total|booking fee|subtotal|basket/i.test(label)) return;
+    seen.add(key); out.push({ label, price });
+  });
+  return out.slice(0, 20);
+}
 const abs = (u) => { if (!u || u.startsWith("data:")) return null; try { return new URL(u.trim(), BASE).href; } catch { return null; } };
 const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
 const slug = (s) => clean(s).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
@@ -407,6 +423,19 @@ if (PAGES && !blocked && !result.today.length && !result.days.some((d) => d.film
   if (!result.comingSoon.length && !blocked) {
     try { await sleep(1500); const h = await schedules(name, 0, { viewMode: "ALL", filterType: "advance-bookings" }); const d = parseFilms(`<html><body>${h}</body></html>`).films; note(`schedules advance: ${d.length} films`); if (d.length) { result.comingSoon = await withPosters(d); fresh.add("advance"); } } catch (e) { note(`schedules advance failed: ${e.message}`); }
   }
+}
+// ticket prices: imc.ie shows them on the booking page for a showing, so read one per cinema
+if (PAGES && !blocked) {
+  const book = [...result.today, ...result.days.flatMap((d) => d.films)].flatMap((f) => f.sessions || []).map((x) => x.book).find(Boolean);
+  if (book) {
+    try {
+      await sleep(1500);
+      const h = await get(book);
+      if (isBotCheck(h)) blocked = true;
+      else { await saveRaw("booking", h); result.prices = pricesOf(h); note(`prices: ${result.prices.map((p) => p.label + " " + p.price).join(", ") || "none found"}`); }
+    } catch (e) { note(`booking page failed: ${e.message}`); }
+  }
+  if (!result.prices && prev && prev.prices) result.prices = prev.prices;
 }
 // keep the last good data for anything this run couldn't refresh
 if (prev) {
