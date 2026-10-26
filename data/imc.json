@@ -2,7 +2,7 @@
   "id": "enniskillen",
   "cinema": "IMC Enniskillen",
   "source": "https://imc.ie/enniskillen",
-  "updated": "2026-10-26T13:01:33.500Z",
+  "updated": "2026-10-26T22:32:48.077Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -825,103 +825,6 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "ALI G: WHO IZ I?",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114097.jpg",
-          "cert": "15",
-          "runtime": 89,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Sacha Baron Cohen",
-          "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
-          "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-          "date": "2026-10-26",
-          "times": [
-            "20:10"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120700",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:10",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120700",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ali-g-who-iz-i",
-          "posterFile": "data/posters/ali-g-who-iz-i.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Arnie and Barney",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
-          "cert": "PG",
-          "runtime": 77,
-          "release": "October 24, 2026",
-          "releaseDate": "2026-10-24",
-          "director": "Sean Heuston",
-          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "13:30",
-            "15:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120807",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "13:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120807",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120806",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "arnie-and-barney",
-          "posterFile": "data/posters/arnie-and-barney.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
           "certFile": "18",
           "title": "Clayface",
           "luxx": true,
@@ -937,40 +840,10 @@
           "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
           "date": "2026-10-26",
           "times": [
-            "15:45",
-            "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120701",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120428",
           "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120701",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120429",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Mon 26 October",
               "date": "2026-10-26",
@@ -989,205 +862,6 @@
           "slug": "clayface",
           "posterFile": "data/posters/clayface.jpg",
           "certIcon": "data/ratings/bbfc-18.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Coyote vs Acme",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110457.jpg",
-          "cert": "PG",
-          "runtime": 103,
-          "release": "August 21, 2026",
-          "releaseDate": "2026-08-21",
-          "director": "Dave Green",
-          "synopsis": "After decades of being blown to bits by bombs, demolished by dynamite, mangled by magnets, battered by boulders, trampled by trains, tricked by tunnels, sprung by springs, steamrolled by steamrollers, maligned by misfires, bedeviled by bungees, rattled by rockets, backstabbed by bat suits, rocked by rocket skates, upended by unicycles, quaked by quake pills, rubberized by rogue bands, and hurled headlong off every cliff in the Southwest, Wile E. Coyote (Genius) finally fights back. Teaming up with billboard accident lawyer Kevin Avery (Will Forte), he takes on slick corporate counsel Buddy Cra",
-          "trailer": "https://www.youtube.com/watch?v=H-43VeYGiPM",
-          "date": "2026-10-26",
-          "times": [
-            "12:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120682",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120682",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "coyote-vs-acme",
-          "posterFile": "data/posters/coyote-vs-acme.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-10-26",
-          "times": [
-            "12:30",
-            "15:00",
-            "17:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120696",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "12:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120696",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "15:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120695",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:35",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120694",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "PG",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "13:15",
-            "15:40",
-            "18:00",
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120693",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "13:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120693",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "15:40",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120692",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120691",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120690",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -1274,48 +948,6 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Sensory Shaun The Sheep: The Beast of Mossy Bottom",
-          "luxx": false,
-          "sensory": true,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/114446.jpg",
-          "cert": "PG",
-          "runtime": 81,
-          "release": "September 20, 2026",
-          "releaseDate": "2026-09-20",
-          "director": "Steve Cox, Matthew Walker",
-          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
-          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
-          "date": "2026-10-26",
-          "times": [
-            "12:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120775",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120775",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "sensory-shaun-the-sheep-the-beast-of-mossy-bottom",
-          "posterFile": "data/posters/sensory-shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
           "certFile": "12A",
           "title": "Street Fighter",
           "luxx": false,
@@ -1331,40 +963,10 @@
           "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
           "date": "2026-10-26",
           "times": [
-            "14:45",
-            "17:30",
             "20:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120697",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120699",
           "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "14:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120697",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120793",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Mon 26 October",
               "date": "2026-10-26",
@@ -1382,256 +984,6 @@
           ],
           "slug": "street-fighter",
           "posterFile": "data/posters/street-fighter.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Street Fighter",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115929.jpg",
-          "cert": "12A",
-          "runtime": 119,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Kitao Sakurai",
-          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-          "date": "2026-10-26",
-          "times": [
-            "13:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120800",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120800",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "street-fighter",
-          "posterFile": "data/posters/street-fighter.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "U",
-          "title": "Tad and the Magic Lamp",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-          "cert": "U",
-          "runtime": 94,
-          "release": "October 17, 2026",
-          "releaseDate": "2026-10-17",
-          "director": "Enrique Gato",
-          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "13:00",
-            "15:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120687",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120687",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "15:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120686",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "tad-and-the-magic-lamp",
-          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-          "certIcon": "data/ratings/bbfc-U.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "TBC",
-          "title": "THE LOST CHILDREN OF TUAM",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114662.jpg",
-          "cert": "TBC",
-          "runtime": 86,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Frank Berry",
-          "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "17:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120681",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120681",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-lost-children-of-tuam",
-          "posterFile": "data/posters/the-lost-children-of-tuam.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Verity",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110405.jpg",
-          "cert": "15",
-          "runtime": 117,
-          "release": "October 2, 2026",
-          "releaseDate": "2026-10-02",
-          "director": "Michael Showalter",
-          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
-          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-          "date": "2026-10-26",
-          "times": [
-            "17:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120680",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120680",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "verity",
-          "posterFile": "data/posters/verity.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-26",
-          "times": [
-            "14:15",
-            "17:10",
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120685",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "14:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120685",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:10",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120684",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120683",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
           "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
@@ -3706,13 +3058,13 @@
           "times": [
             "12:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120792",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121151",
           "sessions": [
             {
               "day": "Thu 29 October",
               "date": "2026-10-29",
               "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120792",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121151",
               "luxx": false,
               "screen": "2",
               "threeD": false,
@@ -4116,52 +3468,22 @@
           "trailer": null,
           "date": "2026-10-30",
           "times": [
-            "12:20",
-            "14:20",
-            "16:20"
+            "13:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120889",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120902",
           "sessions": [
             {
               "day": "Fri 30 October",
               "date": "2026-10-30",
-              "time": "12:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120889",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120902",
               "luxx": false,
-              "screen": "4",
+              "screen": "5",
               "threeD": false,
               "tags": [
                 "new",
                 "matinee",
                 "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "14:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120902",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "16:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120903",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
                 "seating-standard"
               ]
             }
@@ -4188,27 +3510,12 @@
           "trailer": null,
           "date": "2026-10-30",
           "times": [
-            "13:15",
             "15:45",
             "18:15",
             "20:40"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120879",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120886",
           "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "13:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120879",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Fri 30 October",
               "date": "2026-10-30",
@@ -4275,6 +3582,7 @@
           "date": "2026-10-30",
           "times": [
             "12:10",
+            "13:10",
             "14:45",
             "17:15"
           ],
@@ -4287,6 +3595,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120900",
               "luxx": false,
               "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "13:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121034",
+              "luxx": false,
+              "screen": "2",
               "threeD": false,
               "tags": [
                 "released",
@@ -4345,66 +3667,38 @@
           "trailer": null,
           "date": "2026-10-30",
           "times": [
-            "13:00",
-            "15:30",
-            "18:00",
-            "20:25"
+            "12:15",
+            "14:35"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120893",
           "sessions": [
             {
               "day": "Fri 30 October",
               "date": "2026-10-30",
-              "time": "13:00",
+              "time": "12:15",
               "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120893",
               "luxx": false,
-              "screen": "5",
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "new",
                 "matinee",
+                "kidsclub",
                 "seating-standard"
               ]
             },
             {
               "day": "Fri 30 October",
               "date": "2026-10-30",
-              "time": "15:30",
+              "time": "14:35",
               "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120892",
               "luxx": false,
-              "screen": "5",
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "new",
                 "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120891",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:25",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120890",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
+                "kidsclub",
                 "seating-standard"
               ]
             }
@@ -4431,15 +3725,30 @@
           "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
           "date": "2026-10-30",
           "times": [
-            "18:30"
+            "18:35",
+            "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120904",
           "sessions": [
             {
               "day": "Fri 30 October",
               "date": "2026-10-30",
-              "time": "18:30",
+              "time": "18:35",
               "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120904",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121036",
               "luxx": false,
               "screen": "4",
               "threeD": false,
@@ -4458,29 +3767,29 @@
         {
           "certSystem": "bbfc",
           "certFile": "16",
-          "title": "Pan's Labyrinth",
+          "title": "Pan's Labyrinth (20th Anniversary)",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115976.jpg",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114493.jpg",
           "cert": "16",
-          "runtime": 121,
+          "runtime": 118,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
           "director": "Guillermo del Toro",
-          "synopsis": "2006 Spanish-language fantasy drama in which a young girl seeks to escape from the realities of Fascist Spain by entering a fantasy world.",
-          "trailer": "https://www.youtube.com/watch?v=jVZRnnVSQ8k",
+          "synopsis": "Celebrate the 20th Anniversary of Guillermo del Toro?s Academy Award?winning masterpiece with a return to the big screen. Set against the backdrop of post?Civil War Spain, Pan?s Labyrinth follows young Ofelia as she escapes into a haunting fantasy realm, where a mysterious faun sets her on a dangerous quest. A visually stunning and emotionally powerful film, this re-release offers audiences a rare opportunity to experience a modern classic in theaters?perfect for prestige programming, genre fans, and awards-season retrospectives.",
+          "trailer": null,
           "date": "2026-10-30",
           "times": [
-            "19:45"
+            "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120883",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121152",
           "sessions": [
             {
               "day": "Fri 30 October",
               "date": "2026-10-30",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120883",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121152",
               "luxx": false,
               "screen": "3",
               "threeD": false,
@@ -4491,20 +3800,20 @@
               ]
             }
           ],
-          "slug": "pan-s-labyrinth",
-          "posterFile": "data/posters/pan-s-labyrinth.jpg",
+          "slug": "pan-s-labyrinth-20th-anniversary",
+          "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
           "certIcon": null,
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
           "certSystem": "bbfc",
-          "certFile": "18",
+          "certFile": "15",
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "18",
+          "cert": "15",
           "runtime": 100,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
@@ -4513,28 +3822,28 @@
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-10-30",
           "times": [
-            "19:45"
+            "17:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120896",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121035",
           "sessions": [
             {
               "day": "Fri 30 October",
               "date": "2026-10-30",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120896",
+              "time": "17:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121035",
               "luxx": false,
-              "screen": "6",
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "advance",
-                "evening",
+                "matinee",
                 "seating-standard"
               ]
             }
           ],
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/bbfc-18.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -4595,47 +3904,49 @@
           "trailer": null,
           "date": "2026-10-30",
           "times": [
-            "12:30",
-            "15:00",
-            "17:15"
+            "12:00",
+            "14:15",
+            "16:25"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120882",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120884",
           "sessions": [
             {
               "day": "Fri 30 October",
               "date": "2026-10-30",
-              "time": "12:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120882",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "15:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120885",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "17:15",
+              "time": "12:00",
               "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120884",
               "luxx": false,
-              "screen": "3",
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120882",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "16:25",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120885",
+              "luxx": false,
+              "screen": "4",
               "threeD": false,
               "tags": [
                 "released",
@@ -4647,6 +3958,77 @@
           "slug": "tad-and-the-magic-lamp",
           "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
           "certIcon": "data/ratings/bbfc-U.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "TBC",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-10-30",
+          "times": [
+            "15:30",
+            "18:00",
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121039",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121039",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121038",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121037",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/bbfc-TBC.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -4744,52 +4126,22 @@
           "trailer": null,
           "date": "2026-10-31",
           "times": [
-            "12:20",
-            "14:20",
-            "16:20"
+            "13:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120970",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121053",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "12:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120970",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121053",
               "luxx": false,
-              "screen": "4",
+              "screen": "5",
               "threeD": false,
               "tags": [
                 "new",
                 "evening",
                 "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "14:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120961",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "16:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120962",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
                 "seating-standard"
               ]
             }
@@ -4816,32 +4168,17 @@
           "trailer": null,
           "date": "2026-10-31",
           "times": [
-            "13:15",
             "15:45",
             "18:15",
             "20:40"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120958",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121043",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "13:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120958",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
               "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120960",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121043",
               "luxx": false,
               "screen": "2",
               "threeD": false,
@@ -4855,7 +4192,7 @@
               "day": "Sat 31 October",
               "date": "2026-10-31",
               "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120965",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121044",
               "luxx": false,
               "screen": "2",
               "threeD": false,
@@ -4869,7 +4206,7 @@
               "day": "Sat 31 October",
               "date": "2026-10-31",
               "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120969",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121045",
               "luxx": false,
               "screen": "2",
               "threeD": false,
@@ -4903,16 +4240,17 @@
           "date": "2026-10-31",
           "times": [
             "12:10",
+            "13:10",
             "14:45",
             "17:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120977",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121040",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
               "time": "12:10",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120977",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121040",
               "luxx": false,
               "screen": "6",
               "threeD": false,
@@ -4925,8 +4263,22 @@
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
+              "time": "13:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121058",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
               "time": "14:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120974",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121051",
               "luxx": false,
               "screen": "6",
               "threeD": false,
@@ -4940,7 +4292,7 @@
               "day": "Sat 31 October",
               "date": "2026-10-31",
               "time": "17:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120975",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121052",
               "luxx": false,
               "screen": "6",
               "threeD": false,
@@ -5014,66 +4366,38 @@
           "trailer": null,
           "date": "2026-10-31",
           "times": [
-            "13:00",
-            "15:30",
-            "18:00",
-            "20:25"
+            "12:15",
+            "14:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120973",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121050",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120973",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121050",
               "luxx": false,
-              "screen": "5",
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "new",
                 "evening",
+                "kidsclub",
                 "seating-standard"
               ]
             },
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "15:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120972",
+              "time": "14:35",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121049",
               "luxx": false,
-              "screen": "5",
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "new",
                 "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120971",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "20:25",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120959",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
+                "kidsclub",
                 "seating-standard"
               ]
             }
@@ -5100,15 +4424,30 @@
           "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
           "date": "2026-10-31",
           "times": [
-            "18:30"
+            "18:35",
+            "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120963",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121054",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120963",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121054",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121060",
               "luxx": false,
               "screen": "4",
               "threeD": false,
@@ -5127,29 +4466,29 @@
         {
           "certSystem": "bbfc",
           "certFile": "16",
-          "title": "Pan's Labyrinth",
+          "title": "Pan's Labyrinth (20th Anniversary)",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115976.jpg",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114493.jpg",
           "cert": "16",
-          "runtime": 121,
+          "runtime": 118,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
           "director": "Guillermo del Toro",
-          "synopsis": "2006 Spanish-language fantasy drama in which a young girl seeks to escape from the realities of Fascist Spain by entering a fantasy world.",
-          "trailer": "https://www.youtube.com/watch?v=jVZRnnVSQ8k",
+          "synopsis": "Celebrate the 20th Anniversary of Guillermo del Toro?s Academy Award?winning masterpiece with a return to the big screen. Set against the backdrop of post?Civil War Spain, Pan?s Labyrinth follows young Ofelia as she escapes into a haunting fantasy realm, where a mysterious faun sets her on a dangerous quest. A visually stunning and emotionally powerful film, this re-release offers audiences a rare opportunity to experience a modern classic in theaters?perfect for prestige programming, genre fans, and awards-season retrospectives.",
+          "trailer": null,
           "date": "2026-10-31",
           "times": [
-            "19:45"
+            "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120964",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121153",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120964",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121153",
               "luxx": false,
               "screen": "3",
               "threeD": false,
@@ -5160,20 +4499,20 @@
               ]
             }
           ],
-          "slug": "pan-s-labyrinth",
-          "posterFile": "data/posters/pan-s-labyrinth.jpg",
+          "slug": "pan-s-labyrinth-20th-anniversary",
+          "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
           "certIcon": null,
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
           "certSystem": "bbfc",
-          "certFile": "18",
+          "certFile": "15",
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "18",
+          "cert": "15",
           "runtime": 100,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
@@ -5182,17 +4521,17 @@
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-10-31",
           "times": [
-            "19:45"
+            "17:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120976",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121059",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120976",
+              "time": "17:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121059",
               "luxx": false,
-              "screen": "6",
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "advance",
@@ -5203,7 +4542,7 @@
           ],
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/bbfc-18.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -5225,13 +4564,13 @@
           "times": [
             "12:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120980",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121056",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
               "time": "12:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120980",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121056",
               "luxx": false,
               "screen": "7",
               "threeD": false,
@@ -5264,47 +4603,49 @@
           "trailer": null,
           "date": "2026-10-31",
           "times": [
-            "12:30",
-            "15:00",
-            "17:15"
+            "12:00",
+            "14:15",
+            "16:25"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120966",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121048",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "12:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120966",
+              "time": "12:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121048",
               "luxx": false,
-              "screen": "3",
+              "screen": "4",
               "threeD": false,
               "tags": [
                 "released",
                 "evening",
+                "kidsclub",
                 "seating-standard"
               ]
             },
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "15:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120968",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121046",
               "luxx": false,
-              "screen": "3",
+              "screen": "4",
               "threeD": false,
               "tags": [
                 "released",
                 "evening",
+                "kidsclub",
                 "seating-standard"
               ]
             },
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
-              "time": "17:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120967",
+              "time": "16:25",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121042",
               "luxx": false,
-              "screen": "3",
+              "screen": "4",
               "threeD": false,
               "tags": [
                 "released",
@@ -5316,6 +4657,77 @@
           "slug": "tad-and-the-magic-lamp",
           "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
           "certIcon": "data/ratings/bbfc-U.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "TBC",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-10-31",
+          "times": [
+            "15:30",
+            "18:00",
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121063",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121063",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121062",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121061",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/bbfc-TBC.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -5339,13 +4751,13 @@
             "17:05",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120981",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121057",
           "sessions": [
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
               "time": "14:10",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120981",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121057",
               "luxx": false,
               "screen": "7",
               "threeD": false,
@@ -5359,7 +4771,7 @@
               "day": "Sat 31 October",
               "date": "2026-10-31",
               "time": "17:05",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120978",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121041",
               "luxx": false,
               "screen": "7",
               "threeD": false,
@@ -5373,7 +4785,7 @@
               "day": "Sat 31 October",
               "date": "2026-10-31",
               "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120979",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121055",
               "luxx": false,
               "screen": "7",
               "threeD": false,
@@ -5712,29 +5124,29 @@
         {
           "certSystem": "bbfc",
           "certFile": "16",
-          "title": "Pan's Labyrinth",
+          "title": "Pan's Labyrinth (20th Anniversary)",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115976.jpg",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114493.jpg",
           "cert": "16",
-          "runtime": 121,
+          "runtime": 118,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
           "director": "Guillermo del Toro",
-          "synopsis": "2006 Spanish-language fantasy drama in which a young girl seeks to escape from the realities of Fascist Spain by entering a fantasy world.",
-          "trailer": "https://www.youtube.com/watch?v=jVZRnnVSQ8k",
+          "synopsis": "Celebrate the 20th Anniversary of Guillermo del Toro?s Academy Award?winning masterpiece with a return to the big screen. Set against the backdrop of post?Civil War Spain, Pan?s Labyrinth follows young Ofelia as she escapes into a haunting fantasy realm, where a mysterious faun sets her on a dangerous quest. A visually stunning and emotionally powerful film, this re-release offers audiences a rare opportunity to experience a modern classic in theaters?perfect for prestige programming, genre fans, and awards-season retrospectives.",
+          "trailer": null,
           "date": "2026-11-01",
           "times": [
-            "19:45"
+            "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121071",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121154",
           "sessions": [
             {
               "day": "Sun 1 November",
               "date": "2026-11-01",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121071",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121154",
               "luxx": false,
               "screen": "3",
               "threeD": false,
@@ -5745,20 +5157,20 @@
               ]
             }
           ],
-          "slug": "pan-s-labyrinth",
-          "posterFile": "data/posters/pan-s-labyrinth.jpg",
+          "slug": "pan-s-labyrinth-20th-anniversary",
+          "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
           "certIcon": null,
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
           "certSystem": "bbfc",
-          "certFile": "18",
+          "certFile": "15",
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "18",
+          "cert": "15",
           "runtime": 100,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
@@ -5788,7 +5200,7 @@
           ],
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/bbfc-18.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -9607,17 +9019,27 @@
     }
   ],
   "log": [
-    "imc.ie showed a browser check on home; stopping this run and keeping the previous listings",
+    "enniskillen: no films on the film-times page",
+    "home: 1 films parsed",
+    "today: 0 films parsed",
+    "day-26-10-2026-dated: 4 films parsed",
+    "day-27-10-2026-dated: 15 films parsed",
+    "day-28-10-2026-dated: 15 films parsed",
+    "day-29-10-2026-dated: 15 films parsed",
+    "day-30-10-2026-dated: 11 films parsed",
+    "day-31-10-2026-dated: 12 films parsed",
+    "day-01-11-2026-dated: 11 films parsed",
+    "day-02-11-2026-dated: 6 films parsed",
+    "advance: 15 films parsed",
+    "kids: 4 films parsed",
+    "luxx: 3 films parsed",
+    "prices: none found",
     "kept previous today",
-    "kept previous days",
-    "kept previous comingSoon",
-    "kept previous kidsClub",
-    "kept previous luxx",
-    "kept previous banners",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "checked": "2026-10-26T21:38:43.719Z",
-  "blocked": true,
+  "prices": [],
+  "checked": "2026-10-26T22:33:20.153Z",
+  "blocked": false,
   "ratings": {
     "bbfc": {
       "12": "data/ratings/bbfc-12.svg",

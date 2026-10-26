@@ -2,7 +2,7 @@
   "id": "galway",
   "cinema": "IMC Galway",
   "source": "https://imc.ie/galway-headford-road",
-  "updated": "2026-10-26T13:07:45.766Z",
+  "updated": "2026-10-26T22:33:21.569Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -1041,6 +1041,12 @@
       "label": "Mon 26 Oct",
       "url": "https://imc.ie/film-times/galway-headford-road/26-10-2026#dateD",
       "date": "2026-10-26",
+      "films": []
+    },
+    {
+      "label": "Tue 27 Oct",
+      "url": "https://imc.ie/film-times/galway-headford-road/27-10-2026#dateD",
+      "date": "2026-10-27",
       "films": [
         {
           "certSystem": "ifco",
@@ -1057,17 +1063,17 @@
           "director": "Sacha Baron Cohen",
           "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
           "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-          "date": "2026-10-26",
+          "date": "2026-10-27",
           "times": [
             "20:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177924",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178081",
           "sessions": [
             {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
+              "day": "Tue 27 October",
+              "date": "2026-10-27",
               "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177924",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178081",
               "luxx": false,
               "screen": "9",
               "threeD": false,
@@ -1083,987 +1089,6 @@
           "certIcon": "data/ratings/ifco-16.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115573.jpg",
-          "cert": "16",
-          "runtime": 120,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "James Watkins",
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-          "date": "2026-10-26",
-          "times": [
-            "15:45",
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177707",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177707",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177116",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177117",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-10-26",
-          "times": [
-            "12:55",
-            "13:50",
-            "15:20",
-            "16:00",
-            "17:50"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177719",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "12:55",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177719",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "13:50",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177722",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "15:20",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177692",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "16:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177705",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:50",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177691",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "PG",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "14:00",
-            "16:15",
-            "18:30",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177537",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "14:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177537",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "16:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177538",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177539",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177536",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Heart Of The Beast",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
-          "cert": "15A",
-          "runtime": 102,
-          "release": "September 23, 2026",
-          "releaseDate": "2026-09-23",
-          "director": "David Ayer",
-          "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
-          "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-          "date": "2026-10-26",
-          "times": [
-            "18:05"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177615",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "18:05",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177615",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "heart-of-the-beast",
-          "posterFile": "data/posters/heart-of-the-beast.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Klara And The Sun",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112474.jpg",
-          "cert": "12A",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "14:55",
-            "17:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177578",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "14:55",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177578",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:35",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177577",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "klara-and-the-sun",
-          "posterFile": "data/posters/klara-and-the-sun.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Monster Mia",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
-          "cert": "G",
-          "runtime": 81,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "13:40",
-            "15:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177721",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "13:40",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177721",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "15:40",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177703",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "monster-mia",
-          "posterFile": "data/posters/monster-mia.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Other Mommy",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 9, 2026",
-          "releaseDate": "2026-10-09",
-          "director": "Rob Savage",
-          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
-          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-          "date": "2026-10-26",
-          "times": [
-            "18:30",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177599",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177599",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177600",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "other-mommy",
-          "posterFile": "data/posters/other-mommy.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Paw Patrol 3 The Dino Movie",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/109935.jpg",
-          "cert": "G",
-          "runtime": 90,
-          "release": "August 7, 2026",
-          "releaseDate": "2026-08-07",
-          "director": null,
-          "synopsis": "Paw Patrol: The Dino Movie brings the heroic pups back to the big screen for another action-packed family adventure, following the huge global success of PAW Patrol: The Movie (2021) and PAW Patrol: The Mighty Movie (2023). Based on the enormously popular preschool series created by Keith Chapman, the franchise has become one of the most successful children?s brands in the world, broadcast in over 160 countries and translated into dozens of languages. Directed once again by Cal Brunker, who also helmed the previous two films, this new cinematic adventure sends Ryder and the rescue pups on thei",
-          "trailer": "https://www.youtube.com/watch?v=xgI5iYmOf5Q",
-          "date": "2026-10-26",
-          "times": [
-            "12:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177923",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "12:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177923",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "paw-patrol-3-the-dino-movie",
-          "posterFile": "data/posters/paw-patrol-3-the-dino-movie.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Resident Evil",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110404.jpg",
-          "cert": "16",
-          "runtime": 93,
-          "release": "September 18, 2026",
-          "releaseDate": "2026-09-18",
-          "director": "Zach Cregger",
-          "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
-          "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
-          "date": "2026-10-26",
-          "times": [
-            "15:50",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177613",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "15:50",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177613",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177614",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "resident-evil",
-          "posterFile": "data/posters/resident-evil.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
-          "cert": "G",
-          "runtime": 81,
-          "release": "September 12, 2026",
-          "releaseDate": "2026-09-12",
-          "director": "Steve Cox, Matthew Walker",
-          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
-          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
-          "date": "2026-10-26",
-          "times": [
-            "13:00",
-            "16:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177718",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177718",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "16:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177723",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
-          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Street Fighter",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
-          "cert": "12A",
-          "runtime": 119,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Kitao Sakurai",
-          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-          "date": "2026-10-26",
-          "times": [
-            "17:45",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177704",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177704",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177702",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "street-fighter",
-          "posterFile": "data/posters/street-fighter.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Tad and the Magic Lamp",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-          "cert": "G",
-          "runtime": 94,
-          "release": "October 17, 2026",
-          "releaseDate": "2026-10-17",
-          "director": "Enrique Gato",
-          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "13:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177775",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "13:35",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177775",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "tad-and-the-magic-lamp",
-          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "THE LOST CHILDREN OF TUAM",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/114662.jpg",
-          "cert": "12A",
-          "runtime": 86,
-          "release": "September 25, 2026",
-          "releaseDate": "2026-09-25",
-          "director": "Frank Berry",
-          "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "18:10",
-            "20:10"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177717",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177717",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177706",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-lost-children-of-tuam",
-          "posterFile": "data/posters/the-lost-children-of-tuam.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Try!",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114408.jpg",
-          "cert": "12A",
-          "runtime": 88,
-          "release": "October 26, 2026",
-          "releaseDate": "2026-10-26",
-          "director": null,
-          "synopsis": "Try is an uplifting portrait of four diverse people who defy stereotypes and break barriers, on and off the field, on the road to the Mixed Ability Rugby World Cup in Pamplona.",
-          "trailer": null,
-          "date": "2026-10-26",
-          "times": [
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177690",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177690",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "try",
-          "posterFile": "data/posters/try.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Verity",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115384.jpg",
-          "cert": "15A",
-          "runtime": 119,
-          "release": "October 2, 2026",
-          "releaseDate": "2026-10-02",
-          "director": "Michael Showalter",
-          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
-          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-          "date": "2026-10-26",
-          "times": [
-            "14:30",
-            "17:05",
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177514",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "14:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177514",
-              "luxx": true,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:05",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177515",
-              "luxx": true,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177516",
-              "luxx": true,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "verity",
-          "posterFile": "data/posters/verity.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-26",
-          "times": [
-            "12:50",
-            "14:20",
-            "17:10",
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177776",
-          "sessions": [
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "12:50",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177776",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "14:20",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177560",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "17:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177559",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 26 October",
-              "date": "2026-10-26",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177558",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
-    {
-      "label": "Tue 27 Oct",
-      "url": "https://imc.ie/film-times/galway-headford-road/27-10-2026#dateD",
-      "date": "2026-10-27",
-      "films": [
         {
           "certSystem": "ifco",
           "certFile": "G",
@@ -2422,8 +1447,7 @@
           "date": "2026-10-27",
           "times": [
             "14:55",
-            "17:35",
-            "20:15"
+            "17:35"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177581",
           "sessions": [
@@ -2452,20 +1476,6 @@
               "tags": [
                 "new",
                 "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177579",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
                 "seating-standard"
               ]
             }
@@ -2860,7 +1870,7 @@
           "title": "Try!",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114408.jpg",
           "cert": "12A",
           "runtime": 88,
@@ -2884,7 +1894,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3044,6 +2054,47 @@
       "url": "https://imc.ie/film-times/galway-headford-road/28-10-2026#dateD",
       "date": "2026-10-28",
       "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "ALI G: WHO IZ I?",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114097.jpg",
+          "cert": "16",
+          "runtime": 89,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Sacha Baron Cohen",
+          "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
+          "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
+          "date": "2026-10-28",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178122",
+          "sessions": [
+            {
+              "day": "Wed 28 October",
+              "date": "2026-10-28",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178122",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ali-g-who-iz-i",
+          "posterFile": "data/posters/ali-g-who-iz-i.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
         {
           "certSystem": "ifco",
           "certFile": "G",
@@ -3402,8 +2453,7 @@
           "date": "2026-10-28",
           "times": [
             "14:55",
-            "17:35",
-            "20:15"
+            "17:35"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177584",
           "sessions": [
@@ -3432,20 +2482,6 @@
               "tags": [
                 "new",
                 "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177582",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
                 "seating-standard"
               ]
             }
@@ -3514,13 +2550,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "18",
+          "certFile": "16",
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "18",
+          "cert": "16",
           "runtime": 100,
           "release": "October 28, 2026",
           "releaseDate": "2026-10-28",
@@ -3565,7 +2601,7 @@
           ],
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-18.svg",
+          "certIcon": "data/ratings/ifco-16.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -3840,7 +2876,7 @@
           "title": "Try!",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114408.jpg",
           "cert": "12A",
           "runtime": 88,
@@ -3864,7 +2900,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -4494,13 +3530,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "18",
+          "certFile": "16",
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "18",
+          "cert": "16",
           "runtime": 100,
           "release": "October 28, 2026",
           "releaseDate": "2026-10-28",
@@ -4545,7 +3581,7 @@
           ],
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-18.svg",
+          "certIcon": "data/ratings/ifco-16.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -4820,7 +3856,7 @@
           "title": "Try!",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114408.jpg",
           "cert": "12A",
           "runtime": 88,
@@ -4844,7 +3880,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -5006,13 +4042,334 @@
       "films": [
         {
           "certSystem": "ifco",
-          "certFile": "18",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 25, 2026",
+          "releaseDate": "2026-10-25",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "15:40",
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177931",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:40",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177931",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177930",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177929",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-10-30",
+          "times": [
+            "15:15",
+            "17:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177973",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177973",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177972",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "15:15",
+            "17:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178023",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178023",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178022",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Monster Mia",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "15:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177983",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177983",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "monster-mia",
+          "posterFile": "data/posters/monster-mia.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Other Mommy",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 9, 2026",
+          "releaseDate": "2026-10-09",
+          "director": "Rob Savage",
+          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+          "date": "2026-10-30",
+          "times": [
+            "18:30",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177975",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177975",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177974",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "other-mommy",
+          "posterFile": "data/posters/other-mommy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Pan's Labyrinth (20th Anniversary)",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114493.jpg",
+          "cert": "16",
+          "runtime": 118,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Guillermo del Toro",
+          "synopsis": "Celebrate the 20th Anniversary of Guillermo del Toro?s Academy Award?winning masterpiece with a return to the big screen. Set against the backdrop of post?Civil War Spain, Pan?s Labyrinth follows young Ofelia as she escapes into a haunting fantasy realm, where a mysterious faun sets her on a dangerous quest. A visually stunning and emotionally powerful film, this re-release offers audiences a rare opportunity to experience a modern classic in theaters?perfect for prestige programming, genre fans, and awards-season retrospectives.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177971",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177971",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "pan-s-labyrinth-20th-anniversary",
+          "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "18",
+          "cert": "16",
           "runtime": 100,
           "release": "October 28, 2026",
           "releaseDate": "2026-10-28",
@@ -5023,6 +4380,7 @@
           "times": [
             "15:45",
             "18:15",
+            "19:35",
             "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177810",
@@ -5058,6 +4416,20 @@
             {
               "day": "Fri 30 October",
               "date": "2026-10-30",
+              "time": "19:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178024",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
               "time": "20:45",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177811",
               "luxx": true,
@@ -5072,7 +4444,317 @@
           ],
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-18.svg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Resident Evil",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110404.jpg",
+          "cert": "16",
+          "runtime": 93,
+          "release": "September 18, 2026",
+          "releaseDate": "2026-09-18",
+          "director": "Zach Cregger",
+          "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
+          "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
+          "date": "2026-10-30",
+          "times": [
+            "16:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178070",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "16:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178070",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178003",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "resident-evil",
+          "posterFile": "data/posters/resident-evil.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Street Fighter",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
+          "cert": "12A",
+          "runtime": 119,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Kitao Sakurai",
+          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
+          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
+          "date": "2026-10-30",
+          "times": [
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177984",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177984",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "street-fighter",
+          "posterFile": "data/posters/street-fighter.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Verity",
+          "luxx": true,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/115384.jpg",
+          "cert": "15A",
+          "runtime": 119,
+          "release": "October 2, 2026",
+          "releaseDate": "2026-10-02",
+          "director": "Michael Showalter",
+          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
+          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
+          "date": "2026-10-30",
+          "times": [
+            "14:25",
+            "17:05",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177934",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "14:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177934",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "17:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177933",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177932",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "verity",
+          "posterFile": "data/posters/verity.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-10-30",
+          "times": [
+            "15:45",
+            "18:10",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177926",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177926",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177927",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177928",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-10-30",
+          "times": [
+            "14:20",
+            "17:10",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177953",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177953",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "17:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177955",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177954",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -5084,13 +4766,511 @@
       "films": [
         {
           "certSystem": "ifco",
-          "certFile": "18",
+          "certFile": "G",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "G",
+          "runtime": 77,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "12:15",
+            "14:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178064",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178064",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178063",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 25, 2026",
+          "releaseDate": "2026-10-25",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "13:00",
+            "15:40",
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178056",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178056",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "15:40",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177985",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177986",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177987",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-10-31",
+          "times": [
+            "12:30",
+            "13:30",
+            "15:15",
+            "17:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178065",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178065",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "13:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178062",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "15:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177979",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177978",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "12:35",
+            "14:55",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178060",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178060",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "14:55",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178041",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178040",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Monster Mia",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "12:55",
+            "15:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178061",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:55",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178061",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "15:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178047",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "monster-mia",
+          "posterFile": "data/posters/monster-mia.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Other Mommy",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 9, 2026",
+          "releaseDate": "2026-10-09",
+          "director": "Rob Savage",
+          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+          "date": "2026-10-31",
+          "times": [
+            "18:30",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178026",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178026",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178025",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "other-mommy",
+          "posterFile": "data/posters/other-mommy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Pan's Labyrinth (20th Anniversary)",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114493.jpg",
+          "cert": "16",
+          "runtime": 118,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Guillermo del Toro",
+          "synopsis": "Celebrate the 20th Anniversary of Guillermo del Toro?s Academy Award?winning masterpiece with a return to the big screen. Set against the backdrop of post?Civil War Spain, Pan?s Labyrinth follows young Ofelia as she escapes into a haunting fantasy realm, where a mysterious faun sets her on a dangerous quest. A visually stunning and emotionally powerful film, this re-release offers audiences a rare opportunity to experience a modern classic in theaters?perfect for prestige programming, genre fans, and awards-season retrospectives.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177977",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177977",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "pan-s-labyrinth-20th-anniversary",
+          "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Paw Patrol 3 The Dino Movie",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/109935.jpg",
+          "cert": "G",
+          "runtime": 90,
+          "release": "August 7, 2026",
+          "releaseDate": "2026-08-07",
+          "director": null,
+          "synopsis": "Paw Patrol: The Dino Movie brings the heroic pups back to the big screen for another action-packed family adventure, following the huge global success of PAW Patrol: The Movie (2021) and PAW Patrol: The Mighty Movie (2023). Based on the enormously popular preschool series created by Keith Chapman, the franchise has become one of the most successful children?s brands in the world, broadcast in over 160 countries and translated into dozens of languages. Directed once again by Cal Brunker, who also helmed the previous two films, this new cinematic adventure sends Ryder and the rescue pups on thei",
+          "trailer": "https://www.youtube.com/watch?v=xgI5iYmOf5Q",
+          "date": "2026-10-31",
+          "times": [
+            "12:10"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178069",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178069",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "paw-patrol-3-the-dino-movie",
+          "posterFile": "data/posters/paw-patrol-3-the-dino-movie.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "18",
+          "cert": "16",
           "runtime": 100,
           "release": "October 28, 2026",
           "releaseDate": "2026-10-28",
@@ -5099,12 +5279,28 @@
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-10-31",
           "times": [
+            "13:10",
             "15:45",
             "18:15",
+            "19:35",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177792",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178053",
           "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "13:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178053",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
@@ -5136,6 +5332,20 @@
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
+              "time": "19:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178042",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
               "time": "20:45",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177794",
               "luxx": true,
@@ -5150,7 +5360,415 @@
           ],
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-18.svg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Resident Evil",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110404.jpg",
+          "cert": "16",
+          "runtime": 93,
+          "release": "September 18, 2026",
+          "releaseDate": "2026-09-18",
+          "director": "Zach Cregger",
+          "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
+          "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
+          "date": "2026-10-31",
+          "times": [
+            "16:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178071",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "16:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178071",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178048",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "resident-evil",
+          "posterFile": "data/posters/resident-evil.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "September 12, 2026",
+          "releaseDate": "2026-09-12",
+          "director": "Steve Cox, Matthew Walker",
+          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+          "date": "2026-10-31",
+          "times": [
+            "12:20"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178066",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "12:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178066",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Street Fighter",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
+          "cert": "12A",
+          "runtime": 119,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Kitao Sakurai",
+          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
+          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
+          "date": "2026-10-31",
+          "times": [
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178046",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178046",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "street-fighter",
+          "posterFile": "data/posters/street-fighter.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "G",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "16:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178068",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "16:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178068",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Verity",
+          "luxx": true,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/115384.jpg",
+          "cert": "15A",
+          "runtime": 119,
+          "release": "October 2, 2026",
+          "releaseDate": "2026-10-02",
+          "director": "Michael Showalter",
+          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
+          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
+          "date": "2026-10-31",
+          "times": [
+            "14:25",
+            "17:05",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177937",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "14:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177937",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "17:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177936",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177935",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "verity",
+          "posterFile": "data/posters/verity.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-10-31",
+          "times": [
+            "13:20",
+            "15:45",
+            "18:10",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178057",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "13:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178057",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178006",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178004",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178005",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-10-31",
+          "times": [
+            "14:20",
+            "17:10",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177956",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177956",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "17:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177958",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177957",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -5162,13 +5780,510 @@
       "films": [
         {
           "certSystem": "ifco",
-          "certFile": "18",
+          "certFile": "G",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "G",
+          "runtime": 77,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "12:15",
+            "14:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178079",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178079",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178080",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 25, 2026",
+          "releaseDate": "2026-10-25",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "13:00",
+            "15:40",
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178055",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178055",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "15:40",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177988",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177989",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177990",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-01",
+          "times": [
+            "12:30",
+            "13:30",
+            "15:15",
+            "17:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178073",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178073",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "13:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178074",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "15:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177982",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177981",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "12:35",
+            "14:55",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178078",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178078",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "14:55",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178044",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178043",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Monster Mia",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "12:55",
+            "15:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178075",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:55",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178075",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "15:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178050",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "monster-mia",
+          "posterFile": "data/posters/monster-mia.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Other Mommy",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 9, 2026",
+          "releaseDate": "2026-10-09",
+          "director": "Rob Savage",
+          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+          "date": "2026-11-01",
+          "times": [
+            "18:30",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178029",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178029",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178028",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "other-mommy",
+          "posterFile": "data/posters/other-mommy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Pan's Labyrinth (20th Anniversary)",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114493.jpg",
+          "cert": "16",
+          "runtime": 118,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Guillermo del Toro",
+          "synopsis": "Celebrate the 20th Anniversary of Guillermo del Toro?s Academy Award?winning masterpiece with a return to the big screen. Set against the backdrop of post?Civil War Spain, Pan?s Labyrinth follows young Ofelia as she escapes into a haunting fantasy realm, where a mysterious faun sets her on a dangerous quest. A visually stunning and emotionally powerful film, this re-release offers audiences a rare opportunity to experience a modern classic in theaters?perfect for prestige programming, genre fans, and awards-season retrospectives.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177980",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177980",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "pan-s-labyrinth-20th-anniversary",
+          "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Paw Patrol 3 The Dino Movie",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/109935.jpg",
+          "cert": "G",
+          "runtime": 90,
+          "release": "August 7, 2026",
+          "releaseDate": "2026-08-07",
+          "director": null,
+          "synopsis": "Paw Patrol: The Dino Movie brings the heroic pups back to the big screen for another action-packed family adventure, following the huge global success of PAW Patrol: The Movie (2021) and PAW Patrol: The Mighty Movie (2023). Based on the enormously popular preschool series created by Keith Chapman, the franchise has become one of the most successful children?s brands in the world, broadcast in over 160 countries and translated into dozens of languages. Directed once again by Cal Brunker, who also helmed the previous two films, this new cinematic adventure sends Ryder and the rescue pups on thei",
+          "trailer": "https://www.youtube.com/watch?v=xgI5iYmOf5Q",
+          "date": "2026-11-01",
+          "times": [
+            "12:10"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178076",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178076",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "paw-patrol-3-the-dino-movie",
+          "posterFile": "data/posters/paw-patrol-3-the-dino-movie.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "18",
+          "cert": "16",
           "runtime": 100,
           "release": "October 28, 2026",
           "releaseDate": "2026-10-28",
@@ -5177,12 +6292,28 @@
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-01",
           "times": [
+            "13:10",
             "15:45",
             "18:15",
+            "19:35",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177795",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178054",
           "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "13:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178054",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
             {
               "day": "Sun 1 November",
               "date": "2026-11-01",
@@ -5214,6 +6345,20 @@
             {
               "day": "Sun 1 November",
               "date": "2026-11-01",
+              "time": "19:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178045",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
               "time": "20:45",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177797",
               "luxx": true,
@@ -5228,7 +6373,415 @@
           ],
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-18.svg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Resident Evil",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110404.jpg",
+          "cert": "16",
+          "runtime": 93,
+          "release": "September 18, 2026",
+          "releaseDate": "2026-09-18",
+          "director": "Zach Cregger",
+          "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
+          "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
+          "date": "2026-11-01",
+          "times": [
+            "16:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178072",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "16:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178072",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178051",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "resident-evil",
+          "posterFile": "data/posters/resident-evil.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "September 12, 2026",
+          "releaseDate": "2026-09-12",
+          "director": "Steve Cox, Matthew Walker",
+          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+          "date": "2026-11-01",
+          "times": [
+            "12:20"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178059",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "12:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178059",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Street Fighter",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
+          "cert": "12A",
+          "runtime": 119,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Kitao Sakurai",
+          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
+          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
+          "date": "2026-11-01",
+          "times": [
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178049",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178049",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "street-fighter",
+          "posterFile": "data/posters/street-fighter.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "G",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "16:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178077",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "16:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178077",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Verity",
+          "luxx": true,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/115384.jpg",
+          "cert": "15A",
+          "runtime": 119,
+          "release": "October 2, 2026",
+          "releaseDate": "2026-10-02",
+          "director": "Michael Showalter",
+          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
+          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
+          "date": "2026-11-01",
+          "times": [
+            "14:25",
+            "17:05",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177940",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "14:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177940",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "17:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177939",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177938",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "verity",
+          "posterFile": "data/posters/verity.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-01",
+          "times": [
+            "13:20",
+            "15:45",
+            "18:10",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178058",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "13:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178058",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178009",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178007",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178008",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-11-01",
+          "times": [
+            "14:20",
+            "17:10",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177959",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177959",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "17:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177961",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177960",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -5311,13 +6864,196 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "18",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-02",
+          "times": [
+            "15:15",
+            "17:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178085",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "15:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178085",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178086",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-11-02",
+          "times": [
+            "15:25",
+            "17:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178097",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "15:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178097",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178099",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Other Mommy",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 9, 2026",
+          "releaseDate": "2026-10-09",
+          "director": "Rob Savage",
+          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+          "date": "2026-11-02",
+          "times": [
+            "16:15",
+            "18:30",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178033",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "16:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178033",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "18:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178032",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178031",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "other-mommy",
+          "posterFile": "data/posters/other-mommy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "18",
+          "cert": "16",
           "runtime": 100,
           "release": "October 28, 2026",
           "releaseDate": "2026-10-28",
@@ -5328,6 +7064,7 @@
           "times": [
             "15:45",
             "18:15",
+            "19:45",
             "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177798",
@@ -5363,6 +7100,20 @@
             {
               "day": "Mon 2 November",
               "date": "2026-11-02",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178102",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
               "time": "20:45",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177800",
               "luxx": true,
@@ -5377,7 +7128,186 @@
           ],
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-18.svg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Resident Evil",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110404.jpg",
+          "cert": "16",
+          "runtime": 93,
+          "release": "September 18, 2026",
+          "releaseDate": "2026-09-18",
+          "director": "Zach Cregger",
+          "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
+          "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
+          "date": "2026-11-02",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178084",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178084",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "resident-evil",
+          "posterFile": "data/posters/resident-evil.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Street Fighter",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
+          "cert": "12A",
+          "runtime": 119,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Kitao Sakurai",
+          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
+          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
+          "date": "2026-11-02",
+          "times": [
+            "14:30",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178082",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "14:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178082",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178083",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "street-fighter",
+          "posterFile": "data/posters/street-fighter.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "G",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-11-02",
+          "times": [
+            "15:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178098",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178098",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "THE LOST CHILDREN OF TUAM",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/114662.jpg",
+          "cert": "12A",
+          "runtime": 86,
+          "release": "September 25, 2026",
+          "releaseDate": "2026-09-25",
+          "director": "Frank Berry",
+          "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
+          "trailer": null,
+          "date": "2026-11-02",
+          "times": [
+            "17:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178096",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "17:40",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178096",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-lost-children-of-tuam",
+          "posterFile": "data/posters/the-lost-children-of-tuam.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -10236,22 +12166,100 @@
     }
   ],
   "log": [
+    "galway-headford-road: no films on the film-times page",
+    "galway: no films on the film-times page",
     "home: 0 films parsed",
-    "today: 17 films parsed",
-    "day-26-10-2026-dated: 17 films parsed",
-    "day-27-10-2026-dated: 16 films parsed",
-    "day-28-10-2026-dated: 16 films parsed",
+    "today: 0 films parsed",
+    "day-26-10-2026-dated: 0 films parsed",
+    "day-27-10-2026-dated: 17 films parsed",
+    "day-28-10-2026-dated: 17 films parsed",
     "day-29-10-2026-dated: 16 films parsed",
-    "day-30-10-2026-dated: 1 films parsed",
-    "day-31-10-2026-dated: 1 films parsed",
-    "day-01-11-2026-dated: 1 films parsed",
-    "day-02-11-2026-dated: 5 films parsed",
+    "day-30-10-2026-dated: 12 films parsed",
+    "day-31-10-2026-dated: 16 films parsed",
+    "day-01-11-2026-dated: 16 films parsed",
+    "day-02-11-2026-dated: 12 films parsed",
     "advance: 13 films parsed",
     "kids: 4 films parsed",
     "luxx: 6 films parsed",
+    "prices: dleDetails1 Adult Ticket + a Medium Combo €18.00, dleDetails2 Adult Tickets + a Share Combo €29.00, Student Meal Deal €12.00, Adult Evening €13.00, Teen €10.50, Student €7.50, OAP €10.50, Plus 2 For 1Requires Voucher €10.00, excludes a €1.00, Flexi €1.00, Maltesers €4.50, Minstrels €4.50, Tahila Water Carton €3.00, Medium Combo €9.50, Large Combo €11.50, popcorn and sweet treat) €6.00, Combo (2 Medium Drinks + 1 Large Popcorn) €14.00, Nacho Large Cheese €8.50",
+    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "checked": "2026-10-26T13:08:11.263Z",
+  "prices": [
+    {
+      "label": "dleDetails1 Adult Ticket + a Medium Combo",
+      "price": "€18.00"
+    },
+    {
+      "label": "dleDetails2 Adult Tickets + a Share Combo",
+      "price": "€29.00"
+    },
+    {
+      "label": "Student Meal Deal",
+      "price": "€12.00"
+    },
+    {
+      "label": "Adult Evening",
+      "price": "€13.00"
+    },
+    {
+      "label": "Teen",
+      "price": "€10.50"
+    },
+    {
+      "label": "Student",
+      "price": "€7.50"
+    },
+    {
+      "label": "OAP",
+      "price": "€10.50"
+    },
+    {
+      "label": "Plus 2 For 1Requires Voucher",
+      "price": "€10.00"
+    },
+    {
+      "label": "excludes a",
+      "price": "€1.00"
+    },
+    {
+      "label": "Flexi",
+      "price": "€1.00"
+    },
+    {
+      "label": "Maltesers",
+      "price": "€4.50"
+    },
+    {
+      "label": "Minstrels",
+      "price": "€4.50"
+    },
+    {
+      "label": "Tahila Water Carton",
+      "price": "€3.00"
+    },
+    {
+      "label": "Medium Combo",
+      "price": "€9.50"
+    },
+    {
+      "label": "Large Combo",
+      "price": "€11.50"
+    },
+    {
+      "label": "popcorn and sweet treat)",
+      "price": "€6.00"
+    },
+    {
+      "label": "Combo (2 Medium Drinks + 1 Large Popcorn)",
+      "price": "€14.00"
+    },
+    {
+      "label": "Nacho Large Cheese",
+      "price": "€8.50"
+    }
+  ],
+  "checked": "2026-10-26T22:33:50.727Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
