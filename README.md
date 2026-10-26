@@ -34,12 +34,13 @@ There's no account or server to run. GitHub Pages hosts the site, and a GitHub A
 - **Frames:** IMC brand bar, Premiere, Neon glow, Clean, Cinema ticket, Film strip, Marquee lights, Photo border.
 - **Badges:** Coming Soon, New Release, LUXX, Premier, Now Showing, Book Now, release date, Tonight, corner sash, Kids Club, price burst, Selling Fast.
 - **Deal pieces:** price ticket, "What's included" card, Save ribbon.
-- **Food, drink & tickets:** the IMC ♥ movies popcorn box, drink, the red kids tray with popcorn and a juice bottle, nachos, hot dog, sweet bag, pick 'n' mix, scooped ice cream, ice cream tub and a cinema ticket that shows how many tickets the deal includes. They're drawn in code, and every colour and label can be changed.
+- **Real photos:** IMC's own product photos from imc.ie (AI-upscaled 4× for sharpness by the *Upscale product photos* job), and a curated library of public-domain photos (popcorn, auditoriums, curtains, projector, ice cream, nachos, festive lights, pumpkins, fireworks) under Photo → Real photos, as a background or a framed photo card. Deals and video clips always picture real photos; only the gold ticket is a graphic.
+- **Food, drink & tickets (drawn, for custom designs):** the IMC ♥ movies popcorn box, drink, the red kids tray with popcorn and a juice bottle, nachos, hot dog, sweet bag, pick 'n' mix, scooped ice cream, ice cream tub and a cinema ticket that shows how many tickets the deal includes. They're drawn in code, and every colour and label can be changed.
 - **Film times:** a panel listing films and times, filled from imc.ie and editable.
 - **Motion:** slow zoom, light rays, spotlights, bokeh, marquee chase, gold sparkle, popcorn burst, fizz bubbles, confetti, snow, old projector.
-- **Per-item animation:** Shine, Pulse, Pop in, Slam in, Slide up, Swing, Wiggle, Float or Blink, each with a start time so items arrive in sequence.
+- **Per-item animation:** Pop in, Slam in, Slide up, Zoom in, Fade in, Drop & bounce, Spin in, Flip in, Type on (text), Shine, Pulse, Heartbeat, Glow, Swing, Wiggle, Shake, Float or Blink, each with a start time so items arrive in sequence.
 - **Seasons & occasions:** one-click Halloween, fireworks night, midterm, Black Friday, Christmas, New Year, Valentine's, St Patrick's Day, Mother's Day, Easter, Father's Day, summer and autumn looks, each with its own background, colours, animation and banner.
-- **Seasonal effects:** bats, spooky fog, fairy lights, floating hearts, shamrocks, autumn leaves, fireworks and bunting, with an effect strength slider and effect colour picker.
+- **Seasonal effects:** bats, spooky fog, fairy lights, floating hearts, shamrocks, autumn leaves, fireworks, bunting, twinkling stars, light leaks, glitter, balloons, rain, camera flashes, a neon border, floating embers and a 3-2-1 film countdown intro, with an effect strength slider and effect colour picker.
 - **Sizes:** feed, Story, foyer 16:9, Facebook event and cover, and Print A4/A3 (portrait and landscape).
 - **Export:**
   - **PNG/JPG** for posts.
@@ -76,3 +77,7 @@ Use official posters and trailer stills, your own photos and videos from the cin
 ## Logo
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
+
+## Photo library
+
+`data/library/` holds real photos from Wikimedia Commons, public domain or CC0 only (no credit or conditions for use in ads). The set is curated by hand and frozen; to fetch more, set `frozen` to `false` in `data/library/sources.json`, run the importer, then add any unsuitable photo's id to `block`.

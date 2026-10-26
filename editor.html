@@ -1509,7 +1509,7 @@ const PRODUCT_W={popcorn:400,drink:240,nachos:420,hotdog:440,sweets:300,pickmix:
 function dealTickets(d){let n=0;for(const l of d.items||[]){if(!/ticket/i.test(l))continue;const m=/(\d+)\s*[x×]?/i.exec(l);n+=m?+m[1]:/family/i.test(l)?4:1}return n}
 /* what to picture for a deal, real photos first: IMC's own product photos, then library photos as cards; a drawing only when nothing real fits */
 /* IMC product photos already downloaded from other cinemas, used when this cinema's booking page doesn't list the item */
-const ANY_IMC={combo_share:["data/products/scon.jpg","Share Combo"],combo_large:["data/products/lccc.jpg","Large Combo"],combo_medium:["data/products/combotest.jpg","Medium Combo"],tray:["data/products/onkt.jpg","Kids Tray"],nachos:["data/products/nacholargchese.jpg","Nachos"],icecream:["data/products/softserve1.jpg","Soft-serve ice cream"]};
+const ANY_IMC={combo_share:["data/products/scon.jpg","Share Combo"],combo_large:["data/products/lccc.jpg","Large Combo"],combo_medium:["data/products/combotest.jpg","Medium Combo"],tray:["data/products/onkt.jpg","Kids Tray"],nachos:["data/products/nacholargchese.jpg","Nachos"],sweets:["data/products/maltesers.jpg","Sweets"],icecream:["data/products/softserve1.jpg","Soft-serve ice cream"]};
 const anyImc=k=>ANY_IMC[k]?{src:ANY_IMC[k][0],label:ANY_IMC[k][1]}:null;
 function dealVisuals(d){if(d.real===false)return null;if(d.photos&&d.photos.length)return d.photos.map(p=>({src:p.src,label:p.label,card:!!p.card}));
   const m=imcMatch(d.name);if(m&&m.file)return[{src:m.file,label:m.name}];
@@ -1519,10 +1519,12 @@ function dealVisuals(d){if(d.real===false)return null;if(d.photos&&d.photos.leng
     else if(k==="drink")v=lib("drinks");
     else if(k==="tray")v=own(it(/kids tray/i))||anyImc("tray");
     else if(k==="nachos")v=own(it(/nacho/i))||anyImc("nachos");
-    else if(k==="sweets"||k==="pickmix")v=lib("sweets");
+    else if(k==="sweets"||k==="pickmix")v=own(it(/pick|mix|sweet|malteser|minstrel|haribo/i))||lib("sweets")||anyImc("sweets");
     else if(k==="icescoop"||k==="icetub")v=own(imcItems().find(x=>/soft ?serve|ice ?cream|sundae/i.test(x.file+" "+x.name)))||anyImc("icecream")||lib("icecream");
     else if(k==="hotdog")v=null;else if(k==="ticket")v={draw:"ticket"};
-    if(!v&&k!=="drink")v={draw:k};if(!v)continue;const key=v.src||v.draw;if(!seen.has(key)){seen.add(key);out.push(v)}}
+    /* no drawn food: anything without a real photo is simply left out (the gold ticket graphic is the only drawing) */
+    if(!v)continue;const key=v.src||v.draw;if(!seen.has(key)){seen.add(key);out.push(v)}}
+  if(!out.some(v=>v.src)){const g=lib("popcorn")||anyImc("combo_large");if(g)out.unshift(g)}
   return out.some(v=>v.src)?out.slice(0,4):null}
 function dealLayers(d,anim){const vis=dealVisuals(d);if(vis)return dealPhotoLayers(d,anim,vis);const P=(d.products&&d.products.length?d.products:["popcorn","drink"]).slice(0,6),L=[],n=P.length,cur=d.cur||siteCur(),items=d.items||[];
   const list=items.length>=3||items.join("  +  ").length>46,tk=dealTickets(d);
