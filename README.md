@@ -17,6 +17,7 @@ There's no account or server to run. GitHub Pages hosts the site, and a GitHub A
 | **Prices from imc.ie** | On the Deals page: ticket prices, ticket + snack bundles and snacks with IMC's own product photos, read from imc.ie's booking page for the chosen cinema. **Make a deal** or **Video clip** from any of them. Your deals show the imc.ie price when the name matches, and use IMC's real product photos unless you untick that. |
 | **LUXX ads** | **LUXX ad** / **LUXX Story** on the Today page and What's on → LUXX: today's LUXX showings and times, plus the LUXX seat price when imc.ie lists one. Add a photo of your LUXX seats in the editor's Photo tab to use it as the background. |
 | **Video clips** | **Video clip** on any deal or imc.ie product makes a 6-second Story: a hook, the product, the price, then "Grab it at the kiosk". Preview it, then save it from the editor's Video button. |
+| **Foyer trailers** | Trailer packs for the foyer TVs. Only U/PG/12A films (G/PG/12A in the Republic) go in by default, trailers titled red band, uncensored or explicit are always left out, and films without a certificate wait until you've watched the trailer and ticked it. **Open foyer player** gives a full-screen page (`foyer.html`) that plays a showtimes card then each official trailer, on a loop, updating itself daily: open it in the TV's browser. **Download pack** gives a ZIP of 16:9 MP4 showtimes cards and stills, a USB playlist and the trailer list. |
 | **Planner** | Week calendar, what's due next, and engagement by post type once you add results. |
 | **Create ad** | Quick text-led posters with a caption writer and a share-ability score. |
 | **Upcoming releases** | UK release schedule to January 2027 with a viral angle for each film. |
@@ -54,7 +55,7 @@ Shortcuts: Ctrl+Z undo, Ctrl+Shift+Z redo, Delete removes, Ctrl+D duplicates, ar
 - LUXX
 - the cinema page's banners
 
-It saves posters and banners into `data/` and writes `data/imc.json` for Enniskillen and `data/cinemas/<cinema>.json` for the others. `data/cinemas.json` lists which imc.ie address worked for each cinema and whether listings came in. To import one cinema only, run `ONLY=galway node tools/import-imc.mjs`. To refresh straight away, open **Actions → Import imc.ie listings → Run workflow**.
+It also looks up each trailer's title through YouTube's oEmbed service into `data/trailers.json`, so red-band trailers can be kept off the foyer TVs. It saves posters and banners into `data/` and writes `data/imc.json` for Enniskillen and `data/cinemas/<cinema>.json` for the others. `data/cinemas.json` lists which imc.ie address worked for each cinema and whether listings came in. To import one cinema only, run `ONLY=galway node tools/import-imc.mjs`. To refresh straight away, open **Actions → Import imc.ie listings → Run workflow**.
 
 The raw pages are kept in `data/raw/` so the importer can be adjusted if imc.ie changes its layout. Check `log` in `data/imc.json` to see what each run found.
 

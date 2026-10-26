@@ -197,6 +197,16 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .banners img{width:100%;height:100%;object-fit:cover;display:block}
 .deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
 .addchips{display:flex;flex-wrap:wrap;gap:6px}
+.foygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.foygrid fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;margin:0}
+.foygrid legend{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700;padding:0 4px}
+.foygrid .check{display:flex;gap:8px;align-items:flex-start;font-size:14px}.foygrid small{color:var(--muted)}
+.frow{display:grid;grid-template-columns:28px 54px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.frow:first-child{border-top:0}.frow img.p{width:54px;height:80px;object-fit:cover;border-radius:4px;background:var(--chip)}
+.frow b{display:block}.frow .m{font-size:13px;color:var(--muted)}.frow .tt{font-size:12px;color:var(--muted);font-style:italic}
+.fst{font-size:12px;font-weight:700;padding:3px 8px;border-radius:99px;white-space:nowrap}.fst.ok{color:var(--good);background:color-mix(in srgb,var(--good) 12%,transparent)}.fst.no{color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,transparent)}.fst.rv{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent)}
+.frow .acts{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+@media (max-width:640px){.frow{grid-template-columns:28px 44px minmax(0,1fr)}.frow .acts{grid-column:3;align-items:flex-start;flex-direction:row;flex-wrap:wrap}}
 .prices{margin-bottom:16px}.prices h3{margin:14px 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .tickrow{display:flex;flex-wrap:wrap;gap:6px}.tickrow span{border:1px solid var(--line);border-radius:99px;padding:4px 10px;font-size:13px}.tickrow b{font-variant-numeric:tabular-nums}
 .prodgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
@@ -258,6 +268,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <button data-view="today">Today</button>
       <button data-view="whatson">What's on</button>
       <button data-view="deals">Deals</button>
+      <button data-view="foyer">Foyer trailers</button>
       <button data-view="dashboard">Planner</button>
       <button data-view="studio">Create ad</button>
       <button data-view="releases">Upcoming releases</button>
@@ -293,6 +304,29 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       </div>
       <div id="imcPrices"></div>
       <div id="dealList" class="deals"></div>
+    </section>
+
+    <!-- FOYER TRAILERS -->
+    <section id="v-foyer" hidden>
+      <div class="head">
+        <div><h1>Foyer trailers</h1><p>Trailer packs for the foyer TVs. Only films rated <span class="safecerts">U, PG or 12A</span> go in by default, and trailers marked red band, uncensored or explicit are always left out. Films without a certificate yet stay out until you've watched the trailer and ticked it.</p></div>
+      </div>
+      <div class="panel foyopts">
+        <div class="foygrid">
+          <fieldset><legend>Which films</legend>
+            <label class="check"><input type="radio" name="fmode" value="auto" checked> Every foyer-safe film showing in the next 7 days <small>(updates itself daily)</small></label>
+            <label class="check"><input type="radio" name="fmode" value="pick"> Only the films I tick below</label>
+            <label class="check"><input type="checkbox" id="fsoon"> Include coming-soon films</label></fieldset>
+          <fieldset><legend>Player</legend>
+            <label class="check"><input type="checkbox" id="ftrail" checked> Play each film's trailer after its showtimes card</label>
+            <label class="check"><input type="checkbox" id="fsound" checked> Sound on (click Start once on the TV)</label>
+            <label class="field" style="max-width:220px"><span class="flabel">Showtimes card length</span><select id="fcard"><option value="8">8 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option></select></label></fieldset>
+        </div>
+        <div class="row-btns" style="margin-top:12px"><a class="btn primary" id="fopen" target="_blank" rel="noopener" style="text-decoration:none">Open foyer player ↗</a><button class="btn" id="fcopy">Copy TV link</button><button class="btn" id="fzip">Download pack (.zip)</button><button class="btn" id="fcsv">Download trailer list (.csv)</button></div>
+        <div id="fprog" class="tip" hidden></div>
+      </div>
+      <div class="panel" style="margin-top:16px"><div class="ph"><h2>Films</h2><span class="tip" id="fcount" style="margin:0"></span></div><div id="foyList"></div></div>
+      <p class="tip">The pack has a 16:9 showtimes video card and a still for each film, a playlist for TVs that play from a USB stick, and the trailer list. The trailers themselves play through the foyer player from imc.ie's official YouTube links; YouTube doesn't allow them to be downloaded, so for offline trailer files use the ones distributors supply. The safety check works from certificates and trailer titles; nothing listens to the audio, so watch any trailer you're unsure of.</p>
     </section>
 
     <!-- DASHBOARD -->
@@ -557,7 +591,7 @@ async function remove(id){
 const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
 /* ---------- navigation ---------- */
-function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="deals")renderDeals();if(v==="today")renderToday();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));if(v==="studio")drawPoster();window.scrollTo(0,0)}
+function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="deals")renderDeals();if(v==="today")renderToday();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));if(v==="studio")drawPoster();window.scrollTo(0,0)}
 $("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view)});
 document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g){if(g.dataset.go==="studio"&&!g.dataset.keep)startNew();go(g.dataset.go)}});
 
@@ -1041,6 +1075,95 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-dealmake]"
 $("#addDeal").onclick=()=>{const ds=getDeals();ds.push({id:newId(),name:"New deal",items:["Popcorn","Drink"],price:"",was:"",small:"",products:["popcorn","drink"]});putDeals(ds);renderDeals();toast("Deal added")};
 $("#resetDeals").onclick=()=>{try{localStorage.removeItem(sk("imc-deals"))}catch(e){}renderDeals();renderToday();toast("Deals reset")};
 
+
+/* ---------- foyer trailers: safe-by-default trailer packs for the foyer TVs ---------- */
+const FSAFE={bbfc:["U","PG","12A","12"],ifco:["G","PG","12A"]},FRED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
+let TRAIL=null;
+const fsk=()=>sk("imc-foyer");
+function foyState(){try{return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10,...JSON.parse(localStorage.getItem(fsk())||"{}")}}catch(e){return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10}}}
+function foySave(st){try{localStorage.setItem(fsk(),JSON.stringify(st))}catch(e){}}
+function foyFilms(){if(!IMC)return[];const m=new Map(),T=todayIso(),n=cinemaNow();
+  for(const f of allFilms()){const k=f.slug||f.title.toLowerCase(),o=m.get(k);if(!o)m.set(k,{...f,key:k,luxxToo:!!f.luxx,sessions:[...f.sessions]});else{o.luxxToo=o.luxxToo||!!f.luxx;for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s);for(const key of["trailer","cert","certSystem","posterFile","runtime"])o[key]=o[key]||f[key]}}
+  return[...m.values()].map(f=>{const up=f.sessions.filter(s=>notStarted(s.date,s.time)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));return{...f,next:up[0]||null}})
+    .sort((a,b)=>(a.next?a.next.date+a.next.time:"9"+(a.releaseDate||"")).localeCompare(b.next?b.next.date+b.next.time:"9"+(b.releaseDate||"")))}
+function foySafety(f,st){const t=(TRAIL||{})[f.trailer]||{},sys=f.certSystem||(S().ni?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
+  if(!f.trailer)return{ok:false,cls:"no",label:"No trailer on imc.ie"};
+  if(t.unavailable)return{ok:false,cls:"no",label:"Trailer no longer on YouTube"};
+  if(t.red||FRED.test(t.title||""))return{ok:false,cls:"no",label:"Red-band trailer: left out"};
+  if(!c||c==="TBC")return st.ok.includes(f.key)?{ok:true,cls:"ok",label:"Checked by you"}:{ok:false,review:true,cls:"rv",label:"No certificate yet: watch first"};
+  return(FSAFE[sys]||FSAFE.bbfc).includes(c)?{ok:true,cls:"ok",label:"Foyer-safe ("+c+")"}:{ok:false,cls:"no",label:"Rated "+c+": may contain strong language"}}
+function foyChosen(st){const in7=addDays(todayIso(),7);return foyFilms().filter(f=>{const sf=foySafety(f,st);if(!sf.ok)return false;
+  if(st.mode==="pick")return st.pick.includes(f.key);return(f.next&&f.next.date<=in7)||(st.soon&&!f.next&&f.sources&&f.sources.has("soon"))}).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer)===i)}
+function foyUrl(st){const u=new URL("foyer.html",location.href),P=u.searchParams;P.set("c",site);P.set("mode",st.mode);if(st.mode==="pick")P.set("ids",foyChosen(st).map(f=>f.key).join(","));
+  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");return u.href}
+async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
+  if(!IMC){el.innerHTML=noData();return}
+  if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}
+  const st=foyState(),fl=foyFilms(),chosen=new Set(foyChosen(st).map(f=>f.key));
+  $$("input[name=fmode]").forEach(r=>r.checked=r.value===st.mode);$("#fsoon").checked=st.soon;$("#ftrail").checked=st.trail;$("#fsound").checked=st.sound;$("#fcard").value=String(st.card);
+  $("#fopen").href=foyUrl(st);$("#fcount").textContent=`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;
+  el.innerHTML=fl.length?fl.map(f=>{const sf=foySafety(f,st),t=(TRAIL||{})[f.trailer]||{},nx=f.next?`${f.next.date===todayIso()?"Today":fmtShort(f.next.date)} ${f.next.time}`:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"No upcoming times";
+    return`<div class="frow"><input type="checkbox" aria-label="Include ${esc(f.title)}" data-fpick="${esc(f.key)}" ${chosen.has(f.key)?"checked":""} ${sf.ok&&st.mode==="pick"?"":"disabled"}>
+      <img class="p" src="${esc(asset(f.posterFile)||f.poster||"")}" alt="" loading="lazy">
+      <div style="min-width:0"><b>${esc(f.title)}</b><div class="m">${esc(f.cert||"No certificate")}${f.runtime?` · ${f.runtime} min`:""}${f.luxxToo?" · LUXX":""} · ${esc(nx)}</div>${t.title?`<div class="tt">Trailer: “${esc(t.title)}”</div>`:""}</div>
+      <div class="acts"><span class="fst ${sf.cls}">${esc(sf.label)}</span>${sf.review?`<label class="check" style="font-size:12px"><input type="checkbox" data-fok="${esc(f.key)}"> I've watched it; it's fine</label>`:""}${!sf.review&&st.ok.includes(f.key)?`<button class="btn small" data-funok="${esc(f.key)}">Undo my check</button>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="_blank" rel="noopener">Watch trailer ↗</a>`:""}</div></div>`}).join(""):'<p class="tip">No films in the latest import.</p>'}
+$("#v-foyer").addEventListener("change",e=>{const st=foyState(),t=e.target;
+  if(t.name==="fmode"){st.mode=t.value;if(st.mode==="pick"&&!st.pick.length)st.pick=foyChosen({...st,mode:"auto"}).map(f=>f.key)}
+  else if(t.id==="fsoon")st.soon=t.checked;else if(t.id==="ftrail")st.trail=t.checked;else if(t.id==="fsound")st.sound=t.checked;else if(t.id==="fcard")st.card=+t.value;
+  else if(t.dataset.fpick){const k=t.dataset.fpick;st.pick=t.checked?[...new Set([...st.pick,k])]:st.pick.filter(x=>x!==k)}
+  else if(t.dataset.fok){if(t.checked){st.ok=[...new Set([...st.ok,t.dataset.fok])];if(st.mode==="pick")st.pick=[...new Set([...st.pick,t.dataset.fok])]}}
+  else return;foySave(st);renderFoyer()});
+$("#v-foyer").addEventListener("click",e=>{const u=e.target.closest("[data-funok]");if(u){const st=foyState();st.ok=st.ok.filter(x=>x!==u.dataset.funok);st.pick=st.pick.filter(x=>x!==u.dataset.funok);foySave(st);renderFoyer()}});
+$("#fcopy").onclick=()=>{const u=foyUrl(foyState());navigator.clipboard?.writeText(u).then(()=>toast("TV link copied. Open it in the foyer TV's browser"),()=>prompt("Copy this link",u))};
+function foyCsv(list){const q=v=>`"${String(v??"").replace(/"/g,'""')}"`;return["Order,Film,Certificate,Runtime (min),Next showing,Trailer link,Trailer title",...list.map((f,i)=>[i+1,f.title,f.cert||"",f.runtime||"",f.next?f.next.date+" "+f.next.time:"",f.trailer||"",((TRAIL||{})[f.trailer]||{}).title||""].map(q).join(","))].join("\r\n")}
+function saveBlob(b,name){const u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
+$("#fcsv").onclick=async()=>{if(!TRAIL)TRAIL=(await getJson("data/trailers.json"))||{};const list=foyChosen(foyState());if(!list.length){toast("No films in the pack yet");return}saveBlob(new Blob([foyCsv(list)],{type:"text/csv"}),`${S().town.replace(/\W+/g,"-")}-foyer-trailers-${todayIso()}.csv`)};
+/* 16:9 showtimes card, drawn for a still or recorded as video */
+function loadImg(src){return new Promise(r=>{if(!src)return r(null);const im=new Image();im.crossOrigin="anonymous";im.onload=()=>r(im);im.onerror=()=>r(null);im.src=src})}
+function drawFoyCard(c,f,poster,cert,t){const W=1920,H=1080,ease=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3),a=k=>ease((t*8-k));c.save();c.fillStyle="#070a1c";c.fillRect(0,0,W,H);
+  if(poster){c.save();c.filter="blur(40px) brightness(.38) saturate(1.25)";const k=Math.max(W/poster.width,H/poster.height)*1.15;c.drawImage(poster,(W-poster.width*k)/2,(H-poster.height*k)/2,poster.width*k,poster.height*k);c.restore()}
+  const vg=c.createRadialGradient(W*.3,H/2,100,W*.3,H/2,W*.8);vg.addColorStop(0,"rgba(7,10,28,.15)");vg.addColorStop(1,"rgba(7,10,28,.85)");c.fillStyle=vg;c.fillRect(0,0,W,H);
+  const ph=800,pw=ph*2/3,px=110,py=(H-90-ph)/2,z=1+.04*t;
+  if(poster){c.save();c.shadowColor="rgba(0,0,0,.6)";c.shadowBlur=60;c.shadowOffsetY=30;c.translate(px+pw/2,py+ph/2);c.scale(z,z);c.globalAlpha=a(0);c.beginPath();c.roundRect?c.roundRect(-pw/2,-ph/2,pw,ph,14):c.rect(-pw/2,-ph/2,pw,ph);c.clip();const k=Math.max(pw/poster.width,ph/poster.height);c.drawImage(poster,-poster.width*k/2,-poster.height*k/2,poster.width*k,poster.height*k);c.restore()}
+  const x=px+pw+110,maxW=W-x-110,n=cinemaNow();let y=230;
+  const day=f.next?f.next.date:null,times=day?f.sessions.filter(s=>s.date===day&&notStarted(s.date,s.time)).map(s=>s.time).sort():[];
+  c.globalAlpha=a(1);c.fillStyle="#ffd84a";c.font="500 26px 'IBM Plex Mono',monospace";c.letterSpacing="8px";c.fillText((day?(day===n.date?"SHOWING TODAY":"SHOWING "+fmtLong(day).toUpperCase()):f.releaseDate?"COMING "+fmtLong(f.releaseDate).toUpperCase():"COMING SOON"),x,y);c.letterSpacing="0px";
+  c.globalAlpha=a(1.5);c.fillStyle="#fff";let fs=130;const T=f.title.toUpperCase();const lines=()=>{const w=T.split(" "),out=[];let l="";for(const p of w){const tt=l?l+" "+p:p;if(c.measureText(tt).width>maxW&&l){out.push(l);l=p}else l=tt}if(l)out.push(l);return out};
+  let L;for(;fs>60;fs-=6){c.font=`900 ${fs}px 'Big Shoulders Display','Arial Narrow',Impact,sans-serif`;L=lines();if(L.length<=3)break}
+  y+=30;L.forEach(l=>{y+=fs*.92;c.fillText(l,x,y)});y+=40;
+  c.globalAlpha=a(2);let mx=x;if(cert){c.drawImage(cert,mx,y,64,64);mx+=88}c.fillStyle="#b9c3e6";c.font="600 34px Figtree,system-ui,sans-serif";const meta=[f.runtime?f.runtime+" min":"",f.luxxToo?"Also in LUXX":""].filter(Boolean).join("   ·   ");c.fillText(meta,mx,y+46);y+=110;
+  c.globalAlpha=a(2.5);if(times.length){c.font="500 46px 'IBM Plex Mono',monospace";let tx=x;for(const tm of times.slice(0,7)){const w=c.measureText(tm).width+44;if(tx+w>W-110){tx=x;y+=84}c.fillStyle="rgba(255,255,255,.1)";c.strokeStyle="rgba(255,255,255,.2)";c.lineWidth=2;c.beginPath();c.roundRect?c.roundRect(tx,y,w,70,12):c.rect(tx,y,w,70);c.fill();c.stroke();c.fillStyle="#fff";c.fillText(tm,tx+22,y+50);tx+=w+16}y+=120}
+  c.globalAlpha=a(3);c.fillStyle="#fff";c.font="700 40px Figtree,system-ui,sans-serif";c.fillText("Book at ",x,y+30);const bw=c.measureText("Book at ").width;c.fillStyle="#ffd84a";c.fillText("imc.ie",x+bw,y+30);
+  c.globalAlpha=1;const g=c.createLinearGradient(0,0,W,0);g.addColorStop(0,"#ffd84a");g.addColorStop(.55,"#f39a2b");g.addColorStop(1,"#e2452e");c.fillStyle="rgba(0,0,0,.55)";c.fillRect(0,H-90,W,90);c.fillStyle=g;c.fillRect(0,H-90,W,5);
+  c.fillStyle="#b9c3e6";c.font="500 24px 'IBM Plex Mono',monospace";c.letterSpacing="6px";c.textAlign="right";c.fillText(S().name.toUpperCase(),W-80,H-35);c.textAlign="left";c.letterSpacing="0px";
+  if(drawFoyCard.logo){const lh=62,lw=lh*drawFoyCard.logo.width/drawFoyCard.logo.height;c.drawImage(drawFoyCard.logo,80,H-76,lw,lh)}c.restore()}
+async function recordCard(f,poster,cert,secs){const cv=document.createElement("canvas");cv.width=1920;cv.height=1080;const c=cv.getContext("2d");
+  const types=["video/mp4;codecs=avc1.42E01E","video/mp4;codecs=avc1","video/mp4","video/webm;codecs=vp9","video/webm"],mime=window.MediaRecorder&&types.find(t=>MediaRecorder.isTypeSupported(t));if(!mime)return null;
+  const rec=new MediaRecorder(cv.captureStream(30),{mimeType:mime,videoBitsPerSecond:8e6}),chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+  drawFoyCard(c,f,poster,cert,0);rec.start(250);const t0=performance.now();
+  await new Promise(res=>{const step=()=>{const el=(performance.now()-t0)/1000;if(el>=secs)return res();drawFoyCard(c,f,poster,cert,el/secs);requestAnimationFrame(step)};requestAnimationFrame(step)});
+  rec.stop();await new Promise(r=>rec.onstop=r);return{blob:new Blob(chunks,{type:mime.split(";")[0]}),ext:mime.startsWith("video/mp4")?"mp4":"webm"}}
+function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement("script");s.src=src;s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
+$("#fzip").onclick=async()=>{const btn=$("#fzip"),pr=$("#fprog"),st=foyState();if(!TRAIL)TRAIL=(await getJson("data/trailers.json"))||{};const list=foyChosen(st);if(!list.length){toast("No films in the pack yet");return}
+  btn.disabled=true;pr.hidden=false;try{
+    if(!window.JSZip){pr.textContent="Getting ready…";await loadScript("https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js")}
+    if(!drawFoyCard.logo)drawFoyCard.logo=await loadImg("imc-logo.png");
+    await (document.fonts?Promise.all(["900 60px 'Big Shoulders Display'","600 30px Figtree","700 30px Figtree","500 30px 'IBM Plex Mono'"].map(x=>document.fonts.load(x).catch(()=>{}))):Promise.resolve());
+    const zip=new JSZip(),dir=zip.folder(`${S().town.replace(/\W+/g,"-")} foyer trailers ${todayIso()}`),m3u=["#EXTM3U"],secs=st.card||10;let ext="mp4";
+    for(const [i,f] of list.entries()){const nm=String(i+1).padStart(2,"0")+" - "+f.title.replace(/[\\/:*?"<>|]+/g,"").trim();pr.textContent=`Making card ${i+1} of ${list.length}: ${f.title} (about ${secs} seconds each)…`;
+      const [poster,cert]=await Promise.all([loadImg(asset(f.posterFile)||f.poster),f.certIcon?loadImg(asset(f.certIcon)):Promise.resolve(null)]);
+      const cv=document.createElement("canvas");cv.width=1920;cv.height=1080;drawFoyCard(cv.getContext("2d"),f,poster,cert,1);dir.file(nm+" - still.png",await new Promise(r=>cv.toBlob(r,"image/png")));
+      const v=await recordCard(f,poster,cert,secs);if(v){ext=v.ext;dir.file(nm+" - card."+v.ext,v.blob);m3u.push(`#EXTINF:${secs},${f.title}`,`${nm} - card.${v.ext}`)}}
+    dir.file("playlist.m3u",m3u.join("\r\n"));dir.file("trailers.csv",foyCsv(list));
+    dir.file("README.txt",[`Foyer pack for ${S().name}, made ${new Date().toLocaleString("en-GB")}.`,"",`Films (${list.length}): only foyer-safe ones were included${S().ni?" (BBFC U, PG, 12A)":" (IFCO G, PG, 12A)"}, plus any you checked yourself. Trailers marked red band, uncensored or explicit were left out.`,"",
+      "In this folder:",`- A ${secs}-second 16:9 showtimes card (${ext.toUpperCase()}) and a still (PNG) for each film, numbered in playing order.`,"- playlist.m3u: plays the cards in order on TVs and media players that play from a USB stick.","- trailers.csv: each film's official trailer link and certificate.","",
+      "Trailers: for the trailers themselves on a connected TV, open this link in the TV's browser:",foyUrl(st),"It plays each showtimes card followed by the official trailer, and updates itself every day.","YouTube doesn't allow trailers to be downloaded; for offline trailer files use the ones the distributors supply.","",
+      "Showtimes on the cards are as of the time the pack was made."].join("\r\n"));
+    pr.textContent="Zipping…";const blob=await zip.generateAsync({type:"blob"});saveBlob(blob,`${S().town.replace(/\W+/g,"-")}-foyer-pack-${todayIso()}.zip`);pr.textContent=`Pack downloaded: ${list.length} films.`;
+    if(ext!=="mp4")pr.textContent+=" This browser saved the cards as WebM; use Chrome, Edge or Safari for MP4."}
+  catch(err){pr.textContent="Couldn't make the pack: "+(err&&err.message||"something went wrong")+". Try again, or download the trailer list instead."}
+  btn.disabled=false};
+
 /* ---------- cinema picker ---------- */
 function fillSitePicker(){const sel=$("#sitesel");if(!sel)return;const have=new Set(((CINEMAS&&CINEMAS.cinemas)||[]).filter(c=>c.ok).map(c=>c.id));have.add("enniskillen");
   const opt=([k,x])=>`<option value="${k}">${esc(x.name)}${CINEMAS&&!have.has(k)?" · no listings yet":""}</option>`;
@@ -1050,7 +1173,7 @@ function siteText(){const x=S();$$(".sitename").forEach(e=>e.textContent=x.name)
   const im=document.querySelector('a[href*="imdb.com/calendar"]');if(im){im.href="https://www.imdb.com/calendar/?region="+(x.ni?"GB":"IE");im.textContent="IMDb "+(x.ni?"UK":"Ireland")+" calendar ↗"}}
 $("#sitesel").addEventListener("change",async e=>{site=e.target.value;try{localStorage.setItem(SITE_LS,site)}catch(err){}
   scope();siteText();renderPlays();startNew();ratingSys=pickRating();IMC=null;imcTried=false;lastShowKey="";renderAll();renderToday();renderWhatsOn();if(view==="deals")renderDeals();toast("Switched to "+S().name);
-  await loadImc();imcTried=true;renderToday();renderWhatsOn();if(view==="deals")renderDeals()});
+  await loadImc();imcTried=true;renderToday();renderWhatsOn();if(view==="deals")renderDeals();if(view==="foyer")renderFoyer()});
 fillSitePicker();siteText();
 
 loadImc().finally(()=>{imcTried=true;renderToday();renderWhatsOn()});

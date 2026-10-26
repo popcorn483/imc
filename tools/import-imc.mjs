@@ -528,6 +528,30 @@ for (const cin of CINEMAS) {
   try { summary.push(await importCinema(cin, file, prev, before && before.slug)); }
   catch (e) { console.log(`${cin.id} failed: ${e.message}`); summary.push(before || { id: cin.id, name: cin.name, slug: null, file, ok: false, films: 0 }); }
 }
+// trailer titles from YouTube's oEmbed service, so the hub can keep red-band / uncensored trailers off the foyer TVs.
+// Cached in data/trailers.json; only new trailers are looked up.
+{
+  const file = path.join(OUT, "trailers.json");
+  const known = await fs.readFile(file, "utf8").then(JSON.parse).catch(() => ({}));
+  const urls = new Set();
+  for (const c of summary) {
+    const d = await fs.readFile(c.file, "utf8").then(JSON.parse).catch(() => null);
+    if (d) for (const list of [d.today || [], d.comingSoon || [], d.kidsClub || [], d.luxx || [], ...(d.days || []).map((x) => x.films || [])]) for (const f of list) if (f.trailer) urls.add(f.trailer);
+  }
+  const RED = /red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
+  let n = 0;
+  for (const u of urls) {
+    if (known[u] && known[u].title) continue;
+    try {
+      await sleep(400);
+      const r = await fetch(`https://www.youtube.com/oembed?format=json&url=${encodeURIComponent(u)}`, { headers: { "user-agent": UA } });
+      if (r.ok) { const j = await r.json(); known[u] = { title: j.title || "", channel: j.author_name || "", red: RED.test(j.title || ""), checked: new Date().toISOString() }; n++; }
+      else known[u] = { title: "", channel: "", red: false, unavailable: r.status === 404 || r.status === 401 || r.status === 403, checked: new Date().toISOString() };
+    } catch (e) { /* try again next run */ }
+  }
+  await fs.writeFile(file, JSON.stringify(known, null, 2));
+  console.log(`trailers: ${urls.size} listed, ${n} newly checked`);
+}
 // files are written relative to the repo root; the site reads them the same way
 for (const c of summary) c.file = String(c.file).split(path.sep).join("/");
 await fs.writeFile(path.join(OUT, "cinemas.json"), JSON.stringify({ updated: new Date().toISOString(), blocked, cinemas: summary }, null, 2));
