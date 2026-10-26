@@ -71,21 +71,28 @@ async function schedules(cinemaName, daysAhead, extra = {}) {
   if (!r.ok) throw new Error(`${r.status} schedules ${cinemaName}`);
   return await r.text();
 }
-// "Adult £9.50", "Child (3-14) €7.20" … from a booking page; labels come from the same row or element
+// booking page tables: a row with a name and a £/€ price; rows with an image under /products/ or /tickets/ are snacks or bundles
 function pricesOf(html) {
-  const $ = cheerio.load(html), out = [], seen = new Set();
-  $("script,style,noscript").remove();
-  $("tr, li, label, [class*='ticket'], [class*='price'], [class*='Ticket'], [class*='Price'], div, p").each((_, el) => {
-    const t = clean($(el).clone().children("tr,li,div").remove().end().text());
-    if (!t || t.length > 120) return;
-    const m = /([A-Za-z][A-Za-z0-9 '’&()+\/-]{1,40}?)\s*[:\-–]?\s*([£€]\s?\d{1,3}(?:[.,]\d{2})?)/.exec(t);
-    if (!m) return;
-    const label = clean(m[1]).replace(/\s*(ticket|tickets)$/i, ""), price = m[2].replace(/\s/g, "").replace(",", ".");
-    const key = label.toLowerCase() + price;
-    if (label.length < 2 || seen.has(key) || /total|booking fee|subtotal|basket/i.test(label)) return;
-    seen.add(key); out.push({ label, price });
+  const $ = cheerio.load(html), out = { tickets: [], bundles: [], products: [] };
+  $("tr").each((_, tr) => {
+    const tds = $(tr).children("td");
+    if (tds.length < 2) return;
+    let price = null, name = null, details = null, image = null;
+    tds.each((_, td) => {
+      const $td = $(td), t = clean($td.clone().find("select,option,script").remove().end().text());
+      const m = /^([£€])\s?(\d{1,3}(?:\.\d{2})?)$/.exec(t);
+      if (m) { price = m[1] + m[2]; return; }
+      const img = $td.find("img").attr("src");
+      if (img) { image = abs(new URL(img, "https://booking.imc.ie/").href); return; }
+      if (!name && t && t.length < 120) { const d = /^(.*?)\s*Bundle Details\s*(.*)$/i.exec(t); if (d) { name = d[1]; details = d[2]; } else name = t; }
+    });
+    if (!price || !name) return;
+    const item = { name, price, ...(details ? { details } : {}), ...(image ? { image } : {}) };
+    if (/\/tickets\//i.test(image || "") || details) out.bundles.push(item);
+    else if (image) out.products.push(item);
+    else out.tickets.push(item);
   });
-  return out.slice(0, 20);
+  return out;
 }
 const abs = (u) => { if (!u || u.startsWith("data:")) return null; try { return new URL(u.trim(), BASE).href; } catch { return null; } };
 const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
@@ -424,18 +431,30 @@ if (PAGES && !blocked && !result.today.length && !result.days.some((d) => d.film
     try { await sleep(1500); const h = await schedules(name, 0, { viewMode: "ALL", filterType: "advance-bookings" }); const d = parseFilms(`<html><body>${h}</body></html>`).films; note(`schedules advance: ${d.length} films`); if (d.length) { result.comingSoon = await withPosters(d); fresh.add("advance"); } } catch (e) { note(`schedules advance failed: ${e.message}`); }
   }
 }
-// ticket prices: imc.ie shows them on the booking page for a showing, so read one per cinema
+// prices: imc.ie's booking page for a showing lists ticket types, ticket + snack bundles and snacks (with photos).
+// Read one afternoon and one evening showing that haven't started, so matinee and evening prices both come in.
 if (PAGES && !blocked) {
-  const book = [...result.today, ...result.days.flatMap((d) => d.films)].flatMap((f) => f.sessions || []).map((x) => x.book).find(Boolean);
-  if (book) {
+  const now = new Date(), nowDate = now.toLocaleDateString("en-CA", { timeZone: "Europe/London" }), nowHM = now.toLocaleTimeString("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
+  const upcoming = [...result.today, ...result.days.flatMap((d) => d.films)].flatMap((f) => f.sessions || []).filter((x) => x.book && x.date && (x.date > nowDate || (x.date === nowDate && x.time > nowHM)))
+    .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+  const picks = [upcoming.find((x) => x.time < "17:00"), upcoming.find((x) => x.time >= "17:00")].filter(Boolean);
+  if (!picks.length && upcoming[0]) picks.push(upcoming[0]);
+  const merged = { tickets: [], bundles: [], products: [], checked: new Date().toISOString() };
+  for (const [i, x] of picks.entries()) {
     try {
       await sleep(1500);
-      const h = await get(book);
-      if (isBotCheck(h)) blocked = true;
-      else { await saveRaw("booking", h); result.prices = pricesOf(h); note(`prices: ${result.prices.map((p) => p.label + " " + p.price).join(", ") || "none found"}`); }
+      const h = await get(x.book);
+      if (isBotCheck(h)) { blocked = true; break; }
+      await saveRaw(`booking-${i}`, h);
+      const pr = pricesOf(h);
+      for (const k of ["tickets", "bundles", "products"]) for (const it of pr[k]) if (!merged[k].some((m) => m.name === it.name)) merged[k].push(it);
     } catch (e) { note(`booking page failed: ${e.message}`); }
   }
-  if (!result.prices && prev && prev.prices) result.prices = prev.prices;
+  for (const it of merged.products.concat(merged.bundles)) if (it.image) it.file = await download(it.image, "products", slug(it.image.split("/").pop().replace(/\.\w+$/, "")));
+  if (merged.tickets.length + merged.products.length) result.prices = merged;
+  note(`prices: ${merged.tickets.length} ticket types, ${merged.bundles.length} bundles, ${merged.products.length} products`);
+  if (!result.prices && prev && prev.prices && !Array.isArray(prev.prices)) result.prices = prev.prices;
+  if (result.prices) for (const it of result.prices.products.concat(result.prices.bundles)) if (it.file) used.add(it.file);
 }
 // keep the last good data for anything this run couldn't refresh
 if (prev) {
