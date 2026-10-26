@@ -2,7 +2,7 @@
   "id": "enniskillen",
   "cinema": "IMC Enniskillen",
   "source": "https://imc.ie/enniskillen",
-  "updated": "2026-10-26T22:32:48.077Z",
+  "updated": "2026-10-26T22:35:31.971Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -9033,12 +9033,116 @@
     "advance: 15 films parsed",
     "kids: 4 films parsed",
     "luxx: 3 films parsed",
-    "prices: none found",
+    "prices: 9 ticket types, 2 bundles, 8 products",
     "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "prices": [],
-  "checked": "2026-10-26T22:33:20.153Z",
+  "prices": {
+    "tickets": [
+      {
+        "name": "Kids Club",
+        "price": "£4.50"
+      },
+      {
+        "name": "Kids Club Adult",
+        "price": "£4.50"
+      },
+      {
+        "name": "Kids Club Meal Deal",
+        "price": "£7.50"
+      },
+      {
+        "name": "Adult",
+        "price": "£9.00"
+      },
+      {
+        "name": "Teen",
+        "price": "£7.50"
+      },
+      {
+        "name": "Child",
+        "price": "£7.00"
+      },
+      {
+        "name": "Student",
+        "price": "£7.50"
+      },
+      {
+        "name": "Family",
+        "price": "£26.00"
+      },
+      {
+        "name": "Senior",
+        "price": "£7.50"
+      }
+    ],
+    "bundles": [
+      {
+        "name": "Medium Combo BundleDetails1 Adult Ticket + a Medium Combo",
+        "price": "£14.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCB.jpg",
+        "file": "data/products/t2mcb.jpg"
+      },
+      {
+        "name": "Share Combo BundleDetails2 Adult Tickets + a Share Combo",
+        "price": "£23.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCB.jpg",
+        "file": "data/products/t2scb.jpg"
+      }
+    ],
+    "products": [
+      {
+        "name": "Flexi Ticket",
+        "price": "£0.80",
+        "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
+        "file": "data/products/flexi.jpg"
+      },
+      {
+        "name": "Maltesers",
+        "price": "£4.00",
+        "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
+        "file": "data/products/maltesers.jpg"
+      },
+      {
+        "name": "Minstrels",
+        "price": "£4.00",
+        "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
+        "file": "data/products/minstrels.jpg"
+      },
+      {
+        "name": "Tahila Water Carton",
+        "price": "£3.00",
+        "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
+        "file": "data/products/ttc.jpg"
+      },
+      {
+        "name": "Medium Combo",
+        "price": "£8.50",
+        "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
+        "file": "data/products/combotest.jpg"
+      },
+      {
+        "name": "Large Combo",
+        "price": "£9.50",
+        "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
+        "file": "data/products/lccc.jpg"
+      },
+      {
+        "name": "Kids Tray (Kids drink, popcorn and sweet treat)",
+        "price": "£5.50",
+        "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
+        "file": "data/products/onkt.jpg"
+      },
+      {
+        "name": "Share Combo (2 Medium Drinks + 1 Large Popcorn)",
+        "price": "£13.50",
+        "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
+        "file": "data/products/scon.jpg"
+      }
+    ],
+    "checked": "2026-10-26T22:35:57.506Z"
+  },
+  "checked": "2026-10-26T22:36:03.201Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

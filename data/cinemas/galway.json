@@ -2,7 +2,7 @@
   "id": "galway",
   "cinema": "IMC Galway",
   "source": "https://imc.ie/galway-headford-road",
-  "updated": "2026-10-26T22:33:21.569Z",
+  "updated": "2026-10-26T22:36:04.882Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -12181,85 +12181,146 @@
     "advance: 13 films parsed",
     "kids: 4 films parsed",
     "luxx: 6 films parsed",
-    "prices: dleDetails1 Adult Ticket + a Medium Combo €18.00, dleDetails2 Adult Tickets + a Share Combo €29.00, Student Meal Deal €12.00, Adult Evening €13.00, Teen €10.50, Student €7.50, OAP €10.50, Plus 2 For 1Requires Voucher €10.00, excludes a €1.00, Flexi €1.00, Maltesers €4.50, Minstrels €4.50, Tahila Water Carton €3.00, Medium Combo €9.50, Large Combo €11.50, popcorn and sweet treat) €6.00, Combo (2 Medium Drinks + 1 Large Popcorn) €14.00, Nacho Large Cheese €8.50",
+    "prices: 12 ticket types, 4 bundles, 9 products",
     "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "prices": [
-    {
-      "label": "dleDetails1 Adult Ticket + a Medium Combo",
-      "price": "€18.00"
-    },
-    {
-      "label": "dleDetails2 Adult Tickets + a Share Combo",
-      "price": "€29.00"
-    },
-    {
-      "label": "Student Meal Deal",
-      "price": "€12.00"
-    },
-    {
-      "label": "Adult Evening",
-      "price": "€13.00"
-    },
-    {
-      "label": "Teen",
-      "price": "€10.50"
-    },
-    {
-      "label": "Student",
-      "price": "€7.50"
-    },
-    {
-      "label": "OAP",
-      "price": "€10.50"
-    },
-    {
-      "label": "Plus 2 For 1Requires Voucher",
-      "price": "€10.00"
-    },
-    {
-      "label": "excludes a",
-      "price": "€1.00"
-    },
-    {
-      "label": "Flexi",
-      "price": "€1.00"
-    },
-    {
-      "label": "Maltesers",
-      "price": "€4.50"
-    },
-    {
-      "label": "Minstrels",
-      "price": "€4.50"
-    },
-    {
-      "label": "Tahila Water Carton",
-      "price": "€3.00"
-    },
-    {
-      "label": "Medium Combo",
-      "price": "€9.50"
-    },
-    {
-      "label": "Large Combo",
-      "price": "€11.50"
-    },
-    {
-      "label": "popcorn and sweet treat)",
-      "price": "€6.00"
-    },
-    {
-      "label": "Combo (2 Medium Drinks + 1 Large Popcorn)",
-      "price": "€14.00"
-    },
-    {
-      "label": "Nacho Large Cheese",
-      "price": "€8.50"
-    }
-  ],
-  "checked": "2026-10-26T22:33:50.727Z",
+  "prices": {
+    "tickets": [
+      {
+        "name": "Student Meal Deal",
+        "price": "€12.00"
+      },
+      {
+        "name": "Adult Matinee",
+        "price": "€11.50"
+      },
+      {
+        "name": "Teen",
+        "price": "€10.50"
+      },
+      {
+        "name": "Child Matinee",
+        "price": "€9.50"
+      },
+      {
+        "name": "Student",
+        "price": "€7.50"
+      },
+      {
+        "name": "Family",
+        "price": "€35.50"
+      },
+      {
+        "name": "OAP",
+        "price": "€10.50"
+      },
+      {
+        "name": "3 Plus 2 For 1Requires Voucher",
+        "price": "€10.00"
+      },
+      {
+        "name": "Student Meal Deal LUXX",
+        "price": "€15.50"
+      },
+      {
+        "name": "LUXX Recliner",
+        "price": "€15.50"
+      },
+      {
+        "name": "LUXX Child/Student/OAP",
+        "price": "€12.50"
+      },
+      {
+        "name": "3 Plus 2 For 1 LUXXRequires Voucher",
+        "price": "€18.00"
+      }
+    ],
+    "bundles": [
+      {
+        "name": "Medium Combo BundleDetails1 Adult Ticket + a Medium Combo",
+        "price": "€18.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
+        "file": "data/products/t1mcb.jpg"
+      },
+      {
+        "name": "Share Combo BundleDetails2 Adult Tickets + a Share Combo",
+        "price": "€29.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
+        "file": "data/products/t1scb.jpg"
+      },
+      {
+        "name": "Medium Combo Bundle LuxxDetails1 Adult Ticket + a Medium Combo",
+        "price": "€22.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
+        "file": "data/products/t1mcbluxx.jpg"
+      },
+      {
+        "name": "Share Combo Bundle LuxxDetails2 Adult Tickets + a Share Combo",
+        "price": "€37.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
+        "file": "data/products/t1scbluxx.jpg"
+      }
+    ],
+    "products": [
+      {
+        "name": "Flexi Ticket",
+        "price": "€1.00",
+        "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
+        "file": "data/products/flexi.jpg"
+      },
+      {
+        "name": "Maltesers",
+        "price": "€4.50",
+        "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
+        "file": "data/products/maltesers.jpg"
+      },
+      {
+        "name": "Minstrels",
+        "price": "€4.50",
+        "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
+        "file": "data/products/minstrels.jpg"
+      },
+      {
+        "name": "Tahila Water Carton",
+        "price": "€3.00",
+        "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
+        "file": "data/products/ttc.jpg"
+      },
+      {
+        "name": "Medium Combo",
+        "price": "€9.50",
+        "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
+        "file": "data/products/combotest.jpg"
+      },
+      {
+        "name": "Large Combo",
+        "price": "€11.50",
+        "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
+        "file": "data/products/lccc.jpg"
+      },
+      {
+        "name": "Kids Tray (Kids drink, popcorn and sweet treat)",
+        "price": "€6.00",
+        "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
+        "file": "data/products/onkt.jpg"
+      },
+      {
+        "name": "Share Combo (2 Medium Drinks + 1 Large Popcorn)",
+        "price": "€14.00",
+        "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
+        "file": "data/products/scon.jpg"
+      },
+      {
+        "name": "Nacho Large Cheese",
+        "price": "€8.50",
+        "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
+        "file": "data/products/nacholargchese.jpg"
+      }
+    ],
+    "checked": "2026-10-26T22:36:31.158Z"
+  },
+  "checked": "2026-10-26T22:36:37.176Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
