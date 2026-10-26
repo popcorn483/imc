@@ -552,36 +552,44 @@ for (const cin of CINEMAS) {
   await fs.writeFile(file, JSON.stringify(known, null, 2));
   console.log(`trailers: ${urls.size} listed, ${n} newly checked`);
 }
-// photo library: free photos listed in data/library/sources.json. Each page is checked for "Free to use under the Unsplash
-// License" before downloading, so Unsplash+ (paid) photos are never used. Already-downloaded photos are skipped.
+// photo library: real photos from Wikimedia Commons for the queries in data/library/sources.json. Only public-domain and
+// CC0 photos are taken (no credit or conditions needed for use in ads), at least 1200px wide, and never anything in "block".
 {
-  const dir = path.join(OUT, "library"), srcs = await fs.readFile(path.join(dir, "sources.json"), "utf8").then(JSON.parse).catch(() => []);
-  const idx = await fs.readFile(path.join(dir, "index.json"), "utf8").then(JSON.parse).catch(() => []);
-  let added = 0; const liblog = [];
-  for (const s of srcs) {
-    if (idx.some((x) => x.id === s.id) || (s.skip && s.checked && Date.now() - Date.parse(s.checked) < 30 * 864e5)) continue;
+  const dir = path.join(OUT, "library"), cfg = await fs.readFile(path.join(dir, "sources.json"), "utf8").then(JSON.parse).catch(() => ({ queries: [] }));
+  let idx = await fs.readFile(path.join(dir, "index.json"), "utf8").then(JSON.parse).catch(() => []);
+  const block = new Set(cfg.block || []); idx = idx.filter((x) => !block.has(String(x.id)));
+  const strip = (h) => String(h || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+  const FREE = /^(cc0|public domain|pd|cc-zero|pdm)/i, liblog = []; let added = 0;
+  for (const q of cfg.queries || []) {
+    const have = idx.filter((x) => x.q === q.q).length;
+    if (have >= q.n) continue;
     try {
-      await sleep(800);
-      const r = await fetch(s.page, { headers: { "user-agent": UA, accept: "text/html" }, redirect: "follow" });
-      const html = await r.text();
-      const og = /<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i.exec(html) || /<meta[^>]+content="([^"]+)"[^>]+property="og:image"/i.exec(html);
-      // free photos are served from images.unsplash.com/photo-…; paid Unsplash+ ones from plus.unsplash.com/premium_photo-…
-      const img = og ? og[1].replace(/&amp;/g, "&") : "";
-      const free = /^https:\/\/images\.unsplash\.com\/photo-/i.test(img) && !/premium|plus\.unsplash|Unsplash\+ License/i.test(img);
-      liblog.push({ id: s.id, status: r.status, image: img.slice(0, 90), free });
-      if (!free) { console.log(`library: ${s.id} is not a free photo, skipped`); s.skip = true; s.checked = new Date().toISOString(); continue; }
-      const credit = (/Photo by ([^<|]+?) on Unsplash/i.exec(html) || [])[1] || "";
-      if (!og) { console.log(`library: ${s.id} has no image link`); continue; }
-      const u = new URL(og[1].replace(/&amp;/g, "&")); for (const k of ["w", "h", "fit", "crop", "q", "fm", "auto", "ixlib", "mark", "blend", "txt"]) u.searchParams.delete(k);
-      u.searchParams.set("w", "1800"); u.searchParams.set("q", "82"); u.searchParams.set("fm", "jpg");
-      const buf = await get(u.href, true);
-      const file = `${OUT}/library/${s.cat}-${slug(s.id)}.jpg`;
-      await fs.writeFile(file, buf);
-      idx.push({ id: s.id, cat: s.cat, title: s.title, credit: credit.trim(), page: s.page, file, license: "Unsplash License" }); added++;
-    } catch (e) { console.log(`library: ${s.id} failed: ${e.message}`); }
+      await sleep(600);
+      const api = `https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&gsrsearch=${encodeURIComponent(q.q + " filetype:bitmap")}&prop=imageinfo&iiprop=url|size|extmetadata|mime&iiurlwidth=1800`;
+      const r = await fetch(api, { headers: { "user-agent": UA } });
+      const j = await r.json();
+      const pages = Object.values((j.query && j.query.pages) || {}).sort((a, b) => (a.index || 0) - (b.index || 0));
+      let got = have;
+      for (const pg of pages) {
+        if (got >= q.n) break;
+        const ii = (pg.imageinfo || [])[0]; if (!ii) continue;
+        const md = ii.extmetadata || {}, lic = strip(md.LicenseShortName && md.LicenseShortName.value);
+        const ok = FREE.test(lic) && ii.width >= 1200 && ii.height >= 800 && ii.width / ii.height < 2.2 && ii.height / ii.width < 1.8 && /jpe?g|png/i.test(ii.mime || "") && !block.has(String(pg.pageid)) && !idx.some((x) => String(x.id) === String(pg.pageid));
+        liblog.push({ q: q.q, id: pg.pageid, title: pg.title, lic, size: [ii.width, ii.height], ok });
+        if (!ok) continue;
+        try {
+          await sleep(500);
+          const buf = await get(ii.thumburl || ii.url, true);
+          const file = `${OUT}/library/${q.cat}-${pg.pageid}.jpg`;
+          await fs.writeFile(file, buf);
+          idx.push({ id: String(pg.pageid), cat: q.cat, q: q.q, title: strip(pg.title.replace(/^File:/, "").replace(/\.\w+$/, "")).slice(0, 80), credit: strip(md.Artist && md.Artist.value).slice(0, 80), license: lic, page: ii.descriptionurl, file });
+          got++; added++;
+        } catch (e) { liblog.push({ id: pg.pageid, error: e.message }); }
+      }
+    } catch (e) { liblog.push({ q: q.q, error: e.message }); }
   }
+  for (const f of await fs.readdir(dir).catch(() => [])) if (/\.jpg$/.test(f) && !idx.some((x) => x.file.endsWith("/" + f))) await fs.unlink(path.join(dir, f)).catch(() => {});
   await fs.writeFile(path.join(dir, "index.json"), JSON.stringify(idx, null, 2));
-  await fs.writeFile(path.join(dir, "sources.json"), JSON.stringify(srcs, null, 1));
   if (liblog.length) await fs.writeFile(path.join(dir, "log.json"), JSON.stringify(liblog, null, 1));
   console.log(`library: ${idx.length} photos (${added} new)`);
 }
