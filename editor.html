@@ -1515,7 +1515,7 @@ function dealVisuals(d){if(d.real===false)return null;if(d.photos&&d.photos.leng
     if(k==="popcorn"||k==="drink"){const x=(drinks>=2&&it(/share combo/i))||it(/large combo/i)||it(/medium combo/i);v=x?{src:x.file,label:x.name}:lib(k==="drink"?"drinks":"popcorn")}
     else if(k==="tray"){const x=it(/kids tray/i);v=x?{src:x.file,label:x.name}:lib("popcorn")}
     else if(k==="nachos"){const x=it(/nacho/i);v=x?{src:x.file,label:x.name}:null}
-    else if(k==="sweets"||k==="pickmix")v=lib("sweets");else if(k==="icescoop"||k==="icetub")v=lib("icecream");else if(k==="ticket")v={draw:"ticket"};
+    else if(k==="sweets"||k==="pickmix")v=lib("sweets");else if(k==="icescoop"||k==="icetub"){const x=imcItems().find(x=>/soft ?serve|ice ?cream|sundae/i.test(x.file+" "+x.name));v=x?{src:x.file,label:x.name}:lib("icecream")}else if(k==="ticket")v={draw:"ticket"};
     v=v||{draw:k};const key=v.src||v.draw;if(!seen.has(key)){seen.add(key);out.push(v)}}
   return out.some(v=>v.src)?out.slice(0,4):null}
 function dealLayers(d,anim){const vis=dealVisuals(d);if(vis)return dealPhotoLayers(d,anim,vis);const P=(d.products&&d.products.length?d.products:["popcorn","drink"]).slice(0,6),L=[],n=P.length,cur=d.cur||siteCur(),items=d.items||[];
