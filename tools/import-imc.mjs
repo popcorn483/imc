@@ -560,7 +560,7 @@ for (const cin of CINEMAS) {
   const block = new Set(cfg.block || []); idx = idx.filter((x) => !block.has(String(x.id)));
   const strip = (h) => String(h || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
   const FREE = /^(cc0|public domain|pd|cc-zero|pdm)/i, liblog = []; let added = 0;
-  for (const q of cfg.queries || []) {
+  for (const q of cfg.frozen ? [] : cfg.queries || []) {
     const have = idx.filter((x) => x.q === q.q).length;
     if (have >= q.n) continue;
     try {
