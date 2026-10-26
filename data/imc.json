@@ -9607,23 +9607,17 @@
     }
   ],
   "log": [
-    "home: 1 films parsed",
-    "today: 15 films parsed",
-    "day-26-10-2026-dated: 15 films parsed",
-    "day-27-10-2026-dated: 15 films parsed",
-    "day-28-10-2026-dated: 15 films parsed",
-    "day-29-10-2026-dated: 15 films parsed",
-    "day-30-10-2026-dated: 10 films parsed",
-    "day-31-10-2026-dated: 11 films parsed",
-    "day-01-11-2026-dated: 11 films parsed",
-    "day-02-11-2026-dated: 6 films parsed",
-    "advance: 15 films parsed",
-    "kids: 4 films parsed",
-    "luxx: 3 films parsed",
+    "imc.ie showed a browser check on home; stopping this run and keeping the previous listings",
+    "kept previous today",
+    "kept previous days",
+    "kept previous comingSoon",
+    "kept previous kidsClub",
+    "kept previous luxx",
+    "kept previous banners",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "checked": "2026-10-26T13:02:01.163Z",
-  "blocked": false,
+  "checked": "2026-10-26T21:38:43.719Z",
+  "blocked": true,
   "ratings": {
     "bbfc": {
       "12": "data/ratings/bbfc-12.svg",
