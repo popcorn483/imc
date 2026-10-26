@@ -2,7 +2,7 @@
   "id": "galway",
   "cinema": "IMC Galway",
   "source": "https://imc.ie/galway-headford-road",
-  "updated": "2026-10-26T22:36:04.882Z",
+  "updated": "2026-10-26T22:48:51.343Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -12238,26 +12238,30 @@
     ],
     "bundles": [
       {
-        "name": "Medium Combo BundleDetails1 Adult Ticket + a Medium Combo",
+        "name": "Medium Combo",
         "price": "€18.00",
+        "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
         "file": "data/products/t1mcb.jpg"
       },
       {
-        "name": "Share Combo BundleDetails2 Adult Tickets + a Share Combo",
+        "name": "Share Combo",
         "price": "€29.00",
+        "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
         "file": "data/products/t1scb.jpg"
       },
       {
-        "name": "Medium Combo Bundle LuxxDetails1 Adult Ticket + a Medium Combo",
+        "name": "Medium Combo LUXX",
         "price": "€22.00",
+        "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
         "file": "data/products/t1mcbluxx.jpg"
       },
       {
-        "name": "Share Combo Bundle LuxxDetails2 Adult Tickets + a Share Combo",
+        "name": "Share Combo LUXX",
         "price": "€37.00",
+        "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
         "file": "data/products/t1scbluxx.jpg"
       }
@@ -12318,9 +12322,9 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-10-26T22:36:31.158Z"
+    "checked": "2026-10-26T22:49:17.305Z"
   },
-  "checked": "2026-10-26T22:36:37.176Z",
+  "checked": "2026-10-26T22:49:20.815Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
