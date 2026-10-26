@@ -406,7 +406,7 @@ const SEASONS=[
 function seasonNow(d=new Date()){const v=md(d.getMonth()+1,d.getDate());return SEASONS.filter(x=>x.win.some(([a,b])=>v>=a&&v<=b))}
 /* largest font size (up to max) that keeps a line of text within the design's safe width */
 function fitSize(text,font,max,min,width){let z=max;for(;z>min;z-=4){mctx.font=`${WEIGHT[font]} ${z}px ${FONTS[font]}`;if(Math.max(...String(text).split("\n").map(l=>tw(mctx,l.toUpperCase(),2)))<=width)break}return z}
-function seasonLayers(se,fresh){const ink=se.ink||"#ffffff",L=[mk("badge","coming",{...se.badge,y:se.fx.lights?.17:.13,anim:"shine",season:true})];
+function seasonLayers(se,fresh){const ink=se.ink||"#ffffff",L=[mk("badge","coming",{...se.badge,y:se.fx.lights?.17:.13,s:se.badge.text.length>16?.82:1,anim:"shine",season:true})];
   if(fresh)L.push(mk("text","title",{text:se.title,size:fitSize(se.title,"display",130,60,940),y:.5,c1:ink,anim:"slide",delay:.05}),mk("text","sub",{text:se.sub,y:.62,c1:ink,anim:"slide",delay:.12}),mk("badge","book",{y:.75,s:.85,anim:"pulse",delay:.2}));
   return L}
 function applySeason(k,fresh){const se=SEASONS.find(x=>x.k===k);if(!se)return;S.label=se.n;

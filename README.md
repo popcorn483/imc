@@ -11,13 +11,15 @@ There's no account or server to run. GitHub Pages hosts the site, and a GitHub A
 
 | Page | What it does |
 |---|---|
-| **Today** | Every film showing today, with certificate, runtime and times from imc.ie. One click makes today's times as a post or a Story. Also shows films opening soon, your deals, and the current banners from imc.ie. |
+| **Today** | Starts with **What do you want to make?**: one-click buttons for today's times, Stories, the current season's post, deals, coming-soon films, LUXX ads, foyer trailers, the ideas calendar and the caption bank. Then every film showing today, with certificate, runtime and times from imc.ie. Also shows films opening soon, your deals (with imc.ie prices), and the current banners from imc.ie. |
 | **What's on** | Today, the next 7 days, Coming soon, Kids Club, LUXX and Relaxed (sensory) screenings. Each film has **Make post**, **Story**, **Write caption**, **Book ↗** and **Trailer ↗**. |
 | **Deals** | Family Combo, Kids Tray, Share Combo, Large Combo, Medium Combo and any deals you add. One-click buttons add tickets (adult, child, family), popcorn, drinks, kids trays, nachos, hot dogs, sweet bags, pick 'n' mix and ice cream (scooped or tub) to what's included, with the counts kept up to date. Set the name, what's included, price, "was" price, small print and which food pictures to show. Then make an **Animated post**, **Still post** or **Animated Story**. |
 | **Prices from imc.ie** | On the Deals page: ticket prices, ticket + snack bundles and snacks with IMC's own product photos, read from imc.ie's booking page for the chosen cinema. **Make a deal** or **Video clip** from any of them. Your deals show the imc.ie price when the name matches, and use IMC's real product photos unless you untick that. |
 | **LUXX ads** | **LUXX ad** / **LUXX Story** on the Today page and What's on → LUXX: today's LUXX showings and times, plus the LUXX seat price when imc.ie lists one. Add a photo of your LUXX seats in the editor's Photo tab to use it as the background. |
 | **Video clips** | **Video clip** on any deal or imc.ie product makes a 6-second Story: a hook, the product, the price, then "Grab it at the kiosk". Preview it, then save it from the editor's Video button. |
 | **Foyer trailers** | Trailer packs for the foyer TVs. Only U/PG/12A films (G/PG/12A in the Republic) go in by default, trailers titled red band, uncensored or explicit are always left out, and films without a certificate wait until you've watched the trailer and ticked it. **Open foyer player** gives a full-screen page (`foyer.html`) that plays a showtimes card then each official trailer, on a loop, updating itself daily: open it in the TV's browser. **Download pack** gives a ZIP of 16:9 MP4 showtimes cards and stills, a USB playlist and the trailer list. |
+| **Ideas calendar** | Key dates for the next 12 months for the chosen cinema's side of the border (bank holidays, school holidays, Halloween, Christmas, Mother's and Father's Day, Easter and more) plus big releases, each with a post idea, when to start posting, **Design it** (opens a seasonal design) and **Plan a post** (adds it to the planner). School holiday dates are approximate. |
+| **Toolkit** | Caption bank by topic, hashtag sets, a sizes cheat sheet, a before-you-post checklist, and **brand settings** for each cinema: hashtags, a sign-off added to captions, and how the caption writer describes the cinema. |
 | **Planner** | Week calendar, what's due next, and engagement by post type once you add results. |
 | **Create ad** | Quick text-led posters with a caption writer and a share-ability score. |
 | **Upcoming releases** | UK release schedule to January 2027 with a viral angle for each film. |
@@ -36,10 +38,14 @@ There's no account or server to run. GitHub Pages hosts the site, and a GitHub A
 - **Film times:** a panel listing films and times, filled from imc.ie and editable.
 - **Motion:** slow zoom, light rays, spotlights, bokeh, marquee chase, gold sparkle, popcorn burst, fizz bubbles, confetti, snow, old projector.
 - **Per-item animation:** Shine, Pulse, Pop in, Slam in, Slide up, Swing, Wiggle, Float or Blink, each with a start time so items arrive in sequence.
+- **Seasons & occasions:** one-click Halloween, fireworks night, midterm, Black Friday, Christmas, New Year, Valentine's, St Patrick's Day, Mother's Day, Easter, Father's Day, summer and autumn looks, each with its own background, colours, animation and banner.
+- **Seasonal effects:** bats, spooky fog, fairy lights, floating hearts, shamrocks, autumn leaves, fireworks and bunting, with an effect strength slider and effect colour picker.
+- **Sizes:** feed, Story, foyer 16:9, Facebook event and cover, and Print A4/A3 (portrait and landscape).
 - **Export:**
   - **PNG/JPG** for posts.
   - **GIF** for Facebook, WhatsApp and X.
   - **Video** for Reels, Stories and TikTok. Chrome, Edge and Safari save MP4; other browsers save WebM.
+  - **PDF** for printing posters and flyers (A4, scales to A3).
   - **Copy image** to paste straight into a post.
 
 Everything can be dragged, resized, rotated, recoloured and re-ordered. You can also undo and redo, and save your own layouts.

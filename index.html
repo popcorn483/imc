@@ -197,6 +197,17 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .banners img{width:100%;height:100%;object-fit:cover;display:block}
 .deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
 .addchips{display:flex;flex-wrap:wrap;gap:6px}
+.startp{margin-bottom:16px}.starts{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:10px}
+.start{all:unset;cursor:pointer;box-sizing:border-box;border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px;background:var(--bg);transition:border-color .15s,transform .15s}
+.start:hover{border-color:var(--velvet);transform:translateY(-1px)}.start:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.start .si{font-size:24px;line-height:1}.start b{font-size:15px}.start small{font-size:12.5px;color:var(--muted);line-height:1.3}
+.calrow{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:14px;align-items:start;padding:12px 0;border-top:1px solid var(--line)}.calrow:first-of-type{border-top:0}
+.calrow h3{font-size:16px;margin:0 0 2px}.calrow .angle{margin:0 0 4px;font-size:14px}.calrow .acts{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.caps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:12px}.cap{border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:10px}.cap p{margin:0;font-size:14px}
+.tagsets{display:flex;flex-direction:column;gap:10px;margin-top:8px}.tagsets div{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:8px;align-items:center}.tagsets code{font-family:var(--f-mono);font-size:12.5px;overflow-wrap:anywhere}
+table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}table.sizes th,table.sizes td{text-align:left;padding:7px 6px;border-top:1px solid var(--line)}table.sizes th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.checklist{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+@media (max-width:640px){.calrow{grid-template-columns:48px minmax(0,1fr)}.calrow .acts{grid-column:2;flex-direction:row;flex-wrap:wrap;align-items:flex-start}.tagsets div{grid-template-columns:1fr}}
 .foygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .foygrid fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;margin:0}
 .foygrid legend{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700;padding:0 4px}
@@ -269,6 +280,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <button data-view="whatson">What's on</button>
       <button data-view="deals">Deals</button>
       <button data-view="foyer">Foyer trailers</button>
+      <button data-view="calendar">Ideas calendar</button>
+      <button data-view="toolkit">Toolkit</button>
       <button data-view="dashboard">Planner</button>
       <button data-view="studio">Create ad</button>
       <button data-view="releases">Upcoming releases</button>
@@ -327,6 +340,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       </div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>Films</h2><span class="tip" id="fcount" style="margin:0"></span></div><div id="foyList"></div></div>
       <p class="tip">The pack has a 16:9 showtimes video card and a still for each film, a playlist for TVs that play from a USB stick, and the trailer list. The trailers themselves play through the foyer player from imc.ie's official YouTube links; YouTube doesn't allow them to be downloaded, so for offline trailer files use the ones distributors supply. The safety check works from certificates and trailer titles; nothing listens to the audio, so watch any trailer you're unsure of.</p>
+    </section>
+
+    <!-- IDEAS CALENDAR -->
+    <section id="v-calendar" hidden>
+      <div class="head"><div><h1>Ideas calendar</h1><p>Key dates for the next 12 months with what to post and when. School holiday dates are approximate, so check them against your local schools. <b>Design it</b> opens a seasonal design; <b>Plan a post</b> adds it to your planner.</p></div></div>
+      <div id="calBody"></div>
+    </section>
+
+    <!-- TOOLKIT -->
+    <section id="v-toolkit" hidden>
+      <div class="head"><div><h1>Toolkit</h1><p>Captions, hashtags, sizes and a pre-post checklist, plus this cinema's brand settings.</p></div></div>
+      <div id="toolBody"></div>
     </section>
 
     <!-- DASHBOARD -->
@@ -524,7 +549,7 @@ const SITES={
  thurles:{name:"IMC Thurles",town:"Thurles",county:"Tipperary",tags:"#IMCThurles #Thurles #Tipperary #CinemaIreland",local:"thurles|tipp|local"},
  tullamore:{name:"IMC Tullamore",town:"Tullamore",county:"Offaly",tags:"#IMCTullamore #Tullamore #Offaly #CinemaIreland",local:"tullamore|offaly|midlands|local"}
 };
-const S=k=>SITES[k||site]||SITES.enniskillen;
+const S=k=>{const id=k||site,b=SITES[id]||SITES.enniskillen,o=brandFor(id);return o&&Object.keys(o).length?{...b,...o}:b};
 const aboutOf=x=>x.about||`a cinema in ${x.town}, Co. ${x.county}, ${x.ni?"Northern Ireland":"Ireland"}`;
 /* rewrite Enniskillen wording for another cinema */
 function loc(t,k){const x=S(k);if(!t||x===SITES.enniskillen)return t;
@@ -591,7 +616,7 @@ async function remove(id){
 const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
 /* ---------- navigation ---------- */
-function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="deals")renderDeals();if(v==="today")renderToday();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));if(v==="studio")drawPoster();window.scrollTo(0,0)}
+function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));if(v==="studio")drawPoster();window.scrollTo(0,0)}
 $("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view)});
 document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g){if(g.dataset.go==="studio"&&!g.dataset.keep)startNew();go(g.dataset.go)}});
 
@@ -747,7 +772,7 @@ function capFor(d){
     access:`💙 ${h}: a relaxed screening at IMC Enniskillen.${s}${dt}\n\nLights up a little, sound down a little, and no one minds if you move about. Please share with families who'd love to know.${cta}`,
     poll:`🗳️ YOU DECIDE: ${h}\n${d.sub||"❤️ for option one or 😂 for option two"}\n\nVote with a reaction. Most votes wins a spot on our screens!${cta}`,
     quiz:`🤔 GUESS THE FILM! ${h}\n${d.sub||"Three emojis, one film."}\n\nFirst correct answer in the comments gets a shout-out 🏆 No Googling!${cta}`
-  };return loc(m[d.type]||m.now,siteOf(d))}
+  };return loc(m[d.type]||m.now,siteOf(d))+(S(siteOf(d)).signoff?"\n\n"+S(siteOf(d)).signoff:"")}
 $("#capgen").onclick=()=>{readForm();cur.caption=capFor(cur);$("#f-caption").value=cur.caption;score();toast("Caption filled")};
 $("#capcopy").onclick=()=>{const t=$("#f-caption").value+"\n\n"+$("#f-tags").value;navigator.clipboard?.writeText(t).then(()=>toast("Caption copied"),()=>{$("#f-caption").select();toast("Press Ctrl+C to copy")})};
 $("#capai").onclick=async()=>{if(!sample)return;readForm();const b=$("#capai");b.disabled=true;b.textContent="Writing…";
@@ -970,12 +995,12 @@ function stamp(){if(!IMC||!IMC.updated)return"";const f=d=>new Date(d).toLocaleS
 
 /* ---------- Today ---------- */
 function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").textContent=fmtLong(todayIso());$("#todayStamp").textContent=stamp();
-  if(!IMC){el.innerHTML=noData();return}
+  if(!IMC){el.innerHTML=startPanel()+noData();return}
   const films=keyed(filmsOn(todayIso())),soon=keyed(allFilms().filter(f=>{const d=firstDate(f);return d&&d>todayIso()}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))).slice(0,6));
-  el.innerHTML=`<div class="panel"><div class="ph"><h2>Showing today</h2><div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
+  el.innerHTML=startPanel()+`<div class="panel"><div class="ph"><h2>Showing today</h2><div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
     ${films.length?`<div class="films">${films.map(f=>filmCard(f,f.sources?.has("kids")&&!f.sources?.has("today")?"kids":f.luxx?"luxx":"now")).join("")}</div>`:(filmsOn(todayIso(),true).length?`<p class="tip">Every show today has started. Tomorrow\'s times are under <button class="btn small ghost" data-wo="week">What\'s on → Next 7 days</button></p>`:`<p class="tip">No times for today in the latest import. ${IMC.today&&IMC.today.length===0?"The imc.ie film-times page may have been unavailable; the next import runs within 3 hours.":""}</p>`)}</div>
     <div class="grid two" style="margin-top:16px"><div class="panel"><div class="ph"><h2>Opening soon</h2><button class="btn small ghost" data-wo="soon">All coming soon →</button></div><div class="films compact">${soon.map(f=>filmCard(f,"soon")).join("")||'<p class="tip">Nothing announced yet.</p>'}</div></div>
-    <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
+    <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):imcMatch(d.name)?esc(imcMatch(d.name).price)+' <em>(imc.ie)</em>':'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
     ${(IMC.banners||[]).length?`<h2 style="margin-top:18px">imc.ie graphics</h2><div class="banners">${IMC.banners.slice(0,6).map(b=>`<button data-banner="${esc(asset(b.file))}" title="Open in the photo editor"><img src="${esc(asset(b.file))}" alt="imc.ie banner" loading="lazy"></button>`).join("")}</div>`:""}</div></div>`;hydrateSvgs(el)}
 document.addEventListener("click",e=>{const t=e.target.closest("[data-times]");if(t){makeTimes(todayIso(),t.dataset.times);return}
   const b=e.target.closest("[data-banner]");if(b){openEditor({kind:"image",url:b.dataset.banner});return}
@@ -1164,6 +1189,111 @@ $("#fzip").onclick=async()=>{const btn=$("#fzip"),pr=$("#fprog"),st=foyState();i
   catch(err){pr.textContent="Couldn't make the pack: "+(err&&err.message||"something went wrong")+". Try again, or download the trailer list instead."}
   btn.disabled=false};
 
+/* ---------- brand settings per cinema: override hashtags, sign-off and description ---------- */
+function brandFor(k){try{return JSON.parse(localStorage.getItem((k==="enniskillen"?"imc-brand":"imc-brand-"+k))||"null")}catch(e){return null}}
+function brandSave(k,o){try{localStorage.setItem((k==="enniskillen"?"imc-brand":"imc-brand-"+k),JSON.stringify(o))}catch(e){toast("Couldn't save. Browser storage is blocked.")}}
+
+/* ---------- seasons (match the editor's) ---------- */
+const HSEASONS=[["halloween","Halloween",[[1001,1101]]],["fireworks","Fireworks night",[[1028,1106]]],["midterm","Midterm break",[[1020,1103],[210,222]]],["blackfriday","Black Friday",[[1120,1201]]],["christmas","Christmas",[[1115,1226]]],["newyear","New Year",[[1227,1231],[101,106]]],["valentines","Valentine's",[[125,214]]],["stpatricks","St Patrick's Day",[[301,317]]],["mothers","Mother's Day",[[301,401]]],["easter","Easter holidays",[[320,425]]],["fathers","Father's Day",[[601,621]]],["summer","Summer holidays",[[620,831]]],["autumn","Autumn",[[901,1031]]]];
+function hSeasonNow(){const d=new Date(todayIso()+"T12:00"),v=(d.getMonth()+1)*100+d.getDate();return HSEASONS.filter(([,,w])=>w.some(([a,b])=>v>=a&&v<=b))}
+function seasonDesign(key,fmt,title){openEditor({kind:"season",key,fmt:fmt||"square",title:title||""})}
+
+/* ---------- start panel: the common jobs, one click each ---------- */
+function startPanel(){const se=hSeasonNow()[0];
+  const t=(icon,label,sub,attr)=>`<button class="start" ${attr}><span class="si" aria-hidden="true">${icon}</span><b>${label}</b><small>${sub}</small></button>`;
+  return`<div class="panel startp"><div class="ph"><h2>What do you want to make?</h2><span class="tip" style="margin:0">Everything opens ready to post. Click any text in the editor to change it.</span></div><div class="starts">
+    ${t("🕒","Today's film times","Square post from imc.ie",'data-times="square"')}
+    ${t("📱","Times for Stories","9:16 for Instagram & Facebook",'data-times="story"')}
+    ${se?t("✨",se[1]+" post","Seasonal look with animation",`data-seasonpost="${se[0]}"`):""}
+    ${t("🍿","Promote a deal","Real prices & photos from imc.ie",'data-go="deals"')}
+    ${t("🎬","Coming-soon film","Pick a film to announce",'data-wo="soon"')}
+    ${t("💺","LUXX ad","Today's LUXX showings",'data-luxxad="square"')}
+    ${t("📺","Foyer TV trailers","Safe trailer loop or download",'data-go="foyer"')}
+    ${t("🗓️","Ideas calendar","Key dates & what to post",'data-go="calendar"')}
+    ${t("✍️","Caption bank","Ready-to-use captions",'data-go="toolkit"')}
+  </div></div>`}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-seasonpost]");if(b)seasonDesign(b.dataset.seasonpost)});
+
+/* ---------- ideas calendar: key dates for the next 12 months, for this cinema's side of the border ---------- */
+function easterSun(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=(h+l-7*m+114)%31+1;return`${y}-${String(mo).padStart(2,"0")}-${String(da).padStart(2,"0")}`}
+const iso=(y,m,d)=>`${y}-${String(m).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+function nthDow(y,m,dow,n){const d=new Date(y,m-1,1);let c=0;while(true){if(d.getDay()===dow&&++c===n)return iso(y,m,d.getDate());d.setDate(d.getDate()+1)}}
+function lastDow(y,m,dow){const d=new Date(y,m,0);while(d.getDay()!==dow)d.setDate(d.getDate()-1);return iso(y,m,d.getDate())}
+function calEvents(){const ni=!!S().ni,y0=+todayIso().slice(0,4),out=[];
+  for(const y of[y0,y0+1]){const E=easterSun(y),add=(date,name,season,idea,o={})=>out.push({date,name,season,idea,...o});
+    add(iso(y,1,1),"New Year's Day","newyear","Post a 'films to look forward to this year' carousel and ask which one they're most excited for.");
+    add(iso(y,1,19),"Popcorn Day (fun)","","A light-hearted 'sweet or salted?' poll. Popcorn posts are some of the most commented.");
+    add(iso(y,2,14),"Valentine's Day","valentines","Date-night post: the romcom or big film that week plus a combo for two. 'Tag who you're bringing.'");
+    add(addDays(E,-47),"Pancake Tuesday","","Fun post only: 'Which film would you watch with a stack of pancakes?'");
+    add(iso(y,3,17),"St Patrick's Day","stpatricks","Parade in the morning, movie in the afternoon. Post family showtimes the day before.");
+    add(addDays(E,-21),"Mother's Day","mothers","Gift cards and a 'treat Mum' post a week before, then again two days before.",{lead:7});
+    add(addDays(E,-7),"Easter holidays (approx.)","easter","Kids Club and family films line-up. Post a week before the schools break up.",{approx:true,lead:7});
+    add(E,"Easter Sunday","easter","Family showtimes for Easter Monday; ask 'what's your Easter holiday film?'");
+    add(nthDow(y,5,1,1),"May bank holiday","","Long weekend: post the bank holiday Monday times on Thursday evening.");
+    add(iso(y,5,4),"Star Wars Day (fun)","","'May the 4th be with you' fun post if a sci-fi film is on or coming.");
+    if(!ni)add(nthDow(y,6,1,1),"June bank holiday","","Long weekend: post Monday times on Thursday.");
+    add(nthDow(y,6,0,3),"Father's Day","fathers","'Let Dad pick the film' plus a combo deal, posted the week before.",{lead:7});
+    add(ni?iso(y,7,1):addDays(nthDow(y,6,5,4),0),ni?"Summer holidays start (approx.)":"Summer holidays start (approx., primary)","summer","Summer Kids Club line-up and 'rainy day sorted' posts. Schedule weekly Monday posts.",{approx:true,lead:10});
+    if(ni)add(iso(y,7,12),"July bank holidays","","Busy days for families: post times the day before.");
+    if(!ni)add(nthDow(y,8,1,1),"August bank holiday","","Long weekend: post Monday times on Thursday.");
+    if(ni)add(lastDow(y,8,1),"August bank holiday","","Long weekend: post Monday times on Thursday.");
+    add(iso(y,8,25),"Back to school (approx.)","autumn","'One last summer trip' post the weekend before schools go back.",{approx:true});
+    add(iso(y,10,1),"Spooky season starts","halloween","Start the Halloween build-up: horror line-up and a 'scariest film you've seen?' question.");
+    add(ni?addDays(iso(y,10,31),-((new Date(iso(y,10,31)+"T12:00").getDay()+6)%7)):addDays(lastDow(y,10,1),0),"Halloween midterm (approx.)","midterm","Kids Club every morning and family films. Post the full week a week ahead.",{approx:true,lead:7});
+    add(iso(y,10,31),"Halloween","halloween","Fright night, costume competition or a horror double bill. Fog and bats look on the poster.");
+    add(iso(y,11,5),"Fireworks night","fireworks","'See the fireworks, then see a film' evening post.");
+    const bf=addDays(nthDow(y,11,4,4),1);add(bf,"Black Friday","blackfriday","Gift card offers and combo deals: post on the Thursday and again on the day.");
+    add(iso(y,11,20),"Christmas build-up","christmas","Christmas line-up, gift cards and festive films. Fairy lights and snow look.",{lead:5});
+    add(iso(y,12,20),ni?"Christmas holidays (approx.)":"Christmas holidays (approx.)","christmas","Holiday showtimes and family films every day. Post a week before.",{approx:true,lead:7});
+    add(iso(y,12,25),"Christmas Day","christmas","A 'Merry Christmas from all of us at "+S().name+"' post (check your opening hours).");
+    add(iso(y,12,26),ni?"Boxing Day":"St Stephen's Day","christmas","Big family cinema day: post times the night before.");
+    add(iso(y,12,31),"New Year's Eve","newyear","Opening hours and a 'film of the year?' question to end the year.")}
+  /* big releases from the release planner */
+  if(typeof RELEASES!=="undefined")for(const r of RELEASES)out.push({date:r.d,name:r.t+" opens",idea:loc(r.angle),release:r.id});
+  const T=todayIso(),end=addDays(T,365);return out.filter(e=>e.date>=T&&e.date<=end).sort((a,b)=>a.date.localeCompare(b.date))}
+function renderCalendar(){const el=$("#calBody");if(!el)return;const ev=calEvents(),T=todayIso();let h="",mon="";
+  const soon=ev.filter(e=>e.date<=addDays(T,14));
+  h+=`<div class="panel"><div class="ph"><h2>Coming up in the next two weeks</h2></div>${soon.length?soon.map(calRow).join(""):'<p class="tip">Nothing major in the next two weeks. A good time for fun engagement posts from the caption bank.</p>'}</div>`;
+  for(const e of ev.filter(e=>e.date>addDays(T,14))){const m=new Date(e.date+"T12:00").toLocaleDateString("en-GB",{month:"long",year:"numeric"});if(m!==mon){if(mon)h+="</div>";mon=m;h+=`<div class="panel" style="margin-top:16px"><div class="ph"><h2>${m}</h2></div>`}h+=calRow(e)}
+  if(mon)h+="</div>";el.innerHTML=h}
+function calRow(e,i){const d=new Date(e.date+"T12:00"),days=Math.round((d-new Date(todayIso()+"T12:00"))/864e5),k=btoa(unescape(encodeURIComponent(e.date+e.name))).replace(/=/g,"");
+  return`<div class="calrow"><div class="date"><b>${d.getDate()}</b><span>${d.toLocaleDateString("en-GB",{weekday:"short"})}</span></div><div style="min-width:0"><h3>${esc(e.name)}${e.approx?' <span class="pill">check dates</span>':""}</h3><p class="angle">${esc(e.idea)}</p><span class="tip" style="margin:0">${days===0?"Today":days===1?"Tomorrow":"In "+days+" days"}${e.lead&&days>e.lead?` · post from ${fmtShort(addDays(e.date,-e.lead))}`:""}</span></div>
+    <div class="acts">${e.season?`<button class="btn small primary" data-calseason="${e.season}" data-t="${esc(e.name)}">Design it</button>`:e.release?`<button class="btn small primary" data-relgo="${e.release}">Release ad</button>`:""}<button class="btn small" data-calcap="${esc(e.date)}" data-n="${esc(e.name)}" data-i="${esc(e.idea)}">Plan a post</button></div></div>`}
+document.addEventListener("click",async e=>{const s=e.target.closest("[data-calseason]");if(s){seasonDesign(s.dataset.calseason,"square",s.dataset.t.toUpperCase());return}
+  const r=e.target.closest("[data-relgo]");if(r){go("releases");setTimeout(()=>{const b=document.querySelector(`[data-relad="${r.dataset.relgo}"][data-k="announce"]`);if(b)b.click()},100);return}
+  const c=e.target.closest("[data-calcap]");if(c){const lead=addDays(c.dataset.calcap,-2)<todayIso()?todayIso():addDays(c.dataset.calcap,-2);startNew();
+    Object.assign(cur,{type:"event",kicker:c.dataset.n.toUpperCase(),headline:c.dataset.n,sub:"",details:fmtShort(c.dataset.calcap),date:lead,time:"18:30",status:"idea",caption:`${c.dataset.n} at ${S().name}! ${c.dataset.i}`});fillForm();go("studio");toast("Post planned for "+fmtShort(lead)+". Edit it, then save")}});
+
+/* ---------- toolkit: caption bank, hashtags, sizes, checklists, brand settings ---------- */
+const CAPS={
+  "New films":["🎬 [FILM] is now showing at IMC Enniskillen! Who's coming with you? Tag them below 👇\n🎟️ Book at imc.ie","Out today 🍿 [FILM] lands on our screens this Friday. Drop a 🔥 if you're already counting the days.","Big screen, big sound, big film. [FILM] is here. What's the first scene you can't wait to see?"],
+  "Family & Kids Club":["🧸 Kids Club this week: [FILM] for just [PRICE]! Which wee film fan is coming? 👇","Rainy day sorted ☔ Family films every day this week at IMC Enniskillen. Times at imc.ie","Midterm sorted 🙌 Morning films for the kids, popcorn included. Save this post for the week!"],
+  "Deals & food":["🍿 [DEAL] for just [PRICE]. Show this post at the kiosk? Tag the friend who owes you a cinema trip 😅","Sweet or salted? 🍯🧂 Settle it once and for all in the comments.","Movie night for two: 2 tickets + a share combo for [PRICE]. Date night? Done. 💕"],
+  "LUXX":["Kick back in LUXX 💺 Luxury recliner seats for [FILM]. Book your LUXX seat at imc.ie","Feet up, phone down, film on. LUXX recliners at IMC Enniskillen. Have you tried them yet?","The best seats in the house are in LUXX ✨ Showing today: [FILM] at [TIME]."],
+  "Events & one-offs":["🔥 ONE NIGHT ONLY: [FILM] on [DATE]. Seats are limited, so tag your crew before it sells out.","Opening night 🎉 Who's joining us for the first showing of [FILM] at [TIME]?","💙 Relaxed screening: [FILM] on [DATE]. Lights up a little, sound down a little. Please share with families who'd love to know."],
+  "Engagement & fun":["🤔 GUESS THE FILM! 🦖 🏝️ 🚙 First right answer in the comments gets a shout-out 🏆","Best seat in the house? Back row, middle, or right at the front? 👇","Describe your favourite film in 3 emojis. We'll go first: 👻🔦🏠"],
+  "Seasonal":["🎃 Spooky season is here! Our Halloween line-up is on imc.ie. What's the scariest film you've ever seen?","🎄 Christmas at IMC Enniskillen: festive films, family treats and gift cards at the kiosk. Who's on your list?","☀️ Summer holidays sorted. Kids Club every morning and big films all day. Save this for a rainy day!"],
+  "Thank you & community":["A massive thank you to everyone who came out for [FILM] this weekend 🙌 What did you think? (No spoilers!)","Congratulations to [CLUB/SCHOOL] on [ACHIEVEMENT]! Team night at the movies is on us 🏆","We're hiring! Love films and people? Ask at the kiosk or send us a message. 🎟️"]};
+const TAGSETS={"Every post":()=>S().tags,"Family & kids":()=>"#KidsClub #FamilyFun #HalfTerm #ThingsToDoWithKids","Food & deals":()=>"#CinemaSnacks #Popcorn #MovieNight #DateNight","Big releases":()=>"#NowShowing #NewRelease #BigScreen #MovieNight","LUXX":()=>"#LUXX #ReclinerSeats #CinemaInStyle #TreatYourself"};
+const SIZES_GUIDE=[["Facebook / Instagram feed","1080 × 1080 or 1080 × 1350","Feed 1:1 or Feed 4:5"],["Stories & Reels","1080 × 1920","Story 9:16"],["Facebook event cover","1920 × 1005","FB event"],["Facebook page cover","1640 × 624","FB cover"],["Foyer TVs","1920 × 1080","Foyer 16:9"],["Posters & flyers (print)","A4 / A3 at 300 dpi","Print A4/A3, then PDF"],["X / LinkedIn","1920 × 1080","Foyer 16:9"]];
+function renderToolkit(){const el=$("#toolBody");if(!el)return;const b=brandFor(site)||{},x=SITES[site]||SITES.enniskillen,loc2=t=>loc(t);
+  el.innerHTML=`<div class="panel"><div class="ph"><h2>Caption bank</h2><span class="tip" style="margin:0">Swap the [BRACKETS] for your details.</span></div><div class="filters" id="capCats">${Object.keys(CAPS).map((k,i)=>`<button data-capcat="${esc(k)}" aria-pressed="${i===(renderToolkit.cat||0)}">${esc(k)}</button>`).join("")}</div>
+    <div class="caps">${CAPS[Object.keys(CAPS)[renderToolkit.cat||0]].map(c=>{const t=loc2(c)+(S().signoff?"\n\n"+S().signoff:"");return`<div class="cap"><p>${esc(t).replace(/\n/g,"<br>")}</p><div class="row-btns"><button class="btn small" data-copy="${esc(t)}">Copy</button><button class="btn small primary" data-usecap="${esc(t)}">Use in Create ad</button></div></div>`}).join("")}</div></div>
+  <div class="grid two" style="margin-top:16px"><div class="panel"><h2>Hashtag sets</h2><div class="tagsets">${Object.entries(TAGSETS).map(([n,f])=>`<div><b>${esc(n)}</b><code>${esc(f())}</code><button class="btn small" data-copy="${esc(f())}">Copy</button></div>`).join("")}</div><p class="tip">3 to 6 hashtags per post is plenty. Always include the town.</p></div>
+    <div class="panel"><h2>Sizes cheat sheet</h2><table class="sizes"><thead><tr><th>Where</th><th>Size</th><th>Pick in the editor</th></tr></thead><tbody>${SIZES_GUIDE.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></div>
+  <div class="grid two" style="margin-top:16px"><div class="panel"><h2>Before you post</h2><ul class="checklist">
+      <li>Film title, date and times match imc.ie</li><li>Price is right (Deals page shows the imc.ie price)</li><li>Certificate shown for the film</li><li>Booking link or "Book at imc.ie" included</li><li>Official poster or your own photo (no AI-made film art)</li><li>Alt text added: describe the image in one sentence</li><li>3–6 hashtags, including the town</li><li>Posted at a busy time: Thu–Fri 5–9pm, Sun evening</li></ul></div>
+    <div class="panel"><h2>Brand settings for ${esc(x.name)}</h2><p class="tip" style="margin-top:0">Used in captions, hashtags and the caption writer for this cinema. Saved in this browser.</p>
+      <label class="field"><span class="flabel">Hashtags</span><input id="bTags" value="${esc(b.tags||x.tags)}"></label>
+      <label class="field"><span class="flabel">Sign-off added to captions (optional)</span><input id="bSign" value="${esc(b.signoff||"")}" placeholder="e.g. See you at the movies! 🍿"></label>
+      <label class="field"><span class="flabel">How to describe the cinema (for the caption writer)</span><input id="bAbout" value="${esc(b.about||x.about||"")}" placeholder="e.g. a 7-screen cinema on Factory Road with LUXX recliners"></label>
+      <div class="row-btns" style="margin-top:8px"><button class="btn primary" id="bSave">Save</button><button class="btn" id="bReset">Reset to defaults</button></div></div></div>`}
+document.addEventListener("click",e=>{const c=e.target.closest("[data-capcat]");if(c){renderToolkit.cat=Object.keys(CAPS).indexOf(c.dataset.capcat);renderToolkit();return}
+  const cp=e.target.closest("[data-copy]");if(cp){navigator.clipboard?.writeText(cp.dataset.copy).then(()=>toast("Copied"),()=>toast("Couldn't copy. Select the text and copy it instead"));return}
+  const u=e.target.closest("[data-usecap]");if(u){startNew();cur.caption=u.dataset.usecap;fillForm();go("studio");toast("Caption added. Fill in the [BRACKETS]");return}
+  if(e.target.id==="bSave"){const o={tags:$("#bTags").value.trim(),signoff:$("#bSign").value.trim(),about:$("#bAbout").value.trim()};for(const k in o)if(!o[k])delete o[k];brandSave(site,o);toast("Brand settings saved for "+(SITES[site]||{}).name);renderToolkit();return}
+  if(e.target.id==="bReset"){brandSave(site,{});toast("Brand settings reset");renderToolkit()}});
+
 /* ---------- cinema picker ---------- */
 function fillSitePicker(){const sel=$("#sitesel");if(!sel)return;const have=new Set(((CINEMAS&&CINEMAS.cinemas)||[]).filter(c=>c.ok).map(c=>c.id));have.add("enniskillen");
   const opt=([k,x])=>`<option value="${k}">${esc(x.name)}${CINEMAS&&!have.has(k)?" · no listings yet":""}</option>`;
@@ -1173,7 +1303,7 @@ function siteText(){const x=S();$$(".sitename").forEach(e=>e.textContent=x.name)
   const im=document.querySelector('a[href*="imdb.com/calendar"]');if(im){im.href="https://www.imdb.com/calendar/?region="+(x.ni?"GB":"IE");im.textContent="IMDb "+(x.ni?"UK":"Ireland")+" calendar ↗"}}
 $("#sitesel").addEventListener("change",async e=>{site=e.target.value;try{localStorage.setItem(SITE_LS,site)}catch(err){}
   scope();siteText();renderPlays();startNew();ratingSys=pickRating();IMC=null;imcTried=false;lastShowKey="";renderAll();renderToday();renderWhatsOn();if(view==="deals")renderDeals();toast("Switched to "+S().name);
-  await loadImc();imcTried=true;renderToday();renderWhatsOn();if(view==="deals")renderDeals();if(view==="foyer")renderFoyer()});
+  await loadImc();imcTried=true;renderToday();renderWhatsOn();if(view==="deals")renderDeals();if(view==="foyer")renderFoyer();if(view==="calendar")renderCalendar();if(view==="toolkit")renderToolkit()});
 fillSitePicker();siteText();
 
 loadImc().finally(()=>{imcTried=true;renderToday();renderWhatsOn()});
