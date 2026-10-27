@@ -183,6 +183,8 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .fmeta .sens{color:var(--velvet);font-weight:700}
 .ftimes{display:flex;gap:6px;flex-wrap:wrap}
 .ftimes span{font-family:var(--f-mono);font-size:13px;font-weight:600;padding:3px 8px;border-radius:6px;background:var(--chip);font-variant-numeric:tabular-nums}
+.kidsp{margin-top:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--amber) 14%,var(--panel)),var(--panel) 60%)}
+.kidsfilms{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.kf{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;align-items:center}.kf img{width:52px;aspect-ratio:2/3;object-fit:cover;border-radius:5px;background:var(--chip)}.kf .m{font-size:12px;color:var(--muted)}.kf .ftimes{margin-top:4px}
 .ftimes span.kc,.kclegend .kc{background:color-mix(in srgb,var(--amber) 24%,var(--panel));box-shadow:inset 0 0 0 1.5px var(--amber);display:inline-flex;align-items:center;gap:6px}
 .kc i{font-style:normal;font-family:var(--f-body);font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:99px;background:var(--amber);color:#2a1800}
 .kclegend{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;margin-right:auto;margin-left:12px}.kclegend .kc{padding:2px 4px;border-radius:6px}
@@ -1111,6 +1113,33 @@ function filmPayload(f,mode){const d=firstDate(f);return{title:f.title,poster:as
 function makeFilm(f,mode,fmt){openEditor({kind:"film",mode,fmt,film:filmPayload(f,mode)})}
 function makeTimes(date,fmt){const films=filmsOn(date);if(!films.length){toast("No film times for that day yet");return}
   openEditor({kind:"listing",fmt,heading:date===todayIso()?"Today at "+S().name:"At "+S().name,sub:fmtLong(date),rows:films.map(f=>({t:f.title,times:f.times,cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||"",luxx:!!f.luxx}))})}
+/* ---------- Kids Club: the weekend's (or week's) Kids Club showings from imc.ie, for ads, Reels and captions ---------- */
+const DOW=d=>new Date(d+"T12:00").getDay();
+function kidsRange(range){const T=todayIso();if(range==="week")return{from:T,to:addDays(T,6),label:"next 7 days"};
+  /* this weekend: Friday to Sunday (from today if the weekend has started) */
+  const w=DOW(T);if(w===5||w===6||w===0)return{from:T,to:addDays(T,w===0?0:7-w),label:"this weekend"};const fri=addDays(T,5-w);return{from:fri,to:addDays(fri,2),label:"this weekend"}}
+const knorm=t=>String(t||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+function kidsPayload(range){const R=kidsRange(range),m=new Map(),dates=new Set();
+  for(const f of allFilms())for(const s of f.sessions||[]){if(!isKids(s)||s.date<R.from||s.date>R.to||!notStarted(s.date,s.time))continue;
+    const sens=/^sensory\s*/i.test(f.title)||!!f.sensory,name=f.title.replace(/^sensory\s*:?\s*/i,"").trim(),k=knorm(name)+(sens?"|s":"");
+    const o=m.get(k)||{t:name+(sens?" (relaxed screening)":""),cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||"",poster:asset(f.posterFile)||f.poster||"",runtime:f.runtime||"",slots:[]};
+    if(!o.slots.some(x=>x.d===s.date&&x.t===s.time))o.slots.push({d:s.date,t:s.time});o.poster=o.poster||asset(f.posterFile)||f.poster||"";m.set(k,o);dates.add(s.date)}
+  const days=[...dates].sort(),dl=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"short"}),sameAll=f=>{const by=days.map(d=>f.slots.filter(s=>s.d===d).map(s=>s.t).sort().join(","));return by.every(x=>x===by[0])};
+  const films=[...m.values()].map(f=>{f.slots.sort((a,b)=>(a.d+a.t).localeCompare(b.d+b.t));const times=sameAll(f)?[...new Set(f.slots.map(s=>s.t))].sort():f.slots.slice(0,6).map(s=>dl(s.d)+" "+s.t);return{...f,times}}).sort((a,b)=>a.slots[0].t.localeCompare(b.slots[0].t));
+  const span=days.length?(days.length===1?fmtLong(days[0]):dl(days[0])+" "+fmtShort(days[0]).replace(/^\w+\s/,"")+" – "+dl(days[days.length-1])+" "+fmtShort(days[days.length-1]).replace(/^\w+\s/,"")):"";
+  const P=imcPrices(),tk=(P&&P.tickets)||[],pr=n=>(tk.find(t=>t.name.toLowerCase()===n)||{}).price||"";
+  return{range,label:R.label,days,span,everyDay:films.every(sameAll)&&days.length>1?days.map(dl).join(", "):"",films,price:pr("kids club"),adult:pr("kids club adult"),meal:pr("kids club meal deal")}}
+function kidsAd(range,fmt,tpl){const k=kidsPayload(range);if(!k.films.length){toast(range==="weekend"?"No Kids Club showings found for this weekend yet. Try the next 7 days":"No Kids Club showings in the next 7 days");return}
+  openEditor({kind:"kidsclub",fmt,tpl:tpl||"listing",...k})}
+function kidsCaption(range){const k=kidsPayload(range);if(!k.films.length)return"";const nm=S().name;
+  return`Kids Club ${k.label==="this weekend"?"this weekend":"this week"} at ${nm}! 🍿🎬${k.price?` Just ${k.price} a ticket${k.adult===k.price?" for kids and grown-ups":""}.`:""}\n\n`+k.films.map(f=>`🎟️ ${f.t}${f.cert?` (${f.cert})`:""}: ${k.everyDay&&!/\s/.test(f.times[0])?k.everyDay.replace(/, ([^,]+)$/," & $1")+" at ":""}${f.times.join(", ")}`).join("\n")+(k.meal?`\n\nMake it a treat with the Kids Club Meal Deal (${k.meal}).`:"")+`\n\nBook at imc.ie or at the box office.\n\n${(S().tags||"").trim()} #KidsClub #FamilyFun`}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-kidsad]");if(b){kidsAd(b.dataset.kidsad,b.dataset.fmt||"square",b.dataset.tpl);return}
+  const c=e.target.closest("[data-kidscap]");if(c){const t=kidsCaption(c.dataset.kidscap);if(!t){toast("No Kids Club showings found for that range");return}navigator.clipboard?.writeText(t).then(()=>toast("Kids Club caption copied"),()=>prompt("Copy this caption",t))}});
+function kidsPanel(){const k=kidsPayload("weekend"),w=k.films.length?k:kidsPayload("week");if(!w.films.length)return"";
+  return`<div class="panel kidsp"><div class="ph"><h2>Kids Club ${w===k?"this weekend":"this week"}</h2><span class="tip" style="margin:0">${w.price?`${esc(w.price)} tickets${w.adult===w.price?" (adults too)":""}`:""}${w.meal?` · Meal deal ${esc(w.meal)}`:""} · ${esc(w.span)}</span></div>
+    <div class="kidsfilms">${w.films.map(f=>`<div class="kf"><img src="${esc(f.poster)}" alt="" loading="lazy"><div><b>${esc(f.t)}</b>${f.cert?` <span class="m">${esc(f.cert)}</span>`:""}<div class="ftimes">${f.times.map(t=>`<span class="kc">${esc(t)}</span>`).join("")}</div></div></div>`).join("")}</div>
+    <div class="row-btns" style="margin-top:12px"><button class="btn primary" data-kidsad="${w.range}" data-fmt="square">Kids Club ad</button><button class="btn" data-kidsad="${w.range}" data-fmt="portrait">4:5 post</button><button class="btn" data-kidsad="${w.range}" data-fmt="story">Story</button><button class="btn" data-kidsad="${w.range}" data-fmt="story" data-tpl="reel">Reel (video)</button><button class="btn" data-kidsad="${w.range}" data-fmt="wide">Foyer 16:9</button><button class="btn" data-kidscap="${w.range}">Copy caption</button>${w===k?`<button class="btn ghost" data-kidsad="week" data-fmt="square">Next 7 days instead</button>`:""}</div></div>`}
+
 function writeFilmPost(f,mode){startNew();const d=firstDate(f);
   Object.assign(cur,{type:mode==="soon"?"soon":mode==="kids"?"kids":"now",kicker:TPL[mode==="soon"?"soon":mode==="kids"?"kids":"now"].kicker,headline:f.title,sub:f.luxx?"In LUXX luxury recliners":(f.synopsis||"").split(/(?<=\.)\s/)[0].slice(0,88),
     details:mode==="soon"?("Opens "+fmtShort(d)):((f.times||[]).slice(0,5).join(" · ")),cta:"Book at imc.ie",status:"draft",tags:S().tags+" #"+f.title.replace(/[^A-Za-z0-9]/g,"")});
@@ -1146,7 +1175,7 @@ function stamp(){if(!IMC||!IMC.updated)return"";const f=d=>new Date(d).toLocaleS
 function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").textContent=fmtLong(todayIso());$("#todayStamp").textContent=stamp();
   if(!IMC){el.innerHTML=startPanel()+noData();return}
   const films=keyed(filmsOn(todayIso())),soon=keyed(allFilms().filter(f=>{const d=firstDate(f);return d&&d>todayIso()}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))).slice(0,6));
-  el.innerHTML=startPanel()+`<div class="panel"><div class="ph"><h2>Showing today</h2>${films.some(f=>(f.kidsTimes||[]).length)?'<span class="kclegend"><span class="kc"><i>Kids Club</i></span> showings are highlighted</span>':""}<div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
+  el.innerHTML=startPanel()+kidsPanel()+`<div class="panel" style="margin-top:16px"><div class="ph"><h2>Showing today</h2>${films.some(f=>(f.kidsTimes||[]).length)?'<span class="kclegend"><span class="kc"><i>Kids Club</i></span> showings are highlighted</span>':""}<div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
     ${films.length?`<div class="films">${films.map(f=>filmCard(f,f.sources?.has("kids")&&!f.sources?.has("today")?"kids":f.luxx?"luxx":"now")).join("")}</div>`:(filmsOn(todayIso(),true).length?`<p class="tip">Every show today has started. Tomorrow\'s times are under <button class="btn small ghost" data-wo="week">What\'s on → Next 7 days</button></p>`:`<p class="tip">No times for today in the latest import. ${IMC.today&&IMC.today.length===0?"The imc.ie film-times page may have been unavailable; the next import runs within 3 hours.":""}</p>`)}</div>
     <div class="grid two" style="margin-top:16px"><div class="panel"><div class="ph"><h2>Opening soon</h2><button class="btn small ghost" data-wo="soon">All coming soon →</button></div><div class="films compact">${soon.map(f=>filmCard(f,"soon")).join("")||'<p class="tip">Nothing announced yet.</p>'}</div></div>
     <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):imcMatch(d.name)?esc(imcMatch(d.name).price)+' <em>(imc.ie)</em>':'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
@@ -1171,6 +1200,7 @@ function renderWhatsOn(){const el=$("#woBody");if(!el)return;$("#woStamp").textC
   else if(woTab==="soon"){const f=keyed(all.filter(x=>{const d=firstDate(x);return d&&d>T}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))));html=f.length?`<div class="films">${f.map(x=>filmCard(x,"soon")).join("")}</div>`:'<p class="tip">Nothing announced yet.</p>'}
   else{const pick=woTab==="kids"?x=>x.sources.has("kids"):woTab==="luxx"?x=>x.luxx:x=>x.sensory;const f=keyed(all.filter(pick).map(x=>{const up=x.sessions.filter(s=>notStarted(s.date,s.time)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));return{...x,times:up.filter(s=>s.date===up[0]?.date).map(s=>s.time),nextDate:up[0]?.date}}));
     html=f.length?`<div class="films">${f.map(x=>filmCard({...x,times:x.times.length?[fmtShort(x.nextDate),...x.times]:[]},woTab==="kids"?"kids":woTab==="luxx"?"luxx":"now")).join("")}</div>`:'<p class="tip">None listed right now.</p>'}
+  if(woTab==="kids")html=kidsPanel()+html;
   if(woTab==="luxx")html=`<div class="row-btns" style="margin-bottom:12px"><button class="btn small primary" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button><button class="btn small" data-luxxad="portrait">LUXX 4:5 post</button></div>`+html;
   el.innerHTML=html;hydrateSvgs(el)}
 /* LUXX recliner ad: today's LUXX showings (or the next day that has them) and the LUXX price from imc.ie */
@@ -1513,6 +1543,7 @@ function startPanel(){const se=hSeasonNow()[0];
     ${se?t("✨",se[1]+" post","Seasonal look with animation",`data-seasonpost="${se[0]}"`):""}
     ${t("🍿","Promote a deal","Real prices & photos from imc.ie",'data-go="deals"')}
     ${t("🎬","Coming-soon film","Pick a film to announce",'data-wo="soon"')}
+    ${t("🧸","Kids Club ad","This weekend's Kids Club films & times",'data-kidsad="weekend" data-fmt="square"')}
     ${t("💺","LUXX ad","Today's LUXX showings",'data-luxxad="square"')}
     ${t("🎞️","Cinema Reel","9:16 video for Reels, TikTok & Stories",'data-reelgo="0"')}
     ${t("📺","Foyer TV trailers","Safe trailer loop or download",'data-go="foyer"')}

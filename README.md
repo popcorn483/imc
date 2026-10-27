@@ -78,6 +78,13 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## Kids Club
+
+Kids Club showings come from imc.ie, which labels each one, so there's nothing to keep up to date by hand.
+- **Today page:** Kids Club times are highlighted, and a **Kids Club this weekend** panel (Fri–Sun, from today if the weekend has started) shows each Kids Club film with its poster and times. The Kids Club ticket and meal deal prices come from imc.ie.
+- **Ads:** a square post, 4:5 post, Story, a 12-second Reel ("Weekend plans?", then each film's poster and times, then the full list and price), and a 16:9 foyer screen. Plus **Copy caption**, which gives a ready-to-post caption with every film, day and time.
+- **No Kids Club this weekend?** The panel switches to the next 7 days. It's also on What's on → Kids Club, and there's a start-panel tile.
+
 ## LUXX
 
 The hub's **LUXX** page (top bar, or Menu → Every day) is everything for the LUXX recliners:

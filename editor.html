@@ -371,7 +371,7 @@ const BADGES={
   tonight:{n:"Tonight",style:"stamp",text:"TONIGHT",sub:"ONE NIGHT ONLY",c1:"#ffc23d",c2:"#1a1440",r:-.17},
   sash:{n:"Corner sash",style:"sash",text:"NEW RELEASE",sub:"",c1:"#e2452e",c2:"#ffffff",r:Math.PI/4,x:.86,y:.14},
   premier:{n:"Premier screen",style:"luxx",text:"PREMIER",sub:"SCREEN",c1:"#1a1440",c2:"#cdd8ee"},
-  kids:{n:"Kids Club",style:"stamp",text:"KIDS CLUB",sub:"£3 TICKETS",c1:"#f39a2b",c2:"#ffffff",r:.12},
+  kids:{n:"Kids Club",style:"stamp",text:"KIDS CLUB",sub:"FAMILY FILMS",c1:"#f39a2b",c2:"#ffffff",r:.12},
   price:{n:"Price burst",style:"stamp",text:"£5",sub:"ALL DAY TUESDAY",c1:"#e2452e",c2:"#ffffff",r:-.12},
   ticket:{n:"Price ticket",group:"deal",style:"ticket",text:"£X.XX",sub:"ONLY",c1:"#ffd84a",c2:"#1a1440",r:-.06},
   menu:{n:"What's included",group:"deal",style:"menu",text:"SHARE COMBO",sub:"While stocks last",items:"Large sharing popcorn\n2 regular drinks",c1:"#110e30",c2:"#ffffff"},
@@ -1859,6 +1859,34 @@ $("#dealLayouts").addEventListener("click",e=>{const b=e.target.closest("[data-d
 
 /* ---------- listings ---------- */
 function todayRows(){const f=(IMC&&IMC.today)||[];return f.map(x=>({t:x.title,times:x.times||[],cert:x.cert||"",system:x.certSystem||"",luxx:!!x.luxx}))}
+/* ---------- Kids Club ads: the weekend's Kids Club films with posters, times and the Kids Club price ---------- */
+function applyKids(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,films=(h.films||[]).slice(0,tall?5:4),L=[],reel=h.tpl==="reel";
+  films.forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src)});
+  const wk=h.label==="this weekend",title=wk?"THIS WEEKEND":"THIS WEEK",u=Math.min(f.w,f.h)/1080;
+  const rows=films.map(x=>({t:x.t,times:x.times,cert:x.cert,system:x.system}));
+  const listing=(x,y,maxH,maxW)=>{const need=listingH(rows.length),s=Math.min(.95,maxH*f.h/u/need,(maxW||.9)*f.w/u/940);return mk("listing",null,{text:"Kids Club · "+(h.span||title),sub:h.everyDay?"Same times "+h.everyDay.replace(/, ([^,]+)$/," & $1"):SITE_NAME,rows,x,y,s,anim:"slide",delay:.12})};
+  const poster=(x,i,o)=>x.poster?{id:uid(),kind:"pphoto",src:x.poster,label:x.t+" poster",card:true,ar:.667,x:.5,y:.5,s:.42,r:(i%2?.04:-.04),o:1,anim:"drop",delay:.05+i*.07,...o}:null;
+  const badge=o=>mk("badge","kids",{text:"KIDS CLUB",sub:h.price?h.price+" TICKETS":"FAMILY FILMS",anim:"wiggle",...o});
+  const price=o=>h.price?mk("badge","price",{text:h.price,sub:h.adult&&h.adult===h.price?"KIDS & ADULTS":"PER TICKET",r:-.1,c1:"#e2452e",c2:"#ffffff",anim:"slam",delay:.3,...o}):null;
+  const small=(y,o)=>mk("text","small",{text:(h.meal?"KIDS CLUB MEAL DEAL "+h.meal+" · ":"")+"BOOK AT IMC.IE",y,size:tall?28:22,sp:5,anim:"fade",delay:.4,...o});
+  S.label="Kids Club "+(h.span||"");S.bg="sky";S.frame={...S.frame,style:"brandbar",accent:"#ffd84a",logo:true};let fx={balloons:true,confetti:true},dur=6;
+  const row=(y,s,x0,x1)=>films.map((x,i,a)=>poster(x,i,{x:a.length===1?(x0+x1)/2:x0+(x1-x0)*i/(a.length-1),y,s})).filter(Boolean);
+  if(reel){S.fmt="story";dur=12;const n=Math.max(1,films.length),seg=.5/n;
+    const hook=wk?"WEEKEND PLANS?":"SCHOOL'S OUT?";L.push(mk("text","title",{text:hook,y:.42,size:fitSize(hook,"display",150,60,900),c1:"#ffffff",anim:"slam",ilen:.4,until:.17}));
+    L.push(badge({y:.2,s:1.3,anim:"pop",delay:.17,ilen:.4,until:.69}));
+    films.forEach((x,i)=>{const a=.19+i*seg,b=a+seg;const p=poster(x,i,{y:.45,s:1.2,r:i%2?.03:-.03,anim:"zoom",delay:a,until:b,ilen:.4});if(p)L.push(p);
+      const tt=x.t.toUpperCase(),two=tt.length>22?(()=>{const w=tt.split(" "),m=Math.ceil(w.length/2);return w.slice(0,m).join(" ")+"\n"+w.slice(m).join(" ")})():tt;
+      L.push(mk("text","title",{text:two,y:.66,size:fitSize(two,"display",96,40,880),anim:"slide",delay:a+.02,until:b,ilen:.4}));
+      L.push(mk("text","sub",{text:x.times.join("  ·  "),y:two.includes("\n")?.735:.715,size:46,font:"mono",c1:"#ffd84a",anim:"slide",delay:a+.04,until:b,ilen:.4}))});
+    L.push(badge({y:.18,s:1.1,anim:"pop",delay:.7,ilen:.4}),{...listing(.5,.47,.3,.9),delay:.73,ilen:.4});const pb=price({x:.82,y:.27,s:.75,delay:.8,ilen:.4});if(pb)L.push(pb);L.push(small(.76,{delay:.84,ilen:.4}));fx={balloons:true,popcornrain:true};showSafe=true}
+  else if(tall){L.push(badge({x:h.price?.32:.5,y:.185,s:1.05,r:-.06}),mk("text","title",{text:title,y:.275,size:fitSize(title,"display",120,56,820),anim:"slide",delay:.05}),mk("text","sub",{text:h.span||"",y:.31,size:42,c1:"#ffd84a",anim:"slide",delay:.08}));
+    L.push(...row(.43,.72,.2,.8));L.push(listing(.5,.635,.22));const pb=price({x:.7,y:.185,s:.85});if(pb)L.push(pb);L.push(small(.765));showSafe=true}
+  else if(wide){L.push(badge({x:.1,y:.2,s:.75,r:-.06}),mk("text","title",{text:title,x:.37,y:.19,size:fitSize(title,"display",100,40,600),anim:"slide",delay:.05}),mk("text","sub",{text:h.span||"",x:.37,y:.28,size:38,c1:"#ffd84a",anim:"slide",delay:.08}));
+    L.push(...row(.62,.62,.08,.45));L.push(listing(.75,.52,.72,.46));const pb=price({x:.6,y:.2,s:.62});if(pb)L.push(pb);L.push(small(.88,{x:.27,size:22}))}
+  else{const port=ar<.95;L.push(badge({x:.16,y:port?.12:.14,s:port?.72:.68,r:-.08}),mk("text","title",{text:title,x:.62,y:port?.1:.11,size:fitSize(title,"display",96,40,560),anim:"slide",delay:.05}),mk("text","sub",{text:h.span||"",x:.62,y:port?.15:.18,size:36,c1:"#ffd84a",anim:"slide",delay:.08}));
+    L.push(...row(port?.34:.37,port?.6:.52,.18,.82));L.push(listing(.5,port?.68:.715,port?.3:.28));const pb=price({x:.9,y:port?.5:.535,s:.58});if(pb)L.push(pb);L.push(small(port?.875:.905))}
+  S.layers=L.filter(Boolean);S.motion={...S.motion,dur,fx,amt:.75};selId=null;clampPhoto();syncAll();commit();
+  toast("Kids Club "+(wk?"weekend":"week")+" ad ready, with times from imc.ie. Click any text to change it")}
 function applyListing(h){S.label="film times "+(h.sub||"");const rows=h.rows||[];rows.forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src)});S.bg="stage";S.frame={...S.frame,style:"brandbar",logo:true};const f=FORMATS[S.fmt],u=Math.min(f.w,f.h)/1080,avail=(f.h-150*u)/u*.92,need=listingH(rows.length);
   S.layers=[mk("listing",null,{text:h.heading||"Today at "+SITE_NAME,sub:h.sub||new Date().toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"}),rows,y:(f.h-150*u)/2/f.h,s:Math.min(1,avail/need,(f.w/u*.92)/940)})];
   S.motion={...S.motion,fx:{}};selId=null;syncAll();commit()}
@@ -1887,6 +1915,7 @@ function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-ha
   else if(h.kind==="clip")applyClip(h.deal);
   else if(h.kind==="luxx")applyLuxx(h);
   else if(h.kind==="luxxkit")applyLuxxKit(h);
+  else if(h.kind==="kidsclub")applyKids(h);
   else if(h.kind==="season"){applySeason(h.key,true);if(h.title){const t=S.layers.find(l=>l.kind==="text");if(t)t.text=h.title}}
   else if(h.kind==="listing")applyListing(h);
   else if(h.kind==="reel"){applyPreset(REELS[h.i|0]||REELS[0],true);const b=$('[data-tab="layouts"]');if(b){b.click();setTimeout(()=>{const r=$("#reels");if(r)r.closest(".sec").scrollIntoView({block:"start"})},300)}}
