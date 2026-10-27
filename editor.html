@@ -176,7 +176,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 <body data-standalone="1">
 <div class="app">
   <header class="top">
-    <div class="brandmark"><a id="back" href="index.html" hidden>← Ad Studio</a><img id="brandLogo" src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Photo</span> Editor</b></div>
+    <div class="brandmark"><a id="back" href="index.html" target="imc-hub" hidden>← Hub</a><img id="brandLogo" src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Photo</span> Editor</b></div>
     <div class="menuwrap"><button class="btn ddbtn" id="fmtBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fmts"><small>Size</small> <span id="fmtName">Feed 1:1</span> ▾</button><div class="ddmenu" id="fmts" role="menu" aria-label="Size" hidden></div></div>
     <div class="topact">
       <button class="btn icon" id="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
@@ -341,6 +341,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 </div>
 <div class="toast" id="toast" hidden></div>
 
+<script>try{window.name="imc-editor"}catch(e){}</script>
 <script>
 (function(){
 "use strict";

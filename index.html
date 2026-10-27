@@ -339,7 +339,7 @@ body.menuopen{overflow:hidden}
       <button class="qtab" data-view="studio">Create a post</button>
       <button class="qtab" data-view="foyer">Foyer TVs</button>
     </nav>
-    <div class="topright"><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary edlink" href="editor.html" target="_blank" rel="noopener">Editor ↗</a></div>
+    <div class="topright"><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary edlink" href="editor.html" target="imc-editor">Editor ↗</a></div>
   </header>
   <div class="scrim" id="scrim" hidden></div>
   <aside class="drawer" id="drawer" aria-label="Menu" hidden>
@@ -352,7 +352,7 @@ body.menuopen{overflow:hidden}
       <button data-view="luxx">LUXX<small>Recliner ads, Reels, photos and captions</small></button>
       <h3>Make</h3>
       <button data-view="studio">Create a post<small>Quick poster and caption</small></button>
-      <a class="navlink" href="editor.html" target="_blank" rel="noopener">Photo &amp; video editor ↗<small>Designs, Reels, clips and video</small></a>
+      <a class="navlink" href="editor.html" target="imc-editor">Photo &amp; video editor ↗<small>Designs, Reels, clips and video</small></a>
       <button data-view="releases">Upcoming releases<small>Films to announce</small></button>
       <h3>Plan &amp; track</h3>
       <button data-view="dashboard">Planner<small>Your week of posts</small></button>
@@ -411,7 +411,7 @@ body.menuopen{overflow:hidden}
             <label class="field" style="max-width:220px"><span class="flabel">Showtimes card length</span><select id="fcard"><option value="8">8 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option></select></label>
             <label class="field" style="max-width:300px"><span class="flabel">Welcome videos between trailers</span><select class="wfreq"></select></label><button class="btn small" data-go="welcome" style="align-self:flex-start">Make welcome videos →</button></fieldset>
         </div>
-        <div class="row-btns" style="margin-top:12px"><a class="btn" id="flounge" target="_blank" rel="noopener" style="text-decoration:none;order:2">LUXX lounge player ↗</a><a class="btn primary" id="fopen" target="_blank" rel="noopener" style="text-decoration:none">Open foyer player ↗</a><button class="btn" id="fcopy">Copy TV link</button><button class="btn" id="fzip">Download pack (.zip)</button><button class="btn" id="fcsv">Download trailer list (.csv)</button></div>
+        <div class="row-btns" style="margin-top:12px"><a class="btn" id="flounge" target="imc-lounge" style="text-decoration:none;order:2">LUXX lounge player ↗</a><a class="btn primary" id="fopen" target="imc-foyer" style="text-decoration:none">Open foyer player ↗</a><button class="btn" id="fcopy">Copy TV link</button><button class="btn" id="fzip">Download pack (.zip)</button><button class="btn" id="fcsv">Download trailer list (.csv)</button></div>
         <div id="fprog" class="tip" hidden></div>
       </div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>Films</h2><span class="tip" id="fcount" style="margin:0"></span></div><div id="foyList"></div></div>
@@ -421,7 +421,7 @@ body.menuopen{overflow:hidden}
     <!-- LUXX -->
     <section id="v-luxx" hidden>
       <div class="head lxhead"><div><h1><span class="lxword">LUXX</span> at <span class="sitename">IMC Enniskillen</span></h1><p>Ads, Reels and captions for your LUXX recliner seats, made from your own LUXX photos and this week's LUXX showings from imc.ie.</p></div>
-        <div class="row-btns"><button class="btn" data-go="welcome" data-wb="luxx">LUXX welcome videos</button><a class="btn" id="lxlounge" target="_blank" rel="noopener" style="text-decoration:none">LUXX lounge player ↗</a></div></div>
+        <div class="row-btns"><button class="btn" data-go="welcome" data-wb="luxx">LUXX welcome videos</button><a class="btn" id="lxlounge" target="imc-lounge" style="text-decoration:none">LUXX lounge player ↗</a></div></div>
       <div class="panel"><div class="ph"><h2>1. Your LUXX photos</h2><span class="tip" id="lxcount" style="margin:0"></span></div>
         <p class="lxnote">Add photos of your LUXX seats, screen and lounge. Every LUXX ad below uses them. To use the ones on the cinema's Facebook page, open a photo there, choose <b>⋯ → Download</b>, then add it here. Photos are kept in this browser for <span class="sitename">IMC Enniskillen</span>.</p>
         <div class="lxpics" id="lxpics"></div>
@@ -473,7 +473,7 @@ body.menuopen{overflow:hidden}
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>Your welcome videos</h2><span class="tip" id="wcount" style="margin:0"></span></div><div class="wlist" id="wlist"></div></div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>On the foyer TVs</h2></div>
         <div class="row-btns" style="align-items:flex-end"><label class="field" style="max-width:300px"><span class="flabel">How often between trailers</span><select class="wfreq"></select></label>
-          <a class="btn primary" id="wopen" target="_blank" rel="noopener" style="text-decoration:none">Open foyer player ↗</a><a class="btn" id="wlounge" target="_blank" rel="noopener" style="text-decoration:none">Open LUXX lounge player ↗</a><button class="btn" data-go="foyer">Foyer trailer settings</button></div>
+          <a class="btn primary" id="wopen" target="imc-foyer" style="text-decoration:none">Open foyer player ↗</a><a class="btn" id="wlounge" target="imc-lounge" style="text-decoration:none">Open LUXX lounge player ↗</a><button class="btn" data-go="foyer">Foyer trailer settings</button></div>
         <p class="tip">The <b>foyer player</b> uses every video marked for the TVs, IMC and LUXX. The <b>LUXX lounge player</b> is for a screen in or outside the LUXX area. It shows only films with LUXX showings and their LUXX times, and only your LUXX welcome videos.</p>
         <p class="tip">The foyer player picks one of the videos marked for the TVs at random each time. They're silent, so the room stays quiet between trailers. If the foyer TV already has the player open, reopen the link (or copy it again from Foyer trailers) to pick up changes.</p></div>
     </section>
@@ -573,7 +573,7 @@ body.menuopen{overflow:hidden}
     <section id="v-releases" hidden>
       <div class="head">
         <div><h1>Upcoming releases</h1><p>UK release dates for the next three months, from the Film Distributors' Association schedule (checked 18 Oct 2026). Mark what you're showing, then build an announcement ad and an opening-day ad for each.</p></div>
-        <div class="links"><a href="https://www.imc.ie" target="_blank" rel="noopener">Our website ↗</a><a href="https://www.imdb.com/calendar/?region=GB" target="_blank" rel="noopener">IMDb UK calendar ↗</a><a href="https://filmdistributorsassociation.com/release-schedule/all-future-releases/" target="_blank" rel="noopener">FDA schedule ↗</a></div>
+        <div class="links"><a href="https://www.imc.ie" target="imc-web">Our website ↗</a><a href="https://www.imdb.com/calendar/?region=GB" target="imc-web">IMDb UK calendar ↗</a><a href="https://filmdistributorsassociation.com/release-schedule/all-future-releases/" target="imc-web">FDA schedule ↗</a></div>
       </div>
       <div class="panel" style="display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center">
         <div class="filters" id="relfilters"></div>
@@ -638,6 +638,7 @@ body.menuopen{overflow:hidden}
 <div class="toast" id="toast" hidden></div>
 
 <script src="ident.js"></script>
+<script>try{if(!window.name||window.name==="imchub"||/^imchub/.test(window.name))window.name="imc-hub"}catch(e){}</script>
 <script>
 (function(){
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -1041,7 +1042,7 @@ function renderReleases(){
       <p class="angle"><b>Viral angle:</b> ${esc(loc(r.angle))}</p>
       ${r.note?`<p class="note">Date note: ${esc(r.note)}</p>`:""}
       <div class="prog" role="group" aria-label="Are we showing it?">${[["yes","Showing"],["maybe","Maybe"],["no","Not showing"]].map(([k,l])=>`<button data-prog="${r.id}" data-v="${k}" aria-pressed="${p===k}">${l}</button>`).join("")}</div>
-      <div class="acts"><button class="btn small primary" data-relad="${r.id}" data-k="announce">Announce ad</button><button class="btn small" data-relad="${r.id}" data-k="open">Opening-day ad</button><a href="${imdbUrl(r.t)}" target="_blank" rel="noopener">IMDb ↗</a></div>
+      <div class="acts"><button class="btn small primary" data-relad="${r.id}" data-k="announce">Announce ad</button><button class="btn small" data-relad="${r.id}" data-k="open">Opening-day ad</button><a href="${imdbUrl(r.t)}" target="imc-web">IMDb ↗</a></div>
     </div>`});
   if(month)h+="</div>";
   $("#rellist").innerHTML=h||`<p class="empty">No releases match these filters.</p>`;
@@ -1100,7 +1101,7 @@ function firstDate(f){const ds=f.sessions.map(s=>s.date).filter(Boolean).sort();
 
 /* ---------- open the photo editor with something ready ---------- */
 function openEditor(h){try{localStorage.setItem("imc-handoff",JSON.stringify({...h,at:Date.now()}))}catch(e){toast("Couldn't pass this to the editor. Browser storage is blocked.");return}
-  const a=document.createElement("a");a.href="editor.html";a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove()}
+  const a=document.createElement("a");a.href="editor.html";a.target="imc-editor";document.body.appendChild(a);a.click();a.remove()}
 function filmPayload(f,mode){const d=firstDate(f);return{title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert||"",certIcon:f.certIcon||null,certSystem:f.certSystem||null,times:mode==="soon"?[]:(f.times||[]),dateLabel:d?new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}).toUpperCase():"SOON",luxx:!!f.luxx}}
 function makeFilm(f,mode,fmt){openEditor({kind:"film",mode,fmt,film:filmPayload(f,mode)})}
 function makeTimes(date,fmt){const films=filmsOn(date);if(!films.length){toast("No film times for that day yet");return}
@@ -1117,7 +1118,7 @@ function filmCard(f,mode){const d=firstDate(f),poster=asset(f.posterFile)||f.pos
   <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${(()=>{const r=certShown(f);return r&&r.src?`<img class="certimg" data-svg="${esc(r.src)}" alt="Rated ${esc(r.cert)}" width="24" height="24">`:r?`<span class="cert">${esc(r.cert)}</span>`:""})()}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
   ${when}
   <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button><button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
-  ${(f.book||f.sessions?.[0]?.book)?`<a class="btn small ghost" href="${esc(f.book||f.sessions[0].book)}" target="_blank" rel="noopener">Book ↗</a>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="_blank" rel="noopener">Trailer ↗</a>`:""}</div></div></article>`}
+  ${(f.book||f.sessions?.[0]?.book)?`<a class="btn small ghost" href="${esc(f.book||f.sessions[0].book)}" target="imc-web">Book ↗</a>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="imc-web">Trailer ↗</a>`:""}</div></div></article>`}
 const SVGURL={};
 let ratingSys=pickRating();
 /* BBFC or IFCO, remembered per cinema; Republic of Ireland cinemas default to IFCO */
@@ -1278,7 +1279,7 @@ async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts
     return`<div class="frow"><input type="checkbox" aria-label="Include ${esc(f.title)}" data-fpick="${esc(f.key)}" ${chosen.has(f.key)?"checked":""} ${sf.ok&&st.mode==="pick"?"":"disabled"}>
       <img class="p" src="${esc(asset(f.posterFile)||f.poster||"")}" alt="" loading="lazy">
       <div style="min-width:0"><b>${esc(f.title)}</b><div class="m">${esc(f.cert||"No certificate")}${f.runtime?` · ${f.runtime} min`:""}${f.luxxToo?" · LUXX":""} · ${esc(nx)}</div>${t.title?`<div class="tt">Trailer: “${esc(t.title)}”</div>`:""}</div>
-      <div class="acts"><span class="fst ${sf.cls}">${esc(sf.label)}</span>${f.mine?`<span class="tt">Your trailer${f.mine.title?`: “${esc(f.mine.title)}”`:""}</span><button class="btn small ghost" data-funlink="${esc(f.key)}">${f.imcTrailer?"Use imc.ie's trailer again":"Remove my link"}</button>`:(!f.trailer||t.unavailable||t.red||FRED.test(t.title||""))?`<form class="flink" data-flink="${esc(f.key)}"><input type="url" placeholder="Paste a YouTube trailer link" aria-label="YouTube trailer link for ${esc(f.title)}" required><button class="btn small primary">Use</button><a class="btn small ghost" href="https://www.youtube.com/results?search_query=${encodeURIComponent(f.title+" official trailer")}" target="_blank" rel="noopener">Find on YouTube ↗</a></form>`:""}${sf.review?`<label class="check" style="font-size:12px"><input type="checkbox" data-fok="${esc(f.key)}"> I've watched it; it's fine</label>`:""}${!sf.review&&st.ok.includes(f.key)?`<button class="btn small" data-funok="${esc(f.key)}">Undo my check</button>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="_blank" rel="noopener">Watch trailer ↗</a>`:""}</div></div>`}).join(""):'<p class="tip">No films in the latest import.</p>'}
+      <div class="acts"><span class="fst ${sf.cls}">${esc(sf.label)}</span>${f.mine?`<span class="tt">Your trailer${f.mine.title?`: “${esc(f.mine.title)}”`:""}</span><button class="btn small ghost" data-funlink="${esc(f.key)}">${f.imcTrailer?"Use imc.ie's trailer again":"Remove my link"}</button>`:(!f.trailer||t.unavailable||t.red||FRED.test(t.title||""))?`<form class="flink" data-flink="${esc(f.key)}"><input type="url" placeholder="Paste a YouTube trailer link" aria-label="YouTube trailer link for ${esc(f.title)}" required><button class="btn small primary">Use</button><a class="btn small ghost" href="https://www.youtube.com/results?search_query=${encodeURIComponent(f.title+" official trailer")}" target="imc-web">Find on YouTube ↗</a></form>`:""}${sf.review?`<label class="check" style="font-size:12px"><input type="checkbox" data-fok="${esc(f.key)}"> I've watched it; it's fine</label>`:""}${!sf.review&&st.ok.includes(f.key)?`<button class="btn small" data-funok="${esc(f.key)}">Undo my check</button>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="imc-web">Watch trailer ↗</a>`:""}</div></div>`}).join(""):'<p class="tip">No films in the latest import.</p>'}
 $("#v-foyer").addEventListener("change",e=>{const st=foyState(),t=e.target;
   if(t.name==="fmode"){st.mode=t.value;if(st.mode==="pick"&&!st.pick.length)st.pick=foyChosen({...st,mode:"auto"}).map(f=>f.key)}
   else if(t.id==="fsoon")st.soon=t.checked;else if(t.id==="ftrail")st.trail=t.checked;else if(t.id==="fsound")st.sound=t.checked;else if(t.id==="fcard")st.card=+t.value;
