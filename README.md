@@ -78,6 +78,12 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## Your product photos
+
+In the editor's Add tab, **Your product photos** has a slot for each item: Candy King pick 'n' mix, popcorn, drinks, sweets, ice cream, nachos, hot dogs, kids tray, LUXX seats and the kiosk. Upload a photo once and deals and video clips use it for that item at that cinema. Photos on a plain white background are cut out; others appear as framed photo cards. They're saved in the browser (IndexedDB), not uploaded anywhere.
+
+Pick 'n' mix is Candy King: it uses your own photo or an IMC pick 'n' mix photo, and is never shown as another brand (e.g. Maltesers).
+
 ## IMC images
 
 The editor's **IMC images** (Photo tab) are IMC's own: cinema photos and graphics from imc.ie, and product and deal photos from the booking pages, gathered from every cinema by the importer into `data/library/index.json`. No stock photos are used.

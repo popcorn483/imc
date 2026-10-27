@@ -109,6 +109,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
 .chip{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,180,60,.4);border-radius:99px;padding:2px 8px}
 .layers{display:flex;flex-direction:column;gap:2px}
+.ownslots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ownslot{display:flex;flex-direction:column;gap:6px;font-size:12.5px}.ownth{aspect-ratio:4/3;border-radius:8px;border:1px dashed var(--line);display:grid;place-items:center;overflow:hidden;background:var(--bg);color:var(--muted)}.ownth img{width:100%;height:100%;object-fit:cover}.ownbtns{display:flex;flex-wrap:wrap;gap:6px}.ownbtns .btn{flex:1 1 auto;min-width:0;padding-left:8px;padding-right:8px}
 .libitem{position:relative}.libitem .libcard{aspect-ratio:auto;width:auto;height:auto;position:absolute;right:4px;bottom:4px;font-size:11px;font-weight:700;padding:3px 7px;border-radius:6px;border:0;background:rgba(10,12,30,.85);color:#fff;cursor:pointer}
 .layer{all:unset;cursor:pointer;display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:center;padding:7px 8px;border-radius:7px;font-size:13px}
 .layer:hover{background:var(--panel2)}
@@ -236,6 +237,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 
     <div data-panel="add" hidden>
       <div class="sec"><h3>Badges</h3><div class="tiles" id="badges"></div></div>
+      <div class="sec"><h3>Your product photos</h3><p class="note">Upload your own photo for an item once, for example your Candy King pick 'n' mix stand, and deals and video clips use it for that item at this cinema. Photos on a plain white background are cut out; others become framed photo cards. Saved in this browser.</p><div class="ownslots" id="ownGrid"></div></div>
       <div class="sec"><h3>Products from imc.ie</h3><p class="note" id="pphNote">Real product photos and prices from imc.ie for this cinema.</p><div class="tiles" id="pphotos"></div></div>
       <div class="sec"><h3>Food &amp; drink</h3><p class="note">Drawn in IMC colours. Select one to recolour it.</p><div class="tiles" id="products"></div></div>
       <div class="sec"><h3>Deal pieces</h3><div class="tiles" id="dealBadges"></div></div>
@@ -1424,7 +1426,7 @@ $("#gifGo").onclick=async()=>{if(gBusy)return;gBusy=true;gCancel=false;$("#gifGo
 const RAW="https://raw.githubusercontent.com/popcorn483/imc/main/";
 let IMC=null,photoIsVideo=false;
 async function loadImcData(){let k="enniskillen";try{k=localStorage.getItem("imc-hub-site")||k}catch(e){}const f=k==="enniskillen"?"data/imc.json":"data/cinemas/"+k+".json";for(const u of[RAW+f+"?ts="+Date.now(),f]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();j._base=u.startsWith(RAW)?RAW:"";IMC=j;return j}}catch(e){}}return null}
-const asset=p=>!p?null:/^https?:/.test(p)?p:((IMC&&IMC._base)||"")+p;
+const asset=p=>!p?null:/^(https?:|blob:|data:)/.test(p)?p:/^own:/.test(p)?((OWN[p.slice(4)]||{}).url||null):((IMC&&IMC._base)||"")+p;
 function blobToMedia(b){if((b.type||"").startsWith("video/"))return new Promise((res,rej)=>{const v=document.createElement("video");v.muted=true;v.loop=true;v.playsInline=true;v.preload="auto";v.onloadeddata=()=>{v.play().catch(()=>{});res(v)};v.onerror=()=>rej(new Error("bad video"));v.src=URL.createObjectURL(b)});return blobToImg(b)}
 function seekVideo(sec){return new Promise(r=>{const v=photoImg;if(!photoIsVideo||!v)return r();const T=Math.min(Math.max(0,sec),Math.max(0,(v.duration||1)-.05));if(Math.abs(v.currentTime-T)<.02)return r();let done=false;const fin=()=>{if(done)return;done=true;v.removeEventListener("seeked",fin);r()};v.addEventListener("seeked",fin);v.currentTime=T;setTimeout(fin,1200)})}
 async function mediaIndex(){return(await idbGet("media-index"))||[]}
@@ -1468,7 +1470,17 @@ function drawPPhoto(c,L){const e=ppLoad(L.src,L.card),H=440;if(!e.img){c.strokeS
   const w=H*im.width/im.height;
   if(L.shadow!==false){c.save();const g=c.createRadialGradient(0,H/2,0,0,H/2,w*.55);g.addColorStop(0,"rgba(0,0,0,.45)");g.addColorStop(1,"rgba(0,0,0,0)");c.translate(0,H/2);c.scale(1,.14);c.translate(0,-H/2);c.fillStyle=g;c.beginPath();c.arc(0,H/2,w*.55,0,TAU);c.fill();c.restore()}
   c.imageSmoothingEnabled=true;c.imageSmoothingQuality="high";c.drawImage(im,-w/2,-H/2,w,H);return{w,h:H}}
-/* ---------- photo library: free real photos downloaded by the importer (data/library/index.json) ---------- */
+/* ---------- your own product photos (saved in this browser per cinema): used first for that item on deals and clips ---------- */
+const OWN_KEYS=[["pickmix","Candy King pick 'n' mix"],["popcorn","Popcorn"],["drink","Drinks"],["sweets","Sweets"],["icecream","Ice cream"],["nachos","Nachos"],["hotdog","Hot dogs"],["tray","Kids tray"],["luxx","LUXX seats"],["kiosk","Kiosk / foyer"]];
+const OWN={};
+function ownSite(){let k="enniskillen";try{k=localStorage.getItem("imc-hub-site")||k}catch(e){}return k}
+async function loadOwn(){for(const[k]of OWN_KEYS){try{const b=await idbGet(`own:${ownSite()}:${k}`);if(b&&b.blob){if(OWN[k]&&OWN[k].url)URL.revokeObjectURL(OWN[k].url);OWN[k]={url:URL.createObjectURL(b.blob),cut:!!b.cut}}else delete OWN[k]}catch(e){}}renderOwn();draw()}
+/* photos on a plain light background get cut out like IMC's; anything else is shown as a framed photo card */
+async function plainBg(blob){try{const im=await blobToImg(blob),c=document.createElement("canvas"),w=c.width=60,h=c.height=60,x=c.getContext("2d");x.drawImage(im,0,0,w,h);const d=x.getImageData(0,0,w,h).data;let n=0,t=0;
+  for(let i=0;i<w;i++)for(const j of[0,h-1]){for(const [X,Y] of[[i,j],[j,i]]){const o=(Y*w+X)*4,mn=Math.min(d[o],d[o+1],d[o+2]),mx=Math.max(d[o],d[o+1],d[o+2]);t++;if(mn>215&&mx-mn<20)n++}}return n/t>.8}catch(e){return false}}
+function ownVisual(k){const o=OWN[k];if(!o)return null;const label=(OWN_KEYS.find(x=>x[0]===k)||[,k])[1];return{src:"own:"+k,label,card:!o.cut}}
+function renderOwn(){const g=$("#ownGrid");if(!g)return;g.innerHTML=OWN_KEYS.map(([k,n])=>`<div class="ownslot"><div class="ownth">${OWN[k]?`<img src="${OWN[k].url}" alt="">`:`<span>No photo yet</span>`}</div><b>${esc(n)}</b><div class="ownbtns"><label class="btn">${OWN[k]?"Replace":"Upload"}<input type="file" accept="image/*" data-own="${k}" hidden></label>${OWN[k]?`<button class="btn" data-ownuse="${k}" title="Add to the design">Add</button><button class="btn danger" data-owndel="${k}" aria-label="Remove ${esc(n)} photo">✕</button>`:""}</div></div>`).join("")}
+/* ---------- photo library: IMC's own images gathered by the importer (data/library/index.json) ---------- */
 let LIB=null,libCat="all";
 async function loadLibrary(){for(const u of[RAW+"data/library/index.json?ts="+Date.now(),"data/library/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();const base=u.startsWith(RAW)?RAW:"";LIB=j.map(x=>({...x,src:base+x.file}));return LIB}}catch(e){}}LIB=[];return LIB}
 const LIBCATS={all:"All",imc:"Cinemas & imc.ie",food:"Food & drink",deals:"Deal graphics"};
@@ -1489,6 +1501,9 @@ function renderPPhotos(){const g=$("#pphotos"),n=$("#pphNote");if(!g)return;cons
   g.innerHTML=items.map((x,i)=>`<div class="tile badge"><img src="${esc(asset(x.file))}" alt="" style="width:100%;aspect-ratio:3/2;object-fit:contain;background:#fff"><span>${esc(x.name)} · ${esc(x.price)}</span><div class="row" style="padding:0 8px 8px;gap:6px"><button class="btn" data-pph="${i}" style="flex:1">Add</button><button class="btn" data-pph="${i}" data-withprice="1" style="flex:1">+ Price</button></div></div>`).join("");
   g.onclick=e=>{const b=e.target.closest("[data-pph]");if(!b)return;const x=items[+b.dataset.pph];addLayer({id:uid(),kind:"pphoto",src:x.file,label:x.name,x:.42,y:.55,s:.9,r:0,o:1});
     if(b.dataset.withprice)addLayer(mk("badge","ticket",{text:x.price,sub:"ONLY",x:.76,y:.72,s:.8,r:-.07}))}}
+$("#ownGrid").addEventListener("change",async e=>{const i=e.target.closest("[data-own]");if(!i||!i.files[0])return;const f=i.files[0],cut=await plainBg(f);await idbSet(`own:${ownSite()}:${i.dataset.own}`,{blob:f,cut,t:Date.now()});for(const k in PPH)if(k.startsWith("own:"+i.dataset.own))delete PPH[k];await loadOwn();toast(cut?"Saved. It has a plain background, so it'll be cut out on your designs":"Saved. It'll appear as a framed photo card on your designs")});
+$("#ownGrid").addEventListener("click",async e=>{const d=e.target.closest("[data-owndel]");if(d){await idbSet(`own:${ownSite()}:${d.dataset.owndel}`,null);for(const k in PPH)if(k.startsWith("own:"+d.dataset.owndel))delete PPH[k];await loadOwn();toast("Photo removed");return}
+  const u=e.target.closest("[data-ownuse]");if(u){const v=ownVisual(u.dataset.ownuse);if(v)addLayer({id:uid(),kind:"pphoto",src:v.src,label:v.label,card:v.card,x:.5,y:.55,s:.9,r:v.card?-.04:0,o:1})}});
 $("#libCats").addEventListener("click",e=>{const b=e.target.closest("[data-libcat]");if(b){libCat=b.dataset.libcat;renderLibrary()}});
 $("#libGrid").addEventListener("click",async e=>{const c=e.target.closest("[data-libcard]");if(c){const x=LIB.find(p=>p.id===c.dataset.libcard);if(x){const food=x.cat!=="imc";addLayer({id:uid(),kind:"pphoto",src:food?x.file:x.src,label:x.title,card:!food,x:.5,y:.5,s:.9,r:food?0:-.04,o:1});toast(food?"Added with its background removed. Drag to move, corners to resize":"Added as a photo card. Drag to move, corners to resize")}return}
   const b=e.target.closest("[data-lib]");if(!b)return;const x=LIB.find(p=>p.id===b.dataset.lib);if(!x)return;try{let r=await fetch(x.cat==="food"?asset(hdOf(x.file)):x.src);if(!r.ok)r=await fetch(x.src);if(!r.ok)throw 0;await setPhotoBlob(await r.blob(),false,{fromLib:true});toast("IMC image added as the background")}catch(err){toast("Couldn't load that photo. Try again in a moment.")}});
@@ -1514,17 +1529,19 @@ const anyImc=k=>ANY_IMC[k]?{src:ANY_IMC[k][0],label:ANY_IMC[k][1]}:null;
 function dealVisuals(d){if(d.real===false)return null;if(d.photos&&d.photos.length)return d.photos.map(p=>({src:p.src,label:p.label,card:!!p.card}));
   const m=imcMatch(d.name);if(m&&m.file)return[{src:m.file,label:m.name}];
   const P=d.products&&d.products.length?d.products:["popcorn","drink"],out=[],seen=new Set(),it=re=>imcItems().find(x=>!x.details&&re.test(x.name)),own=x=>x?{src:x.file,label:x.name}:null,drinks=P.filter(x=>x==="drink").length,pop=P.includes("popcorn");
-  for(const k of P){let v=null;
-    if(k==="popcorn"||(k==="drink"&&pop)){v=drinks>=2?(own(it(/share combo/i))||anyImc("combo_share")):(own(it(/large combo/i))||own(it(/medium combo/i))||anyImc("combo_large"))}
+  for(const k of P){let v=ownVisual(k==="icescoop"||k==="icetub"?"icecream":k);
+    if(v){}
+    else if(k==="popcorn"||(k==="drink"&&pop)){v=drinks>=2?(own(it(/share combo/i))||anyImc("combo_share")):(own(it(/large combo/i))||own(it(/medium combo/i))||anyImc("combo_large"))}
     else if(k==="drink")v=null;
     else if(k==="tray")v=own(it(/kids tray/i))||anyImc("tray");
     else if(k==="nachos")v=own(it(/nacho/i))||anyImc("nachos");
-    else if(k==="sweets"||k==="pickmix")v=own(it(/pick|mix|sweet|malteser|minstrel|haribo/i))||anyImc("sweets");
+    else if(k==="pickmix")v=own(it(/pick|mix|candy king/i));   /* Candy King pick 'n' mix: your own photo or IMC's, never another brand */
+    else if(k==="sweets")v=own(it(/sweet|malteser|minstrel|haribo/i))||anyImc("sweets");
     else if(k==="icescoop"||k==="icetub")v=own(imcItems().find(x=>/soft ?serve|ice ?cream|sundae/i.test(x.file+" "+x.name)))||anyImc("icecream");
     else if(k==="hotdog")v=null;else if(k==="ticket")v={draw:"ticket"};
     /* no drawn food: anything without a real photo is simply left out (the gold ticket graphic is the only drawing) */
     if(!v)continue;const key=v.src||v.draw;if(!seen.has(key)){seen.add(key);out.push(v)}}
-  if(!out.some(v=>v.src)){const g=anyImc("combo_large");if(g)out.unshift(g)}
+  if(!out.some(v=>v.src)&&!P.includes("pickmix")){const g=anyImc("combo_large");if(g)out.unshift(g)}
   return out.some(v=>v.src)?out.slice(0,4):null}
 function dealLayers(d,anim){const vis=dealVisuals(d);if(vis)return dealPhotoLayers(d,anim,vis);const P=(d.products&&d.products.length?d.products:["popcorn","drink"]).slice(0,6),L=[],n=P.length,cur=d.cur||siteCur(),items=d.items||[];
   const list=items.length>=3||items.join("  +  ").length>46,tk=dealTickets(d);
@@ -1665,6 +1682,7 @@ async function boot(){buildMotionUI();
   syncLogo();syncSaved();renderMedia();
   loadLibrary().then(()=>{renderLibrary();if(selId)renderProps()});
   const imcP=loadImcData().then(()=>{renderWeb();renderPPhotos();ratingList().forEach(o=>loadRating(o.src));renderRatings();if(selId)renderProps()});
+  await loadOwn().catch(()=>{});
   let handed=null;try{handed=localStorage.getItem("imc-handoff")}catch(e){}if(handed){await imcP;applyHandoff()}
   syncAll();commit();
   const faces=["900 40px 'Big Shoulders Display'","800 40px Figtree","700 40px Figtree","700 40px 'Playfair Display'","400 40px 'Bebas Neue'","500 20px 'IBM Plex Mono'","600 20px 'IBM Plex Mono'"];
