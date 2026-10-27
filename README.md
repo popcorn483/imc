@@ -91,6 +91,15 @@ The wording sticks to what IMC says about LUXX ("deluxe recliner seats"). Add an
 
 The importer also saves each cinema's building photo from imc.ie to `data/sites/`. These appear in the editor's IMC images and in the LUXX photos panel as "Cinema building".
 
+## Your own trailer links
+
+On the Foyer trailers page, any film with no trailer on imc.ie (or whose trailer is gone from YouTube or is red-band) gets a box to paste a YouTube link, plus a "Find on YouTube" search. Pasted links are checked:
+- the link must be a real YouTube video that can play outside YouTube
+- red-band or uncensored titles are refused
+- the certificate rules still apply
+
+Your trailer then plays on the foyer player (it travels in the TV link) and goes in the pack's trailer list. "Remove my link" undoes it.
+
 ## Welcome videos (foyer logo reveals)
 
 The hub's **Welcome videos** page makes "Welcome to IMC" logo reveals for the foyer TVs. There are 10 reveals: spotlight, curtain up, film countdown, lens flare wipe, popcorn burst, starfield zoom, marquee lights, gold particles, film strip and neon sign. You can change the top line, big line, message, background, accent colour, extra effect (sparkle, confetti, snow, bats, hearts, fireworks) and length (6–12 seconds). Each one downloads as a 1920 × 1080 video.

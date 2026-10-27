@@ -77,6 +77,8 @@ const SAFE={bbfc:["U","PG","12A","12"],ifco:["G","PG","12A"]};
 const RED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
  /* welcome videos made in the hub travel in the link, since the TV can't see the hub's saved settings */
 const LOUNGE=Q.get("luxx")==="1";
+/* trailers you linked yourself in the hub, for films whose imc.ie trailer is missing or unsuitable */
+const MYTR=Object.fromEntries((Q.get("tl")||"").split("|").map(x=>x.split("~")).filter(x=>x.length===2&&/^[\w-]{11}$/.test(x[1])));
 const WEL=(window.IMCIdent?IMCIdent.decode(Q.get("w")||""):[]).filter(w=>!LOUNGE||w.brand==="luxx"),WF=Q.get("wf")||(WEL.length?"r":"0");
 let since=0,justIdent=false,lastIdent=-1,idAssets=null,idRaf=0;
 const newGap=()=>WF==="r"?2+Math.floor(Math.random()*3):Math.max(1,+WF||1);let gap=newGap();
@@ -93,8 +95,9 @@ function films(){const m=new Map();
       for(const s of f.sessions||[])if(!p.sessions.some(x=>x.date===s.date&&x.time===s.time))p.sessions.push(s);for(const key of["poster","posterFile","cert","certIcon","certSystem","runtime","trailer","releaseDate"])p[key]=p[key]||f[key];m.set(k,p)}
   /* one entry per film: the LUXX listing shares the standard one's trailer */
   const out=new Map();for(const f of m.values()){const k=f.slug||f.title.toLowerCase(),o=out.get(k);if(!o)out.set(k,{...f,key:k,luxxToo:!!f.luxx,luxxS:f.luxx?[...f.sessions]:[]});else{o.luxxToo=o.luxxToo||!!f.luxx;if(f.luxx)for(const s of f.sessions)if(!o.luxxS.some(x=>x.date===s.date&&x.time===s.time))o.luxxS.push(s);for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s)}}
+  for(const f of out.values())if(MYTR[f.key]){f.trailer="https://www.youtube.com/watch?v="+MYTR[f.key];f.mine=true}
   return[...out.values()]}
-function safety(f){const t=T[f.trailer]||{};const sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
+function safety(f){const t=f.mine?{}:T[f.trailer]||{};const sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
   if(!f.trailer||!ytId(f.trailer))return{ok:false,why:"no trailer"};if(t.unavailable)return{ok:false,why:"trailer unavailable"};
   if(t.red||RED.test(t.title||""))return{ok:false,why:"red-band trailer"};
   if(!c||c==="TBC")return OK.has(f.key)?{ok:true}:{ok:false,review:true,why:"no certificate yet"};
