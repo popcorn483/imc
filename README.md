@@ -78,6 +78,12 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## Cinema Reels, animated presets and overlays
+
+The editor's **Layouts** tab has **Cinema Reels**: eight ready-made 9:16 videos for Instagram and Facebook Reels, TikTok and Stories. They are a coming-soon teaser (next release and date from imc.ie), this week's films (from imc.ie), snack attack, the LUXX experience, Kids Club, a win-tickets competition, Fright night and Opening night. Each plays in scenes. A pink guide shows the parts of the screen that the Reels buttons and caption cover; it's shown in the editor only and never exported. There are also twelve **Animated presets** that work at any size. Point at a tile to preview it.
+
+New overlays in the Motion tab: spinning film reels, moving film strip, curtain reveal, clapperboard intro, cinematic bars, lens flare sweep, retro VHS, spotlight sweep, falling tickets, popcorn rain and friendly ghosts.
+
 ## Your product photos
 
 In the editor's Add tab, **Your product photos** has a slot for each item: Candy King pick 'n' mix, popcorn, drinks, sweets, ice cream, nachos, hot dogs, kids tray, LUXX seats and the kiosk. Upload a photo once and deals and video clips use it for that item at that cinema. Photos on a plain white background are cut out; others appear as framed photo cards. They're saved in the browser (IndexedDB), not uploaded anywhere.

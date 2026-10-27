@@ -1211,11 +1211,13 @@ function startPanel(){const se=hSeasonNow()[0];
     ${t("🍿","Promote a deal","Real prices & photos from imc.ie",'data-go="deals"')}
     ${t("🎬","Coming-soon film","Pick a film to announce",'data-wo="soon"')}
     ${t("💺","LUXX ad","Today's LUXX showings",'data-luxxad="square"')}
+    ${t("🎞️","Cinema Reel","9:16 video for Reels, TikTok & Stories",'data-reelgo="0"')}
     ${t("📺","Foyer TV trailers","Safe trailer loop or download",'data-go="foyer"')}
     ${t("🗓️","Ideas calendar","Key dates & what to post",'data-go="calendar"')}
     ${t("✍️","Caption bank","Ready-to-use captions",'data-go="toolkit"')}
   </div></div>`}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-seasonpost]");if(b)seasonDesign(b.dataset.seasonpost)});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-reelgo]");if(b)openEditor({kind:"reel",i:+b.dataset.reelgo,fmt:"story"})});
 
 /* ---------- ideas calendar: key dates for the next 12 months, for this cinema's side of the border ---------- */
 function easterSun(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=(h+l-7*m+114)%31+1;return`${y}-${String(mo).padStart(2,"0")}-${String(da).padStart(2,"0")}`}

@@ -74,6 +74,7 @@ input[type=range]{width:100%;accent-color:var(--gold)}
 .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .tile{all:unset;cursor:pointer;border-radius:9px;border:1px solid var(--line);background:var(--bg);overflow:hidden;display:flex;flex-direction:column}
 .tile canvas{width:100%;height:auto;display:block;aspect-ratio:1/1}
+.tiles.reels{grid-template-columns:repeat(3,minmax(0,1fr))}.tiles.reels .tile canvas{aspect-ratio:9/16}
 .tile.badge canvas{aspect-ratio:3/2}
 .tile span{font-size:12px;font-weight:600;padding:7px 9px;color:var(--muted);border-top:1px solid var(--line)}
 .tile:hover{border-color:#3d4352}.tile:hover span{color:var(--ink)}
@@ -255,6 +256,9 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 
     <div data-panel="layouts" hidden>
       <div class="sec"><h3>Deals</h3><p class="note">Your concession deals. Edit names, contents and prices in the hub's Deals page.</p><div class="tiles" id="dealLayouts"></div></div>
+      <div class="sec"><h3>Cinema Reels</h3><p class="note">Vertical 9:16 videos for Instagram &amp; Facebook Reels, TikTok and Stories. Point at one to preview it. Film names and dates fill in from imc.ie.</p><div class="tiles reels" id="reels"></div>
+        <label class="check" style="margin-top:10px"><input type="checkbox" id="safeChk"> Show the area Reels buttons and captions cover (editor only)</label></div>
+      <div class="sec"><h3>Animated presets</h3><p class="note">Effects, layout and timed animation in one click, at any size. Point at one to preview it.</p><div class="tiles" id="presets"></div></div>
       <div class="sec"><h3>Seasons &amp; occasions</h3><p class="note">One click gives your design a seasonal background, colours and animation. Your photo and text stay.</p><div class="tiles" id="seasons"></div></div>
       <div class="sec"><h3>Starter layouts</h3><p class="note">Swaps the frame and badges. Your photo stays.</p><div class="tiles" id="layouts"></div></div>
       <div class="sec"><h3>Your layouts</h3>
@@ -322,7 +326,7 @@ function toast(t){const el=$("#toast");el.textContent=t;el.hidden=false;clearTim
 if(document.body.dataset.standalone)$("#back").hidden=false;
 
 /* ---------- constants ---------- */
-const FORMATS={square:{n:"Feed 1:1",w:1080,h:1080},portrait:{n:"Feed 4:5",w:1080,h:1350},story:{n:"Story 9:16",w:1080,h:1920},wide:{n:"Foyer 16:9",w:1920,h:1080},event:{n:"FB event",w:1920,h:1005},cover:{n:"FB cover",w:1640,h:624},a4:{n:"Print A4/A3",w:2480,h:3508},a4l:{n:"Print landscape",w:3508,h:2480}};
+const FORMATS={square:{n:"Feed 1:1",w:1080,h:1080},portrait:{n:"Feed 4:5",w:1080,h:1350},story:{n:"Story / Reel 9:16",w:1080,h:1920},wide:{n:"Foyer 16:9",w:1920,h:1080},event:{n:"FB event",w:1920,h:1005},cover:{n:"FB cover",w:1640,h:624},a4:{n:"Print A4/A3",w:2480,h:3508},a4l:{n:"Print landscape",w:3508,h:2480}};
 const FONTS={display:'"Big Shoulders Display","Arial Narrow",Impact,sans-serif',poster:'"Bebas Neue","Big Shoulders Display",Impact,sans-serif',serif:'"Playfair Display",Georgia,serif',body:'"Figtree",system-ui,sans-serif',mono:'"IBM Plex Mono",ui-monospace,monospace'};
 const SITE_TOWN=(()=>{const T={"enniskillen": "ENNISKILLEN", "ballymena": "BALLYMENA", "banbridge": "BANBRIDGE", "newtownards": "NEWTOWNARDS", "athlone": "ATHLONE", "ballina": "BALLINA", "ballincollig": "BALLINCOLLIG", "blackpool": "BLACKPOOL", "carlow": "CARLOW", "clonmel": "CLONMEL", "dundalk": "DUNDALK", "dunlaoghaire": "DÚN LAOGHAIRE", "galway": "GALWAY", "oranmore": "ORANMORE", "kilkenny": "KILKENNY", "mullingar": "MULLINGAR", "santry": "SANTRY", "savoy": "SAVOY", "thurles": "THURLES", "tullamore": "TULLAMORE"};let k="enniskillen";try{k=localStorage.getItem("imc-hub-site")||k}catch(e){}return T[k]||"ENNISKILLEN"})();
 const SITE_NAME=SITE_TOWN==="SAVOY"?"Savoy Cinema":"IMC "+SITE_TOWN.charAt(0)+SITE_TOWN.slice(1).toLowerCase().replace(/ (\w)/g,(m,x)=>" "+x.toUpperCase());
@@ -376,6 +380,69 @@ const LAYOUTS=[
   {n:"Opening night lights",fx:{chase:true,confetti:true},frame:{style:"marquee",accent:"#3a2560"},layers:()=>[mk("badge","tonight",{y:.3,anim:"swing"}),mk("text","title",{y:.6})]},
   {n:"LUXX gold",fx:{sparkle:true,kenburns:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","luxx",{y:.44,s:1.15,anim:"shine"}),mk("text","sub",{text:"Recline in style",font:"serif",size:66,y:.62})]}
 ];
+
+/* ---------- animated presets (any size) and Cinema Reels (9:16 videos): effects, layout and timed animation in one click ---------- */
+const MON=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+const isoToday=()=>{const d=new Date();return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`};
+function nextSoon(){const t=isoToday(),c=((IMC&&IMC.comingSoon)||[]).filter(f=>f.releaseDate&&f.releaseDate>t&&!/sensory|fancy dress|relaxed|parent|toddler|autism|subtitled|\b(19|20)\d\d$/i.test(f.title)).map(f=>({...f,title:String(f.title).replace(/\s+-\s+.*$/,"")})).sort((a,b)=>a.releaseDate<b.releaseDate?-1:1);return c[0]||null}
+function soonDate(f){if(!f||!f.releaseDate)return"18 DEC";const[y,m,d]=f.releaseDate.split("-").map(Number);return d+" "+MON[m-1]}
+function weekTitles(n){const t=isoToday(),seen=new Set(),out=[];for(const d of((IMC&&IMC.days)||[]).filter(d=>d.date>=t).slice(0,7))for(const f of d.films||[]){const k=norm(f.title);if(!seen.has(k)){seen.add(k);out.push(f.title)}}
+  if(!out.length)for(const f of((IMC&&IMC.today)||[])){const k=norm(f.title);if(!seen.has(k)){seen.add(k);out.push(f.title)}}return out.slice(0,n)}
+const tcase=s=>String(s).toLowerCase().replace(/(^|[\s:(\-'])(\p{L})/gu,(m,a,b)=>a+b.toUpperCase());
+const bigT=(text,{max=130,...o})=>mk("text","title",{text,size:fitSize(text,"display",max,48,900),...o});
+const subT=(text,{max=50,...o})=>mk("text","sub",{text,size:fitSize(text,"body",max,26,800),...o});
+const ANIM_PRESETS=[
+  {n:"Blockbuster intro",dur:6,fx:{countdown:true,spotlights:true,flash:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.15,anim:"slam",delay:.32,ilen:.6}),mk("text","title",{y:.56,anim:"zoom",delay:.37,ilen:.6}),mk("badge","date",{y:.7,s:.85,anim:"pop",delay:.45,ilen:.6}),mk("badge","book",{y:.81,s:.7,anim:"pop",delay:.52,ilen:.6})]},
+  {n:"Curtain up",dur:6,fx:{curtain:true,spotlights:true,sparkle:true},frame:{style:"vignette",accent:"#ffc23d"},layers:()=>[mk("badge","now",{y:.24,s:.85,anim:"pop",delay:.26,ilen:.6}),mk("text","title",{y:.58,anim:"zoom",delay:.3,ilen:.6}),mk("badge","book",{y:.73,s:.8,anim:"pop",delay:.38,ilen:.6})]},
+  {n:"Action!",dur:5,fx:{clapper:true,flash:true},frame:{style:"brandbar",accent:"#ffc23d"},layers:()=>[mk("badge","newrel",{y:.14,anim:"slam",delay:.28,ilen:.6}),mk("text","title",{y:.55,anim:"slam",delay:.32,ilen:.6}),mk("badge","book",{y:.7,s:.85,anim:"pop",delay:.4,ilen:.6})]},
+  {n:"Retro reel",dur:5,fx:{projector:true,stripscroll:true},frame:{style:"vignette",accent:"#ffd84a"},layers:()=>[mk("text","small",{text:"NOW SHOWING",y:.25,anim:"type"}),mk("text","title",{font:"poster",y:.52,anim:"type",delay:.08}),mk("text","sub",{text:"Book at imc.ie",y:.66,anim:"fade",delay:.35})]},
+  {n:"Red carpet",dur:4,fx:{flash:true,spotlights:true,glitter:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","tonight",{y:.24,anim:"swing"}),mk("text","title",{y:.58,anim:"glow"}),mk("badge","book",{y:.74,s:.85,anim:"pulse"})]},
+  {n:"Spotlight",dur:5,fx:{spotsweep:true,sparkle:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","now",{y:.2,s:.85,anim:"pop"}),mk("text","title",{y:.55,anim:"glow"}),mk("badge","book",{y:.71,s:.8,anim:"pulse"})]},
+  {n:"Reel to reel",dur:4,fx:{reels:true,popburst:true},frame:{style:"brandbar",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.38,anim:"shine"}),mk("text","title",{y:.6,anim:"pop"}),mk("badge","date",{y:.74,s:.85,anim:"pulse"})]},
+  {n:"Cinematic",dur:6,fx:{letterbox:true,flare:true,kenburns:true},frame:{style:"none",accent:"#ffc23d"},layers:()=>[mk("text","title",{y:.5,anim:"fade",delay:.1}),mk("text","small",{text:"ONLY IN CINEMAS",y:.6,anim:"fade",delay:.2})]},
+  {n:"Neon late show",dur:4,bg:"midnight",fx:{neon:true,stars:true},frame:{style:"none",accent:"#ff3fa4"},layers:()=>[mk("badge","newrel",{text:"LATE SHOW",c1:"#ff3fa4",c2:"#ffffff",y:.22,anim:"blink"}),mk("text","title",{y:.52,anim:"glow",c1:"#ffffff"}),mk("text","sub",{text:"Tonight at "+SITE_NAME,y:.64,anim:"float"})]},
+  {n:"Competition",dur:5,bg:"gold",fx:{tickets:true,sparkle:true},frame:{style:"premiere",accent:"#ffd84a"},layers:()=>[mk("badge","coming",{text:"COMPETITION",c1:"#ffd84a",c2:"#1a1440",y:.14,anim:"shine"}),bigT("WIN A FAMILY TICKET",{y:.38,anim:"pop"}),mk("text","sub",{text:"1. Like this post\n2. Share it\n3. Tag who you'd bring",y:.6,anim:"slide",delay:.1}),mk("text","small",{text:"WINNER PICKED FRIDAY · T&CS APPLY",y:.84,size:22,anim:"fade",delay:.2})]},
+  {n:"Fright night",dur:5,bg:"spooky",fx:{ghosts:true,fog:true,vhs:true},frame:{style:"vignette",accent:"#f39a2b"},layers:()=>[mk("badge","tonight",{text:"DARE YOU?",sub:"FRIGHT NIGHT",c1:"#f39a2b",c2:"#1a0b24",y:.25,anim:"shake"}),mk("text","title",{y:.56,anim:"shake"}),mk("badge","book",{y:.72,s:.85,anim:"pulse"})]},
+  {n:"Popcorn party",dur:4,bg:"sky",fx:{popcornrain:true,confetti:true},frame:{style:"filmstrip",accent:"#ffd84a"},layers:()=>[mk("badge","kids",{sub:"FAMILY FILMS",y:.24,anim:"wiggle"}),bigT("WEEKEND MOVIES",{y:.56,anim:"pop"}),mk("badge","book",{y:.72,s:.85,anim:"pulse"})]}
+];
+const REELS=[
+  {n:"Coming soon teaser",dur:9,fx:{countdown:true,spotlights:true,flash:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>{const f=nextSoon(),title=f?String(f.title).toUpperCase():"FILM TITLE";return[
+    bigT("GET READY…",{y:.45,max:150,anim:"slam",delay:.31,ilen:.3,until:.46}),mk("badge","coming",{y:.22,anim:"pop",delay:.47,ilen:.3}),bigT(title,{y:.42,max:150,anim:"zoom",delay:.5,ilen:.3}),
+    mk("badge","date",{text:soonDate(f),y:.53,s:1,anim:"pop",delay:.58,ilen:.3}),subT("Only at "+SITE_NAME,{y:.61,anim:"slide",delay:.63,ilen:.3}),mk("badge","book",{y:.7,anim:"pop",delay:.7,ilen:.3})]}},
+  {n:"This week's films",dur:10,fx:{stripscroll:true,bokeh:true},frame:{style:"brandbar",accent:"#ffc23d"},layers:()=>{const ts=weekTitles(6),L=[mk("text","small",{text:"THIS WEEK AT",y:.17,size:40,anim:"slide",ilen:.4}),bigT(SITE_NAME.toUpperCase(),{y:.225,max:110,anim:"slide",delay:.04,ilen:.4})];
+    (ts.length?ts:["FILM ONE","FILM TWO","FILM THREE","FILM FOUR"]).forEach((x,i)=>L.push(subT(tcase(x),{max:56,y:.32+i*.065,anim:"slide",delay:.14+i*.07,ilen:.4})));
+    L.push(mk("badge","book",{y:.76,anim:"pop",delay:.62,ilen:.4}));return L}},
+  {n:"Snack attack",dur:7,fx:{rays:true,sparkle:true,popburst:true},frame:{style:"brandbar",accent:"#ffc23d"},layers:()=>{const[src,label]=ANY_IMC.combo_large;return[
+    bigT("FEELING PECKISH?",{y:.42,max:150,anim:"slam",ilen:.5,until:.26}),bigT("LARGE COMBO",{y:.2,max:120,anim:"slide",delay:.27,ilen:.5}),
+    {id:uid(),kind:"pphoto",src,label,card:false,x:.5,y:.44,s:1.25,r:0,o:1,anim:"pop",delay:.3,ilen:.5},
+    mk("badge","price",{text:siteCur()+"X.XX",sub:"ONLY",x:.72,y:.62,s:1.15,r:-.08,anim:"slam",delay:.55,ilen:.5}),mk("text","small",{text:"GRAB IT AT THE KIOSK",y:.73,size:40,sp:6,anim:"slide",delay:.65,ilen:.5})]}},
+  {n:"LUXX experience",dur:8,bg:"gold",fx:{sparkle:true,spotlights:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[
+    bigT("SIT BACK.",{y:.42,max:170,anim:"slam",ilen:.4,until:.22}),bigT("RECLINE.",{y:.42,max:170,anim:"slam",delay:.23,ilen:.4,until:.45}),bigT("ENJOY.",{y:.42,max:170,anim:"slam",delay:.46,ilen:.4,until:.66}),
+    mk("badge","luxx",{y:.36,s:1.35,anim:"pop",delay:.67,ilen:.4}),subT("Luxury recliner seating at "+SITE_NAME,{y:.5,font:"serif",max:52,anim:"slide",delay:.72,ilen:.4}),mk("badge","book",{y:.62,anim:"pop",delay:.78,ilen:.4})]},
+  {n:"Kids Club",dur:8,bg:"sky",fx:{balloons:true,popcornrain:true},frame:{style:"filmstrip",accent:"#ffd84a"},layers:()=>[
+    bigT("WEEKEND PLANS?",{y:.42,max:150,anim:"slam",ilen:.4,until:.3}),mk("badge","kids",{sub:"FAMILY FILMS",y:.3,s:1.35,anim:"pop",delay:.32,ilen:.4}),subT("Films for the little ones",{y:.48,anim:"slide",delay:.4,ilen:.4}),
+    mk("text","small",{text:"SEE TIMES AT IMC.IE",y:.55,size:36,anim:"slide",delay:.47,ilen:.4}),mk("badge","book",{y:.66,anim:"pop",delay:.55,ilen:.4})]},
+  {n:"Win tickets",dur:9,bg:"gold",fx:{tickets:true,glitter:true},frame:{style:"premiere",accent:"#ffd84a"},layers:()=>[
+    bigT("WIN!",{y:.42,max:300,anim:"slam",ilen:.35,until:.25}),mk("badge","coming",{text:"COMPETITION",c1:"#ffd84a",c2:"#1a1440",y:.2,anim:"pop",delay:.27,ilen:.35}),bigT("A FAMILY TICKET",{y:.31,max:130,anim:"zoom",delay:.3,ilen:.35}),
+    ...["1. Like this post","2. Share it","3. Tag who you'd bring"].map((x,i)=>subT(x,{y:.42+i*.06,max:54,anim:"slide",delay:.4+i*.08,ilen:.35})),
+    mk("text","small",{text:"WINNER PICKED FRIDAY · T&CS APPLY",y:.66,size:28,anim:"fade",delay:.66,ilen:.35})]},
+  {n:"Fright night",dur:8,bg:"spooky",fx:{ghosts:true,fog:true,vhs:true},frame:{style:"vignette",accent:"#f39a2b"},layers:()=>[
+    bigT("DARE YOU?",{y:.42,max:170,c1:"#f39a2b",anim:"slam",ilen:.35,until:.3}),mk("badge","coming",{text:"HALLOWEEN AT THE IMC",c1:"#f39a2b",c2:"#1a0b24",s:.85,y:.2,anim:"pop",delay:.32,ilen:.35}),
+    bigT("FRIGHT NIGHTS",{y:.36,max:150,anim:"zoom",delay:.36,ilen:.35}),subT("Spooky films on the big screen",{y:.46,anim:"slide",delay:.44,ilen:.35}),mk("badge","book",{y:.6,anim:"pop",delay:.52,ilen:.35})]},
+  {n:"Opening night",dur:8,fx:{curtain:true,flash:true,confetti:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[
+    mk("badge","tonight",{y:.24,s:1.2,anim:"pop",delay:.27,ilen:.4}),mk("text","title",{y:.42,anim:"zoom",delay:.3,ilen:.4}),subT("Be first to see it at "+SITE_NAME,{y:.5,anim:"slide",delay:.36,ilen:.4}),mk("badge","book",{y:.62,anim:"pop",delay:.42,ilen:.4})]}
+];
+function presetState(p,fmt){return{fmt,bg:p.bg&&!photoImg?p.bg:(photoImg?"photo":(p.bg||"stage")),frame:{...S.frame,...p.frame},photo:S.photo,layers:p.layers(),motion:{fx:p.fx||{},dur:p.dur||4}}}
+function applyPreset(p,reel){S.label=p.n;if(reel)S.fmt="story";
+  if(!(photoImg&&S.bg==="photo"))S.bg=p.bg||(S.bg==="photo"?"stage":S.bg);S.frame={...S.frame,...p.frame};S.layers=p.layers();S.motion={...S.motion,dur:p.dur||4,fx:{...(p.fx||{})}};
+  if(reel)showSafe=true;selId=null;clampPhoto();syncAll();commit();toast(p.n+(reel?" Reel":"")+" ready: it plays on the canvas. Click any text to change it, then Video to save")}
+/* tiles play their animation while hovered (or focused) */
+let tileAnim=null;
+function stopTileAnim(){if(!tileAnim)return;cancelAnimationFrame(tileAnim.id);tileAnim.still();tileAnim=null}
+function startTileAnim(cn,st){stopTileAnim();const t0=performance.now(),dur=(st.motion.dur||4)*1000,c=cn.getContext("2d"),go=()=>{render(c,cn.width,cn.height,{t:((performance.now()-t0)%dur)/dur,noPhoto:!photoImg},st);tileAnim.id=requestAnimationFrame(go)};
+  tileAnim={cn,id:0,still:()=>render(c,cn.width,cn.height,{noPhoto:!photoImg},st)};tileAnim.id=requestAnimationFrame(go)}
+/* Instagram/Facebook Reels and TikTok cover the top, bottom and right edge with buttons and captions: shown in the editor only, never exported */
+let showSafe=true;try{showSafe=localStorage.getItem("imc-editor-safe")!=="0"}catch(e){}
 
 /* ---------- seasons: one click sets the background, frame colour, animation and a seasonal badge ---------- */
 const md=(m,d)=>m*100+d;
@@ -1035,9 +1102,61 @@ const FX={
     const sc=Math.max(1,u*1.4),ox=r()*180*sc,oy=r()*180*sc;c.save();c.translate(ox,oy);c.scale(sc,sc);c.fillStyle=c.createPattern(G[f%4],"repeat");c.globalAlpha=.6;c.fillRect(-ox/sc,-oy/sc,W/sc,H/sc);c.restore();
     const vg=c.createRadialGradient(W/2,H/2,Math.min(W,H)*.35,W/2,H/2,Math.hypot(W,H)*.6);vg.addColorStop(0,"rgba(0,0,0,0)");vg.addColorStop(1,"rgba(20,10,0,.35)");c.fillStyle=vg;c.fillRect(0,0,W,H);
     c.strokeStyle="rgba(255,250,235,.28)";c.lineWidth=1.6*u;for(let i=0;i<2;i++){if(r()<.55){const x=r()*W;c.beginPath();c.moveTo(x,0);c.lineTo(x+(r()-.5)*20*u,H);c.stroke()}}
-    c.fillStyle="rgba(10,8,5,.55)";for(let i=0;i<3;i++){if(r()<.5){c.beginPath();c.arc(r()*W,r()*H,(2+r()*5)*u,0,TAU);c.fill()}}c.restore()}}
+    c.fillStyle="rgba(10,8,5,.55)";for(let i=0;i<3;i++){if(r()<.5){c.beginPath();c.arc(r()*W,r()*H,(2+r()*5)*u,0,TAU);c.fill()}}c.restore()}},
+  /* ---- cinema overlays ---- */
+  reels:{n:"Spinning film reels",z:"over",draw(c,W,H,u,t){const R=Math.min(W,H)*.2,col=FXC||"#c9ccd6";c.save();
+    [[R*.35,R*.35,1],[W-R*.35,R*.35,-1]].forEach(([x,y,d])=>{c.save();c.translate(x,y);c.rotate(d*TAU*t);
+      c.fillStyle="#1d140e";c.beginPath();c.arc(0,0,R*.9,0,TAU);c.fill();c.strokeStyle="rgba(120,80,40,.5)";c.lineWidth=1.2*u;for(let i=3;i<9;i++){c.beginPath();c.arc(0,0,R*i/10,0,TAU);c.stroke()}
+      const g=c.createRadialGradient(-R*.3,-R*.3,R*.1,0,0,R);g.addColorStop(0,shade(col,45));g.addColorStop(.6,col);g.addColorStop(1,shade(col,-35));c.fillStyle=g;c.beginPath();c.arc(0,0,R,0,TAU);
+      for(let i=0;i<6;i++){const a=i*TAU/6,hx=Math.cos(a)*R*.55,hy=Math.sin(a)*R*.55,hr=R*.24;c.moveTo(hx+hr,hy);c.arc(hx,hy,hr,0,TAU)}c.moveTo(R*.07,0);c.arc(0,0,R*.07,0,TAU);c.fill("evenodd");
+      c.strokeStyle=shade(col,-45);c.lineWidth=3*u;c.beginPath();c.arc(0,0,R-1.5*u,0,TAU);c.stroke();c.fillStyle=shade(col,-20);c.beginPath();c.arc(0,0,R*.15,0,TAU);c.arc(0,0,R*.07,0,TAU,true);c.fill();c.restore()});c.restore()}},
+  stripscroll:{n:"Moving film strip",z:"over",draw(c,W,H,u,t){const h=96*u,fw=150*u,hole=13*u;c.save();
+    [[0,-1],[H-h,1]].forEach(([y,d])=>{c.fillStyle="rgba(8,8,10,.92)";c.fillRect(0,y,W,h);const off=d*fr(t*4)*fw;
+      for(let x=-fw*2+off;x<W+fw;x+=fw){const g=c.createLinearGradient(x,y,x+fw,y+h);g.addColorStop(0,FXC?shade(FXC,-30):"rgba(255,190,90,.38)");g.addColorStop(1,FXC?shade(FXC,20):"rgba(90,160,255,.3)");c.fillStyle=g;c.globalAlpha=.75;c.fillRect(x+10*u,y+24*u,fw-20*u,h-48*u);c.globalAlpha=1;
+        c.fillStyle="rgba(250,246,236,.9)";for(let k=0;k<4;k++){const hx=x+k*fw/4+fw/8-hole/2;[y+6*u,y+h-6*u-hole*.8].forEach(hy=>{c.beginPath();c.roundRect?c.roundRect(hx,hy,hole,hole*.8,2.5*u):c.rect(hx,hy,hole,hole*.8);c.fill()})}}});c.restore()}},
+  curtain:{n:"Curtain reveal (intro)",z:"over",draw(c,W,H,u,t){const e=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,o=t<.05?0:t<.27?e((t-.05)/.22):t<.93?1:1-e((t-.93)/.07),col=FXC||"#9e0f1f",side=W*.06+W*.44*(1-o);c.save();
+    const half=w=>{const g=c.createLinearGradient(0,0,w,0),n=Math.max(3,Math.round(w/(40*u)));for(let i=0;i<=n;i++)g.addColorStop(i/n,i%2?shade(col,-45):shade(col,18));c.fillStyle=g;
+      const sway=Math.sin(TAU*t*2)*6*u*o;c.beginPath();c.moveTo(0,0);c.lineTo(w,0);c.quadraticCurveTo(w*(1+.06*o)+sway,H*.55,w*(1-.35*o),H);c.lineTo(0,H);c.closePath();c.fill();
+      const sh=c.createLinearGradient(0,0,0,H);sh.addColorStop(0,"rgba(0,0,0,.35)");sh.addColorStop(.3,"rgba(0,0,0,0)");sh.addColorStop(1,"rgba(0,0,0,.4)");c.fillStyle=sh;c.fill();
+      if(o>.5){c.fillStyle="#ffc23d";c.globalAlpha=(o-.5)*2;c.fillRect(0,H*.6-4*u,w*(1-.12*o),8*u);c.globalAlpha=1}};
+    half(side);c.save();c.translate(W,0);c.scale(-1,1);half(side);c.restore();
+    const vh=Math.max(60*u,H*.075),sc=W/9,gv=c.createLinearGradient(0,0,0,vh);gv.addColorStop(0,shade(col,-30));gv.addColorStop(1,shade(col,10));
+    const val=()=>{c.beginPath();c.moveTo(0,vh);for(let x=0;x<W;x+=sc)c.quadraticCurveTo(x+sc/2,vh+26*u,x+sc,vh)};
+    c.fillStyle=gv;val();c.lineTo(W,0);c.lineTo(0,0);c.closePath();c.fill();c.strokeStyle="#ffc23d";c.lineWidth=5*u;val();c.stroke();c.restore()}},
+  letterbox:{n:"Cinematic bars",z:"over",draw(c,W,H,u,t){const e=x=>1-Math.pow(1-x,3),p=t<.1?e(t/.1):t>.95?1-e((t-.95)/.05):1,b=Math.min(H*.11,W*.14)*p;c.save();c.fillStyle="#000";c.fillRect(0,0,W,b);c.fillRect(0,H-b,W,b);
+    c.fillStyle=FXC||"#ffc23d";c.globalAlpha=.85*p;c.fillRect(0,b-2*u,W,2*u);c.fillRect(0,H-b,W,2*u);c.restore()}},
+  clapper:{n:"Clapperboard (intro)",z:"over",draw(c,W,H,u,t){if(t>=.3)return;const a=t<.12?-.55:t<.15?-.55*(1-(t-.12)/.03):0,out=t>.22?(t-.22)/.08:0,s=Math.min(W,H)*.56,cx=W/2,cy=H/2;c.save();
+    c.fillStyle=`rgba(0,0,0,${.6*(1-out)})`;c.fillRect(0,0,W,H);c.translate(cx,cy+(t>=.12&&t<.17?Math.sin((t-.12)/.05*Math.PI)*8*u:0));c.scale(1-out*.3,1-out*.3);c.globalAlpha=1-out;
+    const bw=s,bh=s*.62,top=-bh*.36,stripes=(y,h)=>{c.save();c.beginPath();c.rect(-bw/2,y,bw,h);c.clip();c.fillStyle="#111";c.fillRect(-bw/2,y,bw,h);c.fillStyle="#f4f1ea";for(let x=-bw/2-h;x<bw/2+h;x+=h*1.2){c.beginPath();c.moveTo(x,y+h);c.lineTo(x+h*.6,y+h);c.lineTo(x+h*1.2,y);c.lineTo(x+h*.6,y);c.closePath();c.fill()}c.restore()};
+    c.fillStyle="#141416";c.fillRect(-bw/2,top,bw,bh);stripes(top-bh*.18,bh*.18);
+    c.save();c.translate(-bw/2,top-bh*.18);c.rotate(a);stripes(-bh*.18,bh*.18);c.restore();
+    c.fillStyle="#f4f1ea";c.textAlign="center";c.textBaseline="middle";c.font=`900 ${bh*.2}px ${FONTS.display}`;c.fillText("IMC CINEMAS",0,top+bh*.3);
+    c.strokeStyle="rgba(244,241,234,.6)";c.lineWidth=2*u;c.beginPath();c.moveTo(-bw*.44,top+bh*.48);c.lineTo(bw*.44,top+bh*.48);c.moveTo(0,top+bh*.48);c.lineTo(0,top+bh*.9);c.stroke();
+    c.font=`600 ${bh*.085}px ${FONTS.mono}`;c.fillText("SCENE  1",-bw*.22,top+bh*.62);c.fillText("TAKE  1",bw*.22,top+bh*.62);c.fillText(SITE_TOWN,-bw*.22,top+bh*.8);c.fillText("ACTION!",bw*.22,top+bh*.8);c.restore()}},
+  tickets:{n:"Falling tickets",z:"over",draw(c,W,H,u,t){const r=rng(191),n=dens(W,H,u,14),col=FXC||"#ffd84a";c.save();
+    for(let i=0;i<n;i++){const x0=r()*W,y0=r(),w=(70+r()*40)*u,h=w*.5,k=r()<.6?1:2,ph=r(),y=fr(y0+t*k)*(H+h*3)-h*1.5,x=x0+Math.sin(TAU*(t*k+ph))*40*u;
+      c.save();c.translate(x,y);c.rotate(Math.sin(TAU*(t*k+ph))*.6+ph*3);c.scale(1,.55+.45*Math.abs(Math.cos(TAU*(t*k+ph))));const g=c.createLinearGradient(-w/2,-h/2,w/2,h/2);g.addColorStop(0,shade(col,30));g.addColorStop(1,shade(col,-15));c.fillStyle=g;
+      c.beginPath();c.moveTo(-w/2,-h/2);c.lineTo(w/2,-h/2);c.lineTo(w/2,-h*.15);c.arc(w/2,0,h*.15,-Math.PI/2,Math.PI/2,true);c.lineTo(w/2,h/2);c.lineTo(-w/2,h/2);c.lineTo(-w/2,h*.15);c.arc(-w/2,0,h*.15,Math.PI/2,-Math.PI/2,true);c.closePath();c.fill();
+      c.strokeStyle="rgba(90,50,0,.45)";c.setLineDash([3*u,3*u]);c.lineWidth=1.4*u;c.beginPath();c.moveTo(w*.22,-h/2);c.lineTo(w*.22,h/2);c.stroke();c.setLineDash([]);c.fillStyle="rgba(70,40,0,.8)";c.textAlign="center";c.textBaseline="middle";c.font=`900 ${h*.3}px ${FONTS.display}`;c.fillText("ADMIT ONE",-w*.12,0);c.restore()}c.restore()}},
+  popcornrain:{n:"Popcorn rain",z:"over",draw(c,W,H,u,t){const r=rng(201),n=dens(W,H,u,30);for(let i=0;i<n;i++){const x0=r()*W,y0=r(),sz=(14+r()*12)*u,k=r()<.6?1:2,ph=r(),y=fr(y0+t*k)*(H+80*u)-40*u,x=x0+Math.sin(TAU*(t*k+ph))*16*u;kernel(c,x,y,sz,TAU*(t*k+ph))}}},
+  ghosts:{n:"Friendly ghosts",z:"over",draw(c,W,H,u,t){const r=rng(211),n=Math.max(3,dens(W,H,u,6));c.save();
+    for(let i=0;i<n;i++){const x0=r()*W,y0=r(),s=(36+r()*36)*u,ph=r(),y=(1-fr(y0+t))*(H+s*4)-s*2,x=x0+Math.sin(TAU*(t+ph))*50*u;c.save();c.translate(x,y);c.rotate(Math.sin(TAU*(t*2+ph))*.12);c.globalAlpha=.82;
+      c.fillStyle=FXC||"#f5f3ff";c.shadowColor="rgba(200,190,255,.8)";c.shadowBlur=24*u;c.beginPath();c.arc(0,0,s,Math.PI,0);c.lineTo(s,s*1.3);const wv=Math.sin(TAU*(t*4+ph));for(let j=0;j<4;j++){const x1=s-(j+.5)*s/2,x2=s-(j+1)*s/2;c.quadraticCurveTo(x1,s*1.3+(j%2?-1:1)*s*.25*wv,x2,s*1.3)}c.closePath();c.fill();c.shadowBlur=0;
+      c.fillStyle="#1a1440";c.beginPath();c.ellipse(-s*.32,-s*.1,s*.12,s*.18,0,0,TAU);c.ellipse(s*.32,-s*.1,s*.12,s*.18,0,0,TAU);c.fill();c.beginPath();c.ellipse(0,s*.35,s*.14,s*.18*(.7+.3*Math.abs(wv)),0,0,TAU);c.fill();c.restore()}c.restore()}},
+  flare:{n:"Lens flare sweep",z:"over",draw(c,W,H,u,t){const x=-W*.25+t*W*1.5,y=H*.3,col=FXC?rgb(FXC).join(","):"140,200,255";c.save();c.globalCompositeOperation="screen";
+    let g=c.createRadialGradient(x,y,0,x,y,220*u);g.addColorStop(0,"rgba(255,255,255,.9)");g.addColorStop(.2,`rgba(${col},.45)`);g.addColorStop(1,`rgba(${col},0)`);c.fillStyle=g;c.beginPath();c.arc(x,y,220*u,0,TAU);c.fill();
+    g=c.createLinearGradient(x-W*.7,0,x+W*.7,0);g.addColorStop(0,`rgba(${col},0)`);g.addColorStop(.5,`rgba(${col},.75)`);g.addColorStop(1,`rgba(${col},0)`);c.fillStyle=g;c.fillRect(x-W*.7,y-3*u,W*1.4,6*u);
+    const cx=W/2,cy=H/2;[[.4,40,.18],[.7,22,.25],[1.3,60,.12],[1.6,30,.2]].forEach(([k,rr,a])=>{const gx=x+(cx-x)*k*1.25,gy=y+(cy-y)*k*1.25;c.fillStyle=`rgba(${col},${a})`;c.beginPath();for(let j=0;j<6;j++){const an=j*TAU/6;c.lineTo(gx+Math.cos(an)*rr*u,gy+Math.sin(an)*rr*u)}c.closePath();c.fill()});c.restore()}},
+  vhs:{n:"Retro VHS",z:"over",draw(c,W,H,u,t){const f=Math.floor(t*24),r=rng(700+f),G=grainTiles();c.save();
+    if(r()<.35){const y=r()*H,h=(10+r()*50)*u,dx=(r()-.5)*40*u;try{c.drawImage(c.canvas,0,y*(c.canvas.height/H),c.canvas.width,h*(c.canvas.height/H),dx,y,W,h)}catch(e){}}
+    c.fillStyle="rgba(0,0,0,.16)";for(let y=0;y<H;y+=4*u)c.fillRect(0,y,W,1.6*u);
+    c.globalAlpha=.25;c.fillStyle=c.createPattern(G[f%4],"repeat");c.fillRect(0,0,W,H);c.globalAlpha=1;
+    c.fillStyle="#fff";c.shadowColor="rgba(0,0,0,.6)";c.shadowBlur=4*u;c.font=`600 ${40*u}px ${FONTS.mono}`;c.textBaseline="top";c.textAlign="left";if(f%24<18)c.fillText("PLAY ▶",48*u,44*u);c.textAlign="right";c.fillText("SP",W-48*u,44*u);c.restore()}},
+  spotsweep:{n:"Spotlight sweep",z:"under",draw(c,W,H,u,t){const x=W*(.5+.3*Math.sin(TAU*t)),y=H*(.45+.14*Math.sin(TAU*t*2)),R=Math.min(W,H)*.42;c.save();
+    const g=c.createRadialGradient(x,y,R*.35,x,y,Math.hypot(W,H));g.addColorStop(0,"rgba(0,0,0,0)");g.addColorStop(.25,"rgba(0,0,0,.55)");g.addColorStop(1,"rgba(0,0,0,.75)");c.fillStyle=g;c.fillRect(0,0,W,H);
+    c.globalCompositeOperation="screen";const w=c.createRadialGradient(x,y,0,x,y,R);w.addColorStop(0,FXC?`rgba(${rgb(FXC).join(",")},.35)`:"rgba(255,240,200,.3)");w.addColorStop(1,"rgba(0,0,0,0)");c.fillStyle=w;c.beginPath();c.arc(x,y,R,0,TAU);c.fill();c.restore()}}
 };
-const FX_ORDER=["kenburns","stars","rays","spotlights","fireworks","bokeh","chase","lightleak","sparkle","glitter","popburst","fizz","confetti","balloons","snow","rain","lights","bats","fog","embers","hearts","shamrocks","leaves","bunting","flash","neon","countdown","projector"];
+const FX_ORDER=["kenburns","stars","rays","spotlights","spotsweep","fireworks","bokeh","chase","lightleak","sparkle","glitter","popburst","popcornrain","fizz","confetti","tickets","balloons","snow","rain","lights","bats","ghosts","fog","embers","hearts","shamrocks","leaves","bunting","flash","neon","flare","vhs","letterbox","stripscroll","reels","countdown","clapper","curtain","projector"];
 const ANIMS={none:"None",pop:"Pop in",slam:"Slam in",slide:"Slide up",zoom:"Zoom in",fade:"Fade in",drop:"Drop & bounce",spin:"Spin in",flip:"Flip in",type:"Type on (text)",shine:"Shine",pulse:"Pulse",heartbeat:"Heartbeat",glow:"Glow",swing:"Swing",wiggle:"Wiggle",shake:"Shake",float:"Float",blink:"Blink"};
 function animOf(L,t){const o={ds:1,dr:0,dy:0,da:1},a=L.anim,d=L.delay||0,tt=t-d,intro=len=>tt<0?-1:Math.min(1,tt/(len*(L.ilen||1))),eo=p=>1-Math.pow(1-p,3);
   if(a==="pulse")o.ds=1+.055*Math.sin(TAU*tt*2);
@@ -1084,6 +1203,9 @@ function corners(L,W,H,u,k){const co=Math.cos(L.r||0),si=Math.sin(L.r||0),sc=L.s
   const P=(lx,ly)=>({x:cx+lx*co-ly*si,y:cy+lx*si+ly*co});return{c:{x:cx,y:cy},tl:P(-hw,-hh),tr:P(hw,-hh),br:P(hw,hh),bl:P(-hw,hh),top:P(0,-hh),rot:P(0,-hh-46*k)}}
 function drawOverlay(c,W,H,u){const k=kpx();c.save();
   if(!photoImg){c.fillStyle="rgba(255,255,255,.5)";c.font=`600 ${Math.max(14*k,26*u)}px ${FONTS.body}`;c.textAlign="center";c.fillText("Drop a photo here, paste one, or use Photo → Upload",W/2,H/2);c.textAlign="left"}
+  if(showSafe&&S.fmt==="story"){const top=H*.13,bot=H*.22,rt=W*.13;c.fillStyle="rgba(255,79,216,.13)";c.fillRect(0,0,W,top);c.fillRect(0,H-bot,W,bot);c.fillRect(W-rt,top,rt,H-top-bot);
+    c.strokeStyle="rgba(255,79,216,.75)";c.lineWidth=1.5*k;c.setLineDash([8*k,6*k]);c.strokeRect(0,top,W-rt,H-top-bot);c.setLineDash([]);c.fillStyle="rgba(255,255,255,.85)";c.font=`600 ${Math.max(11*k,22*u)}px ${FONTS.body}`;c.textAlign="center";
+    c.fillText("Reels: app buttons cover this",W/2,top*.55);c.fillText("Reels: caption & buttons cover this",W/2,H-bot*.5);c.textAlign="left"}
   if(drag&&drag.gx){c.strokeStyle="#ff4fd8";c.lineWidth=1.5*k;c.beginPath();c.moveTo(W/2,0);c.lineTo(W/2,H);c.stroke()}
   if(drag&&drag.gy){c.strokeStyle="#ff4fd8";c.lineWidth=1.5*k;c.beginPath();c.moveTo(0,H/2);c.lineTo(W,H/2);c.stroke()}
   const L=getSel();if(L&&!L.hidden){const C=corners(L,W,H,u,k);c.strokeStyle="#4da3ff";c.lineWidth=2*k;c.setLineDash([6*k,4*k]);c.beginPath();c.moveTo(C.tl.x,C.tl.y);c.lineTo(C.tr.x,C.tr.y);c.lineTo(C.br.x,C.br.y);c.lineTo(C.bl.x,C.bl.y);c.closePath();c.stroke();c.setLineDash([]);
@@ -1193,12 +1315,23 @@ function renderThumbs(){
   const now=seasonNow().map(x=>x.k);
   $("#seasons").innerHTML=SEASONS.map(se=>`<button class="tile" data-season="${se.k}"><canvas width="320" height="320"></canvas><span>${esc(se.n)}${now.includes(se.k)?' <em class="anim">Now</em>':""}</span></button>`).join("");
   $$("#seasons .tile").forEach(t=>{const se=SEASONS.find(x=>x.k===t.dataset.season),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:se.bg,frame:{...S.frame,...se.frame},photo:S.photo,layers:seasonLayers(se,true),motion:{fx:se.fx}})});
+  $("#presets").innerHTML=ANIM_PRESETS.map((p,i)=>`<button class="tile" data-preset="${i}"><canvas width="320" height="320"></canvas><span>${esc(p.n)}</span></button>`).join("");
+  $("#reels").innerHTML=REELS.map((p,i)=>`<button class="tile" data-reel="${i}"><canvas width="216" height="384"></canvas><span>${esc(p.n)}</span></button>`).join("");
+  stopTileAnim();$$("#presets .tile").forEach(t=>{const c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},presetState(ANIM_PRESETS[+t.dataset.preset],"square"))});
+  $$("#reels .tile").forEach(t=>{const c=t.querySelector("canvas");render(c.getContext("2d"),216,384,{noPhoto:!photoImg},presetState(REELS[+t.dataset.reel],"story"))});
+  $("#safeChk").checked=showSafe;
   $$("#layouts .tile").forEach(t=>{const l=LAYOUTS[+t.dataset.layout],c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,...l.frame},photo:S.photo,layers:l.layers(),motion:{fx:l.fx||{}}})});
 }
 let thumbT=0;function thumbsSoon(){clearTimeout(thumbT);thumbT=setTimeout(renderThumbs,600)}
 
 /* ---------- layouts ---------- */
 $("#seasons").addEventListener("click",e=>{const t=e.target.closest("[data-season]");if(t)applySeason(t.dataset.season,false)});
+$("#presets").addEventListener("click",e=>{const t=e.target.closest("[data-preset]");if(t){stopTileAnim();applyPreset(ANIM_PRESETS[+t.dataset.preset],false)}});
+$("#reels").addEventListener("click",e=>{const t=e.target.closest("[data-reel]");if(t){stopTileAnim();applyPreset(REELS[+t.dataset.reel],true)}});
+for(const[id,list,fmt]of[["#presets",()=>ANIM_PRESETS,"square"],["#reels",()=>REELS,"story"]])for(const[on,off]of[["pointerover","pointerout"],["focusin","focusout"]]){
+  $(id).addEventListener(on,e=>{const t=e.target.closest(".tile");if(!t||(tileAnim&&tileAnim.cn===t.querySelector("canvas")))return;const i=+(t.dataset.preset??t.dataset.reel);startTileAnim(t.querySelector("canvas"),presetState(list()[i],fmt))});
+  $(id).addEventListener(off,e=>{const t=e.target.closest(".tile");if(t&&!t.contains(e.relatedTarget))stopTileAnim()})}
+$("#safeChk").addEventListener("change",e=>{showSafe=e.target.checked;try{localStorage.setItem("imc-editor-safe",showSafe?"1":"0")}catch(x){}draw()});
 $("#layouts").addEventListener("click",e=>{const t=e.target.closest("[data-layout]");if(!t)return;const l=LAYOUTS[+t.dataset.layout];S.label="";S.frame={...S.frame,...l.frame};S.layers=l.layers();S.motion={...S.motion,fx:{...(l.fx||{})}};selId=null;clampPhoto();syncAll();commit();toast(l.n+" layout applied")});
 function getSaved(){try{return JSON.parse(fixSite(localStorage.getItem("imc-editor-layouts")||"[]"))}catch(e){return[]}}
 function putSaved(a){try{localStorage.setItem("imc-editor-layouts",JSON.stringify(a))}catch(e){toast("Couldn't save. Browser storage is full or blocked.")}}
@@ -1635,6 +1768,8 @@ function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-ha
   else if(h.kind==="luxx")applyLuxx(h);
   else if(h.kind==="season"){applySeason(h.key,true);if(h.title){const t=S.layers.find(l=>l.kind==="text");if(t)t.text=h.title}}
   else if(h.kind==="listing")applyListing(h);
+  else if(h.kind==="reel"){applyPreset(REELS[h.i|0]||REELS[0],true);const b=$('[data-tab="layouts"]');if(b){b.click();setTimeout(()=>{const r=$("#reels");if(r)r.closest(".sec").scrollIntoView({block:"start"})},300)}}
+  else if(h.kind==="preset")applyPreset(ANIM_PRESETS[h.i|0]||ANIM_PRESETS[0],false);
   else if(h.kind==="film")applyFilm(h.film,h.mode);
   else if(h.kind==="image"&&h.url)loadUrlAsPhoto(h.url);
   return true}
