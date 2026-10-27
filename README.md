@@ -84,6 +84,12 @@ The hub's **Welcome videos** page makes "Welcome to IMC" logo reveals for the fo
 
 Videos marked "on the foyer TVs" play between trailers on the foyer player: after every trailer, every 2nd, every 3rd, or now and then at random (every 2–4 films). They're drawn live by `ident.js`, which the hub and `foyer.html` share. Because the TV can't see the hub's saved settings, the welcome videos travel inside the foyer player link, so reopen the link after making changes. The downloadable foyer pack includes them too, slotted into `playlist.m3u`.
 
+### LUXX welcome videos
+
+The IMC / LUXX switch on the Welcome videos page has a LUXX set. It uses a gold LUXX wordmark with "Luxury recliner seating" and serif text, and adds three LUXX reveals: gold lines, gold foil shine and warm glow. Every other reveal works with the LUXX wordmark too, and there are two LUXX backgrounds (LUXX lounge, Leather & gold). Three LUXX starters are included.
+
+The **LUXX lounge player** link (Welcome videos and Foyer trailers pages) is for a TV in or near the LUXX area. It shows only films with LUXX showings, with their LUXX times, and plays only the LUXX welcome videos.
+
 ## Cinema Reels, animated presets and overlays
 
 The editor's **Layouts** tab has **Cinema Reels**: eight ready-made 9:16 videos for Instagram and Facebook Reels, TikTok and Stories. They are a coming-soon teaser (next release and date from imc.ie), this week's films (from imc.ie), snack attack, the LUXX experience, Kids Club, a win-tickets competition, Fright night and Opening night. Each plays in scenes. A pink guide shows the parts of the screen that the Reels buttons and caption cover; it's shown in the editor only and never exported. There are also twelve **Animated presets** that work at any size. Point at a tile to preview it.

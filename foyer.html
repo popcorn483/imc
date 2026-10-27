@@ -6,7 +6,7 @@
 <title>IMC Foyer Trailers</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:wght@700&family=Figtree:wght@500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
 /* Full-screen foyer player: a showtimes card, then the film's official trailer, then the next film. Built for TVs, so everything scales with the screen. */
 :root{--ink:#fff;--muted:#b9c3e6;--gold:#ffd84a;--blue:#1fa0de;--bg:#070a1c;--stripe:linear-gradient(90deg,#ffd84a,#f39a2b 55%,#e2452e);
@@ -76,7 +76,8 @@ const NI=["enniskillen","ballymena","banbridge","newtownards"];
 const SAFE={bbfc:["U","PG","12A","12"],ifco:["G","PG","12A"]};
 const RED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
  /* welcome videos made in the hub travel in the link, since the TV can't see the hub's saved settings */
-const WEL=window.IMCIdent?IMCIdent.decode(Q.get("w")||""):[],WF=Q.get("wf")||(WEL.length?"r":"0");
+const LOUNGE=Q.get("luxx")==="1";
+const WEL=(window.IMCIdent?IMCIdent.decode(Q.get("w")||""):[]).filter(w=>!LOUNGE||w.brand==="luxx"),WF=Q.get("wf")||(WEL.length?"r":"0");
 let since=0,justIdent=false,lastIdent=-1,idAssets=null,idRaf=0;
 const newGap=()=>WF==="r"?2+Math.floor(Math.random()*3):Math.max(1,+WF||1);let gap=newGap();
 let D=null,T={},base="",queue=[],qi=-1,player=null,timer=null,ytReady=null,muted=!SOUND,lastLoad=0;
@@ -91,7 +92,7 @@ function films(){const m=new Map();
     for(const f of list){if(!f.title)continue;const k=(f.slug||f.title.toLowerCase())+(f.luxx?"|l":"");const p=m.get(k)||{...f,key:k,sources:new Set(),sessions:[]};p.sources.add(src);
       for(const s of f.sessions||[])if(!p.sessions.some(x=>x.date===s.date&&x.time===s.time))p.sessions.push(s);for(const key of["poster","posterFile","cert","certIcon","certSystem","runtime","trailer","releaseDate"])p[key]=p[key]||f[key];m.set(k,p)}
   /* one entry per film: the LUXX listing shares the standard one's trailer */
-  const out=new Map();for(const f of m.values()){const k=f.slug||f.title.toLowerCase(),o=out.get(k);if(!o)out.set(k,{...f,key:k,luxxToo:!!f.luxx});else{o.luxxToo=o.luxxToo||!!f.luxx;for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s)}}
+  const out=new Map();for(const f of m.values()){const k=f.slug||f.title.toLowerCase(),o=out.get(k);if(!o)out.set(k,{...f,key:k,luxxToo:!!f.luxx,luxxS:f.luxx?[...f.sessions]:[]});else{o.luxxToo=o.luxxToo||!!f.luxx;if(f.luxx)for(const s of f.sessions)if(!o.luxxS.some(x=>x.date===s.date&&x.time===s.time))o.luxxS.push(s);for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s)}}
   return[...out.values()]}
 function safety(f){const t=T[f.trailer]||{};const sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
   if(!f.trailer||!ytId(f.trailer))return{ok:false,why:"no trailer"};if(t.unavailable)return{ok:false,why:"trailer unavailable"};
@@ -99,7 +100,7 @@ function safety(f){const t=T[f.trailer]||{};const sys=f.certSystem||(NI.includes
   if(!c||c==="TBC")return OK.has(f.key)?{ok:true}:{ok:false,review:true,why:"no certificate yet"};
   return(SAFE[sys]||SAFE.bbfc).includes(c)?{ok:true}:{ok:false,why:"rated "+c}}
 function upcoming(f){const n=londonNow();return f.sessions.filter(s=>s.date&&(s.date>n.date||(s.date===n.date&&s.time>n.hm))).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))}
-function buildQueue(){const n=londonNow(),all=films(),in7=new Date(Date.now()+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
+function buildQueue(){const n=londonNow(),all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.length).map(f=>({...f,sessions:f.luxxS})):films(),in7=new Date(Date.now()+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
   let list=MODE==="pick"&&IDS.length?IDS.map(k=>all.find(f=>f.key===k)).filter(Boolean):all.filter(f=>{const u=upcoming(f);return u.length&&u[0].date<=in7||(SOON&&f.sources.has("soon"))});
   /* special screenings (sensory, fancy dress…) share their film's trailer: show each trailer once */
   const nt=t=>String(t||"").toLowerCase().replace(/^(sensory|autism friendly|parent (and|&) baby)[:\s-]*/,"").replace(/\s+-\s+.*$|\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
@@ -142,7 +143,7 @@ async function playIdent(){try{if(player&&player.stopVideo)player.stopVideo()}ca
   const step=()=>{const t=Math.min(1,(performance.now()-t0)/(secs*1000));IMCIdent.draw(c,1920,1080,t,w,idAssets);if(t<1)idRaf=requestAnimationFrame(step)};step();
   timer=setTimeout(next,secs*1000+150)}
 async function load(){D=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json");T=(await getJson("data/trailers.json"))||{};base=D?D._base:"";lastLoad=Date.now();
-  if(!D){queue=[];return}queue=buildQueue();$("#bname").textContent=(D.cinema||"IMC")+" · Book at imc.ie";document.title=(D.cinema||"IMC")+" foyer trailers"}
+  if(!D){queue=[];return}queue=buildQueue();$("#bname").textContent=(D.cinema||"IMC")+(LOUNGE?" · LUXX":"")+" · Book at imc.ie";document.title=(D.cinema||"IMC")+(LOUNGE?" LUXX lounge":" foyer trailers");if(LOUNGE){const h=$("#start h1");if(h)h.textContent="LUXX lounge"}}
 async function start(){if(SOUND){muted=false}show("card");qi=-1;next()}
 document.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){if(player&&player._done)player._done();next()}if(e.key==="f"||e.key==="F"){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}
   if(e.key==="m"||e.key==="M"){muted=!muted;if(player&&player.mute){muted?player.mute():player.unMute()}}});

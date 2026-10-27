@@ -8,7 +8,7 @@
 <title>IMC Hub</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Playfair+Display:wght@700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: projection-booth console. Left rail navigation, working area right; studio = form | live poster | virality. */
 :root{
@@ -213,7 +213,8 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .wstyles{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;margin:6px 0 14px}
 .wstyles button{font:inherit;font-size:13px;font-weight:600;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:inherit;cursor:pointer;text-align:left}
 .wstyles button[aria-pressed=true]{border-color:#f39a2b;box-shadow:0 0 0 2px rgba(243,154,43,.35)}
-.welform .check{display:flex;gap:8px;align-items:center;font-size:14px}
+.wbrand{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}.wbrand button{font:inherit;font-weight:700;font-size:13px;padding:7px 16px;border:0;background:var(--panel);color:inherit;cursor:pointer;letter-spacing:.06em}.wbrand button[aria-pressed=true]{background:#1a1440;color:#ffd84a}
+.welform .check{display:flex!important;justify-content:flex-start;gap:8px;align-items:center;font-size:14px}.welform .check input{width:auto;flex:none;margin:0}
 .wfields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.wfields .wide{grid-column:1/-1}.wfields input,.wfields select{width:100%;box-sizing:border-box}
 #waccents button{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}#waccents button[aria-pressed=true]{outline:3px solid #f39a2b;outline-offset:1px}#waccents input{width:36px;height:30px;padding:0;border:0;background:none}
 .wlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
@@ -349,7 +350,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
             <label class="field" style="max-width:220px"><span class="flabel">Showtimes card length</span><select id="fcard"><option value="8">8 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option></select></label>
             <label class="field" style="max-width:300px"><span class="flabel">Welcome videos between trailers</span><select class="wfreq"></select></label><button class="btn small" data-go="welcome" style="align-self:flex-start">Make welcome videos →</button></fieldset>
         </div>
-        <div class="row-btns" style="margin-top:12px"><a class="btn primary" id="fopen" target="_blank" rel="noopener" style="text-decoration:none">Open foyer player ↗</a><button class="btn" id="fcopy">Copy TV link</button><button class="btn" id="fzip">Download pack (.zip)</button><button class="btn" id="fcsv">Download trailer list (.csv)</button></div>
+        <div class="row-btns" style="margin-top:12px"><a class="btn" id="flounge" target="_blank" rel="noopener" style="text-decoration:none;order:2">LUXX lounge player ↗</a><a class="btn primary" id="fopen" target="_blank" rel="noopener" style="text-decoration:none">Open foyer player ↗</a><button class="btn" id="fcopy">Copy TV link</button><button class="btn" id="fzip">Download pack (.zip)</button><button class="btn" id="fcsv">Download trailer list (.csv)</button></div>
         <div id="fprog" class="tip" hidden></div>
       </div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>Films</h2><span class="tip" id="fcount" style="margin:0"></span></div><div id="foyList"></div></div>
@@ -359,7 +360,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <!-- WELCOME VIDEOS -->
     <section id="v-welcome" hidden>
       <div class="head"><div><h1>Welcome videos</h1><p>“Welcome to IMC” logo reveals for the foyer TVs. Pick a reveal, change the words and colours, and they play between trailers on the foyer player. You can also download each one as a video.</p></div>
-        <div class="row-btns"><button class="btn primary" id="wnew">+ New welcome video</button></div></div>
+        <div class="row-btns"><span class="wbrand" id="wbrand" role="group" aria-label="Brand"><button type="button" data-wbrand="imc">IMC</button><button type="button" data-wbrand="luxx">LUXX</button></span><button class="btn primary" id="wnew">+ New welcome video</button></div></div>
       <div class="welgrid">
         <div class="panel"><div class="ph"><h2>Preview</h2><span class="tip" id="wdur" style="margin:0"></span></div>
           <canvas id="wcv" width="1280" height="720" aria-label="Preview of the welcome video"></canvas>
@@ -368,6 +369,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
           <span class="flabel">Reveal</span><div class="wstyles" id="wstyles"></div>
           <div class="wfields">
             <label class="field"><span class="flabel">Name (only you see this)</span><input id="wname" maxlength="40"></label>
+            <label class="field"><span class="flabel">Logo</span><select id="wlogo"><option value="imc">IMC logo</option><option value="luxx">LUXX wordmark</option></select></label>
             <label class="field"><span class="flabel">Small top line</span><input id="wkicker" maxlength="40"></label>
             <label class="field wide"><span class="flabel">Big line</span><input id="wtitle" maxlength="40"></label>
             <label class="field wide"><span class="flabel">Message</span><input id="wmsg" maxlength="70"></label>
@@ -382,7 +384,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>Your welcome videos</h2><span class="tip" id="wcount" style="margin:0"></span></div><div class="wlist" id="wlist"></div></div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>On the foyer TVs</h2></div>
         <div class="row-btns" style="align-items:flex-end"><label class="field" style="max-width:300px"><span class="flabel">How often between trailers</span><select class="wfreq"></select></label>
-          <a class="btn primary" id="wopen" target="_blank" rel="noopener" style="text-decoration:none">Open foyer player ↗</a><button class="btn" data-go="foyer">Foyer trailer settings</button></div>
+          <a class="btn primary" id="wopen" target="_blank" rel="noopener" style="text-decoration:none">Open foyer player ↗</a><a class="btn" id="wlounge" target="_blank" rel="noopener" style="text-decoration:none">Open LUXX lounge player ↗</a><button class="btn" data-go="foyer">Foyer trailer settings</button></div>
+        <p class="tip">The <b>foyer player</b> uses every video marked for the TVs, IMC and LUXX. The <b>LUXX lounge player</b> is for a screen in or outside the LUXX area. It shows only films with LUXX showings and their LUXX times, and only your LUXX welcome videos.</p>
         <p class="tip">The foyer player picks one of the videos marked for the TVs at random each time. They're silent, so the room stays quiet between trailers. If the foyer TV already has the player open, reopen the link (or copy it again from Foyer trailers) to pick up changes.</p></div>
     </section>
 
@@ -1167,8 +1170,8 @@ function foySafety(f,st){const t=(TRAIL||{})[f.trailer]||{},sys=f.certSystem||(S
   return(FSAFE[sys]||FSAFE.bbfc).includes(c)?{ok:true,cls:"ok",label:"Foyer-safe ("+c+")"}:{ok:false,cls:"no",label:"Rated "+c+": may contain strong language"}}
 function foyChosen(st){const in7=addDays(todayIso(),7);return foyFilms().filter(f=>{const sf=foySafety(f,st);if(!sf.ok)return false;
   if(st.mode==="pick")return st.pick.includes(f.key);return(f.next&&f.next.date<=in7)||(st.soon&&!f.next&&f.sources&&f.sources.has("soon"))}).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer)===i)}
-function foyUrl(st){const u=new URL("foyer.html",location.href),P=u.searchParams;P.set("c",site);P.set("mode",st.mode);if(st.mode==="pick")P.set("ids",foyChosen(st).map(f=>f.key).join(","));
-  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");const wl=wGet().filter(w=>w.on!==false);if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
+function foyUrl(st,lounge){const u=new URL("foyer.html",location.href),P=u.searchParams;if(lounge)P.set("luxx","1");P.set("c",site);P.set("mode",st.mode);if(st.mode==="pick")P.set("ids",foyChosen(st).map(f=>f.key).join(","));
+  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
 async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
   if(!IMC){el.innerHTML=noData();return}
   if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}
@@ -1244,48 +1247,56 @@ $("#fzip").onclick=async()=>{const btn=$("#fzip"),pr=$("#fprog"),st=foyState();i
 const WI=window.IMCIdent;
 const wsk=()=>sk("imc-idents");
 const WFREQ=[["0","Off"],["1","After every trailer"],["2","After every 2nd trailer"],["3","After every 3rd trailer"],["r","Now and then (at random)"]];
-const WACC=["#ffd84a","#f39a2b","#e2452e","#1fa0de","#ff3fa4","#7bd148","#ffffff"];
-function wDefaults(){const nm=S().name.toUpperCase();return[
+const WACC=["#ffd84a","#e8c46a","#f39a2b","#e2452e","#1fa0de","#ff3fa4","#7bd148","#ffffff"];
+function wLuxxDefaults(){const nm=S().name.toUpperCase(),lx={...WI.DEFAULT,brand:"luxx",theme:"luxx",accent:"#e8c46a"};return[
+  {...lx,id:newId(),name:"Welcome to LUXX",style:"luxxlines",kicker:"WELCOME TO",title:"LUXX AT "+nm,msg:"Sit back, recline and enjoy the show"},
+  {...lx,id:newId(),name:"Upgrade to LUXX",style:"luxxfoil",kicker:"UPGRADE YOUR NIGHT",title:"TRY LUXX",msg:"Luxury recliner seating · book at imc.ie",extra:"sparkle"},
+  {...lx,id:newId(),name:"LUXX phones off",style:"luxxglow",theme:"leather",kicker:"THANK YOU FOR CHOOSING LUXX",title:"ENJOY THE FILM",msg:"Please switch off your phone and relax"}]}
+function wDefaults(){const nm=S().name.toUpperCase();return[...wLuxxDefaults(),
   {...WI.DEFAULT,id:newId(),name:"Welcome",style:"spotlight",kicker:"WELCOME TO",title:nm,msg:"Sit back, relax and enjoy the show"},
   {...WI.DEFAULT,id:newId(),name:"Phones off",style:"curtain",theme:"velvet",kicker:"THANKS FOR CHOOSING",title:nm,msg:"Please switch off your phone and enjoy the film"},
   {...WI.DEFAULT,id:newId(),name:"Snacks",style:"popcorn",theme:"imc",kicker:"DON'T FORGET",title:"SNACKS AT THE KIOSK",msg:"Popcorn, drinks and Candy King pick 'n' mix"}]}
-function wGet(){try{const a=JSON.parse(localStorage.getItem(wsk())||"null");if(Array.isArray(a))return a}catch(e){}return wDefaults()}
+function wGet(){try{const a=JSON.parse(localStorage.getItem(wsk())||"null");if(Array.isArray(a)){
+  /* lists saved before LUXX videos existed get the LUXX starters once */
+  if(!a.some(w=>w.brand==="luxx")&&!localStorage.getItem(wsk()+"-luxx")){a.push(...wLuxxDefaults());localStorage.setItem(wsk()+"-luxx","1");wPut(a)}return a}}catch(e){}return wDefaults()}
 function wPut(a){try{localStorage.setItem(wsk(),JSON.stringify(a))}catch(e){toast("Couldn't save. Browser storage is blocked.")}}
-let wSel=0,wT0=performance.now(),wRaf=0,wAssets=null,wHover=null;
+let wBrand=(()=>{try{return localStorage.getItem("imc-wbrand")||"imc"}catch(e){return"imc"}})(),wSel=-1,wT0=performance.now(),wRaf=0,wAssets=null,wHover=null;
 const wFonts=()=>document.fonts?Promise.all(["900 60px 'Big Shoulders Display'","600 30px Figtree","500 30px 'IBM Plex Mono'"].map(x=>document.fonts.load(x).catch(()=>{}))):Promise.resolve();
 async function wReady(){if(!wAssets){await wFonts();wAssets=await WI.loadAssets("")}return wAssets}
-function wCur(){const a=wGet();if(wSel>=a.length)wSel=Math.max(0,a.length-1);return a[wSel]}
+function wCur(){const a=wGet();if(!a[wSel]||(a[wSel].brand||"imc")!==wBrand){wSel=a.findIndex(w=>(w.brand||"imc")===wBrand)}return a[wSel]}
 function wSave(patch){const a=wGet();if(!a[wSel])return;a[wSel]={...a[wSel],...patch};wPut(a);wList();wFormSync(true)}
 async function renderWelcome(){await wReady();const st=foyState();
   $("#wstyles").innerHTML=Object.entries(WI.STYLES).map(([k,v])=>`<button type="button" data-wstyle="${k}">${esc(v.n)}</button>`).join("");
   $("#wtheme").innerHTML=Object.entries(WI.THEMES).map(([k,v])=>`<option value="${k}">${esc(v.n)}</option>`).join("");
   $("#wextra").innerHTML=Object.entries(WI.EXTRAS).map(([k,v])=>`<option value="${k}">${esc(v)}</option>`).join("");
   wList();wFormSync();wFreqSync();wT0=performance.now();wLoop()}
-function wFreqSync(){const st=foyState();$$(".wfreq").forEach(s=>{s.innerHTML=WFREQ.map(([v,n])=>`<option value="${v}">${n}</option>`).join("");s.value=st.wfreq||"r"});const o=$("#wopen");if(o)o.href=foyUrl(st)}
-function wFormSync(keepInputs){const w=wCur();if(!w){$("#wcount").textContent="No welcome videos yet";return}
+function wFreqSync(){const st=foyState();$$(".wfreq").forEach(s=>{s.innerHTML=WFREQ.map(([v,n])=>`<option value="${v}">${n}</option>`).join("");s.value=st.wfreq||"r"});const o=$("#wopen");if(o)o.href=foyUrl(st);for(const id of["#wlounge","#flounge"]){const l=$(id);if(l)l.href=foyUrl(st,true)}}
+function wFormSync(keepInputs){$$("#wbrand [data-wbrand]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.wbrand===wBrand));const w=wCur();$(".welform").style.opacity=w?1:.5;if(!w)return;
+  $("#wlogo").value=w.brand||"imc";
   $$("#wstyles [data-wstyle]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.wstyle===w.style));
   if(!keepInputs){$("#wname").value=w.name||"";$("#wkicker").value=w.kicker||"";$("#wtitle").value=w.title||"";$("#wmsg").value=w.msg||""}
   $("#wtheme").value=w.theme;$("#wextra").value=w.extra||"none";$("#wlen").value=String(w.dur||8);$("#won").checked=w.on!==false;
   $("#waccents").innerHTML=WACC.map(c=>`<button type="button" data-wacc="${c}" style="background:${c}" aria-label="Accent ${c}" aria-pressed="${c===w.accent}"></button>`).join("")+`<input type="color" id="wacc" value="${esc(w.accent)}" aria-label="Pick any accent colour">`;
   $("#wdur").textContent=`${w.dur||8} seconds · 1920 × 1080`;const o=$("#wopen");if(o)o.href=foyUrl(foyState())}
-function wList(){const a=wGet(),on=a.filter(w=>w.on!==false).length;$("#wcount").textContent=`${a.length} saved · ${on} on the foyer TVs`;
-  $("#wlist").innerHTML=a.map((w,i)=>`<div class="wcard" aria-current="${i===wSel}"><canvas width="480" height="270" data-wthumb="${i}" title="Edit ${esc(w.name)}"></canvas><div class="b"><b>${esc(w.name||"Welcome")}</b><span class="m">${esc((WI.STYLES[w.style]||{}).n||"")} · ${w.dur||8}s · ${w.on!==false?"On the TVs":"Not on the TVs"}</span>
-    <div class="row-btns"><button class="btn small" data-wedit="${i}">Edit</button><button class="btn small" data-wdup="${i}">Duplicate</button><button class="btn small ghost" data-wdel="${i}" aria-label="Delete ${esc(w.name)}">Delete</button></div></div></div>`).join("")||'<p class="tip">Add a welcome video to get started.</p>';
-  if(wAssets)$$("#wlist canvas").forEach(cn=>{const w=a[+cn.dataset.wthumb];WI.draw(cn.getContext("2d"),480,270,.8,w,wAssets)})}
+function wList(){const all=wGet(),a=all.map((w,i)=>[w,i]).filter(([w])=>(w.brand||"imc")===wBrand),on=a.filter(([w])=>w.on!==false).length,bn=wBrand==="luxx"?"LUXX":"IMC";$("#wcount").textContent=`${a.length} ${bn} video${a.length===1?"":"s"} · ${on} on the TVs`;
+  $("#wlist").innerHTML=a.map(([w,i])=>`<div class="wcard" aria-current="${i===wSel}"><canvas width="480" height="270" data-wthumb="${i}" title="Edit ${esc(w.name)}"></canvas><div class="b"><b>${esc(w.name||"Welcome")}</b><span class="m">${esc((WI.STYLES[w.style]||{}).n||"")} · ${w.dur||8}s · ${w.on!==false?"On the TVs":"Not on the TVs"}</span>
+    <div class="row-btns"><button class="btn small" data-wedit="${i}">Edit</button><button class="btn small" data-wdup="${i}">Duplicate</button><button class="btn small ghost" data-wdel="${i}" aria-label="Delete ${esc(w.name)}">Delete</button></div></div></div>`).join("")||`<p class="tip">No ${bn} welcome videos yet. Press “+ New welcome video”.</p>`;
+  if(wAssets)$$("#wlist canvas").forEach(cn=>{const w=all[+cn.dataset.wthumb];WI.draw(cn.getContext("2d"),480,270,.8,w,wAssets)})}
 function wLoop(){cancelAnimationFrame(wRaf);const cv=$("#wcv");if(!cv||$("#v-welcome").hidden)return;const w=wCur(),c=cv.getContext("2d"),d=(w?w.dur:8)*1000;
   const step=()=>{if($("#v-welcome").hidden)return;const now=performance.now(),cur=wCur();if(cur&&wAssets){const el=(now-wT0)%(d+1200);WI.draw(c,cv.width,cv.height,Math.min(1,el/d),cur,wAssets)}
     if(wHover&&wAssets){const ww=wGet()[+wHover.dataset.wthumb];if(ww)WI.draw(wHover.getContext("2d"),480,270,((now-wHover._t0)%(ww.dur*1000))/(ww.dur*1000),ww,wAssets)}wRaf=requestAnimationFrame(step)};wRaf=requestAnimationFrame(step)}
 $("#v-welcome").addEventListener("input",e=>{const t=e.target,m={wname:"name",wkicker:"kicker",wtitle:"title",wmsg:"msg"};if(m[t.id])wSave({[m[t.id]]:t.value});if(t.id==="wacc")wSave({accent:t.value})});
-$("#v-welcome").addEventListener("change",e=>{const t=e.target;if(t.id==="wtheme")wSave({theme:t.value});else if(t.id==="wextra")wSave({extra:t.value});else if(t.id==="wlen"){wSave({dur:+t.value});wT0=performance.now()}else if(t.id==="won")wSave({on:t.checked});else if(t.id==="wacc")wSave({accent:t.value})});
+$("#v-welcome").addEventListener("change",e=>{const t=e.target;if(t.id==="wlogo"){const lx=t.value==="luxx";wSave({brand:t.value,...(lx?{theme:"luxx",accent:"#e8c46a"}:{theme:"midnight",accent:"#ffd84a"})});wBrand=t.value;try{localStorage.setItem("imc-wbrand",wBrand)}catch(x){}wList();wFormSync();return}if(t.id==="wtheme")wSave({theme:t.value});else if(t.id==="wextra")wSave({extra:t.value});else if(t.id==="wlen"){wSave({dur:+t.value});wT0=performance.now()}else if(t.id==="won")wSave({on:t.checked});else if(t.id==="wacc")wSave({accent:t.value})});
 $("#v-welcome").addEventListener("click",e=>{const g=k=>e.target.closest(`[data-${k}]`);let b;
-  if(b=g("wstyle")){wSave({style:b.dataset.wstyle});wT0=performance.now()}
+  if(b=g("wbrand")){wBrand=b.dataset.wbrand;try{localStorage.setItem("imc-wbrand",wBrand)}catch(x){}wSel=-1;wList();wFormSync();wT0=performance.now()}
+  else if(b=g("wstyle")){wSave({style:b.dataset.wstyle});wT0=performance.now()}
   else if(b=g("wacc"))wSave({accent:b.dataset.wacc});
   else if((b=g("wedit"))||(b=g("wthumb"))){wSel=+(b.dataset.wedit??b.dataset.wthumb);wList();wFormSync();wT0=performance.now();$("#wcv").scrollIntoView({behavior:"smooth",block:"center"})}
   else if(b=g("wdup")){const a=wGet(),i=+b.dataset.wdup;a.splice(i+1,0,{...a[i],id:newId(),name:(a[i].name||"Welcome")+" copy"});wPut(a);wSel=i+1;wList();wFormSync();toast("Duplicated")}
   else if(b=g("wdel")){const a=wGet(),i=+b.dataset.wdel;if(!confirm(`Delete “${a[i].name||"this welcome video"}”?`))return;a.splice(i,1);wPut(a);wSel=Math.min(wSel,Math.max(0,a.length-1));wList();wFormSync();toast("Deleted")}});
 $("#wlist").addEventListener("pointerover",e=>{const cn=e.target.closest("canvas[data-wthumb]");if(cn&&cn!==wHover){if(wHover)wList();wHover=cn;cn._t0=performance.now()}});
 $("#wlist").addEventListener("pointerout",e=>{const cn=e.target.closest("canvas[data-wthumb]");if(cn&&!cn.contains(e.relatedTarget)){const i=+cn.dataset.wthumb,w=wGet()[i];wHover=null;if(w&&wAssets)WI.draw(cn.getContext("2d"),480,270,.8,w,wAssets)}});
-$("#wnew").onclick=()=>{const a=wGet();a.push({...WI.DEFAULT,id:newId(),name:"Welcome "+(a.length+1),title:S().name.toUpperCase()});wPut(a);wSel=a.length-1;wList();wFormSync();wT0=performance.now();toast("New welcome video added. Pick a reveal and change the words")};
+$("#wnew").onclick=()=>{const a=wGet(),lx=wBrand==="luxx";a.push({...WI.DEFAULT,id:newId(),...(lx?{brand:"luxx",style:"luxxlines",theme:"luxx",accent:"#e8c46a",title:"LUXX AT "+S().name.toUpperCase(),msg:"Sit back, recline and enjoy the show"}:{title:S().name.toUpperCase()}),name:(lx?"LUXX ":"Welcome ")+(a.filter(w=>(w.brand||"imc")===wBrand).length+1)});wPut(a);wSel=a.length-1;wList();wFormSync();wT0=performance.now();toast("New welcome video added. Pick a reveal and change the words")};
 $("#wreplay").onclick=()=>{wT0=performance.now()};
 document.addEventListener("change",e=>{if(!e.target.classList.contains("wfreq"))return;const st=foyState();st.wfreq=e.target.value;foySave(st);wFreqSync();if(view==="foyer")renderFoyer()});
 /* record a welcome video at full HD in real time */
