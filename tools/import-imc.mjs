@@ -552,12 +552,32 @@ for (const cin of CINEMAS) {
   await fs.writeFile(file, JSON.stringify(known, null, 2));
   console.log(`trailers: ${urls.size} listed, ${n} newly checked`);
 }
+// cinema building photos from imc.ie's cinema list (used for LUXX and "visit us" designs): data/sites/<id>.<ext>
+const SITE_PICS = {};
+{
+  const MATCH = [["athlone", /atl?hl?one/], ["ballina", /bal+ina/], ["ballymena", /ballymena/], ["banbridge", /banbridge/], ["carlow", /carlow/], ["clonmel", /clonmel/],
+    ["ballincollig", /ballincollig/], ["blackpool", /blackpool/], ["dundalk", /dundalk/], ["dunlaoghaire", /dun-?laoghaire/], ["enniskillen", /enniskillen/], ["oranmore", /oranmore/],
+    ["galway", /^galway/], ["kilkenny", /kil+ken+y/], ["mullingar", /mullingar/], ["newtownards", /newtownards/], ["santry", /santry/], ["savoy", /savoy/], ["thurles", /thurles/], ["tullamore", /tullamore/]];
+  try {
+    const $ = cheerio.load(await get("https://imc.ie/luxx/enniskillen/"));
+    const urls = new Set();
+    $("img").each((_, i) => { const u = abs($(i).attr("data-src") || $(i).attr("src")); if (u && /wp-content\/uploads\/\d{4}\/\d{2}\//.test(u)) urls.add(u); });
+    for (const u of urls) {
+      const name = decodeURIComponent(u.split("/").pop()).toLowerCase();
+      const hit = MATCH.find(([, re]) => re.test(name)); if (!hit || SITE_PICS[hit[0]]) continue;
+      const f = await download(u, "sites", hit[0]); if (f) SITE_PICS[hit[0]] = f;
+    }
+    if (Object.keys(SITE_PICS).length) await fs.writeFile(path.join(OUT, "sites", "index.json"), JSON.stringify(SITE_PICS, null, 1));
+    console.log(`site photos: ${Object.keys(SITE_PICS).length}`);
+  } catch (e) { console.log("site photos: " + e.message); }
+}
 // photo library: IMC's own images only, gathered from every cinema's listings: imc.ie banners and cinema photos,
 // plus product and deal photos from the booking pages. Written to data/library/index.json for the editor.
 {
   const lib = [], seen = new Set();
   for (const c of summary) {
     const d = await fs.readFile(c.file, "utf8").then(JSON.parse).catch(() => null); if (!d) continue;
+    const sp = SITE_PICS[c.id]; if (sp && !seen.has(sp)) { seen.add(sp); lib.push({ id: sp, cat: "imc", title: (d.cinema || "IMC") + " cinema building", file: sp }); }
     for (const b of d.banners || []) if (b.file && !seen.has(b.file)) { seen.add(b.file); lib.push({ id: b.file, cat: "imc", title: "imc.ie image (" + (d.cinema || "IMC") + ")", file: b.file }); }
     const P = d.prices && !Array.isArray(d.prices) ? d.prices : {};
     for (const [k, cat] of [["products", "food"], ["bundles", "deals"]]) for (const x of P[k] || []) if (x.file && !/flexi/i.test(x.file) && !seen.has(x.file)) { seen.add(x.file); lib.push({ id: x.file, cat, title: x.name, file: x.file }); }
