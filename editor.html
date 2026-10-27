@@ -203,7 +203,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
         <p class="note">Drag the photo on the canvas to reposition it. Scroll to zoom.</p>
       </div>
       <div class="sec"><h3>Your media</h3><div class="media" id="mediaGrid"></div></div>
-      <div class="sec"><h3>Real photos</h3><p class="note" id="libNote">Loading…</p><div class="seg" id="libCats" style="flex-wrap:wrap"></div><div class="media" id="libGrid"></div></div>
+      <div class="sec"><h3>IMC images</h3><p class="note" id="libNote">Loading…</p><div class="seg" id="libCats" style="flex-wrap:wrap"></div><div class="media" id="libGrid"></div></div>
       <div class="sec"><h3>From imc.ie</h3><p class="note" id="webNote">Loading…</p><div class="media" id="webGrid"></div></div>
       <div class="sec"><p class="real"><b>Keep it real.</b> Use the official poster or trailer stills, or your own photos from the cinema. No AI-generated images.</p></div>
     </div>
@@ -1471,13 +1471,13 @@ function drawPPhoto(c,L){const e=ppLoad(L.src,L.card),H=440;if(!e.img){c.strokeS
 /* ---------- photo library: free real photos downloaded by the importer (data/library/index.json) ---------- */
 let LIB=null,libCat="all";
 async function loadLibrary(){for(const u of[RAW+"data/library/index.json?ts="+Date.now(),"data/library/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();const base=u.startsWith(RAW)?RAW:"";LIB=j.map(x=>({...x,src:base+x.file}));return LIB}}catch(e){}}LIB=[];return LIB}
-const LIBCATS={all:"All",popcorn:"Popcorn",auditorium:"Auditorium",audience:"Audience",recliners:"Recliners",stage:"Stage",projector:"Projector",film:"Film",icecream:"Ice cream",sweets:"Sweets",drinks:"Drinks",nachos:"Nachos",hotdog:"Hot dogs",exterior:"Outside at night",bokeh:"Lights",seasonal:"Seasonal"};
+const LIBCATS={all:"All",imc:"Cinemas & imc.ie",food:"Food & drink",deals:"Deal graphics"};
 function lib(cat){const x=(LIB||[]).find(p=>p.cat===cat);return x?{src:x.src,label:x.title,card:true}:null}
 function renderLibrary(){const g=$("#libGrid"),n=$("#libNote"),cats=$("#libCats");if(!g)return;
-  if(!LIB||!LIB.length){n.textContent="Real photos appear here once the importer has downloaded the photo library.";g.innerHTML="";cats.innerHTML="";return}
+  if(!LIB||!LIB.length){n.textContent="IMC images appear here once the importer has run.";g.innerHTML="";cats.innerHTML="";return}
   const have=new Set(LIB.map(x=>x.cat));cats.innerHTML=Object.entries(LIBCATS).filter(([k])=>k==="all"||have.has(k)).map(([k,v])=>`<button data-libcat="${k}" aria-pressed="${libCat===k}">${v}</button>`).join("");
-  const list=LIB.filter(x=>libCat==="all"||x.cat===libCat);n.textContent=`${LIB.length} free real photos (public domain, from Wikimedia Commons). Click to use as the background, or + Card to add as a photo card.`;
-  g.innerHTML=list.map(x=>`<div class="libitem"><button data-lib="${esc(x.id)}" title="${esc(x.title)}${x.credit?" · Photo: "+esc(x.credit):""}"><img src="${esc(x.src)}" alt="${esc(x.title)}" loading="lazy" crossorigin="anonymous"></button><button class="libcard" data-libcard="${esc(x.id)}" aria-label="Add ${esc(x.title)} as a photo card">+ Card</button></div>`).join("")}
+  const list=LIB.filter(x=>libCat==="all"||x.cat===libCat);n.textContent=`${LIB.length} images from IMC's own website and booking pages. Click to use as the background, or + Add to place it on your design.`;
+  g.innerHTML=list.map(x=>`<div class="libitem"><button data-lib="${esc(x.id)}" title="${esc(x.title)}${x.credit?" · Photo: "+esc(x.credit):""}"><img src="${esc(x.cat==="food"?asset(hdOf(x.file)):x.src)}" onerror="this.onerror=null;this.src='${esc(x.src)}'" alt="${esc(x.title)}" loading="lazy" crossorigin="anonymous" style="${x.cat==="imc"?"":"object-fit:contain;background:#fff"}"></button><button class="libcard" data-libcard="${esc(x.id)}" aria-label="Add ${esc(x.title)} to the design">+ Add</button></div>`).join("")}
 /* imc.ie items for this cinema: snacks and ticket bundles, each with a photo and price */
 function imcItems(){const P=(IMC&&IMC.prices)||{};return[...(P.products||[]),...(P.bundles||[])].filter(x=>x.file&&!/flexi/i.test(x.name))}
 const norm=t=>String(t||"").toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
@@ -1490,8 +1490,8 @@ function renderPPhotos(){const g=$("#pphotos"),n=$("#pphNote");if(!g)return;cons
   g.onclick=e=>{const b=e.target.closest("[data-pph]");if(!b)return;const x=items[+b.dataset.pph];addLayer({id:uid(),kind:"pphoto",src:x.file,label:x.name,x:.42,y:.55,s:.9,r:0,o:1});
     if(b.dataset.withprice)addLayer(mk("badge","ticket",{text:x.price,sub:"ONLY",x:.76,y:.72,s:.8,r:-.07}))}}
 $("#libCats").addEventListener("click",e=>{const b=e.target.closest("[data-libcat]");if(b){libCat=b.dataset.libcat;renderLibrary()}});
-$("#libGrid").addEventListener("click",async e=>{const c=e.target.closest("[data-libcard]");if(c){const x=LIB.find(p=>p.id===c.dataset.libcard);if(x){addLayer({id:uid(),kind:"pphoto",src:x.src,label:x.title,card:true,x:.5,y:.5,s:.9,r:-.04,o:1});toast("Photo card added. Drag to move, corners to resize")}return}
-  const b=e.target.closest("[data-lib]");if(!b)return;const x=LIB.find(p=>p.id===b.dataset.lib);if(!x)return;try{const r=await fetch(x.src);if(!r.ok)throw 0;await setPhotoBlob(await r.blob(),false,{fromLib:true});toast("Photo added"+(x.credit?" (by "+x.credit+", public domain)":""))}catch(err){toast("Couldn't load that photo. Try again in a moment.")}});
+$("#libGrid").addEventListener("click",async e=>{const c=e.target.closest("[data-libcard]");if(c){const x=LIB.find(p=>p.id===c.dataset.libcard);if(x){const food=x.cat!=="imc";addLayer({id:uid(),kind:"pphoto",src:food?x.file:x.src,label:x.title,card:!food,x:.5,y:.5,s:.9,r:food?0:-.04,o:1});toast(food?"Added with its background removed. Drag to move, corners to resize":"Added as a photo card. Drag to move, corners to resize")}return}
+  const b=e.target.closest("[data-lib]");if(!b)return;const x=LIB.find(p=>p.id===b.dataset.lib);if(!x)return;try{let r=await fetch(x.cat==="food"?asset(hdOf(x.file)):x.src);if(!r.ok)r=await fetch(x.src);if(!r.ok)throw 0;await setPhotoBlob(await r.blob(),false,{fromLib:true});toast("IMC image added as the background")}catch(err){toast("Couldn't load that photo. Try again in a moment.")}});
 /* ---------- deals ---------- */
 const DEFAULT_DEALS=[
   {id:"family",name:"Family Combo Deal",items:["2X Adult tickets","2X Child tickets","1X Share combo","2X Kids combo"],price:"",was:"",small:"",products:["popcorn","drink","drink","ticket","tray","tray"]},
@@ -1516,15 +1516,15 @@ function dealVisuals(d){if(d.real===false)return null;if(d.photos&&d.photos.leng
   const P=d.products&&d.products.length?d.products:["popcorn","drink"],out=[],seen=new Set(),it=re=>imcItems().find(x=>!x.details&&re.test(x.name)),own=x=>x?{src:x.file,label:x.name}:null,drinks=P.filter(x=>x==="drink").length,pop=P.includes("popcorn");
   for(const k of P){let v=null;
     if(k==="popcorn"||(k==="drink"&&pop)){v=drinks>=2?(own(it(/share combo/i))||anyImc("combo_share")):(own(it(/large combo/i))||own(it(/medium combo/i))||anyImc("combo_large"))}
-    else if(k==="drink")v=lib("drinks");
+    else if(k==="drink")v=null;
     else if(k==="tray")v=own(it(/kids tray/i))||anyImc("tray");
     else if(k==="nachos")v=own(it(/nacho/i))||anyImc("nachos");
-    else if(k==="sweets"||k==="pickmix")v=own(it(/pick|mix|sweet|malteser|minstrel|haribo/i))||lib("sweets")||anyImc("sweets");
-    else if(k==="icescoop"||k==="icetub")v=own(imcItems().find(x=>/soft ?serve|ice ?cream|sundae/i.test(x.file+" "+x.name)))||anyImc("icecream")||lib("icecream");
+    else if(k==="sweets"||k==="pickmix")v=own(it(/pick|mix|sweet|malteser|minstrel|haribo/i))||anyImc("sweets");
+    else if(k==="icescoop"||k==="icetub")v=own(imcItems().find(x=>/soft ?serve|ice ?cream|sundae/i.test(x.file+" "+x.name)))||anyImc("icecream");
     else if(k==="hotdog")v=null;else if(k==="ticket")v={draw:"ticket"};
     /* no drawn food: anything without a real photo is simply left out (the gold ticket graphic is the only drawing) */
     if(!v)continue;const key=v.src||v.draw;if(!seen.has(key)){seen.add(key);out.push(v)}}
-  if(!out.some(v=>v.src)){const g=lib("popcorn")||anyImc("combo_large");if(g)out.unshift(g)}
+  if(!out.some(v=>v.src)){const g=anyImc("combo_large");if(g)out.unshift(g)}
   return out.some(v=>v.src)?out.slice(0,4):null}
 function dealLayers(d,anim){const vis=dealVisuals(d);if(vis)return dealPhotoLayers(d,anim,vis);const P=(d.products&&d.products.length?d.products:["popcorn","drink"]).slice(0,6),L=[],n=P.length,cur=d.cur||siteCur(),items=d.items||[];
   const list=items.length>=3||items.join("  +  ").length>46,tk=dealTickets(d);
@@ -1548,7 +1548,7 @@ function dealPhotoLayers(d,anim,vis){const L=[],cur=d.cur||siteCur(),items=d.ite
     L.push(mk("text","sub",{text:lines.join("\n"),x:.31,y:.19+nl*ls*.98/1080/2+.02,size:ls,font:"body",align:"left",c1:"#ffffff",anim:anim?"slide":"none",delay:.06}));
     L.push(mk("badge","price",{text:d.price||cur+"X",sub:d.was?("WAS "+d.was).toUpperCase():"",x:.77,y:.34,s:.92,r:-.08,c1:"#c8161d",anim:anim?"slam":"none",delay:.42}))}
   else if(items.length)L.push(mk("text","sub",{text:items.join("  +  "),y:.195,size:items.join("  +  ").length>40?32:40,c1:"#ffd84a",anim:anim?"slide":"none",delay:.06}));
-  const n=vis.length,y=list?.7:.55,x0=list?(n===1?.5:.18):(n===1?.4:.2),x1=list?(n===1?.5:.82):(n===1?.4:.6),base=n===1?(list?.85:.98):n===2?.74:n===3?.58:.48;
+  const n=vis.length,y=list?.7:.55,x0=list?(n===1?.5:.18):(n===1?.4:.2),x1=list?(n===1?.5:.82):(n===1?.4:.6),base=n===1?(list?1.12:.98):n===2?.74:n===3?.58:.48;
   vis.forEach((v,i)=>{const x=n===1?x0:x0+(x1-x0)*i/(n-1),o={x,y,anim:anim?"pop":"none",delay:.12+i*.07};
     if(v.src)L.push({id:uid(),kind:"pphoto",src:v.src,label:v.label||"Product photo",card:!!v.card,s:v.card?base*.9:base,r:v.card?(i%2?.05:-.05):0,o:1,...o});
     else L.push(mk("product",v.draw,{...o,s:base*.8,...(v.draw==="ticket"&&tk?{text:tk+(tk>1?" TICKETS":" TICKET")}:{})}))});

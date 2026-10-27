@@ -34,7 +34,7 @@ There's no account or server to run. GitHub Pages hosts the site, and a GitHub A
 - **Frames:** IMC brand bar, Premiere, Neon glow, Clean, Cinema ticket, Film strip, Marquee lights, Photo border.
 - **Badges:** Coming Soon, New Release, LUXX, Premier, Now Showing, Book Now, release date, Tonight, corner sash, Kids Club, price burst, Selling Fast.
 - **Deal pieces:** price ticket, "What's included" card, Save ribbon.
-- **Real photos:** IMC's own product photos from imc.ie (AI-upscaled 4× for sharpness by the *Upscale product photos* job), and a curated library of public-domain photos (popcorn, auditoriums, curtains, projector, ice cream, nachos, festive lights, pumpkins, fireworks) under Photo → Real photos, as a background or a framed photo card. Deals and video clips always picture real photos; only the gold ticket is a graphic.
+- **IMC images:** IMC's own cinema photos and graphics from imc.ie, and IMC's product and deal photos from the booking pages (AI-upscaled 4× for sharpness by the *Upscale product photos* job), under Photo → IMC images, as a background or placed on the design. Deals and video clips always picture IMC's real product photos; only the gold ticket is a graphic.
 - **Food, drink & tickets (drawn, for custom designs):** the IMC ♥ movies popcorn box, drink, the red kids tray with popcorn and a juice bottle, nachos, hot dog, sweet bag, pick 'n' mix, scooped ice cream, ice cream tub and a cinema ticket that shows how many tickets the deal includes. They're drawn in code, and every colour and label can be changed.
 - **Film times:** a panel listing films and times, filled from imc.ie and editable.
 - **Motion:** slow zoom, light rays, spotlights, bokeh, marquee chase, gold sparkle, popcorn burst, fizz bubbles, confetti, snow, old projector.
@@ -78,6 +78,8 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
-## Photo library
+## IMC images
 
-`data/library/` holds real photos from Wikimedia Commons, public domain or CC0 only (no credit or conditions for use in ads). The set is curated by hand and frozen; to fetch more, set `frozen` to `false` in `data/library/sources.json`, run the importer, then add any unsuitable photo's id to `block`.
+The editor's **IMC images** (Photo tab) are IMC's own: cinema photos and graphics from imc.ie, and product and deal photos from the booking pages, gathered from every cinema by the importer into `data/library/index.json`. No stock photos are used.
+
+Product photos in `data/products/hd/` are AI-upscaled copies. `onkt.png` (Kids Tray) has been edited to remove the full popcorn box that stands behind the tray in IMC's photo; the upscaling job never overwrites an existing HD file, so the edit stays.
