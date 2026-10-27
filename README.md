@@ -87,6 +87,8 @@ The hub's **LUXX** page (top bar, or Menu → Every day) is everything for the L
 - **LUXX captions:** six captions with this cinema's name, films and times filled in, ready to copy.
 - Links to the LUXX welcome videos and the LUXX lounge player.
 
+- **LUXX combo deals** (Enniskillen): the Medium Combo Deal LUXX (£18) and Share Combo Deal LUXX (£31) from the cinema's Facebook posts, one click to add to Deals. Check the prices are still current.
+
 The wording sticks to what IMC says about LUXX ("deluxe recliner seats"). Add any other features you want to promote in the editor.
 
 The importer also saves each cinema's building photo from imc.ie to `data/sites/`. These appear in the editor's IMC images and in the LUXX photos panel as "Cinema building".

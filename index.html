@@ -427,6 +427,7 @@ body.menuopen{overflow:hidden}
         <div class="lxpics" id="lxpics"></div>
         <label class="btn primary lxup">+ Add LUXX photos<input type="file" id="lxfile" accept="image/*" multiple hidden></label></div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>2. Make a LUXX ad</h2><span class="tip" id="lxprice" style="margin:0"></span></div><div class="lxtpls" id="lxtpls"></div></div>
+      <div class="panel" style="margin-top:16px" id="lxdealsP"><div class="ph"><h2>LUXX combo deals</h2><span class="tip" style="margin:0">From the cinema's Facebook posts: check prices are current</span></div><div class="lxtpls" id="lxdeals"></div></div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>In LUXX this week</h2></div><div id="lxweek"></div></div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>LUXX captions</h2><span class="tip" style="margin:0">Copy, then paste with your ad</span></div><div class="lxcaps" id="lxcaps"></div></div>
     </section>
@@ -1454,6 +1455,10 @@ const LX_TPL=[
   {k:"datenight",n:"Date night in LUXX",d:"For couples: two seats, one great film",fmts:["square","portrait","story"]},
   {k:"foyer",n:"Foyer screen",d:"16:9 for the foyer TVs: ask at the kiosk to upgrade",fmts:["wide"]},
   {k:"cover",n:"Facebook cover",d:"LUXX banner for the top of the Facebook page",fmts:["cover"]}];
+/* LUXX combos IMC Enniskillen has advertised on Facebook (ticket + combo in LUXX) */
+const LX_DEALS={enniskillen:[{name:"Medium Combo Deal LUXX",items:["1 adult LUXX ticket","1 medium combo"],price:"£18",products:["ticket","popcorn","drink"]},{name:"Share Combo Deal LUXX",items:["2 adult LUXX tickets","1 share combo"],price:"£31",products:["ticket","popcorn","drink","drink"]}]};
+function renderLxDeals(){const L=LX_DEALS[site]||[];$("#lxdealsP").hidden=!L.length;const have=new Set(getDeals().map(d=>d.name));
+  $("#lxdeals").innerHTML=L.map((d,i)=>`<div class="lxtpl"><b>${esc(d.name)} · ${esc(d.price)}</b><small>${esc(d.items.join(" + "))}</small><div class="row-btns">${have.has(d.name)?`<button class="btn small primary" data-go="deals">In your Deals →</button>`:`<button class="btn small primary" data-lxdeal="${i}">Add to Deals</button>`}</div></div>`).join("")}
 const LX_FMTN={square:"Post",portrait:"4:5",story:"Story",wide:"16:9",cover:"Cover"};
 function lxPrice(){const P=imcPrices();return((P&&P.tickets)||[]).filter(t=>/luxx/i.test(t.name)&&!/voucher|meal/i.test(t.name)).map(t=>t.price).sort((a,b)=>parseFloat(a.slice(1))-parseFloat(b.slice(1)))[0]||""}
 function lxRowsToday(){const T=todayIso();let day=T,films=filmsOn(T).filter(f=>f.luxx);for(let i=1;!films.length&&i<7;i++){day=addDays(T,i);films=filmsOn(day).filter(f=>f.luxx)}
@@ -1461,7 +1466,7 @@ function lxRowsToday(){const T=todayIso();let day=T,films=filmsOn(T).filter(f=>f
 function lxWeek(){const T=todayIso(),m=new Map();for(let i=0;i<7;i++){const d=addDays(T,i);for(const f of filmsOn(d).filter(f=>f.luxx)){const k=f.title,o=m.get(k)||{t:f.title,cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||"",poster:asset(f.posterFile)||f.poster||"",slots:[]};
   for(const t of f.times)o.slots.push({d,t});m.set(k,o)}}return[...m.values()]}
 const dShort=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"short"});
-function renderLuxx(){$("#lxlounge").href=foyUrl(foyState(),true);renderLxPics();const pr=lxPrice();$("#lxprice").textContent=pr?`LUXX tickets from ${pr} on imc.ie`:"";
+function renderLuxx(){$("#lxlounge").href=foyUrl(foyState(),true);renderLxPics();renderLxDeals();const pr=lxPrice();$("#lxprice").textContent=pr?`LUXX tickets from ${pr} on imc.ie`:"";
   $("#lxtpls").innerHTML=LX_TPL.map(t=>`<div class="lxtpl"><b>${esc(t.n)}</b><small>${esc(t.d)}</small><div class="row-btns">${t.fmts.map((f,i)=>`<button class="btn small ${i?"":"primary"}" data-lxmake="${t.k}" data-fmt="${f}">${LX_FMTN[f]}</button>`).join("")}</div></div>`).join("");
   const wk=lxWeek();$("#lxweek").innerHTML=wk.length?`<div class="lxfilms">${wk.map((f,i)=>`<div class="lxfilm"><img src="${esc(f.poster)}" alt="" loading="lazy"><div><b>${esc(f.title||f.t)}</b><span class="m">${esc(f.cert||"")}</span>
     <div class="lxslots">${f.slots.slice(0,8).map(s=>`<span>${s.d===todayIso()?"Today":dShort(s.d)} ${s.t}</span>`).join("")}${f.slots.length>8?`<span>+${f.slots.length-8} more</span>`:""}</div>
@@ -1478,6 +1483,7 @@ function renderLuxx(){$("#lxlounge").href=foyUrl(foyState(),true);renderLxPics()
 $("#v-luxx").addEventListener("click",async e=>{const g=k=>e.target.closest(`[data-${k}]`);let b;
   if(b=g("lxmake")){const t=b.dataset.lxmake,td=lxRowsToday();openEditor({kind:"luxxkit",tpl:t,fmt:b.dataset.fmt,price:lxPrice(),heading:td.heading,rows:td.rows,week:lxWeek().map(f=>({t:f.t,cert:f.cert,system:f.system,times:f.slots.slice(0,3).map(s=>(s.d===todayIso()?"Today":dShort(s.d))+" "+s.t)}))})}
   else if(b=g("lxfilm")){const f=lxWeek()[+b.dataset.lxfilm];if(f)openEditor({kind:"luxxkit",tpl:"film",fmt:b.dataset.fmt,price:lxPrice(),film:{t:f.t,cert:f.cert,system:f.system,poster:f.poster,times:f.slots.slice(0,6).map(s=>(s.d===todayIso()?"Today ":dShort(s.d)+" ")+s.t)}})}
+  else if(b=g("lxdeal")){const d=(LX_DEALS[site]||[])[+b.dataset.lxdeal];if(d){const ds=getDeals();ds.push({id:newId(),was:"",small:"LUXX recliner seats. Book at imc.ie",...JSON.parse(JSON.stringify(d))});putDeals(ds);renderLxDeals();toast(d.name+" added to your Deals. Make posts from it there")}}
   else if(b=g("lxcap")){const t=renderLuxx.caps[+b.dataset.lxcap];navigator.clipboard?.writeText(t).then(()=>toast("Caption copied"),()=>prompt("Copy this caption",t))}
   else if(b=g("lxdel")){const a=(await lxGet()).filter(x=>x.id!==b.dataset.lxdel);await edbSet(lxKey(),a);renderLxPics()}
   else if(b=g("lxfirst")){const a=await lxGet(),i=a.findIndex(x=>x.id===b.dataset.lxfirst);if(i>0){a.unshift(...a.splice(i,1));await edbSet(lxKey(),a);renderLxPics()}}});
