@@ -17,6 +17,7 @@ body.pointer{cursor:default}
 #stage{position:fixed;inset:0}
 .layer{position:absolute;inset:0;transition:opacity .8s ease}
 .layer[hidden]{display:block!important;opacity:0;pointer-events:none}
+#ident{background:#000}#ident canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 #yt,#yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
 /* showtimes card */
 #card{display:grid;grid-template-columns:auto 1fr;gap:4vw;align-items:center;padding:6vh 6vw 10vh;overflow:hidden}
@@ -55,12 +56,14 @@ body.pointer #help{opacity:1}
 <body>
 <div id="stage">
   <div id="yt-wrap" class="layer" hidden><div id="yt"></div><div id="tlabel"></div></div>
+  <div id="ident" class="layer" hidden><canvas id="icv" width="1920" height="1080" aria-label="Welcome to IMC"></canvas></div>
   <div id="card" class="layer" hidden><div class="bgimg"></div><div class="shade"></div><div class="poster" role="img"></div>
     <div class="info"><div class="kicker" id="ck"></div><h1 class="title" id="ct"></h1><div class="meta" id="cm"></div><div class="when" id="cw"></div><div class="times" id="cx"></div><div class="book">Book at <b>imc.ie</b></div></div></div>
   <div id="start" class="layer"><div><h1>Foyer trailers</h1><p id="sinfo">Loading the latest listings…</p><button id="go" hidden>Start</button><p style="font-size:2vh">Tip: press F for full screen, → to skip. Leave this tab open; it updates itself every day.</p></div></div>
   <div id="bar"><img src="imc-logo.png" alt="IMC Cinemas"><span id="bname"></span><div class="prog" id="prog"></div></div>
 </div>
 <div id="help">→ skip · F full screen · M sound on/off</div>
+<script src="ident.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -72,6 +75,10 @@ const NI=["enniskillen","ballymena","banbridge","newtownards"];
 /* foyer-safe certificates: trailers for these films are made for all audiences */
 const SAFE={bbfc:["U","PG","12A","12"],ifco:["G","PG","12A"]};
 const RED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
+ /* welcome videos made in the hub travel in the link, since the TV can't see the hub's saved settings */
+const WEL=window.IMCIdent?IMCIdent.decode(Q.get("w")||""):[],WF=Q.get("wf")||(WEL.length?"r":"0");
+let since=0,justIdent=false,lastIdent=-1,idAssets=null,idRaf=0;
+const newGap=()=>WF==="r"?2+Math.floor(Math.random()*3):Math.max(1,+WF||1);let gap=newGap();
 let D=null,T={},base="",queue=[],qi=-1,player=null,timer=null,ytReady=null,muted=!SOUND,lastLoad=0;
 
 function londonNow(){const p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()))p[x.type]=x.value;return{date:`${p.year}-${p.month}-${p.day}`,hm:`${p.hour}:${p.minute}`}}
@@ -95,7 +102,8 @@ function upcoming(f){const n=londonNow();return f.sessions.filter(s=>s.date&&(s.
 function buildQueue(){const n=londonNow(),all=films(),in7=new Date(Date.now()+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
   let list=MODE==="pick"&&IDS.length?IDS.map(k=>all.find(f=>f.key===k)).filter(Boolean):all.filter(f=>{const u=upcoming(f);return u.length&&u[0].date<=in7||(SOON&&f.sources.has("soon"))});
   /* special screenings (sensory, fancy dress…) share their film's trailer: show each trailer once */
-  list=list.filter(f=>safety(f).ok).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer)===i);
+  const nt=t=>String(t||"").toLowerCase().replace(/^(sensory|autism friendly|parent (and|&) baby)[:\s-]*/,"").replace(/\s+-\s+.*$|\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
+  list=list.filter(f=>safety(f).ok).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer||nt(x.title)===nt(f.title))===i);
   list.sort((a,b)=>{const ua=upcoming(a)[0],ub=upcoming(b)[0];return(ua?ua.date+ua.time:"9"+(a.releaseDate||"")).localeCompare(ub?ub.date+ub.time:"9"+(b.releaseDate||""))});
   return list}
 function fmtDay(d){return new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"})}
@@ -108,14 +116,17 @@ function showCard(f){const u=upcoming(f),n=londonNow(),day=u[0]?u[0].date:null,t
   $("#cw").textContent=times.length>1?"Showtimes":times.length?"Showtime":"";
   $("#cx").innerHTML=times.slice(0,8).map(t=>`<span>${t}</span>`).join("");
   show("card")}
-function show(id){for(const l of["card","yt-wrap","start"])$("#"+(l)).hidden=l!==id}
+function show(id){if(id!=="ident")cancelAnimationFrame(idRaf);for(const l of["card","yt-wrap","start","ident"])$("#"+(l)).hidden=l!==id}
 function progress(sec){const p=$("#prog");p.style.transition="none";p.style.width="0";requestAnimationFrame(()=>{p.style.transition=`width ${sec}s linear`;p.style.width="100%"})}
 function loadYT(){if(ytReady)return ytReady;ytReady=new Promise(res=>{window.onYouTubeIframeAPIReady=()=>res(true);const s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";s.onerror=()=>res(false);document.head.appendChild(s);setTimeout(()=>res(!!window.YT&&!!window.YT.Player),12000)});return ytReady}
 async function next(){clearTimeout(timer);
   if(Date.now()-lastLoad>6*3600e3)await load();
   if(!queue.length){show("start");$("#sinfo").textContent="No foyer-safe trailers to show right now. Checking again in 10 minutes.";timer=setTimeout(async()=>{await load();next()},600e3);return}
-  qi=(qi+1)%(queue.length*2);const f=queue[Math.floor(qi/2)%queue.length];
-  if(qi%2===0||!TRAILERS){if(!TRAILERS&&qi%2)qi++;showCard(f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
+  /* now and then, a welcome video between films */
+  if(WEL.length&&WF!=="0"&&!justIdent&&qi>=0&&(qi%2===1||!TRAILERS)){since++;if(since>=gap){since=0;gap=newGap();justIdent=true;return playIdent()}}
+  justIdent=false;
+  qi=(qi+1)%(queue.length*2);if(!TRAILERS&&qi%2)qi=(qi+1)%(queue.length*2);const f=queue[Math.floor(qi/2)%queue.length];
+  if(qi%2===0||!TRAILERS){showCard(f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
   const ok=await loadYT();if(!ok){showCard(f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
   const id=ytId(f.trailer);$("#tlabel").textContent=f.title;$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,5000);
   show("yt-wrap");progress(0.01);
@@ -125,6 +136,11 @@ async function next(){clearTimeout(timer);
   else player=new YT.Player("yt",{videoId:id,playerVars:{autoplay:1,controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,mute:muted?1:0},
     events:{onReady:e=>{if(muted)e.target.mute();e.target.playVideo()},onStateChange:e=>{if(e.data===1)started=true;if(e.data===0){done();next()}},onError:()=>{done();next()}}});
   player._done=done}
+async function playIdent(){try{if(player&&player.stopVideo)player.stopVideo()}catch(e){}
+  if(!idAssets)idAssets=await IMCIdent.loadAssets("");let i=Math.floor(Math.random()*WEL.length);if(WEL.length>1&&i===lastIdent)i=(i+1)%WEL.length;lastIdent=i;
+  const w=WEL[i],cv=$("#icv"),c=cv.getContext("2d"),secs=w.dur||8,t0=performance.now();show("ident");progress(secs);
+  const step=()=>{const t=Math.min(1,(performance.now()-t0)/(secs*1000));IMCIdent.draw(c,1920,1080,t,w,idAssets);if(t<1)idRaf=requestAnimationFrame(step)};step();
+  timer=setTimeout(next,secs*1000+150)}
 async function load(){D=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json");T=(await getJson("data/trailers.json"))||{};base=D?D._base:"";lastLoad=Date.now();
   if(!D){queue=[];return}queue=buildQueue();$("#bname").textContent=(D.cinema||"IMC")+" · Book at imc.ie";document.title=(D.cinema||"IMC")+" foyer trailers"}
 async function start(){if(SOUND){muted=false}show("card");qi=-1;next()}
