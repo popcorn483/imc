@@ -183,6 +183,10 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .fmeta .sens{color:var(--velvet);font-weight:700}
 .ftimes{display:flex;gap:6px;flex-wrap:wrap}
 .ftimes span{font-family:var(--f-mono);font-size:13px;font-weight:600;padding:3px 8px;border-radius:6px;background:var(--chip);font-variant-numeric:tabular-nums}
+.ftimes span.kc,.kclegend .kc{background:color-mix(in srgb,var(--amber) 24%,var(--panel));box-shadow:inset 0 0 0 1.5px var(--amber);display:inline-flex;align-items:center;gap:6px}
+.kc i{font-style:normal;font-family:var(--f-body);font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:99px;background:var(--amber);color:#2a1800}
+.kclegend{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;margin-right:auto;margin-left:12px}.kclegend .kc{padding:2px 4px;border-radius:6px}
+.kcb{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:1px 7px;border-radius:99px;background:var(--amber);color:#2a1800}
 .opens{font-weight:700;color:var(--velvet);font-size:14px}
 .facts{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
 .facts .btn{text-decoration:none}
@@ -1092,7 +1096,8 @@ function allFilms(){if(!IMC)return[];const m=new Map();
   for(const [src,list] of [["today",IMC.today||[]],["soon",IMC.comingSoon||[]],["kids",IMC.kidsClub||[]],["luxx",IMC.luxx||[]],...(IMC.days||[]).map(d=>["day",d.films||[]])])
     for(const f of list){const k=(f.title||"").toLowerCase()+(f.luxx?"|luxx":"");if(!f.title)continue;const p=m.get(k)||{...f,sources:new Set(),sessions:[]};p.sources.add(src);for(const s of f.sessions||[])if(!p.sessions.some(x=>x.date===s.date&&x.time===s.time))p.sessions.push(s);for(const key of["poster","posterFile","cert","certIcon","certSystem","runtime","trailer","synopsis","releaseDate","release"])p[key]=p[key]||f[key];m.set(k,p)}
   return[...m.values()]}
-function filmsOn(date,all){const live=t=>all||notStarted(date,t);const out=[];for(const f of allFilms()){const t=f.sessions.filter(s=>s.date===date&&live(s.time)).map(s=>s.time).sort();if(t.length)out.push({...f,times:t})}
+const isKids=s=>(s.tags||[]).includes("kidsclub");
+function filmsOn(date,all){const live=t=>all||notStarted(date,t);const out=[];for(const f of allFilms()){const ss=f.sessions.filter(s=>s.date===date&&live(s.time)),t=ss.map(s=>s.time).sort();if(t.length)out.push({...f,times:t,kidsTimes:ss.filter(isKids).map(s=>s.time)})}
   if(date===todayIso())for(const f of IMC?.today||[]){const t=(f.times||[]).filter(live);if(!out.some(o=>o.title===f.title&&!!o.luxx===!!f.luxx)&&t.length)out.push({...f,times:t})}
   return out.sort((a,b)=>(a.times[0]||"").localeCompare(b.times[0]||""))}
 const fmtLong=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"});
@@ -1113,9 +1118,9 @@ function writeFilmPost(f,mode){startNew();const d=firstDate(f);
 
 /* ---------- film cards ---------- */
 function filmCard(f,mode){const d=firstDate(f),poster=asset(f.posterFile)||f.poster;
-  const when=mode==="soon"?`<span class="opens">Opens ${esc(fmtShort(d))}</span>`:`<div class="ftimes">${(f.times||[]).map(t=>`<span>${t}</span>`).join("")}</div>`;
+  const when=mode==="soon"?`<span class="opens">Opens ${esc(fmtShort(d))}</span>`:`<div class="ftimes">${(f.times||[]).map(t=>(f.kidsTimes||[]).includes(t)?`<span class="kc" title="Kids Club showing">${t}<i>Kids Club</i></span>`:`<span>${t}</span>`).join("")}</div>`;
   return`<article class="film"><div class="fposter">${poster?`<img src="${esc(poster)}" alt="${esc(f.title)} poster" loading="lazy">`:""}</div>
-  <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${(()=>{const r=certShown(f);return r&&r.src?`<img class="certimg" data-svg="${esc(r.src)}" alt="Rated ${esc(r.cert)}" width="24" height="24">`:r?`<span class="cert">${esc(r.cert)}</span>`:""})()}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
+  <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${(()=>{const r=certShown(f);return r&&r.src?`<img class="certimg" data-svg="${esc(r.src)}" alt="Rated ${esc(r.cert)}" width="24" height="24">`:r?`<span class="cert">${esc(r.cert)}</span>`:""})()}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${(f.kidsTimes||[]).length?'<span class="kcb">Kids Club</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
   ${when}
   <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button><button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
   ${(f.book||f.sessions?.[0]?.book)?`<a class="btn small ghost" href="${esc(f.book||f.sessions[0].book)}" target="imc-web">Book ↗</a>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="imc-web">Trailer ↗</a>`:""}</div></div></article>`}
@@ -1141,7 +1146,7 @@ function stamp(){if(!IMC||!IMC.updated)return"";const f=d=>new Date(d).toLocaleS
 function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").textContent=fmtLong(todayIso());$("#todayStamp").textContent=stamp();
   if(!IMC){el.innerHTML=startPanel()+noData();return}
   const films=keyed(filmsOn(todayIso())),soon=keyed(allFilms().filter(f=>{const d=firstDate(f);return d&&d>todayIso()}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))).slice(0,6));
-  el.innerHTML=startPanel()+`<div class="panel"><div class="ph"><h2>Showing today</h2><div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
+  el.innerHTML=startPanel()+`<div class="panel"><div class="ph"><h2>Showing today</h2>${films.some(f=>(f.kidsTimes||[]).length)?'<span class="kclegend"><span class="kc"><i>Kids Club</i></span> showings are highlighted</span>':""}<div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
     ${films.length?`<div class="films">${films.map(f=>filmCard(f,f.sources?.has("kids")&&!f.sources?.has("today")?"kids":f.luxx?"luxx":"now")).join("")}</div>`:(filmsOn(todayIso(),true).length?`<p class="tip">Every show today has started. Tomorrow\'s times are under <button class="btn small ghost" data-wo="week">What\'s on → Next 7 days</button></p>`:`<p class="tip">No times for today in the latest import. ${IMC.today&&IMC.today.length===0?"The imc.ie film-times page may have been unavailable; the next import runs within 3 hours.":""}</p>`)}</div>
     <div class="grid two" style="margin-top:16px"><div class="panel"><div class="ph"><h2>Opening soon</h2><button class="btn small ghost" data-wo="soon">All coming soon →</button></div><div class="films compact">${soon.map(f=>filmCard(f,"soon")).join("")||'<p class="tip">Nothing announced yet.</p>'}</div></div>
     <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):imcMatch(d.name)?esc(imcMatch(d.name).price)+' <em>(imc.ie)</em>':'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
