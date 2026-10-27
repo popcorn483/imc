@@ -283,28 +283,71 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .sitepick select{font:700 16px var(--f-body);color:var(--ink);background-color:var(--panel);border:2px solid var(--velvet);border-radius:9px;padding:9px 36px 9px 12px;appearance:none;-webkit-appearance:none;cursor:pointer;
   background-image:linear-gradient(45deg,transparent 50%,var(--velvet) 50%),linear-gradient(135deg,var(--velvet) 50%,transparent 50%);background-position:calc(100% - 18px) 55%,calc(100% - 12px) 55%;background-size:6px 6px;background-repeat:no-repeat}
 .headacts{display:flex;gap:10px;align-items:flex-end;flex:none;max-width:100%}
+/* ---- top bar + hamburger menu ---- */
+.app{display:block}
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:14px;padding:10px max(20px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));background:var(--panel);border-bottom:1px solid var(--line)}
+.topbar::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--stripe)}
+.topbar .brand{display:flex;align-items:center;gap:8px;flex:none}.topbar .brand::after{display:none}.topbar .brand img{width:34px;height:34px}.topbar .brand b{font-size:22px;white-space:nowrap}
+.menubtn{all:unset;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:9px;border:1px solid var(--line);font-weight:700;color:var(--ink)}.menubtn:hover{background:var(--chip)}
+nav.quick{flex-direction:row;gap:2px;margin-left:8px;min-width:0;overflow-x:auto;scrollbar-width:none}nav.quick button{padding:7px 12px;white-space:nowrap}
+.topright{margin-left:auto;display:flex;align-items:center;gap:10px;flex:none}
+.topright .sitepick{min-width:0;flex-direction:row;align-items:center;gap:8px}.topright .sitepick label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.topright .sitepick select{font-size:14px;padding:7px 32px 7px 10px}
+.edlink{text-decoration:none;white-space:nowrap}
+.scrim{position:fixed;inset:0;background:rgba(10,8,30,.45);z-index:40}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);z-index:41;background:var(--panel);border-right:1px solid var(--line);box-shadow:20px 0 60px rgba(0,0,0,.25);display:flex;flex-direction:column;padding:16px max(16px,env(safe-area-inset-left,0px)) 16px 16px;overflow-y:auto;animation:dIn .18s ease-out}
+@keyframes dIn{from{transform:translateX(-24px);opacity:0}}
+.dhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.dhead .brand{display:flex;align-items:center;gap:8px}.dhead .brand::after{display:none}.dhead .brand img{width:30px;height:30px}.dhead .brand b{font-size:20px}
+.dclose{all:unset;cursor:pointer;width:36px;height:36px;display:grid;place-items:center;border-radius:8px;font-size:18px}.dclose:hover{background:var(--chip)}
+.drawer nav{flex-direction:column!important;overflow:visible!important;width:auto!important;gap:2px}
+.drawer nav h3{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:16px 12px 4px;font-weight:800}
+.drawer nav button,.drawer nav .navlink{display:grid!important;grid-template-columns:1fr auto;padding:8px 12px;white-space:normal}
+.drawer nav small{grid-column:1/-1;font-weight:500;font-size:12px;color:var(--muted);margin-top:1px}
+.drawer nav button[aria-current="true"] small{color:inherit;opacity:.8}
+.drawer nav .navlink{border:1px dashed var(--line);margin:2px 0}
+.drawer .railfoot{margin-top:auto;padding-top:16px}
+.drawer nav .count{display:inline-block!important}
+body.menuopen{overflow:hidden}
+@media (max-width:980px){nav.quick{display:none}}
+@media (max-width:560px){.topbar{gap:8px;flex-wrap:wrap}.menubtn span{display:none}.topbar .brand b{font-size:19px}.edlink{display:none}.topright{margin-left:auto}.topright .sitepick select{max-width:150px}}
 @media (max-width:560px){.headacts{flex-wrap:wrap;flex:1 1 100%}.sitepick{flex:1 1 100%}}
 </style>
 
 </head>
 <body>
 <div class="app">
-  <aside class="rail">
-    <div class="brand"><img src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span id="brandsite">Enniskillen</span></b><small>Marketing hub</small></div>
+  <header class="topbar">
+    <button class="menubtn" id="menuBtn" type="button" aria-label="Open the menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Menu</span></button>
+    <div class="brand"><img src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span id="brandsite">Enniskillen</span></b></div>
+    <nav class="quick" aria-label="Shortcuts">
+      <button class="qtab" data-view="today">Today</button>
+      <button class="qtab" data-view="deals">Deals</button>
+      <button class="qtab" data-view="studio">Create a post</button>
+      <button class="qtab" data-view="foyer">Foyer TVs</button>
+    </nav>
+    <div class="topright"><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary edlink" href="editor.html" target="_blank" rel="noopener">Editor ↗</a></div>
+  </header>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Menu" hidden>
+    <div class="dhead"><div class="brand"><img src="imc-logo.png" alt=""><b>Marketing hub</b></div><button class="dclose" id="menuClose" type="button" aria-label="Close the menu">✕</button></div>
     <nav id="nav">
-      <button data-view="today">Today</button>
-      <button data-view="whatson">What's on</button>
-      <button data-view="deals">Deals</button>
-      <button data-view="foyer">Foyer trailers</button>
-      <button data-view="welcome">Welcome videos</button>
-      <button data-view="calendar">Ideas calendar</button>
-      <button data-view="toolkit">Toolkit</button>
-      <button data-view="dashboard">Planner</button>
-      <button data-view="studio">Create ad</button>
-      <button data-view="releases">Upcoming releases</button>
-      <button data-view="library">Posts <span class="count" id="cnt"></span></button>
-      <button data-view="playbook">Go-viral playbook</button>
-      <a class="navlink" href="editor.html" target="_blank" rel="noopener">Photo &amp; video editor ↗</a>
+      <h3>Every day</h3>
+      <button data-view="today">Today<small>Film times and quick posts</small></button>
+      <button data-view="whatson">What's on<small>All films, coming soon, Kids Club, LUXX</small></button>
+      <button data-view="deals">Deals<small>Snack and ticket deals with prices</small></button>
+      <h3>Make</h3>
+      <button data-view="studio">Create a post<small>Quick poster and caption</small></button>
+      <a class="navlink" href="editor.html" target="_blank" rel="noopener">Photo &amp; video editor ↗<small>Designs, Reels, clips and video</small></a>
+      <button data-view="releases">Upcoming releases<small>Films to announce</small></button>
+      <h3>Plan &amp; track</h3>
+      <button data-view="dashboard">Planner<small>Your week of posts</small></button>
+      <button data-view="library">Posts <span class="count" id="cnt"></span><small>Drafts and scheduled posts</small></button>
+      <button data-view="calendar">Ideas calendar<small>Key dates and what to post</small></button>
+      <h3>Foyer TVs</h3>
+      <button data-view="foyer">Foyer trailers<small>Safe trailer loop and packs</small></button>
+      <button data-view="welcome">Welcome videos<small>IMC and LUXX logo reveals</small></button>
+      <h3>Help &amp; settings</h3>
+      <button data-view="toolkit">Toolkit<small>Captions, hashtags, sizes, brand settings</small></button>
+      <button data-view="playbook">Go-viral playbook<small>Tips that get posts seen</small></button>
     </nav>
     <div class="railfoot"><span class="sync"><span class="dot" id="syncdot"></span><span id="synctxt">Connecting…</span></span></div>
   </aside>
@@ -314,7 +357,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <section id="v-today">
       <div class="head">
         <div><h1>Today at <span class="sitename">IMC Enniskillen</span></h1><p><span id="todayDate"></span> · <span id="todayStamp"></span></p></div>
-        <div class="headacts"><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary" href="editor.html" target="_blank" rel="noopener" style="text-decoration:none">Open the editor ↗</a></div>
       </div>
       <div id="todayBody"></div>
     </section>
@@ -681,8 +723,14 @@ async function remove(id){
 const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
 /* ---------- navigation ---------- */
-function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));if(v==="studio")drawPoster();window.scrollTo(0,0)}
-$("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view)});
+function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button,.qtab").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));menu(false);if(v==="studio")drawPoster();window.scrollTo(0,0)}
+$("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view);else if(e.target.closest("a"))menu(false)});
+$(".quick").addEventListener("click",e=>{const b=e.target.closest("[data-view]");if(b)go(b.dataset.view)});
+/* hamburger menu: a drawer from the left, closed with ✕, Esc or a click outside */
+function menu(open){const d=$("#drawer"),sc=$("#scrim"),b=$("#menuBtn");if(!d)return;if(open===(!d.hidden))return;d.hidden=!open;sc.hidden=!open;b.setAttribute("aria-expanded",open);document.body.classList.toggle("menuopen",open);
+  if(open){const cur=d.querySelector('[aria-current="true"]')||d.querySelector("button");cur&&cur.focus()}else if(document.activeElement&&d.contains(document.activeElement))b.focus()}
+$("#menuBtn").onclick=()=>menu(true);$("#menuClose").onclick=()=>menu(false);$("#scrim").onclick=()=>menu(false);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#drawer").hidden)menu(false)});
 document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g){if(g.dataset.go==="studio"&&!g.dataset.keep)startNew();go(g.dataset.go)}});
 
 /* ---------- dashboard ---------- */

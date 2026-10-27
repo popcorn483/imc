@@ -103,6 +103,14 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .stage.dragover .canvaswrap{outline:2px dashed var(--gold);outline-offset:-14px}
 .stagebar{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:8px 16px 12px;font-size:12px;color:var(--muted)}
 .stagebar .dims{font-family:var(--f-mono)}
+.menuwrap{position:relative}
+.ddbtn small{font-weight:600;opacity:.7;margin-right:2px}
+.ddmenu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;min-width:260px;background:var(--panel,#14112e);border:1px solid var(--line);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:6px;display:flex;flex-direction:column;gap:2px}
+.ddmenu.right{left:auto;right:0}
+.ddmenu button{all:unset;cursor:pointer;display:flex;flex-direction:column;padding:8px 12px;border-radius:8px;font-weight:700;font-size:14px;color:var(--ink)}
+.ddmenu button small{font-weight:500;font-size:12px;color:var(--muted);margin-top:1px}
+.ddmenu button:hover,.ddmenu button:focus-visible{background:rgba(255,255,255,.07)}
+.ddmenu button[aria-pressed=true]{background:rgba(255,194,61,.14);box-shadow:inset 3px 0 0 var(--gold)}
 .timeline{padding:0 16px 12px;font-size:12px;color:var(--muted);max-height:34vh;overflow:auto}
 .tlhead{display:flex;gap:12px;align-items:center;margin-bottom:6px}.tlhead .btn{padding:4px 10px;font-size:12px}
 .tlgrid,.tlrow{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px;align-items:center}
@@ -169,15 +177,18 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 <div class="app">
   <header class="top">
     <div class="brandmark"><a id="back" href="index.html" hidden>← Ad Studio</a><img id="brandLogo" src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Photo</span> Editor</b></div>
-    <div class="seg" id="fmts" aria-label="Size"></div>
+    <div class="menuwrap"><button class="btn ddbtn" id="fmtBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fmts"><small>Size</small> <span id="fmtName">Feed 1:1</span> ▾</button><div class="ddmenu" id="fmts" role="menu" aria-label="Size" hidden></div></div>
     <div class="topact">
       <button class="btn icon" id="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
       <button class="btn icon" id="redo" title="Redo (Ctrl+Shift+Z)" aria-label="Redo">↷</button>
-      <button class="btn" id="copy">Copy image</button>
-      <button class="btn" id="jpg">JPG</button>
-      <button class="btn" id="pdf" title="Print-ready PDF at the design's size: A4/A3 for print sizes">PDF</button>
-      <button class="btn gifbtn" id="gif" title="Export an animated GIF">GIF</button>
-      <button class="btn" id="vid" title="Export a video for Reels, Stories and TikTok">Video</button>
+      <div class="menuwrap"><button class="btn ddbtn gifbtn" id="saveBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="saveMenu">More ways to save ▾</button>
+        <div class="ddmenu right" id="saveMenu" role="menu" hidden>
+          <button role="menuitem" id="vid">Video<small>MP4 for Reels, Stories and TikTok</small></button>
+          <button role="menuitem" class="gifbtn" id="gif">Animated GIF<small>Loops anywhere, no sound</small></button>
+          <button role="menuitem" id="jpg">JPG<small>Smaller file for email and websites</small></button>
+          <button role="menuitem" id="pdf">PDF<small>Print-ready, A4/A3 for print sizes</small></button>
+          <button role="menuitem" id="copy">Copy image<small>Paste straight into Facebook or a message</small></button>
+        </div></div>
       <button class="btn primary" id="png">Download PNG</button>
     </div>
   </header>
@@ -1284,9 +1295,15 @@ function syncLogo(){const box=$("#logoBox");box.innerHTML="";if(logoImg){const i
   $("#logoRemove").hidden=!logoImg||siteLogo;$("#logoBtn").textContent=logoImg?(siteLogo?"Use a different logo":"Replace logo"):"Upload the official logo"}
 
 /* ---------- formats + tabs ---------- */
-$("#fmts").innerHTML=Object.entries(FORMATS).map(([k,f])=>`<button data-fmt="${k}">${f.n}</button>`).join("");
+const FMT_HINT={square:"Facebook & Instagram post",portrait:"Instagram feed, tallest",story:"Stories, Reels, TikTok",wide:"Foyer TVs, YouTube",event:"Facebook event cover",cover:"Facebook page cover",a4:"Posters to print",a4l:"Landscape print"};
+$("#fmts").innerHTML=Object.entries(FORMATS).map(([k,f])=>`<button role="menuitemradio" data-fmt="${k}">${f.n}<small>${FMT_HINT[k]||""} · ${f.w} × ${f.h}</small></button>`).join("");
 $("#fmts").addEventListener("click",e=>{const b=e.target.closest("[data-fmt]");if(!b)return;S.fmt=b.dataset.fmt;syncFmt();clampPhoto();fit();commit()});
-function syncFmt(){$$("#fmts button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.fmt===S.fmt))}
+function syncFmt(){$$("#fmts button").forEach(b=>{b.setAttribute("aria-pressed",b.dataset.fmt===S.fmt);b.setAttribute("aria-checked",b.dataset.fmt===S.fmt)});const n=$("#fmtName");if(n)n.textContent=FORMATS[S.fmt].n}
+/* drop-down menus in the top bar (size, more ways to save): close on choice, Esc or a click elsewhere */
+function ddClose(except){$$(".ddmenu").forEach(m=>{if(m!==except&&!m.hidden){m.hidden=true;const b=document.querySelector(`[aria-controls="${m.id}"]`);b&&b.setAttribute("aria-expanded","false")}})}
+document.addEventListener("click",e=>{const b=e.target.closest(".ddbtn");if(b){const m=$("#"+b.getAttribute("aria-controls"));const open=m.hidden;ddClose(m);m.hidden=!open;b.setAttribute("aria-expanded",open);if(open){const f=m.querySelector('[aria-pressed="true"]')||m.querySelector("button");f&&f.focus()}return}
+  if(e.target.closest(".ddmenu button"))setTimeout(()=>ddClose(),0);else if(!e.target.closest(".ddmenu"))ddClose()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$$(".ddmenu").some(m=>!m.hidden)){ddClose();e.stopPropagation()}},true);
 $("#tabs").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(!b)return;$$("#tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));$$("[data-panel]").forEach(p=>p.hidden=p.dataset.panel!==b.dataset.tab);
   try{localStorage.setItem("imc-editor-tab",b.dataset.tab)}catch(e){}if(b.dataset.tab==="motion")startFxLoop()});
 
@@ -1499,7 +1516,7 @@ function buildMotionUI(){
 function syncFxCtl(){const a=S.motion.amt||1;$("#fxAmt").value=a;$("#fxAmtO").textContent=Math.round(a*100)+"%";const cur=S.motion.fxc||"";
   $("#fxCol").innerHTML=`<button class="sw" data-fxc="" aria-pressed="${!cur}" title="Auto" aria-label="Automatic colours" style="background:conic-gradient(#ffd84a,#e2452e,#ff8fab,#4fb6ff,#7bd148,#ffd84a)"></button>`+SWATCHES.concat(["#ff8fab","#7bd148","#b9a2ff"]).map(h=>`<button class="sw" data-fxc="${h}" aria-pressed="${cur===h}" aria-label="Effect colour ${h}" style="background:${h}"></button>`).join("")+`<input type="color" id="fxColPick" value="${cur||"#ffd84a"}" aria-label="Custom effect colour">`}
 function syncMotion(){syncFxCtl();const fx=S.motion.fx||{};$$("#fxTiles .tile").forEach(t=>t.setAttribute("aria-pressed",!!fx[t.dataset.fx]));$$("#durSeg button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.dur===S.motion.dur));
-  const on=hasMotion();if($("#tl"))setTimeout(syncTimeline,0);$("#play").hidden=!on;$("#play").textContent=playing?"Pause":"Play";$("#gif").classList.toggle("live",on)}
+  const on=hasMotion();if($("#tl"))setTimeout(syncTimeline,0);$("#play").hidden=!on;$("#play").textContent=playing?"Pause":"Play";$("#gif").classList.toggle("live",on);$("#saveBtn").classList.toggle("live",on);$("#saveBtn").textContent=on?"Video, GIF & more ▾":"More ways to save ▾"}
 $("#fxTiles").addEventListener("click",e=>{const t=e.target.closest("[data-fx]");if(!t)return;const k=t.dataset.fx;S.motion.fx={...S.motion.fx,[k]:!S.motion.fx[k]};
   if(k==="chase"&&S.motion.fx.chase&&S.frame.style!=="marquee"){S.frame.style="marquee";syncFrame();toast("Switched to the Marquee frame so the lights can chase")}
   commit();draw()});
