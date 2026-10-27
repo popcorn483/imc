@@ -214,6 +214,9 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .wstyles button{font:inherit;font-size:13px;font-weight:600;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:inherit;cursor:pointer;text-align:left}
 .wstyles button[aria-pressed=true]{border-color:#f39a2b;box-shadow:0 0 0 2px rgba(243,154,43,.35)}
 .wbrand{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}.wbrand button{font:inherit;font-weight:700;font-size:13px;padding:7px 16px;border:0;background:var(--panel);color:inherit;cursor:pointer;letter-spacing:.06em}.wbrand button[aria-pressed=true]{background:#1a1440;color:#ffd84a}
+.wmore{margin-top:14px;border:1px solid var(--line);border-radius:10px;padding:8px 12px}.wmore summary{cursor:pointer;font-weight:700;font-size:13px}.wmore[open] summary{margin-bottom:10px}
+.wmore input[type=color]{width:46px;height:34px;padding:2px;flex:none;border-radius:6px}.wmore .row-btns{align-items:center}
+.wsl{grid-column:1/-1;display:grid;grid-template-columns:130px minmax(0,1fr) 64px;gap:8px;align-items:center;font-size:13px}.wsl output{font-family:var(--f-mono,monospace);font-size:12px;text-align:right}.wsl input{width:100%}
 .welform .check{display:flex!important;justify-content:flex-start;gap:8px;align-items:center;font-size:14px}.welform .check input{width:auto;flex:none;margin:0}
 .wfields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.wfields .wide{grid-column:1/-1}.wfields input,.wfields select{width:100%;box-sizing:border-box}
 #waccents button{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}#waccents button[aria-pressed=true]{outline:3px solid #f39a2b;outline-offset:1px}#waccents input{width:36px;height:30px;padding:0;border:0;background:none}
@@ -378,6 +381,20 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
             <label class="field"><span class="flabel">Accent colour</span><span class="row-btns" id="waccents"></span></label>
             <label class="field"><span class="flabel">Length</span><select id="wlen"><option value="6">6 seconds</option><option value="8">8 seconds</option><option value="10">10 seconds</option><option value="12">12 seconds</option></select></label>
           </div>
+          <details class="wmore" id="wmore"><summary>Fine-tune: sizes, positions, fonts, colours and timing</summary>
+            <div class="wfields">
+              <label class="wsl"><span>Logo size</span><input type="range" id="wls" min="40" max="180" step="5"><output id="owls"></output></label>
+              <label class="wsl"><span>Logo up / down</span><input type="range" id="wly" min="-20" max="20" step="1"><output id="owly"></output></label>
+              <label class="wsl"><span>Words size</span><input type="range" id="wts" min="60" max="150" step="5"><output id="owts"></output></label>
+              <label class="wsl"><span>Words up / down</span><input type="range" id="wty" min="-30" max="15" step="1"><output id="owty"></output></label>
+              <label class="wsl wide"><span>Words appear</span><input type="range" id="wta" min="-30" max="30" step="5"><output id="owta"></output></label>
+              <label class="field"><span class="flabel">Big line font</span><select id="wfont"><option value="auto">Automatic</option><option value="display">Bold condensed</option><option value="serif">Elegant serif</option><option value="body">Clean</option></select></label>
+              <label class="field"><span class="flabel">Big line colour</span><span class="row-btns"><input type="color" id="wtc"><button type="button" class="btn small ghost" data-wreset="titleCol">Automatic</button></span></label>
+              <label class="field"><span class="flabel">Message colour</span><span class="row-btns"><input type="color" id="wmc"><button type="button" class="btn small ghost" data-wreset="msgCol">Automatic</button></span></label>
+              <label class="field" id="wcustbg"><span class="flabel">My own background colours</span><span class="row-btns"><input type="color" id="wbga" aria-label="Centre colour"><input type="color" id="wbgb" aria-label="Edge colour"></span></label>
+            </div>
+            <div class="row-btns" style="margin-top:10px"><button type="button" class="btn small" id="wfinereset">Reset fine-tuning</button></div>
+          </details>
           <label class="check" style="margin-top:12px"><input type="checkbox" id="won"> Play this one on the foyer TVs</label>
         </div>
       </div>
@@ -1277,6 +1294,12 @@ function wFormSync(keepInputs){$$("#wbrand [data-wbrand]").forEach(b=>b.setAttri
   if(!keepInputs){$("#wname").value=w.name||"";$("#wkicker").value=w.kicker||"";$("#wtitle").value=w.title||"";$("#wmsg").value=w.msg||""}
   $("#wtheme").value=w.theme;$("#wextra").value=w.extra||"none";$("#wlen").value=String(w.dur||8);$("#won").checked=w.on!==false;
   $("#waccents").innerHTML=WACC.map(c=>`<button type="button" data-wacc="${c}" style="background:${c}" aria-label="Accent ${c}" aria-pressed="${c===w.accent}"></button>`).join("")+`<input type="color" id="wacc" value="${esc(w.accent)}" aria-label="Pick any accent colour">`;
+  const fv=(id,v,txt)=>{const el=$("#"+id);if(el&&document.activeElement!==el)el.value=v;const o=$("#o"+id);if(o)o.textContent=txt};
+  fv("wls",Math.round((w.logoScale??1)*100),Math.round((w.logoScale??1)*100)+"%");fv("wly",Math.round((w.logoY||0)*100),(w.logoY>0?"+":"")+Math.round((w.logoY||0)*100));
+  fv("wts",Math.round((w.textScale??1)*100),Math.round((w.textScale??1)*100)+"%");fv("wty",Math.round((w.textY||0)*100),(w.textY>0?"+":"")+Math.round((w.textY||0)*100));
+  const ta=Math.round((w.textAt||0)*100);fv("wta",ta,ta===0?"Normal":ta<0?"Earlier":"Later");
+  $("#wfont").value=w.font||"auto";$("#wtc").value=w.titleCol||(w.brand==="luxx"?"#f7e7c0":"#ffffff");$("#wmc").value=w.msgCol||(w.brand==="luxx"?"#f0e4c8":"#ebf0ff");
+  $("#wbga").value=w.bgA||"#16205a";$("#wbgb").value=w.bgB||"#050716";$("#wcustbg").hidden=w.theme!=="custom";
   $("#wdur").textContent=`${w.dur||8} seconds · 1920 × 1080`;const o=$("#wopen");if(o)o.href=foyUrl(foyState())}
 function wList(){const all=wGet(),a=all.map((w,i)=>[w,i]).filter(([w])=>(w.brand||"imc")===wBrand),on=a.filter(([w])=>w.on!==false).length,bn=wBrand==="luxx"?"LUXX":"IMC";$("#wcount").textContent=`${a.length} ${bn} video${a.length===1?"":"s"} · ${on} on the TVs`;
   $("#wlist").innerHTML=a.map(([w,i])=>`<div class="wcard" aria-current="${i===wSel}"><canvas width="480" height="270" data-wthumb="${i}" title="Edit ${esc(w.name)}"></canvas><div class="b"><b>${esc(w.name||"Welcome")}</b><span class="m">${esc((WI.STYLES[w.style]||{}).n||"")} · ${w.dur||8}s · ${w.on!==false?"On the TVs":"Not on the TVs"}</span>
@@ -1285,12 +1308,16 @@ function wList(){const all=wGet(),a=all.map((w,i)=>[w,i]).filter(([w])=>(w.brand
 function wLoop(){cancelAnimationFrame(wRaf);const cv=$("#wcv");if(!cv||$("#v-welcome").hidden)return;const w=wCur(),c=cv.getContext("2d"),d=(w?w.dur:8)*1000;
   const step=()=>{if($("#v-welcome").hidden)return;const now=performance.now(),cur=wCur();if(cur&&wAssets){const el=(now-wT0)%(d+1200);WI.draw(c,cv.width,cv.height,Math.min(1,el/d),cur,wAssets)}
     if(wHover&&wAssets){const ww=wGet()[+wHover.dataset.wthumb];if(ww)WI.draw(wHover.getContext("2d"),480,270,((now-wHover._t0)%(ww.dur*1000))/(ww.dur*1000),ww,wAssets)}wRaf=requestAnimationFrame(step)};wRaf=requestAnimationFrame(step)}
-$("#v-welcome").addEventListener("input",e=>{const t=e.target,m={wname:"name",wkicker:"kicker",wtitle:"title",wmsg:"msg"};if(m[t.id])wSave({[m[t.id]]:t.value});if(t.id==="wacc")wSave({accent:t.value})});
-$("#v-welcome").addEventListener("change",e=>{const t=e.target;if(t.id==="wlogo"){const lx=t.value==="luxx";wSave({brand:t.value,...(lx?{theme:"luxx",accent:"#e8c46a"}:{theme:"midnight",accent:"#ffd84a"})});wBrand=t.value;try{localStorage.setItem("imc-wbrand",wBrand)}catch(x){}wList();wFormSync();return}if(t.id==="wtheme")wSave({theme:t.value});else if(t.id==="wextra")wSave({extra:t.value});else if(t.id==="wlen"){wSave({dur:+t.value});wT0=performance.now()}else if(t.id==="won")wSave({on:t.checked});else if(t.id==="wacc")wSave({accent:t.value})});
+$("#v-welcome").addEventListener("input",e=>{const t=e.target,m={wname:"name",wkicker:"kicker",wtitle:"title",wmsg:"msg"};if(m[t.id])wSave({[m[t.id]]:t.value});
+  const n={wls:["logoScale",100],wly:["logoY",100],wts:["textScale",100],wty:["textY",100],wta:["textAt",100]};if(n[t.id]){wSave({[n[t.id][0]]:+t.value/n[t.id][1]});if(t.id==="wta")wT0=performance.now()}
+  const col={wtc:"titleCol",wmc:"msgCol",wbga:"bgA",wbgb:"bgB"};if(col[t.id])wSave({[col[t.id]]:t.value});if(t.id==="wacc")wSave({accent:t.value})});
+$("#v-welcome").addEventListener("change",e=>{const t=e.target;if(t.id==="wlogo"){const lx=t.value==="luxx";wSave({brand:t.value,...(lx?{theme:"luxx",accent:"#e8c46a"}:{theme:"midnight",accent:"#ffd84a"})});wBrand=t.value;try{localStorage.setItem("imc-wbrand",wBrand)}catch(x){}wList();wFormSync();return}if(t.id==="wfont")wSave({font:t.value});else if(t.id==="wtheme")wSave({theme:t.value});else if(t.id==="wextra")wSave({extra:t.value});else if(t.id==="wlen"){wSave({dur:+t.value});wT0=performance.now()}else if(t.id==="won")wSave({on:t.checked});else if(t.id==="wacc")wSave({accent:t.value})});
 $("#v-welcome").addEventListener("click",e=>{const g=k=>e.target.closest(`[data-${k}]`);let b;
   if(b=g("wbrand")){wBrand=b.dataset.wbrand;try{localStorage.setItem("imc-wbrand",wBrand)}catch(x){}wSel=-1;wList();wFormSync();wT0=performance.now()}
   else if(b=g("wstyle")){wSave({style:b.dataset.wstyle});wT0=performance.now()}
   else if(b=g("wacc"))wSave({accent:b.dataset.wacc});
+  else if(b=g("wreset"))wSave({[b.dataset.wreset]:""});
+  else if(e.target.id==="wfinereset")wSave({logoScale:1,logoY:0,textScale:1,textY:0,textAt:0,font:"auto",titleCol:"",msgCol:""});
   else if((b=g("wedit"))||(b=g("wthumb"))){wSel=+(b.dataset.wedit??b.dataset.wthumb);wList();wFormSync();wT0=performance.now();$("#wcv").scrollIntoView({behavior:"smooth",block:"center"})}
   else if(b=g("wdup")){const a=wGet(),i=+b.dataset.wdup;a.splice(i+1,0,{...a[i],id:newId(),name:(a[i].name||"Welcome")+" copy"});wPut(a);wSel=i+1;wList();wFormSync();toast("Duplicated")}
   else if(b=g("wdel")){const a=wGet(),i=+b.dataset.wdel;if(!confirm(`Delete “${a[i].name||"this welcome video"}”?`))return;a.splice(i,1);wPut(a);wSel=Math.min(wSel,Math.max(0,a.length-1));wList();wFormSync();toast("Deleted")}});

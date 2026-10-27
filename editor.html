@@ -103,6 +103,18 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .stage.dragover .canvaswrap{outline:2px dashed var(--gold);outline-offset:-14px}
 .stagebar{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:8px 16px 12px;font-size:12px;color:var(--muted)}
 .stagebar .dims{font-family:var(--f-mono)}
+.timeline{padding:0 16px 12px;font-size:12px;color:var(--muted);max-height:34vh;overflow:auto}
+.tlhead{display:flex;gap:12px;align-items:center;margin-bottom:6px}.tlhead .btn{padding:4px 10px;font-size:12px}
+.tlgrid,.tlrow{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px;align-items:center}
+.tln{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink);font-weight:600}
+.tlruler{position:relative;height:22px;border-bottom:1px solid var(--line);cursor:ew-resize;touch-action:none}
+.tlruler span{position:absolute;top:2px;transform:translateX(-50%);font-family:var(--f-mono);font-size:10.5px}.tlruler span:first-child{transform:none}.tlruler span:last-of-type{transform:translateX(-100%)}
+.tlruler i{position:absolute;top:0;bottom:-400px;width:2px;background:#ff4fd8;pointer-events:none;z-index:2}
+.tlrow{padding:3px 0;border-radius:6px}.tlrow.sel .tln{color:var(--gold)}.tlrow.off{opacity:.45}
+.tltrack{position:relative;height:22px;background:rgba(255,255,255,.04);border-radius:5px;touch-action:none}
+.tlbar{position:absolute;top:3px;bottom:3px;background:linear-gradient(180deg,#2f7fe0,#1f5fb8);border-radius:4px;cursor:grab;min-width:6px;overflow:hidden}.tlrow.sel .tlbar{background:linear-gradient(180deg,#ffc23d,#e08e1a)}
+.tlbar em{position:absolute;left:0;top:0;bottom:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.35) 0 4px,transparent 4px 8px)}
+.tlbar b{position:absolute;top:0;bottom:0;width:8px;cursor:ew-resize}.tlbar b[data-h=a]{left:0}.tlbar b[data-h=b]{right:0}.tlbar b::after{content:"";position:absolute;top:4px;bottom:4px;left:3px;width:2px;border-radius:2px;background:rgba(255,255,255,.75)}
 /* props */
 .empty{padding:20px 16px;color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:6px}
 .empty b{color:var(--ink);font-size:14px}
@@ -282,6 +294,8 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
   <section class="stage" id="stage">
     <div class="canvaswrap" id="wrap"><canvas id="cv" width="1080" height="1080" aria-label="Design canvas"></canvas></div>
     <div class="stagebar"><span class="row" style="gap:10px"><button class="btn" id="play" hidden>Pause</button><span class="dims" id="dims"></span></span><span class="hint">Drag to move · corners resize · top dot rotates · <span class="kbd">Del</span> removes · <span class="kbd">Ctrl</span>+<span class="kbd">D</span> duplicates</span></div>
+    <div class="timeline" id="tl" hidden><div class="tlhead"><button class="btn" id="tlPlay" type="button">Play / pause</button><span id="tlInfo"></span></div>
+      <div class="tlgrid"><span class="tln"></span><div class="tlruler" id="tlRuler" title="Click or drag to jump to a moment"></div></div><div id="tlRows"></div></div>
   </section>
 
   <aside class="right">
@@ -1176,6 +1190,7 @@ function animOf(L,t){const o={ds:1,dr:0,dy:0,da:1},a=L.anim,d=L.delay||0,tt=t-d,
   else if(a==="heartbeat"){const k=fr(tt),g=x=>Math.exp(-(x*x)/.0018);o.ds=1+.08*(g(k-.08)+.7*g(k-.24))}
   else if(a==="glow")o.glow=.5+.5*Math.sin(TAU*tt*2);
   else if(a==="shake"){const k=fr(tt);if(k<.16){o.dx=.012*Math.sin(k*TAU*14)*(1-k/.16);o.dr=.03*Math.sin(k*TAU*11)*(1-k/.16)}}
+  if(d>0&&tt<0)o.da=0;
   /* layers in a video sequence can leave at a set point in the loop */
   if(L.until!=null){const k=(t-L.until)/.04;if(k>0){o.da*=Math.max(0,1-k);o.ds*=1+.15*Math.min(1,k)}}
   return o}
@@ -1364,9 +1379,11 @@ function renderProps(){const L=getSel(),P=$("#props");
   if(L.kind==="listing"){const ls=L.rsys||ratingSys;h+=`<div class="lbl">Rating symbols</div><div class="seg" id="pp-lsys" style="width:max-content"><button data-pls="bbfc" aria-pressed="${ls==="bbfc"}">BBFC</button><button data-pls="ifco" aria-pressed="${ls==="ifco"}">IFCO</button></div>`;h+=`<label class="lbl" for="pp-text">Heading</label><input id="pp-text" type="text" value="${esc(L.text||"")}"><label class="lbl" for="pp-sub">Date line</label><input id="pp-sub" type="text" value="${esc(L.sub||"")}"><label class="lbl" for="pp-rows">Films: Title | times | cert | LUXX</label><textarea id="pp-rows" rows="7" style="font-family:var(--f-mono);font-size:12px">${esc(rowsText(L.rows))}</textarea>${IMC&&IMC.today&&IMC.today.length?'<button class="btn wide" data-act="reloadrows">Refresh from imc.ie</button>':""}`}
   if(L.kind==="rating"){const sys=L.system||"bbfc",opts=ratingList(sys).filter(o=>o.cert!==sys.toUpperCase());h+=`<div class="seg" id="pp-rsys" style="width:max-content"><button data-prs="bbfc" aria-pressed="${sys==="bbfc"}">BBFC</button><button data-prs="ifco" aria-pressed="${sys==="ifco"}">IFCO</button></div>`+(opts.length?`<label class="lbl" for="pp-rating">Certificate</label><select id="pp-rating">${!L.src?`<option value="" selected>${esc(L.cert||"Choose")}</option>`:""}${opts.map(o=>`<option value="${esc(o.src)}" ${o.src===L.src?"selected":""}>${esc(o.cert)}</option>`).join("")}</select>`:`<p class="note">Rating symbols load from imc.ie on the live site.</p>`)+(sys==="ifco"?`<p class="note">IFCO certificates can differ from BBFC ones. Check the film's IFCO rating.</p>`:"")}
   if(L.kind==="logo"){h+=`<label class="lbl" for="pp-plate">Backing</label><select id="pp-plate"><option value="none">None</option><option value="light">White panel</option><option value="dark">Dark panel</option></select>${logoImg?"":colourBlock("Text logo colour","c1",L)}`}
-  h+=`</div><div class="sec"><h3>Position</h3>${sliderRow("pp-s","Size",10,400,Math.round(L.s*100),"%")}${sliderRow("pp-r","Rotate",-180,180,Math.round((L.r||0)*180/Math.PI),"°")}${sliderRow("pp-o","Opacity",10,100,Math.round((L.o??1)*100),"%")}<label class="lbl" for="pp-anim">Animation</label><select id="pp-anim">${Object.entries(ANIMS).map(([k,n])=>`<option value="${k}" ${(L.anim||"none")===k?"selected":""}>${n}</option>`).join("")}</select>${L.anim&&L.anim!=="none"?sliderRow("pp-delay","Starts at",0,50,Math.round((L.delay||0)*100),"%"):""}
+  h+=`</div><div class="sec"><h3>Position</h3>${sliderRow("pp-s","Size",10,400,Math.round(L.s*100),"%")}${sliderRow("pp-r","Rotate",-180,180,Math.round((L.r||0)*180/Math.PI),"°")}${sliderRow("pp-o","Opacity",10,100,Math.round((L.o??1)*100),"%")}<label class="lbl" for="pp-anim">Animation</label><select id="pp-anim">${Object.entries(ANIMS).map(([k,n])=>`<option value="${k}" ${(L.anim||"none")===k?"selected":""}>${n}</option>`).join("")}</select>${(()=>{const d=S.motion.dur||3,sec=v=>Math.round(v*d*10)/10;return`<div class="lbl" style="margin-top:10px">Timing</div>${sliderRow("pp-delay","Appears at",0,Math.round(d*10),Math.round((L.delay||0)*d*10),"")}${sliderRow("pp-until","Leaves at",1,Math.round(d*10),Math.round((L.until??1)*d*10),"")}
+    <label class="lbl" for="pp-ilen">Animation speed</label><select id="pp-ilen">${[[.5,"Quick"],[1,"Normal"],[1.8,"Slow"]].map(([v,n])=>`<option value="${v}" ${(L.ilen||1)===v?"selected":""}>${n}</option>`).join("")}</select><p class="note">Or drag this layer's bar on the timeline under the design.</p>`})()}
     <div class="acts"><button class="btn" data-act="centre">Centre</button><button class="btn" data-act="fwd">Forward</button><button class="btn" data-act="back">Back</button><button class="btn" data-act="dup">Duplicate</button><button class="btn" data-act="flat">Straighten</button><button class="btn danger" data-act="del">Delete</button></div></div>`;
-  P.innerHTML=h;if(L.kind==="logo")$("#pp-plate").value=L.plate||"none"}
+  P.innerHTML=h;if(L.kind==="logo")$("#pp-plate").value=L.plate||"none";tlFmt()}
+function tlFmt(){const L=getSel();if(!L)return;const d=S.motion.dur||3,a=$("#opp-delay"),b=$("#opp-until");if(a)a.textContent=((L.delay||0)*d).toFixed(1)+"s";if(b)b.textContent=L.until==null?"End":(L.until*d).toFixed(1)+"s"}
 function syncPropNums(){const L=getSel();if(!L)return;const set=(id,v,u)=>{const el=$("#"+id);if(el&&document.activeElement!==el){el.value=v;$("#o"+id).textContent=v+u}};
   set("pp-s",Math.round(L.s*100),"%");set("pp-r",Math.round((L.r||0)*180/Math.PI),"°")}
 $("#props").addEventListener("input",e=>{const L=getSel();if(!L)return;const id=e.target.id;
@@ -1375,7 +1392,8 @@ $("#props").addEventListener("input",e=>{const L=getSel();if(!L)return;const id=
   else if(id==="pp-r"){L.r=+e.target.value*Math.PI/180;$("#opp-r").textContent=e.target.value+"°"}
   else if(id==="pp-o"){L.o=+e.target.value/100;$("#opp-o").textContent=e.target.value+"%"}
   else if(id==="pp-sp"){L.sp=+e.target.value;$("#opp-sp").textContent=e.target.value}
-  else if(id==="pp-delay"){L.delay=+e.target.value/100;$("#opp-delay").textContent=e.target.value+"%"}
+  else if(id==="pp-delay"||id==="pp-until"){const d=S.motion.dur||3,v=+e.target.value/10/d;if(id==="pp-delay"){L.delay=Math.min(v,(L.until??1)-.03);if(L.delay>0&&(!L.anim||L.anim==="none"))L.anim="fade"}else L.until=v>=.995?null:Math.max(v,(L.delay||0)+.03);syncTimeline();tlFmt()}
+  else if(id==="pp-ilen"){L.ilen=+e.target.value;syncTimeline()}
   else if(id==="pp-items"){L.items=e.target.value;commitSoon()}
   else if(id==="pp-rows"){L.rows=parseRows(e.target.value);commitSoon()}
   else if(e.target.type==="color"){const k=e.target.closest("[data-colour]").dataset.colour;L[k]=e.target.value}
@@ -1473,22 +1491,22 @@ let playing=true,pausedT=STILL,loopOn=false,lastF=0;
 const hasMotion=(st=S)=>(st===S&&photoIsVideo&&(st.bg||"photo")==="photo")||(st.frame&&st.frame.anim!==false&&!!FRAME_MOVES[st.frame.style])||Object.values(st.motion?.fx||{}).some(Boolean)||st.layers.some(l=>!l.hidden&&l.anim&&l.anim!=="none");
 const curT=()=>fr(performance.now()/1000/(S.motion.dur||3));
 function ensureLoop(){if(hasMotion()&&playing&&!loopOn){loopOn=true;requestAnimationFrame(loop)}else if(!hasMotion()||!playing){draw()}}
-function loop(now){if(!(hasMotion()&&playing)){loopOn=false;draw();return}if(now-lastF>=32){lastF=now;render(ctx,cv.width,cv.height,{overlay:true,t:curT()})}requestAnimationFrame(loop)}
+function loop(now){if(!(hasMotion()&&playing)){loopOn=false;draw();return}if(now-lastF>=32){lastF=now;render(ctx,cv.width,cv.height,{overlay:true,t:curT()});tlHead()}requestAnimationFrame(loop)}
 function buildMotionUI(){
   $("#fxTiles").innerHTML=FX_ORDER.map(k=>`<button class="tile fx" data-fx="${k}" aria-pressed="false"><canvas width="200" height="200" data-fx="${k}"></canvas><span>${FX[k].n}${k==="chase"?' <em class="anim">Marquee</em>':""}</span></button>`).join("");
-  $("#durSeg").innerHTML=[2,3,4,6,8,10,15].map(d=>`<button data-dur="${d}">${d} sec</button>`).join("");
+  $("#durSeg").innerHTML=[2,3,4,5,6,8,10,12,15,20].map(d=>`<button data-dur="${d}">${d} sec</button>`).join("");
 }
 function syncFxCtl(){const a=S.motion.amt||1;$("#fxAmt").value=a;$("#fxAmtO").textContent=Math.round(a*100)+"%";const cur=S.motion.fxc||"";
   $("#fxCol").innerHTML=`<button class="sw" data-fxc="" aria-pressed="${!cur}" title="Auto" aria-label="Automatic colours" style="background:conic-gradient(#ffd84a,#e2452e,#ff8fab,#4fb6ff,#7bd148,#ffd84a)"></button>`+SWATCHES.concat(["#ff8fab","#7bd148","#b9a2ff"]).map(h=>`<button class="sw" data-fxc="${h}" aria-pressed="${cur===h}" aria-label="Effect colour ${h}" style="background:${h}"></button>`).join("")+`<input type="color" id="fxColPick" value="${cur||"#ffd84a"}" aria-label="Custom effect colour">`}
 function syncMotion(){syncFxCtl();const fx=S.motion.fx||{};$$("#fxTiles .tile").forEach(t=>t.setAttribute("aria-pressed",!!fx[t.dataset.fx]));$$("#durSeg button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.dur===S.motion.dur));
-  const on=hasMotion();$("#play").hidden=!on;$("#play").textContent=playing?"Pause":"Play";$("#gif").classList.toggle("live",on)}
+  const on=hasMotion();if($("#tl"))setTimeout(syncTimeline,0);$("#play").hidden=!on;$("#play").textContent=playing?"Pause":"Play";$("#gif").classList.toggle("live",on)}
 $("#fxTiles").addEventListener("click",e=>{const t=e.target.closest("[data-fx]");if(!t)return;const k=t.dataset.fx;S.motion.fx={...S.motion.fx,[k]:!S.motion.fx[k]};
   if(k==="chase"&&S.motion.fx.chase&&S.frame.style!=="marquee"){S.frame.style="marquee";syncFrame();toast("Switched to the Marquee frame so the lights can chase")}
   commit();draw()});
 $("#fxAmt").addEventListener("input",e=>{S.motion.amt=+e.target.value;$("#fxAmtO").textContent=Math.round(S.motion.amt*100)+"%";draw()});$("#fxAmt").addEventListener("change",()=>commit());
 $("#fxCol").addEventListener("click",e=>{const b=e.target.closest("[data-fxc]");if(!b)return;S.motion.fxc=b.dataset.fxc||null;syncFxCtl();draw();commit()});
 $("#fxCol").addEventListener("input",e=>{if(e.target.id==="fxColPick"){S.motion.fxc=e.target.value;draw()}});$("#fxCol").addEventListener("change",e=>{if(e.target.id==="fxColPick"){syncFxCtl();commit()}});
-$("#durSeg").addEventListener("click",e=>{const b=e.target.closest("[data-dur]");if(b){S.motion.dur=+b.dataset.dur;commit()}});
+$("#durSeg").addEventListener("click",e=>{const b=e.target.closest("[data-dur]");if(b){S.motion.dur=+b.dataset.dur;syncMotion();commit()}});
 $("#shineAll").onclick=()=>{let n=0;S.layers.forEach(l=>{if(l.kind==="badge"){l.anim="shine";n++}});renderProps();commit();toast(n?"Every badge now shines":"Add a badge first")};
 $("#stillAll").onclick=()=>{S.layers.forEach(l=>l.anim="none");renderProps();commit()};
 $("#play").onclick=()=>{if(playing){pausedT=curT();playing=false}else playing=true;syncMotion();ensureLoop();draw()};
@@ -1496,6 +1514,31 @@ let fxLoopOn=false;function startFxLoop(){if(fxLoopOn)return;fxLoopOn=true;const
   const t=curT();$$("#fxTiles canvas").forEach(cn=>{const k=cn.dataset.fx;render(cn.getContext("2d"),cn.width,cn.height,{t,noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,style:k==="chase"?"marquee":(S.frame.style==="gallery"?"vignette":S.frame.style),logo:false,caption:""},photo:S.photo,layers:[],motion:{fx:{[k]:true}}})});
   setTimeout(()=>requestAnimationFrame(step),55)};step()}
 document.addEventListener("visibilitychange",()=>{if(!document.hidden&&!$('[data-panel="motion"]').hidden)startFxLoop()});
+
+/* ---------- timeline: when each layer appears and leaves in an animated design (drag the bars, or click the ruler to jump to a moment) ---------- */
+const INTRO_ANIMS={pop:1,slam:1,slide:1,zoom:1,fade:1,drop:1,spin:1,flip:1,type:1};
+const TL_SNAP=.01;
+function tlShown(){return S.layers.length>0&&(hasMotion()||S.layers.some(l=>(l.delay||0)>0||l.until!=null))}
+function syncTimeline(){const el=$("#tl");if(!el)return;const on=tlShown();if(el.hidden===on){el.hidden=!on;fit()}if(!on)return;const d=S.motion.dur||3;
+  const ticks=[];const step=d<=4?.5:d<=10?1:2;for(let s=0;s<=d+1e-6;s+=step)ticks.push(`<span style="left:${s/d*100}%">${Number.isInteger(s)?s:s.toFixed(1)}s</span>`);
+  $("#tlRuler").innerHTML=ticks.join("")+'<i id="tlHead"></i>';
+  $("#tlRows").innerHTML=[...S.layers].reverse().map(L=>{const a=L.delay||0,b=L.until!=null?L.until:1,intro=INTRO_ANIMS[L.anim]?Math.min(b-a,(L.anim==="type"?.5:L.anim==="drop"?.45:L.anim==="spin"?.4:.3)*(L.ilen||1)):0;
+    return`<div class="tlrow${L.id===selId?" sel":""}${L.hidden?" off":""}" data-tlid="${L.id}"><span class="tln" title="${esc(layerName(L))}">${esc(layerName(L))}</span><div class="tltrack"><div class="tlbar" style="left:${a*100}%;width:${(b-a)*100}%"><em style="width:${b>a?intro/(b-a)*100:0}%"></em><b data-h="a" aria-hidden="true"></b><b data-h="b" aria-hidden="true"></b></div></div></div>`}).join("");
+  $("#tlInfo").textContent=`${d} second loop · drag a bar to change when it appears and leaves`;tlHead()}
+function tlHead(){const h=$("#tlHead");if(!h||$("#tl").hidden)return;h.style.left=((playing?curT():pausedT)*100)+"%"}
+let tlDrag=null;
+$("#tl").addEventListener("pointerdown",e=>{const ru=e.target.closest("#tlRuler");if(ru){const r=ru.getBoundingClientRect();pausedT=Math.max(0,Math.min(.999,(e.clientX-r.left)/r.width));playing=false;syncMotion();draw();tlHead();tlDrag={scrub:ru};ru.setPointerCapture(e.pointerId);return}
+  const row=e.target.closest("[data-tlid]");if(!row)return;const L=S.layers.find(l=>l.id===row.dataset.tlid);if(!L)return;if(selId!==L.id){selId=L.id;syncLayers();renderProps();draw()}
+  const bar=e.target.closest(".tlbar"),tr=row.querySelector(".tltrack");if(!bar&&!e.target.closest(".tltrack"))return;const r=tr.getBoundingClientRect(),h=e.target.dataset.h||(bar?"m":"m");
+  tlDrag={L,h,r,x0:e.clientX,a0:L.delay||0,b0:L.until!=null?L.until:1};tr.setPointerCapture(e.pointerId);e.preventDefault()});
+$("#tl").addEventListener("pointermove",e=>{if(!tlDrag)return;if(tlDrag.scrub){const r=tlDrag.scrub.getBoundingClientRect();pausedT=Math.max(0,Math.min(.999,(e.clientX-r.left)/r.width));draw();tlHead();return}
+  const{L,h,r,x0,a0,b0}=tlDrag,dx=(e.clientX-x0)/r.width,sn=v=>Math.round(v/TL_SNAP)*TL_SNAP;let a=a0,b=b0;
+  if(h==="a")a=Math.max(0,Math.min(b0-.04,sn(a0+dx)));else if(h==="b")b=Math.min(1,Math.max(a0+.04,sn(b0+dx)));else{const len=b0-a0;a=Math.max(0,Math.min(1-len,sn(a0+dx)));b=a+len}
+  L.delay=a>.005?a:0;L.until=b>=.995?null:b;if(L.delay>0&&(!L.anim||L.anim==="none"))L.anim="fade";
+  if(!playing){pausedT=h==="b"?Math.max(0,b-.02):Math.min(.999,a+.05)}syncTimeline();draw()});
+const tlEnd=()=>{if(!tlDrag)return;const was=tlDrag;tlDrag=null;if(!was.scrub){renderProps();commit()}};
+$("#tl").addEventListener("pointerup",tlEnd);$("#tl").addEventListener("pointercancel",tlEnd);
+$("#tlPlay").onclick=()=>$("#play").click();
 
 /* ---------- GIF encoder (median-cut palette, ordered dither, LZW, unchanged pixels left transparent) ---------- */
 const GIF={
@@ -1805,7 +1848,7 @@ $("#vidGo").onclick=async()=>{if(vBusy)return;vBusy=true;vCancel=false;$("#vidGo
   saveBlob(res.blob,fileName(res.ext));ensureLoop()};
 
 /* ---------- sync + boot ---------- */
-function syncAll(){syncMotion();ensureLoop();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
+function syncAll(){syncMotion();ensureLoop();syncTimeline();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
 async function boot(){buildMotionUI();
   try{const t=localStorage.getItem("imc-editor-tab");if(t){const b=$(`#tabs [data-tab="${t}"]`);if(b)b.click()}}catch(e){}
   let saved=null;try{saved=JSON.parse(fixSite(localStorage.getItem("imc-editor-state")||"null"))}catch(e){}

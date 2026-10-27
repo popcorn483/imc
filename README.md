@@ -84,11 +84,22 @@ The hub's **Welcome videos** page makes "Welcome to IMC" logo reveals for the fo
 
 Videos marked "on the foyer TVs" play between trailers on the foyer player: after every trailer, every 2nd, every 3rd, or now and then at random (every 2–4 films). They're drawn live by `ident.js`, which the hub and `foyer.html` share. Because the TV can't see the hub's saved settings, the welcome videos travel inside the foyer player link, so reopen the link after making changes. The downloadable foyer pack includes them too, slotted into `playlist.m3u`.
 
+**Fine-tune** (on the Welcome videos page): logo size and position, words size and position, when the words appear, big-line font (bold condensed, elegant serif, clean), big-line and message colours, and your own two background colours. Fine-tuning goes in the foyer link too, so the TVs match the preview.
+
 ### LUXX welcome videos
 
 The IMC / LUXX switch on the Welcome videos page has a LUXX set. It uses a gold LUXX wordmark with "Luxury recliner seating" and serif text, and adds three LUXX reveals: gold lines, gold foil shine and warm glow. Every other reveal works with the LUXX wordmark too, and there are two LUXX backgrounds (LUXX lounge, Leather & gold). Three LUXX starters are included.
 
 The **LUXX lounge player** link (Welcome videos and Foyer trailers pages) is for a TV in or near the LUXX area. It shows only films with LUXX showings, with their LUXX times, and plays only the LUXX welcome videos.
+
+## Timeline in the photo & video editor
+
+Animated designs (Reels, product clips, presets) show a timeline under the canvas, with one bar per layer:
+- Drag a bar to move it, or drag its ends to change when it appears and leaves.
+- The striped part of a bar is the entrance animation.
+- Click or drag along the ruler to jump to a moment.
+
+The selected layer's panel also has **Appears at** and **Leaves at** sliders (in seconds) and an animation speed setting. More loop lengths are available: 5, 12 and 20 seconds.
 
 ## Cinema Reels, animated presets and overlays
 

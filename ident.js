@@ -16,13 +16,14 @@ const THEMES={
   velvet:{n:"Red velvet",a:"#5e0d1c",b:"#12030a"},
   gold:{n:"Black & gold",a:"#3a2a0c",b:"#050403"},
   purple:{n:"Premiere purple",a:"#3a2560",b:"#0b0718"},
+  custom:{n:"My own colours",a:"#16205a",b:"#050716"},
   black:{n:"Pure black",a:"#141414",b:"#000000"},
   luxx:{n:"LUXX lounge",a:"#2b1d12",b:"#060403"},
   leather:{n:"Leather & gold",a:"#4a2614",b:"#0d0604"}
 };
-const DEFAULT={brand:"imc",name:"Welcome",style:"spotlight",kicker:"WELCOME TO",title:"IMC CINEMAS",msg:"Sit back, relax and enjoy the show",theme:"midnight",accent:"#ffd84a",extra:"none",dur:8,on:true};
+const DEFAULT={logoScale:1,logoY:0,textScale:1,textY:0,font:"auto",titleCol:"",msgCol:"",textAt:0,bgA:"#16205a",bgB:"#050716",brand:"imc",name:"Welcome",style:"spotlight",kicker:"WELCOME TO",title:"IMC CINEMAS",msg:"Sit back, relax and enjoy the show",theme:"midnight",accent:"#ffd84a",extra:"none",dur:8,on:true};
 
-function bg(c,W,H,cfg){const th=THEMES[cfg.theme]||THEMES.midnight,g=c.createRadialGradient(W/2,H*.42,0,W/2,H*.42,Math.hypot(W,H)*.62);g.addColorStop(0,th.a);g.addColorStop(1,th.b);c.fillStyle=g;c.fillRect(0,0,W,H)}
+function bg(c,W,H,cfg){const th=cfg.theme==="custom"?{a:cfg.bgA||"#16205a",b:cfg.bgB||"#050716"}:THEMES[cfg.theme]||THEMES.midnight,g=c.createRadialGradient(W/2,H*.42,0,W/2,H*.42,Math.hypot(W,H)*.62);g.addColorStop(0,th.a);g.addColorStop(1,th.b);c.fillStyle=g;c.fillRect(0,0,W,H)}
 /* the LUXX wordmark: gold serif letters, fine rules and "LUXURY RECLINER SEATING". letters/lines/sub run 0 → 1 for build-up reveals */
 const GOLD=["#fff3c8","#e8c46a","#b8862e","#f7dc8e","#9c6c22"];
 function goldFill(c,x0,y0,x1,y1){const g=c.createLinearGradient(x0,y0,x1,y1);GOLD.forEach((col,i)=>g.addColorStop(i/(GOLD.length-1),col));return g}
@@ -33,18 +34,19 @@ function luxxMark(c,x,y,h,o={}){const a=o.a??1;if(a<=0)return;const L=o.letters?
   c.shadowBlur=0;const rw=tot*.6*eo(ln),ry=by+fs*.2;if(rw>1){c.fillStyle=goldFill(c,-tot/2,0,tot/2,0);c.fillRect(-rw,ry,rw*2,Math.max(1,fs*.016));c.fillRect(-rw,-fs*.86,rw*2,Math.max(1,fs*.016))}
   if(sb>0){c.globalAlpha*=eo(sb);const z=fs*.13;c.font=`600 ${z}px ${F.body}`;c.letterSpacing=`${z*.42}px`;c.fillStyle="#e8c46a";c.textAlign="center";c.fillText("LUXURY RECLINER SEATING",z*.21,ry+z*1.75);c.letterSpacing="0px"}
   c.restore()}
-function logo(c,A,x,y,h,o={}){const a=o.a??1;if(a<=0)return;if(A&&A.brand==="luxx")return luxxMark(c,x,y,h,{...o,glowCol:"rgba(232,196,106,.8)"});c.save();c.globalAlpha*=a;c.translate(x,y);c.rotate(o.r||0);c.scale(o.s??1,o.s??1);
+function logo(c,A,x,y,h,o={}){const a=o.a??1;if(a<=0)return;if(A&&!o.raw){h*=A.ls||1;y+=A.dy||0}if(A&&A.brand==="luxx")return luxxMark(c,x,y,h,{...o,glowCol:"rgba(232,196,106,.8)"});c.save();c.globalAlpha*=a;c.translate(x,y);c.rotate(o.r||0);c.scale(o.s??1,o.s??1);
   if(o.glow){c.shadowColor=o.glowCol||"rgba(255,216,74,.9)";c.shadowBlur=o.glow}
   if(A&&A.logo){const w=h*A.logo.width/A.logo.height;c.drawImage(A.logo,-w/2,-h/2,w,h)}
   else{c.fillStyle="#1fa0de";c.beginPath();c.arc(0,0,h/2,0,TAU);c.fill();c.shadowBlur=0;c.fillStyle="#fff";c.font=`900 ${h*.42}px ${F.display}`;c.textAlign="center";c.textBaseline="middle";c.fillText("IMC",0,h*.03)}
   c.restore()}
 function fitFont(c,text,weight,family,max,width){let z=max;for(;z>12;z-=2){c.font=`${weight} ${z}px ${family}`;if(c.measureText(text).width<=width)break}return z}
 /* the three lines under the logo; p runs 0 → 1 as they arrive */
-function words(c,W,H,cfg,p,y0){if(p<=0)return;const u=H/1080,base=y0??(cfg.brand==="luxx"?H*.685:H*.665);c.save();c.textAlign="center";c.textBaseline="alphabetic";
+const TFONT={display:[900,F.display,150],serif:[700,F.serif,100],body:[800,F.body,110]};
+function words(c,W,H,cfg,p,y0){if(p<=0)return;const k=Math.max(.5,Math.min(1.6,+cfg.textScale||1)),u=H/1080*k,base=(y0??(cfg.brand==="luxx"?H*.685:H*.665))+(+cfg.textY||0)*H;c.save();c.textAlign="center";c.textBaseline="alphabetic";
   const line=(txt,k,draw)=>{const q=eo(seg(p,k,k+.45));if(q<=0||!txt)return;c.globalAlpha=q;c.save();c.translate(0,(1-q)*24*u);draw(txt);c.restore()};
   line(String(cfg.kicker||"").toUpperCase(),0,s=>{c.fillStyle=cfg.accent||"#ffd84a";c.font=`500 ${38*u}px ${F.mono}`;c.letterSpacing=`${12*u}px`;c.fillText(s,W/2+5*u,base);c.letterSpacing="0px"});
-  const lx=cfg.brand==="luxx";line(String(cfg.title||"").toUpperCase(),.2,s=>{const z=lx?fitFont(c,s,700,F.serif,100*u,W*.84):fitFont(c,s,900,F.display,150*u,W*.84);c.fillStyle=lx?"#f7e7c0":"#fff";c.shadowColor="rgba(0,0,0,.55)";c.shadowBlur=24*u;c.fillText(s,W/2,base+z*.95)});
-  line(cfg.msg,.4,s=>{const z=fitFont(c,s,600,F.body,52*u,W*.8);c.fillStyle=cfg.brand==="luxx"?"rgba(240,228,200,.9)":"rgba(235,240,255,.88)";c.font=`600 ${z}px ${F.body}`;c.fillText(s,W/2,base+(lx?175:225)*u)});
+  const lx=cfg.brand==="luxx",tf=TFONT[cfg.font]||(lx?TFONT.serif:TFONT.display),tall=tf[1]===F.display;line(String(cfg.title||"").toUpperCase(),.2,s=>{const z=fitFont(c,s,tf[0],tf[1],tf[2]*u,W*.86);c.fillStyle=cfg.titleCol||(lx?"#f7e7c0":"#fff");c.shadowColor="rgba(0,0,0,.55)";c.shadowBlur=24*u;c.fillText(s,W/2,base+z*(tall?.95:1.05))});
+  line(cfg.msg,.4,s=>{const z=fitFont(c,s,600,F.body,52*u,W*.8);c.fillStyle=cfg.msgCol||(lx?"rgba(240,228,200,.9)":"rgba(235,240,255,.88)");c.font=`600 ${z}px ${F.body}`;c.fillText(s,W/2,base+(tall?225:175)*u)});
   c.restore()}
 function kernel(c,x,y,r,rot){c.save();c.translate(x,y);c.rotate(rot);const g=c.createRadialGradient(-r*.3,-r*.3,r*.1,0,0,r*1.2);g.addColorStop(0,"#fffdf3");g.addColorStop(.7,"#fbeec6");g.addColorStop(1,"#e0b35a");c.fillStyle=g;
   [[0,0,1],[.55,-.35,.7],[-.5,-.4,.75],[.4,.5,.65],[-.45,.45,.6]].forEach(([a,b,k])=>{c.beginPath();c.arc(a*r,b*r,r*k*.75,0,TAU);c.fill()});c.fillStyle="#d48a2a";c.beginPath();c.arc(r*.1,r*.15,r*.16,0,TAU);c.fill();c.restore()}
@@ -110,7 +112,7 @@ const STYLES={
   luxxlines:{n:"Gold lines (LUXX)",text:.5,draw(c,W,H,t,cfg,A){const u=H/1080;bg(c,W,H,cfg);const v=c.createRadialGradient(W/2,H*.4,0,W/2,H*.4,H*.55);v.addColorStop(0,`rgba(232,196,106,${.16*eo(seg(t,.2,.5))})`);v.addColorStop(1,"rgba(232,196,106,0)");c.fillStyle=v;c.fillRect(0,0,W,H);
     const ln=eio(seg(t,.04,.28));c.save();c.fillStyle=goldFill(c,0,0,W,0);c.globalAlpha=.85;const lw=W*.42*ln;c.fillRect(W/2-lw,H*.22,lw*2,2*u);c.fillRect(W/2-lw,H*.585,lw*2,2*u);c.restore();
     sparkles(c,W,H,t,14,"#e8c46a",.45);
-    if(A&&A.brand==="luxx")luxxMark(c,W/2,H*.4,H*.36,{letters:seg(t,.18,.5),lines:seg(t,.38,.55),sub:seg(t,.45,.6),glow:18*u});else logo(c,A,W/2,H*.4,H*.36,{a:eo(seg(t,.2,.4)),glow:20*u})}},
+    if(A&&A.brand==="luxx")luxxMark(c,W/2,H*.4+(A.dy||0),H*.36*(A.ls||1),{letters:seg(t,.18,.5),lines:seg(t,.38,.55),sub:seg(t,.45,.6),glow:18*u});else logo(c,A,W/2,H*.4,H*.36,{a:eo(seg(t,.2,.4)),glow:20*u})}},
   luxxfoil:{n:"Gold foil shine",text:.42,draw(c,W,H,t,cfg,A){const u=H/1080;bg(c,W,H,cfg);c.fillStyle="rgba(0,0,0,.35)";c.fillRect(0,0,W,H);
     const a=eo(seg(t,.04,.3)),s=1.08-.08*eo(seg(t,.04,.5));logo(c,A,W/2,H*.4,H*.36,{a,s,glow:10*u});
     const p=seg(t,.28,.58);if(p>0&&p<1){const off=document.createElement("canvas");off.width=W;off.height=H;const o=off.getContext("2d");logo(o,A,W/2,H*.4,H*.36,{s});o.globalCompositeOperation="source-atop";const x=-W*.2+p*W*1.4,g=o.createLinearGradient(x-W*.12,0,x+W*.12,H*.25);g.addColorStop(0,"rgba(255,255,255,0)");g.addColorStop(.5,"rgba(255,252,235,.95)");g.addColorStop(1,"rgba(255,255,255,0)");o.fillStyle=g;o.fillRect(0,0,W,H);c.drawImage(off,0,0)}
@@ -138,14 +140,14 @@ function extra(c,W,H,t,k,cfg){const u=H/1080;if(!k||k==="none")return;c.save();
     for(let j=0;j<32;j++){const a=j/32*TAU,d=R*e,x=cx+Math.cos(a)*d,y=cy+Math.sin(a)*d+q*q*60*u;c.strokeStyle=col;c.globalAlpha=al*.8;c.lineWidth=3*u;c.beginPath();c.moveTo(cx+Math.cos(a)*d*.72,cy+Math.sin(a)*d*.72+q*q*40*u);c.lineTo(x,y);c.stroke()}}}
   c.restore()}
 
-function draw(c,W,H,t,cfg,A){cfg={...DEFAULT,...cfg};A={...(A||{}),brand:cfg.brand};const st=STYLES[cfg.style]||STYLES.spotlight;c.save();
+function draw(c,W,H,t,cfg,A){cfg={...DEFAULT,...cfg};A={...(A||{}),brand:cfg.brand,ls:Math.max(.3,Math.min(2,+cfg.logoScale||1)),dy:(+cfg.logoY||0)*H};const st=STYLES[cfg.style]||STYLES.spotlight;c.save();
   st.draw(c,W,H,t,cfg,A);extra(c,W,H,t,cfg.extra,cfg);
-  words(c,W,H,cfg,seg(t,st.text,st.text+.3));
+  const ta=Math.max(.05,Math.min(.85,st.text+(+cfg.textAt||0)));words(c,W,H,cfg,seg(t,ta,ta+.3));
   const fin=seg(t,0,.035),fout=seg(t,.93,1);if(fin<1||fout>0){c.fillStyle=`rgba(0,0,0,${Math.max(1-fin,fout)})`;c.fillRect(0,0,W,H)}c.restore()}
 function loadAssets(base){return new Promise(r=>{const im=new Image();im.onload=()=>r({logo:im});im.onerror=()=>r({logo:null});im.src=(base||"")+"imc-logo.png"})}
 /* compact encoding for the TV link (foyer TVs can't see the hub's saved settings) */
-const KEYS=["style","kicker","title","msg","theme","accent","extra","dur","brand"];
-function encode(list){const a=list.map(x=>KEYS.map(k=>x[k]??DEFAULT[k]));const s=JSON.stringify(a);return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
+const KEYS=["style","kicker","title","msg","theme","accent","extra","dur","brand","logoScale","logoY","textScale","textY","font","titleCol","msgCol","textAt","bgA","bgB"];
+function encode(list){const a=list.map(x=>{const v=KEYS.map(k=>x[k]??DEFAULT[k]);for(let i=v.length-1;i>=8&&v[i]===DEFAULT[KEYS[i]];i--)v.pop();return v});const s=JSON.stringify(a);return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
 function decode(s){try{s=s.replace(/-/g,"+").replace(/_/g,"/");const a=JSON.parse(decodeURIComponent(escape(atob(s))));return a.map(v=>{const o={...DEFAULT};KEYS.forEach((k,i)=>{if(v[i]!=null)o[k]=v[i]});o.dur=Math.max(4,Math.min(20,+o.dur||8));if(!STYLES[o.style])o.style="spotlight";return o})}catch(e){return[]}}
 window.IMCIdent={STYLES,THEMES,EXTRAS,DEFAULT,draw,loadAssets,encode,decode};
 })();
