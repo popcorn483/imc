@@ -559,9 +559,9 @@ const SITE_PICS = {};
     ["ballincollig", /ballincollig/], ["blackpool", /blackpool/], ["dundalk", /dundalk/], ["dunlaoghaire", /dun-?laoghaire/], ["enniskillen", /enniskillen/], ["oranmore", /oranmore/],
     ["galway", /^galway/], ["kilkenny", /kil+ken+y/], ["mullingar", /mullingar/], ["newtownards", /newtownards/], ["santry", /santry/], ["savoy", /savoy/], ["thurles", /thurles/], ["tullamore", /tullamore/]];
   try {
-    const $ = cheerio.load(await get("https://imc.ie/luxx/enniskillen/"));
     const urls = new Set();
-    $("img").each((_, i) => { const u = abs($(i).attr("data-src") || $(i).attr("src")); if (u && /wp-content\/uploads\/\d{4}\/\d{2}\//.test(u)) urls.add(u); });
+    for (const page of ["https://imc.ie/luxx/", "https://imc.ie/"]) { let $; try { $ = cheerio.load(await get(page)); } catch { continue; }
+    $("img").each((_, i) => { const u = abs($(i).attr("data-src") || $(i).attr("src")); if (u && /wp-content\/uploads\/\d{4}\/\d{2}\//.test(u)) urls.add(u); }); }
     for (const u of urls) {
       const name = decodeURIComponent(u.split("/").pop()).toLowerCase();
       const hit = MATCH.find(([, re]) => re.test(name)); if (!hit || SITE_PICS[hit[0]]) continue;

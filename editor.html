@@ -261,6 +261,8 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 
     <div data-panel="add" hidden>
       <div class="sec"><h3>Badges</h3><div class="tiles" id="badges"></div></div>
+      <div class="sec"><h3>LUXX photos</h3><p class="note">Your LUXX seat, screen and lounge photos. Use one as the background or add it as a print. They're shared with the hub's LUXX page.</p><div class="ownslots" id="lxEd"></div>
+        <label class="btn" style="margin-top:8px">+ Add LUXX photos<input type="file" id="lxEdFile" accept="image/*" multiple hidden></label></div>
       <div class="sec"><h3>Your product photos</h3><p class="note">Upload your own photo for an item once, for example your Candy King pick 'n' mix stand, and deals and video clips use it for that item at this cinema. Photos on a plain white background are cut out; others become framed photo cards. Saved in this browser.</p><div class="ownslots" id="ownGrid"></div></div>
       <div class="sec"><h3>Products from imc.ie</h3><p class="note" id="pphNote">Real product photos and prices from imc.ie for this cinema.</p><div class="tiles" id="pphotos"></div></div>
       <div class="sec"><h3>Food &amp; drink</h3><p class="note">Drawn in IMC colours. Select one to recolour it.</p><div class="tiles" id="products"></div></div>
@@ -1619,7 +1621,7 @@ $("#gifGo").onclick=async()=>{if(gBusy)return;gBusy=true;gCancel=false;$("#gifGo
 const RAW="https://raw.githubusercontent.com/popcorn483/imc/main/";
 let IMC=null,photoIsVideo=false;
 async function loadImcData(){let k="enniskillen";try{k=localStorage.getItem("imc-hub-site")||k}catch(e){}const f=k==="enniskillen"?"data/imc.json":"data/cinemas/"+k+".json";for(const u of[RAW+f+"?ts="+Date.now(),f]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();j._base=u.startsWith(RAW)?RAW:"";IMC=j;return j}}catch(e){}}return null}
-const asset=p=>!p?null:/^(https?:|blob:|data:)/.test(p)?p:/^own:/.test(p)?((OWN[p.slice(4)]||{}).url||null):((IMC&&IMC._base)||"")+p;
+const asset=p=>!p?null:/^(https?:|blob:|data:)/.test(p)?p:/^own:/.test(p)?((OWN[p.slice(4)]||{}).url||null):/^lx:/.test(p)?((LXP.find(x=>x.id===p.slice(3))||{}).url||null):((IMC&&IMC._base)||"")+p;
 function blobToMedia(b){if((b.type||"").startsWith("video/"))return new Promise((res,rej)=>{const v=document.createElement("video");v.muted=true;v.loop=true;v.playsInline=true;v.preload="auto";v.onloadeddata=()=>{v.play().catch(()=>{});res(v)};v.onerror=()=>rej(new Error("bad video"));v.src=URL.createObjectURL(b)});return blobToImg(b)}
 function seekVideo(sec){return new Promise(r=>{const v=photoImg;if(!photoIsVideo||!v)return r();const T=Math.min(Math.max(0,sec),Math.max(0,(v.duration||1)-.05));if(Math.abs(v.currentTime-T)<.02)return r();let done=false;const fin=()=>{if(done)return;done=true;v.removeEventListener("seeked",fin);r()};v.addEventListener("seeked",fin);v.currentTime=T;setTimeout(fin,1200)})}
 async function mediaIndex(){return(await idbGet("media-index"))||[]}
@@ -1657,7 +1659,7 @@ function ppLoad(src,card){const key=src+(card?"|card":"");if(PPH[key])return PPH
 function drawPPhoto(c,L){const e=ppLoad(L.src,L.card),H=440;if(!e.img){c.strokeStyle="rgba(255,255,255,.4)";c.setLineDash([10,8]);c.lineWidth=3;rr(c,-170,-H/2,340,H,24);c.stroke();c.setLineDash([]);return{w:340,h:H}}
   const im=e.img;
   if(L.card){/* real photo as a framed card: cover-cropped 4:5, white border, soft shadow */
-    const w=H*.8,b=16,iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height,k=Math.max((w-b*2)/iw,(H-b*2)/ih);
+    const w=H*(L.ar||.8),b=16,iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height,k=Math.max((w-b*2)/iw,(H-b*2)/ih);
     c.save();c.shadowColor="rgba(0,0,0,.45)";c.shadowBlur=36;c.shadowOffsetY=16;rr(c,-w/2,-H/2,w,H,20);c.fillStyle="#ffffff";c.fill();c.restore();
     c.save();rr(c,-w/2+b,-H/2+b,w-b*2,H-b*2,12);c.clip();c.imageSmoothingQuality="high";c.drawImage(im,-iw*k/2,-ih*k/2,iw*k,ih*k);c.restore();return{w,h:H}}
   const w=H*im.width/im.height;
@@ -1673,6 +1675,63 @@ async function plainBg(blob){try{const im=await blobToImg(blob),c=document.creat
   for(let i=0;i<w;i++)for(const j of[0,h-1]){for(const [X,Y] of[[i,j],[j,i]]){const o=(Y*w+X)*4,mn=Math.min(d[o],d[o+1],d[o+2]),mx=Math.max(d[o],d[o+1],d[o+2]);t++;if(mn>215&&mx-mn<20)n++}}return n/t>.8}catch(e){return false}}
 function ownVisual(k){const o=OWN[k];if(!o)return null;const label=(OWN_KEYS.find(x=>x[0]===k)||[,k])[1];return{src:"own:"+k,label,card:!o.cut}}
 function renderOwn(){const g=$("#ownGrid");if(!g)return;g.innerHTML=OWN_KEYS.map(([k,n])=>`<div class="ownslot"><div class="ownth">${OWN[k]?`<img src="${OWN[k].url}" alt="">`:`<span>No photo yet</span>`}</div><b>${esc(n)}</b><div class="ownbtns"><label class="btn">${OWN[k]?"Replace":"Upload"}<input type="file" accept="image/*" data-own="${k}" hidden></label>${OWN[k]?`<button class="btn" data-ownuse="${k}" title="Add to the design">Add</button><button class="btn danger" data-owndel="${k}" aria-label="Remove ${esc(n)} photo">✕</button>`:""}</div></div>`).join("")}
+/* ---------- LUXX kit: your LUXX photos (added in the hub's LUXX page or here) + ready-made LUXX ads ---------- */
+let LXP=[],SITEPICS={};
+const lxKey=()=>"luxxpics:"+ownSite();
+async function loadLuxxPics(){LXP.forEach(p=>URL.revokeObjectURL(p.url));const a=await idbGet(lxKey());LXP=(Array.isArray(a)?a:[]).map(p=>({...p,url:URL.createObjectURL(p.blob)}));for(const k in PPH)if(k.startsWith("lx:"))delete PPH[k];renderLxEd()}
+async function loadSitePics(){for(const u of[RAW+"data/sites/index.json?ts="+Date.now(),"data/sites/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){SITEPICS=await r.json();SITEPICS._base=u.startsWith(RAW)?RAW:"";return}}catch(e){}}}
+const sitePic=()=>{const f=SITEPICS[ownSite()];return f?(SITEPICS._base||"")+f:null};
+const lxSeats=()=>{const s=LXP.filter(p=>p.label==="Seats");return s.length?[...s,...LXP.filter(p=>p.label!=="Seats")]:LXP};
+function renderLxEd(){const g=$("#lxEd");if(!g)return;const sp=sitePic();
+  g.innerHTML=LXP.map((p,i)=>`<div class="ownslot"><div class="ownth"><img src="${p.url}" alt="LUXX photo ${i+1}"></div><b>${esc(p.label||"LUXX")}</b><div class="ownbtns"><button class="btn" data-lxbg="${p.id}">Background</button><button class="btn" data-lxcard="${p.id}">Add as print</button><button class="btn danger" data-lxdel="${p.id}" aria-label="Remove photo">✕</button></div></div>`).join("")+
+  (sp?`<div class="ownslot"><div class="ownth"><img src="${sp}" alt="The cinema building"></div><b>Cinema building (imc.ie)</b><div class="ownbtns"><button class="btn" data-lxbg="site">Background</button><button class="btn" data-lxcard="site">Add as print</button></div></div>`:"")}
+async function lxBg(id){if(id==="site"){const sp=sitePic();if(sp){await loadUrlAsPhoto(sp)}return}const p=LXP.find(x=>x.id===id);if(p){await setPhotoBlob(p.blob,false,{fromLib:true,quiet:true});S.bg="photo";S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:0};syncAll();commit()}}
+function lxCardLayer(id,o){const p=id==="site"?{url:sitePic(),label:"Cinema building",w:16,h:10}:LXP.find(x=>x.id===id);if(!p)return null;return{id:uid(),kind:"pphoto",src:id==="site"?sitePic():"lx:"+id,label:id==="site"?"Cinema building":"LUXX "+(p.label||"photo").toLowerCase(),card:true,ar:1.33,x:.5,y:.5,s:1,r:0,o:1,...o}}
+$("#lxEdFile").addEventListener("change",async e=>{const fs=[...e.target.files];e.target.value="";const a=(await idbGet(lxKey()))||[];for(const f of fs)if(/^image\//.test(f.type))a.push({id:"lx"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),blob:f,label:"Seats"});await idbSet(lxKey(),a);await loadLuxxPics();toast("Added. They're in the hub's LUXX page too")});
+$("#lxEd").addEventListener("click",async e=>{let b;if(b=e.target.closest("[data-lxbg]"))lxBg(b.dataset.lxbg);else if(b=e.target.closest("[data-lxcard]")){const L=lxCardLayer(b.dataset.lxcard,{r:-.03});if(L)addLayer(L)}
+  else if(b=e.target.closest("[data-lxdel]")){const a=((await idbGet(lxKey()))||[]).filter(x=>x.id!==b.dataset.lxdel);await idbSet(lxKey(),a);loadLuxxPics()}});
+/* the templates: every one works without photos (gold background), and uses yours when you've added them */
+async function applyLuxxKit(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,port=!tall&&!wide&&ar<.95,lx=lxSeats(),G="#ffd98a",gold="#ffc23d",L=[];
+  const rowsFix=r=>(r||[]).map(x=>({...x,luxx:true}));(h.rows||[]).concat(h.week||[]).forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src)});
+  const listing=(rows,head,y,maxH)=>{const u=Math.min(f.w,f.h)/1080,need=listingH(rows.length),avail=maxH*f.h/u;return mk("listing",null,{text:head,sub:SITE_NAME,rows:rowsFix(rows),y,s:Math.min(.9,avail/need,(f.w/u*.9)/940),anim:"slide",delay:.15})};
+  const usePhoto=async(i=0)=>{if(lx[i]){await setPhotoBlob(lx[i].blob,false,{fromLib:true,quiet:true});S.bg="photo";S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:0,shade:45};return true}S.bg="gold";return false};
+  const card=(i,o)=>lx[i]?{id:uid(),kind:"pphoto",src:"lx:"+lx[i].id,label:"LUXX "+(lx[i].label||"photo").toLowerCase(),card:true,ar:1.33,x:.5,y:.5,s:1,r:0,o:1,...o}:null;
+  const badge=(o)=>mk("badge","luxx",{anim:"shine",...o}),book=(y,o)=>mk("badge","book",{y,s:tall?.95:.8,anim:"pulse",...o}),T=(text,o)=>mk("text","title",{text,size:fitSize(text,o.font||"display",o.max||120,44,o.w||(wide?1100:920)),c1:G,anim:"slide",...o});
+  const price=(x,y,s)=>h.price?mk("badge","price",{text:h.price,sub:"LUXX FROM",x,y,s,r:-.1,c1:gold,c2:"#1a1440",anim:"slam",delay:.35}):null;
+  S.frame={...S.frame,style:"premiere",accent:gold,logo:true};S.label="LUXX "+h.tpl;let fx={sparkle:true},dur=S.motion.dur||4;
+  const t=h.tpl;
+  if(t==="hero"){await usePhoto(0);L.push(badge({y:tall?.12:.12,s:tall?1.15:.85}),T("RECLINE IN STYLE",{y:tall?.25:.26,max:tall?130:100}));
+    if(h.rows&&h.rows.length)L.push(listing(h.rows.slice(0,tall?6:4),h.heading||"In LUXX today",tall?.55:.6,tall?.42:.4));else L.push(mk("text","sub",{text:"Deluxe recliner seats at "+SITE_NAME,y:.5,size:50,anim:"slide",delay:.15}));
+    L.push(mk("text","small",{text:"BOOK YOUR LUXX SEAT AT IMC.IE",y:tall?.86:.9,size:tall?30:24,sp:6,anim:"fade",delay:.4}));fx={sparkle:true,kenburns:true}}
+  else if(t==="upgrade"){S.bg="gold";const c=card(0,tall?{y:.43,s:1.3,r:-.03,anim:"pop",delay:.05}:port?{y:.4,s:1.15,r:-.03,anim:"pop",delay:.05}:{x:.3,y:.53,s:1.1,r:-.04,anim:"pop",delay:.05});
+    const right=!tall&&!port&&!!c,tx=right?.7:.5;L.push(badge({x:tx,y:tall?.17:.13,s:tall?.9:.72}));if(c)L.push(c);
+    const ty=tall?.635:port?.7:.32;L.push(T("UPGRADE TO LUXX",{x:tx,y:ty,max:right?84:110,w:right?500:920}));
+    L.push(mk("text","sub",{text:"✓ Deluxe recliner seats\n✓ Sit back and stretch out\n✓ Same great films",x:tx,y:ty+(tall?.075:right?.2:.12),size:right?40:46,align:right?"center":"center",anim:"slide",delay:.15}));
+    const p=price(right?.88:.8,tall?.3:port?.88:.8,tall?.9:.75);if(p)L.push(p);L.push(mk("text","small",{text:"UPGRADE WHEN YOU BOOK AT IMC.IE",x:tall?.5:right?.7:.4,y:tall?.775:.93,size:tall?28:22,sp:5,anim:"fade",delay:.4}));fx={sparkle:true,spotlights:true}}
+  else if(t==="gallery"){S.bg="gold";const pos=tall?[[.5,.3,-.05,1.25],[.38,.53,.04,1.05],[.64,.7,-.03,1.05]]:port?[[.3,.42,-.06,.95],[.7,.4,.05,.95],[.5,.66,-.02,1]]:[[.24,.52,-.07,.85],[.5,.48,.03,.95],[.76,.53,-.04,.85]];
+    const cs=pos.map(([x,y,r,s],i)=>card(i,{x,y,r,s,anim:"drop",delay:.05+i*.1})).filter(Boolean);L.push(...cs);if(!cs.length)toast("Add LUXX photos in the hub's LUXX page (or Add → LUXX photos) to fill the prints");
+    L.push(badge({y:tall?.08:.1,s:tall?1:.72}));L.push(T("YOUR SEAT IS WAITING",{y:tall?.85:.86,max:tall?110:80,anim:"slide",delay:.35}));L.push(mk("text","small",{text:"LUXX AT "+SITE_NAME.toUpperCase()+" · BOOK AT IMC.IE",y:tall?.92:.94,size:tall?26:20,sp:5,anim:"fade",delay:.45}));fx={sparkle:true}}
+  else if(t==="week"){await usePhoto(0);S.photo.shade=65;const rows=(h.week||[]).slice(0,tall?8:5);L.push(badge({y:tall?.09:.1,s:tall?1.05:.8}));
+    if(rows.length)L.push(listing(rows,"This week in LUXX",tall?.5:.56,tall?.66:.62));else L.push(T("NEW FILMS IN LUXX EVERY WEEK",{y:.5}));
+    L.push(mk("text","small",{text:"BOOK YOUR RECLINER AT IMC.IE",y:tall?.9:.93,size:tall?28:22,sp:6,anim:"fade",delay:.35}));fx={sparkle:true}}
+  else if(t==="datenight"){await usePhoto(lx.length>1?1:0);L.push(badge({y:tall?.12:.12,s:tall?1.05:.75}));L.push(T("DATE NIGHT, UPGRADED",{y:tall?.42:.45,max:tall?120:96,font:"serif",anim:"fade"}));
+    L.push(mk("text","sub",{text:"Two LUXX recliners. One great film.",y:tall?.52:.58,size:48,font:"serif",anim:"fade",delay:.15}));L.push(book(tall?.66:.72,{delay:.3}));fx={hearts:true,bokeh:true};S.motion.amt=.6}
+  else if(t==="foyer"){await usePhoto(0);S.photo.shade=50;const x=.34;L.push(badge({x,y:.2,s:.95}));L.push(T("UPGRADE TO LUXX",{x,y:.42,max:120,w:900}));L.push(mk("text","sub",{text:"Deluxe recliner seats. Ask at the kiosk\nor upgrade when you book at imc.ie",x,y:.55,size:44,anim:"slide",delay:.15}));
+    if(h.rows&&h.rows.length)L.push({...listing(h.rows.slice(0,4),h.heading||"In LUXX today",.55,.7),x:.76,s:.7});fx={sparkle:true,kenburns:true}}
+  else if(t==="cover"){await usePhoto(0);S.photo.shade=40;S.frame={...S.frame,style:"vignette",logo:true};L.push(badge({x:.3,y:.42,s:.95}),T("RECLINE IN STYLE",{x:.3,y:.72,max:84,w:700}));L.push(mk("text","small",{text:"LUXX AT "+SITE_NAME.toUpperCase(),x:.3,y:.86,size:26,sp:6}));fx={sparkle:true}}
+  else if(t==="reel"){S.fmt="story";S.bg="gold";dur=12;const caps=["SIT BACK.","RECLINE.","RELAX.","ENJOY THE FILM."],n=Math.max(1,Math.min(4,lx.length||1)),seg=.62/n;
+    for(let i=0;i<n;i++){const a=.02+i*seg,b=a+seg+.01,c=card(i,{y:.42,s:1.75,r:i%2?.03:-.03,anim:"zoom",delay:a,until:b,ilen:.35});if(c)L.push(c);L.push(mk("text","title",{text:caps[i]||caps[3],y:.72,size:130,c1:G,anim:"slam",delay:a+.03,until:b,ilen:.35}))}
+    if(!lx.length)toast("Add LUXX photos in the hub's LUXX page to put your seats in this Reel");
+    L.push(badge({y:.2,s:1.25,delay:.66,ilen:.35,anim:"pop"}));
+    if(h.rows&&h.rows.length)L.push({...listing(h.rows.slice(0,4),h.heading||"In LUXX today",.48,.36),delay:.7,ilen:.35});else L.push(mk("text","sub",{text:"Deluxe recliner seats at "+SITE_NAME,y:.4,size:50,anim:"slide",delay:.7,ilen:.35}));
+    L.push(book(.72,{anim:"pop",delay:.78,ilen:.35}));fx={sparkle:true,spotlights:true};showSafe=true}
+  else if(t==="film"&&h.film){const fm=h.film;await usePhoto(0);S.photo.shade=60;
+    const pr={id:uid(),kind:"pphoto",src:fm.poster,label:fm.t+" poster",card:true,x:tall?.5:.27,y:tall?.33:.52,s:tall?1.3:1.05,r:-.03,o:1,anim:"pop"};if(fm.poster)L.push(pr);
+    const x=tall?.5:.68;L.push(badge({x,y:tall?.08:.14,s:tall?1:.7}));L.push(mk("text","small",{text:"WATCH IT IN LUXX",x,y:tall?.62:.32,size:tall?34:26,sp:8,c1:gold}));
+    L.push(T(String(fm.t).toUpperCase(),{x,y:tall?.69:.43,max:tall?110:80,w:tall?920:560}));L.push(mk("text","sub",{text:(fm.times||[]).slice(0,tall?6:4).join("\n"),x,y:tall?.79:.6,size:tall?44:38,font:"mono",anim:"slide",delay:.15}));
+    L.push(mk("text","small",{text:"BOOK YOUR LUXX SEAT AT IMC.IE",x,y:tall?.92:.86,size:tall?28:20,sp:5,anim:"fade",delay:.35}));fx={sparkle:true}}
+  S.layers=L.filter(Boolean);S.motion={...S.motion,dur,fx};selId=null;clampPhoto();syncAll();commit();
+  toast(lx.length?"LUXX ad ready with your photos. Click any text to change it":"LUXX ad ready. Add your LUXX seat photos in the hub's LUXX page to use them")}
 /* ---------- photo library: IMC's own images gathered by the importer (data/library/index.json) ---------- */
 let LIB=null,libCat="all";
 async function loadLibrary(){for(const u of[RAW+"data/library/index.json?ts="+Date.now(),"data/library/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();const base=u.startsWith(RAW)?RAW:"";LIB=j.map(x=>({...x,src:base+x.file}));return LIB}}catch(e){}}LIB=[];return LIB}
@@ -1826,6 +1885,7 @@ function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-ha
   if(h.kind==="deal")applyDeal(h.deal,!!h.animated);
   else if(h.kind==="clip")applyClip(h.deal);
   else if(h.kind==="luxx")applyLuxx(h);
+  else if(h.kind==="luxxkit")applyLuxxKit(h);
   else if(h.kind==="season"){applySeason(h.key,true);if(h.title){const t=S.layers.find(l=>l.kind==="text");if(t)t.text=h.title}}
   else if(h.kind==="listing")applyListing(h);
   else if(h.kind==="reel"){applyPreset(REELS[h.i|0]||REELS[0],true);const b=$('[data-tab="layouts"]');if(b){b.click();setTimeout(()=>{const r=$("#reels");if(r)r.closest(".sec").scrollIntoView({block:"start"})},300)}}
@@ -1877,7 +1937,7 @@ async function boot(){buildMotionUI();
   syncLogo();syncSaved();renderMedia();
   loadLibrary().then(()=>{renderLibrary();if(selId)renderProps()});
   const imcP=loadImcData().then(()=>{renderWeb();renderPPhotos();ratingList().forEach(o=>loadRating(o.src));renderRatings();if(selId)renderProps()});
-  await loadOwn().catch(()=>{});
+  await loadOwn().catch(()=>{});await Promise.all([loadLuxxPics().catch(()=>{}),loadSitePics().catch(()=>{})]);
   let handed=null;try{handed=localStorage.getItem("imc-handoff")}catch(e){}if(handed){await imcP;applyHandoff()}
   syncAll();commit();
   const faces=["900 40px 'Big Shoulders Display'","800 40px Figtree","700 40px Figtree","700 40px 'Playfair Display'","400 40px 'Bebas Neue'","500 20px 'IBM Plex Mono'","600 20px 'IBM Plex Mono'"];
