@@ -2,7 +2,7 @@
   "id": "dundalk",
   "cinema": "IMC Dundalk",
   "source": "https://imc.ie/dundalk",
-  "updated": "2026-10-27T18:06:27.356Z",
+  "updated": "2026-10-28T13:01:29.614Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -19,17 +19,17 @@
       "director": "Sacha Baron Cohen",
       "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
       "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117583",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117596",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117583",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117596",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -47,6 +47,62 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "G",
+      "runtime": 77,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": null,
+      "date": "2026-10-28",
+      "times": [
+        "14:25",
+        "16:25"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117633",
+      "sessions": [
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:25",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117633",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "16:25",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117918",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "16",
       "title": "Clayface",
       "luxx": true,
@@ -60,18 +116,33 @@
       "director": "James Watkins",
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117286",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117294",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117294",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117286",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117288",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -82,10 +153,10 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117287",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117289",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -103,47 +174,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "PG",
-      "title": "Forgotten Island -",
-      "luxx": true,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116313.jpg",
-      "cert": "PG",
-      "runtime": 109,
-      "release": "October 23, 2026",
-      "releaseDate": "2026-10-23",
-      "director": "Joel Crawford",
-      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-10-27",
-      "times": [
-        "17:40"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117651",
-      "sessions": [
-        {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
-          "time": "17:40",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117651",
-          "luxx": true,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "seating-lux"
-          ]
-        }
-      ],
-      "slug": "forgotten-island",
-      "posterFile": "data/posters/forgotten-island.jpg",
-      "certIcon": "data/ratings/ifco-PG.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "12A",
       "title": "Ghosts: The Possession Of Button House",
       "luxx": false,
@@ -157,18 +187,48 @@
       "director": "Simon Hynd",
       "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
       "trailer": null,
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "14:15",
+        "16:25",
         "18:40",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117574",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117614",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117614",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "16:25",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117586",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:40",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117574",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117587",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -179,10 +239,10 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117575",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117588",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -213,17 +273,17 @@
       "director": "Rob Savage",
       "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
       "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117917",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117915",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117917",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117915",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -254,17 +314,17 @@
       "director": "Rob Savage",
       "synopsis": "From producer James Wan, one of the most influential architects of modern horror, and Blumhouse Atomic Monster, the studio behind Backrooms and Obsession, comes a terrifying trip from breakout genre director Rob Savage, into the darkening world of a young girl, Bela, who forms a relationship with a sinister entity in her home who looks uncannily like her own mother. Academy Award-winner Jessica Chastain stars in dual roles as Bela's mother and as Other Mommy, a manifestation of the entity.",
       "trailer": "https://www.youtube.com/watch?v=bEpTgowZ1dI",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "18:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117576",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117589",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:35",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117576",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117589",
           "luxx": true,
           "screen": "4",
           "threeD": false,
@@ -295,17 +355,17 @@
       "director": "Kitao Sakurai",
       "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
       "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117572",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117585",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117572",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117585",
           "luxx": true,
           "screen": "2",
           "threeD": false,
@@ -323,6 +383,62 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "G",
+      "runtime": 94,
+      "release": "October 17, 2026",
+      "releaseDate": "2026-10-17",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-10-28",
+      "times": [
+        "14:45",
+        "16:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117620",
+      "sessions": [
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117620",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "16:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117597",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "12A",
       "title": "Try!",
       "luxx": false,
@@ -336,17 +452,17 @@
       "director": null,
       "synopsis": "Try is an uplifting portrait of four diverse people who defy stereotypes and break barriers, on and off the field, on the road to the Mixed Ability Rugby World Cup in Pamplona.",
       "trailer": null,
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "18:25"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117580",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117593",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:25",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117580",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117593",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -365,6 +481,88 @@
     {
       "certSystem": "ifco",
       "certFile": "12A",
+      "title": "Try! -",
+      "luxx": true,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116314.jpg",
+      "cert": "12A",
+      "runtime": 88,
+      "release": "October 24, 2026",
+      "releaseDate": "2026-10-24",
+      "director": null,
+      "synopsis": "Try is an uplifting portrait of four diverse people who defy stereotypes and break barriers, on and off the field, on the road to the Mixed Ability Rugby World Cup in Pamplona.",
+      "trailer": null,
+      "date": "2026-10-28",
+      "times": [
+        "14:10"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117656",
+      "sessions": [
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:10",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117656",
+          "luxx": true,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "try",
+      "posterFile": "data/posters/try.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Verity",
+      "luxx": true,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115384.jpg",
+      "cert": "15A",
+      "runtime": 119,
+      "release": "October 2, 2026",
+      "releaseDate": "2026-10-02",
+      "director": "Michael Showalter",
+      "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
+      "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
+      "date": "2026-10-28",
+      "times": [
+        "16:10"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117590",
+      "sessions": [
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117590",
+          "luxx": true,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "verity",
+      "posterFile": "data/posters/verity.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
       "title": "Wildwood",
       "luxx": false,
       "sensory": false,
@@ -377,18 +575,18 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
-        "17:05",
+        "14:15",
         "19:55"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117581",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117613",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
-          "time": "17:05",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117581",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117613",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -399,10 +597,10 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "19:55",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117582",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117595",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -420,524 +618,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Tue 27 Oct",
-      "url": "https://imc.ie/film-times/dundalk/27-10-2026#dateD",
-      "date": "2026-10-27",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "ALI G: WHO IZ I?",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114097.jpg",
-          "cert": "16",
-          "runtime": 89,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Sacha Baron Cohen",
-          "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
-          "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-          "date": "2026-10-27",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117583",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117583",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ali-g-who-iz-i",
-          "posterFile": "data/posters/ali-g-who-iz-i.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Arnie and Barney",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
-          "cert": "G",
-          "runtime": 77,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Sean Heuston",
-          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
-          "date": "2026-10-27",
-          "times": [
-            "16:25"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117632",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "16:25",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117632",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "arnie-and-barney",
-          "posterFile": "data/posters/arnie-and-barney.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115573.jpg",
-          "cert": "16",
-          "runtime": 120,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "James Watkins",
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-          "date": "2026-10-27",
-          "times": [
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117286",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117286",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117287",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Forgotten Island -",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116313.jpg",
-          "cert": "PG",
-          "runtime": 109,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-10-27",
-          "times": [
-            "17:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117651",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "17:40",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117651",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "12A",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-27",
-          "times": [
-            "16:25",
-            "18:40",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117573",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "16:25",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117573",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:40",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117574",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117575",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Other Mommy",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 10, 2026",
-          "releaseDate": "2026-10-10",
-          "director": "Rob Savage",
-          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
-          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-          "date": "2026-10-27",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117917",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117917",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "other-mommy",
-          "posterFile": "data/posters/other-mommy.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Other Mommy",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115559.jpg",
-          "cert": "15A",
-          "runtime": 93,
-          "release": "October 9, 2026",
-          "releaseDate": "2026-10-09",
-          "director": "Rob Savage",
-          "synopsis": "From producer James Wan, one of the most influential architects of modern horror, and Blumhouse Atomic Monster, the studio behind Backrooms and Obsession, comes a terrifying trip from breakout genre director Rob Savage, into the darkening world of a young girl, Bela, who forms a relationship with a sinister entity in her home who looks uncannily like her own mother. Academy Award-winner Jessica Chastain stars in dual roles as Bela's mother and as Other Mommy, a manifestation of the entity.",
-          "trailer": "https://www.youtube.com/watch?v=bEpTgowZ1dI",
-          "date": "2026-10-27",
-          "times": [
-            "18:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117576",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:35",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117576",
-              "luxx": true,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "other-mommy",
-          "posterFile": "data/posters/other-mommy.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Street Fighter",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115929.jpg",
-          "cert": "12A",
-          "runtime": 119,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Kitao Sakurai",
-          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-          "date": "2026-10-27",
-          "times": [
-            "20:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117572",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117572",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "street-fighter",
-          "posterFile": "data/posters/street-fighter.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Tad and the Magic Lamp",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-          "cert": "G",
-          "runtime": 94,
-          "release": "October 17, 2026",
-          "releaseDate": "2026-10-17",
-          "director": "Enrique Gato",
-          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-          "trailer": null,
-          "date": "2026-10-27",
-          "times": [
-            "16:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117584",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "16:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117584",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "tad-and-the-magic-lamp",
-          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Try!",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114408.jpg",
-          "cert": "12A",
-          "runtime": 88,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "Try is an uplifting portrait of four diverse people who defy stereotypes and break barriers, on and off the field, on the road to the Mixed Ability Rugby World Cup in Pamplona.",
-          "trailer": null,
-          "date": "2026-10-27",
-          "times": [
-            "18:25"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117580",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:25",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117580",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "try",
-          "posterFile": "data/posters/try.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-27",
-          "times": [
-            "17:05",
-            "19:55"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117581",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "17:05",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117581",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "19:55",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117582",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
     {
       "label": "Wed 28 Oct",
       "url": "https://imc.ie/film-times/dundalk/28-10-2026#dateD",
@@ -1024,7 +704,7 @@
               "day": "Wed 28 October",
               "date": "2026-10-28",
               "time": "16:25",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117634",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117918",
               "luxx": false,
               "screen": "5",
               "threeD": false,
@@ -1517,7 +1197,6 @@
           "date": "2026-10-28",
           "times": [
             "14:15",
-            "17:05",
             "19:55"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117613",
@@ -1527,20 +1206,6 @@
               "date": "2026-10-28",
               "time": "14:15",
               "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117613",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "17:05",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117594",
               "luxx": false,
               "screen": "6",
               "threeD": false,
@@ -2480,6 +2145,47 @@
         {
           "certSystem": "ifco",
           "certFile": "15A",
+          "title": "JAK ZYC ZEBY NIE ZWARIOWAC -",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116659.jpg",
+          "cert": "15A",
+          "runtime": 102,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+          "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+          "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+          "date": "2026-10-30",
+          "times": [
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117925",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117925",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "jak-zyc-zeby-nie-zwariowac",
+          "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
           "title": "Other Mommy",
           "luxx": true,
           "sensory": false,
@@ -2586,6 +2292,77 @@
           ],
           "slug": "pan-s-labyrinth-20th-anniversary",
           "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-10-30",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117922",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117922",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117923",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117924",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
           "certIcon": "data/ratings/ifco-16.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
@@ -3024,6 +2801,47 @@
         {
           "certSystem": "ifco",
           "certFile": "15A",
+          "title": "JAK ZYC ZEBY NIE ZWARIOWAC -",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116659.jpg",
+          "cert": "15A",
+          "runtime": 102,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+          "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+          "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+          "date": "2026-10-31",
+          "times": [
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117929",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117929",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "jak-zyc-zeby-nie-zwariowac",
+          "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
           "title": "Other Mommy",
           "luxx": true,
           "sensory": false,
@@ -3130,6 +2948,92 @@
           ],
           "slug": "pan-s-labyrinth-20th-anniversary",
           "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-10-31",
+          "times": [
+            "13:15",
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117930",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117930",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117926",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117927",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117928",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
           "certIcon": "data/ratings/ifco-16.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
@@ -3667,6 +3571,47 @@
         {
           "certSystem": "ifco",
           "certFile": "15A",
+          "title": "JAK ZYC ZEBY NIE ZWARIOWAC -",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116659.jpg",
+          "cert": "15A",
+          "runtime": 102,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+          "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+          "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+          "date": "2026-11-01",
+          "times": [
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117935",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117935",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "jak-zyc-zeby-nie-zwariowac",
+          "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
           "title": "Other Mommy",
           "luxx": true,
           "sensory": false,
@@ -3773,6 +3718,92 @@
           ],
           "slug": "pan-s-labyrinth-20th-anniversary",
           "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-11-01",
+          "times": [
+            "13:15",
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117934",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117934",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117931",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117932",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117933",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
           "certIcon": "data/ratings/ifco-16.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
@@ -4186,11 +4217,11 @@
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
-          "runtime": 100,
+          "runtime": 109,
           "release": "November 2, 2026",
           "releaseDate": "2026-11-02",
-          "director": null,
-          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-02",
           "times": [
@@ -4210,6 +4241,62 @@
                 "advance",
                 "evening",
                 "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-11-02",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117936",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117936",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117937",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
               ]
             }
           ],
@@ -4484,11 +4571,11 @@
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
-          "runtime": 100,
+          "runtime": 109,
           "release": "November 2, 2026",
           "releaseDate": "2026-11-02",
-          "director": null,
-          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-03",
           "times": [
@@ -4508,6 +4595,62 @@
                 "advance",
                 "evening",
                 "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-11-03",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117938",
+          "sessions": [
+            {
+              "day": "Tue 3 November",
+              "date": "2026-11-03",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117938",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Tue 3 November",
+              "date": "2026-11-03",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117939",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
               ]
             }
           ],
@@ -4641,6 +4784,360 @@
               "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117832",
               "luxx": true,
               "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Wed 04 Nov",
+      "url": "https://imc.ie/film-times/dundalk/04-11-2026#dateD",
+      "date": "2026-11-04",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-04",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117848",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117848",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117847",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "16",
+          "runtime": 109,
+          "release": "November 2, 2026",
+          "releaseDate": "2026-11-02",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-04",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117842",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117842",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-11-04",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117940",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117940",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117941",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-04",
+          "times": [
+            "18:15",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117846",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117846",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117845",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wild Horse Nine -",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116666.jpg",
+          "cert": "15A",
+          "runtime": 117,
+          "release": "November 4, 2026",
+          "releaseDate": "2026-11-04",
+          "director": "Martin McDonagh",
+          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
+          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "date": "2026-11-04",
+          "times": [
+            "18:10",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117947",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117947",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117946",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "wild-horse-nine",
+          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-11-04",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117849",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117849",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Wildwood -",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116315.jpg",
+          "cert": "12A",
+          "runtime": 130,
+          "release": "October 31, 2026",
+          "releaseDate": "2026-10-31",
+          "director": "Travis Knight",
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-11-04",
+          "times": [
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117841",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117841",
+              "luxx": true,
+              "screen": "4",
               "threeD": false,
               "tags": [
                 "advance",
@@ -6514,70 +7011,211 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 9 films parsed",
-    "day-27-10-2026-dated: 11 films parsed",
+    "today: 12 films parsed",
     "day-28-10-2026-dated: 12 films parsed",
     "day-29-10-2026-dated: 13 films parsed",
-    "day-30-10-2026-dated: 9 films parsed",
-    "day-31-10-2026-dated: 11 films parsed",
-    "day-01-11-2026-dated: 11 films parsed",
-    "day-02-11-2026-dated: 6 films parsed",
-    "day-03-11-2026-dated: 6 films parsed",
+    "day-30-10-2026-dated: 11 films parsed",
+    "day-31-10-2026-dated: 13 films parsed",
+    "day-01-11-2026-dated: 13 films parsed",
+    "day-02-11-2026-dated: 7 films parsed",
+    "day-03-11-2026-dated: 7 films parsed",
+    "day-04-11-2026-dated: 7 films parsed",
     "advance: 3 films parsed",
     "kids: 1 films parsed",
     "luxx: 8 films parsed",
-    "prices: 12 ticket types, 3 bundles, 9 products",
+    "booking pages read: 10 (Wed, Thu, Fri, Sat, Sun, Mon, Tue)",
+    "prices: 15 ticket types, 2 bundles, 9 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
       {
         "name": "Wednesday Meal Deal",
-        "price": "€12.50"
+        "price": "€12.50",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "luxx"
+        ]
       },
       {
-        "name": "Adult Matinee",
-        "price": "€10.50"
+        "name": "Adult Peak",
+        "price": "€12.00",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening"
+        ]
       },
       {
         "name": "Teen",
-        "price": "€10.00"
+        "price": "€10.00",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "luxx"
+        ]
       },
       {
-        "name": "Child Matinee",
-        "price": "€7.50"
+        "name": "Child Peak",
+        "price": "€9.50",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "evening"
+        ]
       },
       {
         "name": "Student",
-        "price": "€9.50"
+        "price": "€9.50",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "luxx"
+        ]
       },
       {
         "name": "Family",
-        "price": "€28.80"
+        "price": "€28.80",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "luxx"
+        ]
       },
       {
         "name": "OAP",
-        "price": "€10.00"
+        "price": "€10.00",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "luxx"
+        ]
       },
       {
         "name": "3 Plus 2 For 1Requires Voucher",
-        "price": "€10.00"
+        "price": "€10.00",
+        "days": [
+          "Wed",
+          "Thu",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "luxx"
+        ]
       },
       {
-        "name": "Student Meal Deal LUXX",
-        "price": "€15.50"
+        "name": "Crazy Thursday",
+        "price": "€7.50",
+        "days": [
+          "Thu"
+        ],
+        "seenOn": [
+          "evening"
+        ]
       },
       {
-        "name": "LUXX Recliner",
-        "price": "€15.50"
+        "name": "Student Meal Deal",
+        "price": "€12.50",
+        "days": [
+          "Tue"
+        ],
+        "seenOn": [
+          "evening"
+        ]
       },
       {
-        "name": "LUXX Child/Student/OAP",
-        "price": "€12.50"
+        "name": "Adult Matinee",
+        "price": "€10.50",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "matinee",
+          "luxx"
+        ]
       },
       {
-        "name": "3 Plus 2 For 1 LUXXRequires Voucher",
-        "price": "€18.00"
+        "name": "Child Matinee",
+        "price": "€7.50",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "matinee",
+          "luxx"
+        ]
+      },
+      {
+        "name": "Kids Club",
+        "price": "€5.00",
+        "days": [
+          "Fri"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Adult",
+        "price": "€5.00",
+        "days": [
+          "Fri"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Meal Deal",
+        "price": "€9.50",
+        "days": [
+          "Fri"
+        ],
+        "seenOn": [
+          "kids"
+        ]
       }
     ],
     "bundles": [
@@ -6586,21 +7224,39 @@
         "price": "€29.00",
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "luxx"
+        ],
         "file": "data/products/t1scb.jpg"
       },
       {
-        "name": "Medium Combo LUXX",
-        "price": "€22.00",
+        "name": "Medium Combo",
+        "price": "€18.00",
         "details": "1 Adult Ticket + a Medium Combo",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
-        "file": "data/products/t1mcbluxx.jpg"
-      },
-      {
-        "name": "Share Combo LUXX",
-        "price": "€37.00",
-        "details": "2 Adult Tickets + a Share Combo",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
-        "file": "data/products/t1scbluxx.jpg"
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
+        "days": [
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening"
+        ],
+        "file": "data/products/t1mcb.jpg"
       }
     ],
     "products": [
@@ -6608,60 +7264,204 @@
         "name": "Flexi Ticket",
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/flexi.jpg"
       },
       {
         "name": "Maltesers",
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/maltesers.jpg"
       },
       {
         "name": "Minstrels",
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/minstrels.jpg"
       },
       {
         "name": "Tahila Water Carton",
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/ttc.jpg"
       },
       {
         "name": "Medium Combo",
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/combotest.jpg"
       },
       {
         "name": "Large Combo",
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/lccc.jpg"
       },
       {
         "name": "Kids Tray (Kids drink, popcorn and sweet treat)",
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/onkt.jpg"
       },
       {
         "name": "Share Combo (2 Medium Drinks + 1 Large Popcorn)",
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/scon.jpg"
       },
       {
         "name": "Nacho Large Cheese",
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-10-27T18:06:54.187Z"
+    "checked": "2026-10-28T13:01:56.740Z",
+    "sampledDays": [
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun",
+      "Mon",
+      "Tue"
+    ]
   },
-  "checked": "2026-10-27T18:06:58.130Z",
+  "checked": "2026-10-28T13:02:11.131Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

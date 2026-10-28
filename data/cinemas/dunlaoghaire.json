@@ -2,7 +2,7 @@
   "id": "dunlaoghaire",
   "cinema": "IMC Dún Laoghaire",
   "source": "https://imc.ie/dun-laoghaire",
-  "updated": "2026-10-27T18:06:58.134Z",
+  "updated": "2026-10-28T13:02:11.135Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -19,17 +19,17 @@
       "director": "Sacha Baron Cohen",
       "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
       "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238092",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238095",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238092",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238095",
           "luxx": false,
           "screen": "9",
           "threeD": false,
@@ -47,6 +47,105 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "G",
+      "runtime": 77,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": null,
+      "date": "2026-10-28",
+      "times": [
+        "14:30",
+        "16:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238280",
+      "sessions": [
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:30",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238280",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "16:30",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238281",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Bad Apples",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113503.jpg",
+      "cert": "15A",
+      "runtime": 101,
+      "release": "September 6, 2026",
+      "releaseDate": "2026-09-06",
+      "director": "Jonathan Etzler",
+      "synopsis": "A frustrated primary school teacher gets into a physical altercation with one of her troubled pupils, leading her to hold him hostage in her basement in this comedy thriller.",
+      "trailer": "https://www.youtube.com/watch?v=4nhu80EmVQE",
+      "date": "2026-10-28",
+      "times": [
+        "17:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238163",
+      "sessions": [
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238163",
+          "luxx": false,
+          "screen": "12",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "bad-apples",
+      "posterFile": "data/posters/bad-apples.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "16",
       "title": "Clayface",
       "luxx": false,
@@ -60,17 +159,32 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "14:45",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238162",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238164",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238164",
+          "luxx": false,
+          "screen": "12",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238162",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238165",
           "luxx": false,
           "screen": "12",
           "threeD": false,
@@ -101,18 +215,33 @@
       "director": "James Watkins",
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237598",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237600",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237600",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237598",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237601",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -123,10 +252,10 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237599",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237602",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -157,17 +286,17 @@
       "director": "Alejandro González Iñárritu",
       "synopsis": "Digger is one of the most unexpected collaborations of the decade, pairing global superstar Tom Cruise with four-time Academy Award-winning director Alejandro G. Iñárritu, the visionary filmmaker behind Birdman and The Revenant.",
       "trailer": "https://www.youtube.com/watch?v=WsY_1aRZUPA",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238203",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238206",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238203",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238206",
           "luxx": false,
           "screen": "14",
           "threeD": false,
@@ -199,17 +328,62 @@
       "director": "Joel Crawford",
       "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "14:45",
+        "15:45",
+        "17:15",
         "18:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238091",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238074",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238074",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238093",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238073",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238091",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238094",
           "luxx": false,
           "screen": "9",
           "threeD": false,
@@ -240,18 +414,48 @@
       "director": "Simon Hynd",
       "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
       "trailer": null,
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "14:00",
+        "16:15",
         "18:30",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237998",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238000",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238000",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "16:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238001",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237998",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238002",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -262,10 +466,10 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237999",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238003",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -296,18 +500,18 @@
       "director": "David Ayer",
       "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
       "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "18:15",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238136",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238140",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238136",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238140",
           "luxx": false,
           "screen": "11",
           "threeD": false,
@@ -318,10 +522,10 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238137",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238141",
           "luxx": false,
           "screen": "11",
           "threeD": false,
@@ -339,31 +543,32 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "12A",
+      "certFile": "M",
       "title": "Klara And The Sun",
       "luxx": false,
       "sensory": false,
       "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/112474.jpg",
-      "cert": "12A",
-      "runtime": 100,
+      "cert": "M",
+      "runtime": 116,
       "release": "October 23, 2026",
       "releaseDate": "2026-10-23",
       "director": null,
-      "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home.",
+      "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home. When Klara meets Josie, each immediately senses a kindred spirit in the other. Josie has a fraught relationship with her mother and they?ve suffered great loss, but Klara?s innocent wonder and unwavering loyalty begin to heal the family and bring light to Josie?s complicated world.",
       "trailer": null,
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "15:00",
         "17:40",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238182",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238184",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
-          "time": "17:40",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238182",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238184",
           "luxx": false,
           "screen": "13",
           "threeD": false,
@@ -374,10 +579,24 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "17:40",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238185",
+          "luxx": false,
+          "screen": "13",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238183",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238186",
           "luxx": false,
           "screen": "13",
           "threeD": false,
@@ -390,7 +609,63 @@
       ],
       "slug": "klara-and-the-sun",
       "posterFile": "data/posters/klara-and-the-sun.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
+      "certIcon": null,
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Monster Mia",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
+      "cert": "G",
+      "runtime": 81,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+      "trailer": null,
+      "date": "2026-10-28",
+      "times": [
+        "14:10",
+        "16:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238143",
+      "sessions": [
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:10",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238143",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "16:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238142",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "monster-mia",
+      "posterFile": "data/posters/monster-mia.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -408,18 +683,18 @@
       "director": "Rob Savage",
       "synopsis": "From producer James Wan, one of the most influential architects of modern horror, and Blumhouse Atomic Monster, the studio behind Backrooms and Obsession, comes a terrifying trip from breakout genre director Rob Savage, into the darkening world of a young girl, Bela, who forms a relationship with a sinister entity in her home who looks uncannily like her own mother. Academy Award-winner Jessica Chastain stars in dual roles as Bela's mother and as Other Mommy, a manifestation of the entity.",
       "trailer": "https://www.youtube.com/watch?v=bEpTgowZ1dI",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "18:30",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238272",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238282",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238272",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238282",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -431,10 +706,10 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238273",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238283",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -466,18 +741,18 @@
       "director": "Zach Cregger",
       "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
       "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "18:30",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238024",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238028",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238024",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238028",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -488,10 +763,10 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238025",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238029",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -522,17 +797,17 @@
       "director": "Georgia Oakley",
       "synopsis": "An irresistible new take on Jane Austen?s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood starring Daisy Edgar-Jones and Esmé Creed-Miles. Sisters Elinor and Marianne Dashwood must leave their Sussex estate following the sudden loss of their wealthy father and are forced to move in with a distant relative. The two sisters attempt to find security and happiness whilst navigating their vastly different approaches to love.",
       "trailer": null,
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238069",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238072",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238069",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238072",
           "luxx": false,
           "screen": "8",
           "threeD": false,
@@ -563,18 +838,19 @@
       "director": "Kitao Sakurai",
       "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
       "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "15:05",
         "17:50",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237949",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237951",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
-          "time": "17:50",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237949",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "15:05",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237951",
           "luxx": true,
           "screen": "2",
           "threeD": false,
@@ -585,10 +861,24 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "17:50",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237952",
+          "luxx": true,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237950",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237953",
           "luxx": true,
           "screen": "2",
           "threeD": false,
@@ -606,6 +896,62 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "G",
+      "runtime": 94,
+      "release": "October 17, 2026",
+      "releaseDate": "2026-10-17",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-10-28",
+      "times": [
+        "14:15",
+        "16:25"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238030",
+      "sessions": [
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238030",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "16:25",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238031",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "12A",
       "title": "THE LOST CHILDREN OF TUAM",
       "luxx": false,
@@ -619,17 +965,17 @@
       "director": "Frank Berry",
       "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
       "trailer": null,
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "18:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238204",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238207",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238204",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238207",
           "luxx": false,
           "screen": "14",
           "threeD": false,
@@ -649,6 +995,48 @@
     {
       "certSystem": "ifco",
       "certFile": "15A",
+      "title": "The Odyssey",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/105912.jpg",
+      "cert": "15A",
+      "runtime": 172,
+      "release": "July 17, 2026",
+      "releaseDate": "2026-07-17",
+      "director": "Christopher Nolan",
+      "synopsis": "An epic fantasy action film written and directed by Christopher Nolan. An adaptation of Homer's ancient Greek epic the Odyssey, starring Matt Damon as Odysseus, the Greek king of Ithaca, and chronicles his long and perilous journey home after the Trojan War, as he attempts to reunite with his wife, Penelope, portrayed by Anne Hathaway. Where he encounters mythical beings such as the Cyclops, sirens, and the nymph Calypso. The cast includes Tom Holland, Robert Pattinson, Lupita Nyong'o, Zendaya, and Charlize Theron.",
+      "trailer": "https://www.youtube.com/watch?v=Z9kZNzmdSQk",
+      "date": "2026-10-28",
+      "times": [
+        "14:35"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238208",
+      "sessions": [
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:35",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238208",
+          "luxx": false,
+          "screen": "14",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "the-odyssey",
+      "posterFile": "data/posters/the-odyssey.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
       "title": "The Social Reckoning",
       "luxx": false,
       "sensory": false,
@@ -661,18 +1049,18 @@
       "director": "Aaron Sorkin",
       "synopsis": "Inspired by true events and the whistleblower who started the social media reckoning we?re seeing play out today, this Aaron Sorkin original screenplay is a companion piece to the hit film The Social Network and a true David and Goliath story. Frances Haugen (Madison), a young Facebook engineer, enlists the help of Jeff Horwitz (White), a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network?s most guarded secrets.",
       "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
         "17:55",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238048",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238051",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "17:55",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238048",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238051",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -683,10 +1071,10 @@
           ]
         },
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238049",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238052",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -717,17 +1105,47 @@
       "director": "Michael Showalter",
       "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
       "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "14:35",
+        "17:15",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237973",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237974",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:35",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237974",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237975",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237973",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237976",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -758,17 +1176,62 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "times": [
+        "14:20",
+        "15:05",
+        "17:10",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238113",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238114",
       "sessions": [
         {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "14:20",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238114",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "15:05",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238053",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "17:10",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238115",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238113",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238116",
           "luxx": false,
           "screen": "10",
           "threeD": false,
@@ -786,879 +1249,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Tue 27 Oct",
-      "url": "https://imc.ie/film-times/dun-laoghaire/27-10-2026#dateD",
-      "date": "2026-10-27",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "ALI G: WHO IZ I?",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114097.jpg",
-          "cert": "16",
-          "runtime": 89,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Sacha Baron Cohen",
-          "synopsis": "After twenty years spent chillin, Ali G is shocked to discover that his long-term girlfriend, Julie, is 8 months pregnant. Faced with an extra mouth to feed, he gets off his batty and heads to America to reclaim his former glory but soon encounters adversaries who will ultimately threaten his and his child?s very existence.",
-          "trailer": "https://www.youtube.com/watch?v=0c5YkGLo1d0",
-          "date": "2026-10-27",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238092",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238092",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ali-g-who-iz-i",
-          "posterFile": "data/posters/ali-g-who-iz-i.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Bad Apples",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113503.jpg",
-          "cert": "15A",
-          "runtime": 101,
-          "release": "September 6, 2026",
-          "releaseDate": "2026-09-06",
-          "director": "Jonathan Etzler",
-          "synopsis": "A frustrated primary school teacher gets into a physical altercation with one of her troubled pupils, leading her to hold him hostage in her basement in this comedy thriller.",
-          "trailer": "https://www.youtube.com/watch?v=4nhu80EmVQE",
-          "date": "2026-10-27",
-          "times": [
-            "17:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238160",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "17:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238160",
-              "luxx": false,
-              "screen": "12",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "bad-apples",
-          "posterFile": "data/posters/bad-apples.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
-          "cert": "16",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": null,
-          "date": "2026-10-27",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238162",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238162",
-              "luxx": false,
-              "screen": "12",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115573.jpg",
-          "cert": "16",
-          "runtime": 120,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "James Watkins",
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-          "date": "2026-10-27",
-          "times": [
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237598",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237598",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237599",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Digger",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112569.jpg",
-          "cert": "15A",
-          "runtime": 129,
-          "release": "October 2, 2026",
-          "releaseDate": "2026-10-02",
-          "director": "Alejandro González Iñárritu",
-          "synopsis": "Digger is one of the most unexpected collaborations of the decade, pairing global superstar Tom Cruise with four-time Academy Award-winning director Alejandro G. Iñárritu, the visionary filmmaker behind Birdman and The Revenant.",
-          "trailer": "https://www.youtube.com/watch?v=WsY_1aRZUPA",
-          "date": "2026-10-27",
-          "times": [
-            "20:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238203",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238203",
-              "luxx": false,
-              "screen": "14",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "digger",
-          "posterFile": "data/posters/digger.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-10-27",
-          "times": [
-            "17:15",
-            "18:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238070",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "17:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238070",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238091",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "12A",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-27",
-          "times": [
-            "18:30",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237998",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237998",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237999",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Heart Of The Beast",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
-          "cert": "15A",
-          "runtime": 102,
-          "release": "September 23, 2026",
-          "releaseDate": "2026-09-23",
-          "director": "David Ayer",
-          "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
-          "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-          "date": "2026-10-27",
-          "times": [
-            "18:15",
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238136",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238136",
-              "luxx": false,
-              "screen": "11",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238137",
-              "luxx": false,
-              "screen": "11",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "heart-of-the-beast",
-          "posterFile": "data/posters/heart-of-the-beast.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Klara And The Sun",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112474.jpg",
-          "cert": "12A",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home.",
-          "trailer": null,
-          "date": "2026-10-27",
-          "times": [
-            "17:40",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238182",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "17:40",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238182",
-              "luxx": false,
-              "screen": "13",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238183",
-              "luxx": false,
-              "screen": "13",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "klara-and-the-sun",
-          "posterFile": "data/posters/klara-and-the-sun.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Other Mommy Galactic",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115645.jpg",
-          "cert": "15A",
-          "runtime": 105,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Rob Savage",
-          "synopsis": "From producer James Wan, one of the most influential architects of modern horror, and Blumhouse Atomic Monster, the studio behind Backrooms and Obsession, comes a terrifying trip from breakout genre director Rob Savage, into the darkening world of a young girl, Bela, who forms a relationship with a sinister entity in her home who looks uncannily like her own mother. Academy Award-winner Jessica Chastain stars in dual roles as Bela's mother and as Other Mommy, a manifestation of the entity.",
-          "trailer": "https://www.youtube.com/watch?v=bEpTgowZ1dI",
-          "date": "2026-10-27",
-          "times": [
-            "18:30",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238272",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238272",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238273",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            }
-          ],
-          "slug": "other-mommy-galactic",
-          "posterFile": "data/posters/other-mommy-galactic.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Resident Evil",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110404.jpg",
-          "cert": "16",
-          "runtime": 93,
-          "release": "September 18, 2026",
-          "releaseDate": "2026-09-18",
-          "director": "Zach Cregger",
-          "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
-          "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
-          "date": "2026-10-27",
-          "times": [
-            "18:30",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238024",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238024",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238025",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "resident-evil",
-          "posterFile": "data/posters/resident-evil.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Sense And Sensibility",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112473.jpg",
-          "cert": "PG",
-          "runtime": 131,
-          "release": "September 25, 2026",
-          "releaseDate": "2026-09-25",
-          "director": "Georgia Oakley",
-          "synopsis": "An irresistible new take on Jane Austen?s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood starring Daisy Edgar-Jones and Esmé Creed-Miles. Sisters Elinor and Marianne Dashwood must leave their Sussex estate following the sudden loss of their wealthy father and are forced to move in with a distant relative. The two sisters attempt to find security and happiness whilst navigating their vastly different approaches to love.",
-          "trailer": null,
-          "date": "2026-10-27",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238069",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238069",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "sense-and-sensibility",
-          "posterFile": "data/posters/sense-and-sensibility.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Street Fighter",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115929.jpg",
-          "cert": "12A",
-          "runtime": 119,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Kitao Sakurai",
-          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-          "date": "2026-10-27",
-          "times": [
-            "17:50",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237949",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "17:50",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237949",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237950",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "street-fighter",
-          "posterFile": "data/posters/street-fighter.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "THE LOST CHILDREN OF TUAM",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/114662.jpg",
-          "cert": "12A",
-          "runtime": 86,
-          "release": "September 25, 2026",
-          "releaseDate": "2026-09-25",
-          "director": "Frank Berry",
-          "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
-          "trailer": null,
-          "date": "2026-10-27",
-          "times": [
-            "18:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238204",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238204",
-              "luxx": false,
-              "screen": "14",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-lost-children-of-tuam",
-          "posterFile": "data/posters/the-lost-children-of-tuam.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "The Social Reckoning",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115561.jpg",
-          "cert": "15A",
-          "runtime": 112,
-          "release": "October 9, 2026",
-          "releaseDate": "2026-10-09",
-          "director": "Aaron Sorkin",
-          "synopsis": "Inspired by true events and the whistleblower who started the social media reckoning we?re seeing play out today, this Aaron Sorkin original screenplay is a companion piece to the hit film The Social Network and a true David and Goliath story. Frances Haugen (Madison), a young Facebook engineer, enlists the help of Jeff Horwitz (White), a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network?s most guarded secrets.",
-          "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
-          "date": "2026-10-27",
-          "times": [
-            "17:55",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238048",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "17:55",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238048",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238049",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-social-reckoning",
-          "posterFile": "data/posters/the-social-reckoning.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Verity",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110405.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "October 2, 2026",
-          "releaseDate": "2026-10-02",
-          "director": "Michael Showalter",
-          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
-          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-          "date": "2026-10-27",
-          "times": [
-            "17:15",
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237972",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "17:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237972",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=237973",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "verity",
-          "posterFile": "data/posters/verity.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-27",
-          "times": [
-            "17:10",
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238112",
-          "sessions": [
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "17:10",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238112",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 27 October",
-              "date": "2026-10-27",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238113",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
     {
       "label": "Wed 28 Oct",
       "url": "https://imc.ie/film-times/dun-laoghaire/28-10-2026#dateD",
@@ -2203,18 +1793,18 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "12A",
+          "certFile": "M",
           "title": "Klara And The Sun",
           "luxx": false,
           "sensory": false,
           "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112474.jpg",
-          "cert": "12A",
-          "runtime": 100,
+          "cert": "M",
+          "runtime": 116,
           "release": "October 23, 2026",
           "releaseDate": "2026-10-23",
           "director": null,
-          "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home.",
+          "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home. When Klara meets Josie, each immediately senses a kindred spirit in the other. Josie has a fraught relationship with her mother and they?ve suffered great loss, but Klara?s innocent wonder and unwavering loyalty begin to heal the family and bring light to Josie?s complicated world.",
           "trailer": null,
           "date": "2026-10-28",
           "times": [
@@ -2269,7 +1859,7 @@
           ],
           "slug": "klara-and-the-sun",
           "posterFile": "data/posters/klara-and-the-sun.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
+          "certIcon": null,
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -3453,18 +3043,18 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "12A",
+          "certFile": "M",
           "title": "Klara And The Sun",
           "luxx": false,
           "sensory": false,
           "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112474.jpg",
-          "cert": "12A",
-          "runtime": 100,
+          "cert": "M",
+          "runtime": 116,
           "release": "October 23, 2026",
           "releaseDate": "2026-10-23",
           "director": null,
-          "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home.",
+          "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home. When Klara meets Josie, each immediately senses a kindred spirit in the other. Josie has a fraught relationship with her mother and they?ve suffered great loss, but Klara?s innocent wonder and unwavering loyalty begin to heal the family and bring light to Josie?s complicated world.",
           "trailer": null,
           "date": "2026-10-29",
           "times": [
@@ -3519,7 +3109,7 @@
           ],
           "slug": "klara-and-the-sun",
           "posterFile": "data/posters/klara-and-the-sun.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
+          "certIcon": null,
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -4166,6 +3756,62 @@
       "films": [
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "All About The Money",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116632.jpg",
+          "cert": "15A",
+          "runtime": 94,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Sinéad O'Shea",
+          "synopsis": "A wealthy heir establishes a communist revolutionary camp in rural Massachusetts to fight the capitalist system he's grown to hate, launching an extraordinary path ahead.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "18:35",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238606",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238606",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238607",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "all-about-the-money",
+          "posterFile": "data/posters/all-about-the-money.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "G",
           "title": "Arnie and Barney",
           "luxx": false,
@@ -4464,6 +4110,62 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
+          "cert": "15A",
+          "runtime": 102,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+          "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+          "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+          "date": "2026-10-30",
+          "times": [
+            "17:55",
+            "20:20"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238600",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "17:55",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238600",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:20",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238601",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "jak-zyc-zeby-nie-zwariowac",
+          "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "G",
           "title": "Monster Mia",
           "luxx": false,
@@ -4520,6 +4222,62 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "NAZA",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116690.jpg",
+          "cert": "15A",
+          "runtime": 77,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Yuval Abraham, Rachel Szor",
+          "synopsis": "Shot at night on the rooftops of Tel Aviv, the film reveals in detail the systems behind Israel?s calculated mass killing of Palestinian civilians in Gaza.",
+          "trailer": null,
+          "date": "2026-10-30",
+          "times": [
+            "18:25",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238584",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:25",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238584",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238585",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "naza",
+          "posterFile": "data/posters/naza.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "16",
           "title": "Pan's Labyrinth (20th Anniversary)",
           "luxx": false,
@@ -4568,11 +4326,11 @@
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
-          "runtime": 100,
+          "runtime": 109,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
-          "director": null,
-          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-10-30",
           "times": [
@@ -4622,6 +4380,77 @@
                 "advance",
                 "evening",
                 "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-10-30",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238560",
+          "sessions": [
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238560",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238561",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 30 October",
+              "date": "2026-10-30",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238562",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
               ]
             }
           ],
@@ -4828,47 +4657,6 @@
         {
           "certSystem": "ifco",
           "certFile": "15A",
-          "title": "The Social Reckoning",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115561.jpg",
-          "cert": "15A",
-          "runtime": 112,
-          "release": "October 9, 2026",
-          "releaseDate": "2026-10-09",
-          "director": "Aaron Sorkin",
-          "synopsis": "Inspired by true events and the whistleblower who started the social media reckoning we?re seeing play out today, this Aaron Sorkin original screenplay is a companion piece to the hit film The Social Network and a true David and Goliath story. Frances Haugen (Madison), a young Facebook engineer, enlists the help of Jeff Horwitz (White), a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network?s most guarded secrets.",
-          "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
-          "date": "2026-10-30",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238347",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238347",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-social-reckoning",
-          "posterFile": "data/posters/the-social-reckoning.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
           "title": "Verity",
           "luxx": false,
           "sensory": false,
@@ -5025,8 +4813,7 @@
           "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
           "date": "2026-10-30",
           "times": [
-            "15:00",
-            "17:50"
+            "15:00"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238348",
           "sessions": [
@@ -5035,20 +4822,6 @@
               "date": "2026-10-30",
               "time": "15:00",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238348",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "17:50",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238349",
               "luxx": false,
               "screen": "5",
               "threeD": false,
@@ -5142,6 +4915,62 @@
       "url": "https://imc.ie/film-times/dun-laoghaire/31-10-2026#dateD",
       "date": "2026-10-31",
       "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "All About The Money",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116632.jpg",
+          "cert": "15A",
+          "runtime": 94,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Sinéad O'Shea",
+          "synopsis": "A wealthy heir establishes a communist revolutionary camp in rural Massachusetts to fight the capitalist system he's grown to hate, launching an extraordinary path ahead.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "18:35",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238608",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238608",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238609",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "all-about-the-money",
+          "posterFile": "data/posters/all-about-the-money.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
         {
           "certSystem": "ifco",
           "certFile": "G",
@@ -5515,6 +5344,62 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
+          "cert": "15A",
+          "runtime": 102,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+          "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+          "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+          "date": "2026-10-31",
+          "times": [
+            "17:55",
+            "20:20"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238602",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "17:55",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238602",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:20",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238603",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "jak-zyc-zeby-nie-zwariowac",
+          "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "G",
           "title": "Monster Mia",
           "luxx": false,
@@ -5587,6 +5472,62 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "NAZA",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116690.jpg",
+          "cert": "15A",
+          "runtime": 77,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Yuval Abraham, Rachel Szor",
+          "synopsis": "Shot at night on the rooftops of Tel Aviv, the film reveals in detail the systems behind Israel?s calculated mass killing of Palestinian civilians in Gaza.",
+          "trailer": null,
+          "date": "2026-10-31",
+          "times": [
+            "18:25",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238586",
+          "sessions": [
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "18:25",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238586",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238587",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "naza",
+          "posterFile": "data/posters/naza.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "16",
           "title": "Pan's Labyrinth (20th Anniversary)",
           "luxx": false,
@@ -5635,17 +5576,20 @@
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
-          "runtime": 100,
+          "runtime": 109,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
-          "director": null,
-          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-10-31",
           "times": [
             "14:45",
+            "15:45",
             "17:15",
-            "19:45"
+            "18:15",
+            "19:45",
+            "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238495",
           "sessions": [
@@ -5666,6 +5610,20 @@
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238563",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
               "time": "17:15",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238496",
               "luxx": false,
@@ -5680,6 +5638,20 @@
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238564",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
               "time": "19:45",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238497",
               "luxx": false,
@@ -5689,6 +5661,20 @@
                 "advance",
                 "evening",
                 "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 31 October",
+              "date": "2026-10-31",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238565",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
               ]
             }
           ],
@@ -5968,47 +5954,6 @@
         {
           "certSystem": "ifco",
           "certFile": "15A",
-          "title": "The Social Reckoning",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115561.jpg",
-          "cert": "15A",
-          "runtime": 112,
-          "release": "October 9, 2026",
-          "releaseDate": "2026-10-09",
-          "director": "Aaron Sorkin",
-          "synopsis": "Inspired by true events and the whistleblower who started the social media reckoning we?re seeing play out today, this Aaron Sorkin original screenplay is a companion piece to the hit film The Social Network and a true David and Goliath story. Frances Haugen (Madison), a young Facebook engineer, enlists the help of Jeff Horwitz (White), a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network?s most guarded secrets.",
-          "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
-          "date": "2026-10-31",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238350",
-          "sessions": [
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238350",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-social-reckoning",
-          "posterFile": "data/posters/the-social-reckoning.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
           "title": "Verity",
           "luxx": false,
           "sensory": false,
@@ -6181,8 +6126,7 @@
           "date": "2026-10-31",
           "times": [
             "12:10",
-            "15:00",
-            "17:50"
+            "15:00"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238363",
           "sessions": [
@@ -6205,20 +6149,6 @@
               "date": "2026-10-31",
               "time": "15:00",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238351",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "17:50",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238352",
               "luxx": false,
               "screen": "5",
               "threeD": false,
@@ -6312,6 +6242,62 @@
       "url": "https://imc.ie/film-times/dun-laoghaire/01-11-2026#dateD",
       "date": "2026-11-01",
       "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "All About The Money",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116632.jpg",
+          "cert": "15A",
+          "runtime": 94,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Sinéad O'Shea",
+          "synopsis": "A wealthy heir establishes a communist revolutionary camp in rural Massachusetts to fight the capitalist system he's grown to hate, launching an extraordinary path ahead.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "18:35",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238610",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238610",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238611",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "all-about-the-money",
+          "posterFile": "data/posters/all-about-the-money.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
         {
           "certSystem": "ifco",
           "certFile": "G",
@@ -6685,6 +6671,62 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
+          "cert": "15A",
+          "runtime": 102,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+          "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+          "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+          "date": "2026-11-01",
+          "times": [
+            "17:55",
+            "20:20"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238604",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "17:55",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238604",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:20",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238605",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "jak-zyc-zeby-nie-zwariowac",
+          "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "G",
           "title": "Monster Mia",
           "luxx": false,
@@ -6757,6 +6799,62 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "NAZA",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116690.jpg",
+          "cert": "15A",
+          "runtime": 77,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Yuval Abraham, Rachel Szor",
+          "synopsis": "Shot at night on the rooftops of Tel Aviv, the film reveals in detail the systems behind Israel?s calculated mass killing of Palestinian civilians in Gaza.",
+          "trailer": null,
+          "date": "2026-11-01",
+          "times": [
+            "18:25",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238588",
+          "sessions": [
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "18:25",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238588",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238589",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "naza",
+          "posterFile": "data/posters/naza.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "16",
           "title": "Pan's Labyrinth (20th Anniversary)",
           "luxx": false,
@@ -6805,17 +6903,20 @@
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
-          "runtime": 100,
+          "runtime": 109,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
-          "director": null,
-          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-01",
           "times": [
             "14:45",
+            "15:45",
             "17:15",
-            "19:45"
+            "18:15",
+            "19:45",
+            "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238498",
           "sessions": [
@@ -6836,6 +6937,20 @@
             {
               "day": "Sun 1 November",
               "date": "2026-11-01",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238566",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
               "time": "17:15",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238499",
               "luxx": false,
@@ -6850,6 +6965,20 @@
             {
               "day": "Sun 1 November",
               "date": "2026-11-01",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238567",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
               "time": "19:45",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238500",
               "luxx": false,
@@ -6859,6 +6988,20 @@
                 "advance",
                 "evening",
                 "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 1 November",
+              "date": "2026-11-01",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238568",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
               ]
             }
           ],
@@ -7138,47 +7281,6 @@
         {
           "certSystem": "ifco",
           "certFile": "15A",
-          "title": "The Social Reckoning",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115561.jpg",
-          "cert": "15A",
-          "runtime": 112,
-          "release": "October 9, 2026",
-          "releaseDate": "2026-10-09",
-          "director": "Aaron Sorkin",
-          "synopsis": "Inspired by true events and the whistleblower who started the social media reckoning we?re seeing play out today, this Aaron Sorkin original screenplay is a companion piece to the hit film The Social Network and a true David and Goliath story. Frances Haugen (Madison), a young Facebook engineer, enlists the help of Jeff Horwitz (White), a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network?s most guarded secrets.",
-          "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
-          "date": "2026-11-01",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238353",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238353",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-social-reckoning",
-          "posterFile": "data/posters/the-social-reckoning.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
           "title": "Verity",
           "luxx": false,
           "sensory": false,
@@ -7351,8 +7453,7 @@
           "date": "2026-11-01",
           "times": [
             "12:10",
-            "15:00",
-            "17:50"
+            "15:00"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238364",
           "sessions": [
@@ -7375,20 +7476,6 @@
               "date": "2026-11-01",
               "time": "15:00",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238354",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "17:50",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238355",
               "luxx": false,
               "screen": "5",
               "threeD": false,
@@ -7482,6 +7569,62 @@
       "url": "https://imc.ie/film-times/dun-laoghaire/02-11-2026#dateD",
       "date": "2026-11-02",
       "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "All About The Money",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116632.jpg",
+          "cert": "15A",
+          "runtime": 94,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Sinéad O'Shea",
+          "synopsis": "A wealthy heir establishes a communist revolutionary camp in rural Massachusetts to fight the capitalist system he's grown to hate, launching an extraordinary path ahead.",
+          "trailer": null,
+          "date": "2026-11-02",
+          "times": [
+            "18:35",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238612",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238612",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238613",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "all-about-the-money",
+          "posterFile": "data/posters/all-about-the-money.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
         {
           "certSystem": "ifco",
           "certFile": "G",
@@ -7853,6 +7996,62 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "NAZA",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116690.jpg",
+          "cert": "15A",
+          "runtime": 77,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Yuval Abraham, Rachel Szor",
+          "synopsis": "Shot at night on the rooftops of Tel Aviv, the film reveals in detail the systems behind Israel?s calculated mass killing of Palestinian civilians in Gaza.",
+          "trailer": null,
+          "date": "2026-11-02",
+          "times": [
+            "18:25",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238590",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "18:25",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238590",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238591",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "naza",
+          "posterFile": "data/posters/naza.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "16",
           "title": "Primetime",
           "luxx": false,
@@ -7860,11 +8059,11 @@
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
-          "runtime": 100,
+          "runtime": 109,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
-          "director": null,
-          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-02",
           "times": [
@@ -7914,6 +8113,77 @@
                 "advance",
                 "evening",
                 "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-11-02",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238569",
+          "sessions": [
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238569",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238624",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Mon 2 November",
+              "date": "2026-11-02",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238625",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
               ]
             }
           ],
@@ -8149,9 +8419,7 @@
           "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
           "date": "2026-11-02",
           "times": [
-            "15:35",
-            "18:15",
-            "20:45"
+            "15:35"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238362",
           "sessions": [
@@ -8166,34 +8434,6 @@
               "tags": [
                 "released",
                 "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 2 November",
-              "date": "2026-11-02",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238358",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 2 November",
-              "date": "2026-11-02",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238357",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
                 "seating-standard"
               ]
             }
@@ -8423,6 +8663,62 @@
       "url": "https://imc.ie/film-times/dun-laoghaire/03-11-2026#dateD",
       "date": "2026-11-03",
       "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "All About The Money",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116632.jpg",
+          "cert": "15A",
+          "runtime": 94,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Sinéad O'Shea",
+          "synopsis": "A wealthy heir establishes a communist revolutionary camp in rural Massachusetts to fight the capitalist system he's grown to hate, launching an extraordinary path ahead.",
+          "trailer": null,
+          "date": "2026-11-03",
+          "times": [
+            "18:35",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238614",
+          "sessions": [
+            {
+              "day": "Tue 3 November",
+              "date": "2026-11-03",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238614",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Tue 3 November",
+              "date": "2026-11-03",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238615",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "all-about-the-money",
+          "posterFile": "data/posters/all-about-the-money.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
         {
           "certSystem": "ifco",
           "certFile": "G",
@@ -8794,6 +9090,62 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "NAZA",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116690.jpg",
+          "cert": "15A",
+          "runtime": 77,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Yuval Abraham, Rachel Szor",
+          "synopsis": "Shot at night on the rooftops of Tel Aviv, the film reveals in detail the systems behind Israel?s calculated mass killing of Palestinian civilians in Gaza.",
+          "trailer": null,
+          "date": "2026-11-03",
+          "times": [
+            "18:25",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238592",
+          "sessions": [
+            {
+              "day": "Tue 3 November",
+              "date": "2026-11-03",
+              "time": "18:25",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238592",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Tue 3 November",
+              "date": "2026-11-03",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238593",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "naza",
+          "posterFile": "data/posters/naza.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "16",
           "title": "Primetime",
           "luxx": false,
@@ -8801,17 +9153,20 @@
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
-          "runtime": 100,
+          "runtime": 109,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
-          "director": null,
-          "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-03",
           "times": [
             "14:45",
+            "15:45",
             "17:15",
-            "19:45"
+            "18:15",
+            "19:45",
+            "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238504",
           "sessions": [
@@ -8832,6 +9187,20 @@
             {
               "day": "Tue 3 November",
               "date": "2026-11-03",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238572",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Tue 3 November",
+              "date": "2026-11-03",
               "time": "17:15",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238505",
               "luxx": false,
@@ -8846,6 +9215,20 @@
             {
               "day": "Tue 3 November",
               "date": "2026-11-03",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238573",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Tue 3 November",
+              "date": "2026-11-03",
               "time": "19:45",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238506",
               "luxx": false,
@@ -8855,6 +9238,20 @@
                 "advance",
                 "evening",
                 "seating-standard"
+              ]
+            },
+            {
+              "day": "Tue 3 November",
+              "date": "2026-11-03",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238574",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
               ]
             }
           ],
@@ -9090,9 +9487,7 @@
           "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
           "date": "2026-11-03",
           "times": [
-            "15:35",
-            "18:15",
-            "20:45"
+            "15:35"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238360",
           "sessions": [
@@ -9107,34 +9502,6 @@
               "tags": [
                 "released",
                 "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 3 November",
-              "date": "2026-11-03",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238361",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 3 November",
-              "date": "2026-11-03",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238359",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
                 "seating-standard"
               ]
             }
@@ -9342,6 +9709,1085 @@
               "date": "2026-11-03",
               "time": "20:00",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238310",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Wed 04 Nov",
+      "url": "https://imc.ie/film-times/dun-laoghaire/04-11-2026#dateD",
+      "date": "2026-11-04",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "All About The Money",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116632.jpg",
+          "cert": "15A",
+          "runtime": 94,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Sinéad O'Shea",
+          "synopsis": "A wealthy heir establishes a communist revolutionary camp in rural Massachusetts to fight the capitalist system he's grown to hate, launching an extraordinary path ahead.",
+          "trailer": null,
+          "date": "2026-11-04",
+          "times": [
+            "18:35",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238616",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238616",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238617",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "all-about-the-money",
+          "posterFile": "data/posters/all-about-the-money.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "G",
+          "runtime": 77,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": null,
+          "date": "2026-11-04",
+          "times": [
+            "14:15",
+            "16:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238387",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238387",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "16:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238388",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Bad Apples",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113503.jpg",
+          "cert": "15A",
+          "runtime": 101,
+          "release": "September 6, 2026",
+          "releaseDate": "2026-09-06",
+          "director": "Jonathan Etzler",
+          "synopsis": "A frustrated primary school teacher gets into a physical altercation with one of her troubled pupils, leading her to hold him hostage in her basement in this comedy thriller.",
+          "trailer": "https://www.youtube.com/watch?v=4nhu80EmVQE",
+          "date": "2026-11-04",
+          "times": [
+            "15:10",
+            "17:30",
+            "19:50"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238411",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "15:10",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238411",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "17:30",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238412",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "19:50",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238413",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "bad-apples",
+          "posterFile": "data/posters/bad-apples.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
+          "cert": "16",
+          "runtime": 120,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "James Watkins",
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
+          "date": "2026-11-04",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238329",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238329",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238330",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238331",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            }
+          ],
+          "slug": "clayface-galactic",
+          "posterFile": "data/posters/clayface-galactic.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "12A",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-11-04",
+          "times": [
+            "14:05",
+            "16:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238489",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "14:05",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238489",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "16:25",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238490",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Heart Of The Beast",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
+          "cert": "15A",
+          "runtime": 102,
+          "release": "September 23, 2026",
+          "releaseDate": "2026-09-23",
+          "director": "David Ayer",
+          "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
+          "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
+          "date": "2026-11-04",
+          "times": [
+            "18:15",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238477",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238477",
+              "luxx": false,
+              "screen": "11",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238478",
+              "luxx": false,
+              "screen": "11",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "heart-of-the-beast",
+          "posterFile": "data/posters/heart-of-the-beast.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "La bola negra",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116606.jpg",
+          "cert": "15A",
+          "runtime": 159,
+          "release": "November 5, 2026",
+          "releaseDate": "2026-11-05",
+          "director": "Javier Ambrossi, Javier Calvo",
+          "synopsis": "The story of three men whose lives are intimately connected through desire, pain and inheritance, across three different eras ? 1932, 1937 and 2017.",
+          "trailer": "https://www.youtube.com/watch?v=IRHtqjHYPew",
+          "date": "2026-11-04",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238599",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238599",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "la-bola-negra",
+          "posterFile": "data/posters/la-bola-negra.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Monster Mia",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+          "trailer": null,
+          "date": "2026-11-04",
+          "times": [
+            "14:10",
+            "16:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238475",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "14:10",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238475",
+              "luxx": false,
+              "screen": "11",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "16:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238476",
+              "luxx": false,
+              "screen": "11",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "monster-mia",
+          "posterFile": "data/posters/monster-mia.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "NAZA",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116690.jpg",
+          "cert": "15A",
+          "runtime": 77,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Yuval Abraham, Rachel Szor",
+          "synopsis": "Shot at night on the rooftops of Tel Aviv, the film reveals in detail the systems behind Israel?s calculated mass killing of Palestinian civilians in Gaza.",
+          "trailer": null,
+          "date": "2026-11-04",
+          "times": [
+            "15:15",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238594",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "15:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238594",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238595",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "naza",
+          "posterFile": "data/posters/naza.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "16",
+          "runtime": 109,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-04",
+          "times": [
+            "14:45",
+            "17:15",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238507",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238507",
+              "luxx": false,
+              "screen": "12",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238508",
+              "luxx": false,
+              "screen": "12",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238509",
+              "luxx": false,
+              "screen": "12",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-11-04",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238575",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238575",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238628",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238629",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Resident Evil",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110404.jpg",
+          "cert": "16",
+          "runtime": 93,
+          "release": "September 18, 2026",
+          "releaseDate": "2026-09-18",
+          "director": "Zach Cregger",
+          "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
+          "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
+          "date": "2026-11-04",
+          "times": [
+            "18:30",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238385",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:30",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238385",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238386",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "resident-evil",
+          "posterFile": "data/posters/resident-evil.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Sense And Sensibility",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112473.jpg",
+          "cert": "PG",
+          "runtime": 131,
+          "release": "September 25, 2026",
+          "releaseDate": "2026-09-25",
+          "director": "Georgia Oakley",
+          "synopsis": "An irresistible new take on Jane Austen?s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood starring Daisy Edgar-Jones and Esmé Creed-Miles. Sisters Elinor and Marianne Dashwood must leave their Sussex estate following the sudden loss of their wealthy father and are forced to move in with a distant relative. The two sisters attempt to find security and happiness whilst navigating their vastly different approaches to love.",
+          "trailer": null,
+          "date": "2026-11-04",
+          "times": [
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238419",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238419",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "sense-and-sensibility",
+          "posterFile": "data/posters/sense-and-sensibility.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "THE LOST CHILDREN OF TUAM",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/114662.jpg",
+          "cert": "12A",
+          "runtime": 86,
+          "release": "September 25, 2026",
+          "releaseDate": "2026-09-25",
+          "director": "Frank Berry",
+          "synopsis": "THE LOST CHILDREN OF TUAM tells the real-life story of amateur historian Catherine Corless (BAFTA-winner Monica Dolan) who begins researching a former institution for unmarried mothers and their children in Tuam, County Galway and uncovers a shocking hidden history of neglect and loss. Faced with the deafening silence of church and state, she embarks on a campaign for justice, confronting deep wounds that continue to shape Ireland today.",
+          "trailer": null,
+          "date": "2026-11-04",
+          "times": [
+            "15:45",
+            "17:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238557",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238557",
+              "luxx": false,
+              "screen": "14",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238549",
+              "luxx": false,
+              "screen": "13",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-lost-children-of-tuam",
+          "posterFile": "data/posters/the-lost-children-of-tuam.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "The Odyssey",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/105912.jpg",
+          "cert": "15A",
+          "runtime": 172,
+          "release": "July 17, 2026",
+          "releaseDate": "2026-07-17",
+          "director": "Christopher Nolan",
+          "synopsis": "An epic fantasy action film written and directed by Christopher Nolan. An adaptation of Homer's ancient Greek epic the Odyssey, starring Matt Damon as Odysseus, the Greek king of Ithaca, and chronicles his long and perilous journey home after the Trojan War, as he attempts to reunite with his wife, Penelope, portrayed by Anne Hathaway. Where he encounters mythical beings such as the Cyclops, sirens, and the nymph Calypso. The cast includes Tom Holland, Robert Pattinson, Lupita Nyong'o, Zendaya, and Charlize Theron.",
+          "trailer": "https://www.youtube.com/watch?v=Z9kZNzmdSQk",
+          "date": "2026-11-04",
+          "times": [
+            "14:15",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238547",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238547",
+              "luxx": false,
+              "screen": "13",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238548",
+              "luxx": false,
+              "screen": "13",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-odyssey",
+          "posterFile": "data/posters/the-odyssey.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-04",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238444",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238444",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238445",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238446",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wild Horse Nine",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+          "cert": "15A",
+          "runtime": 117,
+          "release": "November 4, 2026",
+          "releaseDate": "2026-11-04",
+          "director": "Martin McDonagh",
+          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
+          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "date": "2026-11-04",
+          "times": [
+            "18:10",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238395",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238395",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238396",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wild-horse-nine",
+          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Wildwood -",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116315.jpg",
+          "cert": "12A",
+          "runtime": 130,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Travis Knight",
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-11-04",
+          "times": [
+            "14:20",
+            "17:10",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238311",
+          "sessions": [
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238311",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "17:10",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238312",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Wed 4 November",
+              "date": "2026-11-04",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=238313",
               "luxx": true,
               "screen": "2",
               "threeD": false,
@@ -11493,70 +12939,248 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 16 films parsed",
-    "day-27-10-2026-dated: 17 films parsed",
+    "today: 21 films parsed",
     "day-28-10-2026-dated: 21 films parsed",
     "day-29-10-2026-dated: 21 films parsed",
-    "day-30-10-2026-dated: 17 films parsed",
-    "day-31-10-2026-dated: 19 films parsed",
-    "day-01-11-2026-dated: 19 films parsed",
-    "day-02-11-2026-dated: 15 films parsed",
-    "day-03-11-2026-dated: 15 films parsed",
+    "day-30-10-2026-dated: 20 films parsed",
+    "day-31-10-2026-dated: 21 films parsed",
+    "day-01-11-2026-dated: 21 films parsed",
+    "day-02-11-2026-dated: 18 films parsed",
+    "day-03-11-2026-dated: 17 films parsed",
+    "day-04-11-2026-dated: 18 films parsed",
     "advance: 9 films parsed",
     "kids: 2 films parsed",
     "luxx: 5 films parsed",
-    "prices: 12 ticket types, 3 bundles, 12 products",
+    "booking pages read: 10 (Wed, Thu, Fri, Sat, Sun, Mon, Tue)",
+    "prices: 19 ticket types, 3 bundles, 12 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
       {
         "name": "Wednesday Meal Deal",
-        "price": "€12.50"
+        "price": "€12.50",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
       },
       {
         "name": "Adult Matinee",
-        "price": "€11.50"
+        "price": "€11.50",
+        "days": [
+          "Wed",
+          "Fri",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
       },
       {
         "name": "Teen",
-        "price": "€10.50"
+        "price": "€10.50",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
       },
       {
         "name": "Child Matinee",
-        "price": "€9.50"
+        "price": "€9.50",
+        "days": [
+          "Wed",
+          "Fri"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
       },
       {
         "name": "Student",
-        "price": "€11.00"
+        "price": "€11.00",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
       },
       {
         "name": "Family",
-        "price": "€35.50"
+        "price": "€35.50",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
       },
       {
         "name": "OAP",
-        "price": "€10.50"
+        "price": "€10.50",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
       },
       {
         "name": "3 Plus 2 For 1Requires Voucher",
-        "price": "€10.00"
+        "price": "€10.00",
+        "days": [
+          "Wed",
+          "Thu",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
       },
       {
-        "name": "Student Meal Deal LUXX",
-        "price": "€15.50"
+        "name": "Crazy Thursday",
+        "price": "€7.50",
+        "days": [
+          "Thu"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Adult Evening",
+        "price": "€13.00",
+        "days": [
+          "Sat",
+          "Sun"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Child Evening",
+        "price": "€10.50",
+        "days": [
+          "Sat",
+          "Sun"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Student Meal Deal",
+        "price": "€12.00",
+        "days": [
+          "Tue"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Kids Club",
+        "price": "€5.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Adult",
+        "price": "€5.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Meal Deal",
+        "price": "€9.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Luxx Wednesday MDeal",
+        "price": "€17.50",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "luxx"
+        ]
       },
       {
         "name": "LUXX Recliner",
-        "price": "€15.50"
+        "price": "€15.50",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "luxx"
+        ]
       },
       {
         "name": "LUXX Child/Student/OAP",
-        "price": "€12.50"
+        "price": "€12.50",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "luxx"
+        ]
       },
       {
         "name": "3 Plus 2 For 1 LUXXRequires Voucher",
-        "price": "€18.00"
+        "price": "€18.00",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "luxx"
+        ]
       }
     ],
     "bundles": [
@@ -11565,20 +13189,50 @@
         "price": "€29.00",
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ],
         "file": "data/products/t1scb.jpg"
       },
       {
-        "name": "Medium Combo LUXX",
-        "price": "€22.00",
+        "name": "Medium Combo",
+        "price": "€18.00",
         "details": "1 Adult Ticket + a Medium Combo",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
-        "file": "data/products/t1mcbluxx.jpg"
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
+        "days": [
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening"
+        ],
+        "file": "data/products/t1mcb.jpg"
       },
       {
         "name": "Share Combo LUXX",
         "price": "€37.00",
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "luxx"
+        ],
         "file": "data/products/t1scbluxx.jpg"
       }
     ],
@@ -11587,78 +13241,267 @@
         "name": "Flexi Ticket",
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/flexi.jpg"
       },
       {
         "name": "Maltesers",
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/maltesers.jpg"
       },
       {
         "name": "Minstrels",
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/minstrels.jpg"
       },
       {
         "name": "Tahila Water Carton",
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/ttc.jpg"
       },
       {
         "name": "Medium Combo",
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/combotest.jpg"
       },
       {
         "name": "Large Combo",
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/lccc.jpg"
       },
       {
         "name": "Kids Tray (Kids drink, popcorn and sweet treat)",
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/onkt.jpg"
       },
       {
         "name": "Share Combo (2 Medium Drinks + 1 Large Popcorn)",
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/scon.jpg"
       },
       {
         "name": "IMC Twist",
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SOFTSERVE1.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/softserve1.jpg"
       },
       {
         "name": "IMC Oreo",
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SOFTSERVE2.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/softserve2.jpg"
       },
       {
         "name": "IMC 99",
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SOFTSERVE3.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/softserve3.jpg"
       },
       {
         "name": "Nacho Large Cheese",
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee",
+          "kids",
+          "luxx"
+        ],
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-10-27T18:07:25.309Z"
+    "checked": "2026-10-28T13:02:39.563Z",
+    "sampledDays": [
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun",
+      "Mon",
+      "Tue"
+    ]
   },
-  "checked": "2026-10-27T18:07:29.309Z",
+  "checked": "2026-10-28T13:02:54.119Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
