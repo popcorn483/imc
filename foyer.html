@@ -18,7 +18,14 @@ body.pointer{cursor:default}
 .layer{position:absolute;inset:0;transition:opacity .8s ease}
 .layer[hidden]{display:block!important;opacity:0;pointer-events:none}
 #ident{background:#000}#ident canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
-#yt,#yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+#yt-wrap{overflow:hidden;background:#000}
+/* The trailer is drawn slightly larger than the screen so YouTube's title bar (top) and logo / "Watch on YouTube" (bottom) sit off-screen. */
+#yt,#yt iframe{position:absolute;top:-9%;left:-9%;width:118%;height:118%;border:0;background:#000;pointer-events:none}
+/* Nothing on the TV can click or hover the player, so its pop-ups never appear. The curtain hides the player while it loads, pauses or ends. */
+#ytshield{position:absolute;inset:0;z-index:1}
+#ytcurtain{position:absolute;inset:0;z-index:2;background:#000;opacity:1;transition:opacity .5s}
+#ytcurtain.off{opacity:0}
+#tlabel{z-index:3}
 /* showtimes card */
 #card{display:grid;grid-template-columns:auto 1fr;gap:4vw;align-items:center;padding:6vh 6vw 10vh;overflow:hidden}
 #card .bgimg{position:absolute;inset:-6%;background-size:cover;background-position:center;filter:blur(40px) brightness(.38) saturate(1.25);transform:scale(1.1)}
@@ -55,7 +62,7 @@ body.pointer #help{opacity:1}
 </head>
 <body>
 <div id="stage">
-  <div id="yt-wrap" class="layer" hidden><div id="yt"></div><div id="tlabel"></div></div>
+  <div id="yt-wrap" class="layer" hidden><div id="yt"></div><div id="ytshield"></div><div id="ytcurtain"></div><div id="tlabel"></div></div>
   <div id="ident" class="layer" hidden><canvas id="icv" width="1920" height="1080" aria-label="Welcome to IMC"></canvas></div>
   <div id="card" class="layer" hidden><div class="bgimg"></div><div class="shade"></div><div class="poster" role="img"></div>
     <div class="info"><div class="kicker" id="ck"></div><h1 class="title" id="ct"></h1><div class="meta" id="cm"></div><div class="when" id="cw"></div><div class="times" id="cx"></div><div class="book">Book at <b>imc.ie</b></div></div></div>
@@ -135,12 +142,19 @@ async function next(){clearTimeout(timer);
   const ok=await loadYT();if(!ok){showCard(f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
   const id=ytId(f.trailer);$("#tlabel").textContent=f.title;$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,5000);
   show("yt-wrap");progress(0.01);
-  let started=false;const guard=setTimeout(()=>{if(!started)next()},15000),cap=setTimeout(()=>next(),5*60e3);
-  const done=()=>{clearTimeout(guard);clearTimeout(cap)};
+  let started=false,over=false;const cur=$("#ytcurtain");cur.classList.remove("off");
+  /* leave just before the end, so YouTube's end screen and suggested videos never get a chance to show */
+  const watch=setInterval(()=>{try{const d=player.getDuration(),t=player.getCurrentTime();if(started&&d>5&&t>=d-1.2)finish()}catch(e){}},250);
+  const finish=()=>{if(over)return;over=true;cur.classList.remove("off");done();try{player.pauseVideo()}catch(e){}setTimeout(next,500)};
+  const guard=setTimeout(()=>{if(!started)finish()},15000),cap=setTimeout(finish,5*60e3);
+  const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch)};
   if(player&&player.loadVideoById){player.loadVideoById(id);if(muted)player.mute();else player.unMute()}
-  else player=new YT.Player("yt",{videoId:id,playerVars:{autoplay:1,controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,mute:muted?1:0},
-    events:{onReady:e=>{if(muted)e.target.mute();e.target.playVideo()},onStateChange:e=>{if(e.data===1)started=true;if(e.data===0){done();next()}},onError:()=>{done();next()}}});
-  player._done=done}
+  else player=new YT.Player("yt",{host:"https://www.youtube-nocookie.com",videoId:id,playerVars:{autoplay:1,controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,fs:0,cc_load_policy:0,mute:muted?1:0,origin:location.origin},
+    events:{onReady:e=>{if(muted)e.target.mute();e.target.playVideo()},onStateChange:e=>{const h=player._h;if(h)h(e.data)},onError:()=>{const x=player._x;if(x)x()}}});
+  /* playing: lift the curtain once the title has had time to fade; paused/ended: drop it straight away */
+  player._h=st=>{if(over)return;if(st===1){if(!started){started=true;setTimeout(()=>{if(!over)cur.classList.add("off")},400)}else cur.classList.add("off")}
+    else if(st===2){cur.classList.remove("off");try{player.playVideo()}catch(e){}}else if(st===0)finish()};
+  player._x=finish;player._done=done}
 async function playIdent(){try{if(player&&player.stopVideo)player.stopVideo()}catch(e){}
   if(!idAssets)idAssets=await IMCIdent.loadAssets("");let i=Math.floor(Math.random()*WEL.length);if(WEL.length>1&&i===lastIdent)i=(i+1)%WEL.length;lastIdent=i;
   const w=WEL[i],cv=$("#icv"),c=cv.getContext("2d"),secs=w.dur||8,t0=performance.now();show("ident");progress(secs);

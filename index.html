@@ -1428,11 +1428,20 @@ function saveBlob(b,name){const u=URL.createObjectURL(b),a=document.createElemen
 $("#fcsv").onclick=async()=>{if(!TRAIL)TRAIL=(await getJson("data/trailers.json"))||{};const list=foyChosen(foyState());if(!list.length){toast("No films in the pack yet");return}saveBlob(new Blob([foyCsv(list)],{type:"text/csv"}),`${S().town.replace(/\W+/g,"-")}-foyer-trailers-${todayIso()}.csv`)};
 /* 16:9 showtimes card, drawn for a still or recorded as video */
 function loadImg(src){return new Promise(r=>{if(!src)return r(null);const im=new Image();im.crossOrigin="anonymous";im.onload=()=>r(im);im.onerror=()=>r(null);im.src=src})}
-function drawFoyCard(c,f,poster,cert,t){const W=1920,H=1080,ease=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3),a=k=>ease((t*8-k));c.save();c.fillStyle="#070a1c";c.fillRect(0,0,W,H);
-  if(poster){c.save();c.filter="blur(40px) brightness(.38) saturate(1.25)";const k=Math.max(W/poster.width,H/poster.height)*1.15;c.drawImage(poster,(W-poster.width*k)/2,(H-poster.height*k)/2,poster.width*k,poster.height*k);c.restore()}
-  const vg=c.createRadialGradient(W*.3,H/2,100,W*.3,H/2,W*.8);vg.addColorStop(0,"rgba(7,10,28,.15)");vg.addColorStop(1,"rgba(7,10,28,.85)");c.fillStyle=vg;c.fillRect(0,0,W,H);
+/* The blurred backdrop and the poster's drop shadow are the expensive parts, so they're drawn once per film
+   (foyCardCache) and then just copied each frame. Blurring a full HD frame 30 times a second froze slower PCs. */
+function foyCardCache(poster){const W=1920,H=1080,ph=800,pw=ph*2/3,pad=120,mk=(w,h)=>{const v=document.createElement("canvas");v.width=w;v.height=h;return v};
+  const bg=mk(W,H),b=bg.getContext("2d");b.fillStyle="#070a1c";b.fillRect(0,0,W,H);
+  if(poster){const sm=mk(240,135),s=sm.getContext("2d"),k=Math.max(240/poster.width,135/poster.height)*1.15;s.drawImage(poster,(240-poster.width*k)/2,(135-poster.height*k)/2,poster.width*k,poster.height*k);
+    b.save();b.filter="blur(5px) brightness(.38) saturate(1.25)";b.imageSmoothingQuality="high";b.drawImage(sm,-20,-12,W+40,H+24);b.restore()}
+  const vg=b.createRadialGradient(W*.3,H/2,100,W*.3,H/2,W*.8);vg.addColorStop(0,"rgba(7,10,28,.15)");vg.addColorStop(1,"rgba(7,10,28,.85)");b.fillStyle=vg;b.fillRect(0,0,W,H);
+  let pc=null;if(poster){pc=mk(pw+pad*2,ph+pad*2);const p=pc.getContext("2d");p.save();p.shadowColor="rgba(0,0,0,.6)";p.shadowBlur=60;p.shadowOffsetY=30;p.fillStyle="#000";p.beginPath();p.roundRect?p.roundRect(pad,pad,pw,ph,14):p.rect(pad,pad,pw,ph);p.fill();p.restore();
+    p.save();p.beginPath();p.roundRect?p.roundRect(pad,pad,pw,ph,14):p.rect(pad,pad,pw,ph);p.clip();const k=Math.max(pw/poster.width,ph/poster.height);p.drawImage(poster,pad+pw/2-poster.width*k/2,pad+ph/2-poster.height*k/2,poster.width*k,poster.height*k);p.restore()}
+  return{bg,pc,pad,free(){bg.width=bg.height=0;if(pc)pc.width=pc.height=0}}}
+function drawFoyCard(c,f,poster,cert,t,cache){const W=1920,H=1080,ease=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3),a=k=>ease((t*8-k));const own=!cache;if(own)cache=foyCardCache(poster);c.save();c.drawImage(cache.bg,0,0);
   const ph=800,pw=ph*2/3,px=110,py=(H-90-ph)/2,z=1+.04*t;
-  if(poster){c.save();c.shadowColor="rgba(0,0,0,.6)";c.shadowBlur=60;c.shadowOffsetY=30;c.translate(px+pw/2,py+ph/2);c.scale(z,z);c.globalAlpha=a(0);c.beginPath();c.roundRect?c.roundRect(-pw/2,-ph/2,pw,ph,14):c.rect(-pw/2,-ph/2,pw,ph);c.clip();const k=Math.max(pw/poster.width,ph/poster.height);c.drawImage(poster,-poster.width*k/2,-poster.height*k/2,poster.width*k,poster.height*k);c.restore()}
+  if(cache.pc){const P=cache.pad,cw=cache.pc.width*z,ch=cache.pc.height*z;c.globalAlpha=a(0);c.drawImage(cache.pc,px+pw/2-cw/2,py+ph/2-ch/2,cw,ch);c.globalAlpha=1}
+  if(own)cache.free();
   const x=px+pw+110,maxW=W-x-110,n=cinemaNow();let y=230;
   const day=f.next?f.next.date:null,times=day?f.sessions.filter(s=>s.date===day&&notStarted(s.date,s.time)).map(s=>s.time).sort():[];
   c.globalAlpha=a(1);c.fillStyle="#ffd84a";c.font="500 26px 'IBM Plex Mono',monospace";c.letterSpacing="8px";c.fillText((day?(day===n.date?"SHOWING TODAY":"SHOWING "+fmtLong(day).toUpperCase()):f.releaseDate?"COMING "+fmtLong(f.releaseDate).toUpperCase():"COMING SOON"),x,y);c.letterSpacing="0px";
@@ -1445,12 +1454,15 @@ function drawFoyCard(c,f,poster,cert,t){const W=1920,H=1080,ease=x=>1-Math.pow(1
   c.globalAlpha=1;const g=c.createLinearGradient(0,0,W,0);g.addColorStop(0,"#ffd84a");g.addColorStop(.55,"#f39a2b");g.addColorStop(1,"#e2452e");c.fillStyle="rgba(0,0,0,.55)";c.fillRect(0,H-90,W,90);c.fillStyle=g;c.fillRect(0,H-90,W,5);
   c.fillStyle="#b9c3e6";c.font="500 24px 'IBM Plex Mono',monospace";c.letterSpacing="6px";c.textAlign="right";c.fillText(S().name.toUpperCase(),W-80,H-35);c.textAlign="left";c.letterSpacing="0px";
   if(drawFoyCard.logo){const lh=62,lw=lh*drawFoyCard.logo.width/drawFoyCard.logo.height;c.drawImage(drawFoyCard.logo,80,H-76,lw,lh)}c.restore()}
-async function recordCard(f,poster,cert,secs){const cv=document.createElement("canvas");cv.width=1920;cv.height=1080;const c=cv.getContext("2d");
+function stopStream(st){try{st.getTracks().forEach(t=>t.stop())}catch(e){}}
+const pause=ms=>new Promise(r=>setTimeout(r,ms));
+async function recordCard(f,poster,cert,secs){const cv=document.createElement("canvas");cv.width=1920;cv.height=1080;const c=cv.getContext("2d"),cache=foyCardCache(poster);
   const types=["video/mp4;codecs=avc1.42E01E","video/mp4;codecs=avc1","video/mp4","video/webm;codecs=vp9","video/webm"],mime=window.MediaRecorder&&types.find(t=>MediaRecorder.isTypeSupported(t));if(!mime)return null;
-  const rec=new MediaRecorder(cv.captureStream(30),{mimeType:mime,videoBitsPerSecond:8e6}),chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
-  drawFoyCard(c,f,poster,cert,0);rec.start(250);const t0=performance.now();
-  await new Promise(res=>{const step=()=>{const el=(performance.now()-t0)/1000;if(el>=secs)return res();drawFoyCard(c,f,poster,cert,el/secs);requestAnimationFrame(step)};requestAnimationFrame(step)});
-  rec.stop();await new Promise(r=>rec.onstop=r);return{blob:new Blob(chunks,{type:mime.split(";")[0]}),ext:mime.startsWith("video/mp4")?"mp4":"webm"}}
+  const stream=cv.captureStream(25),rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:4e6}),chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+  try{drawFoyCard(c,f,poster,cert,0,cache);rec.start(1000);const t0=performance.now();
+    await new Promise(res=>{const step=()=>{const el=(performance.now()-t0)/1000;if(el>=secs)return res();drawFoyCard(c,f,poster,cert,el/secs,cache);setTimeout(step,40)};step()});
+    const stopped=new Promise(r=>rec.onstop=r);rec.stop();await stopped;return{blob:new Blob(chunks,{type:mime.split(";")[0]}),ext:mime.startsWith("video/mp4")?"mp4":"webm"}}
+  finally{stopStream(stream);cache.free();cv.width=cv.height=0}}
 function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement("script");s.src=src;s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
 $("#fzip").onclick=async()=>{const btn=$("#fzip"),pr=$("#fprog"),st=foyState();if(!TRAIL)TRAIL=(await getJson("data/trailers.json"))||{};const list=foyChosen(st);if(!list.length){toast("No films in the pack yet");return}
   btn.disabled=true;pr.hidden=false;try{
@@ -1460,9 +1472,9 @@ $("#fzip").onclick=async()=>{const btn=$("#fzip"),pr=$("#fprog"),st=foyState();i
     const zip=new JSZip(),dir=zip.folder(`${S().town.replace(/\W+/g,"-")} foyer trailers ${todayIso()}`),m3u=["#EXTM3U"],secs=st.card||10;let ext="mp4";
     const wl=st.wfreq!=="0"?wGet().filter(w=>w.on!==false):[],wn=st.wfreq==="r"||!st.wfreq?2:+st.wfreq,wv=[];
     for(const [j,w] of wl.entries()){pr.textContent=`Recording welcome video ${j+1} of ${wl.length}: ${w.name} (${w.dur||8} seconds)…`;const v=await recordIdent(w);if(v){const nm="Welcome - "+String(w.name||j+1).replace(/[\\/:*?"<>|]+/g,"").trim()+"."+v.ext;dir.file(nm,v.blob);wv.push({nm,secs:w.dur||8,name:w.name})}}
-    for(const [i,f] of list.entries()){const nm=String(i+1).padStart(2,"0")+" - "+f.title.replace(/[\\/:*?"<>|]+/g,"").trim();pr.textContent=`Making card ${i+1} of ${list.length}: ${f.title} (about ${secs} seconds each)…`;
+    for(const [i,f] of list.entries()){const nm=String(i+1).padStart(2,"0")+" - "+f.title.replace(/[\\/:*?"<>|]+/g,"").trim();pr.textContent=`Making card ${i+1} of ${list.length}: ${f.title} (about ${secs} seconds each). Keep this tab open…`;
       const [poster,cert]=await Promise.all([loadImg(asset(f.posterFile)||f.poster),f.certIcon?loadImg(asset(f.certIcon)):Promise.resolve(null)]);
-      const cv=document.createElement("canvas");cv.width=1920;cv.height=1080;drawFoyCard(cv.getContext("2d"),f,poster,cert,1);dir.file(nm+" - still.png",await new Promise(r=>cv.toBlob(r,"image/png")));
+      const cv=document.createElement("canvas");cv.width=1920;cv.height=1080;drawFoyCard(cv.getContext("2d"),f,poster,cert,1);dir.file(nm+" - still.png",await new Promise(r=>cv.toBlob(r,"image/png")));cv.width=cv.height=0;await pause(300);
       const v=await recordCard(f,poster,cert,secs);if(v){ext=v.ext;dir.file(nm+" - card."+v.ext,v.blob);m3u.push(`#EXTINF:${secs},${f.title}`,`${nm} - card.${v.ext}`)}
       if(wv.length&&(i+1)%wn===0){const w=wv[Math.floor(i/wn)%wv.length];m3u.push(`#EXTINF:${w.secs},Welcome: ${w.name}`,w.nm)}}
     dir.file("playlist.m3u",m3u.join("\r\n"));dir.file("trailers.csv",foyCsv(list));
@@ -1470,7 +1482,7 @@ $("#fzip").onclick=async()=>{const btn=$("#fzip"),pr=$("#fprog"),st=foyState();i
       "In this folder:",`- A ${secs}-second 16:9 showtimes card (${ext.toUpperCase()}) and a still (PNG) for each film, numbered in playing order.`,"- playlist.m3u: plays the cards in order on TVs and media players that play from a USB stick"+(wv.length?`, with your welcome videos (\"Welcome - …\") after every ${wn===1?"":wn===2?"2nd ":"3rd "}card`:"")+".","- trailers.csv: each film's official trailer link and certificate.","",
       "Trailers: for the trailers themselves on a connected TV, open this link in the TV's browser:",foyUrl(st),"It plays each showtimes card followed by the official trailer, and updates itself every day.","YouTube doesn't allow trailers to be downloaded; for offline trailer files use the ones the distributors supply.","",
       "Showtimes on the cards are as of the time the pack was made."].join("\r\n"));
-    pr.textContent="Zipping…";const blob=await zip.generateAsync({type:"blob"});saveBlob(blob,`${S().town.replace(/\W+/g,"-")}-foyer-pack-${todayIso()}.zip`);pr.textContent=`Pack downloaded: ${list.length} films.`;
+    pr.textContent="Zipping…";await pause(300);const blob=await zip.generateAsync({type:"blob",compression:"STORE"});saveBlob(blob,`${S().town.replace(/\W+/g,"-")}-foyer-pack-${todayIso()}.zip`);pr.textContent=`Pack downloaded: ${list.length} films.`;
     if(ext!=="mp4")pr.textContent+=" This browser saved the cards as WebM; use Chrome, Edge or Safari for MP4."}
   catch(err){pr.textContent="Couldn't make the pack: "+(err&&err.message||"something went wrong")+". Try again, or download the trailer list instead."}
   btn.disabled=false};
@@ -1544,10 +1556,11 @@ document.addEventListener("change",e=>{if(!e.target.classList.contains("wfreq"))
 /* record a welcome video at full HD in real time */
 async function recordIdent(w,onTick){await wReady();const cv=document.createElement("canvas");cv.width=1920;cv.height=1080;const c=cv.getContext("2d");
   const types=["video/mp4;codecs=avc1.42E01E","video/mp4;codecs=avc1","video/mp4","video/webm;codecs=vp9","video/webm"],mime=window.MediaRecorder&&types.find(t=>MediaRecorder.isTypeSupported(t));if(!mime)return null;
-  const rec=new MediaRecorder(cv.captureStream(30),{mimeType:mime,videoBitsPerSecond:10e6}),chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
-  WI.draw(c,1920,1080,0,w,wAssets);rec.start(250);const t0=performance.now(),secs=w.dur||8;
-  await new Promise(res=>{const step=()=>{const el=(performance.now()-t0)/1000;if(el>=secs){WI.draw(c,1920,1080,1,w,wAssets);return setTimeout(res,120)}WI.draw(c,1920,1080,el/secs,w,wAssets);onTick&&onTick(el/secs);requestAnimationFrame(step)};requestAnimationFrame(step)});
-  rec.stop();await new Promise(r=>rec.onstop=r);return{blob:new Blob(chunks,{type:mime.split(";")[0]}),ext:mime.startsWith("video/mp4")?"mp4":"webm"}}
+  const stream=cv.captureStream(25),rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:5e6}),chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+  try{WI.draw(c,1920,1080,0,w,wAssets);rec.start(1000);const t0=performance.now(),secs=w.dur||8;
+    await new Promise(res=>{const step=()=>{const el=(performance.now()-t0)/1000;if(el>=secs){WI.draw(c,1920,1080,1,w,wAssets);return setTimeout(res,120)}WI.draw(c,1920,1080,el/secs,w,wAssets);onTick&&onTick(el/secs);setTimeout(step,40)};step()});
+    const stopped=new Promise(r=>rec.onstop=r);rec.stop();await stopped;return{blob:new Blob(chunks,{type:mime.split(";")[0]}),ext:mime.startsWith("video/mp4")?"mp4":"webm"}}
+  finally{stopStream(stream);cv.width=cv.height=0}}
 $("#wdl").onclick=async()=>{const w=wCur();if(!w)return;const b=$("#wdl"),pr=$("#wprog");b.disabled=true;pr.hidden=false;pr.textContent=`Recording (${w.dur} seconds)… keep this tab open.`;
   try{const v=await recordIdent(w,p=>pr.textContent=`Recording… ${Math.round(p*100)}%`);if(!v){pr.textContent="This browser can't record video. Try Chrome or Edge."}else{saveBlob(v.blob,`${S().town.replace(/\W+/g,"-")}-welcome-${String(w.name||"video").replace(/\W+/g,"-")}.${v.ext}`);pr.textContent=`Saved as ${v.ext.toUpperCase()} (1920 × 1080).`+(v.ext!=="mp4"?" Use Chrome, Edge or Safari for MP4.":"")}}
   catch(err){pr.textContent="Couldn't record: "+(err&&err.message||"something went wrong")}b.disabled=false};
