@@ -184,7 +184,8 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .ftimes{display:flex;gap:6px;flex-wrap:wrap}
 .ftimes span{font-family:var(--f-mono);font-size:13px;font-weight:600;padding:3px 8px;border-radius:6px;background:var(--chip);font-variant-numeric:tabular-nums}
 .kidsp{margin-top:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--amber) 14%,var(--panel)),var(--panel) 60%)}
-.kidsfilms{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.kf{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;align-items:center}.kf img{width:52px;aspect-ratio:2/3;object-fit:cover;border-radius:5px;background:var(--chip)}.kf .m{font-size:12px;color:var(--muted)}.kf .ftimes{margin-top:4px}
+.kidsopts{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.kidsopts .check{display:flex!important;gap:8px;align-items:center;font-weight:600;white-space:nowrap;width:auto}.kidsopts .check input{width:18px;height:18px;margin:0;flex:none}
+.kidsfilms{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.kf{display:grid;grid-template-columns:20px 52px minmax(0,1fr);gap:10px;align-items:center;cursor:pointer;border-radius:10px;padding:6px;border:1px solid transparent}.kf:hover{border-color:var(--line)}.kf input{width:18px;height:18px;margin:0}.kf.off{opacity:.45}.kf.off .ftimes{text-decoration:line-through}.kf img{width:52px;aspect-ratio:2/3;object-fit:cover;border-radius:5px;background:var(--chip)}.kf .m{font-size:12px;color:var(--muted)}.kf .ftimes{margin-top:4px}
 .ftimes span.kc,.kclegend .kc{background:color-mix(in srgb,var(--amber) 24%,var(--panel));box-shadow:inset 0 0 0 1.5px var(--amber);display:inline-flex;align-items:center;gap:6px}
 .kc i{font-style:normal;font-family:var(--f-body);font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:99px;background:var(--amber);color:#2a1800}
 .kclegend{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;margin-right:auto;margin-left:12px}.kclegend .kc{padding:2px 4px;border-radius:6px}
@@ -1134,15 +1135,25 @@ function kidsPayload(range){const R=kidsRange(range),m=new Map(),dates=new Set()
   const span=days.length?(days.length===1?fmtLong(days[0]):dl(days[0])+" "+fmtShort(days[0]).replace(/^\w+\s/,"")+" – "+dl(days[days.length-1])+" "+fmtShort(days[days.length-1]).replace(/^\w+\s/,"")):"";
   const P=imcPrices(),tk=(P&&P.tickets)||[],pr=n=>(tk.find(t=>t.name.toLowerCase()===n)||{}).price||"";
   return{range,label:R.label,days,span,everyDay:films.every(sameAll)&&days.length>1?days.map(dl).join(", "):"",films,price:pr("kids club"),adult:pr("kids club adult"),meal:pr("kids club meal deal")}}
-function kidsAd(range,fmt,tpl){const k=kidsPayload(range);if(!k.films.length){toast(range==="weekend"?"No Kids Club showings found for this weekend yet. Try the next 7 days":"No Kids Club showings in the next 7 days");return}
+/* your choices for Kids Club ads: which films to include and whether to show their times */
+const kpk=()=>sk("imc-kids");
+function kidsPrefs(){try{return{hide:[],times:true,...JSON.parse(localStorage.getItem(kpk())||"{}")}}catch(e){return{hide:[],times:true}}}
+function kidsPrefsSave(p){try{localStorage.setItem(kpk(),JSON.stringify(p))}catch(e){}}
+function kidsChosen(range){const k=kidsPayload(range),p=kidsPrefs();return{...k,all:k.films.length,films:k.films.filter(f=>!p.hide.includes(f.t)),showTimes:p.times!==false}}
+function kidsAd(range,fmt,tpl){const k=kidsChosen(range);if(k.all&&!k.films.length){toast("Tick at least one Kids Club film to include");return}if(!k.films.length){toast(range==="weekend"?"No Kids Club showings found for this weekend yet. Try the next 7 days":"No Kids Club showings in the next 7 days");return}
   openEditor({kind:"kidsclub",fmt,tpl:tpl||"listing",...k})}
-function kidsCaption(range){const k=kidsPayload(range);if(!k.films.length)return"";const nm=S().name;
+function kidsCaption(range){const k=kidsChosen(range);if(!k.films.length)return"";const nm=S().name;
+  if(!k.showTimes)return`Kids Club ${k.label==="this weekend"?"this weekend":"this week"} at ${nm}! 🍿🎬${k.price?` Just ${k.price} a ticket${k.adult===k.price?" for kids and grown-ups":""}.`:""}\n\n`+k.films.map(f=>`🎟️ ${f.t}${f.cert?` (${f.cert})`:""}`).join("\n")+(k.meal?`\n\nMake it a treat with the Kids Club Meal Deal (${k.meal}).`:"")+`\n\nSee times and book at imc.ie.\n\n${(S().tags||"").trim()} #KidsClub #FamilyFun`;
   return`Kids Club ${k.label==="this weekend"?"this weekend":"this week"} at ${nm}! 🍿🎬${k.price?` Just ${k.price} a ticket${k.adult===k.price?" for kids and grown-ups":""}.`:""}\n\n`+k.films.map(f=>`🎟️ ${f.t}${f.cert?` (${f.cert})`:""}: ${k.everyDay&&!/\s/.test(f.times[0])?k.everyDay.replace(/, ([^,]+)$/," & $1")+" at ":""}${f.times.join(", ")}`).join("\n")+(k.meal?`\n\nMake it a treat with the Kids Club Meal Deal (${k.meal}).`:"")+`\n\nBook at imc.ie or at the box office.\n\n${(S().tags||"").trim()} #KidsClub #FamilyFun`}
+document.addEventListener("change",e=>{const t=e.target,p=kidsPrefs();
+  if(t.dataset.kidsfilm!=null){p.hide=t.checked?p.hide.filter(x=>x!==t.dataset.kidsfilm):[...new Set([...p.hide,t.dataset.kidsfilm])];t.closest(".kf").classList.toggle("off",!t.checked)}
+  else if(t.hasAttribute("data-kidstimes"))p.times=t.checked;else return;kidsPrefsSave(p)});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-kidsad]");if(b){kidsAd(b.dataset.kidsad,b.dataset.fmt||"square",b.dataset.tpl);return}
   const c=e.target.closest("[data-kidscap]");if(c){const t=kidsCaption(c.dataset.kidscap);if(!t){toast("No Kids Club showings found for that range");return}navigator.clipboard?.writeText(t).then(()=>toast("Kids Club caption copied"),()=>prompt("Copy this caption",t))}});
 function kidsPanel(){const k=kidsPayload("weekend"),w=k.films.length?k:kidsPayload("week");if(!w.films.length)return"";
   return`<div class="panel kidsp"><div class="ph"><h2>Kids Club ${w===k?"this weekend":"this week"}</h2><span class="tip" style="margin:0">${w.price?`${esc(w.price)} tickets${w.adult===w.price?" (adults too)":""}`:""}${w.meal?` · Meal deal ${esc(w.meal)}`:""} · ${esc(w.span)}</span></div>
-    <div class="kidsfilms">${w.films.map(f=>`<div class="kf"><img src="${esc(f.poster)}" alt="" loading="lazy"><div><b>${esc(f.t)}</b>${f.cert?` <span class="m">${esc(f.cert)}</span>`:""}<div class="ftimes">${f.times.map(t=>`<span class="kc">${esc(t)}</span>`).join("")}</div></div></div>`).join("")}</div>
+    <div class="kidsopts"><span class="tip" style="margin:0;border:0;padding:0">Tick the films to put on the ad.</span><label class="check"><input type="checkbox" data-kidstimes ${kidsPrefs().times!==false?"checked":""}> Show film times on the ad</label></div>
+    <div class="kidsfilms">${w.films.map(f=>{const on=!kidsPrefs().hide.includes(f.t);return`<label class="kf${on?"":" off"}"><input type="checkbox" data-kidsfilm="${esc(f.t)}" ${on?"checked":""} aria-label="Include ${esc(f.t)}"><img src="${esc(f.poster)}" alt="" loading="lazy"><div><b>${esc(f.t)}</b>${f.cert?` <span class="m">${esc(f.cert)}</span>`:""}<div class="ftimes">${f.times.map(t=>`<span class="kc">${esc(t)}</span>`).join("")}</div></div></label>`}).join("")}</div>
     <div class="row-btns" style="margin-top:12px"><button class="btn primary" data-kidsad="${w.range}" data-fmt="square">Kids Club ad</button><button class="btn" data-kidsad="${w.range}" data-fmt="portrait">4:5 post</button><button class="btn" data-kidsad="${w.range}" data-fmt="story">Story</button><button class="btn" data-kidsad="${w.range}" data-fmt="story" data-tpl="reel">Reel (video)</button><button class="btn" data-kidsad="${w.range}" data-fmt="wide">Foyer 16:9</button><button class="btn" data-kidscap="${w.range}">Copy caption</button>${w===k?`<button class="btn ghost" data-kidsad="week" data-fmt="square">Next 7 days instead</button>`:""}</div></div>`}
 
 function writeFilmPost(f,mode){startNew();const d=firstDate(f);
@@ -1246,22 +1257,30 @@ function imcPrices(){return(IMC&&IMC.prices&&!Array.isArray(IMC.prices))?IMC.pri
 function imcMatch(name){const P=imcPrices(),n=pnorm(name);if(!P||!n)return null;const all=[...(P.products||[]),...(P.bundles||[])];return all.find(x=>pnorm(x.name)===n)||all.find(x=>!x.details&&(pnorm(x.name).startsWith(n)||n.startsWith(pnorm(x.name))))||null}
 /* ---------- every deal imc.ie lists for this cinema (ticket deals like the Wednesday Meal Deal, plus ticket + snack bundles) ---------- */
 const DAYN={Mon:"Mondays",Tue:"Tuesdays",Wed:"Wednesdays",Thu:"Thursdays",Fri:"Fridays",Sat:"Saturdays",Sun:"Sundays"};
-function offerWhen(x,P){const so=x.seenOn||[],sd=(P&&P.sampledDays)||[];
+function offerWhen(x,P){const so=x.seenOn||[],sd=(P&&P.sampledDays)||[],wd=/(mon|tues|wednes|thurs|fri|satur|sun)day/i.exec(x.name);
+  if(wd){const dn=wd[0][0].toUpperCase()+wd[0].slice(1).toLowerCase()+"s only";return so.length&&so.every(k=>k==="luxx")?dn+" · LUXX":dn}
   if(so.length&&so.every(k=>k==="kids"))return"Kids Club showings";if(so.length&&so.every(k=>k==="luxx"))return"LUXX showings";
-  const d=(x.days||[]).filter(k=>sd.includes(k));if(sd.length>=3&&d.length&&d.length<sd.length)return d.length===1?DAYN[d[0]]+" only":d.map(k=>DAYN[k]).join(" & ")+" only";return""}
-function offerParts(x){const n=x.name.toLowerCase(),det=x.details||"";
+  const ORD=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],d=ORD.filter(k=>(x.days||[]).includes(k)&&sd.includes(k)),miss=ORD.filter(k=>sd.includes(k)&&!d.includes(k));
+  if(sd.length<3||!d.length||!miss.length)return"";if(d.length===1)return DAYN[d[0]]+" only";if(miss.length===1)return"Not on "+DAYN[miss[0]];
+  const idx=d.map(k=>ORD.indexOf(k));if(idx.every((v,i)=>!i||v===idx[i-1]+1))return DAYN[d[0]].replace(/s$/,"")+" to "+DAYN[d[d.length-1]].replace(/s$/,"");
+  return d.map(k=>DAYN[k]).join(", ").replace(/, ([^,]+)$/," & $1")+" only"}
+/* imc.ie's booking names can be terse ("Luxx Wednesday MDeal"): tidy them for posts */
+const offerName=n=>String(n).replace(/^Family$/i,"Family Ticket").replace(/\bLuxx\b/g,"LUXX").replace(/\bMDeal\b/i,"Meal Deal").replace(/^Meal Deal (Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)(day)$/i,"$1$2 Meal Deal").replace(/^(LUXX) (\w+day) Meal Deal$/,"$1 $2 Meal Deal");
+function offerParts(x){const n=offerName(x.name).toLowerCase(),det=x.details||"";
   if(det){const share=/share/i.test(det+n),items=det.split(/\s*\+\s*|\s*,\s*/).filter(Boolean),tk=(/(\d+)\s*(adult|child|ticket)/i.exec(det)||[])[1];return{items,products:["ticket",...(share?["popcorn","drink","drink"]:/combo|popcorn/i.test(det)?["popcorn","drink"]:[])],sure:true}}
   if(/kids/.test(n)&&/meal/.test(n))return{items:["Kids Club ticket","Kids meal (check what's included)"],products:["ticket","tray"],sure:false};
+  if(/luxx/.test(n)&&/meal/.test(n))return{items:["1 LUXX ticket","Popcorn & drink (check what's included)"],products:["ticket","popcorn","drink"],sure:false};
   if(/wednesday/.test(n)&&/meal/.test(n))return{items:["1 cinema ticket","Medium popcorn","Medium drink"],products:["ticket","popcorn","drink"],sure:true};
+  if(/^family/.test(n))return{items:["Family ticket (check who it covers)"],products:["ticket","ticket","ticket","ticket"],sure:false};
   if(/meal|deal|combo/.test(n))return{items:["Cinema ticket","Popcorn & drink (check what's included)"],products:["ticket","popcorn","drink"],sure:false};
   return{items:[x.name],products:["ticket"],sure:false}}
 function imcOffers(){const P=imcPrices();if(!P)return[];return[...(P.tickets||[]).filter(t=>/deal|meal|combo|bundle|offer|family|special|saver/i.test(t.name)).map(t=>({...t,k:"t"})),...(P.bundles||[]).map(b=>({...b,k:"b"}))]
-  .map(x=>({...x,when:offerWhen(x,P),...offerParts(x)}))}
+  .map(x=>({...x,raw:x.name,name:offerName(x.name),when:offerWhen(x,P),...offerParts(x)}))}
 function offerDeal(x){return{id:newId(),name:x.name,items:x.items,price:x.price,was:"",small:x.when?x.when+(x.when.endsWith("only")?"":" only"):"",products:x.products,imc:true}}
 function offersHtml(){const L=imcOffers();if(!L.length)return"";const have=new Set(getDeals().map(d=>d.name.toLowerCase()));const P=imcPrices();
   return`<h3>Deals on imc.ie <span class="tip" style="margin:0;font-weight:500">(${L.length} found · booking pages checked for ${((P&&P.sampledDays)||[]).join(", ")||"today"})</span></h3>
   <div class="offers">${L.map((x,i)=>`<div class="offer">${x.file?pimg(x.file,x.name):`<div class="oimg" aria-hidden="true">🎟️</div>`}<div><b>${esc(x.name)}</b> <span class="pp">${esc(x.price)}</span>${x.when?` <span class="owhen">${esc(x.when)}</span>`:""}
-    <div class="tip" style="margin:2px 0 0;border:0;padding:0">${esc(x.items.join(" + "))}${x.sure?"":" · check the contents"}</div>
+    <div class="tip" style="margin:2px 0 0;border:0;padding:0">${esc(x.items.join(" + "))}${x.sure||/check/.test(x.items.join(" "))?"":" · check the contents"}</div>
     <div class="row-btns" style="margin-top:6px"><button class="btn small primary" data-omake="${i}" data-anim="1">Animated post</button><button class="btn small" data-omake="${i}" data-anim="0">Still</button><button class="btn small" data-omake="${i}" data-fmt="story" data-anim="1">Story</button>${have.has(x.name.toLowerCase())?`<span class="tip" style="margin:0;border:0;padding:4px">In your deals ✓</span>`:`<button class="btn small ghost" data-oadd="${i}">Add to my deals</button>`}</div></div></div>`).join("")}</div>
   ${L.some(x=>!have.has(x.name.toLowerCase()))?`<div class="row-btns" style="margin:8px 0 14px"><button class="btn small" data-oaddall="1">Add all imc.ie deals to my deals</button></div>`:""}`}
 document.addEventListener("click",e=>{const g=k=>e.target.closest(`[data-${k}]`);let b;
@@ -1274,7 +1293,7 @@ function renderPrices(){const el=$("#imcPrices");if(!el)return;const P=imcPrices
     <div class="row-btns"><button class="btn small primary" data-pmake="${k}:${i}">Make a deal</button><button class="btn small" data-pclip="${k}:${i}">Video clip</button></div></div>`;
   el.innerHTML=`<div class="panel prices"><div class="ph"><h2>Prices from imc.ie</h2><span class="tip" style="margin:0">${esc(S().name)} · checked ${P.checked?new Date(P.checked).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"}):""}</span></div>
     ${offersHtml()}
-    ${(P.tickets||[]).length?`<h3>Tickets</h3><div class="tickrow">${P.tickets.map(t=>`<span>${esc(t.name)} <b>${esc(t.price)}</b>${(()=>{const w=offerWhen(t,P);return w?` <em>${esc(w)}</em>`:""})()}</span>`).join("")}</div>`:""}
+    ${(P.tickets||[]).length?`<h3>Tickets</h3><div class="tickrow">${P.tickets.map(t=>`<span>${esc(offerName(t.name))} <b>${esc(t.price)}</b>${(()=>{const w=offerWhen(t,P);return w?` <em>${esc(w)}</em>`:""})()}</span>`).join("")}</div>`:""}
     ${(P.bundles||[]).length?`<h3>Ticket + snack bundles</h3><div class="prodgrid">${P.bundles.map((x,i)=>card(x,"bundles",i)).join("")}</div>`:""}
     ${(P.products||[]).length?`<h3>Snacks</h3><div class="prodgrid">${P.products.filter(x=>!/flexi/i.test(x.name)).map(x=>card(x,"products",P.products.indexOf(x))).join("")}</div>`:""}
     <p class="tip">Prices are read from imc.ie's booking pages for a showing on each day of the coming week, so day-only deals are included. They can change; some depend on the showing (matinee, evening, Kids Club, LUXX).</p></div>`}

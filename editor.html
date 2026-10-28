@@ -1906,8 +1906,8 @@ function todayRows(){const f=(IMC&&IMC.today)||[];return f.map(x=>({t:x.title,ti
 function applyKids(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,films=(h.films||[]).slice(0,tall?5:4),L=[],reel=h.tpl==="reel";
   films.forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src)});
   const wk=h.label==="this weekend",title=wk?"THIS WEEKEND":"THIS WEEK",u=Math.min(f.w,f.h)/1080;
-  const rows=films.map(x=>({t:x.t,times:x.times,cert:x.cert,system:x.system}));
-  const listing=(x,y,maxH,maxW)=>{const need=listingH(rows.length),s=Math.min(.95,maxH*f.h/u/need,(maxW||.9)*f.w/u/940);return mk("listing",null,{text:"Kids Club · "+(h.span||title),sub:h.everyDay?"Same times "+h.everyDay.replace(/, ([^,]+)$/," & $1"):SITE_NAME,rows,x,y,s,anim:"slide",delay:.12})};
+  const showT=h.showTimes!==false,rows=films.map(x=>({t:x.t,times:showT?x.times:[],cert:x.cert,system:x.system}));
+  const listing=(x,y,maxH,maxW)=>{const need=listingH(rows.length),s=Math.min(.95,maxH*f.h/u/need,(maxW||.9)*f.w/u/940);return mk("listing",null,{text:"Kids Club · "+(h.span||title),sub:!showT?"See times and book at imc.ie":h.everyDay?"Same times "+h.everyDay.replace(/, ([^,]+)$/," & $1"):SITE_NAME,rows,x,y,s,anim:"slide",delay:.12})};
   const poster=(x,i,o)=>x.poster?{id:uid(),kind:"pphoto",src:x.poster,label:x.t+" poster",card:true,ar:.667,x:.5,y:.5,s:.42,r:(i%2?.04:-.04),o:1,anim:"drop",delay:.05+i*.07,...o}:null;
   const badge=o=>mk("badge","kids",{text:"KIDS CLUB",sub:h.price?h.price+" TICKETS":"FAMILY FILMS",anim:"wiggle",...o});
   const price=o=>h.price?mk("badge","price",{text:h.price,sub:h.adult&&h.adult===h.price?"KIDS & ADULTS":"PER TICKET",r:-.1,c1:"#e2452e",c2:"#ffffff",anim:"slam",delay:.3,...o}):null;
@@ -1920,7 +1920,7 @@ function applyKids(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,f
     films.forEach((x,i)=>{const a=.19+i*seg,b=a+seg;const p=poster(x,i,{y:.45,s:1.2,r:i%2?.03:-.03,anim:"zoom",delay:a,until:b,ilen:.4});if(p)L.push(p);
       const tt=x.t.toUpperCase(),two=tt.length>22?(()=>{const w=tt.split(" "),m=Math.ceil(w.length/2);return w.slice(0,m).join(" ")+"\n"+w.slice(m).join(" ")})():tt;
       L.push(mk("text","title",{text:two,y:.66,size:fitSize(two,"display",96,40,880),anim:"slide",delay:a+.02,until:b,ilen:.4}));
-      L.push(mk("text","sub",{text:x.times.join("  ·  "),y:two.includes("\n")?.735:.715,size:46,font:"mono",c1:"#ffd84a",anim:"slide",delay:a+.04,until:b,ilen:.4}))});
+      if(showT)L.push(mk("text","sub",{text:x.times.join("  ·  "),y:two.includes("\n")?.735:.715,size:46,font:"mono",c1:"#ffd84a",anim:"slide",delay:a+.04,until:b,ilen:.4}))});
     L.push(badge({y:.18,s:1.1,anim:"pop",delay:.7,ilen:.4}),{...listing(.5,.47,.3,.9),delay:.73,ilen:.4});const pb=price({x:.82,y:.27,s:.75,delay:.8,ilen:.4});if(pb)L.push(pb);L.push(small(.76,{delay:.84,ilen:.4}));fx={balloons:true,popcornrain:true};showSafe=true}
   else if(tall){L.push(badge({x:h.price?.32:.5,y:.185,s:1.05,r:-.06}),mk("text","title",{text:title,y:.275,size:fitSize(title,"display",120,56,820),anim:"slide",delay:.05}),mk("text","sub",{text:h.span||"",y:.31,size:42,c1:"#ffd84a",anim:"slide",delay:.08}));
     L.push(...row(.43,.72,.2,.8));L.push(listing(.5,.635,.22));const pb=price({x:.7,y:.185,s:.85});if(pb)L.push(pb);L.push(small(.765));showSafe=true}

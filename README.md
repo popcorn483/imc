@@ -78,6 +78,12 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## Deals from imc.ie
+
+The importer reads imc.ie's booking page for a showing on each day of the coming week, plus a matinee, a Kids Club and a LUXX showing. It records which weekdays each ticket type and bundle appears on, so day-only offers come through: the Wednesday Meal Deal, the LUXX Wednesday Meal Deal, and a Family Ticket sold Monday to Thursday. The Deals page's **Deals on imc.ie** shows every one with its price, the days it runs and what's in it. Each has one-click Animated / Still / Story posts and "Add to my deals". Contents marked "check" were inferred from the name, because imc.ie doesn't list them.
+
+Kids Club ads let you tick which films to include and turn the film times on or off. The choices are remembered per cinema and also apply to the copied caption.
+
 ## Share to Story (IMC Enniskillen)
 
 With Enniskillen selected, the editor's top bar has **Share to Story**. It makes the design as a 9:16 still (JPG) or a moving video (MP4), and offers to switch the design to Story size if it isn't already.
