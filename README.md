@@ -78,6 +78,14 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## Share to Story (IMC Enniskillen)
+
+With Enniskillen selected, the editor's top bar has **Share to Story**. It makes the design as a 9:16 still (JPG) or a moving video (MP4), and offers to switch the design to Story size if it isn't already.
+- **On a phone:** after **Get it ready**, **Share** opens the phone's share sheet. Pick Facebook, or Meta Business Suite to post as the page, then choose Story. In Facebook, check you're posting as IMC Enniskillen, not your own profile.
+- **On a computer:** it saves the file and links to IMC Enniskillen's story composer in Meta Business Suite.
+
+Facebook doesn't let websites post to a page's story directly, so the last tap is in Facebook. To add another cinema, put its page in `FB_PAGES` in `editor.html`.
+
 ## Kids Club
 
 Kids Club showings come from imc.ie, which labels each one, so there's nothing to keep up to date by hand.

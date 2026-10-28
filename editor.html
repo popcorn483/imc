@@ -104,6 +104,9 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .stagebar{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:8px 16px 12px;font-size:12px;color:var(--muted)}
 .stagebar .dims{font-family:var(--f-mono)}
 .menuwrap{position:relative}
+.storybtn{background:linear-gradient(135deg,#1877f2,#7b3fe4);color:#fff;border-color:transparent}.storybtn::before{content:"";width:14px;height:14px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
+.stwarn{border:1px solid rgba(255,194,61,.5);background:rgba(255,194,61,.08);border-radius:10px;padding:10px 12px;margin:8px 0}.stwarn .note{margin:0 0 8px}
+.ststeps{margin:10px 0;padding-left:20px;line-height:1.55;font-size:14px}.ststeps a{color:var(--gold)}
 .ddbtn small{font-weight:600;opacity:.7;margin-right:2px}
 .ddmenu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;min-width:260px;background:var(--panel,#14112e);border:1px solid var(--line);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:6px;display:flex;flex-direction:column;gap:2px}
 .ddmenu.right{left:auto;right:0}
@@ -189,6 +192,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
           <button role="menuitem" id="pdf">PDF<small>Print-ready, A4/A3 for print sizes</small></button>
           <button role="menuitem" id="copy">Copy image<small>Paste straight into Facebook or a message</small></button>
         </div></div>
+      <button class="btn storybtn" id="storyBtn" type="button" hidden>Share to Story</button>
       <button class="btn primary" id="png">Download PNG</button>
     </div>
   </header>
@@ -326,6 +330,18 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
     <div class="bar" id="gifBarWrap" hidden><div id="gifBar"></div></div>
     <p class="note" id="gifStatus" aria-live="polite"></p>
     <div class="row" style="justify-content:flex-end"><button class="btn" id="gifCancel">Close</button><button class="btn primary" id="gifGo">Create GIF</button></div>
+  </div>
+</div>
+<div class="modal" id="storyModal" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="stTitle">
+    <h2 id="stTitle">Share to story</h2>
+    <div class="stwarn" id="stFmt"><p class="note">Facebook stories are tall (9:16). This design is a different shape, so it would show with bands above and below.</p><button class="btn" id="stToStory">Switch to Story size</button></div>
+    <div id="stKind"><div class="lbl">Share as</div><div class="seg" style="width:max-content"><button data-stk="video">Video (moving)</button><button data-stk="image">Still image</button></div></div>
+    <div id="stPhone"><ol class="ststeps"><li>Tap <b>Get it ready</b>, then <b>Share</b>.</li><li>Choose <b>Facebook</b>, or <b>Meta Business Suite</b> to post straight as the cinema.</li><li>In Facebook, make sure you're posting as <b>IMC Enniskillen</b> (tap the profile picture to switch from your own profile), then choose <b>Story</b>.</li></ol></div>
+    <div id="stDesk" hidden><ol class="ststeps"><li><b>Get it ready</b> saves the story file to this computer.</li><li>Open the <a id="stBS" href="https://business.facebook.com/" target="imc-fb">IMC Enniskillen story composer ↗</a> in Meta Business Suite, add the file and press <b>Share story</b>.</li></ol></div>
+    <div class="bar" id="stBarWrap" hidden><div id="stBar"></div></div>
+    <p class="note" id="stStatus" aria-live="polite"></p>
+    <div class="row" style="justify-content:flex-end"><button class="btn" id="stClose">Close</button><button class="btn primary" id="stPrep">Get it ready</button><button class="btn primary" id="stShare" hidden>Share…</button></div>
   </div>
 </div>
 <div class="modal" id="vidModal" hidden>
@@ -1560,6 +1576,33 @@ const tlEnd=()=>{if(!tlDrag)return;const was=tlDrag;tlDrag=null;if(!was.scrub){r
 $("#tl").addEventListener("pointerup",tlEnd);$("#tl").addEventListener("pointercancel",tlEnd);
 $("#tlPlay").onclick=()=>$("#play").click();
 
+/* ---------- Share to Story: the cinema's own Facebook page (only cinemas listed here) ---------- */
+const FB_PAGES={enniskillen:{name:"IMC Enniskillen",id:"100063481303499",handle:"imcenniskillen"}};
+const fbPage=()=>FB_PAGES[ownSite()]||null;
+let stFile=null,stBusy=false;
+function syncStoryBtn(){const p=fbPage(),b=$("#storyBtn");if(b){b.hidden=!p;if(p)b.title="Share this design to "+p.name+"'s Facebook story"}}
+function stOpen(){const p=fbPage();if(!p)return;select(null);stFile=null;const anim=hasMotion();
+  $("#stTitle").textContent="Share to "+p.name+"'s story";$("#stFmt").hidden=S.fmt==="story";$("#stKind").hidden=!anim;$$("#stKind [data-stk]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.stk===(anim?"video":"image")));
+  $("#stShare").hidden=true;$("#stPrep").hidden=false;$("#stPrep").disabled=false;$("#stStatus").textContent="";$("#stBarWrap").hidden=true;
+  const canShare=!!(navigator.canShare&&navigator.share);$("#stPhone").hidden=!canShare;$("#stDesk").hidden=canShare;$("#stBS").href="https://business.facebook.com/latest/story_composer?asset_id="+p.id;
+  $("#storyModal").hidden=false}
+function stKind(){const b=$('#stKind [aria-pressed="true"]');return b&&!$("#stKind").hidden?b.dataset.stk:"image"}
+$("#storyBtn").onclick=stOpen;
+$("#stClose").onclick=()=>{if(stBusy)return;$("#storyModal").hidden=true;ensureLoop()};
+$("#stKind").addEventListener("click",e=>{const b=e.target.closest("[data-stk]");if(!b)return;$$("#stKind [data-stk]").forEach(x=>x.setAttribute("aria-pressed",x===b));stFile=null;$("#stShare").hidden=true;$("#stPrep").hidden=false});
+$("#stToStory").onclick=()=>{S.fmt="story";syncFmt();clampPhoto();fit();commit();$("#stFmt").hidden=true;stFile=null;toast("Switched to Story size (9:16). Check nothing is cut off, then share")};
+$("#stPrep").onclick=async()=>{if(stBusy)return;stBusy=true;$("#stPrep").disabled=true;const p=fbPage(),kind=stKind();
+  try{if(kind==="video"){$("#stBarWrap").hidden=false;const res=await recordVideo({long:1280,loops:1},(q,m)=>{$("#stBar").style.width=Math.round(q*100)+"%";$("#stStatus").textContent=m},()=>false);
+      stFile=new File([res.blob],fileName(res.ext),{type:res.blob.type||"video/mp4"})}
+    else{const b=await exportBlob("image/jpeg",.92);stFile=new File([b],fileName("jpg"),{type:"image/jpeg"})}
+    const ok=!$("#stPhone").hidden&&navigator.canShare({files:[stFile]});
+    if(ok){$("#stPrep").hidden=true;$("#stShare").hidden=false;$("#stStatus").textContent="Ready. Tap Share, then choose Facebook (or Meta Business Suite)."}
+    else{saveBlob(stFile,stFile.name);$("#stStatus").textContent="Saved "+stFile.name+". Now open the story composer below and add it.";$("#stPhone").hidden=true;$("#stDesk").hidden=false}}
+  catch(e){$("#stStatus").textContent=kind==="video"?"This phone couldn't record the video. Choose Still image instead.":"Couldn't create the image. Try again."}
+  stBusy=false;$("#stPrep").disabled=false;$("#stBarWrap").hidden=true;ensureLoop()};
+/* the share sheet needs a fresh tap, so sharing is its own button once the file is ready */
+$("#stShare").onclick=async()=>{if(!stFile)return;const p=fbPage();try{await navigator.share({files:[stFile],title:p?p.name:"IMC"});$("#stStatus").textContent="Sent to the share sheet. In Facebook, check it's posting as "+(p?p.name:"the cinema")+" and choose Story."}
+  catch(e){if(e&&e.name==="AbortError")$("#stStatus").textContent="Share cancelled. Tap Share to try again.";else{saveBlob(stFile,stFile.name);$("#stStatus").textContent="Sharing isn't available here, so the file was saved instead."}}};
 /* ---------- GIF encoder (median-cut palette, ordered dither, LZW, unchanged pixels left transparent) ---------- */
 const GIF={
   palette(sm,n){const cnt=sm.length/3|0,idx=new Uint32Array(cnt);for(let i=0;i<cnt;i++)idx[i]=i;
@@ -1967,7 +2010,7 @@ async function boot(){buildMotionUI();
   syncLogo();syncSaved();renderMedia();
   loadLibrary().then(()=>{renderLibrary();if(selId)renderProps()});
   const imcP=loadImcData().then(()=>{renderWeb();renderPPhotos();ratingList().forEach(o=>loadRating(o.src));renderRatings();if(selId)renderProps()});
-  await loadOwn().catch(()=>{});await Promise.all([loadLuxxPics().catch(()=>{}),loadSitePics().catch(()=>{})]);
+  syncStoryBtn();await loadOwn().catch(()=>{});await Promise.all([loadLuxxPics().catch(()=>{}),loadSitePics().catch(()=>{})]);
   let handed=null;try{handed=localStorage.getItem("imc-handoff")}catch(e){}if(handed){await imcP;applyHandoff()}
   syncAll();commit();
   const faces=["900 40px 'Big Shoulders Display'","800 40px Figtree","700 40px Figtree","700 40px 'Playfair Display'","400 40px 'Bebas Neue'","500 20px 'IBM Plex Mono'","600 20px 'IBM Plex Mono'"];
