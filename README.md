@@ -78,6 +78,14 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## The editor on a phone
+
+On phones the editor works like an app:
+- **Top bar:** one line with back, size, undo/redo, Video ▾ (video, GIF, JPG, PDF, copy), Story and Save.
+- **Your design:** always in view.
+- **Bottom tabs:** Edit, Photo, Add, Layouts, Motion, Frame, Layers, Timing and Logo. Each opens a pull-up panel under the design; tap the tab again or **Done** to close it.
+- **Tapping something on the design** opens its Edit panel. A dot on Edit shows something is selected.
+
 ## Film times posts
 
 The times list is selected when a times post opens, so its options are on the right straight away:

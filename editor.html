@@ -179,6 +179,40 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
   .topact{margin-left:0}
   .stagebar .hint{display:none}
 }
+/* ---- phone layout: slim top bar, the design always in view, tools in a pull-up panel from a bottom tab bar ---- */
+.ptabs,.tlsheet,.sheethead,.top .sm{display:none}
+@media (max-width:760px){
+  html,body{height:100%;overflow:hidden}
+  .app{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto minmax(0,1fr) auto auto!important;height:100dvh!important}
+  .top{flex-wrap:nowrap;gap:6px;padding:8px max(10px,env(safe-area-inset-right,0px)) 8px max(10px,env(safe-area-inset-left,0px))}
+  .brandmark img,.brandmark b{display:none}.brandmark a{font-size:0}.brandmark a::before{content:"←";font-size:20px}
+  .topact{margin-left:auto;flex-wrap:nowrap;gap:5px}.top .btn{padding:7px 9px;font-size:12.5px}.top .btn.icon{width:32px}
+  .ddbtn small{display:none}#fmtBtn{max-width:118px;overflow:hidden;text-overflow:ellipsis}
+  .top .lg{display:none}.top .sm{display:inline}
+  .storybtn::before{width:11px;height:11px;border-width:2px}
+  .stage{order:0;grid-row:2;min-height:0}.canvaswrap{height:auto!important;padding:10px}
+  .stagebar{padding:4px 12px 6px;justify-content:center}.stagebar .hint,.stagebar .dims{display:none}
+  .app>.left,.app>.right{order:0;grid-row:3;display:none;border:0;border-top:1px solid var(--line);border-radius:16px 16px 0 0;max-height:none;height:46dvh;overflow:auto;padding:0;box-shadow:0 -10px 30px rgba(0,0,0,.35)}
+  .app>.left .tabs{display:none}
+  body[data-sheet] .sheethead{display:flex;position:sticky;top:0;z-index:5;background:var(--panel);align-items:center;justify-content:space-between;padding:8px 14px 6px;border-bottom:1px solid var(--line)}
+  .sheethead b{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.sheethead button{all:unset;cursor:pointer;font-size:13px;font-weight:700;color:var(--ink);padding:6px 10px;border-radius:8px;background:var(--panel2)}
+  .sheethead::before{content:"";position:absolute;left:50%;top:4px;width:36px;height:4px;margin-left:-18px;border-radius:2px;background:var(--line)}
+  body[data-sheet="photo"] .app>.left,body[data-sheet="frame"] .app>.left,body[data-sheet="motion"] .app>.left,body[data-sheet="add"] .app>.left,body[data-sheet="layouts"] .app>.left,body[data-sheet="logo"] .app>.left{display:block}
+  body[data-sheet="edit"] .app>.right,body[data-sheet="layers"] .app>.right{display:block}
+  body[data-sheet="edit"] .app>.right .layersec{display:none}body[data-sheet="layers"] .app>.right #props{display:none}
+  body[data-sheet="timing"] .tlsheet{display:block;grid-row:3;height:46dvh;overflow:auto;background:var(--panel);border-top:1px solid var(--line);border-radius:16px 16px 0 0;padding-top:6px}
+  .tlsheet .timeline{max-height:none;padding-top:10px}.tlsheet .tlgrid,.tlsheet .tlrow{grid-template-columns:96px minmax(0,1fr)}
+  .stage>.timeline{display:none!important}
+  .ptabs{display:flex;grid-row:4;overflow-x:auto;scrollbar-width:none;background:var(--panel);border-top:1px solid var(--line);padding:4px max(4px,env(safe-area-inset-left,0px)) calc(4px + env(safe-area-inset-bottom,0px))}
+  .ptabs::-webkit-scrollbar{display:none}
+  .ptabs button{all:unset;cursor:pointer;flex:1 0 auto;min-width:58px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 6px 4px;border-radius:10px;font-size:10.5px;font-weight:700;color:var(--muted);position:relative}
+  .ptabs button i{font-style:normal;font-size:19px;line-height:1}
+  .ptabs button[aria-pressed="true"]{color:var(--ink);background:var(--panel2)}
+  .ptabs button[data-pt="edit"].has::after{content:"";position:absolute;top:5px;right:12px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  .ptabs button[hidden]{display:none}
+  .dlg{max-height:88dvh;overflow:auto}
+  .ddmenu{position:fixed;left:8px!important;right:8px!important;top:56px;min-width:0;max-height:70dvh;overflow:auto}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -199,12 +233,13 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
           <button role="menuitem" id="pdf">PDF<small>Print-ready, A4/A3 for print sizes</small></button>
           <button role="menuitem" id="copy">Copy image<small>Paste straight into Facebook or a message</small></button>
         </div></div>
-      <button class="btn storybtn" id="storyBtn" type="button" hidden>Share to Story</button>
-      <button class="btn primary" id="png">Download PNG</button>
+      <button class="btn storybtn" id="storyBtn" type="button" hidden><span class="lg">Share to Story</span><span class="sm">Story</span></button>
+      <button class="btn primary" id="png"><span class="lg">Download PNG</span><span class="sm">Save</span></button>
     </div>
   </header>
 
   <aside class="left">
+    <div class="sheethead"><b></b><button type="button">Done</button></div>
     <div class="tabs" role="tablist" id="tabs">
       <button role="tab" data-tab="photo" aria-selected="true">Photo</button>
       <button role="tab" data-tab="frame" aria-selected="false">Frame</button>
@@ -323,9 +358,15 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
   </section>
 
   <aside class="right">
+    <div class="sheethead"><b></b><button type="button">Done</button></div>
     <div id="props"></div>
-    <div class="sec"><h3>Layers</h3><div class="layers" id="layerList"></div></div>
+    <div class="sec layersec"><h3>Layers</h3><div class="layers" id="layerList"></div></div>
   </aside>
+  <div class="tlsheet" id="tlsheet"><div class="sheethead"><b>Timing</b><button type="button">Done</button></div></div>
+  <nav class="ptabs" id="ptabs" aria-label="Editor tools">
+    <button data-pt="edit"><i>✏️</i>Edit</button><button data-pt="photo"><i>🖼️</i>Photo</button><button data-pt="add"><i>➕</i>Add</button><button data-pt="layouts"><i>🗂️</i>Layouts</button>
+    <button data-pt="motion"><i>✨</i>Motion</button><button data-pt="frame"><i>🔲</i>Frame</button><button data-pt="layers"><i>📚</i>Layers</button><button data-pt="timing" hidden><i>⏱️</i>Timing</button><button data-pt="logo"><i>🔵</i>Logo</button>
+  </nav>
 </div>
 <div class="modal" id="gifModal" hidden>
   <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="gifTitle">
@@ -1279,7 +1320,7 @@ function kpx(){const r=cv.getBoundingClientRect();return r.width?cv.width/r.widt
 function corners(L,W,H,u,k){const co=Math.cos(L.r||0),si=Math.sin(L.r||0),sc=L.s*u,hw=(L._w||0)/2*sc,hh=(L._h||0)/2*sc,cx=L.x*W,cy=L.y*H;
   const P=(lx,ly)=>({x:cx+lx*co-ly*si,y:cy+lx*si+ly*co});return{c:{x:cx,y:cy},tl:P(-hw,-hh),tr:P(hw,-hh),br:P(hw,hh),bl:P(-hw,hh),top:P(0,-hh),rot:P(0,-hh-46*k)}}
 function drawOverlay(c,W,H,u){const k=kpx();c.save();
-  if(!photoImg&&(S.bg||"photo")==="photo"){c.fillStyle="rgba(255,255,255,.5)";c.font=`600 ${Math.max(14*k,26*u)}px ${FONTS.body}`;c.textAlign="center";c.fillText("Drop a photo here, paste one, or use Photo → Upload",W/2,H/2);c.textAlign="left"}
+  if(!photoImg&&(S.bg||"photo")==="photo"){c.fillStyle="rgba(255,255,255,.5)";c.font=`600 ${Math.max(14*k,26*u)}px ${FONTS.body}`;c.textAlign="center";c.fillText(matchMedia("(max-width:760px)").matches?"Tap Photo below to add a photo":"Drop a photo here, paste one, or use Photo → Upload",W/2,H/2);c.textAlign="left"}
   if(showSafe&&S.fmt==="story"){const top=H*.13,bot=H*.22,rt=W*.13;c.fillStyle="rgba(255,79,216,.13)";c.fillRect(0,0,W,top);c.fillRect(0,H-bot,W,bot);c.fillRect(W-rt,top,rt,H-top-bot);
     c.strokeStyle="rgba(255,79,216,.75)";c.lineWidth=1.5*k;c.setLineDash([8*k,6*k]);c.strokeRect(0,top,W-rt,H-top-bot);c.setLineDash([]);c.fillStyle="rgba(255,255,255,.85)";c.font=`600 ${Math.max(11*k,22*u)}px ${FONTS.body}`;c.textAlign="center";
     c.fillText("Reels: app buttons cover this",W/2,top*.55);c.fillText("Reels: caption & buttons cover this",W/2,H-bot*.5);c.textAlign="left"}
@@ -1502,7 +1543,7 @@ function syncLayers(){const el=$("#layerList");if(!S.layers.length){el.innerHTML
 $("#layerList").addEventListener("click",e=>{const eye=e.target.closest("[data-eye]");if(eye){const L=S.layers.find(l=>l.id===eye.dataset.eye);L.hidden=!L.hidden;syncLayers();draw();commit();return}
   const r=e.target.closest("[data-sel]");if(r)select(r.dataset.sel)});
 $("#layerList").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){const r=e.target.closest("[data-sel]");if(r){e.preventDefault();select(r.dataset.sel)}}});
-function select(id){if(selId===id)return;selId=id;renderProps();syncLayers();draw()}
+function select(id){if(selId===id)return;selId=id;renderProps();syncLayers();draw();syncPtabs();if(id&&PHONE.matches&&document.body.dataset.sheet!=="edit"&&!drag?.photo)sheet("edit")}
 
 /* ---------- pointer ---------- */
 function pt(e){const r=cv.getBoundingClientRect(),k=cv.width/r.width;return{x:(e.clientX-r.left)*k,y:(e.clientY-r.top)*k}}
@@ -1577,7 +1618,7 @@ function buildMotionUI(){
 function syncFxCtl(){const a=S.motion.amt||1;$("#fxAmt").value=a;$("#fxAmtO").textContent=Math.round(a*100)+"%";const cur=S.motion.fxc||"";
   $("#fxCol").innerHTML=`<button class="sw" data-fxc="" aria-pressed="${!cur}" title="Auto" aria-label="Automatic colours" style="background:conic-gradient(#ffd84a,#e2452e,#ff8fab,#4fb6ff,#7bd148,#ffd84a)"></button>`+SWATCHES.concat(["#ff8fab","#7bd148","#b9a2ff"]).map(h=>`<button class="sw" data-fxc="${h}" aria-pressed="${cur===h}" aria-label="Effect colour ${h}" style="background:${h}"></button>`).join("")+`<input type="color" id="fxColPick" value="${cur||"#ffd84a"}" aria-label="Custom effect colour">`}
 function syncMotion(){syncFxCtl();const fx=S.motion.fx||{};$$("#fxTiles .tile").forEach(t=>t.setAttribute("aria-pressed",!!fx[t.dataset.fx]));$$("#durSeg button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.dur===S.motion.dur));
-  const on=hasMotion();if($("#tl"))setTimeout(syncTimeline,0);$("#play").hidden=!on;$("#play").textContent=playing?"Pause":"Play";$("#gif").classList.toggle("live",on);$("#saveBtn").classList.toggle("live",on);$("#saveBtn").textContent=on?"Video, GIF & more ▾":"More ways to save ▾"}
+  const on=hasMotion();if($("#tl"))setTimeout(syncTimeline,0);$("#play").hidden=!on;$("#play").textContent=playing?"Pause":"Play";$("#gif").classList.toggle("live",on);$("#saveBtn").classList.toggle("live",on);$("#saveBtn").innerHTML=on?'<span class="lg">Video, GIF &amp; more ▾</span><span class="sm">Video ▾</span>':'<span class="lg">More ways to save ▾</span><span class="sm">More ▾</span>';syncPtabs()}
 $("#fxTiles").addEventListener("click",e=>{const t=e.target.closest("[data-fx]");if(!t)return;const k=t.dataset.fx;S.motion.fx={...S.motion.fx,[k]:!S.motion.fx[k]};
   if(k==="chase"&&S.motion.fx.chase&&S.frame.style!=="marquee"){S.frame.style="marquee";syncFrame();toast("Switched to the Marquee frame so the lights can chase")}
   commit();draw()});
@@ -1645,6 +1686,18 @@ $("#stPrep").onclick=async()=>{if(stBusy)return;stBusy=true;$("#stPrep").disable
 /* the share sheet needs a fresh tap, so sharing is its own button once the file is ready */
 $("#stShare").onclick=async()=>{if(!stFile)return;const p=fbPage();try{await navigator.share({files:[stFile],title:p?p.name:"IMC"});$("#stStatus").textContent="Sent to the share sheet. In Facebook, check it's posting as "+(p?p.name:"the cinema")+" and choose Story."}
   catch(e){if(e&&e.name==="AbortError")$("#stStatus").textContent="Share cancelled. Tap Share to try again.";else{saveBlob(stFile,stFile.name);$("#stStatus").textContent="Sharing isn't available here, so the file was saved instead."}}};
+/* ---------- phone layout: bottom tabs open a pull-up panel; the design stays in view above it ---------- */
+const PHONE=matchMedia("(max-width:760px)");
+const PT_NAMES={edit:"Edit",photo:"Photo",frame:"Frame",motion:"Motion",add:"Add",layouts:"Layouts",logo:"Logo",layers:"Layers",timing:"Timing"};
+function sheet(k){const b=document.body;if(!k){delete b.dataset.sheet}else{b.dataset.sheet=k;const t=$(`#tabs [data-tab="${k}"]`);if(t&&t.getAttribute("aria-selected")!=="true")t.click();$$(".sheethead b").forEach(x=>x.textContent=PT_NAMES[k]||"")}
+  $$("#ptabs [data-pt]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.pt===k));setTimeout(fit,30)}
+function phoneMode(){const on=PHONE.matches,tl=$("#tl");document.body.classList.toggle("phone",on);
+  if(on){if(tl&&tl.parentElement.id!=="tlsheet")$("#tlsheet").appendChild(tl)}else{if(tl&&tl.parentElement.id==="tlsheet")$("#stage").appendChild(tl);delete document.body.dataset.sheet}
+  syncPtabs();setTimeout(fit,30)}
+function syncPtabs(){const e=$('#ptabs [data-pt="edit"]');if(e)e.classList.toggle("has",!!selId);const tm=$('#ptabs [data-pt="timing"]');if(tm)tm.hidden=!(typeof tlShown==="function"&&tlShown())}
+$("#ptabs").addEventListener("click",e=>{const b=e.target.closest("[data-pt]");if(!b)return;const k=b.dataset.pt;sheet(document.body.dataset.sheet===k?null:k)});
+document.addEventListener("click",e=>{if(e.target.closest(".sheethead button"))sheet(null)});
+PHONE.addEventListener?PHONE.addEventListener("change",phoneMode):PHONE.addListener(phoneMode);
 /* ---------- GIF encoder (median-cut palette, ordered dither, LZW, unchanged pixels left transparent) ---------- */
 const GIF={
   palette(sm,n){const cnt=sm.length/3|0,idx=new Uint32Array(cnt);for(let i=0;i<cnt;i++)idx[i]=i;
@@ -1974,7 +2027,7 @@ function applyKids(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,f
   toast("Kids Club "+(wk?"weekend":"week")+" ad ready, with times from imc.ie. Click any text to change it")}
 function applyListing(h){S.label="film times "+(h.sub||"");const rows=h.rows||[];rows.forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src)});S.bg="stage";S.frame={...S.frame,style:"brandbar",logo:true};const f=FORMATS[S.fmt],u=Math.min(f.w,f.h)/1080,avail=(f.h-150*u)/u*.92,need=listingH(rows.length);
   S.layers=[mk("listing",null,{text:h.heading||"Today at "+SITE_NAME,sub:h.sub||new Date().toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"}),rows,y:(f.h-150*u)/2/f.h,s:Math.min(1,avail/need,(f.w/u*.92)/940),day:h.date||undefined})];
-  S.motion={...S.motion,fx:{}};selId=S.layers[0].id;syncAll();commit()}
+  S.motion={...S.motion,fx:{}};selId=S.layers[0].id;syncAll();commit();if(matchMedia("(max-width:760px)").matches)setTimeout(()=>sheet("edit"),50)}
 $("#addListing").onclick=()=>{const rows=todayRows();if(rows.length){applyListing({rows});toast("Today's times added from imc.ie")}else{applyListing({rows:[{t:"Film title",times:["13:00","15:30","18:00"],cert:"12A"},{t:"Another film",times:["14:15","20:30"],cert:"15"}]});toast("Example rows added. Edit them in the panel on the right")}};
 
 /* ---------- film poster graphics (from the hub) ---------- */
@@ -2052,7 +2105,7 @@ async function boot(){buildMotionUI();
   syncLogo();syncSaved();renderMedia();
   loadLibrary().then(()=>{renderLibrary();if(selId)renderProps()});
   const imcP=loadImcData().then(()=>{renderWeb();renderPPhotos();ratingList().forEach(o=>loadRating(o.src));renderRatings();if(selId)renderProps()});
-  syncStoryBtn();await loadOwn().catch(()=>{});await Promise.all([loadLuxxPics().catch(()=>{}),loadSitePics().catch(()=>{})]);
+  syncStoryBtn();phoneMode();await loadOwn().catch(()=>{});await Promise.all([loadLuxxPics().catch(()=>{}),loadSitePics().catch(()=>{})]);
   let handed=null;try{handed=localStorage.getItem("imc-handoff")}catch(e){}if(handed){await imcP;applyHandoff()}
   syncAll();commit();
   const faces=["900 40px 'Big Shoulders Display'","800 40px Figtree","700 40px Figtree","700 40px 'Playfair Display'","400 40px 'Bebas Neue'","500 20px 'IBM Plex Mono'","600 20px 'IBM Plex Mono'"];
