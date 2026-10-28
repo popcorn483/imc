@@ -112,6 +112,10 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .frchk input{width:18px;height:18px;margin:0}.frw input.frt{font-weight:700;padding:5px 7px;font-size:13px;min-width:0}
 .frw input.frtimes{grid-column:2;font-family:var(--f-mono);font-size:12px;padding:5px 7px;min-width:0}.frw select{grid-column:3;font-size:12px;padding:4px}
 .frw .frlx{grid-column:2;font-size:12px;display:flex;gap:6px;align-items:center;color:var(--muted)}.frw .frlx input{margin:0}
+.frw .frkc{grid-column:2/4;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}.frw .frkc span{white-space:nowrap}.frw .frkc input{flex:1;min-width:0;font-family:var(--f-mono);font-size:12px;padding:4px 7px}
+.frw .frkc.on span{color:#2a1800;background:#ffc23d;border-radius:99px;padding:1px 8px;font-weight:800}.frw .frkc.on input{border-color:#ffc23d}
+.frw:has(.frkc.on){box-shadow:inset 3px 0 0 #ffc23d}
+.kcnote{font-size:12.5px;padding:8px 10px;border-radius:9px;background:rgba(255,194,61,.12);border:1px solid rgba(255,194,61,.45);line-height:1.45}.kcnote.none{background:transparent;border-color:var(--line);color:var(--muted)}
 .frbtns{display:flex;gap:3px}.mini{all:unset;cursor:pointer;width:24px;height:24px;display:grid;place-items:center;border-radius:6px;font-size:13px;color:var(--ink);background:rgba(255,255,255,.06)}.mini:hover{background:rgba(255,255,255,.14)}.mini[disabled]{opacity:.3;cursor:default}.mini.danger{color:#ff8a7a}
 .ststeps{margin:10px 0;padding-left:20px;line-height:1.55;font-size:14px}.ststeps a{color:var(--gold)}
 .ddbtn small{font-weight:600;opacity:.7;margin-right:2px}
@@ -955,13 +959,14 @@ function drawListing(c,L){const rows=(L.rows||[]).filter(r=>!r.hide).slice(0,16)
     c.font=`600 25px ${FONTS.mono}`;let tx=X+w-pad;const times=(r.times||[]).slice();const pills=[];let used=0;
     for(let i=times.length-1;i>=0;i--){const pw=c.measureText(times[i]).width+26;if(used+pw+10>w*.5){pills.unshift("+"+(i+1));break}pills.unshift(times[i]);used+=pw+10}
     for(let i=pills.length-1;i>=0;i--){const t=pills[i],pw=c.measureText(t).width+26;tx-=pw;rr(c,tx,cy-22,pw,44,22);const kc=(r.kids||[]).includes(t);c.fillStyle=t.startsWith("+")?"rgba(255,216,74,.18)":kc?"#ffc23d":"rgba(255,255,255,.12)";c.fill();c.fillStyle=t.startsWith("+")?"#ffd84a":kc?"#2a1800":"#ffffff";c.fillText(t,tx+13,cy+9);tx-=10}
-    let lx=X+pad;c.font=`800 33px ${FONTS.body}`;const extra=(r.cert?70:0)+(r.luxx?90:0);const title=fitText(c,r.t||"",tx-lx-extra-16);c.fillStyle="#ffffff";c.fillText(title,lx,cy+12);lx+=c.measureText(title).width+14;
+    let lx=X+pad;c.font=`800 33px ${FONTS.body}`;const kidsRow=(r.kids||[]).length>0,extra=(r.cert?70:0)+(r.luxx?90:0)+(kidsRow?150:0);const title=fitText(c,r.t||"",tx-lx-extra-16);c.fillStyle="#ffffff";c.fillText(title,lx,cy+12);lx+=c.measureText(title).width+14;
     const ri=r.cert&&ratingImg(ratingFor(r.cert,r.system||"bbfc",L.rsys||ratingSys));
     if(ri){const ih=40,iw=ih*(ri.naturalWidth||ih)/(ri.naturalHeight||ih);c.drawImage(ri,lx,cy-ih/2,iw,ih);lx+=iw+10}
     else if(r.cert){c.font=`700 19px ${FONTS.mono}`;const cw=c.measureText(r.cert).width+16;rr(c,lx,cy-16,cw,32,6);c.strokeStyle="rgba(255,255,255,.55)";c.lineWidth=2;c.stroke();c.fillStyle="#fff";c.fillText(r.cert,lx+8,cy+7);lx+=cw+10}
-    if(r.luxx){c.font=`700 22px ${FONTS.serif}`;c.fillStyle="#ffc23d";ft(c,"LUXX",lx,cy+8,4,"left")}
+    if(r.luxx){c.font=`700 22px ${FONTS.serif}`;c.fillStyle="#ffc23d";ft(c,"LUXX",lx,cy+8,4,"left");lx+=90}
+    if(kidsRow){c.font=`900 18px ${FONTS.body}`;const kt="KIDS CLUB",kw=c.measureText(kt).width+22;rr(c,lx,cy-15,kw,30,15);c.fillStyle="#ffc23d";c.fill();c.fillStyle="#2a1800";c.fillText(kt,lx+11,cy+6)}
     y+=80});
-  if(rows.some(r=>(r.kids||[]).length)){c.font=`800 20px ${FONTS.body}`;const kt="KIDS CLUB",kw=c.measureText(kt).width+20;rr(c,X+w-pad-kw,Y+pad+88,kw,30,15);c.fillStyle="#ffc23d";c.fill();c.fillStyle="#2a1800";c.fillText(kt,X+w-pad-kw+10,Y+pad+110)}
+  if(rows.some(r=>(r.kids||[]).length)){c.font=`700 21px ${FONTS.body}`;const kt="Kids Club showings",kw=c.measureText(kt).width;const kx=X+w-pad-kw;c.fillStyle="rgba(255,255,255,.85)";c.fillText(kt,kx,Y+pad+110);const sw=40;rr(c,kx-sw-10,Y+pad+91,sw,24,12);c.fillStyle="#ffc23d";c.fill()}
   return{w,h}}
 /* ---------- film times: a proper film list in the panel (tick to show, edit, reorder), the day to show, and what to include ---------- */
 function lnow(){const p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()))p[x.type]=x.value;return{date:`${p.year}-${p.month}-${p.day}`,hm:`${p.hour}:${p.minute}`}}
@@ -978,7 +983,8 @@ function filmRowsHtml(L){const rows=L.rows||[],certs=["","U","PG","12A","12","15
     <div class="frbtns"><button class="mini" data-frmv="-1" title="Move up" aria-label="Move up" ${i?"":"disabled"}>↑</button><button class="mini" data-frmv="1" title="Move down" aria-label="Move down" ${i<rows.length-1?"":"disabled"}>↓</button><button class="mini danger" data-frdel title="Remove" aria-label="Remove ${esc(r.t)}">✕</button></div>
     <input class="frtimes" data-frk="times" value="${esc((r.times||[]).join(" "))}" placeholder="13:00 15:30" aria-label="Times for ${esc(r.t)}">
     <select data-frk="cert" aria-label="Certificate">${[...new Set([...certs,r.cert||""])].map(c=>`<option value="${c}" ${c===(r.cert||"")?"selected":""}>${c||"No cert"}</option>`).join("")}</select>
-    <label class="frlx"><input type="checkbox" data-frk="luxx" ${r.luxx?"checked":""}> LUXX</label></div>`).join("")}</div>
+    <label class="frlx"><input type="checkbox" data-frk="luxx" ${r.luxx?"checked":""}> LUXX</label>
+    <label class="frkc${(r.kids||[]).length?" on":""}"><span>🧸 Kids Club</span><input data-frk="kids" value="${esc((r.kids||[]).join(" "))}" placeholder="none" aria-label="Kids Club times for ${esc(r.t)}"></label></div>`).join("")}</div>
     <div class="row" style="gap:6px;margin-top:8px"><button class="btn" data-act="addrow">+ Add a film</button><button class="btn" data-act="sortrows">Sort by first time</button></div>`}
 function listingPanel(L){const ls=L.rsys||ratingSys,days=listDays(),n=lnow().date,cur=L.day||n,shown=(L.rows||[]).filter(r=>!r.hide).length;
   return`${days.length?`<label class="lbl" for="pp-day">Day</label><div class="row" style="gap:6px"><select id="pp-day" style="flex:1">${days.map(d=>`<option value="${d.date}" ${d.date===cur?"selected":""}>${esc(dayLabel(d.date))}</option>`).join("")}</select></div>
@@ -986,6 +992,7 @@ function listingPanel(L){const ls=L.rsys||ratingSys,days=listDays(),n=lnow().dat
     <label class="lbl" for="pp-text">Heading</label><input id="pp-text" type="text" value="${esc(L.text||"")}"><label class="lbl" for="pp-sub">Date line</label><input id="pp-sub" type="text" value="${esc(L.sub||"")}">
     <div class="lbl">Show on the post</div><div class="row" style="gap:12px;flex-wrap:wrap"><label class="check"><input type="checkbox" id="pp-shtimes" ${L.hideTimes?"":"checked"}> Times</label><label class="check"><input type="checkbox" id="pp-shcert" ${L.hideCert?"":"checked"}> Certificates</label><label class="check"><input type="checkbox" id="pp-shlx" ${L.hideLuxx?"":"checked"}> LUXX tags</label><label class="check"><input type="checkbox" id="pp-shkids" ${L.hideKids?"":"checked"}> Kids Club colour</label></div>
     ${L.hideCert?"":`<div class="seg" id="pp-lsys" style="width:max-content;margin-top:6px"><button data-pls="bbfc" aria-pressed="${ls==="bbfc"}">BBFC</button><button data-pls="ifco" aria-pressed="${ls==="ifco"}">IFCO</button></div>`}
+    ${(()=>{const k=(L.rows||[]).filter(r=>!r.hide&&(r.kids||[]).length);return k.length?`<div class="kcnote">🧸 <b>Kids Club ${L.day&&L.day!==lnow().date?"that day":"today"}:</b> ${k.map(r=>esc(r.t)+" "+r.kids.join(", ")).join(" · ")}</div>`:`<div class="kcnote none">No Kids Club showings on this day.</div>`})()}
     <div class="lbl" style="display:flex;justify-content:space-between"><span>Films (${shown} shown${shown>16?", first 16 fit":""})</span><span class="note" style="margin:0">Untick to hide</span></div>${filmRowsHtml(L)}`}
 function parseRows(s){return String(s||"").split("\n").map(l=>l.split("|").map(x=>x.trim())).filter(p=>p[0]).map(([t,times,cert,lx])=>({t,times:(times||"").split(/[\s,]+/).filter(Boolean),cert:cert||"",luxx:/luxx/i.test(lx||"")}))}
 function rowsText(rows){return(rows||[]).map(r=>[r.t,(r.times||[]).join(" "),r.cert||"",r.luxx?"LUXX":""].join(" | ").replace(/( \| )+$/,"")).join("\n")}
@@ -1505,7 +1512,7 @@ $("#props").addEventListener("input",e=>{const L=getSel();if(!L)return;const id=
   else if(id==="pp-ilen"){L.ilen=+e.target.value;syncTimeline()}
   else if(id==="pp-items"){L.items=e.target.value;commitSoon()}
   else if(id==="pp-rows"){L.rows=parseRows(e.target.value);commitSoon()}
-  else if(e.target.closest("[data-fr]")&&e.target.dataset.frk&&e.target.type!=="checkbox"&&e.target.tagName!=="SELECT"){const r=L.rows[+e.target.closest("[data-fr]").dataset.fr],k=e.target.dataset.frk;if(r){if(k==="times")r.times=e.target.value.split(/[\s,]+/).filter(Boolean);else r[k]=e.target.value;commitSoon()}}
+  else if(e.target.closest("[data-fr]")&&e.target.dataset.frk&&e.target.type!=="checkbox"&&e.target.tagName!=="SELECT"){const r=L.rows[+e.target.closest("[data-fr]").dataset.fr],k=e.target.dataset.frk;if(r){if(k==="times"||k==="kids"){r[k]=e.target.value.split(/[\s,]+/).filter(Boolean);if(k==="kids")r.times=[...new Set([...(r.times||[]),...r.kids])].sort()}else r[k]=e.target.value;draw();commitSoon()}}
   else if(e.target.type==="color"){const k=e.target.closest("[data-colour]").dataset.colour;L[k]=e.target.value}
   else return;draw();if(id==="pp-text"||id==="pp-sub"){syncLayers();commitSoon()}});
 $("#props").addEventListener("change",e=>{const L=getSel();if(!L)return;const id=e.target.id;
