@@ -227,6 +227,11 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .lxfilm img{width:70px;aspect-ratio:2/3;object-fit:cover;border-radius:6px}.lxfilm .m{color:var(--muted);font-size:12px;margin-left:6px}.lxfilm .row-btns{margin-top:8px}
 .lxslots{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}.lxslots span{font-family:var(--f-mono,monospace);font-size:12px;padding:2px 6px;border-radius:5px;background:var(--chip)}
 .lxcaps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}.lxcap{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start}.lxcap p{margin:0;flex:1}
+.offers{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px;margin:6px 0 8px}
+.offer{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:start;border:1px solid var(--line);border-radius:10px;padding:10px;background:linear-gradient(135deg,color-mix(in srgb,var(--amber) 10%,var(--panel)),var(--panel) 70%)}
+.offer img,.offer .oimg{width:64px;height:64px;object-fit:contain;border-radius:8px;background:var(--chip);display:grid;place-items:center;font-size:28px}
+.offer .pp{font-weight:800}.owhen{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:1px 7px;border-radius:99px;background:var(--amber);color:#2a1800;white-space:nowrap}
+.tickrow em{font-style:normal;font-size:11px;color:var(--muted)}
 .welgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px}@media (max-width:980px){.welgrid{grid-template-columns:1fr}}
 #wcv{width:100%;height:auto;aspect-ratio:16/9;border-radius:8px;background:#000;display:block}
 .wstyles{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;margin:6px 0 14px}
@@ -1239,15 +1244,40 @@ const hdOf=f=>String(f||"").replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,
 const pimg=(f,alt,style)=>`<img src="${esc(asset(hdOf(f)))}" data-fallback="${esc(asset(f))}" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback)this.src=this.dataset.fallback" alt="${esc(alt||"")}" loading="lazy"${style?` style="${style}"`:""}>`;
 function imcPrices(){return(IMC&&IMC.prices&&!Array.isArray(IMC.prices))?IMC.prices:null}
 function imcMatch(name){const P=imcPrices(),n=pnorm(name);if(!P||!n)return null;const all=[...(P.products||[]),...(P.bundles||[])];return all.find(x=>pnorm(x.name)===n)||all.find(x=>!x.details&&(pnorm(x.name).startsWith(n)||n.startsWith(pnorm(x.name))))||null}
+/* ---------- every deal imc.ie lists for this cinema (ticket deals like the Wednesday Meal Deal, plus ticket + snack bundles) ---------- */
+const DAYN={Mon:"Mondays",Tue:"Tuesdays",Wed:"Wednesdays",Thu:"Thursdays",Fri:"Fridays",Sat:"Saturdays",Sun:"Sundays"};
+function offerWhen(x,P){const so=x.seenOn||[],sd=(P&&P.sampledDays)||[];
+  if(so.length&&so.every(k=>k==="kids"))return"Kids Club showings";if(so.length&&so.every(k=>k==="luxx"))return"LUXX showings";
+  const d=(x.days||[]).filter(k=>sd.includes(k));if(sd.length>=3&&d.length&&d.length<sd.length)return d.length===1?DAYN[d[0]]+" only":d.map(k=>DAYN[k]).join(" & ")+" only";return""}
+function offerParts(x){const n=x.name.toLowerCase(),det=x.details||"";
+  if(det){const share=/share/i.test(det+n),items=det.split(/\s*\+\s*|\s*,\s*/).filter(Boolean),tk=(/(\d+)\s*(adult|child|ticket)/i.exec(det)||[])[1];return{items,products:["ticket",...(share?["popcorn","drink","drink"]:/combo|popcorn/i.test(det)?["popcorn","drink"]:[])],sure:true}}
+  if(/kids/.test(n)&&/meal/.test(n))return{items:["Kids Club ticket","Kids meal (check what's included)"],products:["ticket","tray"],sure:false};
+  if(/wednesday/.test(n)&&/meal/.test(n))return{items:["1 cinema ticket","Medium popcorn","Medium drink"],products:["ticket","popcorn","drink"],sure:true};
+  if(/meal|deal|combo/.test(n))return{items:["Cinema ticket","Popcorn & drink (check what's included)"],products:["ticket","popcorn","drink"],sure:false};
+  return{items:[x.name],products:["ticket"],sure:false}}
+function imcOffers(){const P=imcPrices();if(!P)return[];return[...(P.tickets||[]).filter(t=>/deal|meal|combo|bundle|offer|family|special|saver/i.test(t.name)).map(t=>({...t,k:"t"})),...(P.bundles||[]).map(b=>({...b,k:"b"}))]
+  .map(x=>({...x,when:offerWhen(x,P),...offerParts(x)}))}
+function offerDeal(x){return{id:newId(),name:x.name,items:x.items,price:x.price,was:"",small:x.when?x.when+(x.when.endsWith("only")?"":" only"):"",products:x.products,imc:true}}
+function offersHtml(){const L=imcOffers();if(!L.length)return"";const have=new Set(getDeals().map(d=>d.name.toLowerCase()));const P=imcPrices();
+  return`<h3>Deals on imc.ie <span class="tip" style="margin:0;font-weight:500">(${L.length} found · booking pages checked for ${((P&&P.sampledDays)||[]).join(", ")||"today"})</span></h3>
+  <div class="offers">${L.map((x,i)=>`<div class="offer">${x.file?pimg(x.file,x.name):`<div class="oimg" aria-hidden="true">🎟️</div>`}<div><b>${esc(x.name)}</b> <span class="pp">${esc(x.price)}</span>${x.when?` <span class="owhen">${esc(x.when)}</span>`:""}
+    <div class="tip" style="margin:2px 0 0;border:0;padding:0">${esc(x.items.join(" + "))}${x.sure?"":" · check the contents"}</div>
+    <div class="row-btns" style="margin-top:6px"><button class="btn small primary" data-omake="${i}" data-anim="1">Animated post</button><button class="btn small" data-omake="${i}" data-anim="0">Still</button><button class="btn small" data-omake="${i}" data-fmt="story" data-anim="1">Story</button>${have.has(x.name.toLowerCase())?`<span class="tip" style="margin:0;border:0;padding:4px">In your deals ✓</span>`:`<button class="btn small ghost" data-oadd="${i}">Add to my deals</button>`}</div></div></div>`).join("")}</div>
+  ${L.some(x=>!have.has(x.name.toLowerCase()))?`<div class="row-btns" style="margin:8px 0 14px"><button class="btn small" data-oaddall="1">Add all imc.ie deals to my deals</button></div>`:""}`}
+document.addEventListener("click",e=>{const g=k=>e.target.closest(`[data-${k}]`);let b;
+  if(b=g("omake")){const x=imcOffers()[+b.dataset.omake];if(x)openEditor({kind:"deal",deal:dealOut(offerDeal(x)),animated:b.dataset.anim==="1",fmt:b.dataset.fmt||"square"});return}
+  if(b=g("oadd")){const x=imcOffers()[+b.dataset.oadd];if(x){const ds=getDeals();ds.push(offerDeal(x));putDeals(ds);renderDeals();renderToday();toast(x.name+" added to your deals")}return}
+  if(b=g("oaddall")){const ds=getDeals(),have=new Set(ds.map(d=>d.name.toLowerCase()));let n=0;for(const x of imcOffers())if(!have.has(x.name.toLowerCase())){ds.push(offerDeal(x));n++}putDeals(ds);renderDeals();renderToday();toast(n+" imc.ie deal"+(n===1?"":"s")+" added")}});
 function renderPrices(){const el=$("#imcPrices");if(!el)return;const P=imcPrices();
   if(!P){el.innerHTML=IMC?`<div class="panel prices"><h2>Prices from imc.ie</h2><p class="tip">No prices imported for ${esc(S().name)} yet. The importer reads them from imc.ie's booking page on its next run.</p></div>`:"";return}
   const card=(x,k,i)=>`<div class="prod">${x.file?pimg(x.file,x.name):""}<b>${esc(x.name)}</b>${x.details?`<span class="tip" style="margin:0">${esc(x.details)}</span>`:""}<span class="pp">${esc(x.price)}</span>
     <div class="row-btns"><button class="btn small primary" data-pmake="${k}:${i}">Make a deal</button><button class="btn small" data-pclip="${k}:${i}">Video clip</button></div></div>`;
   el.innerHTML=`<div class="panel prices"><div class="ph"><h2>Prices from imc.ie</h2><span class="tip" style="margin:0">${esc(S().name)} · checked ${P.checked?new Date(P.checked).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"}):""}</span></div>
-    ${(P.tickets||[]).length?`<h3>Tickets</h3><div class="tickrow">${P.tickets.map(t=>`<span>${esc(t.name)} <b>${esc(t.price)}</b></span>`).join("")}</div>`:""}
+    ${offersHtml()}
+    ${(P.tickets||[]).length?`<h3>Tickets</h3><div class="tickrow">${P.tickets.map(t=>`<span>${esc(t.name)} <b>${esc(t.price)}</b>${(()=>{const w=offerWhen(t,P);return w?` <em>${esc(w)}</em>`:""})()}</span>`).join("")}</div>`:""}
     ${(P.bundles||[]).length?`<h3>Ticket + snack bundles</h3><div class="prodgrid">${P.bundles.map((x,i)=>card(x,"bundles",i)).join("")}</div>`:""}
     ${(P.products||[]).length?`<h3>Snacks</h3><div class="prodgrid">${P.products.filter(x=>!/flexi/i.test(x.name)).map(x=>card(x,"products",P.products.indexOf(x))).join("")}</div>`:""}
-    <p class="tip">Prices are read from imc.ie's booking page and can change. Ticket prices depend on the showing (matinee or evening).</p></div>`}
+    <p class="tip">Prices are read from imc.ie's booking pages for a showing on each day of the coming week, so day-only deals are included. They can change; some depend on the showing (matinee, evening, Kids Club, LUXX).</p></div>`}
 function dealFromImc(x){const nm=x.name.replace(/\s*\(.*?\)\s*/g," ").trim(),inc=(x.details||(/\((.*)\)/.exec(x.name)||[])[1]||"").split(/\s*(?:\+|,| and )\s*/).map(t=>t.trim()).filter(Boolean);
   return{id:newId(),name:nm,items:inc.length?inc:[nm],price:x.price,was:"",small:"",products:/kids/i.test(nm)?["tray"]:/nacho/i.test(nm)?["nachos"]:["popcorn","drink"],photos:x.file?[{src:x.file,label:nm}]:[]}}
 document.addEventListener("click",e=>{const m=e.target.closest("[data-pmake],[data-pclip]");if(!m)return;const P=imcPrices();if(!P)return;const[k,i]=(m.dataset.pmake||m.dataset.pclip).split(":"),x=(P[k]||[])[+i];if(!x)return;const d=dealFromImc(x);

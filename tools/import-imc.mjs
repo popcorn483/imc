@@ -469,9 +469,10 @@ if (PAGES && !blocked) {
   for (const it of merged.products.concat(merged.bundles)) if (it.image) it.file = await download(it.image, "products", slug(it.image.split("/").pop().replace(/\.\w+$/, "")));
   if (merged.tickets.length + merged.products.length) result.prices = merged;
   note(`prices: ${merged.tickets.length} ticket types, ${merged.bundles.length} bundles, ${merged.products.length} products`);
-  if (!result.prices && prev && prev.prices && !Array.isArray(prev.prices)) result.prices = prev.prices;
-  if (result.prices) for (const it of result.prices.products.concat(result.prices.bundles)) if (it.file) used.add(it.file);
 }
+// a blocked or failed run keeps the last prices (and their photos) rather than dropping them
+if (!result.prices && prev && prev.prices && !Array.isArray(prev.prices)) result.prices = prev.prices;
+if (result.prices) for (const it of (result.prices.products || []).concat(result.prices.bundles || [])) if (it.file) used.add(it.file);
 // keep the last good data for anything this run couldn't refresh
 if (prev) {
   const keep = (k, ok) => { if (!ok && Array.isArray(prev[k]) && prev[k].length) { result[k] = prev[k]; note(`kept previous ${k}`); } };
