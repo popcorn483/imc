@@ -432,24 +432,40 @@ if (PAGES && !blocked && !result.today.length && !result.days.some((d) => d.film
   }
 }
 // prices: imc.ie's booking page for a showing lists ticket types, ticket + snack bundles and snacks (with photos).
-// Read one afternoon and one evening showing that haven't started, so matinee and evening prices both come in.
+// Some offers only show on certain days (e.g. a Wednesday meal deal), so read one showing for every day of the coming week,
+// plus a matinee, an evening, a Kids Club and a LUXX showing, and note the weekdays each ticket type and bundle appeared on.
 if (PAGES && !blocked) {
   const now = new Date(), nowDate = now.toLocaleDateString("en-CA", { timeZone: "Europe/London" }), nowHM = now.toLocaleTimeString("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
-  const upcoming = [...result.today, ...result.days.flatMap((d) => d.films)].flatMap((f) => f.sessions || []).filter((x) => x.book && x.date && (x.date > nowDate || (x.date === nowDate && x.time > nowHM)))
-    .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
-  const picks = [upcoming.find((x) => x.time < "17:00"), upcoming.find((x) => x.time >= "17:00")].filter(Boolean);
-  if (!picks.length && upcoming[0]) picks.push(upcoming[0]);
-  const merged = { tickets: [], bundles: [], products: [], checked: new Date().toISOString() };
+  const lists = [...result.today, ...result.days.flatMap((d) => d.films), ...result.kidsClub, ...result.luxx];
+  const upcoming = lists.flatMap((f) => f.sessions || []).filter((x) => x.book && x.date && (x.date > nowDate || (x.date === nowDate && x.time > nowHM)))
+    .filter((x, i, a) => a.findIndex((y) => y.book === x.book) === i).sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+  const tags = (x) => x.tags || [], plain = (x) => !tags(x).includes("kidsclub") && !x.luxx && !tags(x).includes("seating-lux");
+  const picks = [];
+  const add = (x) => { if (x && !picks.includes(x)) picks.push(x); };
+  for (const d of [...new Set(upcoming.map((x) => x.date))].slice(0, 7)) add(upcoming.find((x) => x.date === d && plain(x) && x.time >= "17:00") || upcoming.find((x) => x.date === d && plain(x)) || upcoming.find((x) => x.date === d));
+  add(upcoming.find((x) => plain(x) && x.time < "17:00"));
+  add(upcoming.find((x) => tags(x).includes("kidsclub")));
+  add(upcoming.find((x) => x.luxx || tags(x).includes("seating-lux")));
+  const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], dow = (d) => DOW[new Date(d + "T12:00:00Z").getUTCDay()];
+  const merged = { tickets: [], bundles: [], products: [], checked: new Date().toISOString(), sampledDays: [] };
   for (const [i, x] of picks.entries()) {
     try {
-      await sleep(1500);
+      await sleep(1200);
       const h = await get(x.book);
       if (isBotCheck(h)) { blocked = true; break; }
-      await saveRaw(`booking-${i}`, h);
-      const pr = pricesOf(h);
-      for (const k of ["tickets", "bundles", "products"]) for (const it of pr[k]) if (!merged[k].some((m) => m.name === it.name)) merged[k].push(it);
+      if (i < 2) await saveRaw(`booking-${i}`, h);
+      const pr = pricesOf(h), day = dow(x.date), kind = tags(x).includes("kidsclub") ? "kids" : (x.luxx || tags(x).includes("seating-lux")) ? "luxx" : x.time < "17:00" ? "matinee" : "evening";
+      if (kind !== "kids" && kind !== "luxx" && !merged.sampledDays.includes(day)) merged.sampledDays.push(day);
+      for (const k of ["tickets", "bundles", "products"]) for (const it of pr[k]) {
+        let m = merged[k].find((m) => m.name === it.name);
+        if (!m) { m = { ...it, days: [], seenOn: [] }; merged[k].push(m); }
+        if (!m.days.includes(day)) m.days.push(day);
+        if (!m.seenOn.includes(kind)) m.seenOn.push(kind);
+        if (m.price !== it.price) { m.prices = m.prices || { [m.days[0]]: m.price }; m.prices[day] = it.price; }
+      }
     } catch (e) { note(`booking page failed: ${e.message}`); }
   }
+  note(`booking pages read: ${picks.length} (${merged.sampledDays.join(", ")})`);
   for (const it of merged.products.concat(merged.bundles)) if (it.image) it.file = await download(it.image, "products", slug(it.image.split("/").pop().replace(/\.\w+$/, "")));
   if (merged.tickets.length + merged.products.length) result.prices = merged;
   note(`prices: ${merged.tickets.length} ticket types, ${merged.bundles.length} bundles, ${merged.products.length} products`);
