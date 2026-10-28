@@ -267,6 +267,13 @@ body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,bod
 .ezfoot{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:12px;margin:4px 0 0}
 @media (max-width:760px){body.easy .ptabs{display:none!important}body.easy .app>.right{display:block!important;grid-row:3;height:48dvh;overflow:auto}body.easy .app>.right>.sheethead{display:none!important}
   body.easy .app{grid-template-rows:auto minmax(0,1fr) auto!important}}
+
+.flbox{display:flex;flex-direction:column;gap:8px}
+.flprev{border-radius:10px;padding:14px;display:grid;place-items:center;background:repeating-conic-gradient(#2a2f4a 0 25%,#1a1e36 0 50%) 0 0/16px 16px}.flprev img{max-width:100%;max-height:120px}
+.flsteps{margin:0;padding-left:18px;font-size:13px;line-height:1.5;display:flex;flex-direction:column;gap:6px}.flsteps .btn{padding:5px 10px;margin-right:4px;color:var(--ink);text-decoration:none}
+.flpaste{border:2px dashed var(--line);border-radius:12px;padding:18px 10px;text-align:center;font-weight:700;cursor:pointer;line-height:1.5}.flpaste small{font-weight:500;color:var(--muted)}.flpaste:focus{outline:none;border-color:var(--gold);background:rgba(255,194,61,.07)}.flpaste.small{padding:8px;font-size:12px;font-weight:600;color:var(--muted)}
+.layer.bgrow{border-top:1px dashed var(--line);margin-top:4px}.layer.bgrow .eye{font-size:13px}
+.pill{font-size:10.5px;font-weight:800;letter-spacing:.08em;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:2px 8px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -360,6 +367,7 @@ body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,bod
     </div>
 
     <div data-panel="add" hidden>
+      <div class="sec"><h3>Film logo</h3><div id="flBox" class="flbox"></div></div>
       <div class="sec"><h3>Badges</h3><div class="tiles" id="badges"></div></div>
       <div class="sec"><h3>LUXX photos</h3><p class="note">Your LUXX seat, screen and lounge photos. Use one as the background or add it as a print. They're shared with the hub's LUXX page.</p><div class="ownslots" id="lxEd"></div>
         <label class="btn" style="margin-top:8px">+ Add LUXX photos<input type="file" id="lxEdFile" accept="image/*" multiple hidden></label></div>
@@ -1495,7 +1503,7 @@ let thumbDirty={add:true,frame:true,layouts:true},thumbQ=[];
 const _render=render;function qrender(...a){thumbQ.push(a);if(thumbQ.length===1)requestAnimationFrame(thumbStep)}
 function thumbStep(){const t0=performance.now();while(thumbQ.length&&performance.now()-t0<(LOWEND?10:16)){const a=thumbQ.shift();if(a[0].canvas.isConnected)_render(...a)}if(thumbQ.length)requestAnimationFrame(thumbStep)}
 function renderThumbs(){thumbDirty={add:true,frame:true,layouts:true};thumbsFor(curTab())}
-function thumbsFor(t){if(!thumbDirty[t])return;thumbDirty[t]=false;const render=qrender;
+function thumbsFor(t){if(t==="add")renderFlogo();if(!thumbDirty[t])return;thumbDirty[t]=false;const render=qrender;
   if(t==="add"){
   const bt=g=>Object.entries(BADGES).filter(([,b])=>(b.group||"")===g).map(([k,b])=>`<button class="tile badge" data-badge="${k}"><canvas width="300" height="200"></canvas><span>${b.n}</span></button>`).join("");
   $("#badges").innerHTML=bt("");$("#dealBadges").innerHTML=bt("deal");
@@ -1541,9 +1549,9 @@ $("#saved").addEventListener("click",e=>{const a=getSaved();const ap=e.target.cl
 function layerName(L){if(L.kind==="pphoto")return L.label||"Product photo";if(L.kind==="rating")return"Rating "+(L.cert||"");if(L.kind==="product")return(PRODUCTS[L.key]?.n||"Food");if(L.kind==="listing")return"Film times";if(L.kind==="badge")return(BADGES[L.key]?.n||"Badge")+(L.text&&L.text!==BADGES[L.key]?.text?" · "+L.text:"");if(L.kind==="logo")return"IMC logo";return(L.text||"Text").split("\n")[0].slice(0,28)}
 function sliderRow(id,label,min,max,val,unit){return`<label class="slider"><span>${label}</span><input type="range" id="${id}" min="${min}" max="${max}" value="${val}"><output id="o${id}">${val}${unit}</output></label>`}
 function colourBlock(label,key,L){return`<div><div class="lbl" style="margin-bottom:6px">${label}</div><div class="swatches" data-colour="${key}">${SWATCHES.map(c=>`<button class="sw" data-c="${c}" style="background:${c}" aria-label="${c}" aria-pressed="${L[key]===c}"></button>`).join("")}<input type="color" value="${/^#[0-9a-f]{6}$/i.test(L[key])?L[key]:"#ffffff"}" aria-label="Custom colour"></div></div>`}
-function renderProps(){const L=getSel(),P=$("#props");
+function renderProps(){const L=getSel(),P=$("#props");if(selId===BG_ID){P.innerHTML=bgProps();return}
   if(!L){P.innerHTML=`<div class="empty"><b>Click something on your design to change it</b><span>Words, badges, prices and the logo can all be edited here once you click them.</span><span style="margin-top:6px">Want a different look? Try <b style="font-size:inherit">Designs</b> on the left. Need more text or a badge? Use <b style="font-size:inherit">Add</b>.</span></div>`;return}
-  let h=`<div class="sec"><div class="row" style="justify-content:space-between"><h3>${L.kind==="badge"?"Badge":L.kind==="text"?"Text":L.kind==="pphoto"?"Product photo":L.kind==="product"?"Food & drink":L.kind==="listing"?"Film times":L.kind==="rating"?"Rating":"Logo"}</h3><span class="chip">${esc(L.kind==="badge"?BADGES[L.key]?.n||"":L.kind)}</span></div>`;
+  let h=`<div class="sec"><div class="row" style="justify-content:space-between"><h3>${L.kind==="badge"?"Badge":L.kind==="text"?"Text":L.kind==="pphoto"?(/^fl:/.test(L.src||"")?"Film logo":"Product photo"):L.kind==="product"?"Food & drink":L.kind==="listing"?"Film times":L.kind==="rating"?"Rating":"Logo"}</h3><span class="chip">${esc(L.kind==="badge"?BADGES[L.key]?.n||"":L.kind)}</span></div>`;
   if(L.kind==="badge"){h+=`<label class="lbl" for="pp-text">Text</label><input id="pp-text" type="text" value="${esc(L.text)}">`;if(!NO_SUB[L.style])h+=`<label class="lbl" for="pp-sub">Small line</label><input id="pp-sub" type="text" value="${esc(L.sub)}" placeholder="Optional">`;
     h+=colourBlock("Main colour","c1",L)+colourBlock(L.style==="luxx"?"Trim colour":"Text colour","c2",L)}
   if(L.kind==="text"){h+=`<label class="lbl" for="pp-text">Text</label><textarea id="pp-text" rows="2">${esc(L.text)}</textarea>
@@ -1610,12 +1618,12 @@ function act(n){const L=getSel();if(!L)return;const i=S.layers.indexOf(L);
   syncLayers();syncPropNums();draw();commit()}
 
 /* ---------- layer list ---------- */
-function syncLayers(){const el=$("#layerList");if(!S.layers.length){el.innerHTML=`<p class="note">No layers yet.</p>`;return}
-  el.innerHTML=[...S.layers].reverse().map(L=>`<div class="layer ${L.hidden?"off":""}" role="button" tabindex="0" data-sel="${L.id}" aria-current="${L.id===selId}"><button class="eye" data-eye="${L.id}" aria-label="${L.hidden?"Show":"Hide"} layer">${L.hidden?"○":"●"}</button><span class="nm">${esc(layerName(L))}</span><span class="k">${L.kind}</span></div>`).join("")}
+function syncLayers(){const el=$("#layerList");
+  el.innerHTML=[...S.layers].reverse().map(L=>`<div class="layer ${L.hidden?"off":""}" role="button" tabindex="0" data-sel="${L.id}" aria-current="${L.id===selId}"><button class="eye" data-eye="${L.id}" aria-label="${L.hidden?"Show":"Hide"} layer">${L.hidden?"○":"●"}</button><span class="nm">${esc(layerName(L))}</span><span class="k">${L.kind}</span></div>`).join("")+`<div class="layer bgrow" role="button" tabindex="0" data-sel="${BG_ID}" aria-current="${selId===BG_ID}"><span class="eye" aria-hidden="true">🖼️</span><span class="nm">${esc(bgName())}</span><span class="k">background</span></div>`}
 $("#layerList").addEventListener("click",e=>{const eye=e.target.closest("[data-eye]");if(eye){const L=S.layers.find(l=>l.id===eye.dataset.eye);L.hidden=!L.hidden;syncLayers();draw();commit();return}
   const r=e.target.closest("[data-sel]");if(r)select(r.dataset.sel)});
 $("#layerList").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){const r=e.target.closest("[data-sel]");if(r){e.preventDefault();select(r.dataset.sel)}}});
-function select(id){if(selId===id)return;selId=id;renderProps();syncLayers();draw();syncPtabs();if(EASY){const f=id&&$(`#easyPanel [data-ezl="${id}"]`);$$("#easyPanel .ezf").forEach(x=>x.classList.toggle("sel",x===f));if(f)f.scrollIntoView({block:"nearest",behavior:"smooth"});return}if(id&&PHONE.matches&&document.body.dataset.sheet!=="edit"&&!drag?.photo)sheet("edit")}
+function select(id){if(selId===id)return;selId=id;renderProps();syncLayers();draw();syncPtabs();if(EASY){const f=id&&$(`#easyPanel [data-ezl="${id}"]`);$$("#easyPanel .ezf").forEach(x=>x.classList.toggle("sel",x===f));if(f)f.scrollIntoView({block:"nearest",behavior:"smooth"});return}if(id&&id!==BG_ID&&PHONE.matches&&document.body.dataset.sheet!=="edit"&&!drag?.photo)sheet("edit")}
 
 /* ---------- pointer ---------- */
 function pt(e){const r=cv.getBoundingClientRect(),k=cv.width/r.width;return{x:(e.clientX-r.left)*k,y:(e.clientY-r.top)*k}}
@@ -1625,7 +1633,7 @@ function hit(p){const W=cv.width,H=cv.height,u=Math.min(W,H)/1080,k=kpx();for(le
   if(Math.abs(lx)<=L._w/2+pad&&Math.abs(ly)<=L._h/2+pad)return L}return null}
 cv.addEventListener("pointerdown",e=>{if(e.button&&e.button!==0)return;const p=pt(e),W=cv.width,H=cv.height,u=Math.min(W,H)/1080,k=kpx();drag=null;
   const L=getSel();if(L&&!L.hidden){const C=corners(L,W,H,u,k);if(dist(p,C.rot)<16*k)drag={mode:"rot",L,c:C.c};else for(const n of["tl","tr","br","bl"])if(dist(p,C[n])<16*k){drag={mode:"scale",L,c:C.c,d0:Math.max(1,dist(p,C.c)),s0:L.s};break}}
-  if(!drag){const h=hit(p);if(h){select(h.id);drag={mode:"move",L:h,p0:p,x0:h.x,y0:h.y}}else{select(null);if(photoImg)drag={mode:"pan",p0:p,ox0:S.photo.ox,oy0:S.photo.oy}}}
+  if(!drag){const h=hit(p);if(h){select(h.id);drag={mode:"move",L:h,p0:p,x0:h.x,y0:h.y}}else{select(BG_ID);if(photoImg)drag={mode:"pan",p0:p,ox0:S.photo.ox,oy0:S.photo.oy}}}
   if(drag){drag.moved=false;cv.setPointerCapture(e.pointerId);e.preventDefault()}});
 cv.addEventListener("pointermove",e=>{const p=pt(e),W=cv.width,H=cv.height,u=Math.min(W,H)/1080,k=kpx();
   if(!drag){const L=getSel();let cur="default";if(L&&!L.hidden){const C=corners(L,W,H,u,k);if(dist(p,C.rot)<16*k)cur="grab";else if(["tl","br"].some(n=>dist(p,C[n])<16*k))cur="nwse-resize";else if(["tr","bl"].some(n=>dist(p,C[n])<16*k))cur="nesw-resize"}
@@ -1774,7 +1782,7 @@ $("#ptabs").addEventListener("click",e=>{const b=e.target.closest("[data-pt]");i
 document.addEventListener("click",e=>{if(e.target.closest(".sheethead button"))sheet(null)});
 PHONE.addEventListener?PHONE.addEventListener("change",phoneMode):PHONE.addListener(phoneMode);
 /* ---------- tidy panels: sections fold; the main one in each tab starts open; your choices are remembered ---------- */
-const FOLD_OPEN=["Background","Adjust the photo","IMC images","IMC frame","Frame colour","Animated effects","Text","Badges","Film times","Deals","Cinema Reels","Seasons & occasions","IMC logo"];
+const FOLD_OPEN=["Film logo","Background","Adjust the photo","IMC images","IMC frame","Frame colour","Animated effects","Text","Badges","Film times","Deals","Cinema Reels","Seasons & occasions","IMC logo"];
 let foldState={};try{foldState=JSON.parse(localStorage.getItem("imc-editor-fold")||"{}")}catch(e){}
 function setupFolds(){$$(".app>.left [data-panel]>.sec").forEach(sec=>{const h=sec.querySelector(":scope>h3");if(!h||sec.classList.contains("fold"))return;const k=h.textContent.trim();sec.classList.add("fold");
   const open=k in foldState?foldState[k]:FOLD_OPEN.includes(k);sec.classList.toggle("shut",!open);h.setAttribute("role","button");h.tabIndex=0;h.setAttribute("aria-expanded",open)})}
@@ -1799,7 +1807,8 @@ function renderEasy(){const el=$("#easyPanel");if(!el||!EASY)return;const Ls=S.l
       ${L.kind==="badge"&&L.sub!=null&&L.sub!==""?`<input data-ezk="sub" value="${esc(L.sub||"")}" aria-label="${esc(ezLabel(L))} small line" class="ezsub">`:""}</div>`).join(""):`<p class="ezmuted">No words on this design yet.</p>`}
     <button class="ezlink" id="ezAddText" type="button">+ Add more words</button></div></div>
   <div class="ezstep"><div class="ezn">${++n}</div><div><h4>Photo <span>(optional)</span></h4><p>${photoImg?"Your photo is in. Drag it on the design to move it.":"Add your own photo as the background, or leave it as it is."}</p>
-    <div class="ezrow"><button class="btn" id="ezPhoto" type="button">${photoImg?"Change photo":"Choose a photo"}</button>${photoImg?`<button class="btn" id="ezNoPhoto" type="button">Remove photo</button>`:""}</div></div></div>
+    <div class="ezrow"><button class="btn" id="ezPhoto" type="button">${photoImg?"Change photo":"Choose a photo"}</button>${photoImg?`<button class="btn" id="ezNoPhoto" type="button">Remove photo</button>`:""}</div>
+    ${FLOGO_FILM&&!S.layers.some(l=>/^fl:/.test(l.src||""))?`<div class="ezrow" style="margin-top:8px"><button class="btn" id="ezLogo" type="button">🎬 ${FLOGO[flKey(FLOGO_FILM)]?"Add the film's logo":"Find the film's logo"}</button></div>`:""}</div></div>
   <div class="ezstep"><div class="ezn">${++n}</div><div><h4>Save or share</h4><p>Saved files go to your Downloads folder.</p>
     <div class="ezbig"><button class="btn primary" id="ezSave" type="button">⬇ Save picture</button>${anim?`<button class="btn primary" id="ezVid" type="button">🎬 Save video</button>`:""}${story?`<button class="btn storybtn" id="ezStory" type="button">Share to Facebook story</button>`:""}<button class="btn" id="ezCopy" type="button">Copy picture</button></div></div></div>
   <p class="ezfoot">Changed your mind? Use the ↶ undo button at the top. For colours, layouts and animation, open the <button class="ezlink" id="ezFull2" type="button">full editor</button>.</p>`}
@@ -1808,9 +1817,54 @@ $("#easyPanel").addEventListener("focusin",e=>{const f=e.target.closest("[data-e
 $("#easyPanel").addEventListener("click",e=>{const id=e.target.id;
   if(id==="ezFull"||id==="ezFull2"){setEasy(false);toast("Full editor. Switch back any time with ✨ Easy mode at the top")}
   else if(id==="ezPhoto")$("#photoFile").click();else if(id==="ezNoPhoto")$("#photoRemove").click();
+  else if(id==="ezLogo"){const k=flKey(FLOGO_FILM);if(FLOGO[k]){flAdd(k);renderEasy()}else{setEasy(false);if(PHONE.matches)sheet("add");else $('#tabs [data-tab="add"]').click();setTimeout(()=>{const b=$("#flBox");if(b){b.closest(".sec").classList.remove("shut");b.scrollIntoView({block:"start"})}},150)}}
   else if(id==="ezSave")$("#png").click();else if(id==="ezVid")$("#vid").click();else if(id==="ezStory")$("#storyBtn").click();else if(id==="ezCopy")$("#copy").click();
   else if(id==="ezAddText"){addLayer(mk("text","sub",{text:"Your words here",y:.85}));renderEasy();const ins=$$("#easyPanel [data-ezk=text]");const last=ins[ins.length-1];if(last){last.focus();last.select()}}});
 $("#ezToggle").onclick=()=>setEasy(!EASY);
+/* ---------- background as a layer: pick it in Layers (or click an empty part of the design) to change it ---------- */
+const BG_ID="__bg";
+function bgName(){return(S.bg||"photo")==="photo"?(photoImg?(photoIsVideo?"Background video":"Background photo"):"Background (no photo yet)"):"Background: "+(BGS[S.bg]||S.bg)}
+function bgProps(){const isP=(S.bg||"photo")==="photo",sl=(id,lab,min,max,val,unit)=>sliderRow(id,lab,min,max,val,unit);
+  return`<div class="sec"><div class="row" style="justify-content:space-between"><h3>Background</h3><span class="pill">BACKGROUND</span></div>
+    <label class="lbl" for="bp-bg">Background</label><select id="bp-bg">${Object.entries(BGS).map(([k,n])=>`<option value="${k}" ${(S.bg||"photo")===k?"selected":""}>${k==="photo"?"Your photo or video":n}</option>`).join("")}</select>
+    ${isP?`<div class="row" style="gap:6px"><button class="btn" id="bp-change" style="flex:1">${photoImg?"Change photo":"Choose a photo"}</button>${photoImg?`<button class="btn danger" id="bp-remove">Remove</button>`:""}</div>
+    ${photoImg?`<div class="lbl">Fit</div><div class="seg" id="bp-fit" style="width:max-content"><button data-bfit="cover" aria-pressed="${(S.photo.fit||"cover")==="cover"}">Fill the design</button><button data-bfit="poster" aria-pressed="${S.photo.fit==="poster"}">Whole picture</button></div>
+    ${sl("bp-zoom","Zoom",100,400,Math.round(S.photo.zoom*100),"%")}${sl("bp-shade","Darken",0,70,S.photo.shade||0,"%")}${sl("bp-b","Brightness",50,150,S.photo.b??100,"%")}${sl("bp-c","Contrast",50,150,S.photo.c??100,"%")}${sl("bp-s","Colour",0,200,S.photo.s??100,"%")}
+    <button class="btn" id="bp-reset">Reset photo</button><p class="note">Drag an empty part of the design to move the photo.</p>`:""}`:""}</div>`}
+const BP={"bp-zoom":["zoom",v=>v/100],"bp-shade":["shade",Number],"bp-b":["b",Number],"bp-c":["c",Number],"bp-s":["s",Number]};
+$("#props").addEventListener("input",e=>{if(selId!==BG_ID)return;const m=BP[e.target.id];if(!m)return;S.photo[m[0]]=m[1](+e.target.value);const o=$("#o"+e.target.id);if(o)o.textContent=e.target.value+"%";if(m[0]==="zoom")clampPhoto();draw()},true);
+$("#props").addEventListener("change",e=>{if(selId!==BG_ID)return;if(e.target.id==="bp-bg"){S.bg=e.target.value;syncPhoto();renderProps();syncLayers();draw();commit()}else if(BP[e.target.id]){syncPhoto();commit()}},true);
+$("#props").addEventListener("click",e=>{if(selId!==BG_ID)return;const id=e.target.id,f=e.target.closest("[data-bfit]");
+  if(id==="bp-change")$("#photoFile").click();else if(id==="bp-remove"){$("#photoRemove").click();renderProps();syncLayers()}else if(id==="bp-reset"){$("#photoReset").click();renderProps()}
+  else if(f){S.photo.fit=f.dataset.bfit;S.photo.zoom=1;S.photo.ox=0;S.photo.oy=0;syncPhoto();renderProps();draw();commit()}},true);
+
+/* ---------- film logos: find a film's title logo once, and it's remembered for every design for that film ---------- */
+const FLOGO={};let FLOGO_FILM="";
+const flKey=t=>"filmlogo:"+String(t||"").toLowerCase().replace(/\s+-\s+.*$/,"").replace(/^sensory\s*/,"").replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
+function flFilms(){const m=new Map();for(const list of[(IMC&&IMC.today)||[],...(((IMC&&IMC.days)||[]).map(d=>d.films||[])),(IMC&&IMC.comingSoon)||[]])for(const f of list){if(!f.title||/^sensory/i.test(f.title))continue;const k=flKey(f.title);if(!m.has(k))m.set(k,f.title.replace(/\s+-\s+.*$/,""))}return[...m.entries()].sort((a,b)=>a[1].localeCompare(b[1]))}
+async function flLoad(k){if(k in FLOGO)return FLOGO[k];const v=await idbGet(k);FLOGO[k]=v&&v.blob?{url:URL.createObjectURL(v.blob),w:v.w,h:v.h}:null;return FLOGO[k]}
+/* logos usually come with a clear background; if this one has a plain white or black one, take it out */
+async function flPrep(blob){const im=await blobToImg(blob),w=im.naturalWidth||im.width,h=im.naturalHeight||im.height,k=Math.min(1,1600/Math.max(w,h)),c=document.createElement("canvas");c.width=Math.round(w*k);c.height=Math.round(h*k);const x=c.getContext("2d");x.drawImage(im,0,0,c.width,c.height);
+  const d=x.getImageData(0,0,c.width,c.height),D=d.data,edge=[];for(let i=0;i<c.width;i+=4)edge.push(i,(c.height-1)*c.width+i);for(let j=0;j<c.height;j+=4)edge.push(j*c.width,j*c.width+c.width-1);
+  const op=edge.filter(p=>D[p*4+3]>200),wh=op.filter(p=>Math.min(D[p*4],D[p*4+1],D[p*4+2])>225).length,bl=op.filter(p=>Math.max(D[p*4],D[p*4+1],D[p*4+2])<30).length;
+  if(op.length>edge.length*.6&&(wh>op.length*.8||bl>op.length*.8)){const white=wh>bl;for(let i=0;i<D.length;i+=4){const lo=Math.min(D[i],D[i+1],D[i+2]),hi=Math.max(D[i],D[i+1],D[i+2]);const v=white?(255-lo):hi;if(v<24)D[i+3]=0;else if(v<70)D[i+3]=Math.round(D[i+3]*(v-24)/46)}x.putImageData(d,0,0)}
+  return new Promise(r=>c.toBlob(b=>r({blob:b,w:c.width,h:c.height}),"image/png"))}
+async function flSave(k,file){if(!file||!/^image\//.test(file.type)){toast("That isn't a picture. Copy the logo image itself, or save it and upload it.");return}const p=await flPrep(file);await idbSet(k,p);if(FLOGO[k])URL.revokeObjectURL(FLOGO[k].url);delete FLOGO[k];for(const kk in PPH)if(kk.startsWith("fl:"+k))delete PPH[kk];await flLoad(k);renderFlogo();renderEasy&&EASY&&renderEasy();toast("Logo saved for this film. Now press Add to design")}
+function flAdd(k,o){const v=FLOGO[k];if(!v)return;const f=FORMATS[S.fmt],ar=v.w/v.h,maxW=.82,maxH=.22,wf=Math.min(maxW,maxH*f.h/f.w*ar),s=wf*f.w/(Math.min(f.w,f.h)/1080)/(440*ar);
+  addLayer({id:uid(),kind:"pphoto",src:"fl:"+k,label:"Film logo",card:false,shadow:false,x:.5,y:.2,s,r:0,o:1,...o});toast("Film logo added. Drag it where you want it")}
+function curFilmKey(){const sel=$("#flFilm");return sel&&sel.value?sel.value:FLOGO_FILM?flKey(FLOGO_FILM):""}
+async function renderFlogo(){const el=$("#flBox");if(!el)return;const films=flFilms(),cur=FLOGO_FILM?flKey(FLOGO_FILM):"",sel=$("#flFilm"),k=sel&&sel.value||cur||(films[0]&&films[0][0])||"";
+  const v=k?await flLoad(k):null,title=(films.find(f=>f[0]===k)||[,FLOGO_FILM||""])[1];
+  el.innerHTML=`<label class="lbl" for="flFilm">Film</label><select id="flFilm">${films.map(([fk,t])=>`<option value="${esc(fk)}" ${fk===k?"selected":""}>${esc(t)}</option>`).join("")}</select>
+   ${v?`<div class="flprev"><img src="${v.url}" alt="${esc(title)} logo"></div><div class="row" style="gap:6px"><button class="btn primary" id="flAddBtn" style="flex:1">Add to design</button><button class="btn" id="flReplace">Replace</button></div>`:
+   `<ol class="flsteps"><li><a class="btn" href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent('"'+title+'" film logo transparent png')}" target="imc-web">Find the logo ↗</a> Right-click the logo you want and choose <b>Copy image</b>.</li><li>Come back and paste it here:</li></ol>`}
+   <div class="flpaste${v?" small":""}" id="flPaste" tabindex="0" role="button" aria-label="Paste or drop the film logo here">${v?"Paste or drop a different logo here":"📋 Click here, then press Ctrl+V<br><small>or drop the picture here, or <u>choose a file</u></small>"}</div>
+   <input type="file" id="flFile" accept="image/*" hidden><p class="note">Use the official logo from the film's distributor. Each logo is saved for that film on this computer, ready for every future design.</p>`}
+$("#flBox").addEventListener("change",e=>{if(e.target.id==="flFilm"){FLOGO_FILM=(flFilms().find(f=>f[0]===e.target.value)||[,""])[1];renderFlogo()}else if(e.target.id==="flFile"&&e.target.files[0])flSave(curFilmKey(),e.target.files[0])});
+$("#flBox").addEventListener("click",e=>{const id=e.target.id;if(id==="flAddBtn")flAdd(curFilmKey());else if(id==="flReplace")$("#flPaste").focus();else if(e.target.closest("#flPaste")){if(e.target.tagName==="U")$("#flFile").click();else $("#flPaste").focus()}});
+$("#flBox").addEventListener("paste",e=>{if(!e.target.closest("#flPaste"))return;e.preventDefault();e.stopPropagation();const it=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith("image/"));if(it)flSave(curFilmKey(),it.getAsFile());else toast("No picture on the clipboard. Right-click the logo and choose Copy image")},true);
+$("#flBox").addEventListener("dragover",e=>{if(e.target.closest("#flPaste")){e.preventDefault();e.stopPropagation()}});
+$("#flBox").addEventListener("drop",e=>{if(!e.target.closest("#flPaste"))return;e.preventDefault();e.stopPropagation();const f=[...(e.dataTransfer?.files||[])][0];if(f)flSave(curFilmKey(),f)});
 /* ---------- GIF encoder (median-cut palette, ordered dither, LZW, unchanged pixels left transparent) ---------- */
 const GIF={
   palette(sm,n){const cnt=sm.length/3|0,idx=new Uint32Array(cnt);for(let i=0;i<cnt;i++)idx[i]=i;
@@ -1873,7 +1927,7 @@ $("#gifGo").onclick=async()=>{if(gBusy)return;gBusy=true;gCancel=false;$("#gifGo
 const RAW="https://raw.githubusercontent.com/popcorn483/imc/main/";
 let IMC=null,photoIsVideo=false;
 async function loadImcData(){let k="enniskillen";try{k=localStorage.getItem("imc-hub-site")||k}catch(e){}const f=k==="enniskillen"?"data/imc.json":"data/cinemas/"+k+".json";for(const u of[RAW+f+"?ts="+Date.now(),f]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();j._base=u.startsWith(RAW)?RAW:"";IMC=j;return j}}catch(e){}}return null}
-const asset=p=>!p?null:/^(https?:|blob:|data:)/.test(p)?p:/^own:/.test(p)?((OWN[p.slice(4)]||{}).url||null):/^lx:/.test(p)?((LXP.find(x=>x.id===p.slice(3))||{}).url||null):((IMC&&IMC._base)||"")+p;
+const asset=p=>!p?null:/^(https?:|blob:|data:)/.test(p)?p:/^fl:/.test(p)?((FLOGO[p.slice(3)]||{}).url||null):/^own:/.test(p)?((OWN[p.slice(4)]||{}).url||null):/^lx:/.test(p)?((LXP.find(x=>x.id===p.slice(3))||{}).url||null):((IMC&&IMC._base)||"")+p;
 function blobToMedia(b){if((b.type||"").startsWith("video/"))return new Promise((res,rej)=>{const v=document.createElement("video");v.muted=true;v.loop=true;v.playsInline=true;v.preload="auto";v.onloadeddata=()=>{v.play().catch(()=>{});res(v)};v.onerror=()=>rej(new Error("bad video"));v.src=URL.createObjectURL(b)});return blobToImg(b)}
 function seekVideo(sec){return new Promise(r=>{const v=photoImg;if(!photoIsVideo||!v)return r();const T=Math.min(Math.max(0,sec),Math.max(0,(v.duration||1)-.05));if(Math.abs(v.currentTime-T)<.02)return r();let done=false;const fin=()=>{if(done)return;done=true;v.removeEventListener("seeked",fin);r()};v.addEventListener("seeked",fin);v.currentTime=T;setTimeout(fin,1200)})}
 async function mediaIndex(){return(await idbGet("media-index"))||[]}
@@ -1906,7 +1960,7 @@ function cutoutWhite(img){const w=img.naturalWidth||img.width,h=img.naturalHeigh
   if(x1<=x0||y1<=y0)return cvs;const t=document.createElement("canvas");t.width=x1-x0+1;t.height=y1-y0+1;t.getContext("2d").drawImage(cvs,-x0,-y0);return t}
 /* HD copy made by the upscaling job (data/products/hd/<name>.png), used when it exists */
 const hdOf=src=>String(src||"").replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)(\?.*)?$/i,"data/products/hd/$1.png");
-function ppLoad(src,card){const key=src+(card?"|card":"");if(PPH[key])return PPH[key];const e=PPH[key]={img:null};const tries=[...new Set([hdOf(src),src])];
+function ppLoad(src,card){const key=src+(card?"|card":"");if(PPH[key])return PPH[key];if(/^fl:/.test(src)&&!FLOGO[src.slice(3)]){flLoad(src.slice(3)).then(()=>{delete PPH[key];draw()});return{img:null}}if(/^fl:/.test(src))card=true;const e=PPH[key]={img:null};const tries=[...new Set([hdOf(src),src])];
   const attempt=i=>{if(i>=tries.length){e.err=true;return}const im=new Image();im.crossOrigin="anonymous";im.onload=()=>{try{e.img=card?im:cutoutWhite(im)}catch(err){e.img=im}e.hd=tries[i]!==src;draw();renderThumbs&&renderThumbs()};im.onerror=()=>attempt(i+1);im.src=asset(tries[i])};attempt(0);return e}
 function drawPPhoto(c,L){const e=ppLoad(L.src,L.card),H=440;if(!e.img){c.strokeStyle="rgba(255,255,255,.4)";c.setLineDash([10,8]);c.lineWidth=3;rr(c,-170,-H/2,340,H,24);c.stroke();c.setLineDash([]);return{w:340,h:H}}
   const im=e.img;
@@ -2157,7 +2211,7 @@ function filmLayers(fm,mode){const L=[];
   if(rp&&(rp.src||IMC&&IMC.ratings)){if(rp.src)loadRating(rp.src);L.push(mk("rating",null,{src:rp.src,cert:rp.cert,system:rp.system,x:.88,y:.83,s:.52}))}
   else if(fm.cert)L.push(mk("badge","fast",{text:"CERT "+fm.cert,x:.86,y:.84,s:.45}));
   return L}
-async function applyFilm(fm,mode){S.label=fm.title+(mode==="soon"?" coming soon":"");S.bg="photo";S.photo={...S.photo,fit:"poster",zoom:1,ox:0,oy:-.035};S.frame={...S.frame,style:"brandbar",logo:true};S.layers=filmLayers(fm,mode);S.motion={...S.motion,fx:mode==="soon"?{spotlights:true,sparkle:true}:mode==="luxx"?{sparkle:true}:{}};selId=null;syncAll();
+async function applyFilm(fm,mode){FLOGO_FILM=fm.title;S.filmTitle=fm.title;flLoad(flKey(fm.title)).then(()=>{if(EASY)renderEasy()});S.label=fm.title+(mode==="soon"?" coming soon":"");S.bg="photo";S.photo={...S.photo,fit:"poster",zoom:1,ox:0,oy:-.035};S.frame={...S.frame,style:"brandbar",logo:true};S.layers=filmLayers(fm,mode);S.motion={...S.motion,fx:mode==="soon"?{spotlights:true,sparkle:true}:mode==="luxx"?{sparkle:true}:{}};selId=null;syncAll();
   if(fm.poster)await loadUrlAsPhoto(fm.poster);commit();toast(fm.title+" ready. Everything can be moved and edited")}
 function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-handoff")||"null");localStorage.removeItem("imc-handoff")}catch(e){}
   if(!h||Date.now()-(h.at||0)>10*60*1000)return false;

@@ -78,6 +78,18 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## Film logos and the background layer
+
+**Film logo** (editor → Add, top section; also in Easy mode for film designs):
+- Pick the film (the open film design is chosen for you).
+- Press **Find the logo** to search for it, copy the image, and paste it into the box (or drop or upload a file).
+- Plain white or black backgrounds are removed automatically.
+- **Add to design** places the logo at the top. Each logo is saved for that film on that computer, so future designs only need one click.
+
+Logos aren't fetched automatically: the main logo database, TMDB, needs a paid commercial licence for business use like cinema marketing.
+
+**Background in Layers:** the background photo, video or colour is listed as the bottom row in Layers. You can also click an empty part of the design. Its panel lets you change or remove the photo, switch to an IMC background, choose fill or whole picture, and set zoom, darken, brightness, contrast and colour.
+
 ## Easy mode (step by step)
 
 For anyone not used to design tools. **✨ Easy mode** (top bar, or the big "Make an ad step by step" button on Today) asks one question at a time, with big buttons:
