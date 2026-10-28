@@ -244,6 +244,29 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .helptip{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.6;color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.4);width:min(360px,90vw);z-index:20}
 .stage{position:relative}
 .tlbtn[aria-pressed="true"]{border-color:var(--gold);color:var(--gold)}
+
+/* ---- Easy mode ---- */
+.easypanel{display:none}
+.ezbtn{background:linear-gradient(135deg,#ffd84a,#f39a2b);color:#2a1800;border:0;font-weight:800}
+body.easy .ezbtn{box-shadow:0 0 0 2px #fff inset}
+body.easy .easypanel{display:block;padding:14px 16px 24px}
+body.easy .app>.right>#props,body.easy .app>.right>.layersec{display:none}
+body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,body.easy #tl,body.easy .stagebar .helpbtn{display:none!important}
+@media (min-width:761px){body.easy .app{grid-template-columns:minmax(0,1fr) 420px!important}body.easy .app>.left{display:none!important}}
+.ezh{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.ezh b{font-size:17px}
+.ezfull{all:unset;cursor:pointer;font-size:13px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 12px}.ezfull:hover{color:var(--ink)}
+.ezstep{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.ezn{width:30px;height:30px;border-radius:50%;background:var(--stripe);color:var(--gold-ink);display:grid;place-items:center;font-weight:900;font-size:15px}
+.ezstep h4{margin:3px 0 4px;font-size:16px}.ezstep h4 span{font-weight:500;color:var(--muted);font-size:13px}.ezstep p{margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.45}
+.ezf{display:flex;flex-direction:column;gap:5px;margin-bottom:10px;padding:8px;border-radius:10px;border:1px solid transparent}.ezf.sel{border-color:var(--sel);background:rgba(77,163,255,.06)}
+.ezf label{font-size:12px;font-weight:700;color:var(--muted)}.ezf input,.ezf textarea{font-size:15px;padding:9px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line);width:100%;box-sizing:border-box}.ezf .ezsub{font-size:13px}.ezf small{color:var(--muted);font-size:12px}
+.ezlink{all:unset;cursor:pointer;color:var(--gold);font-weight:700;font-size:13px}
+.ezrow{display:flex;gap:8px;flex-wrap:wrap}
+.ezbig{display:flex;flex-direction:column;gap:8px}.ezbig .btn{padding:12px;font-size:15px}
+.ezmuted{font-style:italic}
+.ezfoot{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:12px;margin:4px 0 0}
+@media (max-width:760px){body.easy .ptabs{display:none!important}body.easy .app>.right{display:block!important;grid-row:3;height:48dvh;overflow:auto}body.easy .app>.right>.sheethead{display:none!important}
+  body.easy .app{grid-template-rows:auto minmax(0,1fr) auto!important}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -254,6 +277,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
     <div class="brandmark"><a id="back" href="index.html" target="imc-hub" hidden>← Hub</a><img id="brandLogo" src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Photo</span> Editor</b></div>
     <div class="menuwrap"><button class="btn ddbtn" id="fmtBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fmts"><small>Size</small> <span id="fmtName">Feed 1:1</span> ▾</button><div class="ddmenu" id="fmts" role="menu" aria-label="Size" hidden></div></div>
     <div class="topact">
+      <button class="btn ezbtn" id="ezToggle" type="button" title="Easy mode: just the steps you need">✨ <span class="lg">Easy mode</span></button>
       <button class="btn icon" id="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
       <button class="btn icon" id="redo" title="Redo (Ctrl+Shift+Z)" aria-label="Redo">↷</button>
       <div class="menuwrap"><button class="btn ddbtn gifbtn" id="saveBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="saveMenu">More ways to save ▾</button>
@@ -390,6 +414,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 
   <aside class="right">
     <div class="sheethead"><b></b><button type="button">Done</button></div>
+    <div id="easyPanel" class="easypanel"></div>
     <div id="props"></div>
     <div class="sec layersec"><h3>Layers</h3><div class="layers" id="layerList"></div></div>
   </aside>
@@ -1590,7 +1615,7 @@ function syncLayers(){const el=$("#layerList");if(!S.layers.length){el.innerHTML
 $("#layerList").addEventListener("click",e=>{const eye=e.target.closest("[data-eye]");if(eye){const L=S.layers.find(l=>l.id===eye.dataset.eye);L.hidden=!L.hidden;syncLayers();draw();commit();return}
   const r=e.target.closest("[data-sel]");if(r)select(r.dataset.sel)});
 $("#layerList").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){const r=e.target.closest("[data-sel]");if(r){e.preventDefault();select(r.dataset.sel)}}});
-function select(id){if(selId===id)return;selId=id;renderProps();syncLayers();draw();syncPtabs();if(id&&PHONE.matches&&document.body.dataset.sheet!=="edit"&&!drag?.photo)sheet("edit")}
+function select(id){if(selId===id)return;selId=id;renderProps();syncLayers();draw();syncPtabs();if(EASY){const f=id&&$(`#easyPanel [data-ezl="${id}"]`);$$("#easyPanel .ezf").forEach(x=>x.classList.toggle("sel",x===f));if(f)f.scrollIntoView({block:"nearest",behavior:"smooth"});return}if(id&&PHONE.matches&&document.body.dataset.sheet!=="edit"&&!drag?.photo)sheet("edit")}
 
 /* ---------- pointer ---------- */
 function pt(e){const r=cv.getBoundingClientRect(),k=cv.width/r.width;return{x:(e.clientX-r.left)*k,y:(e.clientY-r.top)*k}}
@@ -1760,6 +1785,32 @@ $(".app>.left").addEventListener("keydown",e=>{const h=e.target.closest(".sec.fo
 $("#helpBtn").onclick=()=>{$("#helpTip").hidden=!$("#helpTip").hidden};
 document.addEventListener("click",e=>{if(!e.target.closest("#helpBtn,#helpTip"))$("#helpTip").hidden=true});
 let tlOpen=false;$("#tlToggle").onclick=()=>{tlOpen=!tlOpen;$("#tlToggle").setAttribute("aria-pressed",tlOpen);syncTimeline()};
+/* ---------- Easy mode in the editor: just three steps (check the words, photo, save or share); the full editor is one click away ---------- */
+let EASY=false;try{EASY=localStorage.getItem("imc-easy")==="1"}catch(e){}
+const ezTextOf=L=>L.kind==="text"||L.kind==="badge"||L.kind==="listing";
+function ezLabel(L){if(L.kind==="listing")return"Film times heading";if(L.kind==="badge"){const n=L.style==="dateline"?"Date or times":BADGES[L.key]?.n||"Badge";return/price/i.test(n)||/^[£€]/.test(L.text||"")?"Price":n}
+  const t=String(L.text||""),texts=S.layers.filter(l=>!l.hidden&&l.kind==="text").sort((a,b)=>(b.size||0)-(a.size||0));
+  if(t.includes("\n"))return"Details (one per line)";if(texts[0]===L)return"Headline";if(L.font==="mono"||(L.size||0)<=34)return"Small print";return"Line of text"}
+function setEasy(on){EASY=on;document.body.classList.toggle("easy",on);try{localStorage.setItem("imc-easy",on?"1":"0")}catch(e){}if(on)renderEasy();if(PHONE.matches)sheet(null);setTimeout(fit,30)}
+function renderEasy(){const el=$("#easyPanel");if(!el||!EASY)return;const Ls=S.layers.filter(l=>!l.hidden&&ezTextOf(l)),anim=hasMotion(),story=!$("#storyBtn").hidden;let n=0;
+  el.innerHTML=`<div class="ezh"><b>✨ Easy mode</b><button class="ezfull" id="ezFull" type="button">Full editor</button></div>
+  <div class="ezstep"><div class="ezn">${++n}</div><div><h4>Check the words</h4><p>Change anything that isn't right. Prices and times come from imc.ie.</p>
+    ${Ls.length?Ls.map(L=>`<div class="ezf${L.id===selId?" sel":""}" data-ezl="${L.id}"><label for="ez-${L.id}">${esc(ezLabel(L))}</label>${L.kind==="listing"?`<input id="ez-${L.id}" data-ezk="text" value="${esc(L.text||"")}"><small>${(L.rows||[]).filter(r=>!r.hide).length} films listed. Use Full editor → Edit to change films or times.</small>`:String(L.text||"").includes("\n")||L.kind==="text"&&String(L.text||"").length>28?`<textarea id="ez-${L.id}" data-ezk="text" rows="2">${esc(L.text||"")}</textarea>`:`<input id="ez-${L.id}" data-ezk="text" value="${esc(L.text||"")}">`}
+      ${L.kind==="badge"&&L.sub!=null&&L.sub!==""?`<input data-ezk="sub" value="${esc(L.sub||"")}" aria-label="${esc(ezLabel(L))} small line" class="ezsub">`:""}</div>`).join(""):`<p class="ezmuted">No words on this design yet.</p>`}
+    <button class="ezlink" id="ezAddText" type="button">+ Add more words</button></div></div>
+  <div class="ezstep"><div class="ezn">${++n}</div><div><h4>Photo <span>(optional)</span></h4><p>${photoImg?"Your photo is in. Drag it on the design to move it.":"Add your own photo as the background, or leave it as it is."}</p>
+    <div class="ezrow"><button class="btn" id="ezPhoto" type="button">${photoImg?"Change photo":"Choose a photo"}</button>${photoImg?`<button class="btn" id="ezNoPhoto" type="button">Remove photo</button>`:""}</div></div></div>
+  <div class="ezstep"><div class="ezn">${++n}</div><div><h4>Save or share</h4><p>Saved files go to your Downloads folder.</p>
+    <div class="ezbig"><button class="btn primary" id="ezSave" type="button">⬇ Save picture</button>${anim?`<button class="btn primary" id="ezVid" type="button">🎬 Save video</button>`:""}${story?`<button class="btn storybtn" id="ezStory" type="button">Share to Facebook story</button>`:""}<button class="btn" id="ezCopy" type="button">Copy picture</button></div></div></div>
+  <p class="ezfoot">Changed your mind? Use the ↶ undo button at the top. For colours, layouts and animation, open the <button class="ezlink" id="ezFull2" type="button">full editor</button>.</p>`}
+$("#easyPanel").addEventListener("input",e=>{const f=e.target.closest("[data-ezl]");if(!f||!e.target.dataset.ezk)return;const L=S.layers.find(l=>l.id===f.dataset.ezl);if(!L)return;L[e.target.dataset.ezk]=e.target.value;L._w=0;draw();commitSoon()});
+$("#easyPanel").addEventListener("focusin",e=>{const f=e.target.closest("[data-ezl]");if(f&&selId!==f.dataset.ezl){selId=f.dataset.ezl;draw();$$("#easyPanel .ezf").forEach(x=>x.classList.toggle("sel",x===f))}});
+$("#easyPanel").addEventListener("click",e=>{const id=e.target.id;
+  if(id==="ezFull"||id==="ezFull2"){setEasy(false);toast("Full editor. Switch back any time with ✨ Easy mode at the top")}
+  else if(id==="ezPhoto")$("#photoFile").click();else if(id==="ezNoPhoto")$("#photoRemove").click();
+  else if(id==="ezSave")$("#png").click();else if(id==="ezVid")$("#vid").click();else if(id==="ezStory")$("#storyBtn").click();else if(id==="ezCopy")$("#copy").click();
+  else if(id==="ezAddText"){addLayer(mk("text","sub",{text:"Your words here",y:.85}));renderEasy();const ins=$$("#easyPanel [data-ezk=text]");const last=ins[ins.length-1];if(last){last.focus();last.select()}}});
+$("#ezToggle").onclick=()=>setEasy(!EASY);
 /* ---------- GIF encoder (median-cut palette, ordered dither, LZW, unchanged pixels left transparent) ---------- */
 const GIF={
   palette(sm,n){const cnt=sm.length/3|0,idx=new Uint32Array(cnt);for(let i=0;i<cnt;i++)idx[i]=i;
@@ -2110,6 +2161,7 @@ async function applyFilm(fm,mode){S.label=fm.title+(mode==="soon"?" coming soon"
   if(fm.poster)await loadUrlAsPhoto(fm.poster);commit();toast(fm.title+" ready. Everything can be moved and edited")}
 function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-handoff")||"null");localStorage.removeItem("imc-handoff")}catch(e){}
   if(!h||Date.now()-(h.at||0)>10*60*1000)return false;
+  if(h.easy)setEasy(true);
   if(h.fmt&&FORMATS[h.fmt])S.fmt=h.fmt;
   if(h.kind==="deal")applyDeal(h.deal,!!h.animated);
   else if(h.kind==="clip")applyClip(h.deal);
@@ -2155,7 +2207,7 @@ $("#vidGo").onclick=async()=>{if(vBusy)return;vBusy=true;vCancel=false;$("#vidGo
   saveBlob(res.blob,fileName(res.ext));ensureLoop()};
 
 /* ---------- sync + boot ---------- */
-function syncAll(){syncMotion();ensureLoop();syncTimeline();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
+function syncAll(){syncMotion();ensureLoop();syncTimeline();if(EASY&&!(document.activeElement&&document.activeElement.closest&&document.activeElement.closest("#easyPanel")))renderEasy();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
 async function boot(){buildMotionUI();
   try{const t=localStorage.getItem("imc-editor-tab");if(t){const b=$(`#tabs [data-tab="${t}"]`);if(b)b.click()}}catch(e){}
   let saved=null;try{saved=JSON.parse(fixSite(localStorage.getItem("imc-editor-state")||"null"))}catch(e){}
@@ -2167,7 +2219,7 @@ async function boot(){buildMotionUI();
   syncLogo();syncSaved();renderMedia();
   loadLibrary().then(()=>{renderLibrary();if(selId)renderProps()});
   const imcP=loadImcData().then(()=>{renderWeb();renderPPhotos();ratingList().forEach(o=>loadRating(o.src));renderRatings();if(selId)renderProps()});
-  syncStoryBtn();setupFolds();phoneMode();await loadOwn().catch(()=>{});await Promise.all([loadLuxxPics().catch(()=>{}),loadSitePics().catch(()=>{})]);
+  syncStoryBtn();setupFolds();phoneMode();if(EASY)setEasy(true);await loadOwn().catch(()=>{});await Promise.all([loadLuxxPics().catch(()=>{}),loadSitePics().catch(()=>{})]);
   let handed=null;try{handed=localStorage.getItem("imc-handoff")}catch(e){}if(handed){await imcP;applyHandoff()}
   syncAll();commit();
   const faces=["900 40px 'Big Shoulders Display'","800 40px Figtree","700 40px Figtree","700 40px 'Playfair Display'","400 40px 'Bebas Neue'","500 20px 'IBM Plex Mono'","600 20px 'IBM Plex Mono'"];

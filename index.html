@@ -314,6 +314,29 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .sitepick select{font:700 16px var(--f-body);color:var(--ink);background-color:var(--panel);border:2px solid var(--velvet);border-radius:9px;padding:9px 36px 9px 12px;appearance:none;-webkit-appearance:none;cursor:pointer;
   background-image:linear-gradient(45deg,transparent 50%,var(--velvet) 50%),linear-gradient(135deg,var(--velvet) 50%,transparent 50%);background-position:calc(100% - 18px) 55%,calc(100% - 12px) 55%;background-size:6px 6px;background-repeat:no-repeat}
 .headacts{display:flex;gap:10px;align-items:flex-end;flex:none;max-width:100%}
+/* ---- Easy mode builder ---- */
+.ezbtn{background:linear-gradient(135deg,#ffd84a,#f39a2b);color:#2a1800;border:0;font-weight:800}
+.ezhero{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:14px;width:100%;margin-top:10px;padding:16px 18px;border-radius:14px;background:linear-gradient(135deg,#ffd84a,#f39a2b 60%,#e2452e);color:#2a1800}
+.ezhero .si{font-size:30px}.ezhero b{display:block;font-size:18px}.ezhero small{display:block;font-size:13px;opacity:.85}.ezhero .go{margin-left:auto;font-weight:800;background:rgba(255,255,255,.55);padding:8px 14px;border-radius:99px;white-space:nowrap}
+.ezhero:hover{filter:brightness(1.05)}
+.ezwrap{position:fixed;inset:0;z-index:60;background:rgba(10,8,30,.55);display:grid;place-items:center;padding:16px}
+.ezbox{background:var(--panel);border-radius:18px;width:min(860px,100%);max-height:calc(100dvh - 32px);display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.35);overflow:hidden}
+.ezhead{display:flex;align-items:center;gap:10px;padding:14px 16px 0}.ezhead .btn[hidden]{visibility:hidden;display:inline-flex}
+.ezdots{flex:1;display:flex;justify-content:center;align-items:center;gap:6px}.ezdots span{width:28px;height:6px;border-radius:3px;background:var(--line)}.ezdots span.done{background:var(--velvet)}.ezdots span.on{background:#f39a2b}.ezdots em{font-style:normal;font-size:12px;color:var(--muted);margin-left:8px}
+.ezbox h2{font-size:clamp(22px,4vw,30px);margin:14px 20px 10px;text-transform:none;letter-spacing:0}
+.ezbody{overflow:auto;padding:4px 20px 22px}
+.ezgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.ezgrid.posters{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+.eztile{all:unset;box-sizing:border-box;cursor:pointer;border:2px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px;background:var(--bg);min-height:120px;transition:border-color .12s,transform .12s}
+.eztile:hover,.eztile:focus-visible{border-color:#f39a2b;transform:translateY(-2px)}.eztile.sel{border-color:var(--velvet);box-shadow:0 0 0 3px color-mix(in srgb,var(--velvet) 25%,transparent)}
+.eztile.off{opacity:.45;cursor:not-allowed;transform:none}
+.eztile .ezi{font-size:32px;line-height:1}.eztile b{font-size:16px;line-height:1.25}.eztile small{font-size:13px;color:var(--muted);line-height:1.35}
+.eztile img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:8px;background:var(--chip)}.eztile img.pimg{aspect-ratio:4/3;object-fit:contain}
+.eznote{color:var(--muted);font-size:14px;margin:14px 0 0}
+.ezsum{display:grid;gap:10px;margin:4px 0}.ezsum div{display:flex;gap:14px;padding:14px 16px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}.ezsum span{width:70px;color:var(--muted);font-size:14px}.ezsum b{font-size:17px}
+.ezgo{margin-top:18px;font-size:18px;padding:14px 26px}
+@media (max-width:560px){.ezgrid{grid-template-columns:1fr 1fr;gap:8px}.eztile{min-height:0;padding:10px}.eztile b{font-size:14px}.eztile small{font-size:12px}.ezbtn span{display:none}.ezhero b{font-size:16px}.ezhero small{display:none}.ezwrap{padding:0}.ezbox{border-radius:0;max-height:100dvh;height:100dvh}}
+
 /* ---- top bar + hamburger menu ---- */
 .app{display:block}
 .topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:14px;padding:10px max(20px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));background:var(--panel);border-bottom:1px solid var(--line)}
@@ -356,7 +379,7 @@ body.menuopen{overflow:hidden}
       <button class="qtab" data-view="studio">Create a post</button>
       <button class="qtab" data-view="foyer">Foyer TVs</button>
     </nav>
-    <div class="topright"><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary edlink" href="editor.html" target="imc-editor">Editor ↗</a></div>
+    <div class="topright"><button class="btn ezbtn" data-easy type="button">✨ <span>Easy mode</span></button><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary edlink" href="editor.html" target="imc-editor">Editor ↗</a></div>
   </header>
   <div class="scrim" id="scrim" hidden></div>
   <aside class="drawer" id="drawer" aria-label="Menu" hidden>
@@ -651,6 +674,13 @@ body.menuopen{overflow:hidden}
     <h2 id="dtitle">Delete this post?</h2>
     <p style="color:var(--muted);font-size:14px" id="dtext"></p>
     <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button class="btn" id="dcancel">Keep it</button><button class="btn primary" id="dok">Delete</button></div>
+  </div>
+</div>
+<div class="ezwrap" id="easy" hidden>
+  <div class="ezbox" role="dialog" aria-modal="true" aria-labelledby="ezQ">
+    <div class="ezhead"><button class="btn" id="ezBack" type="button">← Back</button><div class="ezdots" id="ezDots"></div><button class="dclose" id="ezClose" type="button" aria-label="Close">✕</button></div>
+    <h2 id="ezQ"></h2>
+    <div class="ezbody" id="ezBody"></div>
   </div>
 </div>
 <div class="toast" id="toast" hidden></div>
@@ -1119,7 +1149,7 @@ const fmtShort=d=>d?new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"sh
 function firstDate(f){const ds=f.sessions.map(s=>s.date).filter(Boolean).sort();return f.releaseDate&&(!ds[0]||f.releaseDate<ds[0])?f.releaseDate:ds[0]||f.releaseDate||f.date||null}
 
 /* ---------- open the photo editor with something ready ---------- */
-function openEditor(h){try{localStorage.setItem("imc-handoff",JSON.stringify({...h,at:Date.now()}))}catch(e){toast("Couldn't pass this to the editor. Browser storage is blocked.");return}
+function openEditor(h){try{localStorage.setItem("imc-handoff",JSON.stringify({...h,...(EASY_NEXT?{easy:true}:{}),at:Date.now()}))}catch(e){toast("Couldn't pass this to the editor. Browser storage is blocked.");return}
   const a=document.createElement("a");a.href="editor.html";a.target="imc-editor";document.body.appendChild(a);a.click();a.remove()}
 function filmPayload(f,mode){const d=firstDate(f);return{title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert||"",certIcon:f.certIcon||null,certSystem:f.certSystem||null,times:mode==="soon"?[]:(f.times||[]),dateLabel:d?new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}).toUpperCase():"SOON",luxx:!!f.luxx}}
 function makeFilm(f,mode,fmt){openEditor({kind:"film",mode,fmt,film:filmPayload(f,mode)})}
@@ -1583,6 +1613,71 @@ $("#v-luxx").addEventListener("click",async e=>{const g=k=>e.target.closest(`[da
   else if(b=g("lxfirst")){const a=await lxGet(),i=a.findIndex(x=>x.id===b.dataset.lxfirst);if(i>0){a.unshift(...a.splice(i,1));await edbSet(lxKey(),a);renderLxPics()}}});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-wb]");if(b){wBrand=b.dataset.wb;wSel=-1;try{localStorage.setItem("imc-wbrand",b.dataset.wb)}catch(x){}}},true);
 
+/* ---------- Easy mode: a step-by-step builder. Big choices, one question at a time, then the editor opens in its simple view ---------- */
+const EZ_WHAT=[
+  ["now","🎬","A film that's on now","Pick a film, we add the times"],
+  ["times","🕒","Film times for a day","Every film and time, ready to post"],
+  ["kids","🧸","Kids Club","This weekend's Kids Club films and price"],
+  ["deal","🍿","A deal or offer","Wednesday Meal Deal, combos and more"],
+  ["soon","📅","A film coming soon","Announce a new release"],
+  ["luxx","💺","LUXX recliners","Show off the LUXX seats"],
+  ["season","✨","A special occasion","Halloween, Christmas and more"],
+  ["welcome","📺","A welcome video for the foyer TVs","Logo reveal between trailers"]];
+const EZ_WHERE={square:["📱","Facebook or Instagram post","Square"],portrait:["📲","Tall Instagram post","4:5"],story:["⬆️","Story or Reel","Tall 9:16 for phones"],wide:["📺","Foyer TV screen","Wide 16:9"],a4:["🖨️","Poster to print","A4 or A3"]};
+let EZ={step:0};
+function ezPicks(){const T=todayIso(),w=EZ.what;
+  const base=t=>String(t).toLowerCase().replace(/\s+-\s+.*$/,"").replace(/[^a-z0-9]+/g," ").trim(),one=L=>{const m=new Map();for(const f of L){const k=base(f.title),o=m.get(k);if(!o||(o.luxx&&!f.luxx)||/\s-\s/.test(o.title))m.set(k,f)}return[...m.values()]};
+  if(w==="now"){const in7=addDays(T,6);return keyed(one(allFilms().filter(f=>f.sessions.some(s=>s.date>=T&&s.date<=in7&&notStarted(s.date,s.time))&&!/^sensory/i.test(f.title)))).sort((a,b)=>a.title.localeCompare(b.title)).map(f=>({k:f._k,poster:asset(f.posterFile)||f.poster,n:f.title,sub:[f.cert,f.luxx?"LUXX":""].filter(Boolean).join(" · ")}))}
+  if(w==="soon")return keyed(one(allFilms()).filter(f=>{const d=firstDate(f);return d&&d>T&&!/^sensory/i.test(f.title)}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b)))).slice(0,24).map(f=>({k:f._k,poster:asset(f.posterFile)||f.poster,n:f.title,sub:"Opens "+fmtShort(firstDate(f))}));
+  if(w==="times")return((IMC&&IMC.days)||[]).filter(d=>d.date>=T&&(d.films||[]).length).slice(0,7).map(d=>({k:d.date,icon:"📅",n:d.date===T?"Today":d.date===addDays(T,1)?"Tomorrow":new Date(d.date+"T12:00").toLocaleDateString("en-GB",{weekday:"long"}),sub:fmtShort(d.date)+" · "+filmsOn(d.date,d.date!==T).length+" films"}));
+  if(w==="kids")return["weekend","week"].map(r=>{const k=kidsChosen(r);return{k:r,icon:r==="weekend"?"🎈":"📆",n:r==="weekend"?"This weekend":"The next 7 days",sub:k.films.length?k.films.map(f=>f.t).join(", "):"No Kids Club showings found",off:!k.films.length}});
+  if(w==="deal")return[...imcOffers().map((x,i)=>({k:"o"+i,img:x.file?asset(x.file):"",icon:"🎟️",n:x.name,sub:[x.price,x.when].filter(Boolean).join(" · ")})),...getDeals().filter(d=>!d.imc).map((d,i)=>({k:"d"+getDeals().indexOf(d),icon:"🍿",n:d.name,sub:d.price||"Your deal"}))];
+  if(w==="luxx")return LX_TPL.filter(t=>!["foyer","cover"].includes(t.k)).map(t=>({k:t.k,icon:{hero:"🛋️",upgrade:"⬆️",gallery:"🖼️",week:"📅",reel:"🎞️",datenight:"💛"}[t.k]||"💺",n:t.n,sub:t.d}));
+  if(w==="season"){const now=hSeasonNow().map(x=>x[0]);return[...HSEASONS].sort((a,b)=>(now.includes(b[0])?1:0)-(now.includes(a[0])?1:0)).map(([k,n])=>({k,icon:{halloween:"🎃",fireworks:"🎆",midterm:"🎒",blackfriday:"🏷️",christmas:"🎄",newyear:"🥂",valentines:"💘",stpatricks:"☘️",mothers:"💐",easter:"🐣",fathers:"👔",summer:"☀️",autumn:"🍂"}[k]||"✨",n,sub:now.includes(k)?"On now":""}))}
+  return[]}
+function ezFormats(){const w=EZ.what;if(w==="luxx"){const t=LX_TPL.find(x=>x.k===EZ.pick);return t?t.fmts:["square"]}
+  if(w==="deal"||w==="soon"||w==="now")return["square","portrait","story","wide","a4"];if(w==="kids")return["square","portrait","story","wide"];if(w==="times")return["square","portrait","story","wide","a4"];return["square","portrait","story","wide"]}
+const ezMoving=()=>EZ.what==="deal"||(EZ.what==="kids"&&EZ.fmt==="story");
+function ezSteps(){const s=["what","pick","where"];if(ezMoving())s.push("move");s.push("done");return s}
+function ezLabel(){const w=EZ_WHAT.find(x=>x[0]===EZ.what),p=ezPicks().find(x=>x.k===EZ.pick);return[w&&w[2],p&&p.n].filter(Boolean).join(": ")}
+function easyOpen(){EZ={step:0};$("#easy").hidden=false;document.body.classList.add("menuopen");easyRender()}
+function easyClose(){$("#easy").hidden=true;document.body.classList.remove("menuopen")}
+function easyRender(){const steps=ezSteps(),st=steps[EZ.step],n=steps.length,el=$("#ezBody");
+  $("#ezDots").innerHTML=steps.map((x,i)=>`<span class="${i<EZ.step?"done":i===EZ.step?"on":""}"></span>`).join("")+`<em>Step ${EZ.step+1} of ${n}</em>`;
+  $("#ezBack").hidden=EZ.step===0;
+  const tile=(o,attr,sel)=>`<button class="eztile${sel?" sel":""}${o.off?" off":""}" ${attr} ${o.off?"disabled":""}>${o.poster?`<img src="${esc(o.poster)}" alt="" loading="lazy">`:o.img?`<img class="pimg" src="${esc(o.img)}" alt="" loading="lazy">`:`<span class="ezi">${o.icon||""}</span>`}<b>${esc(o.n)}</b>${o.sub?`<small>${esc(o.sub)}</small>`:""}</button>`;
+  if(st==="what"){$("#ezQ").textContent="What do you want to make an ad for?";el.innerHTML=`<div class="ezgrid">${EZ_WHAT.map(([k,i,n,sub])=>tile({icon:i,n,sub},`data-ezwhat="${k}"`,EZ.what===k)).join("")}</div>`}
+  else if(st==="pick"){const L=ezPicks(),q={now:"Which film?",soon:"Which film is coming?",times:"Which day?",kids:"Which Kids Club showings?",deal:"Which deal?",luxx:"What kind of LUXX ad?",season:"Which occasion?"}[EZ.what];$("#ezQ").textContent=q;
+    el.innerHTML=L.length?`<div class="ezgrid${["now","soon"].includes(EZ.what)?" posters":""}">${L.map(o=>tile(o,`data-ezpick="${esc(o.k)}"`,EZ.pick===o.k)).join("")}</div>${EZ.what==="kids"?`<p class="eznote">You can untick films or hide the times on the Today page's Kids Club panel.</p>`:""}`:`<p class="eznote">Nothing to choose from right now. The listings from imc.ie may not have loaded yet.</p>`}
+  else if(st==="where"){$("#ezQ").textContent="Where will it go?";el.innerHTML=`<div class="ezgrid">${ezFormats().map(f=>{const [i,n,sub]=EZ_WHERE[f];return tile({icon:i,n,sub},`data-ezfmt="${f}"`,EZ.fmt===f)}).join("")}</div>`}
+  else if(st==="move"){$("#ezQ").textContent="Still picture or moving?";el.innerHTML=`<div class="ezgrid">${tile({icon:"🖼️",n:"Still picture",sub:"Quick to post anywhere"},'data-ezmove="0"',EZ.move==="0")}${tile({icon:"🎬",n:"Moving (video)",sub:"Catches the eye in feeds and Stories"},'data-ezmove="1"',EZ.move==="1")}</div>`}
+  else{$("#ezQ").textContent="Ready to make it";const f=EZ_WHERE[EZ.fmt]||["","",""];
+    el.innerHTML=`<div class="ezsum"><div><span>Advert</span><b>${esc(ezLabel())}</b></div><div><span>For</span><b>${esc(f[1])}</b></div>${ezMoving()?`<div><span>Type</span><b>${EZ.move==="1"?"Moving (video)":"Still picture"}</b></div>`:""}</div>
+      <p class="eznote">Next, the editor opens with your ad made. You'll just check the words, then save it or share it. Nothing is posted until you choose to.</p>
+      <button class="btn primary ezgo" id="ezGo">Make my ad →</button>`}}
+function ezNext(){EZ.step++;easyRender();$("#ezBody").scrollTop=0}
+$("#easy").addEventListener("click",e=>{const g=k=>e.target.closest(`[data-${k}]`);let b;
+  if(e.target.id==="ezClose"||e.target===$("#easy")){easyClose();return}
+  if(e.target.id==="ezBack"){EZ.step=Math.max(0,EZ.step-1);easyRender();return}
+  if(b=g("ezwhat")){const w=b.dataset.ezwhat;if(w==="welcome"){easyClose();go("welcome");toast("Pick a reveal, change the words, and tick 'Play on the foyer TVs'");return}if(EZ.what!==w){EZ={step:0,what:w}}ezNext();return}
+  if(b=g("ezpick")){EZ.pick=b.dataset.ezpick;const fm=ezFormats();if(EZ.fmt&&!fm.includes(EZ.fmt))EZ.fmt=null;if(fm.length===1){EZ.fmt=fm[0];EZ.step++}ezNext();return}
+  if(b=g("ezfmt")){EZ.fmt=b.dataset.ezfmt;ezNext();return}
+  if(b=g("ezmove")){EZ.move=b.dataset.ezmove;ezNext();return}
+  if(e.target.id==="ezGo")easyMake()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#easy").hidden)easyClose()});
+document.addEventListener("click",e=>{if(e.target.closest("[data-easy]"))easyOpen()});
+let EASY_NEXT=false;
+function easyMake(){const w=EZ.what,p=EZ.pick,fmt=EZ.fmt||"square",mv=EZ.move==="1";EASY_NEXT=true;
+  try{
+    if(w==="now"||w==="soon"){const f=FILMKEYS.get(p);if(f)makeFilm(f,w==="soon"?"soon":"now",fmt)}
+    else if(w==="times")makeTimes(p,fmt);
+    else if(w==="kids")kidsAd(p,fmt,fmt==="story"&&mv?"reel":undefined);
+    else if(w==="deal"){if(p[0]==="o"){const x=imcOffers()[+p.slice(1)];if(x)openEditor({kind:"deal",deal:dealOut(offerDeal(x)),animated:mv,fmt})}else{const d=getDeals()[+p.slice(1)];if(d)openEditor({kind:"deal",deal:dealOut(d),animated:mv,fmt})}}
+    else if(w==="luxx"){const td=lxRowsToday();openEditor({kind:"luxxkit",tpl:p,fmt,price:lxPrice(),heading:td.heading,rows:td.rows,week:lxWeek().map(f=>({t:f.t,cert:f.cert,system:f.system,times:f.slots.slice(0,3).map(s=>(s.d===todayIso()?"Today":dShort(s.d))+" "+s.t)}))})}
+    else if(w==="season")seasonDesign(p,fmt)}
+  finally{EASY_NEXT=false}
+  easyClose()}
+
 /* ---------- brand settings per cinema: override hashtags, sign-off and description ---------- */
 function brandFor(k){try{return JSON.parse(localStorage.getItem((k==="enniskillen"?"imc-brand":"imc-brand-"+k))||"null")}catch(e){return null}}
 function brandSave(k,o){try{localStorage.setItem((k==="enniskillen"?"imc-brand":"imc-brand-"+k),JSON.stringify(o))}catch(e){toast("Couldn't save. Browser storage is blocked.")}}
@@ -1595,7 +1690,7 @@ function seasonDesign(key,fmt,title){openEditor({kind:"season",key,fmt:fmt||"squ
 /* ---------- start panel: the common jobs, one click each ---------- */
 function startPanel(){const se=hSeasonNow()[0];
   const t=(icon,label,sub,attr)=>`<button class="start" ${attr}><span class="si" aria-hidden="true">${icon}</span><b>${label}</b><small>${sub}</small></button>`;
-  return`<div class="panel startp"><div class="ph"><h2>What do you want to make?</h2><span class="tip" style="margin:0">Everything opens ready to post. Click any text in the editor to change it.</span></div><div class="starts">
+  return`<div class="panel startp"><div class="ph"><h2>What do you want to make?</h2><span class="tip" style="margin:0">Everything opens ready to post. Click any text in the editor to change it.</span></div><button class="ezhero" data-easy type="button"><span class="si">✨</span><span><b>Make an ad step by step</b><small>Easy mode: answer a few simple questions and we'll build it for you</small></span><span class="go">Start →</span></button><div class="starts">
     ${t("🕒","Today's film times","Square post from imc.ie",'data-times="square"')}
     ${t("📱","Times for Stories","9:16 for Instagram & Facebook",'data-times="story"')}
     ${se?t("✨",se[1]+" post","Seasonal look with animation",`data-seasonpost="${se[0]}"`):""}

@@ -78,6 +78,22 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## Easy mode (step by step)
+
+For anyone not used to design tools. **✨ Easy mode** (top bar, or the big "Make an ad step by step" button on Today) asks one question at a time, with big buttons:
+1. **What's it for?** A film on now, film times for a day, Kids Club, a deal, a coming-soon film, LUXX, a special occasion, or a foyer welcome video.
+2. **Which one?** Film posters, days, deals with prices, Kids Club weekend or week, LUXX ad types, occasions.
+3. **Where will it go?** Facebook/Instagram post, tall post, Story/Reel, foyer TV, poster to print.
+4. **Still or moving?** Only asked for deals and Kids Club Stories.
+5. **Ready:** a summary, then "Make my ad".
+
+The editor then opens in its **easy view**, with the design and three steps:
+1. **Check the words:** every headline, price and line is a labelled box.
+2. **Photo (optional).**
+3. **Save or share:** save picture, save video, share to the Facebook story, copy.
+
+"Full editor" switches to all the tools, and "✨ Easy mode" in the editor switches back. The editor remembers which you used last.
+
 ## The editor on a computer
 
 - **Tools down the left**, with labels: Designs, Photo, Add, Frame, Animate, Logo.
