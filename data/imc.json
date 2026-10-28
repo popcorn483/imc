@@ -8406,115 +8406,17 @@
     }
   ],
   "log": [
-    "home: 1 films parsed",
-    "today: 10 films parsed",
-    "day-27-10-2026-dated: 9 films parsed",
-    "day-28-10-2026-dated: 15 films parsed",
-    "day-29-10-2026-dated: 15 films parsed",
-    "day-30-10-2026-dated: 11 films parsed",
-    "day-31-10-2026-dated: 12 films parsed",
-    "day-01-11-2026-dated: 11 films parsed",
-    "day-02-11-2026-dated: 6 films parsed",
-    "day-03-11-2026-dated: 6 films parsed",
-    "advance: 15 films parsed",
-    "kids: 4 films parsed",
-    "luxx: 3 films parsed",
-    "prices: 5 ticket types, 2 bundles, 8 products",
+    "imc.ie showed a browser check on home; stopping this run and keeping the previous listings",
+    "kept previous today",
+    "kept previous days",
+    "kept previous comingSoon",
+    "kept previous kidsClub",
+    "kept previous luxx",
+    "kept previous banners",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
-  "prices": {
-    "tickets": [
-      {
-        "name": "Kids Club",
-        "price": "£4.50"
-      },
-      {
-        "name": "Kids Club Adult",
-        "price": "£4.50"
-      },
-      {
-        "name": "Kids Club Meal Deal",
-        "price": "£7.50"
-      },
-      {
-        "name": "LUXX Recliner",
-        "price": "£13.00"
-      },
-      {
-        "name": "LUXX Child/Student/OAP",
-        "price": "£9.50"
-      }
-    ],
-    "bundles": [
-      {
-        "name": "Medium Combo LUXX",
-        "price": "£18.00",
-        "details": "1 Adult Ticket + a Medium Combo",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCBLUXX.jpg",
-        "file": "data/products/t2mcbluxx.jpg"
-      },
-      {
-        "name": "Share Combo LUXX",
-        "price": "£31.00",
-        "details": "2 Adult Tickets + a Share Combo",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCBLUXX.jpg",
-        "file": "data/products/t2scbluxx.jpg"
-      }
-    ],
-    "products": [
-      {
-        "name": "Flexi Ticket",
-        "price": "£0.80",
-        "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
-        "file": "data/products/flexi.jpg"
-      },
-      {
-        "name": "Maltesers",
-        "price": "£4.00",
-        "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
-        "file": "data/products/maltesers.jpg"
-      },
-      {
-        "name": "Minstrels",
-        "price": "£4.00",
-        "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
-        "file": "data/products/minstrels.jpg"
-      },
-      {
-        "name": "Tahila Water Carton",
-        "price": "£3.00",
-        "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
-        "file": "data/products/ttc.jpg"
-      },
-      {
-        "name": "Medium Combo",
-        "price": "£8.50",
-        "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
-        "file": "data/products/combotest.jpg"
-      },
-      {
-        "name": "Large Combo",
-        "price": "£9.50",
-        "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
-        "file": "data/products/lccc.jpg"
-      },
-      {
-        "name": "Kids Tray (Kids drink, popcorn and sweet treat)",
-        "price": "£5.50",
-        "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
-        "file": "data/products/onkt.jpg"
-      },
-      {
-        "name": "Share Combo (2 Medium Drinks + 1 Large Popcorn)",
-        "price": "£13.50",
-        "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
-        "file": "data/products/scon.jpg"
-      }
-    ],
-    "checked": "2026-10-27T18:00:57.871Z"
-  },
-  "checked": "2026-10-27T18:01:04.633Z",
-  "blocked": false,
+  "checked": "2026-10-28T10:46:54.609Z",
+  "blocked": true,
   "ratings": {
     "bbfc": {
       "12": "data/ratings/bbfc-12.svg",
