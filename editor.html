@@ -117,6 +117,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .frw:has(.frkc.on){box-shadow:inset 3px 0 0 #ffc23d}
 .kcnote{font-size:12.5px;padding:8px 10px;border-radius:9px;background:rgba(255,194,61,.12);border:1px solid rgba(255,194,61,.45);line-height:1.45}.kcnote.none{background:transparent;border-color:var(--line);color:var(--muted)}
 .frbtns{display:flex;gap:3px}.mini{all:unset;cursor:pointer;width:24px;height:24px;display:grid;place-items:center;border-radius:6px;font-size:13px;color:var(--ink);background:rgba(255,255,255,.06)}.mini:hover{background:rgba(255,255,255,.14)}.mini[disabled]{opacity:.3;cursor:default}.mini.danger{color:#ff8a7a}
+.adv summary{cursor:pointer;font-size:12.5px;color:var(--muted);font-weight:600}.adv summary:hover{color:var(--ink)}
 .ststeps{margin:10px 0;padding-left:20px;line-height:1.55;font-size:14px}.ststeps a{color:var(--gold)}
 .ddbtn small{font-weight:600;opacity:.7;margin-right:2px}
 .ddmenu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;min-width:260px;background:var(--panel,#14112e);border:1px solid var(--line);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:6px;display:flex;flex-direction:column;gap:2px}
@@ -217,6 +218,32 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
   .dlg{max-height:88dvh;overflow:auto}
   .ddmenu{position:fixed;left:8px!important;right:8px!important;top:56px;min-width:0;max-height:70dvh;overflow:auto}
 }
+/* ---- computer layout: tool rail with clear labels, folding sections, quiet canvas area ---- */
+@media (min-width:761px){
+  .app{grid-template-columns:400px minmax(0,1fr) 300px}
+  .app>.left{display:grid;grid-template-columns:84px minmax(0,1fr);align-content:start;padding-left:0}
+  .app>.left>.tabs{grid-column:1;grid-row:1/span 40;display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:calc(100vh - 64px);border-bottom:0;border-right:1px solid var(--line);padding:10px 6px;background:var(--bg)}
+  .app>.left>.tabs button{display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 2px;border-radius:12px;border-bottom:0;font-size:12px;letter-spacing:0;color:var(--muted)}
+  .app>.left>.tabs button i{font-style:normal;font-size:22px;line-height:1;filter:grayscale(.5);opacity:.85}
+  .app>.left>.tabs button:hover{background:var(--panel2);color:var(--ink)}
+  .app>.left>.tabs button[aria-selected="true"]{background:var(--panel2);color:var(--ink);box-shadow:inset 3px 0 0 var(--gold)}
+  .app>.left>.tabs button[aria-selected="true"] i{filter:none;opacity:1}
+  .app>.left>[data-panel]{grid-column:2;min-width:0}
+  .stagebar .hint,.stagebar .dims{display:none}
+}
+.tabs button i{font-style:normal}
+/* folding sections: tap a heading to open or close it */
+.sec.fold>h3{cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;margin:-4px 0;padding:4px 0}
+.sec.fold>h3::after{content:"▾";font-size:14px;color:var(--muted);transition:transform .15s}
+.sec.fold.shut>h3::after{transform:rotate(-90deg)}
+.sec.fold.shut>:not(h3){display:none!important}
+.sec.fold.shut{padding-bottom:16px}
+.sec.fold>h3:hover{color:var(--ink)}
+.helpbtn{all:unset;cursor:pointer;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;color:var(--muted);border:1px solid var(--line)}
+.helpbtn:hover{color:var(--ink)}
+.helptip{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.6;color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.4);width:min(360px,90vw);z-index:20}
+.stage{position:relative}
+.tlbtn[aria-pressed="true"]{border-color:var(--gold);color:var(--gold)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -245,12 +272,12 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
   <aside class="left">
     <div class="sheethead"><b></b><button type="button">Done</button></div>
     <div class="tabs" role="tablist" id="tabs">
-      <button role="tab" data-tab="photo" aria-selected="true">Photo</button>
-      <button role="tab" data-tab="frame" aria-selected="false">Frame</button>
-      <button role="tab" data-tab="motion" aria-selected="false">Motion</button>
-      <button role="tab" data-tab="add" aria-selected="false">Add</button>
-      <button role="tab" data-tab="layouts" aria-selected="false">Layouts</button>
-      <button role="tab" data-tab="logo" aria-selected="false">Logo</button>
+      <button role="tab" data-tab="layouts" aria-selected="false"><i>🗂️</i>Designs</button>
+      <button role="tab" data-tab="photo" aria-selected="true"><i>🖼️</i>Photo</button>
+      <button role="tab" data-tab="add" aria-selected="false"><i>➕</i>Add</button>
+      <button role="tab" data-tab="frame" aria-selected="false"><i>🔲</i>Frame</button>
+      <button role="tab" data-tab="motion" aria-selected="false"><i>✨</i>Animate</button>
+      <button role="tab" data-tab="logo" aria-selected="false"><i>🔵</i>Logo</button>
     </div>
 
     <div data-panel="photo">
@@ -262,13 +289,12 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
           <button class="btn primary wide" id="photoBtn">Upload a photo or video</button>
           <p>or drag it onto the canvas, or paste with <span class="kbd">Ctrl</span>+<span class="kbd">V</span></p>
         </div>
-        <label class="lbl" for="photoUrl">Or link to a photo</label>
-        <div class="row"><input id="photoUrl" type="url" placeholder="https://…/poster.jpg"><button class="btn" id="photoLoad">Load</button></div>
-        <p class="note">Linked photos only load if the website allows it. If one won't load, save it to your computer and upload it.</p>
+        <details class="adv"><summary>Use a photo from a web address</summary><div class="row" style="margin-top:8px"><input id="photoUrl" type="url" placeholder="https://…/poster.jpg"><button class="btn" id="photoLoad">Load</button></div>
+        <p class="note">Some websites don't allow this. If it won't load, save the photo and use Upload instead.</p></details>
         <div class="lbl">Fit</div><div class="seg" id="fitSeg" style="width:max-content"><button data-fit="cover">Fill the frame</button><button data-fit="poster">Whole poster</button></div>
       </div>
       <div class="sec">
-        <h3>Adjust</h3>
+        <h3>Adjust the photo</h3>
         <label class="slider"><span>Zoom</span><input type="range" id="p-zoom" min="100" max="400" step="1"><output id="o-zoom"></output></label>
         <label class="slider"><span>Brightness</span><input type="range" id="p-b" min="50" max="150" step="1"><output id="o-b"></output></label>
         <label class="slider"><span>Contrast</span><input type="range" id="p-c" min="50" max="150" step="1"><output id="o-c"></output></label>
@@ -356,7 +382,8 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 
   <section class="stage" id="stage">
     <div class="canvaswrap" id="wrap"><canvas id="cv" width="1080" height="1080" aria-label="Design canvas"></canvas></div>
-    <div class="stagebar"><span class="row" style="gap:10px"><button class="btn" id="play" hidden>Pause</button><span class="dims" id="dims"></span></span><span class="hint">Drag to move · corners resize · top dot rotates · <span class="kbd">Del</span> removes · <span class="kbd">Ctrl</span>+<span class="kbd">D</span> duplicates</span></div>
+    <div class="stagebar"><span class="row" style="gap:10px"><button class="btn" id="play" hidden>Pause</button><button class="btn tlbtn" id="tlToggle" type="button" hidden aria-pressed="false">⏱ Timings</button><button class="helpbtn" id="helpBtn" type="button" aria-label="How to edit">?</button><span class="dims" id="dims"></span></span><span class="hint">Drag to move · corners resize · top dot rotates · <span class="kbd">Del</span> removes · <span class="kbd">Ctrl</span>+<span class="kbd">D</span> duplicates</span></div>
+    <div class="helptip" id="helpTip" hidden><b>How to edit</b><br>• Click anything on the design to change it.<br>• Drag to move it; drag a corner to resize; the top dot rotates.<br>• Press Delete to remove it, Ctrl+Z to undo.<br>• Pick a ready-made look under <b>Designs</b>.</div>
     <div class="timeline" id="tl" hidden><div class="tlhead"><button class="btn" id="tlPlay" type="button">Play / pause</button><span id="tlInfo"></span></div>
       <div class="tlgrid"><span class="tln"></span><div class="tlruler" id="tlRuler" title="Click or drag to jump to a moment"></div></div><div id="tlRows"></div></div>
   </section>
@@ -1340,9 +1367,13 @@ function drawOverlay(c,W,H,u){const k=kpx();c.save();
   c.restore()}
 
 /* ---------- canvas sizing ---------- */
-function fit(){const f=FORMATS[S.fmt];if(cv.width!==f.w||cv.height!==f.h){cv.width=f.w;cv.height=f.h}
+/* slower computers get a lighter preview: fewer frames and fewer pixels. Exports are always full quality */
+const LOWEND=(navigator.hardwareConcurrency||4)<=4||(navigator.deviceMemory||8)<=4;
+function fit(){const f=FORMATS[S.fmt];
   const wr=$("#wrap"),cs=getComputedStyle(wr),aw=wr.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight),ah=wr.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom);
-  const sc=Math.min(aw/f.w,ah/f.h);if(sc>0){cv.style.width=Math.floor(f.w*sc)+"px";cv.style.height=Math.floor(f.h*sc)+"px"}
+  const sc=Math.min(aw/f.w,ah/f.h);if(sc>0){const dw=Math.floor(f.w*sc),dh=Math.floor(f.h*sc);cv.style.width=dw+"px";cv.style.height=dh+"px";
+    const k=Math.min(1,dw*Math.min(devicePixelRatio||1,LOWEND?1:1.5)/f.w),W=Math.max(2,Math.round(f.w*k)),H=Math.max(2,Math.round(f.h*k));if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H}}
+  else if(cv.width!==f.w||cv.height!==f.h){cv.width=f.w;cv.height=f.h}
   $("#dims").textContent=`${f.w} × ${f.h}px · ${f.n}`;draw()}
 new ResizeObserver(fit).observe($("#wrap"));
 
@@ -1404,7 +1435,7 @@ document.addEventListener("click",e=>{const b=e.target.closest(".ddbtn");if(b){c
   if(e.target.closest(".ddmenu button"))setTimeout(()=>ddClose(),0);else if(!e.target.closest(".ddmenu"))ddClose()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$$(".ddmenu").some(m=>!m.hidden)){ddClose();e.stopPropagation()}},true);
 $("#tabs").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(!b)return;$$("#tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));$$("[data-panel]").forEach(p=>p.hidden=p.dataset.panel!==b.dataset.tab);
-  try{localStorage.setItem("imc-editor-tab",b.dataset.tab)}catch(e){}if(b.dataset.tab==="motion")startFxLoop()});
+  try{localStorage.setItem("imc-editor-tab",b.dataset.tab)}catch(e){}thumbsFor(b.dataset.tab);if(b.dataset.tab==="motion")startFxLoop()});
 
 /* ---------- frame panel ---------- */
 function swatchRow(el,key,get,set){el.innerHTML=SWATCHES.map(c=>`<button class="sw" data-c="${c}" style="background:${c}" aria-label="${c}" aria-pressed="${get()===c}"></button>`).join("")+`<input type="color" value="${get()}" aria-label="Custom colour">`;
@@ -1433,15 +1464,24 @@ $("#addLogo").onclick=()=>addLayer(mk("logo",null,{y:.85}));
 function thumbBadge(cnv,L){const c=cnv.getContext("2d"),W=cnv.width,H=cnv.height;c.clearRect(0,0,W,H);const tmp=document.createElement("canvas").getContext("2d");const d=drawLayer(tmp,L);
   const k=Math.min((W*.86)/(d.w*Math.abs(Math.cos(L.r||0))+d.h*Math.abs(Math.sin(L.r||0))),(H*.8)/(d.w*Math.abs(Math.sin(L.r||0))+d.h*Math.abs(Math.cos(L.r||0))));
   c.save();c.translate(W/2,H/2);c.rotate(L.style==="sash"?-.12:(L.r||0));c.scale(L.style==="sash"?W*.9/d.w:k,L.style==="sash"?W*.9/d.w:k);drawLayer(c,L);c.restore()}
-function renderThumbs(){
+function curTab(){const b=$('#tabs [aria-selected="true"]');return b?b.dataset.tab:"photo"}
+let thumbDirty={add:true,frame:true,layouts:true},thumbQ=[];
+/* canvases are drawn in small batches between frames, so the editor stays responsive while thumbnails fill in */
+const _render=render;function qrender(...a){thumbQ.push(a);if(thumbQ.length===1)requestAnimationFrame(thumbStep)}
+function thumbStep(){const t0=performance.now();while(thumbQ.length&&performance.now()-t0<(LOWEND?10:16)){const a=thumbQ.shift();if(a[0].canvas.isConnected)_render(...a)}if(thumbQ.length)requestAnimationFrame(thumbStep)}
+function renderThumbs(){thumbDirty={add:true,frame:true,layouts:true};thumbsFor(curTab())}
+function thumbsFor(t){if(!thumbDirty[t])return;thumbDirty[t]=false;const render=qrender;
+  if(t==="add"){
   const bt=g=>Object.entries(BADGES).filter(([,b])=>(b.group||"")===g).map(([k,b])=>`<button class="tile badge" data-badge="${k}"><canvas width="300" height="200"></canvas><span>${b.n}</span></button>`).join("");
   $("#badges").innerHTML=bt("");$("#dealBadges").innerHTML=bt("deal");
   $$("#badges .tile, #dealBadges .tile").forEach(t=>thumbBadge(t.querySelector("canvas"),mk("badge",t.dataset.badge)));
   $("#products").innerHTML=Object.entries(PRODUCTS).map(([k,p])=>`<button class="tile badge" data-product="${k}"><canvas width="300" height="200"></canvas><span>${p.n}</span></button>`).join("");
   $$("#products .tile").forEach(t=>thumbBadge(t.querySelector("canvas"),mk("product",t.dataset.product)));
-  renderDealTiles();
+  }else if(t==="frame"){
   $("#frames").innerHTML=Object.entries(FRAMES).map(([k,n])=>`<button class="tile" data-frame="${k}" aria-pressed="${S.frame.style===k}"><canvas width="320" height="320"></canvas><span>${n}</span></button>`).join("");
   $$("#frames .tile").forEach(t=>{const c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,style:t.dataset.frame},photo:S.photo,layers:[]})});
+  }else if(t==="layouts"){thumbQ=thumbQ.filter(a=>a[0].canvas.isConnected);
+  renderDealTiles();
   $("#layouts").innerHTML=LAYOUTS.map((l,i)=>`<button class="tile" data-layout="${i}"><canvas width="320" height="320"></canvas><span>${l.n}${l.fx?' <em class="anim">Animated</em>':""}</span></button>`).join("");
   const now=seasonNow().map(x=>x.k);
   $("#seasons").innerHTML=SEASONS.map(se=>`<button class="tile" data-season="${se.k}"><canvas width="320" height="320"></canvas><span>${esc(se.n)}${now.includes(se.k)?' <em class="anim">Now</em>':""}</span></button>`).join("");
@@ -1452,7 +1492,7 @@ function renderThumbs(){
   $$("#reels .tile").forEach(t=>{const c=t.querySelector("canvas");render(c.getContext("2d"),216,384,{noPhoto:!photoImg},presetState(REELS[+t.dataset.reel],"story"))});
   $("#safeChk").checked=showSafe;
   $$("#layouts .tile").forEach(t=>{const l=LAYOUTS[+t.dataset.layout],c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,...l.frame},photo:S.photo,layers:l.layers(),motion:{fx:l.fx||{}}})});
-}
+  }}
 let thumbT=0;function thumbsSoon(){clearTimeout(thumbT);thumbT=setTimeout(renderThumbs,600)}
 
 /* ---------- layouts ---------- */
@@ -1477,7 +1517,7 @@ function layerName(L){if(L.kind==="pphoto")return L.label||"Product photo";if(L.
 function sliderRow(id,label,min,max,val,unit){return`<label class="slider"><span>${label}</span><input type="range" id="${id}" min="${min}" max="${max}" value="${val}"><output id="o${id}">${val}${unit}</output></label>`}
 function colourBlock(label,key,L){return`<div><div class="lbl" style="margin-bottom:6px">${label}</div><div class="swatches" data-colour="${key}">${SWATCHES.map(c=>`<button class="sw" data-c="${c}" style="background:${c}" aria-label="${c}" aria-pressed="${L[key]===c}"></button>`).join("")}<input type="color" value="${/^#[0-9a-f]{6}$/i.test(L[key])?L[key]:"#ffffff"}" aria-label="Custom colour"></div></div>`}
 function renderProps(){const L=getSel(),P=$("#props");
-  if(!L){P.innerHTML=`<div class="empty"><b>Nothing selected</b><span>Click a badge, text or logo on the canvas to edit it. Click the photo and drag to reposition it.</span><span style="margin-top:6px">Add badges and text from the <b style="font-size:inherit">Add</b> tab.</span></div>`;return}
+  if(!L){P.innerHTML=`<div class="empty"><b>Click something on your design to change it</b><span>Words, badges, prices and the logo can all be edited here once you click them.</span><span style="margin-top:6px">Want a different look? Try <b style="font-size:inherit">Designs</b> on the left. Need more text or a badge? Use <b style="font-size:inherit">Add</b>.</span></div>`;return}
   let h=`<div class="sec"><div class="row" style="justify-content:space-between"><h3>${L.kind==="badge"?"Badge":L.kind==="text"?"Text":L.kind==="pphoto"?"Product photo":L.kind==="product"?"Food & drink":L.kind==="listing"?"Film times":L.kind==="rating"?"Rating":"Logo"}</h3><span class="chip">${esc(L.kind==="badge"?BADGES[L.key]?.n||"":L.kind)}</span></div>`;
   if(L.kind==="badge"){h+=`<label class="lbl" for="pp-text">Text</label><input id="pp-text" type="text" value="${esc(L.text)}">`;if(!NO_SUB[L.style])h+=`<label class="lbl" for="pp-sub">Small line</label><input id="pp-sub" type="text" value="${esc(L.sub)}" placeholder="Optional">`;
     h+=colourBlock("Main colour","c1",L)+colourBlock(L.style==="luxx"?"Trim colour":"Text colour","c2",L)}
@@ -1617,7 +1657,7 @@ let playing=true,pausedT=STILL,loopOn=false,lastF=0;
 const hasMotion=(st=S)=>(st===S&&photoIsVideo&&(st.bg||"photo")==="photo")||(st.frame&&st.frame.anim!==false&&!!FRAME_MOVES[st.frame.style])||Object.values(st.motion?.fx||{}).some(Boolean)||st.layers.some(l=>!l.hidden&&l.anim&&l.anim!=="none");
 const curT=()=>fr(performance.now()/1000/(S.motion.dur||3));
 function ensureLoop(){if(hasMotion()&&playing&&!loopOn){loopOn=true;requestAnimationFrame(loop)}else if(!hasMotion()||!playing){draw()}}
-function loop(now){if(!(hasMotion()&&playing)){loopOn=false;draw();return}if(now-lastF>=32){lastF=now;render(ctx,cv.width,cv.height,{overlay:true,t:curT()});tlHead()}requestAnimationFrame(loop)}
+function loop(now){if(!(hasMotion()&&playing)){loopOn=false;draw();return}if(now-lastF>=(LOWEND?66:40)){lastF=now;render(ctx,cv.width,cv.height,{overlay:true,t:curT()});tlHead()}requestAnimationFrame(loop)}
 function buildMotionUI(){
   $("#fxTiles").innerHTML=FX_ORDER.map(k=>`<button class="tile fx" data-fx="${k}" aria-pressed="false"><canvas width="200" height="200" data-fx="${k}"></canvas><span>${FX[k].n}${k==="chase"?' <em class="anim">Marquee</em>':""}</span></button>`).join("");
   $("#durSeg").innerHTML=[2,3,4,5,6,8,10,12,15,20].map(d=>`<button data-dur="${d}">${d} sec</button>`).join("");
@@ -1636,16 +1676,19 @@ $("#durSeg").addEventListener("click",e=>{const b=e.target.closest("[data-dur]")
 $("#shineAll").onclick=()=>{let n=0;S.layers.forEach(l=>{if(l.kind==="badge"){l.anim="shine";n++}});renderProps();commit();toast(n?"Every badge now shines":"Add a badge first")};
 $("#stillAll").onclick=()=>{S.layers.forEach(l=>l.anim="none");renderProps();commit()};
 $("#play").onclick=()=>{if(playing){pausedT=curT();playing=false}else playing=true;syncMotion();ensureLoop();draw()};
-let fxLoopOn=false;function startFxLoop(){if(fxLoopOn)return;fxLoopOn=true;const step=()=>{if($('[data-panel="motion"]').hidden||document.hidden){fxLoopOn=false;return}
-  const t=curT();$$("#fxTiles canvas").forEach(cn=>{const k=cn.dataset.fx;render(cn.getContext("2d"),cn.width,cn.height,{t,noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,style:k==="chase"?"marquee":(S.frame.style==="gallery"?"vignette":S.frame.style),logo:false,caption:""},photo:S.photo,layers:[],motion:{fx:{[k]:true}}})});
-  setTimeout(()=>requestAnimationFrame(step),55)};step()}
+let fxLoopOn=false,fxHover=null;
+const fxDraw=(cn,t)=>{const k=cn.dataset.fx;render(cn.getContext("2d"),cn.width,cn.height,{t,noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,style:k==="chase"?"marquee":(S.frame.style==="gallery"?"vignette":S.frame.style),logo:false,caption:""},photo:S.photo,layers:[],motion:{fx:{[k]:true}}})};
+function startFxLoop(){$$("#fxTiles canvas").forEach(cn=>qrender(cn.getContext("2d"),cn.width,cn.height,{t:.35,noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,style:cn.dataset.fx==="chase"?"marquee":(S.frame.style==="gallery"?"vignette":S.frame.style),logo:false,caption:""},photo:S.photo,layers:[],motion:{fx:{[cn.dataset.fx]:true}}}))}
+function fxAnim(){if(fxLoopOn)return;fxLoopOn=true;const step=()=>{if(!fxHover||$('[data-panel="motion"]').hidden||document.hidden){fxLoopOn=false;return}fxDraw(fxHover,curT());setTimeout(()=>requestAnimationFrame(step),LOWEND?80:45)};step()}
+$("#fxTiles").addEventListener("pointerover",e=>{const t=e.target.closest(".tile");const cn=t&&t.querySelector("canvas");if(cn&&cn!==fxHover){if(fxHover)fxDraw(fxHover,.35);fxHover=cn;fxAnim()}});
+$("#fxTiles").addEventListener("pointerleave",()=>{if(fxHover)fxDraw(fxHover,.35);fxHover=null});
 document.addEventListener("visibilitychange",()=>{if(!document.hidden&&!$('[data-panel="motion"]').hidden)startFxLoop()});
 
 /* ---------- timeline: when each layer appears and leaves in an animated design (drag the bars, or click the ruler to jump to a moment) ---------- */
 const INTRO_ANIMS={pop:1,slam:1,slide:1,zoom:1,fade:1,drop:1,spin:1,flip:1,type:1};
 const TL_SNAP=.01;
 function tlShown(){return S.layers.length>0&&(hasMotion()||S.layers.some(l=>(l.delay||0)>0||l.until!=null))}
-function syncTimeline(){const el=$("#tl");if(!el)return;const on=tlShown();if(el.hidden===on){el.hidden=!on;fit()}if(!on)return;const d=S.motion.dur||3;
+function syncTimeline(){const el=$("#tl");if(!el)return;const can=tlShown(),tb=$("#tlToggle");if(tb)tb.hidden=!can||PHONE.matches;const on=can&&(PHONE.matches||tlOpen);if(el.hidden===on){el.hidden=!on;fit()}if(!on)return;const d=S.motion.dur||3;
   const ticks=[];const step=d<=4?.5:d<=10?1:2;for(let s=0;s<=d+1e-6;s+=step)ticks.push(`<span style="left:${s/d*100}%">${Number.isInteger(s)?s:s.toFixed(1)}s</span>`);
   $("#tlRuler").innerHTML=ticks.join("")+'<i id="tlHead"></i>';
   $("#tlRows").innerHTML=[...S.layers].reverse().map(L=>{const a=L.delay||0,b=L.until!=null?L.until:1,intro=INTRO_ANIMS[L.anim]?Math.min(b-a,(L.anim==="type"?.5:L.anim==="drop"?.45:L.anim==="spin"?.4:.3)*(L.ilen||1)):0;
@@ -1705,6 +1748,18 @@ function syncPtabs(){const e=$('#ptabs [data-pt="edit"]');if(e)e.classList.toggl
 $("#ptabs").addEventListener("click",e=>{const b=e.target.closest("[data-pt]");if(!b)return;const k=b.dataset.pt;sheet(document.body.dataset.sheet===k?null:k)});
 document.addEventListener("click",e=>{if(e.target.closest(".sheethead button"))sheet(null)});
 PHONE.addEventListener?PHONE.addEventListener("change",phoneMode):PHONE.addListener(phoneMode);
+/* ---------- tidy panels: sections fold; the main one in each tab starts open; your choices are remembered ---------- */
+const FOLD_OPEN=["Background","Adjust the photo","IMC images","IMC frame","Frame colour","Animated effects","Text","Badges","Film times","Deals","Cinema Reels","Seasons & occasions","IMC logo"];
+let foldState={};try{foldState=JSON.parse(localStorage.getItem("imc-editor-fold")||"{}")}catch(e){}
+function setupFolds(){$$(".app>.left [data-panel]>.sec").forEach(sec=>{const h=sec.querySelector(":scope>h3");if(!h||sec.classList.contains("fold"))return;const k=h.textContent.trim();sec.classList.add("fold");
+  const open=k in foldState?foldState[k]:FOLD_OPEN.includes(k);sec.classList.toggle("shut",!open);h.setAttribute("role","button");h.tabIndex=0;h.setAttribute("aria-expanded",open)})}
+function toggleFold(h){const sec=h.parentElement,shut=!sec.classList.toggle("shut");h.setAttribute("aria-expanded",shut);foldState[h.textContent.trim()]=shut;try{localStorage.setItem("imc-editor-fold",JSON.stringify(foldState))}catch(e){}if(shut)thumbsFor(curTab())}
+$(".app>.left").addEventListener("click",e=>{const h=e.target.closest(".sec.fold>h3");if(h)toggleFold(h)});
+$(".app>.left").addEventListener("keydown",e=>{const h=e.target.closest(".sec.fold>h3");if(h&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggleFold(h)}});
+/* help and timings */
+$("#helpBtn").onclick=()=>{$("#helpTip").hidden=!$("#helpTip").hidden};
+document.addEventListener("click",e=>{if(!e.target.closest("#helpBtn,#helpTip"))$("#helpTip").hidden=true});
+let tlOpen=false;$("#tlToggle").onclick=()=>{tlOpen=!tlOpen;$("#tlToggle").setAttribute("aria-pressed",tlOpen);syncTimeline()};
 /* ---------- GIF encoder (median-cut palette, ordered dither, LZW, unchanged pixels left transparent) ---------- */
 const GIF={
   palette(sm,n){const cnt=sm.length/3|0,idx=new Uint32Array(cnt);for(let i=0;i<cnt;i++)idx[i]=i;
@@ -2112,7 +2167,7 @@ async function boot(){buildMotionUI();
   syncLogo();syncSaved();renderMedia();
   loadLibrary().then(()=>{renderLibrary();if(selId)renderProps()});
   const imcP=loadImcData().then(()=>{renderWeb();renderPPhotos();ratingList().forEach(o=>loadRating(o.src));renderRatings();if(selId)renderProps()});
-  syncStoryBtn();phoneMode();await loadOwn().catch(()=>{});await Promise.all([loadLuxxPics().catch(()=>{}),loadSitePics().catch(()=>{})]);
+  syncStoryBtn();setupFolds();phoneMode();await loadOwn().catch(()=>{});await Promise.all([loadLuxxPics().catch(()=>{}),loadSitePics().catch(()=>{})]);
   let handed=null;try{handed=localStorage.getItem("imc-handoff")}catch(e){}if(handed){await imcP;applyHandoff()}
   syncAll();commit();
   const faces=["900 40px 'Big Shoulders Display'","800 40px Figtree","700 40px Figtree","700 40px 'Playfair Display'","400 40px 'Bebas Neue'","500 20px 'IBM Plex Mono'","600 20px 'IBM Plex Mono'"];

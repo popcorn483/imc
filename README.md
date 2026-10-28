@@ -78,6 +78,20 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## The editor on a computer
+
+- **Tools down the left**, with labels: Designs, Photo, Add, Frame, Animate, Logo.
+- **Folding sections:** each section folds away, and only the main ones start open. Click a heading to open or close it. The editor remembers what you open.
+- **Around the design:** a **?** button explains how to edit. **⏱ Timings** shows the timeline for animated designs.
+
+**Built for slow PCs:**
+- The preview is drawn at screen size, not full size.
+- Thumbnails are only drawn for the tool that's open, a few at a time.
+- Effect previews only animate when you point at them.
+- Weaker computers (4 cores or 4 GB or less) get a lower preview frame rate.
+
+Downloads, videos and GIFs are always full quality.
+
 ## The editor on a phone
 
 On phones the editor works like an app:
