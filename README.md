@@ -90,6 +90,12 @@ Logos aren't fetched automatically: the main logo database, TMDB, needs a paid c
 
 **Background in Layers:** the background photo, video or colour is listed as the bottom row in Layers. You can also click an empty part of the design. Its panel lets you change or remove the photo, switch to an IMC background, choose fill or whole picture, and set zoom, darken, brightness, contrast and colour.
 
+## Deleting library pictures
+
+In the editor's Photo tool, every picture in **Your media**, **IMC images** and **From imc.ie** has a ✕ (shown when you point at it, always shown on touch screens). It asks first.
+- **Your media:** the picture is deleted from the computer for good.
+- **IMC images and imc.ie pictures:** they stay deleted on that computer, even though the daily imc.ie update brings them back into the data. "Bring them back" at the bottom of each list restores them.
+
 ## Easy mode (step by step)
 
 For anyone not used to design tools. **✨ Easy mode** (top bar, or the big "Make an ad step by step" button on Today) asks one question at a time, with big buttons:
