@@ -263,6 +263,11 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .frow b{display:block}.frow .m{font-size:13px;color:var(--muted)}.frow .tt{font-size:12px;color:var(--muted);font-style:italic}
 .fst{font-size:12px;font-weight:700;padding:3px 8px;border-radius:99px;white-space:nowrap}.fst.ok{color:var(--good);background:color-mix(in srgb,var(--good) 12%,transparent)}.fst.no{color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,transparent)}.fst.rv{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent)}
 .frow .acts{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.xadd{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}.xadd textarea{flex:1 1 280px;min-height:46px;font-size:13px}
+.xlist{margin-top:10px}.xrow{display:grid;grid-template-columns:26px 96px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.xrow:first-child{border-top:0}
+.xrow .n{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:right}.xrow img{width:96px;height:54px;object-fit:cover;border-radius:4px;background:var(--chip)}.xrow b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.xrow .m{font-size:12.5px;color:var(--muted)}
+.xrow .acts{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:640px){.xrow{grid-template-columns:20px 72px minmax(0,1fr)}.xrow img{width:72px;height:40px}.xrow .acts{grid-column:3;justify-content:flex-start}}
 .flink{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:420px}.flink input{flex:1 1 220px;min-width:0;font-size:13px;padding:6px 8px}
 @media (max-width:640px){.frow{grid-template-columns:28px 44px minmax(0,1fr)}.frow .acts{grid-column:3;align-items:flex-start;flex-direction:row;flex-wrap:wrap}}
 .prices{margin-bottom:16px}.prices h3{margin:14px 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
@@ -456,6 +461,11 @@ body.menuopen{overflow:hidden}
         <div id="fprog" class="tip" hidden></div>
       </div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>Films</h2><span class="tip" id="fcount" style="margin:0"></span></div><div id="foyList"></div></div>
+      <div class="panel" style="margin-top:16px"><div class="ph"><h2>Your own trailers</h2><span class="tip" id="xcount" style="margin:0"></span></div>
+        <p class="tip" style="margin-top:0">Add any YouTube trailers you want in the loop, for example coming attractions or films not on imc.ie yet. Paste one link, or several at once (one per line). They play in this order, without a showtimes card.</p>
+        <form id="xadd" class="xadd"><textarea id="xlinks" rows="2" placeholder="Paste YouTube trailer links here" aria-label="YouTube trailer links"></textarea><button class="btn primary">Add trailers</button></form>
+        <label class="field" style="max-width:360px;margin-top:10px"><span class="flabel">What plays on the TVs</span><select id="fwhat"><option value="both">Films from imc.ie, then my trailers</option><option value="mine">Only my trailers</option></select></label>
+        <div id="xlist" class="xlist"></div></div>
       <p class="tip">The pack has a 16:9 showtimes video card and a still for each film, a playlist for TVs that play from a USB stick, and the trailer list. The trailers themselves play through the foyer player from imc.ie's official YouTube links; YouTube doesn't allow them to be downloaded, so for offline trailer files use the ones distributors supply. The safety check works from certificates and trailer titles; nothing listens to the audio, so watch any trailer you're unsure of.</p>
     </section>
 
@@ -1371,7 +1381,7 @@ $("#resetDeals").onclick=()=>{try{localStorage.removeItem(sk("imc-deals"))}catch
 const FSAFE={bbfc:["U","PG","12A","12"],ifco:["G","PG","12A"]},FRED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
 let TRAIL=null;
 const fsk=()=>sk("imc-foyer");
-function foyState(){try{return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10,wfreq:"r",links:{},...JSON.parse(localStorage.getItem(fsk())||"{}")}}catch(e){return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10,wfreq:"r",links:{}}}}
+function foyState(){try{return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10,wfreq:"r",links:{},extra:[],what:"both",...JSON.parse(localStorage.getItem(fsk())||"{}")}}catch(e){return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10,wfreq:"r",links:{},extra:[],what:"both"}}}
 function foySave(st){try{localStorage.setItem(fsk(),JSON.stringify(st))}catch(e){}}
 function foyFilms(){if(!IMC)return[];const m=new Map(),T=todayIso(),n=cinemaNow();
   for(const f of allFilms()){const k=f.slug||f.title.toLowerCase(),o=m.get(k);if(!o)m.set(k,{...f,key:k,luxxToo:!!f.luxx,sessions:[...f.sessions]});else{o.luxxToo=o.luxxToo||!!f.luxx;for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s);for(const key of["trailer","cert","certSystem","posterFile","runtime"])o[key]=o[key]||f[key]}}
@@ -1387,13 +1397,13 @@ function foySafety(f,st){const t=f.mine?{title:f.mine.title||""}:(TRAIL||{})[f.t
 function foyChosen(st){const in7=addDays(todayIso(),7);return foyFilms().filter(f=>{const sf=foySafety(f,st);if(!sf.ok)return false;
   if(st.mode==="pick")return st.pick.includes(f.key);return(f.next&&f.next.date<=in7)||(st.soon&&!f.next&&f.sources&&f.sources.has("soon"))}).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer)===i)}
 function foyUrl(st,lounge){const u=new URL("foyer.html",location.href),P=u.searchParams;if(lounge)P.set("luxx","1");P.set("c",site);P.set("mode",st.mode);if(st.mode==="pick")P.set("ids",foyChosen(st).map(f=>f.key).join(","));
-  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
+  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=(st.extra||[]);if(xs.length)P.set("x",xs.map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)).join("|"));if(st.what==="mine"&&xs.length)P.set("only","1");const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
 async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
   if(!IMC){el.innerHTML=noData();return}
   if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}
   const st=foyState(),fl=foyFilms(),chosen=new Set(foyChosen(st).map(f=>f.key));
   $$("input[name=fmode]").forEach(r=>r.checked=r.value===st.mode);$("#fsoon").checked=st.soon;$("#ftrail").checked=st.trail;$("#fsound").checked=st.sound;$("#fcard").value=String(st.card);
-  wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;
+  wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=st.what==="mine"&&(st.extra||[]).length?"Not playing: only your trailers are on":`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;$("#fwhat").value=st.what||"both";renderExtra(st);
   const row=f=>{const sf=foySafety(f,st),t=(TRAIL||{})[f.trailer]||{},nx=f.next?`${f.next.date===todayIso()?"Today":fmtShort(f.next.date)} ${f.next.time}`:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"No upcoming times";
     return`<div class="frow"><input type="checkbox" aria-label="Include ${esc(f.title)}" data-fpick="${esc(f.key)}" ${chosen.has(f.key)?"checked":""} ${sf.ok&&st.mode==="pick"?"":"disabled"}>
       <img class="p" src="${esc(asset(f.posterFile)||f.poster||"")}" alt="" loading="lazy">
@@ -1403,9 +1413,27 @@ async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts
   const G={pack:[],todo:[],out:[]};for(const f of fl){const sf=foySafety(f,st);if(chosen.has(f.key))G.pack.push(f);else if((sf.review||sf.cls==="no"&&/no trailer|no longer|red-band/i.test(sf.label))&&(st.soon||(f.next&&f.next.date<=addDays(todayIso(),7)))&&!(sf.label.startsWith("Rated")))G.todo.push(f);else G.out.push(f)}
   const grp=(t,sub,L,open)=>L.length?`<details class="fgroup" ${open?"open":""}><summary>${t} <span>${L.length} · ${sub}</span></summary>${L.map(row).join("")}</details>`:"";
   el.innerHTML=fl.length?grp("In the pack","playing on the foyer TVs",G.pack,true)+grp("Needs you","add a trailer link, or watch and tick",G.todo,true)+grp("Left out","rated too high for the foyer, not picked, or not showing this week",G.out,false):'<p class="tip">No films in the latest import.</p>'}
+/* your own trailers: any YouTube trailers, played in your order after the films (or on their own) */
+const XMAX=40;
+function renderExtra(st){const xs=st.extra||[],el=$("#xlist");$("#xcount").textContent=xs.length?`${xs.length} trailer${xs.length===1?"":"s"}`:"";
+  el.innerHTML=xs.length?xs.map((x,i)=>`<div class="xrow"><span class="n">${i+1}</span><img src="https://i.ytimg.com/vi/${esc(x.id)}/mqdefault.jpg" alt="" loading="lazy"><div style="min-width:0"><b>${esc(x.title||"YouTube video")}</b><div class="m">${esc(x.by||"")}${x.by?" · ":""}Watch once to be sure it's right for the foyer</div></div>
+    <div class="acts"><button class="btn small ghost" data-xmove="${i}" data-d="-1" ${i?"":"disabled"} aria-label="Move up">↑</button><button class="btn small ghost" data-xmove="${i}" data-d="1" ${i<xs.length-1?"":"disabled"} aria-label="Move down">↓</button><a class="btn small ghost" href="https://www.youtube.com/watch?v=${esc(x.id)}" target="imc-web">Watch ↗</a><button class="btn small ghost danger" data-xdel="${i}">Remove</button></div></div>`).join(""):'<p class="tip" style="margin:0">No trailers added yet.</p>'}
+$("#xadd").addEventListener("submit",async e=>{e.preventDefault();const ta=$("#xlinks"),btn=e.target.querySelector("button");
+  const ids=[...new Set(ta.value.split(/[\s,]+/).map(ytIdOf).filter(Boolean))];if(!ids.length){toast("Paste a YouTube link: copy it from the address bar or YouTube's Share button.");ta.focus();return}
+  let st=foyState();const have=new Set((st.extra||[]).map(x=>x.id)),todo=ids.filter(id=>!have.has(id)),room=XMAX-(st.extra||[]).length;
+  if(!todo.length){toast(ids.length>1?"Those are already in your list":"That one's already in your list");return}
+  if(room<=0){toast(`The loop holds up to ${XMAX} of your own trailers. Remove some first.`);return}
+  btn.disabled=true;const added=[],skipped=[];
+  for(const [i,id] of todo.slice(0,room).entries()){btn.textContent=`Checking ${i+1} of ${Math.min(todo.length,room)}…`;const info=await ytInfo(id);
+    if(info.bad){skipped.push("one can't be played outside YouTube");continue}if(FRED.test(info.title||"")){skipped.push(`“${info.title}” looks red-band`);continue}
+    added.push({id,title:info.title||"",by:info.author||""})}
+  btn.disabled=false;btn.textContent="Add trailers";st=foyState();st.extra=[...(st.extra||[]),...added];foySave(st);ta.value="";renderFoyer();
+  toast((added.length?`Added ${added.length} trailer${added.length===1?"":"s"}.`:"Nothing added.")+(skipped.length?` Left out: ${skipped.join("; ")}.`:"")+(todo.length>room?` The list is full at ${XMAX}.`:""))});
+$("#xlist").addEventListener("click",e=>{const mv=e.target.closest("[data-xmove]"),dl=e.target.closest("[data-xdel]");if(!mv&&!dl)return;const st=foyState(),xs=[...(st.extra||[])];
+  if(mv){const i=+mv.dataset.xmove,j=i+ +mv.dataset.d;if(j<0||j>=xs.length)return;[xs[i],xs[j]]=[xs[j],xs[i]]}else xs.splice(+dl.dataset.xdel,1);st.extra=xs;foySave(st);renderFoyer()});
 $("#v-foyer").addEventListener("change",e=>{const st=foyState(),t=e.target;
   if(t.name==="fmode"){st.mode=t.value;if(st.mode==="pick"&&!st.pick.length)st.pick=foyChosen({...st,mode:"auto"}).map(f=>f.key)}
-  else if(t.id==="fsoon")st.soon=t.checked;else if(t.id==="ftrail")st.trail=t.checked;else if(t.id==="fsound")st.sound=t.checked;else if(t.id==="fcard")st.card=+t.value;
+  else if(t.id==="fsoon")st.soon=t.checked;else if(t.id==="ftrail")st.trail=t.checked;else if(t.id==="fsound")st.sound=t.checked;else if(t.id==="fcard")st.card=+t.value;else if(t.id==="fwhat")st.what=t.value;
   else if(t.dataset.fpick){const k=t.dataset.fpick;st.pick=t.checked?[...new Set([...st.pick,k])]:st.pick.filter(x=>x!==k)}
   else if(t.dataset.fok){if(t.checked){st.ok=[...new Set([...st.ok,t.dataset.fok])];if(st.mode==="pick")st.pick=[...new Set([...st.pick,t.dataset.fok])]}}
   else return;foySave(st);renderFoyer()});
@@ -1423,9 +1451,9 @@ $("#v-foyer").addEventListener("submit",async e=>{const fm=e.target.closest("[da
 $("#v-foyer").addEventListener("click",e=>{const ul=e.target.closest("[data-funlink]");if(ul){const st=foyState();const L={...(st.links||{})};delete L[ul.dataset.funlink];st.links=L;foySave(st);renderFoyer();return}
   const u=e.target.closest("[data-funok]");if(u){const st=foyState();st.ok=st.ok.filter(x=>x!==u.dataset.funok);st.pick=st.pick.filter(x=>x!==u.dataset.funok);foySave(st);renderFoyer()}});
 $("#fcopy").onclick=()=>{const u=foyUrl(foyState());navigator.clipboard?.writeText(u).then(()=>toast("TV link copied. Open it in the foyer TV's browser"),()=>prompt("Copy this link",u))};
-function foyCsv(list){const q=v=>`"${String(v??"").replace(/"/g,'""')}"`;return["Order,Film,Certificate,Runtime (min),Next showing,Trailer link,Trailer title",...list.map((f,i)=>[i+1,f.title,f.cert||"",f.runtime||"",f.next?f.next.date+" "+f.next.time:"",f.trailer||"",((TRAIL||{})[f.trailer]||{}).title||""].map(q).join(","))].join("\r\n")}
+function foyCsv(list){const q=v=>`"${String(v??"").replace(/"/g,'""')}"`,xs=foyState().extra||[];return["Order,Film,Certificate,Runtime (min),Next showing,Trailer link,Trailer title",...list.map((f,i)=>[i+1,f.title,f.cert||"",f.runtime||"",f.next?f.next.date+" "+f.next.time:"",f.trailer||"",((TRAIL||{})[f.trailer]||{}).title||""].map(q).join(",")),...xs.map((x,i)=>[list.length+i+1,"(your trailer)","","","","https://www.youtube.com/watch?v="+x.id,x.title||""].map(q).join(","))].join("\r\n")}
 function saveBlob(b,name){const u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
-$("#fcsv").onclick=async()=>{if(!TRAIL)TRAIL=(await getJson("data/trailers.json"))||{};const list=foyChosen(foyState());if(!list.length){toast("No films in the pack yet");return}saveBlob(new Blob([foyCsv(list)],{type:"text/csv"}),`${S().town.replace(/\W+/g,"-")}-foyer-trailers-${todayIso()}.csv`)};
+$("#fcsv").onclick=async()=>{if(!TRAIL)TRAIL=(await getJson("data/trailers.json"))||{};const list=foyChosen(foyState());if(!list.length&&!(foyState().extra||[]).length){toast("No films in the pack yet");return}saveBlob(new Blob([foyCsv(list)],{type:"text/csv"}),`${S().town.replace(/\W+/g,"-")}-foyer-trailers-${todayIso()}.csv`)};
 /* 16:9 showtimes card, drawn for a still or recorded as video */
 function loadImg(src){return new Promise(r=>{if(!src)return r(null);const im=new Image();im.crossOrigin="anonymous";im.onload=()=>r(im);im.onerror=()=>r(null);im.src=src})}
 /* The blurred backdrop and the poster's drop shadow are the expensive parts, so they're drawn once per film

@@ -87,6 +87,8 @@ const RED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[
 const LOUNGE=Q.get("luxx")==="1";
 /* trailers you linked yourself in the hub, for films whose imc.ie trailer is missing or unsuitable */
 const MYTR=Object.fromEntries((Q.get("tl")||"").split("|").map(x=>x.split("~")).filter(x=>x.length===2&&/^[\w-]{11}$/.test(x[1])));
+/* your own trailers from the hub, in your order: id~title|id~title */
+const EXTRA=(Q.get("x")||"").split("|").map(x=>{const i=x.indexOf("~"),id=i<0?x:x.slice(0,i);return{id,title:i<0?"":x.slice(i+1)}}).filter(x=>/^[\w-]{11}$/.test(x.id)&&!RED.test(x.title)),ONLY=Q.get("only")==="1"&&EXTRA.length>0;
 const WEL=(window.IMCIdent?IMCIdent.decode(Q.get("w")||""):[]).filter(w=>!LOUNGE||w.brand==="luxx"),WF=Q.get("wf")||(WEL.length?"r":"0");
 let since=0,justIdent=false,lastIdent=-1,idAssets=null,idRaf=0;
 const newGap=()=>WF==="r"?2+Math.floor(Math.random()*3):Math.max(1,+WF||1);let gap=newGap();
@@ -108,7 +110,7 @@ function films(){const m=new Map();
 function safety(f){const t=f.mine?{}:T[f.trailer]||{};const sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
   if(!f.trailer||!ytId(f.trailer))return{ok:false,why:"no trailer"};if(t.unavailable)return{ok:false,why:"trailer unavailable"};
   if(t.red||RED.test(t.title||""))return{ok:false,why:"red-band trailer"};
-  if(!c||c==="TBC")return OK.has(f.key)?{ok:true}:{ok:false,review:true,why:"no certificate yet"};
+  if(f.extra)return{ok:true};if(!c||c==="TBC")return OK.has(f.key)?{ok:true}:{ok:false,review:true,why:"no certificate yet"};
   return(SAFE[sys]||SAFE.bbfc).includes(c)?{ok:true}:{ok:false,why:"rated "+c}}
 function upcoming(f){const n=londonNow();return f.sessions.filter(s=>s.date&&(s.date>n.date||(s.date===n.date&&s.time>n.hm))).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))}
 function buildQueue(){const n=londonNow(),all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.length).map(f=>({...f,sessions:f.luxxS})):films(),in7=new Date(Date.now()+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
@@ -117,6 +119,8 @@ function buildQueue(){const n=londonNow(),all=LOUNGE?films().filter(f=>f.luxxToo
   const nt=t=>String(t||"").toLowerCase().replace(/^(sensory|autism friendly|parent (and|&) baby)[:\s-]*/,"").replace(/\s+-\s+.*$|\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
   list=list.filter(f=>safety(f).ok).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer||nt(x.title)===nt(f.title))===i);
   list.sort((a,b)=>{const ua=upcoming(a)[0],ub=upcoming(b)[0];return(ua?ua.date+ua.time:"9"+(a.releaseDate||"")).localeCompare(ub?ub.date+ub.time:"9"+(b.releaseDate||""))});
+  if(ONLY)list=[];if(!TRAILERS)return list;
+  const seen=new Set(list.map(f=>ytId(f.trailer)));for(const x of EXTRA)if(!seen.has(x.id)){seen.add(x.id);list.push({key:"x:"+x.id,title:x.title||"Coming soon",trailer:"https://www.youtube.com/watch?v="+x.id,extra:true,sessions:[]})}
   return list}
 function fmtDay(d){return new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"})}
 function showCard(f){const u=upcoming(f),n=londonNow(),day=u[0]?u[0].date:null,times=day?u.filter(s=>s.date===day).map(s=>s.time):[];
@@ -137,9 +141,9 @@ async function next(){clearTimeout(timer);
   /* now and then, a welcome video between films */
   if(WEL.length&&WF!=="0"&&!justIdent&&qi>=0&&(qi%2===1||!TRAILERS)){since++;if(since>=gap){since=0;gap=newGap();justIdent=true;return playIdent()}}
   justIdent=false;
-  qi=(qi+1)%(queue.length*2);if(!TRAILERS&&qi%2)qi=(qi+1)%(queue.length*2);const f=queue[Math.floor(qi/2)%queue.length];
+  qi=(qi+1)%(queue.length*2);if(!TRAILERS&&qi%2)qi=(qi+1)%(queue.length*2);const f=queue[Math.floor(qi/2)%queue.length];if(f.extra&&qi%2===0)qi++; /* your own trailers have no showtimes card */
   if(qi%2===0||!TRAILERS){showCard(f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
-  const ok=await loadYT();if(!ok){showCard(f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
+  const ok=await loadYT();if(!ok&&f.extra){timer=setTimeout(next,1000);return}if(!ok){showCard(f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
   const id=ytId(f.trailer);$("#tlabel").textContent=f.title;$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,5000);
   show("yt-wrap");progress(0.01);
   let started=false,over=false;const cur=$("#ytcurtain");cur.classList.remove("off");
@@ -169,7 +173,7 @@ let mv;document.addEventListener("mousemove",()=>{document.body.classList.add("p
 /* refresh once a day before opening so times are right */
 setInterval(()=>{const n=londonNow();if(n.hm==="05:00")location.reload()},60e3);
 (async()=>{await load();if(!D){$("#sinfo").textContent="Couldn't load the listings. Check the internet connection; retrying in a minute.";setTimeout(()=>location.reload(),60e3);return}
-  const n=queue.length;$("#sinfo").textContent=n?`${n} foyer-safe film${n>1?"s":""} for ${D.cinema}. ${TRAILERS?"Each trailer plays after its showtimes card.":"Showtimes cards only."}${SOUND?" Click Start to play with sound.":""}`:"No foyer-safe trailers to show right now.";
+  const n=queue.length,nx=queue.filter(f=>f.extra).length,nf=n-nx;$("#sinfo").textContent=n?`${ONLY?`${nx} of your trailers on a loop`:`${nf} foyer-safe film${nf===1?"":"s"}${nx?` and ${nx} of your trailers`:""}`} for ${D.cinema}. ${ONLY?"":TRAILERS?"Each film's trailer plays after its showtimes card.":"Showtimes cards only."}${SOUND?" Click Start to play with sound.":""}`:"No foyer-safe trailers to show right now.";
   $("#go").hidden=false;$("#go").focus();$("#go").onclick=start;
   if(!SOUND)start()})();
 })();
