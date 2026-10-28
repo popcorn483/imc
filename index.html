@@ -1118,7 +1118,7 @@ function openEditor(h){try{localStorage.setItem("imc-handoff",JSON.stringify({..
 function filmPayload(f,mode){const d=firstDate(f);return{title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert||"",certIcon:f.certIcon||null,certSystem:f.certSystem||null,times:mode==="soon"?[]:(f.times||[]),dateLabel:d?new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}).toUpperCase():"SOON",luxx:!!f.luxx}}
 function makeFilm(f,mode,fmt){openEditor({kind:"film",mode,fmt,film:filmPayload(f,mode)})}
 function makeTimes(date,fmt){const films=filmsOn(date);if(!films.length){toast("No film times for that day yet");return}
-  openEditor({kind:"listing",fmt,heading:date===todayIso()?"Today at "+S().name:"At "+S().name,sub:fmtLong(date),rows:films.map(f=>({t:f.title,times:f.times,cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||"",luxx:!!f.luxx}))})}
+  openEditor({kind:"listing",fmt,heading:date===todayIso()?"Today at "+S().name:"At "+S().name,sub:fmtLong(date),date,rows:films.map(f=>({t:f.title,times:f.times,kids:f.kidsTimes||[],cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||"",luxx:!!f.luxx}))})}
 /* ---------- Kids Club: the weekend's (or week's) Kids Club showings from imc.ie, for ads, Reels and captions ---------- */
 const DOW=d=>new Date(d+"T12:00").getDay();
 function kidsRange(range){const T=todayIso();if(range==="week")return{from:T,to:addDays(T,6),label:"next 7 days"};

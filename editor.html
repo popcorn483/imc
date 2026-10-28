@@ -106,6 +106,13 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .menuwrap{position:relative}
 .storybtn{background:linear-gradient(135deg,#1877f2,#7b3fe4);color:#fff;border-color:transparent}.storybtn::before{content:"";width:14px;height:14px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
 .stwarn{border:1px solid rgba(255,194,61,.5);background:rgba(255,194,61,.08);border-radius:10px;padding:10px 12px;margin:8px 0}.stwarn .note{margin:0 0 8px}
+.frows{display:flex;flex-direction:column;gap:6px;max-height:46vh;overflow:auto;padding-right:2px}
+.frw{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:4px 6px;align-items:center;padding:7px;border:1px solid var(--line);border-radius:9px;background:var(--panel2)}
+.frw.off{opacity:.5}.frw.off .frt{text-decoration:line-through}
+.frchk input{width:18px;height:18px;margin:0}.frw input.frt{font-weight:700;padding:5px 7px;font-size:13px;min-width:0}
+.frw input.frtimes{grid-column:2;font-family:var(--f-mono);font-size:12px;padding:5px 7px;min-width:0}.frw select{grid-column:3;font-size:12px;padding:4px}
+.frw .frlx{grid-column:2;font-size:12px;display:flex;gap:6px;align-items:center;color:var(--muted)}.frw .frlx input{margin:0}
+.frbtns{display:flex;gap:3px}.mini{all:unset;cursor:pointer;width:24px;height:24px;display:grid;place-items:center;border-radius:6px;font-size:13px;color:var(--ink);background:rgba(255,255,255,.06)}.mini:hover{background:rgba(255,255,255,.14)}.mini[disabled]{opacity:.3;cursor:default}.mini.danger{color:#ff8a7a}
 .ststeps{margin:10px 0;padding-left:20px;line-height:1.55;font-size:14px}.ststeps a{color:var(--gold)}
 .ddbtn small{font-weight:600;opacity:.7;margin-right:2px}
 .ddmenu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;min-width:260px;background:var(--panel,#14112e);border:1px solid var(--line);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:6px;display:flex;flex-direction:column;gap:2px}
@@ -895,7 +902,7 @@ function drawProduct(c,L){const P=PRODUCTS[L.key]||PRODUCTS.popcorn;return P.dra
 /* ---------- film times listing ---------- */
 function fitText(c,t,max){if(c.measureText(t).width<=max)return t;let s=t;while(s.length>1&&c.measureText(s+"…").width>max)s=s.slice(0,-1);return s+"…"}
 function listingH(n){return 44+156+Math.max(1,n)*80+30}
-function drawListing(c,L){const rows=(L.rows||[]).slice(0,12),w=940,pad=46,h=listingH(rows.length),X=-w/2,Y=-h/2;
+function drawListing(c,L){const rows=(L.rows||[]).filter(r=>!r.hide).slice(0,16).map(r=>({...r,times:L.hideTimes?[]:r.times,cert:L.hideCert?"":r.cert,luxx:L.hideLuxx?false:r.luxx,kids:L.hideKids?[]:(r.kids||[])})),w=940,pad=46,h=listingH(rows.length),X=-w/2,Y=-h/2;
   rr(c,X,Y,w,h,30);sh(c,true,.45);c.fillStyle="rgba(12,12,40,.84)";c.fill();sh(c,false);
   c.save();rr(c,X,Y,w,h,30);c.clip();const sg=c.createLinearGradient(X,0,X+w,0);sg.addColorStop(0,"#ffd84a");sg.addColorStop(.55,"#f39a2b");sg.addColorStop(1,"#e2452e");c.fillStyle=sg;c.fillRect(X,Y,w,10);c.restore();
   c.strokeStyle="rgba(255,255,255,.14)";c.lineWidth=2;rr(c,X,Y,w,h,30);c.stroke();
@@ -906,14 +913,39 @@ function drawListing(c,L){const rows=(L.rows||[]).slice(0,12),w=940,pad=46,h=lis
   rows.forEach(r=>{c.fillStyle="rgba(255,255,255,.1)";c.fillRect(X+pad,y,w-pad*2,1.5);const cy=y+40;
     c.font=`600 25px ${FONTS.mono}`;let tx=X+w-pad;const times=(r.times||[]).slice();const pills=[];let used=0;
     for(let i=times.length-1;i>=0;i--){const pw=c.measureText(times[i]).width+26;if(used+pw+10>w*.5){pills.unshift("+"+(i+1));break}pills.unshift(times[i]);used+=pw+10}
-    for(let i=pills.length-1;i>=0;i--){const t=pills[i],pw=c.measureText(t).width+26;tx-=pw;rr(c,tx,cy-22,pw,44,22);c.fillStyle=t.startsWith("+")?"rgba(255,216,74,.18)":"rgba(255,255,255,.12)";c.fill();c.fillStyle=t.startsWith("+")?"#ffd84a":"#ffffff";c.fillText(t,tx+13,cy+9);tx-=10}
+    for(let i=pills.length-1;i>=0;i--){const t=pills[i],pw=c.measureText(t).width+26;tx-=pw;rr(c,tx,cy-22,pw,44,22);const kc=(r.kids||[]).includes(t);c.fillStyle=t.startsWith("+")?"rgba(255,216,74,.18)":kc?"#ffc23d":"rgba(255,255,255,.12)";c.fill();c.fillStyle=t.startsWith("+")?"#ffd84a":kc?"#2a1800":"#ffffff";c.fillText(t,tx+13,cy+9);tx-=10}
     let lx=X+pad;c.font=`800 33px ${FONTS.body}`;const extra=(r.cert?70:0)+(r.luxx?90:0);const title=fitText(c,r.t||"",tx-lx-extra-16);c.fillStyle="#ffffff";c.fillText(title,lx,cy+12);lx+=c.measureText(title).width+14;
     const ri=r.cert&&ratingImg(ratingFor(r.cert,r.system||"bbfc",L.rsys||ratingSys));
     if(ri){const ih=40,iw=ih*(ri.naturalWidth||ih)/(ri.naturalHeight||ih);c.drawImage(ri,lx,cy-ih/2,iw,ih);lx+=iw+10}
     else if(r.cert){c.font=`700 19px ${FONTS.mono}`;const cw=c.measureText(r.cert).width+16;rr(c,lx,cy-16,cw,32,6);c.strokeStyle="rgba(255,255,255,.55)";c.lineWidth=2;c.stroke();c.fillStyle="#fff";c.fillText(r.cert,lx+8,cy+7);lx+=cw+10}
     if(r.luxx){c.font=`700 22px ${FONTS.serif}`;c.fillStyle="#ffc23d";ft(c,"LUXX",lx,cy+8,4,"left")}
     y+=80});
+  if(rows.some(r=>(r.kids||[]).length)){c.font=`800 20px ${FONTS.body}`;const kt="KIDS CLUB",kw=c.measureText(kt).width+20;rr(c,X+w-pad-kw,Y+pad+88,kw,30,15);c.fillStyle="#ffc23d";c.fill();c.fillStyle="#2a1800";c.fillText(kt,X+w-pad-kw+10,Y+pad+110)}
   return{w,h}}
+/* ---------- film times: a proper film list in the panel (tick to show, edit, reorder), the day to show, and what to include ---------- */
+function lnow(){const p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()))p[x.type]=x.value;return{date:`${p.year}-${p.month}-${p.day}`,hm:`${p.hour}:${p.minute}`}}
+function listDays(){const n=lnow().date;return((IMC&&IMC.days)||[]).filter(d=>d.date>=n&&(d.films||[]).length).slice(0,8)}
+function dayRows(date,dropStarted){const n=lnow(),day=((IMC&&IMC.days)||[]).find(d=>d.date===date);if(!day)return todayRows();
+  return(day.films||[]).map(x=>{const ss=(x.sessions||[]).filter(s=>s.date===date&&!(dropStarted&&date===n.date&&s.time<=n.hm));return{t:x.title,times:ss.map(s=>s.time).sort(),kids:ss.filter(s=>(s.tags||[]).includes("kidsclub")).map(s=>s.time),cert:x.cert&&x.cert!=="TBC"?x.cert:"",system:x.certSystem||"",luxx:!!x.luxx}}).filter(r=>r.times.length)}
+const dayLabel=d=>{const n=lnow().date,t=new Date(d+"T12:00");return d===n?"Today":t.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"short"})};
+/* keep the list filling the design as films are added, hidden or removed */
+function fitListing(L){const f=FORMATS[S.fmt],u=Math.min(f.w,f.h)/1080,n=(L.rows||[]).filter(r=>!r.hide).length,avail=(f.h-150*u)/u*.92,need=listingH(Math.min(16,n));L.s=Math.min(1,avail/need,(f.w/u*.92)/940)}
+function filmRowsHtml(L){const rows=L.rows||[],certs=["","U","PG","12A","12","15","18","G","16"];
+  return`<div class="frows">${rows.map((r,i)=>`<div class="frw${r.hide?" off":""}" data-fr="${i}">
+    <label class="frchk" title="Show on the post"><input type="checkbox" data-frk="hide" ${r.hide?"":"checked"} aria-label="Show ${esc(r.t)}"></label>
+    <input class="frt" data-frk="t" value="${esc(r.t)}" aria-label="Film title">
+    <div class="frbtns"><button class="mini" data-frmv="-1" title="Move up" aria-label="Move up" ${i?"":"disabled"}>↑</button><button class="mini" data-frmv="1" title="Move down" aria-label="Move down" ${i<rows.length-1?"":"disabled"}>↓</button><button class="mini danger" data-frdel title="Remove" aria-label="Remove ${esc(r.t)}">✕</button></div>
+    <input class="frtimes" data-frk="times" value="${esc((r.times||[]).join(" "))}" placeholder="13:00 15:30" aria-label="Times for ${esc(r.t)}">
+    <select data-frk="cert" aria-label="Certificate">${[...new Set([...certs,r.cert||""])].map(c=>`<option value="${c}" ${c===(r.cert||"")?"selected":""}>${c||"No cert"}</option>`).join("")}</select>
+    <label class="frlx"><input type="checkbox" data-frk="luxx" ${r.luxx?"checked":""}> LUXX</label></div>`).join("")}</div>
+    <div class="row" style="gap:6px;margin-top:8px"><button class="btn" data-act="addrow">+ Add a film</button><button class="btn" data-act="sortrows">Sort by first time</button></div>`}
+function listingPanel(L){const ls=L.rsys||ratingSys,days=listDays(),n=lnow().date,cur=L.day||n,shown=(L.rows||[]).filter(r=>!r.hide).length;
+  return`${days.length?`<label class="lbl" for="pp-day">Day</label><div class="row" style="gap:6px"><select id="pp-day" style="flex:1">${days.map(d=>`<option value="${d.date}" ${d.date===cur?"selected":""}>${esc(dayLabel(d.date))}</option>`).join("")}</select></div>
+    <label class="check"><input type="checkbox" id="pp-started" ${L.dropStarted!==false?"checked":""}> Leave out shows that have already started</label>`:""}
+    <label class="lbl" for="pp-text">Heading</label><input id="pp-text" type="text" value="${esc(L.text||"")}"><label class="lbl" for="pp-sub">Date line</label><input id="pp-sub" type="text" value="${esc(L.sub||"")}">
+    <div class="lbl">Show on the post</div><div class="row" style="gap:12px;flex-wrap:wrap"><label class="check"><input type="checkbox" id="pp-shtimes" ${L.hideTimes?"":"checked"}> Times</label><label class="check"><input type="checkbox" id="pp-shcert" ${L.hideCert?"":"checked"}> Certificates</label><label class="check"><input type="checkbox" id="pp-shlx" ${L.hideLuxx?"":"checked"}> LUXX tags</label><label class="check"><input type="checkbox" id="pp-shkids" ${L.hideKids?"":"checked"}> Kids Club colour</label></div>
+    ${L.hideCert?"":`<div class="seg" id="pp-lsys" style="width:max-content;margin-top:6px"><button data-pls="bbfc" aria-pressed="${ls==="bbfc"}">BBFC</button><button data-pls="ifco" aria-pressed="${ls==="ifco"}">IFCO</button></div>`}
+    <div class="lbl" style="display:flex;justify-content:space-between"><span>Films (${shown} shown${shown>16?", first 16 fit":""})</span><span class="note" style="margin:0">Untick to hide</span></div>${filmRowsHtml(L)}`}
 function parseRows(s){return String(s||"").split("\n").map(l=>l.split("|").map(x=>x.trim())).filter(p=>p[0]).map(([t,times,cert,lx])=>({t,times:(times||"").split(/[\s,]+/).filter(Boolean),cert:cert||"",luxx:/luxx/i.test(lx||"")}))}
 function rowsText(rows){return(rows||[]).map(r=>[r.t,(r.times||[]).join(" "),r.cert||"",r.luxx?"LUXX":""].join(" | ").replace(/( \| )+$/,"")).join("\n")}
 
@@ -1247,7 +1279,7 @@ function kpx(){const r=cv.getBoundingClientRect();return r.width?cv.width/r.widt
 function corners(L,W,H,u,k){const co=Math.cos(L.r||0),si=Math.sin(L.r||0),sc=L.s*u,hw=(L._w||0)/2*sc,hh=(L._h||0)/2*sc,cx=L.x*W,cy=L.y*H;
   const P=(lx,ly)=>({x:cx+lx*co-ly*si,y:cy+lx*si+ly*co});return{c:{x:cx,y:cy},tl:P(-hw,-hh),tr:P(hw,-hh),br:P(hw,hh),bl:P(-hw,hh),top:P(0,-hh),rot:P(0,-hh-46*k)}}
 function drawOverlay(c,W,H,u){const k=kpx();c.save();
-  if(!photoImg){c.fillStyle="rgba(255,255,255,.5)";c.font=`600 ${Math.max(14*k,26*u)}px ${FONTS.body}`;c.textAlign="center";c.fillText("Drop a photo here, paste one, or use Photo → Upload",W/2,H/2);c.textAlign="left"}
+  if(!photoImg&&(S.bg||"photo")==="photo"){c.fillStyle="rgba(255,255,255,.5)";c.font=`600 ${Math.max(14*k,26*u)}px ${FONTS.body}`;c.textAlign="center";c.fillText("Drop a photo here, paste one, or use Photo → Upload",W/2,H/2);c.textAlign="left"}
   if(showSafe&&S.fmt==="story"){const top=H*.13,bot=H*.22,rt=W*.13;c.fillStyle="rgba(255,79,216,.13)";c.fillRect(0,0,W,top);c.fillRect(0,H-bot,W,bot);c.fillRect(W-rt,top,rt,H-top-bot);
     c.strokeStyle="rgba(255,79,216,.75)";c.lineWidth=1.5*k;c.setLineDash([8*k,6*k]);c.strokeRect(0,top,W-rt,H-top-bot);c.setLineDash([]);c.fillStyle="rgba(255,255,255,.85)";c.font=`600 ${Math.max(11*k,22*u)}px ${FONTS.body}`;c.textAlign="center";
     c.fillText("Reels: app buttons cover this",W/2,top*.55);c.fillText("Reels: caption & buttons cover this",W/2,H-bot*.5);c.textAlign="left"}
@@ -1412,7 +1444,7 @@ function renderProps(){const L=getSel(),P=$("#props");
     ${L.box?colourBlock("Panel colour","c2",L):""}`}
   if(L.kind==="badge"&&L.style==="menu"){h+=`<label class="lbl" for="pp-items">What's included (one per line)</label><textarea id="pp-items" rows="4">${esc(L.items||"")}</textarea>`}
   if(L.kind==="product"){if(PRODUCT_LABEL[L.key])h+=`<label class="lbl" for="pp-text">${PRODUCT_LABEL[L.key]}</label><input id="pp-text" type="text" value="${esc(L.text||"")}">`;h+=colourBlock(L.key==="hotdog"?"Sausage colour":L.key==="nachos"||L.key==="tray"?"Tray colour":L.key==="popcorn"?"Box colour":L.key==="icescoop"?"Cup colour":L.key==="ticket"?"Ticket colour":L.key==="pickmix"?"Stripe colour":L.key==="sweets"?"Bag colour":"Main colour","c1",L)+colourBlock(L.key==="popcorn"?"Heart colour":L.key==="icescoop"?"Top scoop colour":L.key==="icetub"?"Band colour":L.key==="ticket"?"Text colour":L.key==="pickmix"?"Bag colour":L.key==="drink"?"Straw colour":L.key==="hotdog"?"Mustard colour":L.key==="nachos"?"Cheese colour":"Second colour","c2",L)}
-  if(L.kind==="listing"){const ls=L.rsys||ratingSys;h+=`<div class="lbl">Rating symbols</div><div class="seg" id="pp-lsys" style="width:max-content"><button data-pls="bbfc" aria-pressed="${ls==="bbfc"}">BBFC</button><button data-pls="ifco" aria-pressed="${ls==="ifco"}">IFCO</button></div>`;h+=`<label class="lbl" for="pp-text">Heading</label><input id="pp-text" type="text" value="${esc(L.text||"")}"><label class="lbl" for="pp-sub">Date line</label><input id="pp-sub" type="text" value="${esc(L.sub||"")}"><label class="lbl" for="pp-rows">Films: Title | times | cert | LUXX</label><textarea id="pp-rows" rows="7" style="font-family:var(--f-mono);font-size:12px">${esc(rowsText(L.rows))}</textarea>${IMC&&IMC.today&&IMC.today.length?'<button class="btn wide" data-act="reloadrows">Refresh from imc.ie</button>':""}`}
+  if(L.kind==="listing"){h+=listingPanel(L)}
   if(L.kind==="rating"){const sys=L.system||"bbfc",opts=ratingList(sys).filter(o=>o.cert!==sys.toUpperCase());h+=`<div class="seg" id="pp-rsys" style="width:max-content"><button data-prs="bbfc" aria-pressed="${sys==="bbfc"}">BBFC</button><button data-prs="ifco" aria-pressed="${sys==="ifco"}">IFCO</button></div>`+(opts.length?`<label class="lbl" for="pp-rating">Certificate</label><select id="pp-rating">${!L.src?`<option value="" selected>${esc(L.cert||"Choose")}</option>`:""}${opts.map(o=>`<option value="${esc(o.src)}" ${o.src===L.src?"selected":""}>${esc(o.cert)}</option>`).join("")}</select>`:`<p class="note">Rating symbols load from imc.ie on the live site.</p>`)+(sys==="ifco"?`<p class="note">IFCO certificates can differ from BBFC ones. Check the film's IFCO rating.</p>`:"")}
   if(L.kind==="logo"){h+=`<label class="lbl" for="pp-plate">Backing</label><select id="pp-plate"><option value="none">None</option><option value="light">White panel</option><option value="dark">Dark panel</option></select>${logoImg?"":colourBlock("Text logo colour","c1",L)}`}
   h+=`</div><div class="sec"><h3>Position</h3>${sliderRow("pp-s","Size",10,400,Math.round(L.s*100),"%")}${sliderRow("pp-r","Rotate",-180,180,Math.round((L.r||0)*180/Math.PI),"°")}${sliderRow("pp-o","Opacity",10,100,Math.round((L.o??1)*100),"%")}<label class="lbl" for="pp-anim">Animation</label><select id="pp-anim">${Object.entries(ANIMS).map(([k,n])=>`<option value="${k}" ${(L.anim||"none")===k?"selected":""}>${n}</option>`).join("")}</select>${(()=>{const d=S.motion.dur||3,sec=v=>Math.round(v*d*10)/10;return`<div class="lbl" style="margin-top:10px">Timing</div>${sliderRow("pp-delay","Appears at",0,Math.round(d*10),Math.round((L.delay||0)*d*10),"")}${sliderRow("pp-until","Leaves at",1,Math.round(d*10),Math.round((L.until??1)*d*10),"")}
@@ -1432,14 +1464,22 @@ $("#props").addEventListener("input",e=>{const L=getSel();if(!L)return;const id=
   else if(id==="pp-ilen"){L.ilen=+e.target.value;syncTimeline()}
   else if(id==="pp-items"){L.items=e.target.value;commitSoon()}
   else if(id==="pp-rows"){L.rows=parseRows(e.target.value);commitSoon()}
+  else if(e.target.closest("[data-fr]")&&e.target.dataset.frk&&e.target.type!=="checkbox"&&e.target.tagName!=="SELECT"){const r=L.rows[+e.target.closest("[data-fr]").dataset.fr],k=e.target.dataset.frk;if(r){if(k==="times")r.times=e.target.value.split(/[\s,]+/).filter(Boolean);else r[k]=e.target.value;commitSoon()}}
   else if(e.target.type==="color"){const k=e.target.closest("[data-colour]").dataset.colour;L[k]=e.target.value}
   else return;draw();if(id==="pp-text"||id==="pp-sub"){syncLayers();commitSoon()}});
 $("#props").addEventListener("change",e=>{const L=getSel();if(!L)return;const id=e.target.id;
+  if(L.kind==="listing"){const fr=e.target.closest("[data-fr]");let done=true;
+    if(fr&&(e.target.type==="checkbox"||e.target.tagName==="SELECT")){const r=L.rows[+fr.dataset.fr],k=e.target.dataset.frk;if(k==="hide"){r.hide=!e.target.checked;fitListing(L)}else if(k==="luxx")r.luxx=e.target.checked;else if(k==="cert"){r.cert=e.target.value;const p=ratingPick(r.cert,r.system||"bbfc",L.rsys||ratingSys);if(p&&p.src)loadRating(p.src)}}
+    else if(id==="pp-day"||id==="pp-started"){if(id==="pp-day")L.day=e.target.value;else L.dropStarted=e.target.checked;const d=L.day||lnow().date;L.rows=dayRows(d,L.dropStarted!==false);(L.rows||[]).forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",L.rsys||ratingSys);if(p&&p.src)loadRating(p.src)});
+      if(id==="pp-day"){L.text=(d===lnow().date?"Today at ":dayLabel(d).split(" ")[0]+" at ")+SITE_NAME;L.sub=new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"})}fitListing(L)}
+    else if(id==="pp-shtimes")L.hideTimes=!e.target.checked;else if(id==="pp-shcert")L.hideCert=!e.target.checked;else if(id==="pp-shlx")L.hideLuxx=!e.target.checked;else if(id==="pp-shkids")L.hideKids=!e.target.checked;else done=false;
+    if(done){renderProps();draw();commit();return}}
   if(id==="pp-font")L.font=e.target.value;else if(id==="pp-upper")L.upper=e.target.checked;else if(id==="pp-shadow")L.shadow=e.target.checked;
   else if(id==="pp-box"){L.box=e.target.checked;renderProps()}else if(id==="pp-plate")L.plate=e.target.value;else if(id==="pp-anim"){L.anim=e.target.value;renderProps()}else if(id==="pp-rating"){const o=ratingList().find(x=>x.src===e.target.value);if(o){L.src=o.src;L.cert=o.cert;L.system=o.system;loadRating(o.src);syncLayers()}}
   draw();commit()});
 $("#props").addEventListener("click",e=>{const L=getSel();if(!L)return;
   const sw=e.target.closest("[data-c]");if(sw){const k=sw.closest("[data-colour]").dataset.colour;L[k]=sw.dataset.c;sw.parentElement.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b===sw));sw.parentElement.querySelector("input").value=sw.dataset.c;draw();commit();return}
+  const mv=e.target.closest("[data-frmv]"),dl=e.target.closest("[data-frdel]");if((mv||dl)&&L.kind==="listing"){const i=+e.target.closest("[data-fr]").dataset.fr,R=[...L.rows];if(dl){R.splice(i,1);L.rows=R;fitListing(L)}else{const j=i+ +mv.dataset.frmv;if(j>=0&&j<R.length){[R[i],R[j]]=[R[j],R[i]];L.rows=R}}renderProps();draw();commit();return}
   const pls=e.target.closest("[data-pls]");if(pls&&L.kind==="listing"){L.rsys=pls.dataset.pls;(L.rows||[]).forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",L.rsys);if(p&&p.src)loadRating(p.src)});renderProps();draw();commit();return}
   const prs=e.target.closest("[data-prs]");if(prs&&L.kind==="rating"){const p=ratingPick(L.cert,L.system,prs.dataset.prs);if(p){L.system=p.system;L.cert=p.cert;L.src=p.src;if(p.src)loadRating(p.src);else toast(`imc.ie has no ${p.system.toUpperCase()} ${p.cert} symbol, so a plain certificate is shown`)}renderProps();syncLayers();draw();commit();return}
   const al=e.target.closest("[data-al]");if(al){L.align=al.dataset.al;$$("#pp-align button").forEach(b=>b.setAttribute("aria-pressed",b===al));draw();commit();return}
@@ -1447,6 +1487,8 @@ $("#props").addEventListener("click",e=>{const L=getSel();if(!L)return;
 function act(n){const L=getSel();if(!L)return;const i=S.layers.indexOf(L);
   if(n==="centre"){L.x=.5}
   else if(n==="reloadrows"){L.rows=todayRows();renderProps()}
+  else if(n==="addrow"){L.rows=[...(L.rows||[]),{t:"New film",times:["19:00"],cert:""}];fitListing(L);renderProps();const t=$$(".frt");t[t.length-1]?.select()}
+  else if(n==="sortrows"){L.rows=[...(L.rows||[])].sort((a,b)=>((a.times||[])[0]||"99").localeCompare((b.times||[])[0]||"99"));renderProps()}
   else if(n==="fwd"&&i<S.layers.length-1){S.layers.splice(i,1);S.layers.splice(i+1,0,L)}
   else if(n==="back"&&i>0){S.layers.splice(i,1);S.layers.splice(i-1,0,L)}
   else if(n==="dup"){const c={...JSON.parse(clean(L)),id:uid(),x:clamp(L.x+.03,0,1),y:clamp(L.y+.03,0,1)};S.layers.splice(i+1,0,c);selId=c.id;renderProps()}
@@ -1931,8 +1973,8 @@ function applyKids(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,f
   S.layers=L.filter(Boolean);S.motion={...S.motion,dur,fx,amt:.75};selId=null;clampPhoto();syncAll();commit();
   toast("Kids Club "+(wk?"weekend":"week")+" ad ready, with times from imc.ie. Click any text to change it")}
 function applyListing(h){S.label="film times "+(h.sub||"");const rows=h.rows||[];rows.forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src)});S.bg="stage";S.frame={...S.frame,style:"brandbar",logo:true};const f=FORMATS[S.fmt],u=Math.min(f.w,f.h)/1080,avail=(f.h-150*u)/u*.92,need=listingH(rows.length);
-  S.layers=[mk("listing",null,{text:h.heading||"Today at "+SITE_NAME,sub:h.sub||new Date().toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"}),rows,y:(f.h-150*u)/2/f.h,s:Math.min(1,avail/need,(f.w/u*.92)/940)})];
-  S.motion={...S.motion,fx:{}};selId=null;syncAll();commit()}
+  S.layers=[mk("listing",null,{text:h.heading||"Today at "+SITE_NAME,sub:h.sub||new Date().toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"}),rows,y:(f.h-150*u)/2/f.h,s:Math.min(1,avail/need,(f.w/u*.92)/940),day:h.date||undefined})];
+  S.motion={...S.motion,fx:{}};selId=S.layers[0].id;syncAll();commit()}
 $("#addListing").onclick=()=>{const rows=todayRows();if(rows.length){applyListing({rows});toast("Today's times added from imc.ie")}else{applyListing({rows:[{t:"Film title",times:["13:00","15:30","18:00"],cert:"12A"},{t:"Another film",times:["14:15","20:30"],cert:"15"}]});toast("Example rows added. Edit them in the panel on the right")}};
 
 /* ---------- film poster graphics (from the hub) ---------- */

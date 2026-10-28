@@ -78,6 +78,13 @@ Use official posters and trailer stills, your own photos and videos from the cin
 
 `imc-logo.png` is used on every frame, logo layer and poster footer. To try a different version on your own computer, use the editor's **Logo** tab.
 
+## Film times posts
+
+The times list is selected when a times post opens, so its options are on the right straight away:
+- **Day:** today or any of the next days from imc.ie, with an option to leave out shows that have started. The heading and date line update to match the day.
+- **Show on the post:** times, certificates (BBFC/IFCO), LUXX tags, Kids Club colour (Kids Club times in amber with a "Kids Club" key).
+- **Films:** one card each. Tick or untick to show or hide a film, and edit its title, times, certificate and LUXX tag. Move films up and down, remove them, add one, or sort by first showtime. The list resizes to fit (up to 16 films).
+
 ## Deals from imc.ie
 
 The importer reads imc.ie's booking page for a showing on each day of the coming week, plus a matinee, a Kids Club and a LUXX showing. It records which weekdays each ticket type and bundle appears on, so day-only offers come through: the Wednesday Meal Deal, the LUXX Wednesday Meal Deal, and a Family Ticket sold Monday to Thursday. The Deals page's **Deals on imc.ie** shows every one with its price, the days it runs and what's in it. Each has one-click Animated / Still / Story posts and "Add to my deals". Contents marked "check" were inferred from the name, because imc.ie doesn't list them.
