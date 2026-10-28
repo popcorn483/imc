@@ -107,6 +107,8 @@ h3{font-size:15px;margin:0}
 .field{display:flex;flex-direction:column;gap:4px;min-width:0}
 .field label{font-size:12px;font-weight:700;color:var(--muted)}
 input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:8px 10px;width:100%;min-width:0}
+input[type=checkbox],input[type=radio]{width:18px;height:18px;padding:0;margin:0;flex:none;accent-color:var(--velvet)}
+.check{display:flex;gap:9px;align-items:flex-start;text-align:left}.check input{margin-top:2px}
 textarea{resize:vertical;min-height:70px}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .tpls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
@@ -191,7 +193,7 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .kclegend{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;margin-right:auto;margin-left:12px}.kclegend .kc{padding:2px 4px;border-radius:6px}
 .kcb{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:1px 7px;border-radius:99px;background:var(--amber);color:#2a1800}
 .opens{font-weight:700;color:var(--velvet);font-size:14px}
-.facts{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.facts{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;align-items:center}.facts a.btn.ghost{border:0;padding:4px 6px;font-size:12.5px;color:var(--muted)}.facts a.btn.ghost:hover{color:var(--ink)}
 .facts .btn{text-decoration:none}
 .dayhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:22px 0 10px}
 .nodata p{color:var(--muted);max-width:64ch}
@@ -204,7 +206,8 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .banners img{width:100%;height:100%;object-fit:cover;display:block}
 .deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
 .addchips{display:flex;flex-wrap:wrap;gap:6px}
-.startp{margin-bottom:16px}.starts{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:10px}
+.startp{margin-bottom:16px}.starts{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px;margin-top:10px}
+@media (max-width:640px){.starts{grid-template-columns:1fr 1fr;gap:6px}.start{padding:10px!important}.start small{display:none}.start b{font-size:13.5px!important}.start .si{font-size:20px!important}.startp .ph .tip{display:none}}
 .start{all:unset;cursor:pointer;box-sizing:border-box;border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px;background:var(--bg);transition:border-color .15s,transform .15s}
 .start:hover{border-color:var(--velvet);transform:translateY(-1px)}.start:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .start .si{font-size:24px;line-height:1}.start b{font-size:15px}.start small{font-size:12.5px;color:var(--muted);line-height:1.3}
@@ -228,6 +231,8 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .lxfilm img{width:70px;aspect-ratio:2/3;object-fit:cover;border-radius:6px}.lxfilm .m{color:var(--muted);font-size:12px;margin-left:6px}.lxfilm .row-btns{margin-top:8px}
 .lxslots{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}.lxslots span{font-family:var(--f-mono,monospace);font-size:12px;padding:2px 6px;border-radius:5px;background:var(--chip)}
 .lxcaps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}.lxcap{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start}.lxcap p{margin:0;flex:1}
+.fgroup{border-top:1px solid var(--line);padding:8px 0}.fgroup:first-child{border-top:0}.fgroup summary{cursor:pointer;font-weight:800;font-size:15px;list-style:none;display:flex;gap:8px;align-items:center;padding:4px 0}.fgroup summary::before{content:"▸";color:var(--muted);transition:transform .15s}.fgroup[open] summary::before{transform:rotate(90deg)}.fgroup summary::-webkit-details-marker{display:none}.fgroup summary span{font-weight:500;font-size:12.5px;color:var(--muted)}.fgroup .frow:first-of-type{border-top:0}
+.pfold{border-top:1px solid var(--line);padding:10px 0 4px}.pfold summary{cursor:pointer;font-weight:800;font-size:15px;list-style:none;display:flex;align-items:center;gap:8px}.pfold summary::before{content:"▸";color:var(--muted);transition:transform .15s}.pfold[open] summary::before{transform:rotate(90deg)}.pfold summary span{font-weight:500;font-size:12.5px;color:var(--muted)}.pfold summary::-webkit-details-marker{display:none}.pfold .prodgrid,.pfold .tickrow{margin-top:10px}
 .offers{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px;margin:6px 0 8px}
 .offer{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:start;border:1px solid var(--line);border-radius:10px;padding:10px;background:linear-gradient(135deg,color-mix(in srgb,var(--amber) 10%,var(--panel)),var(--panel) 70%)}
 .offer img,.offer .oimg{width:64px;height:64px;object-fit:contain;border-radius:8px;background:var(--chip);display:grid;place-items:center;font-size:28px}
@@ -252,7 +257,7 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .foygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .foygrid fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;margin:0}
 .foygrid legend{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700;padding:0 4px}
-.foygrid .check{display:flex;gap:8px;align-items:flex-start;font-size:14px}.foygrid small{color:var(--muted)}
+.foygrid .check{display:flex;gap:9px;align-items:flex-start;font-size:14px;line-height:1.4}.foygrid .check small{margin-left:4px}.foygrid small{color:var(--muted)}
 .frow{display:grid;grid-template-columns:28px 54px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
 .frow:first-child{border-top:0}.frow img.p{width:54px;height:80px;object-fit:cover;border-radius:4px;background:var(--chip)}
 .frow b{display:block}.frow .m{font-size:13px;color:var(--muted)}.frow .tt{font-size:12px;color:var(--muted);font-style:italic}
@@ -334,7 +339,7 @@ nav.quick{flex-direction:row;gap:2px;margin-left:8px;min-width:0;overflow-x:auto
 .drawer nav .count{display:inline-block!important}
 body.menuopen{overflow:hidden}
 @media (max-width:980px){nav.quick{display:none}}
-@media (max-width:560px){.topbar{gap:8px;flex-wrap:wrap}.menubtn span{display:none}.topbar .brand b{font-size:19px}.edlink{display:none}.topright{margin-left:auto}.topright .sitepick select{max-width:150px}}
+@media (max-width:560px){.topbar{gap:8px;flex-wrap:nowrap}.topbar .brand b{display:none}.menubtn span{display:none}.topbar .brand b{font-size:19px}.edlink{display:none}.topright{margin-left:auto}.topright .sitepick select{max-width:150px}}
 @media (max-width:560px){.headacts{flex-wrap:wrap;flex:1 1 100%}.sitepick{flex:1 1 100%}}
 </style>
 
@@ -399,10 +404,11 @@ body.menuopen{overflow:hidden}
     <!-- DEALS -->
     <section id="v-deals" hidden>
       <div class="head">
-        <div><h1>Deals</h1><p>Your kiosk deals. Set the name, what's included and the price, then make a still or animated graphic. Contents start as placeholders, so check them against the kiosk menu.</p></div>
+        <div><h1>Deals</h1><p>Every deal on imc.ie with its real price, ready to turn into a post, plus your own kiosk deals underneath.</p></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="resetDeals">Reset to defaults</button><button class="btn primary" id="addDeal">+ Add a deal</button></div>
       </div>
       <div id="imcPrices"></div>
+      <div class="ph" style="margin:22px 0 10px"><h2>Your deals</h2><span class="tip" style="margin:0">Deals you've set up. These show on the Today page and in the editor's Layouts.</span></div>
       <div id="dealList" class="deals"></div>
     </section>
 
@@ -1291,11 +1297,10 @@ function renderPrices(){const el=$("#imcPrices");if(!el)return;const P=imcPrices
   if(!P){el.innerHTML=IMC?`<div class="panel prices"><h2>Prices from imc.ie</h2><p class="tip">No prices imported for ${esc(S().name)} yet. The importer reads them from imc.ie's booking page on its next run.</p></div>`:"";return}
   const card=(x,k,i)=>`<div class="prod">${x.file?pimg(x.file,x.name):""}<b>${esc(x.name)}</b>${x.details?`<span class="tip" style="margin:0">${esc(x.details)}</span>`:""}<span class="pp">${esc(x.price)}</span>
     <div class="row-btns"><button class="btn small primary" data-pmake="${k}:${i}">Make a deal</button><button class="btn small" data-pclip="${k}:${i}">Video clip</button></div></div>`;
-  el.innerHTML=`<div class="panel prices"><div class="ph"><h2>Prices from imc.ie</h2><span class="tip" style="margin:0">${esc(S().name)} · checked ${P.checked?new Date(P.checked).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"}):""}</span></div>
+  el.innerHTML=`<div class="panel prices"><div class="ph"><h2>From imc.ie</h2><span class="tip" style="margin:0">${esc(S().name)} · checked ${P.checked?new Date(P.checked).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"}):""}</span></div>
     ${offersHtml()}
-    ${(P.tickets||[]).length?`<h3>Tickets</h3><div class="tickrow">${P.tickets.map(t=>`<span>${esc(offerName(t.name))} <b>${esc(t.price)}</b>${(()=>{const w=offerWhen(t,P);return w?` <em>${esc(w)}</em>`:""})()}</span>`).join("")}</div>`:""}
-    ${(P.bundles||[]).length?`<h3>Ticket + snack bundles</h3><div class="prodgrid">${P.bundles.map((x,i)=>card(x,"bundles",i)).join("")}</div>`:""}
-    ${(P.products||[]).length?`<h3>Snacks</h3><div class="prodgrid">${P.products.filter(x=>!/flexi/i.test(x.name)).map(x=>card(x,"products",P.products.indexOf(x))).join("")}</div>`:""}
+    ${(P.products||[]).length?`<details class="pfold" open><summary>Snacks <span>${P.products.filter(x=>!/flexi/i.test(x.name)).length} from the kiosk</span></summary><div class="prodgrid">${P.products.filter(x=>!/flexi/i.test(x.name)).map(x=>card(x,"products",P.products.indexOf(x))).join("")}</div></details>`:""}
+    ${(P.tickets||[]).length?`<details class="pfold"><summary>All ticket prices <span>${P.tickets.length} ticket types</span></summary><div class="tickrow">${P.tickets.map(t=>`<span>${esc(offerName(t.name))} <b>${esc(t.price)}</b>${(()=>{const w=offerWhen(t,P);return w?` <em>${esc(w)}</em>`:""})()}</span>`).join("")}</div></details>`:""}
     <p class="tip">Prices are read from imc.ie's booking pages for a showing on each day of the coming week, so day-only deals are included. They can change; some depend on the showing (matinee, evening, Kids Club, LUXX).</p></div>`}
 function dealFromImc(x){const nm=x.name.replace(/\s*\(.*?\)\s*/g," ").trim(),inc=(x.details||(/\((.*)\)/.exec(x.name)||[])[1]||"").split(/\s*(?:\+|,| and )\s*/).map(t=>t.trim()).filter(Boolean);
   return{id:newId(),name:nm,items:inc.length?inc:[nm],price:x.price,was:"",small:"",products:/kids/i.test(nm)?["tray"]:/nacho/i.test(nm)?["nachos"]:["popcorn","drink"],photos:x.file?[{src:x.file,label:nm}]:[]}}
@@ -1359,11 +1364,15 @@ async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts
   const st=foyState(),fl=foyFilms(),chosen=new Set(foyChosen(st).map(f=>f.key));
   $$("input[name=fmode]").forEach(r=>r.checked=r.value===st.mode);$("#fsoon").checked=st.soon;$("#ftrail").checked=st.trail;$("#fsound").checked=st.sound;$("#fcard").value=String(st.card);
   wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;
-  el.innerHTML=fl.length?fl.map(f=>{const sf=foySafety(f,st),t=(TRAIL||{})[f.trailer]||{},nx=f.next?`${f.next.date===todayIso()?"Today":fmtShort(f.next.date)} ${f.next.time}`:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"No upcoming times";
+  const row=f=>{const sf=foySafety(f,st),t=(TRAIL||{})[f.trailer]||{},nx=f.next?`${f.next.date===todayIso()?"Today":fmtShort(f.next.date)} ${f.next.time}`:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"No upcoming times";
     return`<div class="frow"><input type="checkbox" aria-label="Include ${esc(f.title)}" data-fpick="${esc(f.key)}" ${chosen.has(f.key)?"checked":""} ${sf.ok&&st.mode==="pick"?"":"disabled"}>
       <img class="p" src="${esc(asset(f.posterFile)||f.poster||"")}" alt="" loading="lazy">
       <div style="min-width:0"><b>${esc(f.title)}</b><div class="m">${esc(f.cert||"No certificate")}${f.runtime?` · ${f.runtime} min`:""}${f.luxxToo?" · LUXX":""} · ${esc(nx)}</div>${t.title?`<div class="tt">Trailer: “${esc(t.title)}”</div>`:""}</div>
-      <div class="acts"><span class="fst ${sf.cls}">${esc(sf.label)}</span>${f.mine?`<span class="tt">Your trailer${f.mine.title?`: “${esc(f.mine.title)}”`:""}</span><button class="btn small ghost" data-funlink="${esc(f.key)}">${f.imcTrailer?"Use imc.ie's trailer again":"Remove my link"}</button>`:(!f.trailer||t.unavailable||t.red||FRED.test(t.title||""))?`<form class="flink" data-flink="${esc(f.key)}"><input type="url" placeholder="Paste a YouTube trailer link" aria-label="YouTube trailer link for ${esc(f.title)}" required><button class="btn small primary">Use</button><a class="btn small ghost" href="https://www.youtube.com/results?search_query=${encodeURIComponent(f.title+" official trailer")}" target="imc-web">Find on YouTube ↗</a></form>`:""}${sf.review?`<label class="check" style="font-size:12px"><input type="checkbox" data-fok="${esc(f.key)}"> I've watched it; it's fine</label>`:""}${!sf.review&&st.ok.includes(f.key)?`<button class="btn small" data-funok="${esc(f.key)}">Undo my check</button>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="imc-web">Watch trailer ↗</a>`:""}</div></div>`}).join(""):'<p class="tip">No films in the latest import.</p>'}
+      <div class="acts"><span class="fst ${sf.cls}">${esc(sf.label)}</span>${f.mine?`<span class="tt">Your trailer${f.mine.title?`: “${esc(f.mine.title)}”`:""}</span><button class="btn small ghost" data-funlink="${esc(f.key)}">${f.imcTrailer?"Use imc.ie's trailer again":"Remove my link"}</button>`:(!f.trailer||t.unavailable||t.red||FRED.test(t.title||""))?`<form class="flink" data-flink="${esc(f.key)}"><input type="url" placeholder="Paste a YouTube trailer link" aria-label="YouTube trailer link for ${esc(f.title)}" required><button class="btn small primary">Use</button><a class="btn small ghost" href="https://www.youtube.com/results?search_query=${encodeURIComponent(f.title+" official trailer")}" target="imc-web">Find on YouTube ↗</a></form>`:""}${sf.review?`<label class="check" style="font-size:12px"><input type="checkbox" data-fok="${esc(f.key)}"> I've watched it; it's fine</label>`:""}${!sf.review&&st.ok.includes(f.key)?`<button class="btn small" data-funok="${esc(f.key)}">Undo my check</button>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="imc-web">Watch trailer ↗</a>`:""}</div></div>`};
+  /* group the list: what's playing, what needs you, and what's left out (folded away) */
+  const G={pack:[],todo:[],out:[]};for(const f of fl){const sf=foySafety(f,st);if(chosen.has(f.key))G.pack.push(f);else if((sf.review||sf.cls==="no"&&/no trailer|no longer|red-band/i.test(sf.label))&&(st.soon||(f.next&&f.next.date<=addDays(todayIso(),7)))&&!(sf.label.startsWith("Rated")))G.todo.push(f);else G.out.push(f)}
+  const grp=(t,sub,L,open)=>L.length?`<details class="fgroup" ${open?"open":""}><summary>${t} <span>${L.length} · ${sub}</span></summary>${L.map(row).join("")}</details>`:"";
+  el.innerHTML=fl.length?grp("In the pack","playing on the foyer TVs",G.pack,true)+grp("Needs you","add a trailer link, or watch and tick",G.todo,true)+grp("Left out","rated too high for the foyer, not picked, or not showing this week",G.out,false):'<p class="tip">No films in the latest import.</p>'}
 $("#v-foyer").addEventListener("change",e=>{const st=foyState(),t=e.target;
   if(t.name==="fmode"){st.mode=t.value;if(st.mode==="pick"&&!st.pick.length)st.pick=foyChosen({...st,mode:"auto"}).map(f=>f.key)}
   else if(t.id==="fsoon")st.soon=t.checked;else if(t.id==="ftrail")st.trail=t.checked;else if(t.id==="fsound")st.sound=t.checked;else if(t.id==="fcard")st.card=+t.value;
@@ -1526,7 +1535,7 @@ function lxShrink(file){return new Promise(res=>{const u=URL.createObjectURL(fil
 async function renderLxPics(){const a=await lxGet();lxUrls.forEach(u=>URL.revokeObjectURL(u));lxUrls=[];
   $("#lxcount").textContent=a.length?`${a.length} photo${a.length===1?"":"s"}`:"No photos yet";
   $("#lxpics").innerHTML=a.length?a.map((p,i)=>{const u=URL.createObjectURL(p.blob);lxUrls.push(u);return`<figure class="lxpic"><img src="${u}" alt="LUXX photo ${i+1}"><figcaption><select data-lxlabel="${p.id}" aria-label="What this photo shows">${LX_LABELS.map(l=>`<option ${p.label===l?"selected":""}>${l}</option>`).join("")}</select>
-    <button class="btn small ghost" data-lxfirst="${p.id}" title="Use this one first" ${i===0?"disabled":""}>${i===0?"Used first":"Use first"}</button><button class="btn small ghost" data-lxdel="${p.id}" aria-label="Remove photo ${i+1}">✕</button></figcaption></figure>`}).join(""):`<div class="lxempty">No LUXX photos yet. The ads still work, using IMC's photo of the cinema building or a gold background, but they look far better with your seats in them.</div>`}
+    <button class="btn small ghost" data-lxfirst="${p.id}" title="Use this one first" ${i===0?"disabled":""}>${i===0?"Used first":"Use first"}</button><button class="btn small ghost" data-lxdel="${p.id}" aria-label="Remove photo ${i+1}">✕</button></figcaption></figure>`}).join(""):`<div class="lxempty">No LUXX photos yet. The ads still work on a gold background, but they look far better with your seats in them.</div>`}
 $("#lxfile").addEventListener("change",async e=>{const fs=[...e.target.files];e.target.value="";if(!fs.length)return;const a=await lxGet();let n=0;
   for(const f of fs){const b=await lxShrink(f);if(!b)continue;a.push({id:"lx"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),blob:b,label:"Seats"});n++}
   if(a.length>24)a.splice(0,a.length-24);await edbSet(lxKey(),a);renderLxPics();toast(n?`${n} LUXX photo${n===1?"":"s"} added`:"Those files aren't photos we can open")});
