@@ -278,6 +278,30 @@ Photos added in one place appear in the other.
 
 IMC Enniskillen's own LUXX photos (4 of the seats, 2 of the screen and the LUXX logo, from the cinema's Facebook page) are built in under data/luxx. Any browser with no LUXX photos gets them automatically, and they come first under **IMC images** in both pickers.
 
+## Film looks (editor → Designs)
+
+Professional, clean designs built from the film you pick.
+
+- **Film:** choose any film showing or coming soon. It fills in the title, "Now showing", "New release" or "Coming soon", today's times or the opening date, and the certificate.
+- **Picture:** the poster, or a shot from the film's trailer: the trailer thumbnail plus two frames from the video. The listings importer saves these for every trailer into data/stills, so they work offline and on every device. A frame from the film is used by default, because trailer thumbnails often have words on them.
+- **Looks** (each works in every size, keeps Story text inside the safe area, and re-lays itself out when you change size, keeping words you've edited):
+  - **Cinematic:** full picture, title low on the left
+  - **Poster card:** poster on a darkened shot, details beside it
+  - **Banner:** picture above a solid colour banner with an accent line
+  - **Split panel:** picture with a solid side panel
+  - **Letterbox:** cinema bars top and bottom
+  - **Fine frame:** a thin border and a centred title
+  - **Editorial:** a big serif title, magazine style
+  - **Showtimes:** today's times as clean chips
+- **Style** (changes the whole design at once, without losing your edits):
+  - **Font:** each look's own, Condensed, Poster, Serif or Clean sans
+  - **Colours:** IMC navy, Black & white, Midnight blue, Crimson, Emerald, LUXX gold, IMC red or Light, or pick your own main, accent and text colours
+  - **Animation:** None, Fade, Rise, Wipe or Slow zoom. These are short, staggered entrances.
+
+The banners, bars, lines and borders are their own layers ("Banner", "Cinema bar", "Accent line", "Border", "Time chip"). Click one in the Layers list to change its colour. Big background parts let clicks through to the picture; untick "Keep in place" to move them.
+
+The playful styles are no longer offered in the pickers: neon, marquee lights, ticket and film-strip frames, popcorn, balloons, confetti and similar effects, and wiggle, slam and spin animations. Designs that already use them still open as before.
+
 ## Photo & video editor
 
 - **Background:** your photo or video, an official poster (**Whole poster** shows the full poster over a blurred copy of itself), or an IMC background (IMC stage, Sky, Midnight, Sunset).

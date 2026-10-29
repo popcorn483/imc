@@ -315,6 +315,14 @@ html.a-rm *{transition:none!important;animation:none!important}
 .lxptabs{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:10px 0}.lxptabs [role=tab]{all:unset;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-weight:650;font-size:14px}.lxptabs [role=tab][aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}.lxptabs [role=tab]:focus-visible{box-shadow:0 0 0 3px rgba(59,168,232,.45)}.lxpup{margin-left:auto;cursor:pointer}
 .lxpgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;max-height:52vh;overflow:auto;padding:2px}.lxp{all:unset;cursor:pointer;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--panel2);display:block}.lxp img{width:100%;height:100%;object-fit:cover;display:block}.lxp:hover,.lxp:focus-visible{outline:3px solid var(--gold);outline-offset:1px}.lxp[disabled]{opacity:.5}
 @media (max-width:760px){.lxpgrid{grid-template-columns:repeat(3,1fr)}.lxpup{margin-left:0}}
+/* Film looks */
+.lkpics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}.lkpic{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:3px;font-size:11.5px;color:var(--muted);text-align:center}.lkpic img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:7px;border:2px solid transparent;background:var(--panel2)}.lkpic[aria-pressed="true"] img{border-color:var(--gold)}.lkpic[aria-pressed="true"]{color:var(--ink)}.lkpic:focus-visible img{box-shadow:0 0 0 3px rgba(59,168,232,.45)}
+.tiles.looks{margin-top:6px}
+.seg.wrap{display:flex;flex-wrap:wrap;width:auto}.seg.wrap button{flex:1 1 auto}
+.pals{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}.pal{all:unset;cursor:pointer;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 0;padding:7px 4px;border-radius:9px;border:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center;line-height:1.15}
+.pal i{display:inline-block;width:24px;height:24px;border-radius:50%;border:2px solid var(--panel)}.pal i+i{margin-left:-6px}.pal span{flex-basis:100%}
+.pal[aria-pressed="true"]{border-color:var(--gold);color:var(--ink);background:rgba(255,216,74,.08)}.pal:focus-visible{box-shadow:0 0 0 3px rgba(59,168,232,.45)}
+.lkcols{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}.lkcols label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}.lkcols input[type=color]{width:38px;height:30px;padding:0;border:1px solid var(--line);border-radius:6px;background:none}
 /* phones: the toolbar scrolls sideways, but Save stays pinned to the right edge so it's always one tap away */
 @media (max-width:760px){.top{overflow-x:auto;scrollbar-width:none}.top::-webkit-scrollbar{display:none}
   #png{position:sticky;right:0;z-index:3;box-shadow:-10px 0 0 0 var(--panel),14px 0 0 0 var(--panel),-22px 0 14px -4px var(--panel)}}
@@ -434,6 +442,8 @@ html.a-rm *{transition:none!important;animation:none!important}
     </div>
 
     <div data-panel="layouts" hidden>
+      <div class="sec"><h3>Film looks</h3><p class="note">Pick a film and a look. The poster or a shot from the film, the title, certificate and times fill in for you.</p><div id="lookPanel"></div></div>
+      <div class="sec"><h3>Style</h3><div id="stylePanel"></div></div>
       <div class="sec"><h3>Deals</h3><p class="note">Your concession deals. Edit names, contents and prices in the hub's Deals page.</p><div class="tiles" id="dealLayouts"></div></div>
       <div class="sec"><h3>Cinema Reels</h3><p class="note">Vertical 9:16 videos for Instagram &amp; Facebook Reels, TikTok and Stories. Point at one to preview it. Film names and dates fill in from imc.ie.</p><div class="tiles reels" id="reels"></div>
         <label class="check" style="margin-top:10px"><input type="checkbox" id="safeChk"> Show the area Reels buttons and captions cover (editor only)</label></div>
@@ -587,6 +597,7 @@ const TEXT_PRESETS={
   sub:{text:"Opens Friday at "+SITE_NAME,font:"body",size:46,sp:0,upper:false,shadow:true},
   small:{text:"BOOK AT IMC.IE",font:"mono",size:26,sp:6,upper:true,shadow:false}
 };
+const PRO_FRAMES=["brandbar","premiere","vignette","gallery","none"],PRO_FX=["kenburns","letterbox","flare","lightleak","bokeh","spotlights","sparkle","snow","embers","stars"],PRO_ANIMS=["none","fade","rise","wipe","slide","zoom","pop","type","shine","pulse"];
 const FRAMES={brandbar:"IMC brand bar",premiere:"Premiere",neon:"Neon glow",vignette:"Clean",ticket:"Cinema ticket",filmstrip:"Film strip",marquee:"Marquee lights",gallery:"Photo border",none:"No frame"};
 const DEFAULT_FRAME={style:"premiere",accent:"#ffc23d",caption:"imc.ie",logo:true,plate:"none",matte:"#ffffff",anim:true};
 const FRAME_MOVES={brandbar:1,premiere:1,neon:1,vignette:1,ticket:1,filmstrip:1,marquee:1,gallery:1};
@@ -603,12 +614,12 @@ const LAYOUTS=[
   {n:"Coming soon",frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.15}),mk("text","title",{y:.6}),mk("badge","date",{y:.735,s:.85})]},
   {n:"New release",frame:{style:"vignette",accent:"#f39a2b"},layers:()=>[mk("badge","newrel",{y:.12}),mk("text","title",{y:.6}),mk("badge","book",{y:.725,s:.85})]},
   {n:"LUXX",frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","luxx",{y:.44,s:1.15}),mk("text","sub",{text:"Recline in style",font:"serif",size:66,y:.62})]},
-  {n:"Now showing",frame:{style:"filmstrip",accent:"#1fa0de"},layers:()=>[mk("badge","now",{x:.35,y:.17,s:.8}),mk("text","title",{y:.66})]},
+  {n:"Now showing",frame:{style:"vignette",accent:"#1fa0de"},layers:()=>[mk("badge","now",{x:.35,y:.17,s:.8}),mk("text","title",{y:.66})]},
   {n:"Opening night",frame:{style:"gallery",accent:"#0b6bb8",matte:"#ffffff"},layers:()=>[mk("badge","tonight",{x:.8,y:.2,s:.8})]},
-  {n:"Countdown",frame:{style:"marquee",accent:"#3a2560"},layers:()=>[mk("badge","price",{text:"3 DAYS",sub:"TO GO",y:.3,s:1.05,r:-.1}),mk("text","title",{y:.58}),mk("badge","book",{y:.7,s:.85})]},
+  {n:"Countdown",hide:true,frame:{style:"marquee",accent:"#3a2560"},layers:()=>[mk("badge","price",{text:"3 DAYS",sub:"TO GO",y:.3,s:1.05,r:-.1}),mk("text","title",{y:.58}),mk("badge","book",{y:.7,s:.85})]},
   {n:"Premiere night",fx:{spotlights:true,sparkle:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.15,anim:"shine"}),mk("text","title",{y:.6}),mk("badge","date",{y:.735,s:.85,anim:"pop"})]},
-  {n:"Christmas release",fx:{snow:true,bokeh:true},frame:{style:"vignette",accent:"#f39a2b"},layers:()=>[mk("badge","newrel",{y:.12,anim:"shine"}),mk("text","title",{y:.6}),mk("badge","book",{y:.725,s:.85,anim:"pulse"})]},
-  {n:"Opening night lights",fx:{chase:true,confetti:true},frame:{style:"marquee",accent:"#3a2560"},layers:()=>[mk("badge","tonight",{y:.3,anim:"swing"}),mk("text","title",{y:.6})]},
+  {n:"Christmas release",hide:true,fx:{snow:true,bokeh:true},frame:{style:"vignette",accent:"#f39a2b"},layers:()=>[mk("badge","newrel",{y:.12,anim:"shine"}),mk("text","title",{y:.6}),mk("badge","book",{y:.725,s:.85,anim:"pulse"})]},
+  {n:"Opening night lights",hide:true,fx:{chase:true,confetti:true},frame:{style:"marquee",accent:"#3a2560"},layers:()=>[mk("badge","tonight",{y:.3,anim:"swing"}),mk("text","title",{y:.6})]},
   {n:"LUXX gold",fx:{sparkle:true,kenburns:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","luxx",{y:.44,s:1.15,anim:"shine"}),mk("text","sub",{text:"Recline in style",font:"serif",size:66,y:.62})]}
 ];
 
@@ -623,18 +634,18 @@ const tcase=s=>String(s).toLowerCase().replace(/(^|[\s:(\-'])(\p{L})/gu,(m,a,b)=
 const bigT=(text,{max=130,...o})=>mk("text","title",{text,size:fitSize(text,"display",max,48,900),...o});
 const subT=(text,{max=50,...o})=>mk("text","sub",{text,size:fitSize(text,"body",max,26,800),...o});
 const ANIM_PRESETS=[
-  {n:"Blockbuster intro",dur:6,fx:{countdown:true,spotlights:true,flash:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.15,anim:"slam",delay:.32,ilen:.6}),mk("text","title",{y:.56,anim:"zoom",delay:.37,ilen:.6}),mk("badge","date",{y:.7,s:.85,anim:"pop",delay:.45,ilen:.6}),mk("badge","book",{y:.81,s:.7,anim:"pop",delay:.52,ilen:.6})]},
+  {n:"Blockbuster intro",hide:true,dur:6,fx:{countdown:true,spotlights:true,flash:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.15,anim:"slam",delay:.32,ilen:.6}),mk("text","title",{y:.56,anim:"zoom",delay:.37,ilen:.6}),mk("badge","date",{y:.7,s:.85,anim:"pop",delay:.45,ilen:.6}),mk("badge","book",{y:.81,s:.7,anim:"pop",delay:.52,ilen:.6})]},
   {n:"Curtain up",dur:6,fx:{curtain:true,spotlights:true,sparkle:true},frame:{style:"vignette",accent:"#ffc23d"},layers:()=>[mk("badge","now",{y:.24,s:.85,anim:"pop",delay:.26,ilen:.6}),mk("text","title",{y:.58,anim:"zoom",delay:.3,ilen:.6}),mk("badge","book",{y:.73,s:.8,anim:"pop",delay:.38,ilen:.6})]},
-  {n:"Action!",dur:5,fx:{clapper:true,flash:true},frame:{style:"brandbar",accent:"#ffc23d"},layers:()=>[mk("badge","newrel",{y:.14,anim:"slam",delay:.28,ilen:.6}),mk("text","title",{y:.55,anim:"slam",delay:.32,ilen:.6}),mk("badge","book",{y:.7,s:.85,anim:"pop",delay:.4,ilen:.6})]},
-  {n:"Retro reel",dur:5,fx:{projector:true,stripscroll:true},frame:{style:"vignette",accent:"#ffd84a"},layers:()=>[mk("text","small",{text:"NOW SHOWING",y:.25,anim:"type"}),mk("text","title",{font:"poster",y:.52,anim:"type",delay:.08}),mk("text","sub",{text:"Book at imc.ie",y:.66,anim:"fade",delay:.35})]},
-  {n:"Red carpet",dur:4,fx:{flash:true,spotlights:true,glitter:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","tonight",{y:.24,anim:"swing"}),mk("text","title",{y:.58,anim:"glow"}),mk("badge","book",{y:.74,s:.85,anim:"pulse"})]},
+  {n:"Action!",hide:true,dur:5,fx:{clapper:true,flash:true},frame:{style:"brandbar",accent:"#ffc23d"},layers:()=>[mk("badge","newrel",{y:.14,anim:"slam",delay:.28,ilen:.6}),mk("text","title",{y:.55,anim:"slam",delay:.32,ilen:.6}),mk("badge","book",{y:.7,s:.85,anim:"pop",delay:.4,ilen:.6})]},
+  {n:"Retro reel",hide:true,dur:5,fx:{projector:true,stripscroll:true},frame:{style:"vignette",accent:"#ffd84a"},layers:()=>[mk("text","small",{text:"NOW SHOWING",y:.25,anim:"type"}),mk("text","title",{font:"poster",y:.52,anim:"type",delay:.08}),mk("text","sub",{text:"Book at imc.ie",y:.66,anim:"fade",delay:.35})]},
+  {n:"Red carpet",hide:true,dur:4,fx:{flash:true,spotlights:true,glitter:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","tonight",{y:.24,anim:"swing"}),mk("text","title",{y:.58,anim:"glow"}),mk("badge","book",{y:.74,s:.85,anim:"pulse"})]},
   {n:"Spotlight",dur:5,fx:{spotsweep:true,sparkle:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>[mk("badge","now",{y:.2,s:.85,anim:"pop"}),mk("text","title",{y:.55,anim:"glow"}),mk("badge","book",{y:.71,s:.8,anim:"pulse"})]},
-  {n:"Reel to reel",dur:4,fx:{reels:true,popburst:true},frame:{style:"brandbar",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.38,anim:"shine"}),mk("text","title",{y:.6,anim:"pop"}),mk("badge","date",{y:.74,s:.85,anim:"pulse"})]},
+  {n:"Reel to reel",hide:true,dur:4,fx:{reels:true,popburst:true},frame:{style:"brandbar",accent:"#ffc23d"},layers:()=>[mk("badge","coming",{y:.38,anim:"shine"}),mk("text","title",{y:.6,anim:"pop"}),mk("badge","date",{y:.74,s:.85,anim:"pulse"})]},
   {n:"Cinematic",dur:6,fx:{letterbox:true,flare:true,kenburns:true},frame:{style:"none",accent:"#ffc23d"},layers:()=>[mk("text","title",{y:.5,anim:"fade",delay:.1}),mk("text","small",{text:"ONLY IN CINEMAS",y:.6,anim:"fade",delay:.2})]},
-  {n:"Neon late show",dur:4,bg:"midnight",fx:{neon:true,stars:true},frame:{style:"none",accent:"#ff3fa4"},layers:()=>[mk("badge","newrel",{text:"LATE SHOW",c1:"#ff3fa4",c2:"#ffffff",y:.22,anim:"blink"}),mk("text","title",{y:.52,anim:"glow",c1:"#ffffff"}),mk("text","sub",{text:"Tonight at "+SITE_NAME,y:.64,anim:"float"})]},
-  {n:"Competition",dur:5,bg:"gold",fx:{tickets:true,sparkle:true},frame:{style:"premiere",accent:"#ffd84a"},layers:()=>[mk("badge","coming",{text:"COMPETITION",c1:"#ffd84a",c2:"#1a1440",y:.14,anim:"shine"}),bigT("WIN A FAMILY TICKET",{y:.38,anim:"pop"}),mk("text","sub",{text:"1. Like this post\n2. Share it\n3. Tag who you'd bring",y:.6,anim:"slide",delay:.1}),mk("text","small",{text:"WINNER PICKED FRIDAY · T&CS APPLY",y:.84,size:22,anim:"fade",delay:.2})]},
-  {n:"Fright night",dur:5,bg:"spooky",fx:{ghosts:true,fog:true,vhs:true},frame:{style:"vignette",accent:"#f39a2b"},layers:()=>[mk("badge","tonight",{text:"DARE YOU?",sub:"FRIGHT NIGHT",c1:"#f39a2b",c2:"#1a0b24",y:.25,anim:"shake"}),mk("text","title",{y:.56,anim:"shake"}),mk("badge","book",{y:.72,s:.85,anim:"pulse"})]},
-  {n:"Popcorn party",dur:4,bg:"sky",fx:{popcornrain:true,confetti:true},frame:{style:"filmstrip",accent:"#ffd84a"},layers:()=>[mk("badge","kids",{sub:"FAMILY FILMS",y:.24,anim:"wiggle"}),bigT("WEEKEND MOVIES",{y:.56,anim:"pop"}),mk("badge","book",{y:.72,s:.85,anim:"pulse"})]}
+  {n:"Neon late show",hide:true,dur:4,bg:"midnight",fx:{neon:true,stars:true},frame:{style:"none",accent:"#ff3fa4"},layers:()=>[mk("badge","newrel",{text:"LATE SHOW",c1:"#ff3fa4",c2:"#ffffff",y:.22,anim:"blink"}),mk("text","title",{y:.52,anim:"glow",c1:"#ffffff"}),mk("text","sub",{text:"Tonight at "+SITE_NAME,y:.64,anim:"float"})]},
+  {n:"Competition",hide:true,dur:5,bg:"gold",fx:{tickets:true,sparkle:true},frame:{style:"premiere",accent:"#ffd84a"},layers:()=>[mk("badge","coming",{text:"COMPETITION",c1:"#ffd84a",c2:"#1a1440",y:.14,anim:"shine"}),bigT("WIN A FAMILY TICKET",{y:.38,anim:"pop"}),mk("text","sub",{text:"1. Like this post\n2. Share it\n3. Tag who you'd bring",y:.6,anim:"slide",delay:.1}),mk("text","small",{text:"WINNER PICKED FRIDAY · T&CS APPLY",y:.84,size:22,anim:"fade",delay:.2})]},
+  {n:"Fright night",hide:true,dur:5,bg:"spooky",fx:{ghosts:true,fog:true,vhs:true},frame:{style:"vignette",accent:"#f39a2b"},layers:()=>[mk("badge","tonight",{text:"DARE YOU?",sub:"FRIGHT NIGHT",c1:"#f39a2b",c2:"#1a0b24",y:.25,anim:"shake"}),mk("text","title",{y:.56,anim:"shake"}),mk("badge","book",{y:.72,s:.85,anim:"pulse"})]},
+  {n:"Popcorn party",hide:true,dur:4,bg:"sky",fx:{popcornrain:true,confetti:true},frame:{style:"filmstrip",accent:"#ffd84a"},layers:()=>[mk("badge","kids",{sub:"FAMILY FILMS",y:.24,anim:"wiggle"}),bigT("WEEKEND MOVIES",{y:.56,anim:"pop"}),mk("badge","book",{y:.72,s:.85,anim:"pulse"})]}
 ];
 const REELS=[
   {n:"Coming soon teaser",dur:9,fx:{countdown:true,spotlights:true,flash:true},frame:{style:"premiere",accent:"#ffc23d"},layers:()=>{const f=nextSoon(),title=f?String(f.title).toUpperCase():"FILM TITLE";return[
@@ -833,7 +844,7 @@ function drawText(c,L){const f=L.font||"display",size=L.size||120,sp=L.sp||0;let
 function drawLogoLayer(c,L){const h=L.size||150,d=logoDims(h),pad=L.plate&&L.plate!=="none"?h*.24:0;
   if(pad){rr(c,-d.w/2-pad,-d.h/2-pad,d.w+pad*2,d.h+pad*2,pad*.55);sh(c,true);c.fillStyle=L.plate==="light"?"rgba(255,255,255,.95)":"rgba(8,9,12,.84)";c.fill();sh(c,false)}
   drawLogo(c,-d.w/2,-d.h/2,h,L.plate==="light"?"#15171d":L.c1);return{w:d.w+pad*2,h:d.h+pad*2}}
-function drawLayer(c,L){c.save();c.textBaseline="alphabetic";const d=L.kind==="pphoto"?drawPPhoto(c,L):L.kind==="badge"?(B[L.style]||B.pill)(c,L):L.kind==="text"?drawText(c,L):L.kind==="product"?drawProduct(c,L):L.kind==="listing"?drawListing(c,L):L.kind==="rating"?drawRating(c,L):L.kind==="qr"?drawQR(c,L):drawLogoLayer(c,L);c.restore();return d}
+function drawLayer(c,L){c.save();c.textBaseline="alphabetic";const d=L.kind==="pphoto"?drawPPhoto(c,L):L.kind==="badge"?(B[L.style]||B.pill)(c,L):L.kind==="text"?drawText(c,L):L.kind==="product"?drawProduct(c,L):L.kind==="listing"?drawListing(c,L):L.kind==="rating"?drawRating(c,L):L.kind==="qr"?drawQR(c,L):L.kind==="shape"?drawShape(c,L):drawLogoLayer(c,L);c.restore();return d}
 
 /* ---------- food & drink illustrations (drawn in code, centred at 0,0 in 1080-frame units) ---------- */
 /* ---------- realistic popcorn: pre-rendered kernel sprites, each an irregular cluster of shaded puffs ---------- */
@@ -1416,7 +1427,7 @@ const FX={
     c.globalCompositeOperation="screen";const w=c.createRadialGradient(x,y,0,x,y,R);w.addColorStop(0,FXC?`rgba(${rgb(FXC).join(",")},.35)`:"rgba(255,240,200,.3)");w.addColorStop(1,"rgba(0,0,0,0)");c.fillStyle=w;c.beginPath();c.arc(x,y,R,0,TAU);c.fill();c.restore()}}
 };
 const FX_ORDER=["kenburns","stars","rays","spotlights","spotsweep","fireworks","bokeh","chase","lightleak","sparkle","glitter","popburst","popcornrain","fizz","confetti","tickets","balloons","snow","rain","lights","bats","ghosts","fog","embers","hearts","shamrocks","leaves","bunting","flash","neon","flare","vhs","letterbox","stripscroll","reels","countdown","clapper","curtain","projector"];
-const ANIMS={none:"None",pop:"Pop in",slam:"Slam in",slide:"Slide up",zoom:"Zoom in",fade:"Fade in",drop:"Drop & bounce",spin:"Spin in",flip:"Flip in",type:"Type on (text)",shine:"Shine",pulse:"Pulse",heartbeat:"Heartbeat",glow:"Glow",swing:"Swing",wiggle:"Wiggle",shake:"Shake",float:"Float",blink:"Blink"};
+const ANIMS={none:"None",rise:"Rise (clean)",wipe:"Wipe in",pop:"Pop in",slam:"Slam in",slide:"Slide up",zoom:"Zoom in",fade:"Fade in",drop:"Drop & bounce",spin:"Spin in",flip:"Flip in",type:"Type on (text)",shine:"Shine",pulse:"Pulse",heartbeat:"Heartbeat",glow:"Glow",swing:"Swing",wiggle:"Wiggle",shake:"Shake",float:"Float",blink:"Blink"};
 function animOf(L,t){const o={ds:1,dr:0,dy:0,da:1},a=L.anim,d=L.delay||0,tt=t-d,intro=len=>tt<0?-1:Math.min(1,tt/(len*(L.ilen||1))),eo=p=>1-Math.pow(1-p,3);
   if(a==="pulse")o.ds=1+.055*Math.sin(TAU*tt*2);
   else if(a==="swing")o.dr=.075*Math.sin(TAU*tt);
@@ -1428,6 +1439,8 @@ function animOf(L,t){const o={ds:1,dr:0,dy:0,da:1},a=L.anim,d=L.delay||0,tt=t-d,
   else if(a==="slide"){const p=intro(.35);if(p<0){o.da=0}else{o.dy=(1-eo(p))*.16;o.da=Math.min(1,p*2)}}
   else if(a==="zoom"){const p=intro(.3);if(p<0)o.da=0;else{o.ds=.25+.75*eo(p);o.da=Math.min(1,p*2.5)}}
   else if(a==="fade"){const p=intro(.35);o.da=p<0?0:p}
+  else if(a==="rise"){const p=intro(.3);if(p<0)o.da=0;else{o.dy=(1-eo(p))*.035;o.da=Math.min(1,p*1.6)}}
+  else if(a==="wipe"){const p=intro(.3);if(p<0)o.da=0;else{o.wipe=eo(p);o.da=1}}
   else if(a==="drop"){const p=intro(.45);if(p<0)o.da=0;else{const b=x=>x<1/2.75?7.5625*x*x:x<2/2.75?7.5625*(x-=1.5/2.75)*x+.75:x<2.5/2.75?7.5625*(x-=2.25/2.75)*x+.9375:7.5625*(x-=2.625/2.75)*x+.984375;o.dy=-(1-b(p))*.6;o.da=Math.min(1,p*4)}}
   else if(a==="spin"){const p=intro(.4);if(p<0)o.da=0;else{o.dr=-(1-eo(p))*Math.PI*1.5;o.ds=.3+.7*eo(p);o.da=Math.min(1,p*2.5)}}
   else if(a==="flip"){const p=intro(.35);if(p<0)o.da=0;else{o.sx=Math.max(.02,Math.abs(Math.cos((1-eo(p))*Math.PI/2)));o.da=Math.min(1,p*3)}}
@@ -1440,12 +1453,12 @@ function animOf(L,t){const o={ds:1,dr:0,dy:0,da:1},a=L.anim,d=L.delay||0,tt=t-d,
   if(L.until!=null){const k=(t-L.until)/.04;if(k>0){o.da*=Math.max(0,1-k);o.ds*=1+.15*Math.min(1,k)}}
   return o}
 const offC=document.createElement("canvas");
-function drawLayerAt(c,L,W,H,u,t){const A=animOf(L,t),sc=L.s*u*A.ds;if(A.chars!=null&&L.kind==="text"){const n=Math.ceil(String(L.text||"").length*A.chars);if(n<String(L.text||"").length){const T={...L,text:String(L.text).slice(0,n)};if(!n){return}const w=L._w,h=L._h;drawLayerAt(c,{...T,anim:"none"},W,H,u,t);L._w=w;L._h=h;return}}c.save();c.translate((L.x+(A.dx||0))*W,(L.y+A.dy)*H);if(A.glow!=null)c.filter=`drop-shadow(0 0 ${Math.round((8+22*A.glow)*u)}px ${L.c1&&L.kind!=="badge"?L.c1:"rgba(255,216,74,.95)"})`;c.rotate((L.r||0)+A.dr);c.globalAlpha=(L.o??1)*A.da;
+function drawLayerAt(c,L,W,H,u,t){LW=W;LH=H;LU=u;const A=animOf(L,t),sc=L.s*u*A.ds;if(A.chars!=null&&L.kind==="text"){const n=Math.ceil(String(L.text||"").length*A.chars);if(n<String(L.text||"").length){const T={...L,text:String(L.text).slice(0,n)};if(!n){return}const w=L._w,h=L._h;drawLayerAt(c,{...T,anim:"none"},W,H,u,t);L._w=w;L._h=h;return}}c.save();c.translate((L.x+(A.dx||0))*W,(L.y+A.dy)*H);if(A.glow!=null)c.filter=`drop-shadow(0 0 ${Math.round((8+22*A.glow)*u)}px ${L.c1&&L.kind!=="badge"?L.c1:"rgba(255,216,74,.95)"})`;c.rotate((L.r||0)+A.dr);c.globalAlpha=(L.o??1)*A.da;
   if(L.anim==="shine"){if(!L._w){const d=drawLayer(mctx,L);L._w=d.w;L._h=d.h}const m=40,ow=Math.ceil((L._w+m*2)*sc),oh=Math.ceil((L._h+m*2)*sc);
     if(ow>0&&oh>0&&ow<6000&&oh<6000){if(offC.width!==ow||offC.height!==oh){offC.width=ow;offC.height=oh}const ox=offC.getContext("2d");ox.setTransform(1,0,0,1,0,0);ox.globalCompositeOperation="source-over";ox.clearRect(0,0,ow,oh);ox.translate(ow/2,oh/2);ox.scale(sc,sc);const d=drawLayer(ox,L);
       const p=fr(t-(L.delay||0))/.5;if(p<1){ox.setTransform(1,0,0,1,0,0);ox.globalCompositeOperation="source-atop";const x=-ow*.35+p*ow*1.7,g=ox.createLinearGradient(x-ow*.16,0,x+ow*.16,oh*.3);g.addColorStop(0,"rgba(255,255,255,0)");g.addColorStop(.5,"rgba(255,250,232,.7)");g.addColorStop(1,"rgba(255,255,255,0)");ox.fillStyle=g;ox.fillRect(0,0,ow,oh);ox.globalCompositeOperation="source-over"}
       c.drawImage(offC,-ow/2,-oh/2);c.restore();L._w=d.w;L._h=d.h;return}}
-  c.scale(sc*(A.sx??1),sc);const d=drawLayer(c,L);c.restore();L._w=d.w;L._h=d.h}
+  c.scale(sc*(A.sx??1),sc);if(A.wipe!=null&&A.wipe<1&&L._w){c.beginPath();c.rect(-L._w/2-30,-L._h/2-30,(L._w+60)*A.wipe,L._h+60);c.clip()}const d=drawLayer(c,L);c.restore();L._w=d.w;L._h=d.h}
 
 /* ---------- render ---------- */
 const STILL=.9;
@@ -1535,7 +1548,7 @@ function syncLogo(){const box=$("#logoBox");box.innerHTML="";if(logoImg){const i
 /* ---------- formats + tabs ---------- */
 const FMT_HINT={square:"Facebook & Instagram post",portrait:"Instagram feed, tallest",story:"Stories, Reels, TikTok",wide:"Foyer TVs, YouTube",event:"Facebook event cover",cover:"Facebook page cover",a4:"Posters to print",a4l:"Landscape print"};
 $("#fmts").innerHTML=Object.entries(FORMATS).map(([k,f])=>`<button role="menuitemradio" data-fmt="${k}">${f.n}<small>${FMT_HINT[k]||""} · ${f.w} × ${f.h}</small></button>`).join("");
-$("#fmts").addEventListener("click",e=>{const b=e.target.closest("[data-fmt]");if(!b)return;S.fmt=b.dataset.fmt;syncFmt();clampPhoto();fit();commit()});
+$("#fmts").addEventListener("click",e=>{const b=e.target.closest("[data-fmt]");if(!b)return;S.fmt=b.dataset.fmt;syncFmt();if(S.look&&S.look.id&&S.layers.some(l=>l.role))relayoutLook();clampPhoto();fit();commit()});
 function syncFmt(){$$("#fmts button").forEach(b=>{b.setAttribute("aria-pressed",b.dataset.fmt===S.fmt);b.setAttribute("aria-checked",b.dataset.fmt===S.fmt)});const n=$("#fmtName");if(n)n.textContent=FORMATS[S.fmt].n}
 /* drop-down menus in the top bar (size, more ways to save): close on choice, Esc or a click elsewhere */
 function ddClose(except){$$(".ddmenu").forEach(m=>{if(m!==except&&!m.hidden){m.hidden=true;const b=document.querySelector(`[aria-controls="${m.id}"]`);b&&b.setAttribute("aria-expanded","false")}})}
@@ -1586,15 +1599,15 @@ function thumbsFor(t){if(t==="add")renderFlogo();if(!thumbDirty[t])return;thumbD
   $("#products").innerHTML=Object.entries(PRODUCTS).map(([k,p])=>`<button class="tile badge" data-product="${k}"><canvas width="300" height="200"></canvas><span>${p.n}</span></button>`).join("");
   $$("#products .tile").forEach(t=>thumbBadge(t.querySelector("canvas"),mk("product",t.dataset.product)));
   }else if(t==="frame"){
-  $("#frames").innerHTML=Object.entries(FRAMES).map(([k,n])=>`<button class="tile" data-frame="${k}" aria-pressed="${S.frame.style===k}"><canvas width="320" height="320"></canvas><span>${n}</span></button>`).join("");
+  $("#frames").innerHTML=Object.entries(FRAMES).filter(([k])=>PRO_FRAMES.includes(k)||S.frame.style===k).map(([k,n])=>`<button class="tile" data-frame="${k}" aria-pressed="${S.frame.style===k}"><canvas width="320" height="320"></canvas><span>${n}</span></button>`).join("");
   $$("#frames .tile").forEach(t=>{const c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,style:t.dataset.frame},photo:S.photo,layers:[]})});
-  }else if(t==="layouts"){thumbQ=thumbQ.filter(a=>a[0].canvas.isConnected);
+  }else if(t==="layouts"){thumbQ=thumbQ.filter(a=>a[0].canvas.isConnected);renderLookPanel();
   renderDealTiles();
-  $("#layouts").innerHTML=LAYOUTS.map((l,i)=>`<button class="tile" data-layout="${i}"><canvas width="320" height="320"></canvas><span>${l.n}${l.fx?' <em class="anim">Animated</em>':""}</span></button>`).join("");
+  $("#layouts").innerHTML=LAYOUTS.map((l,i)=>l.hide?"":`<button class="tile" data-layout="${i}"><canvas width="320" height="320"></canvas><span>${l.n}${l.fx?' <em class="anim">Animated</em>':""}</span></button>`).join("");
   const now=seasonNow().map(x=>x.k);
   $("#seasons").innerHTML=SEASONS.map(se=>`<button class="tile" data-season="${se.k}"><canvas width="320" height="320"></canvas><span>${esc(se.n)}${now.includes(se.k)?' <em class="anim">Now</em>':""}</span></button>`).join("");
   $$("#seasons .tile").forEach(t=>{const se=SEASONS.find(x=>x.k===t.dataset.season),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:se.bg,frame:{...S.frame,...se.frame},photo:S.photo,layers:seasonLayers(se,true),motion:{fx:se.fx}})});
-  $("#presets").innerHTML=ANIM_PRESETS.map((p,i)=>`<button class="tile" data-preset="${i}"><canvas width="320" height="320"></canvas><span>${esc(p.n)}</span></button>`).join("");
+  $("#presets").innerHTML=ANIM_PRESETS.map((p,i)=>p.hide?"":`<button class="tile" data-preset="${i}"><canvas width="320" height="320"></canvas><span>${esc(p.n)}</span></button>`).join("");
   $("#reels").innerHTML=REELS.map((p,i)=>`<button class="tile" data-reel="${i}"><canvas width="216" height="384"></canvas><span>${esc(p.n)}</span></button>`).join("");
   stopTileAnim();$$("#presets .tile").forEach(t=>{const c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},presetState(ANIM_PRESETS[+t.dataset.preset],"square"))});
   $$("#reels .tile").forEach(t=>{const c=t.querySelector("canvas");render(c.getContext("2d"),216,384,{noPhoto:!photoImg},presetState(REELS[+t.dataset.reel],"story"))});
@@ -1602,6 +1615,171 @@ function thumbsFor(t){if(t==="add")renderFlogo();if(!thumbDirty[t])return;thumbD
   $$("#layouts .tile").forEach(t=>{const l=LAYOUTS[+t.dataset.layout],c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",frame:{...S.frame,...l.frame},photo:S.photo,layers:l.layers(),motion:{fx:l.fx||{}}})});
   }}
 let thumbT=0;function thumbsSoon(){clearTimeout(thumbT);thumbT=setTimeout(renderThumbs,600)}
+
+/* ==================== Film looks: clean, professional designs built from the film you pick ====================
+   A look is made of plain parts: the film's poster or a shot from its trailer, solid banners and bars, fine rules and
+   borders, a title, a small label and a line of times or a date. Every part has a role, so the Style controls (font,
+   main colour, accent, animation) restyle the whole design in one go without losing your edits. */
+const LOOK_FONTS=[["display","Condensed"],["poster","Poster"],["serif","Serif"],["body","Clean sans"]];
+const PALETTES=[
+  {k:"imc",n:"IMC navy",main:"#0d1238",ink:"#ffffff",acc:"#ffc93c"},
+  {k:"black",n:"Black & white",main:"#0a0a0c",ink:"#ffffff",acc:"#ffffff"},
+  {k:"midnight",n:"Midnight blue",main:"#0b1d3a",ink:"#ffffff",acc:"#5cc2ff"},
+  {k:"crimson",n:"Crimson",main:"#4a0b14",ink:"#ffffff",acc:"#ffcf70"},
+  {k:"emerald",n:"Emerald",main:"#0b3529",ink:"#f3efe4",acc:"#d6b46a"},
+  {k:"luxx",n:"LUXX gold",main:"#0b0906",ink:"#f4e3b9",acc:"#d4a64a"},
+  {k:"red",n:"IMC red",main:"#15171e",ink:"#ffffff",acc:"#e2452e"},
+  {k:"light",n:"Light",main:"#f3f5f9",ink:"#0d1238",acc:"#0b63b0"}];
+const LOOK_ANIMS=[["none","None"],["fade","Fade"],["rise","Rise"],["wipe","Wipe"],["zoom","Slow zoom"]];
+const LOOKS=[
+  {k:"cinematic",n:"Cinematic",d:"Full-picture shot, title low on the left",font:"display",pic:"still"},
+  {k:"poster",n:"Poster card",d:"Poster on a darkened shot, details beside it",font:"display",pic:"poster"},
+  {k:"banner",n:"Banner",d:"Picture above a solid colour banner",font:"display",pic:"still"},
+  {k:"split",n:"Split panel",d:"Picture with a solid side panel",font:"poster",pic:"still"},
+  {k:"letterbox",n:"Letterbox",d:"Cinema bars top and bottom",font:"display",pic:"still"},
+  {k:"frame",n:"Fine frame",d:"Thin border, centred title",font:"serif",pic:"still"},
+  {k:"editorial",n:"Editorial",d:"Big serif title, magazine style",font:"serif",pic:"still"},
+  {k:"times",n:"Showtimes",d:"Today's times as clean chips",font:"display",pic:"still"}];
+const LOOKDEF={id:null,film:null,font:"auto",pal:"imc",main:"#0d1238",ink:"#ffffff",acc:"#ffc93c",anim:"rise",pic:"auto"};
+let STILLIDX=null,LOOKFILMS=null;
+async function loadStillIdx(){if(STILLIDX)return STILLIDX;for(const u of[RAW+"data/stills/index.json?ts="+Date.now(),"data/stills/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json(),b=u.startsWith(RAW)?RAW:"";STILLIDX={};for(const k in j)STILLIDX[k]=j[k].map(f=>b+f);return STILLIDX}}catch(e){}}STILLIDX={};return STILLIDX}
+const ytIdOf=u=>{const m=/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/.exec(u||"");return m?m[1]:null};
+/* every film with its details, newest listings first; LUXX copies and special screenings fold into the main film */
+function lookFilms(){if(LOOKFILMS&&LOOKFILMS._imc===IMC)return LOOKFILMS;const T=lnow().date,m=new Map();
+  for(const list of[(IMC&&IMC.today)||[],...(((IMC&&IMC.days)||[]).map(d=>d.films||[])),(IMC&&IMC.comingSoon)||[],(IMC&&IMC.kidsClub)||[]])for(const f of list){if(!f.title||/^sensory/i.test(f.title))continue;
+    const title=f.title.replace(/\s+-\s+luxx$/i,"").trim(),k=norm(title),o=m.get(k)||{title,poster:null,trailer:null,cert:"",certSystem:"",runtime:0,release:null,sessions:[],luxx:false};
+    o.poster=o.poster||f.posterFile||f.poster;o.trailer=o.trailer||f.trailer;o.cert=o.cert||(f.cert&&f.cert!=="TBC"?f.cert:"");o.certSystem=o.certSystem||f.certSystem||"";o.runtime=o.runtime||f.runtime||0;o.release=o.release||f.releaseDate||null;if(f.luxx)o.luxx=true;
+    for(const s of f.sessions||[])if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s);if(f.times&&f.date)for(const t of f.times)if(!o.sessions.some(x=>x.date===f.date&&x.time===t))o.sessions.push({date:f.date,time:t});m.set(k,o)}
+  LOOKFILMS=[...m.values()].map(o=>{o.sessions.sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));const first=o.sessions[0]?.date;o.soon=!!(o.release&&o.release>T&&(!first||first>T));return o}).sort((a,b)=>(a.soon-b.soon)||a.title.localeCompare(b.title));LOOKFILMS._imc=IMC;return LOOKFILMS}
+function lookFilm(){const L=lookFilms(),k=(S.look&&S.look.film)||(S.filmTitle&&norm(S.filmTitle));return L.find(f=>norm(f.title)===k)||L.find(f=>!f.soon)||L[0]||null}
+const LONGD=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"}).toUpperCase();
+function lookText(f){const T=lnow().date,now=lnow().hm;if(!f)return{title:"FILM TITLE",label:"NOW SHOWING",when:"BOOK AT IMC.IE",times:[]};
+  if(f.soon)return{title:f.title.toUpperCase(),label:"COMING SOON",when:"IN CINEMAS "+LONGD(f.release),times:[]};
+  const up=f.sessions.filter(s=>s.date>T||(s.date===T&&s.time>now)),day=up[0]?.date,times=up.filter(s=>s.date===day).map(s=>s.time).slice(0,6);
+  const dl=!day?"":day===T?"TODAY":LONGD(day).split(" ")[0];
+  return{title:f.title.toUpperCase(),label:f.release&&f.release>=addDaysE(T,-6)?"NEW RELEASE":"NOW SHOWING",when:day?`${dl}  ${times.join("  ·  ")}`:"BOOK AT IMC.IE",times,day:dl}}
+function addDaysE(s,n){const d=new Date(s+"T12:00");d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
+function hexA(h,a){const m=/^#?([0-9a-f]{6})$/i.exec(h||"");if(!m)return`rgba(0,0,0,${a})`;const n=parseInt(m[1],16);return`rgba(${n>>16&255},${n>>8&255},${n&255},${a})`}
+const lum=h=>{const m=/^#?([0-9a-f]{6})$/i.exec(h||"");if(!m)return 0;const n=parseInt(m[1],16);return(.299*(n>>16&255)+.587*(n>>8&255)+.114*(n&255))/255};
+
+/* ---------- shape layers: banners, bars, rules, borders ---------- */
+let LW=0,LH=0,LU=0;
+function drawShape(c,L){const f=FORMATS[S.fmt],W=LW||f.w,H=LH||f.h,u=LU||Math.min(W,H)/1080,w=(L.w||1)*W/u,h=(L.h||.1)*H/u;
+  if(L.shape==="line"){const th=L.th||4;c.fillStyle=L.c1;c.fillRect(-w/2,-th/2,w,th);return{w,h:Math.max(th,14)}}
+  if(L.shape==="border"){const th=L.th||4;c.strokeStyle=L.c1;c.lineWidth=th;
+    if(L.corners){const k=Math.min(w,h)*.09;c.beginPath();for(const[sx,sy]of[[-1,-1],[1,-1],[1,1],[-1,1]]){const x=sx*(w/2-th/2),y=sy*(h/2-th/2);c.moveTo(x,y-sy*k);c.lineTo(x,y);c.lineTo(x-sx*k,y)}c.stroke()}
+    else c.strokeRect(-w/2+th/2,-h/2+th/2,w-th,h-th);return{w,h}}
+  if(L.grad&&L.grad!=="none"){const g=L.grad==="down"?c.createLinearGradient(0,-h/2,0,h/2):L.grad==="up"?c.createLinearGradient(0,h/2,0,-h/2):L.grad==="right"?c.createLinearGradient(-w/2,0,w/2,0):c.createLinearGradient(w/2,0,-w/2,0);
+    g.addColorStop(0,hexA(L.c1,0));g.addColorStop(.55,hexA(L.c1,(L.ga??.92)*.7));g.addColorStop(1,hexA(L.c1,L.ga??.92));c.fillStyle=g}else c.fillStyle=L.c1;
+  if(L.rad){rr(c,-w/2,-h/2,w,h,L.rad);c.fill()}else c.fillRect(-w/2,-h/2,w,h);
+  if(L.text){c.fillStyle=L.c2||"#fff";c.font=`${WEIGHT[L.font||"body"]} ${L.size||34}px ${FONTS[L.font||"body"]}`;c.textAlign="center";ft(c,L.text,0,(L.size||34)*.36,L.sp||0,"center");c.textAlign="left"}
+  return{w,h}}
+const shape=(o)=>({id:uid(),kind:"shape",shape:"rect",c1:"#000",x:.5,y:.5,w:1,h:.1,s:1,r:0,o:1,...o});
+
+/* place a text layer so its left edge (or right edge) sits at x, by measuring it */
+function edge(L,x,side){const f=FORMATS[S.fmt],u=Math.min(f.w,f.h)/1080,d=drawLayer(mctx,L),half=d.w*L.s*u/2/f.w;L.x=side==="right"?x-half:x+half;L.align=side==="right"?"right":"left";return L}
+
+/* ---------- the looks ---------- */
+function lookLayers(id,o){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,port=!tall&&!wide&&ar<.95,lk=LOOKS.find(x=>x.k===id)||LOOKS[0],th={...LOOKDEF,...(S.look||{}),...o},
+    font=th.font==="auto"?lk.font:th.font,film=lookFilm(),tx=lookText(film),u=Math.min(f.w,f.h)/1080,L=[],W=f.w/u,H=f.h/u;
+  const safeT=tall?.15:.06,safeB=tall?.78:.94,m=wide?.06:.075;
+  const title=(text,o)=>{const w=o.fitW||(wide?900:880);return{...mk("text","title",{text,font,size:fitSize(text,font,o.max||130,40,w),upper:true,shadow:false,c1:th.ink,role:"title",fitW:w,maxS:o.max||130,sp:font==="serif"?0:2}),...o}};
+  const label=(text,o)=>({...mk("text","small",{text,font:"body",size:tall?30:24,sp:7,upper:true,c1:th.acc,shadow:false,role:"label"}),...o});
+  const line=(text,o)=>({...mk("text","sub",{text,font:"body",size:tall?38:32,upper:true,sp:3,c1:th.ink,shadow:false,role:"text"}),...o});
+  const rule=(o)=>shape({shape:"line",w:tall?.16:.12,th:5,c1:th.acc,role:"accent",...o});
+  const logo=(o)=>({...mk("logo",null,{size:tall?120:100,role:"logo"}),...o});
+  const cert=(o)=>{if(!film||!film.cert)return null;const p=ratingPick(film.cert,film.certSystem||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src);return p&&p.src?mk("rating",null,{src:p.src,cert:p.cert,system:p.system,s:tall?.5:.42,...o}):null};
+  const book=(o)=>label("BOOK AT IMC.IE",{c1:th.ink,o:.85,...o});
+  const card=(o)=>film&&film.poster?{id:uid(),kind:"pphoto",src:asset(film.poster),label:film.title+" poster",card:true,ar:.667,x:.5,y:.5,s:1,r:0,o:1,role:"card",...o}:null;
+  const k=lk.k;
+  if(k==="cinematic"){const bot=safeB;L.push(shape({grad:"down",c1:th.main,ga:.96,x:.5,w:1,h:tall?.62:.62,y:1-(tall?.62:.62)/2,role:"scrim",lock:true}));
+    const tw=wide?.52:.84,t=title(tx.title,{fitW:tw*W,max:tall?150:130}),tH=t.size*1.05*u/f.h*Math.max(1,String(t.text).split("\n").length);
+    const y3=bot-(tall?.035:.04),y2=y3-(tall?.055:.065),y1=y2-tH/2-.03,y0=y1-tH/2-(tall?.045:.055);
+    t.y=y1;L.push(edge(label(tx.label,{y:y0}),m),edge(t,m),rule({x:m+(tall?.08:.06),y:y2-.025}),edge(line(tx.when,{y:y2+.012}),m),edge(book({y:y3+.012,size:tall?26:20}),m));
+    const c=cert({x:1-m-.03,y:tall?y0:y1});if(c)L.push(c);L.push(logo({x:1-m-.04,y:safeT+.03}))}
+  else if(k==="poster"){L.push(shape({c1:th.main,ga:.82,grad:"none",o:.78,x:.5,y:.5,w:1,h:1,role:"panel",lock:true}));
+    if(tall){const c=card({y:.36,s:1.62});if(c)L.push(c);L.push(label(tx.label,{y:.6}),title(tx.title,{y:.655,fitW:900,max:110}),rule({y:.705}),line(tx.when,{y:.735,size:34}),book({y:.765,size:24}));const r=cert({x:.86,y:.6});if(r)L.push(r)}
+    else if(wide){const c=card({x:.27,y:.5,s:1.5});if(c)L.push(c);const cx=.68;L.push(label(tx.label,{x:cx,y:.3}),title(tx.title,{x:cx,y:.43,fitW:900,max:120}),rule({x:cx,y:.53}),line(tx.when,{x:cx,y:.6,size:36}),book({x:cx,y:.7,size:24}));const r=cert({x:cx,y:.8});if(r)L.push(r);L.push(logo({x:.94,y:.1,size:80}))}
+    else{const py=port?.42:.5,c=card({x:.29,y:py,s:port?1.6:1.4});if(c)L.push(c);const cx=.72;L.push(label(tx.label,{x:cx,y:py-.2}),title(tx.title,{x:cx,y:py-.07,fitW:430,max:110}),rule({x:cx,y:py+.04,w:.1}),line(tx.when.replace(/  ·  /g,"\n").replace(/^(\S+)\s+/,"$1\n"),{x:cx,y:py+.15,size:30}),book({x:cx,y:py+(port?.3:.33),size:20}));const r=cert({x:cx,y:py+(port?.38:.4)});if(r)L.push(r);if(port)L.push(logo({x:.5,y:.88,size:90}))}}
+  else if(k==="banner"){const bh=tall?.24:wide?.3:.3,by=tall?safeB-bh/2:1-bh/2,ptop=by-bh/2;L.push(shape({c1:th.main,x:.5,y:(ptop+1)/2,w:1,h:1-ptop,role:"panel",lock:true}),shape({shape:"line",c1:th.acc,x:.5,y:by-bh/2,w:1,th:8,role:"accent"}));
+    L.push(label(tx.label,{y:by-bh/2+bh*.2}),title(tx.title,{y:by-bh/2+bh*.48,max:wide?110:120,fitW:wide?1500:900}),line(tx.when,{y:by-bh/2+bh*.76,size:tall?36:30}));
+    const r=cert({x:1-m-.02,y:by-bh/2+bh*(tall?.2:.48)});if(r)L.push(r);L.push(logo({x:m+.04,y:safeT+.03}))}
+  else if(k==="split"){if(tall){const ph=.44,py=safeB-ph/2+.02;L.push(shape({c1:th.main,x:.5,y:py+.1,w:1,h:ph+.2,role:"panel",lock:true}),shape({shape:"line",c1:th.acc,x:.5,y:py-ph/2+.1-.1,w:1,th:8,role:"accent"}));
+      L.push(edge(label(tx.label,{y:.6}),m),edge(title(tx.title,{y:.665,fitW:880,max:130}),m),rule({x:m+.08,y:.715}),edge(line(tx.when,{y:.745,size:34}),m),edge(book({y:.775,size:24}),m));L.push(logo({x:1-m-.04,y:safeT+.03}))}
+    else{const pw=wide?.42:.46,px=1-pw/2;L.push(shape({c1:th.main,x:px,y:.5,w:pw,h:1,role:"panel",lock:true}),shape({shape:"line",c1:th.acc,x:1-pw,y:.5,w:.006,th:4,h:1,role:"accent"}));L[L.length-1]={...L[L.length-1],shape:"rect",w:.006,h:1,c1:th.acc};
+      const x0=1-pw+(wide?.04:.05),cw=(pw-(wide?.08:.1))*W;L.push(edge(label(tx.label,{y:.3}),x0),edge(title(tx.title,{y:.42,fitW:cw,max:wide?120:110}),x0),rule({x:x0+.05,y:.52,w:.1}),edge(line(tx.when.replace(/  ·  /g,"\n").replace(/^(\S+)\s+/,"$1\n"),{y:.64,size:30}),x0),edge(book({y:.8,size:20}),x0));
+      const r=cert({x:x0+.04,y:.9});if(r)L.push(r);L.push(logo({x:m+.04,y:safeT+.04}))}}
+  else if(k==="letterbox"){const tb=tall?.24:.14,bb=tall?.36:.28,bt=tall?safeB-bb+.02:1-bb;L.push(shape({c1:"#000000",x:.5,y:tb/2,w:1,h:tb,role:"bars",lock:true}),shape({c1:"#000000",x:.5,y:bt+bb/2+(tall?.11:0),w:1,h:bb+(tall?.22:0),role:"bars",lock:true}));
+    L.push(shape({shape:"line",c1:th.acc,x:.5,y:tb,w:1,th:3,role:"accent"}),shape({shape:"line",c1:th.acc,x:.5,y:bt,w:1,th:3,role:"accent"}));
+    L.push(label(tx.label,{y:tall?tb-.04:tb/2+.01}),title(tx.title,{y:bt+bb*.38,max:wide?110:120,fitW:wide?1500:900}),line(tx.when,{y:bt+bb*.68,size:tall?34:28}));const r=cert({x:1-m-.02,y:tall?bt+bb*.14:bt+bb*.38});if(r)L.push(r);L.push(logo({x:m+.04,y:tall?tb-.045:tb/2,size:tall?100:80}))}
+  else if(k==="frame"){L.push(shape({grad:"down",c1:th.main,ga:.9,x:.5,y:.75,w:1,h:.5,role:"scrim",lock:true}),shape({shape:"border",c1:th.acc,x:.5,y:tall?.46:.5,w:wide?.95:.9,h:tall?.66:wide?.9:.92,th:3,role:"accent",lock:true}));
+    const by=tall?.7:.78;L.push(label(tx.label,{y:tall?.2:.12}),title(tx.title,{y:by,max:tall?130:120,fitW:wide?1400:820}),rule({y:by+(tall?.04:.07),w:.08}),line(tx.when,{y:by+(tall?.07:.11),size:tall?34:28}));const r=cert({x:.5,y:by-(tall?.07:.11)});if(r)L.push(r);const bw=wide?.95:.9,bH=tall?.66:wide?.9:.92,bY=tall?.46:.5;L.push(logo({x:.5-bw/2+(wide?.05:.08),y:bY-bH/2+(tall?.045:.08),size:tall?90:70}))}
+  else if(k==="editorial"){L.push(shape({grad:"left",c1:th.main,ga:.92,x:wide?.3:.4,y:.5,w:wide?.6:.8,h:1,role:"scrim",lock:true}));
+    const words=tx.title.split(" "),half=Math.ceil(words.length/2),two=words.length>2?words.slice(0,half).join(" ")+"\n"+words.slice(half).join(" "):tx.title,cw=(wide?.5:.78)*W;
+    L.push(edge(label(tx.label,{y:tall?.28:.22}),m),edge(rule({y:tall?.31:.26,w:.1}),m),edge(title(two,{y:tall?.43:.45,fitW:cw,max:tall?150:140,sp:0}),m),edge(line(tx.when,{y:tall?.58:.7,size:tall?34:28}),m),edge(book({y:tall?.62:.77,size:tall?24:20}),m));
+    const r=cert({x:m+.04,y:tall?.7:.87});if(r)L.push(r);L.push(logo({x:1-m-.04,y:tall?.72:.88}))}
+  else if(k==="times"){L.push(shape({c1:th.main,o:.72,x:.5,y:.5,w:1,h:1,role:"panel",lock:true}));const n=Math.max(1,tx.times.length),cw=tall?.36:wide?.12:.2,ch=tall?.06:wide?.11:.09,gap=tall?.03:.015,cols=tall?2:Math.min(n,wide?6:3),rows=Math.ceil(n/cols);
+    const top=tall?.42:.52;L.push(label(tx.day?`${tx.day} AT ${SITE_NAME.toUpperCase()}`:tx.label,{y:tall?.24:.2}),title(tx.title,{y:tall?.32:.33,max:120,fitW:wide?1500:900}),rule({y:tall?.37:.42}));
+    (tx.times.length?tx.times:["BOOK"]).forEach((t,i)=>{const r=Math.floor(i/cols),cI=i%cols,inRow=Math.min(cols,n-r*cols),x=.5+(cI-(inRow-1)/2)*(cw+gap),y=top+r*(ch+gap*(tall?.5:1.6));L.push(shape({c1:th.acc,x,y,w:cw,h:ch,rad:12,role:"chip",text:t,c2:lum(th.acc)>.6?"#0b0d1e":"#ffffff",font:"mono",size:tall?52:wide?46:42}))});
+    L.push(book({y:Math.min(safeB-.02,top+rows*(ch+gap*(tall?.5:1.6))+.04),size:tall?26:22}));L.push(logo({x:m+.05,y:safeT+.03,size:80}))}
+  return L.filter(Boolean)}
+function lookPic(id,th){const lk=LOOKS.find(x=>x.k===id)||LOOKS[0],p=(th&&th.pic)||"auto";return p==="auto"?(lk.pic==="poster"?"still":lk.pic):p}
+
+/* style an existing design's parts by their role, without moving anything */
+function restyle(){const th={...LOOKDEF,...(S.look||{})},lk=LOOKS.find(x=>x.k===th.id),font=th.font==="auto"?(lk?lk.font:"display"):th.font;
+  for(const L of S.layers){if(!L.role)continue;
+    if(L.role==="panel"||L.role==="scrim")L.c1=th.main;else if(L.role==="accent")L.c1=th.acc;else if(L.role==="label")L.c1=th.acc;else if(L.role==="text")L.c1=th.ink;
+    else if(L.role==="chip"){L.c1=th.acc;L.c2=lum(th.acc)>.6?"#0b0d1e":"#ffffff"}
+    else if(L.role==="title"){L.c1=th.ink;L.font=font;L.sp=font==="serif"?0:2;if(L.fitW)L.size=fitSize(L.text,font,L.maxS||130,40,L.fitW)}
+    L._w=0}
+  /* left-aligned blocks keep their left edge after a font change */
+  applyLookAnim();syncAll()}
+function applyLookAnim(){const a=(S.look&&S.look.anim)||"rise";let i=0;S.motion={...S.motion,dur:Math.max(4,S.motion.dur||4),fx:{...(S.motion.fx||{}),kenburns:a==="zoom"}};
+  for(const L of S.layers){if(!L.role)continue;const bg=L.role==="panel"||L.role==="scrim"||L.role==="bars";
+    if(a==="none"){L.anim="none";L.delay=0;continue}
+    L.anim=bg?"fade":a==="wipe"?((L.kind==="shape"||L.role==="title"||L.role==="label")?"wipe":"fade"):a==="zoom"?"fade":a==="rise"?"rise":"fade";
+    L.delay=bg?0:.03+(i++)*.035;L.ilen=.55}}
+
+async function applyLook(id,keepFilm){const th={...LOOKDEF,...(S.look||{}),id},film=lookFilm();S.look=th;if(film){S.look.film=norm(film.title);S.filmTitle=film.title;FLOGO_FILM=film.title}
+  const pic=lookPic(id,th);let src=null;if(film){const st=(await loadStillIdx())[ytIdOf(film.trailer)]||[];src=/^still(\d)?$/.test(pic)&&st.length?(pic==="still"?st[1]||st[0]:st[+pic.slice(5)]||st[0]):asset(film.poster)}
+  S.label=(film?film.title+" · ":"")+(LOOKS.find(x=>x.k===id)||{}).n;S.frame={...S.frame,style:"none",logo:false};S.bg="photo";
+  const isPoster=src&&film&&src===asset(film.poster);S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:isPoster?-.1:0,shade:id==="poster"||id==="times"?0:12,b:100,c:105,s:100};
+  if(src)await loadStillAsPhoto(src);
+  S.layers=lookLayers(id);selId=null;applyLookAnim();clampPhoto();syncAll();commit();renderLookPanel();toast((LOOKS.find(x=>x.k===id)||{}).n+" ready. Change the style on the left, or click any words to edit them")}
+/* a new size: lay the look out again for that shape, keeping any words you changed */
+function relayoutLook(){const keep={};for(const L of S.layers)if(L.role&&L.kind==="text"){(keep[L.role]=keep[L.role]||[]).push(L.text)}
+  const NL=lookLayers(S.look.id),seen={};for(const L of NL)if(L.role&&L.kind==="text"&&keep[L.role]){const i=seen[L.role]=(seen[L.role]||0);if(keep[L.role][i]!=null&&keep[L.role][i]!==L.text){L.text=keep[L.role][i];if(L.fitW)L.size=fitSize(L.text,L.font,L.maxS||130,40,L.fitW)}seen[L.role]++}
+  S.layers=NL;selId=null;applyLookAnim()}
+/* trailer frames can have black bars: trim them so the shot fills the design */
+async function loadStillAsPhoto(url){try{const r=await fetch(url);if(!r.ok)throw 0;let b=await r.blob();if(/stills\//.test(url))b=await trimBars(b);await setPhotoBlob(b,false,{fromLib:true,quiet:true});return true}catch(e){toast("Couldn't load that picture. Try another one");return false}}
+async function trimBars(blob){try{const im=await blobToImg(blob),w=im.naturalWidth,h=im.naturalHeight,c=document.createElement("canvas");c.width=w;c.height=h;const x=c.getContext("2d");x.drawImage(im,0,0);const d=x.getImageData(0,0,w,h).data;
+  const dark=y=>{let mx=0;for(let i=0;i<w;i+=Math.max(1,w>>6)){const o=(y*w+i)*4;mx=Math.max(mx,d[o],d[o+1],d[o+2])}return mx<24};let t=0,b2=h-1;while(t<h/3&&dark(t))t++;while(b2>h*2/3&&dark(b2))b2--;
+  if(t<4&&h-1-b2<4)return blob;const o=document.createElement("canvas");o.width=w;o.height=b2-t+1;o.getContext("2d").drawImage(c,0,t,w,o.height,0,0,w,o.height);return await new Promise(r=>o.toBlob(r,"image/jpeg",.92))}catch(e){return blob}}
+
+/* ---------- the Film looks panel ---------- */
+async function renderLookPanel(){const el=$("#lookPanel");if(!el)return;const films=lookFilms(),film=lookFilm(),th={...LOOKDEF,...(S.look||{})},st=film?((await loadStillIdx())[ytIdOf(film.trailer)]||[]):[];
+  const pics=film?[["poster","Poster",asset(film.poster)],...st.map((u,i)=>["still"+i,i?"Shot "+i:"Thumbnail",u])]:[];const curPic=th.pic==="auto"?(th.id?lookPic(th.id,th):"auto"):th.pic;
+  el.innerHTML=`<label class="lbl" for="lkFilm">Film</label><select id="lkFilm">${films.length?films.map(f=>`<option value="${esc(norm(f.title))}" ${film&&norm(f.title)===norm(film.title)?"selected":""}>${esc(f.title)}${f.soon?" (coming soon)":""}</option>`).join(""):'<option>Listings still loading…</option>'}</select>
+    ${pics.length?`<div class="lbl" style="margin-top:10px">Picture</div><div class="lkpics">${pics.map(([k,n,u])=>`<button type="button" class="lkpic" data-lkpic="${k}" aria-pressed="${curPic===k||(curPic==="still"&&k===(st.length>1?"still1":"still0"))}" title="${n}"><img src="${esc(u)}" alt="" loading="lazy"><span>${n}</span></button>`).join("")}</div>`:""}
+    ${film&&!st.length?'<p class="note">Shots from this film\'s trailer appear here after the next listings update.</p>':""}
+    <div class="lbl" style="margin-top:12px">Look</div><div class="tiles looks" id="looks">${LOOKS.map(l=>`<button class="tile" data-look="${l.k}" aria-pressed="${th.id===l.k}"><canvas width="320" height="320"></canvas><span>${l.n}</span></button>`).join("")}</div>`;
+  renderStylePanel();renderLookThumbs()}
+function renderLookThumbs(){const th={...LOOKDEF,...(S.look||{})};$$("#looks .tile").forEach(t=>{const c=t.querySelector("canvas"),id=t.dataset.look,save=S.fmt;S.fmt="square";const layers=lookLayers(id);S.fmt=save;
+  qrender(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",bg:"photo",frame:{...S.frame,style:"none",logo:false},photo:{...S.photo,fit:"cover",zoom:1,ox:0,oy:0},layers,motion:{fx:{}}})})}
+function renderStylePanel(){const el=$("#stylePanel");if(!el)return;const th={...LOOKDEF,...(S.look||{})};
+  el.innerHTML=`<div class="lbl">Font</div><div class="seg wrap" id="lkFont">${[["auto","Look's own"],...LOOK_FONTS].map(([k,n])=>`<button data-lkfont="${k}" aria-pressed="${th.font===k}" style="font-family:${k==="auto"?"inherit":FONTS[k]};${k==="display"||k==="poster"?"letter-spacing:.04em;text-transform:uppercase":""}">${n}</button>`).join("")}</div>
+    <div class="lbl" style="margin-top:12px">Colours</div><div class="pals">${PALETTES.map(p=>`<button class="pal" data-lkpal="${p.k}" aria-pressed="${th.pal===p.k}" title="${p.n}" aria-label="${p.n}"><i style="background:${p.main}"></i><i style="background:${p.acc}"></i><span>${p.n}</span></button>`).join("")}</div>
+    <div class="lkcols"><label>Main <input type="color" id="lkMain" value="${th.main}"></label><label>Accent <input type="color" id="lkAcc" value="${th.acc}"></label><label>Text <input type="color" id="lkInk" value="${th.ink}"></label></div>
+    <div class="lbl" style="margin-top:12px">Animation</div><div class="seg wrap" id="lkAnim">${LOOK_ANIMS.map(([k,n])=>`<button data-lkanim="${k}" aria-pressed="${th.anim===k}">${n}</button>`).join("")}</div>
+    <p class="note">${th.id?"These change the whole design at once. Your own words stay.":"Pick a look above first; then try fonts and colours here."}</p>`}
+document.addEventListener("click",async e=>{let b;
+  if(b=e.target.closest("[data-look]")){stopTileAnim&&stopTileAnim();await applyLook(b.dataset.look);return}
+  if(b=e.target.closest("[data-lkpic]")){S.look={...LOOKDEF,...(S.look||{}),pic:b.dataset.lkpic};if(S.look.id)await applyLook(S.look.id);else renderLookPanel();return}
+  if(b=e.target.closest("[data-lkfont]")){S.look={...LOOKDEF,...(S.look||{}),font:b.dataset.lkfont};restyle();commit();renderStylePanel();renderLookThumbs();return}
+  if(b=e.target.closest("[data-lkpal]")){const p=PALETTES.find(x=>x.k===b.dataset.lkpal);S.look={...LOOKDEF,...(S.look||{}),pal:p.k,main:p.main,ink:p.ink,acc:p.acc};restyle();commit();renderStylePanel();renderLookThumbs();return}
+  if(b=e.target.closest("[data-lkanim]")){S.look={...LOOKDEF,...(S.look||{}),anim:b.dataset.lkanim};applyLookAnim();syncAll();commit();renderStylePanel();return}});
+document.addEventListener("change",async e=>{const t=e.target;if(t.id==="lkFilm"){S.look={...LOOKDEF,...(S.look||{}),film:t.value,pic:"auto"};if(S.look.id)await applyLook(S.look.id);else renderLookPanel()}});
+document.addEventListener("input",e=>{const t=e.target,map={lkMain:"main",lkAcc:"acc",lkInk:"ink"};if(map[t.id]){S.look={...LOOKDEF,...(S.look||{}),pal:"custom",[map[t.id]]:t.value};restyle();commitSoon();$$("[data-lkpal]").forEach(x=>x.setAttribute("aria-pressed","false"))}});
 
 /* ---------- layouts ---------- */
 $("#seasons").addEventListener("click",e=>{const t=e.target.closest("[data-season]");if(t)applySeason(t.dataset.season,false)});
@@ -1621,7 +1799,7 @@ $("#saved").addEventListener("click",e=>{const a=getSaved();const ap=e.target.cl
   if(dl){a.splice(+dl.dataset.del,1);putSaved(a);syncSaved()}});
 
 /* ---------- properties ---------- */
-function layerName(L){if(L.kind==="qr")return"QR code";if(L.kind==="pphoto")return L.label||"Product photo";if(L.kind==="rating")return"Rating "+(L.cert||"");if(L.kind==="product")return(PRODUCTS[L.key]?.n||"Food");if(L.kind==="listing")return"Film times";if(L.kind==="badge")return(BADGES[L.key]?.n||"Badge")+(L.text&&L.text!==BADGES[L.key]?.text?" · "+L.text:"");if(L.kind==="logo")return"IMC logo";return(L.text||"Text").split("\n")[0].slice(0,28)}
+function layerName(L){if(L.kind==="shape")return L.role==="chip"?"Time chip "+(L.text||""):L.shape==="line"?"Accent line":L.shape==="border"?"Border":L.role==="scrim"?"Shade":L.role==="bars"?"Cinema bar":"Banner";if(L.kind==="qr")return"QR code";if(L.kind==="pphoto")return L.label||"Product photo";if(L.kind==="rating")return"Rating "+(L.cert||"");if(L.kind==="product")return(PRODUCTS[L.key]?.n||"Food");if(L.kind==="listing")return"Film times";if(L.kind==="badge")return(BADGES[L.key]?.n||"Badge")+(L.text&&L.text!==BADGES[L.key]?.text?" · "+L.text:"");if(L.kind==="logo")return"IMC logo";return(L.text||"Text").split("\n")[0].slice(0,28)}
 function sliderRow(id,label,min,max,val,unit){return`<label class="slider"><span>${label}</span><input type="range" id="${id}" min="${min}" max="${max}" value="${val}"><output id="o${id}">${val}${unit}</output></label>`}
 function colourBlock(label,key,L){return`<div><div class="lbl" style="margin-bottom:6px">${label}</div><div class="swatches" data-colour="${key}">${SWATCHES.map(c=>`<button class="sw" data-c="${c}" style="background:${c}" aria-label="${c}" aria-pressed="${L[key]===c}"></button>`).join("")}<input type="color" value="${/^#[0-9a-f]{6}$/i.test(L[key])?L[key]:"#ffffff"}" aria-label="Custom colour"></div></div>`}
 function renderProps(){const L=getSel(),P=$("#props");if(selId===BG_ID){P.innerHTML=bgProps();return}
@@ -1643,8 +1821,9 @@ function renderProps(){const L=getSel(),P=$("#props");if(selId===BG_ID){P.innerH
   if(L.kind==="listing"){h+=listingPanel(L)}
   if(L.kind==="rating"){const sys=L.system||"bbfc",opts=ratingList(sys).filter(o=>o.cert!==sys.toUpperCase());h+=`<div class="seg" id="pp-rsys" style="width:max-content"><button data-prs="bbfc" aria-pressed="${sys==="bbfc"}">BBFC</button><button data-prs="ifco" aria-pressed="${sys==="ifco"}">IFCO</button></div>`+(opts.length?`<label class="lbl" for="pp-rating">Certificate</label><select id="pp-rating">${!L.src?`<option value="" selected>${esc(L.cert||"Choose")}</option>`:""}${opts.map(o=>`<option value="${esc(o.src)}" ${o.src===L.src?"selected":""}>${esc(o.cert)}</option>`).join("")}</select>`:`<p class="note">Rating symbols load from imc.ie on the live site.</p>`)+(sys==="ifco"?`<p class="note">IFCO certificates can differ from BBFC ones. Check the film's IFCO rating.</p>`:"")}
   if(L.kind==="qr")h+=qrProps(L);
+  if(L.kind==="shape"){if(L.role==="chip")h+=`<label class="lbl" for="pp-text">Words</label><input id="pp-text" type="text" value="${esc(L.text||"")}">`;h+=colourBlock(L.shape==="line"||L.shape==="border"?"Colour":"Fill colour","c1",L);if(L.role==="chip")h+=colourBlock("Words colour","c2",L);if(L.lock)h+=`<label class="check"><input type="checkbox" id="pp-lock" checked> Keep in place (clicks go through to the picture)</label>`;}
   if(L.kind==="logo"){h+=`<label class="lbl" for="pp-plate">Backing</label><select id="pp-plate"><option value="none">None</option><option value="light">White panel</option><option value="dark">Dark panel</option></select>${logoImg?"":colourBlock("Text logo colour","c1",L)}`}
-  h+=`</div><div class="sec"><h3>Position</h3>${sliderRow("pp-s","Size",10,400,Math.round(L.s*100),"%")}${sliderRow("pp-r","Rotate",-180,180,Math.round((L.r||0)*180/Math.PI),"°")}${sliderRow("pp-o","Opacity",10,100,Math.round((L.o??1)*100),"%")}<label class="lbl" for="pp-anim">Animation</label><select id="pp-anim">${Object.entries(ANIMS).map(([k,n])=>`<option value="${k}" ${(L.anim||"none")===k?"selected":""}>${n}</option>`).join("")}</select>${(()=>{const d=S.motion.dur||3,sec=v=>Math.round(v*d*10)/10;return`<div class="lbl" style="margin-top:10px">Timing</div>${sliderRow("pp-delay","Appears at",0,Math.round(d*10),Math.round((L.delay||0)*d*10),"")}${sliderRow("pp-until","Leaves at",1,Math.round(d*10),Math.round((L.until??1)*d*10),"")}
+  h+=`</div><div class="sec"><h3>Position</h3>${sliderRow("pp-s","Size",10,400,Math.round(L.s*100),"%")}${sliderRow("pp-r","Rotate",-180,180,Math.round((L.r||0)*180/Math.PI),"°")}${sliderRow("pp-o","Opacity",10,100,Math.round((L.o??1)*100),"%")}<label class="lbl" for="pp-anim">Animation</label><select id="pp-anim">${Object.entries(ANIMS).filter(([k])=>PRO_ANIMS.includes(k)||(L.anim||"none")===k).map(([k,n])=>`<option value="${k}" ${(L.anim||"none")===k?"selected":""}>${n}</option>`).join("")}</select>${(()=>{const d=S.motion.dur||3,sec=v=>Math.round(v*d*10)/10;return`<div class="lbl" style="margin-top:10px">Timing</div>${sliderRow("pp-delay","Appears at",0,Math.round(d*10),Math.round((L.delay||0)*d*10),"")}${sliderRow("pp-until","Leaves at",1,Math.round(d*10),Math.round((L.until??1)*d*10),"")}
     <label class="lbl" for="pp-ilen">Animation speed</label><select id="pp-ilen">${[[.5,"Quick"],[1,"Normal"],[1.8,"Slow"]].map(([v,n])=>`<option value="${v}" ${(L.ilen||1)===v?"selected":""}>${n}</option>`).join("")}</select><p class="note">Or drag this layer's bar on the timeline under the design.</p>`})()}
     <div class="acts"><button class="btn" data-act="centre">Centre</button><button class="btn" data-act="fwd">Forward</button><button class="btn" data-act="back">Back</button><button class="btn" data-act="dup">Duplicate</button><button class="btn" data-act="flat">Straighten</button><button class="btn danger" data-act="del">Delete</button></div></div>`;
   P.innerHTML=h;if(L.kind==="logo")$("#pp-plate").value=L.plate||"none";tlFmt()}
@@ -1672,7 +1851,7 @@ $("#props").addEventListener("change",e=>{const L=getSel();if(!L)return;const id
     else if(id==="pp-shtimes")L.hideTimes=!e.target.checked;else if(id==="pp-shcert")L.hideCert=!e.target.checked;else if(id==="pp-shlx")L.hideLuxx=!e.target.checked;else if(id==="pp-shkids")L.hideKids=!e.target.checked;else done=false;
     if(done){renderProps();draw();commit();return}}
   if(id==="pp-font")L.font=e.target.value;else if(id==="pp-upper")L.upper=e.target.checked;else if(id==="pp-shadow")L.shadow=e.target.checked;
-  else if(id==="pp-box"){L.box=e.target.checked;renderProps()}else if(id==="pp-plate")L.plate=e.target.value;else if(id==="pp-anim"){L.anim=e.target.value;renderProps()}else if(id==="pp-rating"){const o=ratingList().find(x=>x.src===e.target.value);if(o){L.src=o.src;L.cert=o.cert;L.system=o.system;loadRating(o.src);syncLayers()}}
+  else if(id==="pp-box"){L.box=e.target.checked;renderProps()}else if(id==="pp-lock"){L.lock=e.target.checked}else if(id==="pp-plate")L.plate=e.target.value;else if(id==="pp-anim"){L.anim=e.target.value;renderProps()}else if(id==="pp-rating"){const o=ratingList().find(x=>x.src===e.target.value);if(o){L.src=o.src;L.cert=o.cert;L.system=o.system;loadRating(o.src);syncLayers()}}
   draw();commit()});
 $("#props").addEventListener("click",e=>{const L=getSel();if(!L)return;
   const sw=e.target.closest("[data-c]");if(sw){const k=sw.closest("[data-colour]").dataset.colour;L[k]=sw.dataset.c;sw.parentElement.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b===sw));sw.parentElement.querySelector("input").value=sw.dataset.c;draw();commit();return}
@@ -1704,7 +1883,7 @@ function select(id){if(selId===id)return;selId=id;renderProps();syncLayers();dra
 /* ---------- pointer ---------- */
 function pt(e){const r=cv.getBoundingClientRect(),k=cv.width/r.width;return{x:(e.clientX-r.left)*k,y:(e.clientY-r.top)*k}}
 const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
-function hit(p){const W=cv.width,H=cv.height,u=Math.min(W,H)/1080,k=kpx();for(let i=S.layers.length-1;i>=0;i--){const L=S.layers[i];if(L.hidden||!L._w)continue;
+function hit(p){const W=cv.width,H=cv.height,u=Math.min(W,H)/1080,k=kpx();for(let i=S.layers.length-1;i>=0;i--){const L=S.layers[i];if(L.hidden||!L._w||L.lock)continue;
   const dx=p.x-L.x*W,dy=p.y-L.y*H,co=Math.cos(-(L.r||0)),si=Math.sin(-(L.r||0)),sc=L.s*u,lx=(dx*co-dy*si)/sc,ly=(dx*si+dy*co)/sc,pad=6*k/sc;
   if(Math.abs(lx)<=L._w/2+pad&&Math.abs(ly)<=L._h/2+pad)return L}return null}
 cv.addEventListener("pointerdown",e=>{if(e.button&&e.button!==0)return;const p=pt(e),W=cv.width,H=cv.height,u=Math.min(W,H)/1080,k=kpx();drag=null;
@@ -1768,7 +1947,7 @@ const curT=()=>fr(performance.now()/1000/(S.motion.dur||3));
 function ensureLoop(){if(hasMotion()&&playing&&!loopOn){loopOn=true;requestAnimationFrame(loop)}else if(!hasMotion()||!playing){draw()}}
 function loop(now){if(!(hasMotion()&&playing)){loopOn=false;draw();return}if(now-lastF>=(LOWEND?66:40)){lastF=now;render(ctx,cv.width,cv.height,{overlay:true,t:curT()});tlHead()}requestAnimationFrame(loop)}
 function buildMotionUI(){
-  $("#fxTiles").innerHTML=FX_ORDER.map(k=>`<button class="tile fx" data-fx="${k}" aria-pressed="false"><canvas width="200" height="200" data-fx="${k}"></canvas><span>${FX[k].n}${k==="chase"?' <em class="anim">Marquee</em>':""}</span></button>`).join("");
+  $("#fxTiles").innerHTML=FX_ORDER.filter(k=>PRO_FX.includes(k)||(S.motion.fx||{})[k]).map(k=>`<button class="tile fx" data-fx="${k}" aria-pressed="false"><canvas width="200" height="200" data-fx="${k}"></canvas><span>${FX[k].n}${k==="chase"?' <em class="anim">Marquee</em>':""}</span></button>`).join("");
   $("#durSeg").innerHTML=[2,3,4,5,6,8,10,12,15,20].map(d=>`<button data-dur="${d}">${d} sec</button>`).join("");
 }
 function syncFxCtl(){const a=S.motion.amt||1;$("#fxAmt").value=a;$("#fxAmtO").textContent=Math.round(a*100)+"%";const cur=S.motion.fxc||"";
@@ -1858,7 +2037,7 @@ $("#ptabs").addEventListener("click",e=>{const b=e.target.closest("[data-pt]");i
 document.addEventListener("click",e=>{if(e.target.closest(".sheethead button"))sheet(null)});
 PHONE.addEventListener?PHONE.addEventListener("change",phoneMode):PHONE.addListener(phoneMode);
 /* ---------- tidy panels: sections fold; the main one in each tab starts open; your choices are remembered ---------- */
-const FOLD_OPEN=["Scan-to-book QR code","Film logo","Background","Adjust the photo","IMC images","IMC frame","Frame colour","Animated effects","Text","Badges","Film times","Deals","Cinema Reels","Seasons & occasions","IMC logo"];
+const FOLD_OPEN=["Film looks","Style","Scan-to-book QR code","Film logo","Background","Adjust the photo","IMC images","IMC frame","Frame colour","Animated effects","Text","Badges","Film times","Deals","Cinema Reels","Seasons & occasions","IMC logo"];
 let foldState={};try{foldState=JSON.parse(localStorage.getItem("imc-editor-fold")||"{}")}catch(e){}
 function setupFolds(){$$(".app>.left [data-panel]>.sec").forEach(sec=>{const h=sec.querySelector(":scope>h3");if(!h||sec.classList.contains("fold"))return;const k=h.textContent.trim();sec.classList.add("fold");
   const open=k in foldState?foldState[k]:FOLD_OPEN.includes(k);sec.classList.toggle("shut",!open);h.setAttribute("role","button");h.tabIndex=0;h.setAttribute("aria-expanded",open)})}
@@ -2397,7 +2576,7 @@ function filmLayers(fm,mode){const L=[];
   if(rp&&(rp.src||IMC&&IMC.ratings)){if(rp.src)loadRating(rp.src);L.push(mk("rating",null,{src:rp.src,cert:rp.cert,system:rp.system,x:.88,y:.83,s:.52}))}
   else if(fm.cert)L.push(mk("badge","fast",{text:"CERT "+fm.cert,x:.86,y:.84,s:.45}));
   return L}
-async function applyFilm(fm,mode){FLOGO_FILM=fm.title;S.filmTitle=fm.title;flLoad(flKey(fm.title)).then(()=>{if(EASY)renderEasy()});S.label=fm.title+(mode==="soon"?" coming soon":mode==="last"?" last chance":"");S.bg="photo";S.photo={...S.photo,fit:"poster",zoom:1,ox:0,oy:-.035};S.frame={...S.frame,style:"brandbar",logo:true};S.layers=filmLayers(fm,mode);S.motion={...S.motion,fx:mode==="last"?{spotlights:true}:mode==="soon"?{spotlights:true,sparkle:true}:mode==="luxx"?{sparkle:true}:{}};selId=null;syncAll();
+async function applyFilm(fm,mode){FLOGO_FILM=fm.title;S.filmTitle=fm.title;S.look={...LOOKDEF,...(S.look||{}),id:null,film:norm(fm.title.replace(/\s+-\s+luxx$/i,""))};flLoad(flKey(fm.title)).then(()=>{if(EASY)renderEasy()});S.label=fm.title+(mode==="soon"?" coming soon":mode==="last"?" last chance":"");S.bg="photo";S.photo={...S.photo,fit:"poster",zoom:1,ox:0,oy:-.035};S.frame={...S.frame,style:"brandbar",logo:true};S.layers=filmLayers(fm,mode);S.motion={...S.motion,fx:mode==="last"?{spotlights:true}:mode==="soon"?{spotlights:true,sparkle:true}:mode==="luxx"?{sparkle:true}:{}};selId=null;syncAll();
   if(fm.poster)await loadUrlAsPhoto(fm.poster);commit();toast(fm.title+" ready. Everything can be moved and edited")}
 /* ---------- countdown: "3 DAYS TO GO" for a film that's coming soon ---------- */
 function applyCountdown(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,port=!tall&&ar<.95,wide=ar>1.4,fm=h.film||{},n=Math.max(1,h.days|0);
