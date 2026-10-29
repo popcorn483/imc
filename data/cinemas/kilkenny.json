@@ -2,8 +2,105 @@
   "id": "kilkenny",
   "cinema": "IMC Kilkenny",
   "source": "https://imc.ie/kilkenny-barrack-street",
-  "updated": "2026-10-28T21:48:59.836Z",
+  "updated": "2026-10-29T13:10:11.714Z",
   "today": [
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "G",
+      "runtime": 77,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+      "date": "2026-10-29",
+      "times": [
+        "14:15",
+        "16:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124945",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124945",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "16:15",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124946",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Clayface",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+      "cert": "16",
+      "runtime": 100,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+      "trailer": null,
+      "date": "2026-10-29",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124769",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124769",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "clayface",
+      "posterFile": "data/posters/clayface.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
     {
       "certSystem": "ifco",
       "certFile": "16",
@@ -19,17 +116,47 @@
       "director": "James Watkins",
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "times": [
+        "15:45",
+        "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124678",
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124679",
       "sessions": [
         {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124679",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124680",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124678",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124681",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -47,6 +174,62 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 11, 2026",
+      "releaseDate": "2026-10-11",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-10-29",
+      "times": [
+        "14:40",
+        "17:10"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124752",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "14:40",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124752",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "17:10",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124753",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "12A",
       "title": "Ghosts: The Possession Of Button House",
       "luxx": false,
@@ -60,17 +243,47 @@
       "director": "Simon Hynd",
       "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
       "trailer": null,
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "times": [
+        "15:25",
+        "18:30",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124807",
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124789",
       "sessions": [
         {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "15:25",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124789",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "18:30",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124810",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124807",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124811",
           "luxx": false,
           "screen": "8",
           "threeD": false,
@@ -101,17 +314,32 @@
       "director": "David Ayer",
       "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
       "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "times": [
+        "18:15",
         "20:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124889",
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124890",
       "sessions": [
         {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124890",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
           "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124889",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124891",
           "luxx": false,
           "screen": "9",
           "threeD": false,
@@ -129,6 +357,301 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "M",
+      "title": "Klara And The Sun",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112474.jpg",
+      "cert": "M",
+      "runtime": 116,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home. When Klara meets Josie, each immediately senses a kindred spirit in the other. Josie has a fraught relationship with her mother and they?ve suffered great loss, but Klara?s innocent wonder and unwavering loyalty begin to heal the family and bring light to Josie?s complicated world.",
+      "trailer": null,
+      "date": "2026-10-29",
+      "times": [
+        "14:55",
+        "17:35",
+        "20:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124916",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "14:55",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124916",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "17:35",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124917",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124918",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "klara-and-the-sun",
+      "posterFile": "data/posters/klara-and-the-sun.jpg",
+      "certIcon": null,
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Monster Mia",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
+      "cert": "G",
+      "runtime": 81,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+      "trailer": null,
+      "date": "2026-10-29",
+      "times": [
+        "14:25",
+        "16:25"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124812",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "14:25",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124812",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "16:25",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124813",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "monster-mia",
+      "posterFile": "data/posters/monster-mia.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Other Mommy",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+      "cert": "15A",
+      "runtime": 100,
+      "release": "October 9, 2026",
+      "releaseDate": "2026-10-09",
+      "director": "Rob Savage",
+      "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+      "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+      "date": "2026-10-29",
+      "times": [
+        "15:15",
+        "17:30",
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124734",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "15:15",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124734",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124735",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124736",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "other-mommy",
+      "posterFile": "data/posters/other-mommy.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Primetime",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+      "cert": "16",
+      "runtime": 109,
+      "release": "October 28, 2026",
+      "releaseDate": "2026-10-28",
+      "director": "Lance Oppenheim",
+      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+      "date": "2026-10-29",
+      "times": [
+        "17:45",
+        "20:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125067",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125067",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125068",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "primetime",
+      "posterFile": "data/posters/primetime.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Sense And Sensibility",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112473.jpg",
+      "cert": "PG",
+      "runtime": 131,
+      "release": "September 25, 2026",
+      "releaseDate": "2026-09-25",
+      "director": "Georgia Oakley",
+      "synopsis": "An irresistible new take on Jane Austen?s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood starring Daisy Edgar-Jones and Esmé Creed-Miles. Sisters Elinor and Marianne Dashwood must leave their Sussex estate following the sudden loss of their wealthy father and are forced to move in with a distant relative. The two sisters attempt to find security and happiness whilst navigating their vastly different approaches to love.",
+      "trailer": null,
+      "date": "2026-10-29",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124754",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124754",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "sense-and-sensibility",
+      "posterFile": "data/posters/sense-and-sensibility.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "12A",
       "title": "Street Fighter",
       "luxx": false,
@@ -142,17 +665,47 @@
       "director": "Kitao Sakurai",
       "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
       "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "times": [
+        "15:05",
+        "17:50",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124697",
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124698",
       "sessions": [
         {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "15:05",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124698",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "17:50",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124699",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124697",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124700",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -165,6 +718,118 @@
       ],
       "slug": "street-fighter",
       "posterFile": "data/posters/street-fighter.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "G",
+      "runtime": 94,
+      "release": "October 17, 2026",
+      "releaseDate": "2026-10-17",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-10-29",
+      "times": [
+        "14:45",
+        "17:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124770",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124770",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "17:00",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124771",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Try!",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/114408.jpg",
+      "cert": "12A",
+      "runtime": 88,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": null,
+      "synopsis": "Try is an uplifting portrait of four diverse people who defy stereotypes and break barriers, on and off the field, on the road to the Mixed Ability Rugby World Cup in Pamplona.",
+      "trailer": null,
+      "date": "2026-10-29",
+      "times": [
+        "15:30",
+        "17:40"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124947",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124947",
+          "luxx": false,
+          "screen": "12",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "17:40",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124948",
+          "luxx": false,
+          "screen": "12",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "try",
+      "posterFile": "data/posters/try.jpg",
       "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
@@ -183,17 +848,47 @@
       "director": "Michael Showalter",
       "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
       "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "times": [
+        "15:05",
+        "17:45",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124715",
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124716",
       "sessions": [
         {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "15:05",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124716",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124717",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124715",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124718",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -208,344 +903,121 @@
       "posterFile": "data/posters/verity.jpg",
       "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Whalefall",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/108510.jpg",
+      "cert": "15A",
+      "runtime": 117,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Brian Duffield",
+      "synopsis": "A scuba diver in search of his deceased father's remains gets swallowed by an 80-foot, 60-ton sperm whale and has only one hour to escape before his oxygen runs out. After giving up on life, the young man is surprised to find a reason to live in the most dangerous and unlikely of places.",
+      "trailer": "https://www.youtube.com/watch?v=67ho3OxCmmM",
+      "date": "2026-10-29",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124949",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124949",
+          "luxx": false,
+          "screen": "12",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "whalefall",
+      "posterFile": "data/posters/whalefall.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Wildwood",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+      "cert": "12A",
+      "runtime": 131,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+      "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+      "date": "2026-10-29",
+      "times": [
+        "14:20",
+        "17:10",
+        "20:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124831",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "14:20",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124831",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "17:10",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124832",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124833",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "wildwood",
+      "posterFile": "data/posters/wildwood.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "days": [
-    {
-      "label": "Wed 28 Oct",
-      "url": "https://imc.ie/film-times/kilkenny-barrack-street/28-10-2026#dateD",
-      "date": "2026-10-28",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115573.jpg",
-          "cert": "16",
-          "runtime": 120,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "James Watkins",
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-          "date": "2026-10-28",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124678",
-          "sessions": [
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124678",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "12A",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-28",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124807",
-          "sessions": [
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124807",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Heart Of The Beast",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
-          "cert": "15A",
-          "runtime": 102,
-          "release": "September 23, 2026",
-          "releaseDate": "2026-09-23",
-          "director": "David Ayer",
-          "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
-          "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-          "date": "2026-10-28",
-          "times": [
-            "20:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124889",
-          "sessions": [
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124889",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "heart-of-the-beast",
-          "posterFile": "data/posters/heart-of-the-beast.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "M",
-          "title": "Klara And The Sun",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112474.jpg",
-          "cert": "M",
-          "runtime": 116,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home. When Klara meets Josie, each immediately senses a kindred spirit in the other. Josie has a fraught relationship with her mother and they?ve suffered great loss, but Klara?s innocent wonder and unwavering loyalty begin to heal the family and bring light to Josie?s complicated world.",
-          "trailer": null,
-          "date": "2026-10-28",
-          "times": [
-            "20:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124914",
-          "sessions": [
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124914",
-              "luxx": false,
-              "screen": "11",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "klara-and-the-sun",
-          "posterFile": "data/posters/klara-and-the-sun.jpg",
-          "certIcon": null,
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Primetime",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "16",
-          "runtime": 109,
-          "release": "October 28, 2026",
-          "releaseDate": "2026-10-28",
-          "director": "Lance Oppenheim",
-          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-          "date": "2026-10-28",
-          "times": [
-            "20:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125066",
-          "sessions": [
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125066",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "primetime",
-          "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Street Fighter",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
-          "cert": "12A",
-          "runtime": 119,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Kitao Sakurai",
-          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-          "date": "2026-10-28",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124697",
-          "sessions": [
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124697",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "street-fighter",
-          "posterFile": "data/posters/street-fighter.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Verity",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110405.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "October 2, 2026",
-          "releaseDate": "2026-10-02",
-          "director": "Michael Showalter",
-          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
-          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-          "date": "2026-10-28",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124715",
-          "sessions": [
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124715",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "verity",
-          "posterFile": "data/posters/verity.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-28",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124830",
-          "sessions": [
-            {
-              "day": "Wed 28 October",
-              "date": "2026-10-28",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124830",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
     {
       "label": "Thu 29 Oct",
       "url": "https://imc.ie/film-times/kilkenny-barrack-street/29-10-2026#dateD",
@@ -565,7 +1037,7 @@
           "releaseDate": "2026-10-23",
           "director": "Sean Heuston",
           "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
           "date": "2026-10-29",
           "times": [
             "14:15",
@@ -1584,7 +2056,7 @@
           "releaseDate": "2026-10-23",
           "director": "Sean Heuston",
           "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
           "date": "2026-10-30",
           "times": [
             "14:15",
@@ -2438,13 +2910,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "TBC",
+          "certFile": "15A",
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "TBC",
+          "cert": "15A",
           "runtime": 100,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
@@ -2504,7 +2976,7 @@
           ],
           "slug": "wicker",
           "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -2599,7 +3071,7 @@
           "releaseDate": "2026-10-23",
           "director": "Sean Heuston",
           "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
           "date": "2026-10-31",
           "times": [
             "12:15",
@@ -3809,7 +4281,7 @@
           "releaseDate": "2026-10-23",
           "director": "Sean Heuston",
           "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
           "date": "2026-11-01",
           "times": [
             "12:15",
@@ -5004,7 +5476,7 @@
           "releaseDate": "2026-10-23",
           "director": "Sean Heuston",
           "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
           "date": "2026-11-02",
           "times": [
             "14:15",
@@ -5847,13 +6319,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "TBC",
+          "certFile": "15A",
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "TBC",
+          "cert": "15A",
           "runtime": 100,
           "release": "October 30, 2026",
           "releaseDate": "2026-10-30",
@@ -5913,7 +6385,7 @@
           ],
           "slug": "wicker",
           "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -6008,7 +6480,7 @@
           "releaseDate": "2026-10-23",
           "director": "Sean Heuston",
           "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
           "date": "2026-11-03",
           "times": [
             "14:15",
@@ -7012,7 +7484,7 @@
           "releaseDate": "2026-10-23",
           "director": "Sean Heuston",
           "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
           "date": "2026-11-04",
           "times": [
             "14:15",
@@ -7986,6 +8458,995 @@
               "tags": [
                 "new",
                 "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Thu 05 Nov",
+      "url": "https://imc.ie/film-times/kilkenny-barrack-street/05-11-2026#dateD",
+      "date": "2026-11-05",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "G",
+          "runtime": 77,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+          "date": "2026-11-05",
+          "times": [
+            "14:15",
+            "16:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125213",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125213",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "16:15",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125214",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-05",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125107",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125107",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125108",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125109",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 11, 2026",
+          "releaseDate": "2026-10-11",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-05",
+          "times": [
+            "14:40",
+            "17:10"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125136",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "14:40",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125136",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "17:10",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125137",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "12A",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-11-05",
+          "times": [
+            "15:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125091",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "15:25",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125091",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Godzilla Minus Zero",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
+          "cert": "TBC",
+          "runtime": 135,
+          "release": "November 5, 2026",
+          "releaseDate": "2026-11-05",
+          "director": "Takashi Yamazaki",
+          "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
+          "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
+          "date": "2026-11-05",
+          "times": [
+            "16:45",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124983",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "16:45",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124983",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124984",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "godzilla-minus-zero",
+          "posterFile": "data/posters/godzilla-minus-zero.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Heart Of The Beast",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
+          "cert": "15A",
+          "runtime": 102,
+          "release": "September 23, 2026",
+          "releaseDate": "2026-09-23",
+          "director": "David Ayer",
+          "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
+          "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
+          "date": "2026-11-05",
+          "times": [
+            "18:15",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125211",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125211",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125212",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "heart-of-the-beast",
+          "posterFile": "data/posters/heart-of-the-beast.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Monster Mia",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+          "trailer": null,
+          "date": "2026-11-05",
+          "times": [
+            "14:20",
+            "16:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125189",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125189",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "16:25",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125190",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "monster-mia",
+          "posterFile": "data/posters/monster-mia.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Other Mommy",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 9, 2026",
+          "releaseDate": "2026-10-09",
+          "director": "Rob Savage",
+          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+          "date": "2026-11-05",
+          "times": [
+            "15:15",
+            "17:30",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125302",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "15:15",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125302",
+              "luxx": false,
+              "screen": "12",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "17:30",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125245",
+              "luxx": false,
+              "screen": "12",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125246",
+              "luxx": false,
+              "screen": "12",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "other-mommy",
+          "posterFile": "data/posters/other-mommy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "16",
+          "runtime": 109,
+          "release": "October 28, 2026",
+          "releaseDate": "2026-10-28",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-05",
+          "times": [
+            "19:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125188",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "19:30",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125188",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+          "cert": "16",
+          "runtime": 104,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+          "date": "2026-11-05",
+          "times": [
+            "15:30",
+            "18:00",
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125328",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125328",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125329",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125330",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Ramayana: Rise of a Legend",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
+          "cert": "TBC",
+          "runtime": 165,
+          "release": "November 5, 2026",
+          "releaseDate": "2026-11-05",
+          "director": "Nitesh Tiwari",
+          "synopsis": "In an age of gods and kings, the fate of worlds hangs in the balance. Rama, a prince bound by duty, sacrifice, and righteousness, must confront Ravana, an immortal ruler driven by pride and vengeance, powerful enough to shatter the cosmos.",
+          "trailer": null,
+          "date": "2026-11-05",
+          "times": [
+            "19:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124979",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "19:30",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=124979",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ramayana-rise-of-a-legend",
+          "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Sense And Sensibility",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112473.jpg",
+          "cert": "PG",
+          "runtime": 131,
+          "release": "September 25, 2026",
+          "releaseDate": "2026-09-25",
+          "director": "Georgia Oakley",
+          "synopsis": "An irresistible new take on Jane Austen?s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood starring Daisy Edgar-Jones and Esmé Creed-Miles. Sisters Elinor and Marianne Dashwood must leave their Sussex estate following the sudden loss of their wealthy father and are forced to move in with a distant relative. The two sisters attempt to find security and happiness whilst navigating their vastly different approaches to love.",
+          "trailer": null,
+          "date": "2026-11-05",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125135",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125135",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "sense-and-sensibility",
+          "posterFile": "data/posters/sense-and-sensibility.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Street Fighter",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
+          "cert": "12A",
+          "runtime": 119,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Kitao Sakurai",
+          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
+          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
+          "date": "2026-11-05",
+          "times": [
+            "15:05",
+            "17:50",
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125168",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "15:05",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125168",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "17:50",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125169",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125170",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "street-fighter",
+          "posterFile": "data/posters/street-fighter.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "The Restoration at Grayson Manor",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115583.jpg",
+          "cert": "16",
+          "runtime": 96,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Glenn McQuaid",
+          "synopsis": "The foundations of Grayson Manor are shaken when an accident leaves Boyd Grayson handless and his mother invests in radical new technology to help him.",
+          "trailer": null,
+          "date": "2026-11-05",
+          "times": [
+            "15:35",
+            "17:55",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125346",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125346",
+              "luxx": false,
+              "screen": "11",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "17:55",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125347",
+              "luxx": false,
+              "screen": "11",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125348",
+              "luxx": false,
+              "screen": "11",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-restoration-at-grayson-manor",
+          "posterFile": "data/posters/the-restoration-at-grayson-manor.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-05",
+          "times": [
+            "15:00",
+            "17:45",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125153",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "15:00",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125153",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125154",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125155",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wild Horse Nine",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+          "cert": "15A",
+          "runtime": 117,
+          "release": "November 4, 2026",
+          "releaseDate": "2026-11-04",
+          "director": "Martin McDonagh",
+          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
+          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "date": "2026-11-05",
+          "times": [
+            "17:45",
+            "20:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125001",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125001",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "20:25",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125002",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wild-horse-nine",
+          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-11-05",
+          "times": [
+            "14:00",
+            "16:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125300",
+          "sessions": [
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "14:00",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125300",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 5 November",
+              "date": "2026-11-05",
+              "time": "16:45",
+              "book": "https://booking.imc.ie/booking/?cinema=kilkennybarrackstreet&stage=tickets&perf=125301",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
                 "seating-standard"
               ]
             }
@@ -11274,8 +12735,7 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 5 films parsed",
-    "day-28-10-2026-dated: 8 films parsed",
+    "today: 17 films parsed",
     "day-29-10-2026-dated: 17 films parsed",
     "day-30-10-2026-dated: 18 films parsed",
     "day-31-10-2026-dated: 19 films parsed",
@@ -11283,6 +12743,7 @@
     "day-02-11-2026-dated: 17 films parsed",
     "day-03-11-2026-dated: 17 films parsed",
     "day-04-11-2026-dated: 17 films parsed",
+    "day-05-11-2026-dated: 17 films parsed",
     "advance: 11 films parsed",
     "kids: 3 films parsed",
     "luxx: 2 films parsed",
@@ -11827,7 +13288,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-10-28T21:49:25.160Z",
+    "checked": "2026-10-29T13:10:37.840Z",
     "sampledDays": [
       "Thu",
       "Fri",
@@ -11838,7 +13299,7 @@
       "Wed"
     ]
   },
-  "checked": "2026-10-28T21:49:39.998Z",
+  "checked": "2026-10-29T13:10:52.280Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
