@@ -311,6 +311,10 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;bor
 html.a-lg .app>.left,html.a-lg .app>.right,html.a-lg .top,html.a-lg .ptabs{zoom:1.1}html.a-xl .app>.left,html.a-xl .app>.right,html.a-xl .top,html.a-xl .ptabs{zoom:1.22}
 html.a-hc{--muted:#cdd4ee;--line:#5d679c}html.a-hc .btn,html.a-hc input,html.a-hc select,html.a-hc textarea{border-width:2px}
 html.a-rm *{transition:none!important;animation:none!important}
+
+.lxptabs{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:10px 0}.lxptabs [role=tab]{all:unset;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-weight:650;font-size:14px}.lxptabs [role=tab][aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}.lxptabs [role=tab]:focus-visible{box-shadow:0 0 0 3px rgba(59,168,232,.45)}.lxpup{margin-left:auto;cursor:pointer}
+.lxpgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;max-height:52vh;overflow:auto;padding:2px}.lxp{all:unset;cursor:pointer;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--panel2);display:block}.lxp img{width:100%;height:100%;object-fit:cover;display:block}.lxp:hover,.lxp:focus-visible{outline:3px solid var(--gold);outline-offset:1px}.lxp[disabled]{opacity:.5}
+@media (max-width:760px){.lxpgrid{grid-template-columns:repeat(3,1fr)}.lxpup{margin-left:0}}
 /* phones: the toolbar scrolls sideways, but Save stays pinned to the right edge so it's always one tap away */
 @media (max-width:760px){.top{overflow-x:auto;scrollbar-width:none}.top::-webkit-scrollbar{display:none}
   #png{position:sticky;right:0;z-index:3;box-shadow:-10px 0 0 0 var(--panel),14px 0 0 0 var(--panel),-22px 0 14px -4px var(--panel)}}
@@ -410,7 +414,7 @@ html.a-rm *{transition:none!important;animation:none!important}
     <div data-panel="add" hidden>
       <div class="sec"><h3>Film logo</h3><div id="flBox" class="flbox"></div></div>
       <div class="sec"><h3>Badges</h3><div class="tiles" id="badges"></div></div>
-      <div class="sec"><h3>LUXX photos</h3><p class="note">Your LUXX seat, screen and lounge photos. Use one as the background or add it as a print. They're shared with the hub's LUXX page.</p><div class="ownslots" id="lxEd"></div>
+      <div class="sec"><h3>LUXX photos</h3><p class="note">Your LUXX seat, screen and lounge photos. Use one as the background or add it as a print. They're shared with the hub's LUXX page.</p><div class="ownslots" id="lxEd"></div><button class="btn wide" type="button" id="lxPickBtn" style="margin-top:8px">Choose a LUXX photo…</button>
         <label class="btn" style="margin-top:8px">+ Add LUXX photos<input type="file" id="lxEdFile" accept="image/*" multiple hidden></label></div>
       <div class="sec"><h3>Your product photos</h3><p class="note">Upload your own photo for an item once, for example your Candy King pick 'n' mix stand, and deals and video clips use it for that item at this cinema. Photos on a plain white background are cut out; others become framed photo cards. Saved in this browser.</p><div class="ownslots" id="ownGrid"></div></div>
       <div class="sec"><h3>Products from imc.ie</h3><p class="note" id="pphNote">Real product photos and prices from imc.ie for this cinema.</p><div class="tiles" id="pphotos"></div></div>
@@ -496,6 +500,15 @@ html.a-rm *{transition:none!important;animation:none!important}
     <div class="bar" id="stBarWrap" hidden><div id="stBar"></div></div>
     <p class="note" id="stStatus" aria-live="polite"></p>
     <div class="row" style="justify-content:flex-end"><button class="btn" id="stClose">Close</button><button class="btn primary" id="stPrep">Get it ready</button><button class="btn primary" id="stShare" hidden>Share…</button></div>
+  </div>
+</div>
+<div class="modal" id="lxPick" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="lxPickT" style="width:min(760px,100%)">
+    <h2 id="lxPickT">Choose a LUXX photo</h2>
+    <p class="note" id="lxPickWhy">Pick a photo of the LUXX seats, screen or lounge. It's added to your LUXX photos and used in every LUXX ad.</p>
+    <div class="lxptabs" role="tablist"><button role="tab" data-lxpt="media" aria-selected="true">Your media</button><button role="tab" data-lxpt="lib" aria-selected="false">IMC images</button><label class="btn lxpup">Upload from this device<input type="file" accept="image/*" id="lxPickFile" hidden></label></div>
+    <div class="lxpgrid" id="lxPickGrid"></div>
+    <div class="row" style="justify-content:flex-end;margin-top:12px"><button class="btn" id="lxPickClose">Keep the gold background</button></div>
   </div>
 </div>
 <div class="modal" id="asModal" hidden>
@@ -2138,7 +2151,26 @@ $("#lxEdFile").addEventListener("change",async e=>{const fs=[...e.target.files];
 $("#lxEd").addEventListener("click",async e=>{let b;if(b=e.target.closest("[data-lxbg]"))lxBg(b.dataset.lxbg);else if(b=e.target.closest("[data-lxcard]")){const L=lxCardLayer(b.dataset.lxcard,{r:-.03});if(L)addLayer(L)}
   else if(b=e.target.closest("[data-lxdel]")){const a=((await idbGet(lxKey()))||[]).filter(x=>x.id!==b.dataset.lxdel);await idbSet(lxKey(),a);loadLuxxPics()}});
 /* the templates: every one works without photos (gold background), and uses yours when you've added them */
-async function applyLuxxKit(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,port=!tall&&!wide&&ar<.95,lx=lxSeats(),G="#ffd98a",gold="#ffc23d",L=[];
+/* ---------- LUXX photo picker: Your media, IMC images or upload; the chosen photo goes into the LUXX photos and the ad is rebuilt with it ---------- */
+let LXLAST=null,LXPT="media",LXPURLS=[];
+function lxPickOpen(why){$("#lxPickWhy").textContent=why||"Pick a photo of the LUXX seats, screen or lounge. It's added to your LUXX photos and used in every LUXX ad.";$("#lxPick").hidden=false;lxPickTab(LXPT)}
+async function lxPickTab(t){LXPT=t;$$("[data-lxpt]").forEach(b=>b.setAttribute("aria-selected",b.dataset.lxpt===t));const g=$("#lxPickGrid");LXPURLS.forEach(u=>URL.revokeObjectURL(u));LXPURLS=[];g.innerHTML='<p class="note">Loading…</p>';
+  if(t==="media"){const idx=(await mediaIndex()).filter(m=>!String(m.type).startsWith("video"));if(!idx.length){g.innerHTML='<p class="note" style="grid-column:1/-1">Nothing in Your media yet. Photos you upload in the editor are kept there. Try <b>IMC images</b>, or <b>Upload from this device</b>.</p>';return}
+    g.innerHTML=idx.map(m=>`<button type="button" class="lxp" data-lxpm="${m.id}" aria-label="Use ${esc(m.name||"this photo")}"><span data-lxth="${m.id}"></span></button>`).join("");
+    for(const m of idx){const b=await idbGet("m:"+m.id),el=g.querySelector(`[data-lxth="${m.id}"]`);if(!b||!el)continue;const u=URL.createObjectURL(b);LXPURLS.push(u);el.outerHTML=`<img src="${u}" alt="">`}return}
+  if(!LIB)await loadLibrary();const L=[...(LIB||[])].sort((a,b)=>(a.cat==="imc"?0:1)-(b.cat==="imc"?0:1));
+  g.innerHTML=L.length?L.map(x=>`<button type="button" class="lxp" data-lxpl="${esc(x.src)}" title="${esc(x.title)}" aria-label="Use ${esc(x.title)}"><img src="${esc(x.src)}" alt="" loading="lazy"></button>`).join(""):'<p class="note">No IMC images found.</p>'}
+async function lxAddBlob(b){if(!b||!/^image\//.test(b.type||"image/")){toast("That isn't a photo we can use");return}const a=(await idbGet(lxKey()))||[];a.unshift({id:"lx"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),blob:b,label:"Seats"});if(a.length>24)a.length=24;
+  await idbSet(lxKey(),a);await loadLuxxPics();$("#lxPick").hidden=true;
+  if(LXLAST&&String(S.label||"").startsWith("LUXX")){await applyLuxxKit(LXLAST);toast("Photo added. Your LUXX ad now uses it")}else toast("Added to your LUXX photos")}
+$("#lxPick").addEventListener("click",async e=>{let b;if(e.target===$("#lxPick")||e.target.id==="lxPickClose"){$("#lxPick").hidden=true;return}
+  if(b=e.target.closest("[data-lxpt]")){lxPickTab(b.dataset.lxpt);return}
+  if(b=e.target.closest("[data-lxpm]")){lxAddBlob(await idbGet("m:"+b.dataset.lxpm));return}
+  if(b=e.target.closest("[data-lxpl]")){b.disabled=true;try{const r=await fetch(b.dataset.lxpl);if(!r.ok)throw 0;lxAddBlob(await r.blob())}catch(x){toast("Couldn't load that picture. Try another one");b.disabled=false}}});
+$("#lxPickBtn").onclick=()=>lxPickOpen();
+$("#lxPickFile").addEventListener("change",e=>{const f=e.target.files[0];e.target.value="";if(f)lxAddBlob(f)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#lxPick").hidden)$("#lxPick").hidden=true});
+async function applyLuxxKit(h){LXLAST=h;const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,port=!tall&&!wide&&ar<.95,lx=lxSeats(),G="#ffd98a",gold="#ffc23d",L=[];
   const rowsFix=r=>(r||[]).map(x=>({...x,luxx:true}));(h.rows||[]).concat(h.week||[]).forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",ratingSys);if(p&&p.src)loadRating(p.src)});
   const listing=(rows,head,y,maxH)=>{const u=Math.min(f.w,f.h)/1080,need=listingH(rows.length),avail=maxH*f.h/u;return mk("listing",null,{text:head,sub:SITE_NAME,rows:rowsFix(rows),y,s:Math.min(.9,avail/need,(f.w/u*.9)/940),anim:"slide",delay:.15})};
   const usePhoto=async(i=0)=>{if(lx[i]){await setPhotoBlob(lx[i].blob,false,{fromLib:true,quiet:true});S.bg="photo";S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:0,shade:45};return true}S.bg="gold";return false};
@@ -2178,7 +2210,7 @@ async function applyLuxxKit(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide
     L.push(T(String(fm.t).toUpperCase(),{x,y:tall?.69:.43,max:tall?110:80,w:tall?920:560}));L.push(mk("text","sub",{text:(fm.times||[]).slice(0,tall?6:4).join("\n"),x,y:tall?.79:.6,size:tall?44:38,font:"mono",anim:"slide",delay:.15}));
     L.push(mk("text","small",{text:"BOOK YOUR LUXX SEAT AT IMC.IE",x,y:tall?.92:.86,size:tall?28:20,sp:5,anim:"fade",delay:.35}));fx={sparkle:true}}
   S.layers=L.filter(Boolean);S.motion={...S.motion,dur,fx};selId=null;clampPhoto();syncAll();commit();
-  toast(lx.length?"LUXX ad ready with your photos. Click any text to change it":"LUXX ad ready. Add your LUXX seat photos in the hub's LUXX page to use them")}
+  if(lx.length)toast("LUXX ad ready with your photos. Click any text to change it");else setTimeout(()=>lxPickOpen("This LUXX ad has no photo yet. Choose a photo of the LUXX seats and it goes straight into the design."),350)}
 /* ---------- photo library: IMC's own images gathered by the importer (data/library/index.json) ---------- */
 let LIB=null,libCat="all";
 async function loadLibrary(){for(const u of[RAW+"data/library/index.json?ts="+Date.now(),"data/library/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();const base=u.startsWith(RAW)?RAW:"";LIB=j.map(x=>({...x,src:base+x.file}));return LIB}}catch(e){}}LIB=[];return LIB}

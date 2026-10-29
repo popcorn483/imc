@@ -261,6 +261,21 @@ The **Aa** button in the top bar, on every page. Choose:
 
 The choice is remembered on that browser and the photo editor uses it too. Everything works with the keyboard, with a visible focus ring, and buttons say exactly what they do.
 
+## LUXX photos from the library
+
+LUXX ads use the photos in **Your LUXX photos**. If you make a LUXX ad without any, the editor opens **Choose a LUXX photo** straight away. Pick one of these and the ad is rebuilt with it:
+
+- **Your media** (photos you've uploaded in the editor)
+- **IMC images**
+- **Upload from this device**
+
+You can also:
+
+- use **Choose from library** on the hub's LUXX page to add several at once (each shows ✓ Added)
+- use **Choose a LUXX photo…** under LUXX photos in the editor
+
+Photos added in one place appear in the other.
+
 ## Photo & video editor
 
 - **Background:** your photo or video, an official poster (**Whole poster** shows the full poster over a blurred copy of itself), or an IMC background (IMC stage, Sky, Midnight, Sunset).

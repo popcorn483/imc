@@ -577,6 +577,11 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
 @media (max-width:900px){.mnow{grid-template-columns:1fr 1fr}.mgrid{grid-template-columns:1fr}}
 @media (max-width:560px){.topright{gap:6px;min-width:0;flex-shrink:1}.topright .sitepick{min-width:0}.topright .sitepick select{max-width:120px!important;min-width:0;font-size:13px;padding-right:26px}.topbar{gap:6px!important}.topbar .brand img{width:30px;height:30px}.a11ybtn{min-width:40px;padding:6px 8px!important}.topbar .ezbtn{padding:6px 9px!important}}
 @media (max-width:640px){.mcell{padding:12px 14px}.mcell b{font-size:28px}.arow{grid-template-columns:48px minmax(0,1fr) auto}.arow .aacts{grid-column:1/-1;justify-content:flex-start}.adlist li{grid-template-columns:72px minmax(0,1fr)}.adlist .aacts{grid-column:1/-1;justify-content:flex-start}.adth{width:72px}.a11y{position:fixed;left:12px;right:12px;top:64px;width:auto}}
+
+.lxptabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 12px}.lxptabs [role=tab]{all:unset;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--line-2);font-weight:650;font-size:14px;background:var(--panel)}.lxptabs [role=tab][aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:inset 0 -2px 0 var(--gold)}.lxptabs [role=tab]:focus-visible{box-shadow:var(--ring)}
+.lxpgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}.lxp{all:unset;cursor:pointer;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--chip);display:block;position:relative}.lxp img{width:100%;height:100%;object-fit:cover;display:block}.lxp:hover,.lxp:focus-visible{outline:3px solid var(--velvet);outline-offset:1px}
+.lxp.added::after{content:"✓ Added";position:absolute;inset:auto 6px 6px auto;background:#16663d;color:#fff;font-size:12px;font-weight:700;padding:3px 8px;border-radius:99px}.lxp.added img{opacity:.6}
+@media (max-width:640px){.lxpgrid{grid-template-columns:repeat(3,1fr)}}
 </style>
 <script src="qr.js"></script>
 </head>
@@ -729,7 +734,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
       <div class="panel"><div class="ph"><h2>1. Your LUXX photos</h2><span class="tip" id="lxcount" style="margin:0"></span></div>
         <p class="lxnote">Add photos of your LUXX seats, screen and lounge. Every LUXX ad below uses them. To use the ones on the cinema's Facebook page, open a photo there, choose <b>⋯ → Download</b>, then add it here. Photos are kept in this browser for <span class="sitename">IMC Enniskillen</span>.</p>
         <div class="lxpics" id="lxpics"></div>
-        <label class="btn primary lxup">+ Add LUXX photos<input type="file" id="lxfile" accept="image/*" multiple hidden></label></div>
+        <label class="btn primary lxup">+ Add LUXX photos<input type="file" id="lxfile" accept="image/*" multiple hidden></label><button class="btn lxup" type="button" id="lxLibBtn">Choose from library</button></div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>2. Make a LUXX ad</h2><span class="tip" id="lxprice" style="margin:0"></span></div><div class="lxtpls" id="lxtpls"></div></div>
       <div class="panel" style="margin-top:16px" id="lxdealsP"><div class="ph"><h2>LUXX combo deals</h2><span class="tip" style="margin:0">From the cinema's Facebook posts: check prices are current</span></div><div class="lxtpls" id="lxdeals"></div></div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>In LUXX this week</h2></div><div id="lxweek"></div></div>
@@ -919,6 +924,14 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
   </main>
 </div>
 
+<div class="modal" id="lxLib" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="lxLibT" style="max-width:780px;width:100%;max-height:92vh;overflow:auto">
+    <div class="ph"><h2 id="lxLibT">Choose LUXX photos</h2><button class="btn small ghost" id="lxLibClose">Done</button></div>
+    <p class="tip" style="margin-top:0">Tap a photo to add it to your LUXX photos. Every LUXX ad uses them, starting with the first one.</p>
+    <div class="lxptabs" role="tablist"><button role="tab" data-lxlt="media" aria-selected="true">Your media</button><button role="tab" data-lxlt="lib" aria-selected="false">IMC images</button></div>
+    <div class="lxpgrid" id="lxLibGrid"></div>
+  </div>
+</div>
 <div class="modal" id="pollDlg" hidden>
   <div class="panel" role="dialog" aria-modal="true" aria-labelledby="pollT" style="max-width:560px;width:100%;max-height:92vh;overflow:auto">
     <div class="ph"><h2 id="pollT">This or that poll</h2><button class="btn small ghost" id="pollClose">Close</button></div>
@@ -1872,6 +1885,21 @@ $("#lxfile").addEventListener("change",async e=>{const fs=[...e.target.files];e.
   for(const f of fs){const b=await lxShrink(f);if(!b)continue;a.push({id:"lx"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),blob:b,label:"Seats"});n++}
   if(a.length>24)a.splice(0,a.length-24);await edbSet(lxKey(),a);renderLxPics();toast(n?`${n} LUXX photo${n===1?"":"s"} added`:"Those files aren't photos we can open")});
 $("#v-luxx").addEventListener("change",async e=>{const s=e.target.closest("[data-lxlabel]");if(!s)return;const a=await lxGet(),p=a.find(x=>x.id===s.dataset.lxlabel);if(p){p.label=s.value;await edbSet(lxKey(),a)}});
+
+/* ---------- LUXX photos from the library: Your media (from the editor) or IMC images ---------- */
+let LXLT="media",LXLURLS=[];
+async function lxLibTab(t){LXLT=t;$$("[data-lxlt]").forEach(b=>b.setAttribute("aria-selected",b.dataset.lxlt===t));const g=$("#lxLibGrid");LXLURLS.forEach(u=>URL.revokeObjectURL(u));LXLURLS=[];g.innerHTML='<p class="tip">Loading…</p>';
+  if(t==="media"){const idx=((await edbGet("media-index"))||[]).filter(m=>!String(m.type).startsWith("video"));if(!idx.length){g.innerHTML='<p class="tip" style="grid-column:1/-1">Nothing in Your media yet. Photos you upload in the photo editor are kept there. Try <b>IMC images</b>, or use <b>+ Add LUXX photos</b> to upload from this device.</p>';return}
+    g.innerHTML=idx.map(m=>`<button type="button" class="lxp" data-lxlm="${m.id}" aria-label="Add ${esc(m.name||"this photo")}"><span data-lxlth="${m.id}"></span></button>`).join("");
+    for(const m of idx){const b=await edbGet("m:"+m.id),el=g.querySelector(`[data-lxlth="${m.id}"]`);if(!b||!el)continue;const u=URL.createObjectURL(b);LXLURLS.push(u);el.outerHTML=`<img src="${u}" alt="">`}return}
+  const L=await libImages();g.innerHTML=L.length?[...L].sort((a,b)=>(a.cat==="imc"?0:1)-(b.cat==="imc"?0:1)).map(x=>`<button type="button" class="lxp" data-lxll="${esc(x.src)}" title="${esc(x.title)}" aria-label="Add ${esc(x.title)}"><img src="${esc(x.src)}" alt="" loading="lazy"></button>`).join(""):'<p class="tip">No IMC images found.</p>'}
+async function lxLibAdd(b,btn){if(!b){toast("Couldn't load that picture. Try another one");return}const s=await lxShrink(b);if(!s){toast("That isn't a photo we can use");return}const a=await lxGet();a.unshift({id:"lx"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),blob:s,label:"Seats"});if(a.length>24)a.length=24;await edbSet(lxKey(),a);renderLxPics();if(btn){btn.classList.add("added");btn.disabled=true}toast("Added to your LUXX photos")}
+$("#lxLibBtn").onclick=()=>{$("#lxLib").hidden=false;lxLibTab(LXLT)};
+$("#lxLib").addEventListener("click",async e=>{let b;if(e.target===$("#lxLib")||e.target.id==="lxLibClose"){$("#lxLib").hidden=true;return}
+  if(b=e.target.closest("[data-lxlt]")){lxLibTab(b.dataset.lxlt);return}
+  if(b=e.target.closest("[data-lxlm]")){lxLibAdd(await edbGet("m:"+b.dataset.lxlm),b);return}
+  if(b=e.target.closest("[data-lxll]")){try{const r=await fetch(b.dataset.lxll);if(!r.ok)throw 0;lxLibAdd(await r.blob(),b)}catch(x){toast("Couldn't load that picture. Try another one")}}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#lxLib").hidden)$("#lxLib").hidden=true});
 const LX_TPL=[
   {k:"hero",n:"Seat hero",d:"Your best seat photo, full size, with today's LUXX times",fmts:["square","portrait","story"]},
   {k:"upgrade",n:"Upgrade to LUXX",d:"Photo card, what's included and the LUXX price",fmts:["square","portrait","story"]},
