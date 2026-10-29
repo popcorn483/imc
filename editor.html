@@ -2138,6 +2138,7 @@ function renderOwn(){const g=$("#ownGrid");if(!g)return;g.innerHTML=OWN_KEYS.map
 /* ---------- LUXX kit: your LUXX photos (added in the hub's LUXX page or here) + ready-made LUXX ads ---------- */
 let LXP=[],SITEPICS={};
 const lxKey=()=>"luxxpics:"+ownSite();
+async function luxxBuiltIn(site){for(const u of[RAW+"data/luxx/index.json?ts="+Date.now(),"data/luxx/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json(),b=u.startsWith(RAW)?RAW:"";return(j[site]||[]).map(x=>({src:b+x.file,title:"LUXX "+String(x.label||"photo").toLowerCase()+" (IMC "+site+")",cat:"luxx"}))}}catch(e){}}return[]}
 /* built-in LUXX photos (data/luxx/index.json): copied into this browser's LUXX photos once, if it has none */
 async function lxSeed(site,get,set){const flag="luxxpics-seeded:"+site;try{const cur=await get("luxxpics:"+site);if(Array.isArray(cur)&&cur.length)return false;if(await get(flag))return false;
   let idx=null,base="";for(const u of[RAW+"data/luxx/index.json?ts="+Date.now(),"data/luxx/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){idx=await r.json();base=u.startsWith(RAW)?RAW:"";break}}catch(e){}}
@@ -2164,7 +2165,7 @@ async function lxPickTab(t){LXPT=t;$$("[data-lxpt]").forEach(b=>b.setAttribute("
   if(t==="media"){const idx=(await mediaIndex()).filter(m=>!String(m.type).startsWith("video"));if(!idx.length){g.innerHTML='<p class="note" style="grid-column:1/-1">Nothing in Your media yet. Photos you upload in the editor are kept there. Try <b>IMC images</b>, or <b>Upload from this device</b>.</p>';return}
     g.innerHTML=idx.map(m=>`<button type="button" class="lxp" data-lxpm="${m.id}" aria-label="Use ${esc(m.name||"this photo")}"><span data-lxth="${m.id}"></span></button>`).join("");
     for(const m of idx){const b=await idbGet("m:"+m.id),el=g.querySelector(`[data-lxth="${m.id}"]`);if(!b||!el)continue;const u=URL.createObjectURL(b);LXPURLS.push(u);el.outerHTML=`<img src="${u}" alt="">`}return}
-  if(!LIB)await loadLibrary();const L=[...(LIB||[])].sort((a,b)=>(a.cat==="imc"?0:1)-(b.cat==="imc"?0:1));
+  if(!LIB)await loadLibrary();const L=[...await luxxBuiltIn(ownSite()),...[...(LIB||[])].sort((a,b)=>(a.cat==="imc"?0:1)-(b.cat==="imc"?0:1))];
   g.innerHTML=L.length?L.map(x=>`<button type="button" class="lxp" data-lxpl="${esc(x.src)}" title="${esc(x.title)}" aria-label="Use ${esc(x.title)}"><img src="${esc(x.src)}" alt="" loading="lazy"></button>`).join(""):'<p class="note">No IMC images found.</p>'}
 async function lxAddBlob(b){if(!b||!/^image\//.test(b.type||"image/")){toast("That isn't a photo we can use");return}const a=(await idbGet(lxKey()))||[];a.unshift({id:"lx"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),blob:b,label:"Seats"});if(a.length>24)a.length=24;
   await idbSet(lxKey(),a);await loadLuxxPics();$("#lxPick").hidden=true;

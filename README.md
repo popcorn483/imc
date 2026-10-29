@@ -276,6 +276,8 @@ You can also:
 
 Photos added in one place appear in the other.
 
+IMC Enniskillen's own LUXX photos (4 of the seats, 2 of the screen and the LUXX logo, from the cinema's Facebook page) are built in under data/luxx. Any browser with no LUXX photos gets them automatically, and they come first under **IMC images** in both pickers.
+
 ## Photo & video editor
 
 - **Background:** your photo or video, an official poster (**Whole poster** shows the full poster over a blurred copy of itself), or an IMC background (IMC stage, Sky, Midnight, Sunset).

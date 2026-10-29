@@ -1874,6 +1874,7 @@ async function edbSet(k,v){try{const d=await edb();await new Promise((res,rej)=>
 const lxKey=()=>"luxxpics:"+site;
 const LX_LABELS=["Seats","Screen","Lounge","Other"];
 let lxUrls=[];
+async function luxxBuiltIn(site){for(const u of[RAW+"data/luxx/index.json?ts="+Date.now(),"data/luxx/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json(),b=u.startsWith(RAW)?RAW:"";return(j[site]||[]).map(x=>({src:b+x.file,title:"LUXX "+String(x.label||"photo").toLowerCase()+" (IMC "+site+")",cat:"luxx"}))}}catch(e){}}return[]}
 /* built-in LUXX photos (data/luxx/index.json): copied into this browser's LUXX photos once, if it has none */
 async function lxSeed(site,get,set){const flag="luxxpics-seeded:"+site;try{const cur=await get("luxxpics:"+site);if(Array.isArray(cur)&&cur.length)return false;if(await get(flag))return false;
   let idx=null,base="";for(const u of[RAW+"data/luxx/index.json?ts="+Date.now(),"data/luxx/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){idx=await r.json();base=u.startsWith(RAW)?RAW:"";break}}catch(e){}}
@@ -1899,7 +1900,7 @@ async function lxLibTab(t){LXLT=t;$$("[data-lxlt]").forEach(b=>b.setAttribute("a
   if(t==="media"){const idx=((await edbGet("media-index"))||[]).filter(m=>!String(m.type).startsWith("video"));if(!idx.length){g.innerHTML='<p class="tip" style="grid-column:1/-1">Nothing in Your media yet. Photos you upload in the photo editor are kept there. Try <b>IMC images</b>, or use <b>+ Add LUXX photos</b> to upload from this device.</p>';return}
     g.innerHTML=idx.map(m=>`<button type="button" class="lxp" data-lxlm="${m.id}" aria-label="Add ${esc(m.name||"this photo")}"><span data-lxlth="${m.id}"></span></button>`).join("");
     for(const m of idx){const b=await edbGet("m:"+m.id),el=g.querySelector(`[data-lxlth="${m.id}"]`);if(!b||!el)continue;const u=URL.createObjectURL(b);LXLURLS.push(u);el.outerHTML=`<img src="${u}" alt="">`}return}
-  const L=await libImages();g.innerHTML=L.length?[...L].sort((a,b)=>(a.cat==="imc"?0:1)-(b.cat==="imc"?0:1)).map(x=>`<button type="button" class="lxp" data-lxll="${esc(x.src)}" title="${esc(x.title)}" aria-label="Add ${esc(x.title)}"><img src="${esc(x.src)}" alt="" loading="lazy"></button>`).join(""):'<p class="tip">No IMC images found.</p>'}
+  const L=[...await luxxBuiltIn(site),...await libImages()];g.innerHTML=L.length?[...L].sort((a,b)=>({luxx:0,imc:1}[a.cat]??2)-({luxx:0,imc:1}[b.cat]??2)).map(x=>`<button type="button" class="lxp" data-lxll="${esc(x.src)}" title="${esc(x.title)}" aria-label="Add ${esc(x.title)}"><img src="${esc(x.src)}" alt="" loading="lazy"></button>`).join(""):'<p class="tip">No IMC images found.</p>'}
 async function lxLibAdd(b,btn){if(!b){toast("Couldn't load that picture. Try another one");return}const s=await lxShrink(b);if(!s){toast("That isn't a photo we can use");return}const a=await lxGet();a.unshift({id:"lx"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),blob:s,label:"Seats"});if(a.length>24)a.length=24;await edbSet(lxKey(),a);renderLxPics();if(btn){btn.classList.add("added");btn.disabled=true}toast("Added to your LUXX photos")}
 $("#lxLibBtn").onclick=()=>{$("#lxLib").hidden=false;lxLibTab(LXLT)};
 $("#lxLib").addEventListener("click",async e=>{let b;if(e.target===$("#lxLib")||e.target.id==="lxLibClose"){$("#lxLib").hidden=true;return}
