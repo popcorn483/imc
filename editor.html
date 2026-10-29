@@ -307,6 +307,10 @@ body.easy .ezbtn{background:linear-gradient(135deg,#ffd84a,#f39a2b);color:#2a180
 .gifbtn:hover{border-color:var(--muted)!important}
 .btn:focus-visible,.layer:focus-visible,[data-tab]:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(59,168,232,.45)}
 input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;border-color:var(--sel);box-shadow:0 0 0 3px rgba(59,168,232,.3)}
+
+html.a-lg .app>.left,html.a-lg .app>.right,html.a-lg .top,html.a-lg .ptabs{zoom:1.1}html.a-xl .app>.left,html.a-xl .app>.right,html.a-xl .top,html.a-xl .ptabs{zoom:1.22}
+html.a-hc{--muted:#cdd4ee;--line:#5d679c}html.a-hc .btn,html.a-hc input,html.a-hc select,html.a-hc textarea{border-width:2px}
+html.a-rm *{transition:none!important;animation:none!important}
 /* phones: the toolbar scrolls sideways, but Save stays pinned to the right edge so it's always one tap away */
 @media (max-width:760px){.top{overflow-x:auto;scrollbar-width:none}.top::-webkit-scrollbar{display:none}
   #png{position:sticky;right:0;z-index:3;box-shadow:-10px 0 0 0 var(--panel),14px 0 0 0 var(--panel),-22px 0 14px -4px var(--panel)}}
@@ -526,6 +530,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;bor
 
 <script>try{window.name="imc-editor"}catch(e){}</script>
 <script src="qr.js"></script>
+<script>/* "Easier to read" settings chosen in the hub: bigger panel text, high contrast, less movement */
+(function(){function ap(){let o={};try{o=JSON.parse(localStorage.getItem("imc-a11y")||"{}")||{}}catch(e){}const h=document.documentElement;h.classList.toggle("a-lg",o.size===1);h.classList.toggle("a-xl",o.size===2);h.classList.toggle("a-hc",!!o.hc);h.classList.toggle("a-rm",!!o.rm)}ap();addEventListener("storage",e=>{if(e.key==="imc-a11y")ap()})})();</script>
 <script>
 (function(){
 "use strict";

@@ -209,6 +209,58 @@ The hub and editor share one visual system.
 - **Speed:** there's no blur or heavy effects, so it stays quick on older PCs.
 - **Phones:** the editor's Save button stays pinned at the right of the toolbar.
 
+## Manager home
+
+The first item in the menu, and the first shortcut in the top bar. It's one calm page for running the day.
+
+- **Right now:**
+  - the time
+  - how many screens are running and how many are seating
+  - the next show and its screen
+  - how many people the team needs this hour (from the staffing guide)
+- **To do today:** a checklist with progress. The jobs are written for you from the day's listings:
+  - make today's best advert
+  - any adverts planned for today
+  - print the staff briefing
+  - tight changeovers to check
+  - films on their last day
+  - the Wednesday Meal Deal
+  - foyer adverts ending today
+  
+  Under them are your own opening and closing jobs. Change those under **Change my own jobs**. Ticks are kept for each day.
+- **Adverts this week:** how many are posted, the next one up, and buttons to plan the week or add a foyer TV advert.
+- **Handover notes:** short notes for the next manager, newest first, with the date and time.
+
+The job ticks, your own jobs and the handover notes are saved on that computer.
+
+## Adverts
+
+Everything you advertise, in one place.
+
+- **Social media adverts:** this week day by day. Each advert shows **To make**, **Ready** or **Posted** and the buttons to move it along:
+  - **Make it** opens the design
+  - **Mark ready** for when it's made
+  - **Mark posted** asks for the results
+  - **Add results** for adverts already posted
+  
+  Empty days link straight to that day's ideas.
+- **Foyer TV adverts:** for your own promotions or a local business's advert.
+  - Give it a name.
+  - Pick a picture from the IMC images or paste a picture's web address.
+  - Add the business name if you've sold the slot, plus the first and last day, seconds on screen, and Normal or More often.
+  
+  The foyer player shows each advert full screen between the trailers, labelled "Advert · business name" when it's a paid one, and stops after the last day. Pause or remove adverts at any time. **After any change, open the foyer player again or copy the new TV link**, because the adverts travel in the link.
+
+## Easier to read
+
+The **Aa** button in the top bar, on every page. Choose:
+
+- **Text size:** Normal, Large or Extra large
+- **High contrast:** stronger lines and darker grey text
+- **Less movement:** turns off animations
+
+The choice is remembered on that browser and the photo editor uses it too. Everything works with the keyboard, with a visible focus ring, and buttons say exactly what they do.
+
 ## Photo & video editor
 
 - **Background:** your photo or video, an official poster (**Whole poster** shows the full poster over a blurred copy of itself), or an IMC background (IMC stage, Sky, Midnight, Sunset).

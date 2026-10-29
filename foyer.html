@@ -118,6 +118,8 @@ body.lite #card .bgimg{filter:none;opacity:.22}
 #promo.scan .pbg{background:radial-gradient(circle at 70% 50%,#1fa0de33,transparent 50%),linear-gradient(135deg,#0b1240,#060816)}
 #promo.soon .pbg{background:radial-gradient(ellipse at 50% 0%,#e2452e33,transparent 55%),linear-gradient(180deg,#140a26,#060816)}
 #promo.last .pbg{background:radial-gradient(circle at 80% 30%,#e2452e44,transparent 50%),linear-gradient(160deg,#2a0b14,#070a1c)}
+#promo.ad{padding:0;background:#000}#promo.ad .pbg{background:#000 center/cover;filter:blur(30px) brightness(.4);transform:scale(1.15)}body.lite #promo.ad .pbg{filter:none;opacity:.25}#promo .adimg{position:relative;max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+#promo .adtag{position:absolute;right:2vw;top:2vh;font:600 1.8vh var(--f-body);color:rgba(255,255,255,.8);background:rgba(0,0,0,.5);padding:.6vh 1vw;border-radius:99px}
 #promo.msg .pbg{background:linear-gradient(135deg,#1d2a6e,#070a1c)}
 
 /* ---------- opening / closed screen ---------- */
@@ -197,6 +199,9 @@ const SITE=Q.get("c")||"enniskillen",MODE=Q.get("mode")||"auto",IDS=(Q.get("ids"
 const CARD=Math.max(5,Math.min(30,+Q.get("card")||10)),SOUND=Q.get("sound")!=="0",TRAILERS=Q.get("trailers")!=="0",SOON=Q.get("soon")==="1";
 /* new screens: the board every N films (0 = off), promo slides, the live strip, screen numbers, your ticker messages */
 const BOARD_EVERY=Q.has("bd")?Math.max(0,+Q.get("bd")||0):3,PROMOS=Q.get("pr")!=="0",STRIP=Q.get("strip")!=="0",SCREENS=Q.get("scr")!=="0";
+/* adverts from the hub: [picture, name, first day, last day, seconds, how often, business] */
+const ADVERTS=(()=>{try{const b=(Q.get("ad")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4)))))
+  .filter(a=>Array.isArray(a)&&a[0]).map(a=>({src:String(a[0]),title:String(a[1]||""),from:a[2]||"",to:a[3]||"",secs:Math.max(5,Math.min(30,+a[4]||10)),often:+a[5]>1?2:1,adv:String(a[6]||"")}))}catch(e){return[]}})();
 const MSGS=(Q.get("msg")||"").split("|").map(s=>s.trim()).filter(Boolean).slice(0,6);
 const LITE=Q.get("lite")==="1"||(Q.get("lite")!=="0"&&((navigator.hardwareConcurrency||4)<=2||(navigator.deviceMemory||8)<=2));
 const RAW="https://raw.githubusercontent.com/popcorn483/imc/main/";
@@ -319,9 +324,12 @@ function promos(){const n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out
   const leaving=LOUNGE?[]:all.filter(f=>!isSensory(f)).map(f=>{const ds=f.sessions.map(x=>x.date).sort(),last=ds[ds.length-1],rel=f.releaseDate||ds[0];return{f,last,rel}}).filter(x=>x.last&&x.last>=n.date&&x.last<=addDays(n.date,3)&&x.last<=addDays(H,-2)&&!(x.rel&&x.rel>=addDays(n.date,-2))).slice(0,4);
   if(leaving.length)out.push({k:"last",kick:"Don't miss out",title:"Last chance to see",lines:leaving.map(x=>cleanTitle(x.f.title)),posters:leaving.map(x=>({p:asset(x.f.posterFile)||x.f.poster,b:"Last show "+shortDay(x.last).split(" ")[0]}))});
   out.push({k:"scan",kick:"Skip the queue",title:"Book on your phone",lines:["Scan the code with your phone camera","Choose your film, time and seats","Show your ticket at the door"],qr:TIMES_URL()});
+  for(const a of ADVERTS)if((!a.from||a.from<=n.date)&&(!a.to||a.to>=n.date))for(let i=0;i<a.often;i++)out.push({k:"ad",title:a.title,img:/^https?:/.test(a.src)?a.src:asset(a.src),secs:a.secs,adv:a.adv,lines:[]});
   for(const m of MSGS)out.push({k:"msg",kick:(D&&D.cinema)||"IMC",title:m,lines:[]});
   return out}
 function playPromo(){const L=promos();if(!L.length){next();return}const p=L[promoI++%L.length],el=$("#promo");el.className="layer "+p.k;
+  if(p.k==="ad"){el.innerHTML=`<div class="pbg" style="background-image:url('${esc(p.img)}')"></div><img class="adimg" src="${esc(p.img)}" alt="${esc(p.title)}">${p.adv?`<span class="adtag">Advert · ${esc(p.adv)}</span>`:""}`;
+    el.querySelector(".adimg").onerror=()=>{clearTimeout(timer);next()};show("promo");progress(p.secs);timer=setTimeout(next,p.secs*1000);return}
   const right=p.img&&p.price?`<div class="prodwrap"><img src="${esc(p.img)}" alt="" onerror="if(this.src!=='${esc(p.imgFb||"")}')this.src='${esc(p.imgFb||"")}'"><div class="price"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div></div>`:p.qr?`<div class="bigqr">${qrSvg(p.qr)}</div>`:p.posters?`<div class="posters">${p.posters.map(x=>`<div style="background-image:url('${esc(x.p)}')">${x.b?`<b>${esc(x.b)}</b>`:""}</div>`).join("")}</div>`:p.price?`<div class="price"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div>`:"";
   const priceLeft=p.price&&(p.qr||p.posters)?`<div class="price mini"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div>`:"";
   el.innerHTML=`<div class="pbg"></div><div class="pin${right?"":" one"}"><div><div class="pk">${esc(p.kick)}</div><h2 style="${p.k==="msg"&&p.title.length>40?"font-size:8vh":""}">${esc(p.title)}</h2>${p.lines.length?`<ul class="pl">${p.lines.map(l=>`<li>${esc(l)}</li>`).join("")}</ul>`:""}${priceLeft}</div>${right}</div>`;

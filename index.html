@@ -541,6 +541,42 @@ nav.quick button{padding:7px 10px}
   main>section>.head h1{font-size:27px}
   main>section>.head p{font-size:14px}
   .panel{padding:16px;border-radius:14px}}
+
+/* ---- Manager home ---- */
+.mnow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:16px;box-shadow:var(--sh-1)}
+.mcell{background:var(--panel);padding:16px 18px;display:flex;flex-direction:column;gap:2px;min-width:0}.mcell span{font-size:13px;color:var(--muted);font-weight:600}.mcell b{font:800 34px/1.05 var(--f-display);letter-spacing:.01em;font-variant-numeric:tabular-nums}.mcell small{color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mgrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start}.mside{display:flex;flex-direction:column;gap:16px}
+.mjobs .ph{flex-wrap:nowrap}.mprog{flex:1;height:8px;border-radius:99px;background:var(--chip);overflow:hidden;margin:0 6px;max-width:220px}.mprog i,.mbar i{display:block;height:100%;background:var(--velvet);border-radius:99px;transition:width .3s}.mcount{font-size:13px;color:var(--muted);font-weight:600;white-space:nowrap}
+.jobs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}.jobs li{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 2px;border-top:1px solid var(--line)}.jobs li:first-child{border-top:0}
+.jcheck{display:flex;gap:12px;align-items:flex-start;cursor:pointer;min-width:0;flex:1}.jcheck input{width:22px;height:22px;margin-top:1px;flex:none}.jcheck b{display:block;font-weight:650;font-size:15px}.jcheck small{display:block;color:var(--muted);font-size:13px;margin-top:1px}
+.jobs li.done b{text-decoration:line-through;color:var(--muted);font-weight:500}.jobs li.done small{display:none}.jact{flex:none}
+.jedit{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}.jedit summary{cursor:pointer;color:var(--muted);font-weight:600;font-size:14px}.ownlist{display:flex;flex-direction:column;margin:8px 0}.own{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;font-size:14px}
+.ownadd,.hoadd{display:flex;gap:8px;align-items:flex-start}.ownadd input{flex:1}.hoadd{flex-direction:column;align-items:stretch}.hoadd .btn{align-self:flex-start}
+.mbar{height:10px;border-radius:99px;background:var(--chip);overflow:hidden}.mline{margin:8px 0 12px;color:var(--muted);font-size:14px}.mline b{color:var(--ink);font-size:16px}
+.mnext{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:12px;display:flex;flex-direction:column}.mnext span{font-size:12.5px;color:var(--muted);font-weight:600}.mnext small{color:var(--muted)}
+.ho{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}.ho li{border-left:3px solid var(--gold);padding:2px 0 2px 12px;position:relative}.ho li small{color:var(--muted);font-size:12.5px}.ho li p{margin:2px 0 0;white-space:pre-wrap}.ho li .btn{position:absolute;right:0;top:-4px}.ho li.empty{border:0;padding:0;color:var(--muted);font-size:14px}
+/* ---- Adverts ---- */
+.adsum{display:flex;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:16px;box-shadow:var(--sh-1);flex-wrap:wrap}.adsum>div{background:var(--panel);padding:14px 18px;flex:1 1 120px;display:flex;flex-direction:column}.adsum b{font:800 30px/1 var(--f-display)}.adsum span{color:var(--muted);font-size:13px;font-weight:600}.adsum .adsact{flex:2 1 300px;flex-direction:row;gap:8px;align-items:center;flex-wrap:wrap}
+.addays{display:flex;flex-direction:column;gap:12px}.aday{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;box-shadow:var(--sh-1)}.aday.now{border-color:var(--velvet)}.aday h3{font-size:16px;margin:0 0 6px}.aday h3 small{color:var(--muted);font-weight:500;margin-left:6px}
+.arow{display:grid;grid-template-columns:56px minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}.arow:first-of-type{border-top:0}.atime{font-weight:700;font-variant-numeric:tabular-nums}.atitle b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.atitle small{color:var(--muted)}
+.astat{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--chip);color:var(--muted);white-space:nowrap}.astat.todo{background:#fff1d6;color:#7a4b00}.astat.ready{background:#e3efff;color:#0b4f8f}.astat.done{background:#dcf4e6;color:#16663d}
+.aacts{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}.aempty{margin:4px 0;color:var(--muted);font-size:14px}
+.adform{display:flex;flex-direction:column;gap:12px;margin-top:12px}.adrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.adpic{border:1px dashed var(--line-2);border-radius:12px;min-height:120px;display:grid;place-items:center;overflow:hidden;color:var(--muted);font-size:14px;margin-bottom:8px;background:var(--chip)}.adpic img{max-height:200px;width:auto;display:block}
+.adlib{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px;max-height:260px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:6px}.libpick{all:unset;cursor:pointer;border-radius:8px;overflow:hidden;aspect-ratio:1;outline-offset:2px}.libpick img{width:100%;height:100%;object-fit:cover;display:block}.libpick:hover,.libpick:focus-visible{outline:3px solid var(--velvet)}
+.adlist{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column}.adlist li{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}.adlist li:first-child{border-top:0}.adth{width:96px;aspect-ratio:16/9;border-radius:8px;background:#111 center/cover}.adlist b{display:block}.adlist small{display:block;color:var(--muted);margin:1px 0 4px}
+.adnote{margin-top:14px;background:var(--chip);border-radius:12px;padding:12px 14px;font-size:14px}
+/* ---- Easier to read ---- */
+.a11ywrap{position:relative}.a11ybtn{font-weight:800!important;min-width:44px;justify-content:center;background:rgba(255,255,255,.06)!important;color:#fff!important;border-color:rgba(255,255,255,.22)!important;box-shadow:none!important}
+.a11y{position:absolute;right:0;top:calc(100% + 8px);z-index:50;width:280px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-2);padding:14px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.seg3{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-2);border-radius:10px;overflow:hidden}.seg3 button{all:unset;cursor:pointer;text-align:center;padding:9px 4px;font-weight:650}.seg3 button+button{border-left:1px solid var(--line-2)}.seg3 button[aria-pressed="true"]{background:var(--navy);color:#fff}.seg3 button:focus-visible{box-shadow:var(--ring) inset}
+html.a-lg{zoom:1.12}html.a-xl{zoom:1.25}
+html.a-hc{--muted:#2c3352;--line:#8d97b0;--line-2:#6f7a96;--chip:#e6e9f2}
+@media (prefers-color-scheme: dark){html.a-hc:not([data-theme="light"]){--muted:#dfe4f7;--line:#6a74a6;--line-2:#8a93c2}}
+html.a-hc .panel,html.a-hc .btn,html.a-hc input,html.a-hc select,html.a-hc textarea{border-width:2px}html.a-hc a{text-decoration:underline}html.a-hc .tip,html.a-hc small{color:var(--muted)}
+html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media (max-width:900px){.mnow{grid-template-columns:1fr 1fr}.mgrid{grid-template-columns:1fr}}
+@media (max-width:560px){.topright{gap:6px;min-width:0;flex-shrink:1}.topright .sitepick{min-width:0}.topright .sitepick select{max-width:120px!important;min-width:0;font-size:13px;padding-right:26px}.topbar{gap:6px!important}.topbar .brand img{width:30px;height:30px}.a11ybtn{min-width:40px;padding:6px 8px!important}.topbar .ezbtn{padding:6px 9px!important}}
+@media (max-width:640px){.mcell{padding:12px 14px}.mcell b{font-size:28px}.arow{grid-template-columns:48px minmax(0,1fr) auto}.arow .aacts{grid-column:1/-1;justify-content:flex-start}.adlist li{grid-template-columns:72px minmax(0,1fr)}.adlist .aacts{grid-column:1/-1;justify-content:flex-start}.adth{width:72px}.a11y{position:fixed;left:12px;right:12px;top:64px;width:auto}}
 </style>
 <script src="qr.js"></script>
 </head>
@@ -550,19 +586,22 @@ nav.quick button{padding:7px 10px}
     <button class="menubtn" id="menuBtn" type="button" aria-label="Open the menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Menu</span></button>
     <div class="brand"><img src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span id="brandsite">Enniskillen</span></b></div>
     <nav class="quick" aria-label="Shortcuts">
+      <button class="qtab" data-view="manager">Manager</button>
       <button class="qtab" data-view="today">Today</button>
       <button class="qtab" data-view="plan">Week ahead</button>
-      <button class="qtab" data-view="deals">Deals</button>
-      <button class="qtab" data-view="luxx">LUXX</button>
-      <button class="qtab" data-view="studio">Create a post</button>
+      <button class="qtab" data-view="ads">Adverts</button>
       <button class="qtab" data-view="foyer">Foyer TVs</button>
     </nav>
-    <div class="topright"><button class="btn ezbtn" data-easy type="button">✨ <span>Easy mode</span></button><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary edlink" href="editor.html" target="imc-editor">Editor ↗</a></div>
+    <div class="topright"><div class="a11ywrap"><button class="btn a11ybtn" id="a11yBtn" type="button" aria-expanded="false" aria-haspopup="dialog" title="Easier to read: text size and contrast" aria-label="Easier to read: text size and contrast">Aa</button></div><button class="btn ezbtn" data-easy type="button">✨ <span>Easy mode</span></button><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary edlink" href="editor.html" target="imc-editor">Editor ↗</a></div>
   </header>
   <div class="scrim" id="scrim" hidden></div>
   <aside class="drawer" id="drawer" aria-label="Menu" hidden>
     <div class="dhead"><div class="brand"><img src="imc-logo.png" alt=""><b>Marketing hub</b></div><button class="dclose" id="menuClose" type="button" aria-label="Close the menu">✕</button></div>
     <nav id="nav">
+      <h3>Manage</h3>
+      <button data-view="manager">Manager home<small>Right now, today's jobs, handover notes</small></button>
+      <button data-view="ads">Adverts<small>Social media and foyer TV adverts</small></button>
+      <button data-view="ops">Run the cinema<small>Screens, staff briefing, staffing, group prices, weekly report</small></button>
       <h3>Every day</h3>
       <button data-view="today">Today<small>Film times and quick posts</small></button>
       <button data-view="whatson">What's on<small>All films, coming soon, Kids Club, LUXX</small></button>
@@ -578,8 +617,6 @@ nav.quick button{padding:7px 10px}
       <button data-view="dashboard">Planner<small>Your week of posts</small></button>
       <button data-view="library">Posts <span class="count" id="cnt"></span><small>Drafts and scheduled posts</small></button>
       <button data-view="calendar">Ideas calendar<small>Key dates and what to post</small></button>
-      <h3>Run the cinema</h3>
-      <button data-view="ops">Run the cinema<small>Screens, staff briefing, staffing, group prices, weekly report</small></button>
       <h3>Foyer TVs</h3>
       <button data-view="foyer">Foyer trailers<small>Safe trailer loop and packs</small></button>
       <button data-view="welcome">Welcome videos<small>IMC and LUXX logo reveals</small></button>
@@ -606,6 +643,18 @@ nav.quick button{padding:7px 10px}
         <div class="row-btns"><button class="btn primary" id="planAll">Add every best post to the planner</button><button class="btn" data-ics title="Download your planned posts as calendar alerts">🔔 Remind me on my phone</button><button class="btn" data-print="week">🖨️ Print this week's films</button></div>
       </div>
       <div id="planBody"></div>
+    </section>
+
+    <!-- MANAGER HOME -->
+    <section id="v-manager" hidden>
+      <div class="head"><div><h1>Manager home</h1><p>Everything for today at <span class="sitename">IMC Enniskillen</span> in one place: what's happening now, the jobs to do and notes for the next manager.</p></div></div>
+      <div id="mgrBody"></div>
+    </section>
+
+    <!-- ADVERTS -->
+    <section id="v-ads" hidden>
+      <div class="head"><div><h1>Adverts</h1><p>Every advert for <span class="sitename">IMC Enniskillen</span>: what to post on social media this week, and the adverts playing on the foyer TVs.</p></div></div>
+      <div id="adsBody"></div>
     </section>
 
     <!-- RUN THE CINEMA -->
@@ -1023,7 +1072,7 @@ async function remove(id){
 const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
 /* ---------- navigation ---------- */
-function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="luxx")renderLuxx();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();if(v==="plan")renderPlan();if(v==="replies")renderReplies();if(v==="ops")renderOps();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button,.qtab").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));menu(false);if(v==="studio")drawPoster();window.scrollTo(0,0)}
+function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="luxx")renderLuxx();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();if(v==="plan")renderPlan();if(v==="replies")renderReplies();if(v==="ops")renderOps();if(v==="manager")renderManager();if(v==="ads")renderAds();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button,.qtab").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));menu(false);if(v==="studio")drawPoster();window.scrollTo(0,0)}
 $("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view);else if(e.target.closest("a"))menu(false)});
 $(".quick").addEventListener("click",e=>{const b=e.target.closest("[data-view]");if(b)go(b.dataset.view)});
 /* hamburger menu: a drawer from the left, closed with ✕, Esc or a click outside */
@@ -1083,7 +1132,7 @@ function renderLib(){
 $("#filters").addEventListener("click",e=>{const b=e.target.closest("[data-f]");if(b){filter=b.dataset.f;renderLib();drawThumbs()}});
 $("#search").addEventListener("input",()=>{renderLib();drawThumbs()});
 
-function renderAll(){if(typeof renderReleases==="function")renderReleases();renderStats();renderWeek();renderPerf();renderUpnext();renderLib();drawThumbs()}
+function renderAll(){if(view==="ads")setTimeout(renderAds);if(view==="manager")setTimeout(renderManager);if(typeof renderReleases==="function")renderReleases();renderStats();renderWeek();renderPerf();renderUpnext();renderLib();drawThumbs()}
 function drawThumbs(){$$("canvas[data-thumb]").forEach(c=>{const p=posts.find(x=>x.id===c.dataset.thumb);if(p)paint(c.getContext("2d"),128,128,p,null,true)})}
 
 /* row actions */
@@ -1609,7 +1658,7 @@ function foySafety(f,st){const t=f.mine?{title:f.mine.title||""}:(TRAIL||{})[f.t
 function foyChosen(st){const in7=addDays(todayIso(),7);return foyFilms().filter(f=>{const sf=foySafety(f,st);if(!sf.ok)return false;
   if(st.mode==="pick")return st.pick.includes(f.key);return(f.next&&f.next.date<=in7)||(st.soon&&!f.next&&f.sources&&f.sources.has("soon"))}).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer)===i)}
 function foyUrl(st,lounge){const u=new URL("foyer.html",location.href),P=u.searchParams;if(lounge)P.set("luxx","1");P.set("c",site);P.set("mode",st.mode);if(st.mode==="pick")P.set("ids",foyChosen(st).map(f=>f.key).join(","));
-  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=(st.extra||[]);if(xs.length)P.set("x",xs.map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)).join("|"));if(st.what==="mine"&&xs.length)P.set("only","1");if((st.bd??3)!==3)P.set("bd",st.bd);if(st.pr===false)P.set("pr","0");if(st.strip===false)P.set("strip","0");if(st.scr===false)P.set("scr","0");const ms=String(st.msg||"").split("\n").map(x=>x.trim().replace(/\|/g,"/")).filter(Boolean).slice(0,6);if(ms.length)P.set("msg",ms.join("|"));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
+  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=(st.extra||[]);if(xs.length)P.set("x",xs.map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)).join("|"));if(st.what==="mine"&&xs.length)P.set("only","1");if((st.bd??3)!==3)P.set("bd",st.bd);if(st.pr===false)P.set("pr","0");if(st.strip===false)P.set("strip","0");if(st.scr===false)P.set("scr","0");const ms=String(st.msg||"").split("\n").map(x=>x.trim().replace(/\|/g,"/")).filter(Boolean).slice(0,6);if(ms.length)P.set("msg",ms.join("|"));const T0=todayIso(),al=(st.ads||[]).filter(a=>a.on!==false&&(!a.to||a.to>=T0)).map(a=>[a.src,a.title,a.from||"",a.to||"",a.secs||10,a.often||1,a.adv||""]);if(al.length)P.set("ad",btoa(unescape(encodeURIComponent(JSON.stringify(al)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
 async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
   if(!IMC){el.innerHTML=noData();return}
   if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}
@@ -2316,6 +2365,123 @@ function renderOpsTab(el){const T=todayIso(),d=OPS.day||T,days=[...Array(7)].map
   if(OPS.tab==="report"){const R=reportData();el.innerHTML=`<div class="row-btns" style="margin-bottom:12px"><button class="btn primary" id="repCopy">Copy as text (for email)</button><button class="btn" id="repPrint">🖨️ Print</button></div>${reportHtml(R)}`;
     $("#repCopy").onclick=()=>{const t=reportText(R);navigator.clipboard?.writeText(t).then(()=>toast("Report copied. Paste it into an email"),()=>prompt("Copy this report",t))};
     $("#repPrint").onclick=()=>opsPrint("Weekly report",reportHtml(R,true).replace(/class="grid stats opsstats"/,'style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px"').replace(/class="panel stat"/g,'class="bbox"').replace(/class="grid two"[^>]*>/,'class="bgrid">').replace(/class="panel"/g,'class="bbox"'),false);return}}
+
+/* ==================== Manager home and Adverts: one simple place to run the day ==================== */
+const lsGet=(k,d)=>{try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){toast("Couldn't save. This browser is blocking storage.");return false}};
+const SIMPLE={idea:["To make","todo"],draft:["To make","todo"],scheduled:["Ready","ready"],posted:["Posted","done"]};
+const nowMins=()=>toM(cinemaNow().hm);
+
+/* ---------- the day's jobs: made from the listings, plus the manager's own list ---------- */
+const OWN_DEF=[{id:"o1",t:"Opening: foyer TVs on and playing"},{id:"o2",t:"Opening: tills, card machines and floats ready"},{id:"o3",t:"Opening: kiosk stocked and Candy King pick 'n' mix topped up"},{id:"c1",t:"Closing: every screen checked and cleared"},{id:"c2",t:"Closing: takings counted and the day's notes written"}];
+function ownJobs(){return lsGet(sk("imc-ownjobs"),OWN_DEF)}
+function autoJobs(T){const out=[],L=(IDEAS[T]=IDEAS[T]||dayIdeas(T)),best=L[0],dow=DOW(T),{shows}=opsShows(T),tight=shows.filter(x=>x.gap!=null&&x.gap<15);
+  if(best)out.push({id:"a-best-"+best.k,t:`Make today's best advert: ${best.title}`,sub:`Post it at ${best.time}. ${best.why}`,act:`<button class="btn small primary" data-idea="${esc(best.k)}" data-date="${T}" data-fmt="${best.fmts[0]}">Make it</button>`});
+  for(const p of posts.filter(p=>p.date===T&&p.status!=="posted").sort((a,b)=>(a.time||"").localeCompare(b.time||"")))out.push({id:"a-post-"+p.id,t:`Post “${p.headline||"advert"}” at ${p.time||"any time"}`,sub:"It's in the planner for today.",act:`<button class="btn small" data-posted="${p.id}">I've posted it</button>`});
+  if(shows.length)out.push({id:"a-brief",t:"Print the staff briefing",sub:`${shows.length} showings today, first at ${ohm(shows[0].start)}.`,act:`<button class="btn small" data-mgo="brief">Open briefing</button>`});
+  if(tight.length)out.push({id:"a-tight",t:`Check ${tight.length} tight changeover${tight.length>1?"s":""}`,sub:tight.map(x=>`Screen ${x.screen} at ${ohm(x.next.start)}`).join(", "),act:`<button class="btn small" data-mgo="screens">See screens</button>`});
+  for(const x of lastChance().filter(x=>x.last===T))out.push({id:"a-last-"+x.f._k,t:`Last day for ${x.f.title}`,sub:"Let the team know, so they can mention it at the till."});
+  if(dow===3)out.push({id:"a-wed",t:"Wednesday Meal Deal is on today",sub:`${wedPrice()?wedPrice()+" for a ticket, medium popcorn and medium drink. ":""}Remind the kiosk team.`});
+  for(const a of foyAds().filter(a=>a.to===T))out.push({id:"a-adend-"+a.id,t:`Foyer advert ends today: ${a.title}`,sub:a.adv?`For ${a.adv}.`:"It comes off the TVs after today."});
+  return out}
+function jobTicks(T){return new Set(lsGet(sk("imc-ticks-"+T),[]))}
+
+/* ---------- handover notes ---------- */
+function handover(){return lsGet(sk("imc-handover"),[])}
+
+/* ---------- foyer TV adverts (stored with the foyer settings, so they travel in the TV link) ---------- */
+function foyAds(){return(foyState().ads||[])}
+function foyAdsLive(T){T=T||todayIso();return foyAds().filter(a=>a.on!==false&&(!a.from||a.from<=T)&&(!a.to||a.to>=T))}
+let LIBIMGS=null;async function libImages(){if(!LIBIMGS){const j=await getJson("data/library/index.json");LIBIMGS=Array.isArray(j)?j.map(x=>({...x,src:((j._base)||"")+x.file})):[]}return LIBIMGS}
+
+/* ---------- Manager home ---------- */
+function renderManager(){const el=$("#mgrBody");if(!el)return;if(!IMC){el.innerHTML=noData();return}
+  const T=todayIso(),n=cinemaNow(),now=nowMins(),{shows}=opsShows(T),staff=staffPlan(T),hr=staff.find(x=>x.h===Math.floor(now/60));
+  const seating=shows.filter(x=>x.start-now>=0&&x.start-now<=20),running=screensRunning(shows,now),nextShow=shows.find(x=>x.start>now);
+  const jobs=[...autoJobs(T),...ownJobs().map(j=>({...j,own:true}))],ticks=jobTicks(T),done=jobs.filter(j=>ticks.has(j.id)).length;
+  const wk=posts.filter(p=>p.date>=T&&p.date<=addDays(T,6)),wkDone=wk.filter(p=>p.status==="posted").length,ads=foyAdsLive(T);
+  const nextAd=wk.filter(p=>p.status!=="posted").sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))[0];
+  const hello=now<720?"Good morning":now<1080?"Good afternoon":"Good evening";
+  el.innerHTML=`
+  <div class="mnow">
+    <div class="mcell"><span>Right now</span><b>${n.hm}</b><small>${esc(fmtLong(T))}</small></div>
+    <div class="mcell"><span>Screens running</span><b>${running}</b><small>${seating.length?`${seating.length} seating now`:"none seating now"}</small></div>
+    <div class="mcell"><span>Next show</span><b>${nextShow?ohm(nextShow.start):"–"}</b><small>${nextShow?esc(nextShow.title)+(nextShow.screen?` · Screen ${esc(nextShow.screen)}`:""):"No more shows today"}</small></div>
+    <div class="mcell"><span>Team needed this hour</span><b>${hr?hr.total:"–"}</b><small>${hr?`${hr.kiosk} on box office and kiosk, ${hr.usher} usher${hr.usher===1?"":"s"}`:"Outside opening hours"}</small></div>
+  </div>
+  <div class="mgrid">
+    <section class="panel mjobs" aria-labelledby="jobsT"><div class="ph"><h2 id="jobsT">To do today</h2><span class="mprog" aria-label="${done} of ${jobs.length} done"><i style="width:${jobs.length?done/jobs.length*100:0}%"></i></span><span class="mcount">${done} of ${jobs.length} done</span></div>
+      <ul class="jobs">${jobs.map(j=>`<li class="${ticks.has(j.id)?"done":""}"><label class="jcheck"><input type="checkbox" data-job="${esc(j.id)}" ${ticks.has(j.id)?"checked":""}><span><b>${esc(j.t)}</b>${j.sub?`<small>${esc(j.sub)}</small>`:""}</span></label>${j.act&&!ticks.has(j.id)?`<div class="jact">${j.act}</div>`:""}</li>`).join("")}</ul>
+      <details class="jedit"><summary>Change my own jobs</summary><div class="ownlist">${ownJobs().map(j=>`<div class="own"><span>${esc(j.t)}</span><button class="btn small ghost" data-ownrm="${esc(j.id)}" aria-label="Remove ${esc(j.t)}">Remove</button></div>`).join("")}</div>
+        <form class="ownadd" id="ownAdd"><input id="ownText" maxlength="120" placeholder="Add a job, e.g. Closing: lock the fire doors" aria-label="New job"><button class="btn primary small">Add job</button></form></details></section>
+    <div class="mside">
+      <section class="panel" aria-labelledby="advT"><div class="ph"><h2 id="advT">Adverts this week</h2><button class="btn small ghost" data-go="ads">All adverts</button></div>
+        <div class="mbar"><i style="width:${wk.length?wkDone/wk.length*100:0}%"></i></div><p class="mline"><b>${wkDone}</b> of ${wk.length} posted${wk.length?"":". Plan the week to get started."}</p>
+        ${nextAd?`<div class="mnext"><span>Next up</span><b>${esc(nextAd.headline||"Advert")}</b><small>${esc(fmtShort(nextAd.date))} at ${esc(nextAd.time||"any time")} · ${SIMPLE[nextAd.status]?SIMPLE[nextAd.status][0]:"To make"}</small></div>`:""}
+        <div class="row-btns"><button class="btn primary" data-go="plan">Plan the week</button>${ads.length?`<span class="mline">${ads.length} advert${ads.length>1?"s":""} on the foyer TVs</span>`:`<button class="btn" data-go="ads">Add a foyer TV advert</button>`}</div></section>
+      <section class="panel" aria-labelledby="hoT"><div class="ph"><h2 id="hoT">Handover notes</h2></div>
+        <form id="hoAdd" class="hoadd"><textarea id="hoText" rows="2" maxlength="600" placeholder="For the next manager: what happened, what needs doing" aria-label="New handover note"></textarea><button class="btn primary small">Add note</button></form>
+        <ul class="ho">${handover().slice(0,8).map((h,i)=>`<li><small>${esc(new Date(h.at).toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}))}</small><p>${esc(h.text)}</p><button class="btn small ghost" data-horm="${i}" aria-label="Delete this note">Delete</button></li>`).join("")||'<li class="empty">No notes yet. Notes are saved on this computer.</li>'}</ul></section>
+    </div></div>`}
+document.addEventListener("change",e=>{const t=e.target;if(t.dataset.job){const T=todayIso(),s=jobTicks(T);t.checked?s.add(t.dataset.job):s.delete(t.dataset.job);lsSet(sk("imc-ticks-"+T),[...s]);renderManager()}});
+document.addEventListener("submit",e=>{if(e.target.id==="ownAdd"){e.preventDefault();const v=$("#ownText").value.trim();if(!v)return;const L=ownJobs();L.push({id:"u"+Date.now().toString(36),t:v});lsSet(sk("imc-ownjobs"),L);renderManager();const d=$(".jedit");if(d)d.open=true;$("#ownText").focus()}
+  if(e.target.id==="hoAdd"){e.preventDefault();const v=$("#hoText").value.trim();if(!v)return;const L=handover();L.unshift({at:Date.now(),text:v});lsSet(sk("imc-handover"),L.slice(0,60));renderManager();toast("Note added")}});
+document.addEventListener("click",e=>{let b;
+  if(b=e.target.closest("[data-ownrm]")){lsSet(sk("imc-ownjobs"),ownJobs().filter(j=>j.id!==b.dataset.ownrm));renderManager();const d=$(".jedit");if(d)d.open=true;return}
+  if(b=e.target.closest("[data-horm]")){if(!confirm("Delete this note?"))return;const L=handover();L.splice(+b.dataset.horm,1);lsSet(sk("imc-handover"),L);renderManager();return}
+  if(b=e.target.closest("[data-mgo]")){OPS.tab=b.dataset.mgo;OPS.day=null;go("ops");return}});
+
+/* ---------- Adverts page ---------- */
+let ADS={tab:"social",pick:false};
+function renderAds(){const el=$("#adsBody");if(!el)return;const T=todayIso();
+  const tabs=`<div class="opstabs" role="tablist">${[["social","📣","Social media adverts"],["foyer","📺","Foyer TV adverts"]].map(([k,i,n])=>`<button role="tab" data-adstab="${k}" aria-selected="${ADS.tab===k}"><span>${i}</span>${n}</button>`).join("")}</div>`;
+  if(ADS.tab==="social"){const days=[...Array(7)].map((_,i)=>addDays(T,i)),wk=posts.filter(p=>p.date>=T&&p.date<=days[6]);
+    const cnt=k=>wk.filter(p=>(SIMPLE[p.status]||SIMPLE.idea)[1]===k).length;
+    el.innerHTML=tabs+`<div class="adsum"><div><b>${cnt("todo")}</b><span>To make</span></div><div><b>${cnt("ready")}</b><span>Ready to post</span></div><div><b>${cnt("done")}</b><span>Posted</span></div><div class="adsact"><button class="btn primary" data-go="plan">Add adverts from Week ahead</button><button class="btn" data-go="studio">Write one myself</button></div></div>
+    <div class="addays">${days.map((d,i)=>{const L=wk.filter(p=>p.date===d).sort((a,b)=>(a.time||"").localeCompare(b.time||""));return`<section class="aday${i===0?" now":""}"><h3>${i===0?"Today":i===1?"Tomorrow":esc(WDAY(d))} <small>${esc(fmtShort(d))}</small></h3>
+      ${L.length?L.map(p=>{const[sl,sk2]=SIMPLE[p.status]||SIMPLE.idea,idea=p.plan&&ideaFor(d,p.plan);return`<div class="arow"><span class="atime">${esc(p.time||"")}</span><div class="atitle"><b>${esc(p.headline||"Advert")}</b><small>${esc(p.platform||"")}</small></div><span class="astat ${sk2}">${sl}</span>
+        <div class="aacts">${p.status!=="posted"?`${idea?`<button class="btn small" data-idea="${esc(p.plan)}" data-date="${d}" data-fmt="${idea.fmts[0]}">Make it</button>`:`<button class="btn small" data-edit="${p.id}">Open</button>`}${p.status!=="scheduled"?`<button class="btn small" data-aready="${p.id}">Mark ready</button>`:""}<button class="btn small primary" data-posted="${p.id}">Mark posted</button>`:`<button class="btn small" data-metrics="${p.id}">Add results</button>`}</div></div>`}).join(""):`<p class="aempty">Nothing planned. <button class="btn small ghost" data-go="plan">See ideas for ${i===0?"today":"this day"}</button></p>`}</section>`}).join("")}</div>`;return}
+  /* foyer TV adverts */
+  const L=foyAds();
+  el.innerHTML=tabs+`<div class="grid two"><section class="panel"><h2>Add an advert to the foyer TVs</h2><p class="tip" style="margin-top:4px">Your own promotions or a local business's advert. It plays full screen between the trailers, with the deals slides.</p>
+    <form id="adForm" class="adform">
+      <label class="field"><span class="flabel">Name of the advert</span><input id="adTitle" required maxlength="60" placeholder="e.g. Halloween fancy dress night"></label>
+      <div class="field"><span class="flabel">Picture</span><div class="adpic" id="adPicPrev"><span>No picture chosen</span></div><div class="row-btns"><button type="button" class="btn small" id="adLib">Choose from IMC images</button></div>
+        <input id="adImg" type="text" inputmode="url" autocomplete="off" placeholder="…or paste a web address of a picture (https://…)" aria-label="Picture web address"></div>
+      <div class="adlib" id="adLibGrid" hidden></div>
+      <label class="field"><span class="flabel">Business name (only for adverts you sell)</span><input id="adAdv" maxlength="50" placeholder="Leave empty for IMC's own adverts"></label>
+      <div class="adrow"><label class="field"><span class="flabel">First day</span><input id="adFrom" type="date" value="${T}"></label><label class="field"><span class="flabel">Last day</span><input id="adTo" type="date" value="${addDays(T,13)}"></label></div>
+      <div class="adrow"><label class="field"><span class="flabel">Seconds on screen</span><select id="adSecs"><option>8</option><option selected>10</option><option>15</option><option>20</option></select></label><label class="field"><span class="flabel">How often</span><select id="adOften"><option value="1">Normal</option><option value="2">More often</option></select></label></div>
+      <button class="btn primary">Add advert</button></form></section>
+    <section class="panel"><h2>On the foyer TVs</h2>${L.length?`<ul class="adlist">${L.map(a=>{const live=(a.on!==false)&&(!a.from||a.from<=T)&&(!a.to||a.to>=T),soon=a.from&&a.from>T,ended=a.to&&a.to<T;return`<li><div class="adth" style="background-image:url('${esc(a.src)}')"></div><div><b>${esc(a.title)}</b><small>${a.adv?esc(a.adv)+" · ":""}${esc(fmtShort(a.from))} to ${esc(fmtShort(a.to))} · ${a.secs}s${a.often>1?" · more often":""}</small>
+      <span class="astat ${live?"done":ended?"":"ready"}">${live?"Showing now":soon?"Starts "+esc(fmtShort(a.from)):ended?"Finished":"Paused"}</span></div><div class="aacts"><button class="btn small ghost" data-adtoggle="${a.id}">${a.on===false?"Turn on":"Pause"}</button><button class="btn small ghost" data-adrm="${a.id}">Remove</button></div></li>`}).join("")}</ul>
+      <div class="adnote"><b>Important:</b> the TVs get adverts through their link. After adding or changing adverts, open the foyer player again or copy the new TV link.<div class="row-btns" style="margin-top:8px"><a class="btn primary small" id="adOpen" target="imc-foyer" href="${esc(foyUrl(foyState()))}" style="text-decoration:none">Open foyer player ↗</a><button class="btn small" id="adCopy">Copy TV link</button></div></div>`:`<p class="tip">No adverts yet. Add one on the left and it will play on the foyer TVs between the trailers.</p>`}</section></div>`}
+document.addEventListener("click",async e=>{let b;
+  if(b=e.target.closest("[data-adstab]")){ADS.tab=b.dataset.adstab;renderAds();return}
+  if(b=e.target.closest("[data-aready]")){const p=posts.find(x=>x.id===b.dataset.aready);if(p){await persist({...p,status:"scheduled"});toast("Marked ready to post");renderAds()}return}
+  if(e.target.id==="adLib"){const g=$("#adLibGrid");g.hidden=!g.hidden;if(!g.hidden){g.innerHTML='<p class="tip">Loading…</p>';const L=await libImages();g.innerHTML=L.length?L.map(x=>`<button type="button" class="libpick" data-adlib="${esc(x.src)}" title="${esc(x.title)}"><img src="${esc(x.src)}" alt="${esc(x.title)}" loading="lazy"></button>`).join(""):'<p class="tip">No IMC images found.</p>'}return}
+  if(b=e.target.closest("[data-adlib]")){$("#adImg").value=b.dataset.adlib;adPrev();$("#adLibGrid").hidden=true;return}
+  if(b=e.target.closest("[data-adrm]")){if(!confirm("Remove this advert from the foyer TVs?"))return;const st=foyState();st.ads=(st.ads||[]).filter(a=>a.id!==b.dataset.adrm);foySave(st);renderAds();toast("Advert removed. Copy the TV link again");return}
+  if(b=e.target.closest("[data-adtoggle]")){const st=foyState();const a=(st.ads||[]).find(x=>x.id===b.dataset.adtoggle);if(a)a.on=a.on===false;foySave(st);renderAds();return}
+  if(e.target.id==="adCopy"){const u=foyUrl(foyState());navigator.clipboard?.writeText(u).then(()=>toast("TV link copied. Open it in the foyer TV's browser"),()=>prompt("Copy this link",u))}});
+function adPrev(){const v=$("#adImg").value.trim(),p=$("#adPicPrev");p.innerHTML=v?`<img src="${esc(v)}" alt="Chosen picture" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'That picture could not be loaded. Check the address.'}))">`:"<span>No picture chosen</span>"}
+document.addEventListener("input",e=>{if(e.target.id==="adImg")adPrev()});
+document.addEventListener("submit",e=>{if(e.target.id!=="adForm")return;e.preventDefault();const src=$("#adImg").value.trim();if(!src){toast("Choose a picture first");return}
+  const from=$("#adFrom").value,to=$("#adTo").value;if(from&&to&&to<from){toast("The last day is before the first day");return}
+  const st=foyState();st.ads=[...(st.ads||[]),{id:"ad"+Date.now().toString(36),title:$("#adTitle").value.trim(),src,adv:$("#adAdv").value.trim(),from,to,secs:+$("#adSecs").value,often:+$("#adOften").value,on:true}];foySave(st);renderAds();toast("Advert added. Open or copy the TV link to show it")});
+
+/* ---------- Easier to read: text size, high contrast, less movement (saved for this browser, used by the editor too) ---------- */
+function a11y(){return lsGet("imc-a11y",{size:0,hc:false,rm:false})}
+function applyA11y(){const a=a11y(),h=document.documentElement;h.classList.toggle("a-lg",a.size===1);h.classList.toggle("a-xl",a.size===2);h.classList.toggle("a-hc",!!a.hc);h.classList.toggle("a-rm",!!a.rm)}
+function a11yPanel(){const a=a11y();return`<div class="a11y" id="a11yPop" role="dialog" aria-label="Easier to read"><b>Easier to read</b>
+  <div class="seg3" role="group" aria-label="Text size">${["Normal","Large","Extra large"].map((n,i)=>`<button type="button" data-asize="${i}" aria-pressed="${a.size===i}" style="font-size:${13+i*2}px">${n}</button>`).join("")}</div>
+  <label class="check"><input type="checkbox" data-aopt="hc" ${a.hc?"checked":""}> High contrast</label><label class="check"><input type="checkbox" data-aopt="rm" ${a.rm?"checked":""}> Less movement</label></div>`}
+document.addEventListener("click",e=>{const b=e.target.closest("#a11yBtn");if(b){const p=$("#a11yPop");if(p){p.remove();b.setAttribute("aria-expanded","false");return}b.insertAdjacentHTML("afterend",a11yPanel());b.setAttribute("aria-expanded","true");$("#a11yPop button").focus();return}
+  const s=e.target.closest("[data-asize]");if(s){const a=a11y();a.size=+s.dataset.asize;lsSet("imc-a11y",a);applyA11y();$$("[data-asize]").forEach(x=>x.setAttribute("aria-pressed",x===s));return}
+  if(!e.target.closest("#a11yPop")){const p=$("#a11yPop");if(p){p.remove();$("#a11yBtn")?.setAttribute("aria-expanded","false")}}});
+document.addEventListener("change",e=>{const o=e.target.dataset&&e.target.dataset.aopt;if(o){const a=a11y();a[o]=e.target.checked;lsSet("imc-a11y",a);applyA11y()}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#a11yPop")){$("#a11yPop").remove();$("#a11yBtn").focus()}});
+applyA11y();
 
 /* ---------- start panel: the common jobs, one click each ---------- */
 function startPanel(){const se=hSeasonNow()[0];
