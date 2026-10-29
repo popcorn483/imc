@@ -278,6 +278,17 @@ body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,bod
 .flpaste{border:2px dashed var(--line);border-radius:12px;padding:18px 10px;text-align:center;font-weight:700;cursor:pointer;line-height:1.5}.flpaste small{font-weight:500;color:var(--muted)}.flpaste:focus{outline:none;border-color:var(--gold);background:rgba(255,194,61,.07)}.flpaste.small{padding:8px;font-size:12px;font-weight:600;color:var(--muted)}
 .layer.bgrow{border-top:1px dashed var(--line);margin-top:4px}.layer.bgrow .eye{font-size:13px}
 .pill{font-size:10.5px;font-weight:800;letter-spacing:.08em;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:2px 8px}
+
+.chkbtn{position:relative}.chkbtn.warn::after{content:attr(data-n);position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;border-radius:9px;background:#e2452e;color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;padding:0 4px}
+.chklist{list-style:none;margin:8px 0 14px;padding:0;display:flex;flex-direction:column;gap:6px;max-height:56vh;overflow:auto}
+.chklist li{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg)}
+.chklist .ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:13px}
+.chklist li.ok .ic{background:rgba(70,209,122,.18);color:#46d17a}.chklist li.no .ic{background:rgba(255,194,61,.2);color:var(--gold)}.chklist li.no{border-color:rgba(255,194,61,.45)}
+.chklist b{display:block;font-size:14px}.chklist small{display:block;color:var(--muted);font-size:12.5px;line-height:1.4;margin-top:2px}
+.asgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:end;margin:10px 0}
+.asitem{display:flex;flex-direction:column;gap:6px;align-items:center;cursor:pointer}.asitem canvas{max-width:100%;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.asitem span{font-size:13px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}.asitem small{font-weight:500;color:var(--muted)}.asitem input{width:16px;height:16px;margin-right:4px;vertical-align:-2px}
+@media (max-width:760px){.asgrid{grid-template-columns:1fr 1fr}.chkbtn .lg{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -289,10 +300,12 @@ body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,bod
     <div class="menuwrap"><button class="btn ddbtn" id="fmtBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fmts"><small>Size</small> <span id="fmtName">Feed 1:1</span> ▾</button><div class="ddmenu" id="fmts" role="menu" aria-label="Size" hidden></div></div>
     <div class="topact">
       <button class="btn ezbtn" id="ezToggle" type="button" title="Easy mode: just the steps you need">✨ <span class="lg">Easy mode</span></button>
+      <button class="btn chkbtn" type="button" title="Check my post for common mistakes">✓ <span class="lg">Check</span></button>
       <button class="btn icon" id="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
       <button class="btn icon" id="redo" title="Redo (Ctrl+Shift+Z)" aria-label="Redo">↷</button>
       <div class="menuwrap"><button class="btn ddbtn gifbtn" id="saveBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="saveMenu">More ways to save ▾</button>
         <div class="ddmenu right" id="saveMenu" role="menu" hidden>
+          <button role="menuitem" id="allSizes">All sizes in one go<small>Post, tall post, Story and foyer screen, in one zip</small></button>
           <button role="menuitem" id="vid">Video<small>MP4 for Reels, Stories and TikTok</small></button>
           <button role="menuitem" class="gifbtn" id="gif">Animated GIF<small>Loops anywhere, no sound</small></button>
           <button role="menuitem" id="jpg">JPG<small>Smaller file for email and websites</small></button>
@@ -389,6 +402,7 @@ body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,bod
         </div>
       </div>
       <div class="sec"><h3>Logo</h3><button class="btn wide" id="addLogo">Add IMC logo</button></div>
+      <div class="sec"><h3>Scan-to-book QR code</h3><p class="note">A code people scan with their phone camera to go straight to booking. Great on posters and foyer screens.</p><button class="btn wide" id="addQR">Add QR code</button></div>
     </div>
 
     <div data-panel="layouts" hidden>
@@ -460,6 +474,23 @@ body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,bod
     <div class="row" style="justify-content:flex-end"><button class="btn" id="stClose">Close</button><button class="btn primary" id="stPrep">Get it ready</button><button class="btn primary" id="stShare" hidden>Share…</button></div>
   </div>
 </div>
+<div class="modal" id="asModal" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="asTitle" style="width:min(720px,100%)">
+    <h2 id="asTitle">All sizes in one go</h2>
+    <p class="note">Your design, made for every place you post. Check each one; anything placed near the edge can shift a little in other shapes.</p>
+    <div class="asgrid" id="asGrid"></div>
+    <p class="note" id="asStatus" aria-live="polite"></p>
+    <div class="row" style="justify-content:flex-end"><button class="btn" id="asClose">Close</button><button class="btn primary" id="asGo">Download all (zip)</button></div>
+  </div>
+</div>
+<div class="modal" id="chkModal" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="chkTitle" style="width:min(560px,100%)">
+    <h2 id="chkTitle">Check my post</h2>
+    <p class="note" id="chkScore"></p>
+    <ul class="chklist" id="chkList"></ul>
+    <div class="row" style="justify-content:flex-end"><button class="btn" id="chkClose">Done</button></div>
+  </div>
+</div>
 <div class="modal" id="vidModal" hidden>
   <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="vidTitle">
     <h2 id="vidTitle">Export video</h2>
@@ -474,6 +505,7 @@ body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,bod
 <div class="toast" id="toast" hidden></div>
 
 <script>try{window.name="imc-editor"}catch(e){}</script>
+<script src="qr.js"></script>
 <script>
 (function(){
 "use strict";
@@ -762,7 +794,7 @@ function drawText(c,L){const f=L.font||"display",size=L.size||120,sp=L.sp||0;let
 function drawLogoLayer(c,L){const h=L.size||150,d=logoDims(h),pad=L.plate&&L.plate!=="none"?h*.24:0;
   if(pad){rr(c,-d.w/2-pad,-d.h/2-pad,d.w+pad*2,d.h+pad*2,pad*.55);sh(c,true);c.fillStyle=L.plate==="light"?"rgba(255,255,255,.95)":"rgba(8,9,12,.84)";c.fill();sh(c,false)}
   drawLogo(c,-d.w/2,-d.h/2,h,L.plate==="light"?"#15171d":L.c1);return{w:d.w+pad*2,h:d.h+pad*2}}
-function drawLayer(c,L){c.save();c.textBaseline="alphabetic";const d=L.kind==="pphoto"?drawPPhoto(c,L):L.kind==="badge"?(B[L.style]||B.pill)(c,L):L.kind==="text"?drawText(c,L):L.kind==="product"?drawProduct(c,L):L.kind==="listing"?drawListing(c,L):L.kind==="rating"?drawRating(c,L):drawLogoLayer(c,L);c.restore();return d}
+function drawLayer(c,L){c.save();c.textBaseline="alphabetic";const d=L.kind==="pphoto"?drawPPhoto(c,L):L.kind==="badge"?(B[L.style]||B.pill)(c,L):L.kind==="text"?drawText(c,L):L.kind==="product"?drawProduct(c,L):L.kind==="listing"?drawListing(c,L):L.kind==="rating"?drawRating(c,L):L.kind==="qr"?drawQR(c,L):drawLogoLayer(c,L);c.restore();return d}
 
 /* ---------- food & drink illustrations (drawn in code, centred at 0,0 in 1080-frame units) ---------- */
 /* ---------- realistic popcorn: pre-rendered kernel sprites, each an irregular cluster of shaded puffs ---------- */
@@ -1417,7 +1449,7 @@ new ResizeObserver(fit).observe($("#wrap"));
 /* ---------- history + persistence ---------- */
 const clean=st=>JSON.stringify(st,(k,v)=>k.startsWith("_")?undefined:v);
 function commit(){const j=clean(S);if(hist[hi]===j)return;hist=hist.slice(0,hi+1);hist.push(j);if(hist.length>80)hist.shift();hi=hist.length-1;updUndo();save();syncMotion();ensureLoop()}
-let commitT=0;function commitSoon(){clearTimeout(commitT);commitT=setTimeout(commit,350)}
+let commitT=0;function commitSoon(){checkSoon();clearTimeout(commitT);commitT=setTimeout(commit,350)}
 function restore(j){S=JSON.parse(j);if(!S.layers.find(l=>l.id===selId))selId=null;syncAll()}
 function undo(){if(hi>0){hi--;restore(hist[hi]);updUndo();save()}}
 function redo(){if(hi<hist.length-1){hi++;restore(hist[hi]);updUndo();save()}}
@@ -1550,7 +1582,7 @@ $("#saved").addEventListener("click",e=>{const a=getSaved();const ap=e.target.cl
   if(dl){a.splice(+dl.dataset.del,1);putSaved(a);syncSaved()}});
 
 /* ---------- properties ---------- */
-function layerName(L){if(L.kind==="pphoto")return L.label||"Product photo";if(L.kind==="rating")return"Rating "+(L.cert||"");if(L.kind==="product")return(PRODUCTS[L.key]?.n||"Food");if(L.kind==="listing")return"Film times";if(L.kind==="badge")return(BADGES[L.key]?.n||"Badge")+(L.text&&L.text!==BADGES[L.key]?.text?" · "+L.text:"");if(L.kind==="logo")return"IMC logo";return(L.text||"Text").split("\n")[0].slice(0,28)}
+function layerName(L){if(L.kind==="qr")return"QR code";if(L.kind==="pphoto")return L.label||"Product photo";if(L.kind==="rating")return"Rating "+(L.cert||"");if(L.kind==="product")return(PRODUCTS[L.key]?.n||"Food");if(L.kind==="listing")return"Film times";if(L.kind==="badge")return(BADGES[L.key]?.n||"Badge")+(L.text&&L.text!==BADGES[L.key]?.text?" · "+L.text:"");if(L.kind==="logo")return"IMC logo";return(L.text||"Text").split("\n")[0].slice(0,28)}
 function sliderRow(id,label,min,max,val,unit){return`<label class="slider"><span>${label}</span><input type="range" id="${id}" min="${min}" max="${max}" value="${val}"><output id="o${id}">${val}${unit}</output></label>`}
 function colourBlock(label,key,L){return`<div><div class="lbl" style="margin-bottom:6px">${label}</div><div class="swatches" data-colour="${key}">${SWATCHES.map(c=>`<button class="sw" data-c="${c}" style="background:${c}" aria-label="${c}" aria-pressed="${L[key]===c}"></button>`).join("")}<input type="color" value="${/^#[0-9a-f]{6}$/i.test(L[key])?L[key]:"#ffffff"}" aria-label="Custom colour"></div></div>`}
 function renderProps(){const L=getSel(),P=$("#props");if(selId===BG_ID){P.innerHTML=bgProps();return}
@@ -1571,6 +1603,7 @@ function renderProps(){const L=getSel(),P=$("#props");if(selId===BG_ID){P.innerH
   if(L.kind==="product"){if(PRODUCT_LABEL[L.key])h+=`<label class="lbl" for="pp-text">${PRODUCT_LABEL[L.key]}</label><input id="pp-text" type="text" value="${esc(L.text||"")}">`;h+=colourBlock(L.key==="hotdog"?"Sausage colour":L.key==="nachos"||L.key==="tray"?"Tray colour":L.key==="popcorn"?"Box colour":L.key==="icescoop"?"Cup colour":L.key==="ticket"?"Ticket colour":L.key==="pickmix"?"Stripe colour":L.key==="sweets"?"Bag colour":"Main colour","c1",L)+colourBlock(L.key==="popcorn"?"Heart colour":L.key==="icescoop"?"Top scoop colour":L.key==="icetub"?"Band colour":L.key==="ticket"?"Text colour":L.key==="pickmix"?"Bag colour":L.key==="drink"?"Straw colour":L.key==="hotdog"?"Mustard colour":L.key==="nachos"?"Cheese colour":"Second colour","c2",L)}
   if(L.kind==="listing"){h+=listingPanel(L)}
   if(L.kind==="rating"){const sys=L.system||"bbfc",opts=ratingList(sys).filter(o=>o.cert!==sys.toUpperCase());h+=`<div class="seg" id="pp-rsys" style="width:max-content"><button data-prs="bbfc" aria-pressed="${sys==="bbfc"}">BBFC</button><button data-prs="ifco" aria-pressed="${sys==="ifco"}">IFCO</button></div>`+(opts.length?`<label class="lbl" for="pp-rating">Certificate</label><select id="pp-rating">${!L.src?`<option value="" selected>${esc(L.cert||"Choose")}</option>`:""}${opts.map(o=>`<option value="${esc(o.src)}" ${o.src===L.src?"selected":""}>${esc(o.cert)}</option>`).join("")}</select>`:`<p class="note">Rating symbols load from imc.ie on the live site.</p>`)+(sys==="ifco"?`<p class="note">IFCO certificates can differ from BBFC ones. Check the film's IFCO rating.</p>`:"")}
+  if(L.kind==="qr")h+=qrProps(L);
   if(L.kind==="logo"){h+=`<label class="lbl" for="pp-plate">Backing</label><select id="pp-plate"><option value="none">None</option><option value="light">White panel</option><option value="dark">Dark panel</option></select>${logoImg?"":colourBlock("Text logo colour","c1",L)}`}
   h+=`</div><div class="sec"><h3>Position</h3>${sliderRow("pp-s","Size",10,400,Math.round(L.s*100),"%")}${sliderRow("pp-r","Rotate",-180,180,Math.round((L.r||0)*180/Math.PI),"°")}${sliderRow("pp-o","Opacity",10,100,Math.round((L.o??1)*100),"%")}<label class="lbl" for="pp-anim">Animation</label><select id="pp-anim">${Object.entries(ANIMS).map(([k,n])=>`<option value="${k}" ${(L.anim||"none")===k?"selected":""}>${n}</option>`).join("")}</select>${(()=>{const d=S.motion.dur||3,sec=v=>Math.round(v*d*10)/10;return`<div class="lbl" style="margin-top:10px">Timing</div>${sliderRow("pp-delay","Appears at",0,Math.round(d*10),Math.round((L.delay||0)*d*10),"")}${sliderRow("pp-until","Leaves at",1,Math.round(d*10),Math.round((L.until??1)*d*10),"")}
     <label class="lbl" for="pp-ilen">Animation speed</label><select id="pp-ilen">${[[.5,"Quick"],[1,"Normal"],[1.8,"Slow"]].map(([v,n])=>`<option value="${v}" ${(L.ilen||1)===v?"selected":""}>${n}</option>`).join("")}</select><p class="note">Or drag this layer's bar on the timeline under the design.</p>`})()}
@@ -1786,7 +1819,7 @@ $("#ptabs").addEventListener("click",e=>{const b=e.target.closest("[data-pt]");i
 document.addEventListener("click",e=>{if(e.target.closest(".sheethead button"))sheet(null)});
 PHONE.addEventListener?PHONE.addEventListener("change",phoneMode):PHONE.addListener(phoneMode);
 /* ---------- tidy panels: sections fold; the main one in each tab starts open; your choices are remembered ---------- */
-const FOLD_OPEN=["Film logo","Background","Adjust the photo","IMC images","IMC frame","Frame colour","Animated effects","Text","Badges","Film times","Deals","Cinema Reels","Seasons & occasions","IMC logo"];
+const FOLD_OPEN=["Scan-to-book QR code","Film logo","Background","Adjust the photo","IMC images","IMC frame","Frame colour","Animated effects","Text","Badges","Film times","Deals","Cinema Reels","Seasons & occasions","IMC logo"];
 let foldState={};try{foldState=JSON.parse(localStorage.getItem("imc-editor-fold")||"{}")}catch(e){}
 function setupFolds(){$$(".app>.left [data-panel]>.sec").forEach(sec=>{const h=sec.querySelector(":scope>h3");if(!h||sec.classList.contains("fold"))return;const k=h.textContent.trim();sec.classList.add("fold");
   const open=k in foldState?foldState[k]:FOLD_OPEN.includes(k);sec.classList.toggle("shut",!open);h.setAttribute("role","button");h.tabIndex=0;h.setAttribute("aria-expanded",open)})}
@@ -1814,7 +1847,7 @@ function renderEasy(){const el=$("#easyPanel");if(!el||!EASY)return;const Ls=S.l
     <div class="ezrow"><button class="btn" id="ezPhoto" type="button">${photoImg?"Change photo":"Choose a photo"}</button>${photoImg?`<button class="btn" id="ezNoPhoto" type="button">Remove photo</button>`:""}</div>
     ${FLOGO_FILM&&!S.layers.some(l=>/^fl:/.test(l.src||""))?`<div class="ezrow" style="margin-top:8px"><button class="btn" id="ezLogo" type="button">🎬 ${FLOGO[flKey(FLOGO_FILM)]?"Add the film's logo":"Find the film's logo"}</button></div>`:""}</div></div>
   <div class="ezstep"><div class="ezn">${++n}</div><div><h4>Save or share</h4><p>Saved files go to your Downloads folder.</p>
-    <div class="ezbig"><button class="btn primary" id="ezSave" type="button">⬇ Save picture</button>${anim?`<button class="btn primary" id="ezVid" type="button">🎬 Save video</button>`:""}${story?`<button class="btn storybtn" id="ezStory" type="button">Share to Facebook story</button>`:""}<button class="btn" id="ezCopy" type="button">Copy picture</button></div></div></div>
+    <div class="ezbig"><button class="btn chkbtn" type="button">✓ Check my post first</button><button class="btn primary" id="ezSave" type="button">⬇ Save picture</button>${anim?`<button class="btn primary" id="ezVid" type="button">🎬 Save video</button>`:""}${story?`<button class="btn storybtn" id="ezStory" type="button">Share to Facebook story</button>`:""}<button class="btn" id="ezCopy" type="button">Copy picture</button></div></div></div>
   <p class="ezfoot">Changed your mind? Use the ↶ undo button at the top. For colours, layouts and animation, open the <button class="ezlink" id="ezFull2" type="button">full editor</button>.</p>`}
 $("#easyPanel").addEventListener("input",e=>{const f=e.target.closest("[data-ezl]");if(!f||!e.target.dataset.ezk)return;const L=S.layers.find(l=>l.id===f.dataset.ezl);if(!L)return;L[e.target.dataset.ezk]=e.target.value;L._w=0;draw();commitSoon()});
 $("#easyPanel").addEventListener("focusin",e=>{const f=e.target.closest("[data-ezl]");if(f&&selId!==f.dataset.ezl){selId=f.dataset.ezl;draw();$$("#easyPanel .ezf").forEach(x=>x.classList.toggle("sel",x===f))}});
@@ -1869,6 +1902,82 @@ $("#flBox").addEventListener("click",e=>{const id=e.target.id;if(id==="flAddBtn"
 $("#flBox").addEventListener("paste",e=>{if(!e.target.closest("#flPaste"))return;e.preventDefault();e.stopPropagation();const it=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith("image/"));if(it)flSave(curFilmKey(),it.getAsFile());else toast("No picture on the clipboard. Right-click the logo and choose Copy image")},true);
 $("#flBox").addEventListener("dragover",e=>{if(e.target.closest("#flPaste")){e.preventDefault();e.stopPropagation()}});
 $("#flBox").addEventListener("drop",e=>{if(!e.target.closest("#flPaste"))return;e.preventDefault();e.stopPropagation();const f=[...(e.dataTransfer?.files||[])][0];if(f)flSave(curFilmKey(),f)});
+/* ==================== premium tools ==================== */
+/* ---------- 1. Scan-to-book QR code: a white card with a QR code that opens the right imc.ie page ---------- */
+const QRC={};
+function qrOf(url){if(!QRC[url]){try{QRC[url]=IMCQR.make(url)}catch(e){QRC[url]=null}}return QRC[url]}
+function cinemaSlug(){return(IMC&&IMC.slug)||ownSite()}
+function qrPresets(){const sl=cinemaSlug(),L=[["times","This cinema's film times (best for posters)","https://imc.ie/film-times/"+sl+"/"],["luxx","LUXX recliner bookings","https://imc.ie/luxx/"+sl+"/"],["home","imc.ie home page","https://imc.ie/"]];
+  const ft=S.filmTitle&&[...((IMC&&IMC.today)||[]),...((IMC&&IMC.days)||[]).flatMap(d=>d.films||[])].find(f=>norm(f.title)===norm(S.filmTitle));const bk=ft&&(ft.book||(ft.sessions||[])[0]?.book);
+  if(bk)L.push(["show","One showing of "+S.filmTitle+" (that showing only)",bk]);return L}
+function drawQR(c,L){const q=qrOf(L.url||"https://imc.ie/"),w=360,pad=26,cap=L.text?62:0,h=w+cap;
+  c.save();c.shadowColor="rgba(0,0,0,.35)";c.shadowBlur=30;c.shadowOffsetY=10;rr(c,-w/2,-h/2,w,h,26);c.fillStyle=L.c1||"#ffffff";c.fill();c.restore();
+  if(q){const m=(w-pad*2)/q.size,x0=-w/2+pad,y0=-h/2+pad;c.fillStyle=L.c2||"#0b0a1e";for(let y=0;y<q.size;y++)for(let x=0;x<q.size;x++)if(q.get(x,y))c.fillRect(x0+x*m,y0+y*m,Math.ceil(m),Math.ceil(m))}
+  else{c.fillStyle="#c0392b";c.font=`700 26px ${FONTS.body}`;c.textAlign="center";c.fillText("Link too long",0,0);c.textAlign="left"}
+  if(L.text){c.fillStyle=L.c2||"#0b0a1e";c.font=`900 34px ${FONTS.display}`;c.textAlign="center";ft(c,String(L.text).toUpperCase(),0,h/2-22,3,"center");c.textAlign="left"}
+  return{w,h}}
+function qrProps(L){const P=qrPresets(),cur=P.find(p=>p[2]===L.url);return`<label class="lbl" for="pp-qrpick">Where the code goes</label><select id="pp-qrpick">${P.map(p=>`<option value="${esc(p[2])}" ${cur&&cur[0]===p[0]?"selected":""}>${esc(p[1])}</option>`).join("")}<option value="" ${cur?"":"selected"}>My own link…</option></select>
+  <label class="lbl" for="pp-qrurl">Link</label><input id="pp-qrurl" type="url" value="${esc(L.url||"")}">
+  <label class="lbl" for="pp-text">Words under the code</label><input id="pp-text" type="text" value="${esc(L.text||"")}" placeholder="Leave empty for no words">
+  <p class="note">Test it with your phone camera before printing. Keep the code at least 2.5 cm wide on paper.</p>`}
+$("#props").addEventListener("input",e=>{const L=getSel();if(!L||L.kind!=="qr")return;if(e.target.id==="pp-qrurl"){L.url=e.target.value.trim();L._w=0;draw();commitSoon()}},true);
+$("#props").addEventListener("change",e=>{const L=getSel();if(!L||L.kind!=="qr")return;if(e.target.id==="pp-qrpick"&&e.target.value){L.url=e.target.value;L._w=0;renderProps();draw();commit()}},true);
+$("#addQR").onclick=()=>{const P=qrPresets();addLayer({id:uid(),kind:"qr",url:P[0][2],text:"Scan to book",c1:"#ffffff",c2:"#0b0a1e",x:.84,y:.78,s:.55,r:0,o:1});toast("QR code added. It opens this cinema's film times on imc.ie")};
+
+/* ---------- 2. All sizes: the same design as a post, tall post, Story and foyer screen, in one download ---------- */
+const ALL_FMTS=["square","portrait","story","wide"];
+function stateFor(fmt){return{...S,fmt}}
+function exportBlobFor(fmt,type,q){const f=FORMATS[fmt],c=document.createElement("canvas");c.width=f.w;c.height=f.h;render(c.getContext("2d"),f.w,f.h,{},stateFor(fmt));return new Promise(r=>c.toBlob(r,type||"image/png",q))}
+function loadJSZip(){return window.JSZip?Promise.resolve():new Promise((res,rej)=>{const s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";s.onload=res;s.onerror=()=>rej(new Error("no zip"));document.head.appendChild(s)})}
+function allSizesOpen(){select(null);const g=$("#asGrid");g.innerHTML=ALL_FMTS.map(k=>`<label class="asitem"><canvas data-asf="${k}"></canvas><span><input type="checkbox" data-asc="${k}" checked> ${esc(FORMATS[k].n)}<small>${FORMATS[k].w} × ${FORMATS[k].h}</small></span></label>`).join("");
+  $$("#asGrid canvas").forEach(cn=>{const f=FORMATS[cn.dataset.asf],k=200/Math.max(f.w,f.h);cn.width=Math.round(f.w*k);cn.height=Math.round(f.h*k);qrender(cn.getContext("2d"),cn.width,cn.height,{},stateFor(cn.dataset.asf))});
+  $("#asStatus").textContent="";$("#asModal").hidden=false}
+$("#allSizes").onclick=allSizesOpen;$("#asClose").onclick=()=>{$("#asModal").hidden=true};
+$("#asGo").onclick=async()=>{const pick=ALL_FMTS.filter(k=>$(`[data-asc="${k}"]`).checked);if(!pick.length){$("#asStatus").textContent="Tick at least one size.";return}$("#asGo").disabled=true;$("#asStatus").textContent="Making your files…";
+  try{await loadJSZip();const zip=new JSZip(),base=fileName("png").replace(/-[a-z0-9]+\.png$/,"");for(const k of pick){$("#asStatus").textContent="Making "+FORMATS[k].n+"…";zip.file(`${base}-${k}.png`,await exportBlobFor(k));await new Promise(r=>setTimeout(r,20))}
+    const blob=await zip.generateAsync({type:"blob"});saveBlob(blob,base+"-all-sizes.zip");$("#asStatus").textContent=`Done: ${pick.length} picture${pick.length>1?"s":""} in one zip file.`}
+  catch(e){$("#asStatus").textContent="Saving them one at a time instead…";for(const k of pick)saveBlob(await exportBlobFor(k),fileName("png").replace(/-[a-z0-9]+\.png$/,`-${k}.png`))}
+  $("#asGo").disabled=false};
+
+/* ---------- 3. Post checker: catches the usual mistakes before anything goes out, and fixes them in one click ---------- */
+function layerBox(L,fmt){const f=FORMATS[fmt||S.fmt],u=Math.min(f.w,f.h)/1080;if(!L._w){const d=drawLayer(mctx,L);L._w=d.w;L._h=d.h}const w=L._w*L.s*u/f.w,h=L._h*L.s*u/f.h;return{l:L.x-w/2,r:L.x+w/2,t:L.y-h/2,b:L.y+h/2,w,h}}
+const txtOf=L=>[L.text,L.sub,L.items].filter(Boolean).join(" ");
+function checkPost(){const out=[],f=FORMATS[S.fmt],vis=S.layers.filter(l=>!l.hidden),add=(ok,title,detail,fix,id)=>out.push({ok,title,detail,fix,id});
+  const PH=/FILM TITLE|Your words here|£X(\.XX)?\b|\bX\.XX\b|£0\.00/i,ph=vis.filter(l=>PH.test(txtOf(l)));
+  add(!ph.length,"No placeholder words left",ph.length?`Fill in: ${ph.map(l=>"“"+txtOf(l).slice(0,24)+"”").join(", ")}`:"Everything has real words in it.",ph.length?"show":null,ph[0]&&ph[0].id);
+  const small=vis.filter(l=>l.kind==="text"&&(l.size||100)*l.s<26);
+  add(!small.length,"Text is big enough to read on a phone",small.length?`${small.length} line${small.length>1?"s are":" is"} very small.`:"All text is a readable size.",small.length?"bigger":null);
+  const off=vis.filter(l=>{const b=layerBox(l);return b.l<-.02||b.r>1.02||b.t<-.02||b.b>1.02});
+  add(!off.length,"Nothing is cut off the edge",off.length?`${off.map(layerName).join(", ")} ${off.length>1?"go":"goes"} past the edge.`:"Everything fits inside the design.",off.length?"inside":null);
+  if(S.fmt==="story"){const z=vis.filter(l=>l.kind!=="logo"&&l.kind!=="pphoto"&&(()=>{const b=layerBox(l);return b.t<.13||b.b>.78})());
+    add(!z.length,"Clear of the Story buttons",z.length?`${z.map(layerName).join(", ")} ${z.length>1?"sit":"sits"} where Facebook and Instagram put their buttons and caption.`:"Nothing important is hidden behind the app's buttons.",z.length?"safe":null)}
+  const cta=vis.some(l=>/book|imc\.ie|kiosk|box office/i.test(txtOf(l))||l.kind==="qr"||l.kind==="listing");
+  add(cta,"Says how to book",cta?"People can see where to book.":"Add “Book at imc.ie” so people know what to do next.",cta?null:"cta");
+  const film=S.filmTitle&&filmInfo(S.filmTitle),hasCert=vis.some(l=>l.kind==="rating"||l.kind==="listing");
+  if(film&&film.cert&&film.cert!=="TBC")add(hasCert,"Shows the film's certificate",hasCert?"The certificate is on the design.":`${S.filmTitle} is rated ${film.cert}. Add the certificate symbol.`,hasCert?null:"cert");
+  const logo=S.frame.logo||vis.some(l=>l.kind==="logo");add(logo,"IMC logo is on it",logo?"The IMC logo is showing.":"Add the IMC logo so people know it's us.",logo?null:"logo");
+  const words=vis.map(txtOf).join(" ").split(/\s+/).filter(Boolean).length;add(words<=45,"Short and punchy",words<=45?`${words} words. Easy to read while scrolling.`:`${words} words. People scroll past long posts; try to cut it to 45 or fewer.`,null);
+  const qrs=vis.filter(l=>l.kind==="qr");if(qrs.length){const tiny=qrs.filter(l=>360*l.s*Math.min(f.w,f.h)/1080/Math.min(f.w,f.h)<.12);add(!tiny.length,"QR code is big enough to scan",tiny.length?"Make the QR code bigger so phones can read it.":"The QR code is a good size.",tiny.length?"qrbig":null)}
+  if(hasMotion())add(S.motion.dur<=15,"Video length suits Stories",S.motion.dur<=15?`${S.motion.dur} seconds.`:`${S.motion.dur} seconds is long for a Story. 6 to 12 works best.`,null);
+  return out}
+function filmInfo(t){return[...((IMC&&IMC.today)||[]),...((IMC&&IMC.comingSoon)||[]),...((IMC&&IMC.days)||[]).flatMap(d=>d.films||[])].find(f=>norm(f.title)===norm(t))}
+function fixPost(kind,id){const vis=S.layers.filter(l=>!l.hidden);
+  if(kind==="show"){$("#chkModal").hidden=true;if(EASY){const el=$(`#easyPanel [data-ezl="${id}"] [data-ezk]`);if(el){el.focus();el.select&&el.select()}}else select(id);return}
+  if(kind==="bigger")vis.filter(l=>l.kind==="text"&&(l.size||100)*l.s<26).forEach(l=>{l.s=Math.max(l.s,28/(l.size||100))});
+  if(kind==="inside"||kind==="safe"){const top=kind==="safe"?.14:.02,bot=kind==="safe"?.77:.98;vis.forEach(l=>{if(kind==="safe"&&(l.kind==="logo"||l.kind==="pphoto"))return;let b=layerBox(l);const maxH=bot-top,maxW=.96;if(b.h>maxH||b.w>maxW){l.s*=Math.min(maxH/b.h,maxW/b.w)*.98;l._w=0;b=layerBox(l)}
+    if(b.l<.02)l.x+=.02-b.l;if(b.r>.98)l.x-=b.r-.98;if(b.t<top)l.y+=top-b.t;if(b.b>bot)l.y-=b.b-bot})}
+  if(kind==="cta")S.layers.push(mk("text","small",{text:"BOOK AT IMC.IE",y:S.fmt==="story"?.74:.9,size:30,sp:6}));
+  if(kind==="cert"){const fi=filmInfo(S.filmTitle);if(fi){const L=mk("rating",null,{cert:fi.cert,system:fi.certSystem||"bbfc",x:.86,y:S.fmt==="story"?.72:.84,s:.6}),p=ratingPick(fi.cert,fi.certSystem||"bbfc",ratingSys);if(p&&p.src){L.src=p.src;loadRating(p.src)}S.layers.push(L)}}
+  if(kind==="logo")S.frame={...S.frame,logo:true};
+  if(kind==="qrbig")vis.filter(l=>l.kind==="qr").forEach(l=>{l.s=Math.max(l.s,.62)});
+  syncAll();commit();renderCheck()}
+function renderCheck(){const R=checkPost(),bad=R.filter(r=>!r.ok).length;
+  $("#chkScore").innerHTML=bad?`<b>${R.length-bad} of ${R.length}</b> checks passed. ${R.some(r=>!r.ok&&r.fix)?"Use the Fix buttons, then check again.":""}`:`<b>All ${R.length} checks passed.</b> Ready to post! 🎉`;
+  $("#chkList").innerHTML=R.map(r=>`<li class="${r.ok?"ok":"no"}"><span class="ic">${r.ok?"✓":"!"}</span><div><b>${esc(r.title)}</b><small>${esc(r.detail)}</small></div>${!r.ok&&r.fix?`<button class="btn small" data-fix="${r.fix}" data-fid="${r.id||""}">${r.fix==="show"?"Show me":"Fix it"}</button>`:""}</li>`).join("");syncCheckBadge(bad)}
+function syncCheckBadge(n){if(n==null)n=checkPost().filter(r=>!r.ok).length;$$(".chkbtn").forEach(b=>{b.dataset.n=n||"";b.classList.toggle("warn",n>0)})}
+let chkT=0;function checkSoon(){clearTimeout(chkT);chkT=setTimeout(()=>syncCheckBadge(),900)}
+document.addEventListener("click",e=>{if(e.target.closest(".chkbtn")){select(null);renderCheck();$("#chkModal").hidden=false;return}const f=e.target.closest("[data-fix]");if(f)fixPost(f.dataset.fix,f.dataset.fid)});
+$("#chkClose").onclick=()=>{$("#chkModal").hidden=true};
 /* ---------- GIF encoder (median-cut palette, ordered dither, LZW, unchanged pixels left transparent) ---------- */
 const GIF={
   palette(sm,n){const cnt=sm.length/3|0,idx=new Uint32Array(cnt);for(let i=0;i<cnt;i++)idx[i]=i;
@@ -2272,7 +2381,7 @@ $("#vidGo").onclick=async()=>{if(vBusy)return;vBusy=true;vCancel=false;$("#vidGo
   saveBlob(res.blob,fileName(res.ext));ensureLoop()};
 
 /* ---------- sync + boot ---------- */
-function syncAll(){syncMotion();ensureLoop();syncTimeline();if(EASY&&!(document.activeElement&&document.activeElement.closest&&document.activeElement.closest("#easyPanel")))renderEasy();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
+function syncAll(){checkSoon();syncMotion();ensureLoop();syncTimeline();if(EASY&&!(document.activeElement&&document.activeElement.closest&&document.activeElement.closest("#easyPanel")))renderEasy();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
 async function boot(){buildMotionUI();
   try{const t=localStorage.getItem("imc-editor-tab");if(t){const b=$(`#tabs [data-tab="${t}"]`);if(b)b.click()}}catch(e){}
   let saved=null;try{saved=JSON.parse(fixSite(localStorage.getItem("imc-editor-state")||"null"))}catch(e){}
