@@ -197,6 +197,18 @@ A film counts as leaving when its last listed showing is within four days and im
 - The foyer player adds a **Last chance to see** slide with the posters and last show days.
 - The staff briefing and weekly report list them.
 
+## Design
+
+The hub and editor share one visual system.
+
+- **Marquee frame:** the hub's top bar and each page's title band are deep navy, lit by IMC's gold-to-red strip, with titles in tall condensed capitals like cinema-door lettering.
+- **Quiet workspace:** everything you work in is calm: white panels with fine borders, blue for actions, navy for whatever is selected, and gold only for what matters most (the best post, the Easy mode start, the one Download button in the editor).
+- **Text:** headings and labels are in sentence case.
+- **Keyboard:** every control shows a clear focus ring.
+- **Dark mode:** follows your device.
+- **Speed:** there's no blur or heavy effects, so it stays quick on older PCs.
+- **Phones:** the editor's Save button stays pinned at the right of the toolbar.
+
 ## Photo & video editor
 
 - **Background:** your photo or video, an official poster (**Whole poster** shows the full poster over a blurred copy of itself), or an IMC background (IMC stage, Sky, Midnight, Sunset).

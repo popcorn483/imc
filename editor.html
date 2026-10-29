@@ -290,6 +290,26 @@ body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,bod
 .asitem span{font-size:13px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}.asitem small{font-weight:500;color:var(--muted)}.asitem input{width:16px;height:16px;margin-right:4px;vertical-align:-2px}
 @media (max-width:760px){.asgrid{grid-template-columns:1fr 1fr}.chkbtn .lg{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ==================== Premium layer (matches the hub) ====================
+   Quieter chrome so the design on the canvas is the brightest thing on screen. One gold button (Download), everything
+   else outlined; sentence-case headings; matching focus rings and corners. */
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.sec h3{font-size:13px;letter-spacing:-.005em;text-transform:none;color:var(--ink);font-weight:700}
+.layer .k{text-transform:none;letter-spacing:0;font-size:12px}
+.ezbtn{background:rgba(255,216,74,.1);color:#ffd84a;border:1px solid rgba(255,216,74,.45);font-weight:700}
+.ezbtn:hover{background:rgba(255,216,74,.18)}
+body.easy .ezbtn{background:linear-gradient(135deg,#ffd84a,#f39a2b);color:#2a1800;border-color:transparent;box-shadow:none}
+.storybtn{background:rgba(24,119,242,.14);color:#cfe0ff;border:1px solid rgba(110,160,255,.5)}
+.storybtn:hover{background:rgba(24,119,242,.24)}
+.storybtn::before{border-color:#8fb6ff;box-shadow:none}
+.gifbtn{background:transparent!important;color:var(--ink)!important;border-color:var(--line)!important}
+.gifbtn:hover{border-color:var(--muted)!important}
+.btn:focus-visible,.layer:focus-visible,[data-tab]:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(59,168,232,.45)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;border-color:var(--sel);box-shadow:0 0 0 3px rgba(59,168,232,.3)}
+/* phones: the toolbar scrolls sideways, but Save stays pinned to the right edge so it's always one tap away */
+@media (max-width:760px){.top{overflow-x:auto;scrollbar-width:none}.top::-webkit-scrollbar{display:none}
+  #png{position:sticky;right:0;z-index:3;box-shadow:-10px 0 0 0 var(--panel),14px 0 0 0 var(--panel),-22px 0 14px -4px var(--panel)}}
 </style>
 
 </head>
