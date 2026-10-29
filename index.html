@@ -27,6 +27,21 @@
 .ranswer{display:flex;flex-direction:column;gap:12px;position:sticky;top:80px}.ranswer textarea{width:100%;font:15px/1.5 inherit;min-height:220px}.ranswer select{width:100%}
 .rday{display:flex;gap:6px;flex-wrap:wrap}.rday button{all:unset;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:14px}.rday button[aria-pressed="true"]{background:#0b6bb8;color:#fff;border-color:#0b6bb8}
 @media (max-width:760px){.rgrid{grid-template-columns:1fr}.rqs{display:grid;grid-template-columns:1fr 1fr}.rq{font-size:13px;padding:10px}.ranswer{position:static}.pollpick{grid-template-columns:1fr}.pvs{display:none}}
+
+.opsdays{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.opsdays button{all:unset;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-weight:600;font-size:14px}.opsdays button[aria-pressed="true"]{background:#0b6bb8;color:#fff;border-color:#0b6bb8}.opsdays button:focus-visible{outline:3px solid #0b6bb8}
+.grid.stats.opsstats{grid-template-columns:repeat(5,minmax(0,1fr))}.stat.bad .n{color:#e2452e}
+.otl{position:relative;overflow-x:auto;padding-top:22px}.ohours{position:relative;height:18px;margin-left:96px;min-width:760px}.ohours span{position:absolute;top:-4px;transform:translateX(-50%);font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.orow{display:grid;grid-template-columns:96px minmax(760px,1fr);align-items:center;border-top:1px solid var(--line)}.olab{font-size:13px;color:var(--muted)}.olab b{font-size:18px;color:var(--ink)}
+.otrack{position:relative;height:46px}.ogrid{position:absolute;top:0;bottom:0;width:1px;background:var(--line)}
+.obar{position:absolute;top:7px;height:32px;border-radius:7px;background:#0b6bb8;color:#fff;font-size:12px;line-height:32px;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.obar i{position:absolute;left:0;top:0;bottom:0;background:rgba(255,255,255,.28)}.obar b{position:relative;font-variant-numeric:tabular-nums}
+.obar.lx{background:#1a1440;color:#ffc23d}.obar.kc{background:#f39a2b;color:#2a1800}.obar.tight{box-shadow:inset -4px 0 0 #e2452e,0 1px 3px rgba(0,0,0,.2)}.obar.done{opacity:.4}
+.onow{position:absolute;top:0;bottom:0;width:2px;background:#e2452e;z-index:2}
+.lg{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-left:8px;background:#0b6bb8}.lg.lx{background:#1a1440}.lg.kc{background:#f39a2b}.lg.tight{background:#fff;box-shadow:inset -4px 0 0 #e2452e;border:1px solid var(--line)}
+.olist{display:flex;flex-direction:column;gap:6px}.oitem{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:9px 12px;border-radius:10px;border:1px solid var(--line);font-size:13.5px}.oitem.bad{border-color:#e2452e;background:rgba(226,69,46,.07)}.oitem.warn{border-color:#f39a2b}.oitem em{font-style:normal;font-weight:800;white-space:nowrap}.oitem.bad em{color:#e2452e}
+.heat{overflow-x:auto}.heat table{border-collapse:separate;border-spacing:3px;font-size:12px;width:100%}.heat th{font-weight:600;color:var(--muted);text-align:center;padding:2px}.heat tbody th{text-align:left;white-space:nowrap}
+.heat td{height:28px;min-width:24px;text-align:center;border-radius:5px;font-weight:700;background:rgba(11,107,184,calc(.06 + var(--v)*.9));color:color-mix(in srgb,var(--ink) calc(100% - var(--v)*100%),#fff)}
+@media (max-width:900px){.grid.stats.opsstats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 <title>IMC Hub</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -430,6 +445,8 @@ body.menuopen{overflow:hidden}
       <button data-view="dashboard">Planner<small>Your week of posts</small></button>
       <button data-view="library">Posts <span class="count" id="cnt"></span><small>Drafts and scheduled posts</small></button>
       <button data-view="calendar">Ideas calendar<small>Key dates and what to post</small></button>
+      <h3>Run the cinema</h3>
+      <button data-view="ops">Screens &amp; run sheet<small>Timeline, changeovers, busy times</small></button>
       <h3>Foyer TVs</h3>
       <button data-view="foyer">Foyer trailers<small>Safe trailer loop and packs</small></button>
       <button data-view="welcome">Welcome videos<small>IMC and LUXX logo reveals</small></button>
@@ -456,6 +473,12 @@ body.menuopen{overflow:hidden}
         <div class="row-btns"><button class="btn primary" id="planAll">Add every best post to the planner</button><button class="btn" data-ics title="Download your planned posts as calendar alerts">🔔 Remind me on my phone</button><button class="btn" data-print="week">🖨️ Print this week's films</button></div>
       </div>
       <div id="planBody"></div>
+    </section>
+
+    <!-- RUN THE CINEMA -->
+    <section id="v-ops" hidden>
+      <div class="head"><div><h1>Screens &amp; run sheet</h1><p>Every showing at <span class="sitename">IMC Enniskillen</span> by screen, with when each film ends, the time between films and the busiest times of the week. Worked out from imc.ie's listings and running times.</p></div></div>
+      <div id="opsBody"></div>
     </section>
 
     <!-- REPLY HELPER -->
@@ -498,6 +521,12 @@ body.menuopen{overflow:hidden}
             <label class="check"><input type="checkbox" id="fsound" checked> Sound on (click Start once on the TV)</label>
             <label class="field" style="max-width:220px"><span class="flabel">Showtimes card length</span><select id="fcard"><option value="8">8 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option></select></label>
             <label class="field" style="max-width:300px"><span class="flabel">Welcome videos between trailers</span><select class="wfreq"></select></label><button class="btn small" data-go="welcome" style="align-self:flex-start">Make welcome videos →</button></fieldset>
+          <fieldset><legend>Screens between trailers</legend>
+            <label class="field" style="max-width:300px"><span class="flabel">"Now showing" board with screen numbers</span><select id="fbd"><option value="0">Off</option><option value="2">After every 2 films</option><option value="3">After every 3 films</option><option value="5">After every 5 films</option></select></label>
+            <label class="check"><input type="checkbox" id="fpr"> Deals and offers slides <small>(Wednesday Meal Deal, Kids Club, LUXX, scan to book, coming soon)</small></label>
+            <label class="check"><input type="checkbox" id="fstrip"> Info strip along the bottom <small>(clock, next show, scrolling news)</small></label>
+            <label class="check"><input type="checkbox" id="fscr"> Show screen numbers</label>
+            <label class="field"><span class="flabel">Your own messages <small>(one per line; they scroll along the strip and get their own slide)</small></span><textarea id="fmsg" rows="3" placeholder="e.g. Halloween fancy dress: come dressed up on Saturday!"></textarea></label></fieldset>
         </div>
         <div class="row-btns" style="margin-top:12px"><a class="btn" id="flounge" target="imc-lounge" style="text-decoration:none;order:2">LUXX lounge player ↗</a><a class="btn primary" id="fopen" target="imc-foyer" style="text-decoration:none">Open foyer player ↗</a><button class="btn" id="fcopy">Copy TV link</button><button class="btn" id="fzip">Download pack (.zip)</button><button class="btn" id="fcsv">Download trailer list (.csv)</button></div>
         <div id="fprog" class="tip" hidden></div>
@@ -861,7 +890,7 @@ async function remove(id){
 const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
 /* ---------- navigation ---------- */
-function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="luxx")renderLuxx();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();if(v==="plan")renderPlan();if(v==="replies")renderReplies();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button,.qtab").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));menu(false);if(v==="studio")drawPoster();window.scrollTo(0,0)}
+function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="luxx")renderLuxx();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();if(v==="plan")renderPlan();if(v==="replies")renderReplies();if(v==="ops")renderOps();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button,.qtab").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));menu(false);if(v==="studio")drawPoster();window.scrollTo(0,0)}
 $("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view);else if(e.target.closest("a"))menu(false)});
 $(".quick").addEventListener("click",e=>{const b=e.target.closest("[data-view]");if(b)go(b.dataset.view)});
 /* hamburger menu: a drawer from the left, closed with ✕, Esc or a click outside */
@@ -1431,7 +1460,7 @@ $("#resetDeals").onclick=()=>{try{localStorage.removeItem(sk("imc-deals"))}catch
 const FSAFE={bbfc:["U","PG","12A","12"],ifco:["G","PG","12A"]},FRED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
 let TRAIL=null;
 const fsk=()=>sk("imc-foyer");
-function foyState(){try{return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10,wfreq:"r",links:{},extra:[],what:"both",...JSON.parse(localStorage.getItem(fsk())||"{}")}}catch(e){return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10,wfreq:"r",links:{},extra:[],what:"both"}}}
+function foyState(){try{return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10,wfreq:"r",links:{},extra:[],what:"both",bd:3,pr:true,strip:true,scr:true,msg:"",...JSON.parse(localStorage.getItem(fsk())||"{}")}}catch(e){return{mode:"auto",pick:[],ok:[],soon:false,trail:true,sound:true,card:10,wfreq:"r",links:{},extra:[],what:"both"}}}
 function foySave(st){try{localStorage.setItem(fsk(),JSON.stringify(st))}catch(e){}}
 function foyFilms(){if(!IMC)return[];const m=new Map(),T=todayIso(),n=cinemaNow();
   for(const f of allFilms()){const k=f.slug||f.title.toLowerCase(),o=m.get(k);if(!o)m.set(k,{...f,key:k,luxxToo:!!f.luxx,sessions:[...f.sessions]});else{o.luxxToo=o.luxxToo||!!f.luxx;for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s);for(const key of["trailer","cert","certSystem","posterFile","runtime"])o[key]=o[key]||f[key]}}
@@ -1447,12 +1476,12 @@ function foySafety(f,st){const t=f.mine?{title:f.mine.title||""}:(TRAIL||{})[f.t
 function foyChosen(st){const in7=addDays(todayIso(),7);return foyFilms().filter(f=>{const sf=foySafety(f,st);if(!sf.ok)return false;
   if(st.mode==="pick")return st.pick.includes(f.key);return(f.next&&f.next.date<=in7)||(st.soon&&!f.next&&f.sources&&f.sources.has("soon"))}).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer)===i)}
 function foyUrl(st,lounge){const u=new URL("foyer.html",location.href),P=u.searchParams;if(lounge)P.set("luxx","1");P.set("c",site);P.set("mode",st.mode);if(st.mode==="pick")P.set("ids",foyChosen(st).map(f=>f.key).join(","));
-  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=(st.extra||[]);if(xs.length)P.set("x",xs.map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)).join("|"));if(st.what==="mine"&&xs.length)P.set("only","1");const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
+  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=(st.extra||[]);if(xs.length)P.set("x",xs.map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)).join("|"));if(st.what==="mine"&&xs.length)P.set("only","1");if((st.bd??3)!==3)P.set("bd",st.bd);if(st.pr===false)P.set("pr","0");if(st.strip===false)P.set("strip","0");if(st.scr===false)P.set("scr","0");const ms=String(st.msg||"").split("\n").map(x=>x.trim().replace(/\|/g,"/")).filter(Boolean).slice(0,6);if(ms.length)P.set("msg",ms.join("|"));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
 async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
   if(!IMC){el.innerHTML=noData();return}
   if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}
   const st=foyState(),fl=foyFilms(),chosen=new Set(foyChosen(st).map(f=>f.key));
-  $$("input[name=fmode]").forEach(r=>r.checked=r.value===st.mode);$("#fsoon").checked=st.soon;$("#ftrail").checked=st.trail;$("#fsound").checked=st.sound;$("#fcard").value=String(st.card);
+  $$("input[name=fmode]").forEach(r=>r.checked=r.value===st.mode);$("#fsoon").checked=st.soon;$("#ftrail").checked=st.trail;$("#fsound").checked=st.sound;$("#fcard").value=String(st.card);$("#fbd").value=String(st.bd??3);$("#fpr").checked=st.pr!==false;$("#fstrip").checked=st.strip!==false;$("#fscr").checked=st.scr!==false;if(document.activeElement!==$("#fmsg"))$("#fmsg").value=st.msg||"";
   wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=st.what==="mine"&&(st.extra||[]).length?"Not playing: only your trailers are on":`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;$("#fwhat").value=st.what||"both";renderExtra(st);
   const row=f=>{const sf=foySafety(f,st),t=(TRAIL||{})[f.trailer]||{},nx=f.next?`${f.next.date===todayIso()?"Today":fmtShort(f.next.date)} ${f.next.time}`:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"No upcoming times";
     return`<div class="frow"><input type="checkbox" aria-label="Include ${esc(f.title)}" data-fpick="${esc(f.key)}" ${chosen.has(f.key)?"checked":""} ${sf.ok&&st.mode==="pick"?"":"disabled"}>
@@ -1483,7 +1512,7 @@ $("#xlist").addEventListener("click",e=>{const mv=e.target.closest("[data-xmove]
   if(mv){const i=+mv.dataset.xmove,j=i+ +mv.dataset.d;if(j<0||j>=xs.length)return;[xs[i],xs[j]]=[xs[j],xs[i]]}else xs.splice(+dl.dataset.xdel,1);st.extra=xs;foySave(st);renderFoyer()});
 $("#v-foyer").addEventListener("change",e=>{const st=foyState(),t=e.target;
   if(t.name==="fmode"){st.mode=t.value;if(st.mode==="pick"&&!st.pick.length)st.pick=foyChosen({...st,mode:"auto"}).map(f=>f.key)}
-  else if(t.id==="fsoon")st.soon=t.checked;else if(t.id==="ftrail")st.trail=t.checked;else if(t.id==="fsound")st.sound=t.checked;else if(t.id==="fcard")st.card=+t.value;else if(t.id==="fwhat")st.what=t.value;
+  else if(t.id==="fsoon")st.soon=t.checked;else if(t.id==="ftrail")st.trail=t.checked;else if(t.id==="fsound")st.sound=t.checked;else if(t.id==="fcard")st.card=+t.value;else if(t.id==="fbd")st.bd=+t.value;else if(t.id==="fpr")st.pr=t.checked;else if(t.id==="fstrip")st.strip=t.checked;else if(t.id==="fscr")st.scr=t.checked;else if(t.id==="fmsg")st.msg=t.value.slice(0,600);else if(t.id==="fwhat")st.what=t.value;
   else if(t.dataset.fpick){const k=t.dataset.fpick;st.pick=t.checked?[...new Set([...st.pick,k])]:st.pick.filter(x=>x!==k)}
   else if(t.dataset.fok){if(t.checked){st.ok=[...new Set([...st.ok,t.dataset.fok])];if(st.mode==="pick")st.pick=[...new Set([...st.pick,t.dataset.fok])]}}
   else return;foySave(st);renderFoyer()});
@@ -1964,6 +1993,61 @@ function icsReminders(){const T=todayIso(),to=addDays(T,13),L=posts.filter(p=>p.
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));a.download="imc-post-reminders.ics";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);
   toast(`${L.length} reminder${L.length>1?"s":""} ready. Open the file to add them to your calendar`)}
 document.addEventListener("click",e=>{if(e.target.closest("[data-ics]"))icsReminders()});
+
+/* ==================== Run the cinema: screen timeline, changeovers, busy times, printable run sheet ==================== */
+const OPS={day:null,ads:20};try{OPS.ads=+localStorage.getItem("imc-ops-ads")||20}catch(e){}
+const ohm=m=>String(Math.floor(m/60)%24).padStart(2,"0")+":"+String(m%60).padStart(2,"0");
+const toM=t=>{const[a,b]=String(t).split(":").map(Number);return a*60+b};
+/* every showing on a day, with when the film starts (after ads and trailers) and when the screen is free */
+function opsShows(date){const out=[],seen=new Set();
+  for(const f of allFilms())for(const s of f.sessions){if(s.date!==date)continue;const t=f.title.replace(/^sensory\s*:?\s*/i,"").replace(/\s+-\s+luxx$/i,"").trim(),k=t+s.time+(s.screen||"");if(seen.has(k))continue;seen.add(k);
+    const rt=+f.runtime||0,st=toM(s.time),fs=st+OPS.ads,end=fs+(rt||120);
+    out.push({title:t,cert:f.cert&&f.cert!=="TBC"?f.cert:"",screen:s.screen||"?",start:st,filmStart:fs,end,guess:!rt,luxx:!!(s.luxx||f.luxx),kids:(s.tags||[]).includes("kidsclub"),relaxed:/^sensory/i.test(f.title)||!!f.sensory,td:!!s.threeD})}
+  out.sort((a,b)=>a.start-b.start);
+  /* changeover: time between one film ending and the next show starting in the same screen */
+  const by={};for(const x of out)(by[x.screen]=by[x.screen]||[]).push(x);
+  for(const L of Object.values(by))L.forEach((x,i)=>{const n=L[i+1];x.next=n||null;x.gap=n?n.start-x.end:null});
+  return{shows:out,by}}
+function screensRunning(shows,m){return new Set(shows.filter(x=>x.start<=m&&x.end>m).map(x=>x.screen)).size}
+function renderOps(){const el=$("#opsBody");if(!el)return;if(!IMC){el.innerHTML=noData();return}const T=todayIso(),d=OPS.day||T,{shows,by}=opsShows(d),n=cinemaNow?cinemaNow():null;
+  const days=[...Array(7)].map((_,i)=>addDays(T,i)),screens=Object.keys(by).sort((a,b)=>(+a||99)-(+b||99));
+  const dayPills=`<div class="opsdays">${days.map((x,i)=>`<button data-opsday="${x}" aria-pressed="${x===d}">${i===0?"Today":i===1?"Tomorrow":esc(fmtShort(x))}</button>`).join("")}</div>`;
+  if(!shows.length){el.innerHTML=dayPills+`<p class="tip">No showings listed for that day yet.</p>`;return}
+  const first=shows[0].start,last=Math.max(...shows.map(x=>x.end)),from=Math.floor(first/60)*60,to=Math.ceil(last/60)*60,span=to-from;
+  let peak=0,peakAt=first;for(let m=from;m<to;m+=5){const r=screensRunning(shows,m);if(r>peak){peak=r;peakAt=m}}
+  const tight=shows.filter(x=>x.gap!=null&&x.gap<15).sort((a,b)=>a.end-b.end),warm=shows.filter(x=>x.gap!=null&&x.gap>=15&&x.gap<25);
+  const nowM=d===T&&n?toM(n.hm):null;
+  const pct=m=>((m-from)/span*100).toFixed(2)+"%";
+  const hours=[];for(let m=from;m<=to;m+=60)hours.push(m);
+  const bar=x=>`<div class="obar${x.luxx?" lx":""}${x.kids?" kc":""}${x.gap!=null&&x.gap<15?" tight":""}${nowM!=null&&x.end<nowM?" done":""}" style="left:${pct(x.start)};width:calc(${((x.end-x.start)/span*100).toFixed(2)}% - 2px)" title="${esc(x.title)} · ${ohm(x.start)} doors/ads, film ${ohm(x.filmStart)}–${ohm(x.end)}${x.guess?" (running time not listed: 2 hrs assumed)":""}${x.gap!=null?` · ${x.gap} min until the next show`:""}"><i style="width:${(OPS.ads/(x.end-x.start)*100).toFixed(1)}%"></i><b>${ohm(x.start)}</b> ${esc(x.title)}</div>`;
+  el.innerHTML=dayPills+`
+  <div class="grid stats opsstats">
+    <div class="panel stat"><div class="n">${shows.length}</div><div class="l">showings on ${screens.length} screen${screens.length>1?"s":""}</div></div>
+    <div class="panel stat"><div class="n">${ohm(first)}</div><div class="l">first show (doors before this)</div></div>
+    <div class="panel stat"><div class="n">~${ohm(last)}</div><div class="l">last film finishes</div></div>
+    <div class="panel stat"><div class="n">${peak}</div><div class="l">screens running at the busiest time (${ohm(peakAt)})</div></div>
+    <div class="panel stat ${tight.length?"bad":""}"><div class="n">${tight.length}</div><div class="l">tight changeover${tight.length===1?"":"s"} (under 15 min)</div></div></div>
+  <div class="panel" style="margin-top:16px"><div class="ph"><h2>Screen timeline</h2><div class="row-btns"><label class="field" style="margin:0"><span class="flabel">Ads and trailers before each film</span><select id="opsAds">${[10,15,20,25,30].map(v=>`<option value="${v}" ${v===OPS.ads?"selected":""}>${v} minutes</option>`).join("")}</select></label><button class="btn" id="opsPrint">🖨️ Print run sheet</button></div></div>
+    <div class="otl"><div class="ohours">${hours.map(m=>`<span style="left:${pct(m)}">${ohm(m)}</span>`).join("")}</div>
+      ${screens.map(sc=>`<div class="orow"><div class="olab">Screen <b>${esc(sc)}</b></div><div class="otrack">${hours.map(m=>`<span class="ogrid" style="left:${pct(m)}"></span>`).join("")}${by[sc].map(bar).join("")}${nowM!=null&&nowM>from&&nowM<to?`<span class="onow" style="left:${pct(nowM)}"></span>`:""}</div></div>`).join("")}</div>
+    <p class="tip" style="margin-bottom:0">The lighter start of each bar is ads and trailers. <span class="lg lx"></span> LUXX <span class="lg kc"></span> Kids Club <span class="lg tight"></span> tight changeover after this show. Running times come from imc.ie; where one is missing, 2 hours is assumed.</p></div>
+  <div class="grid two" style="margin-top:16px">
+    <div class="panel"><div class="ph"><h2>Changeovers to watch</h2></div>${tight.length||warm.length?`<div class="olist">${[...tight,...warm].map(x=>`<div class="oitem ${x.gap<15?"bad":"warn"}"><b>Screen ${esc(x.screen)}</b><span>${esc(x.title)} ends ~${ohm(x.end)} → ${esc(x.next.title)} at ${ohm(x.next.start)}</span><em>${x.gap<0?"overlaps by "+(-x.gap)+" min":x.gap+" min"}</em></div>`).join("")}</div>`:`<p class="tip">Every screen has at least 25 minutes between films. 👍</p>`}</div>
+    <div class="panel"><div class="ph"><h2>Busy times this week</h2></div>${heatmap()}<p class="tip" style="margin-bottom:0">How many screens are running in each hour. Handy for planning staff rotas.</p></div></div>`;
+  $("#opsAds").onchange=e=>{OPS.ads=+e.target.value;try{localStorage.setItem("imc-ops-ads",OPS.ads)}catch(x){}renderOps()};
+  $("#opsPrint").onclick=()=>printRunSheet(d)}
+function heatmap(){const T=todayIso(),days=[...Array(7)].map((_,i)=>addDays(T,i)),H=[...Array(15)].map((_,i)=>10+i);let max=1;
+  const data=days.map(d=>{const{shows}=opsShows(d);return H.map(h=>{let r=0;for(let m=h*60;m<h*60+60;m+=10)r=Math.max(r,screensRunning(shows,m));max=Math.max(max,r);return r})});
+  return`<div class="heat"><table><thead><tr><th></th>${H.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${days.map((d,i)=>`<tr><th>${i===0?"Today":esc(fmtShort(d).split(" ")[0])}</th>${data[i].map((v,j)=>`<td style="--v:${(v/max).toFixed(2)}" title="${esc(fmtShort(d))} ${H[j]}:00: ${v} screen${v===1?"":"s"} running">${v||""}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`}
+function printRunSheet(d){const{shows}=opsShows(d),nm=S().name;
+  const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Run sheet ${esc(d)}</title><style>@page{size:A4 portrait;margin:10mm}body{font:12px/1.35 Arial,sans-serif;color:#111;margin:0}@media screen{body{max-width:760px;margin:20px auto}}
+h1{font-size:22px;margin:0}p{margin:2px 0 10px;color:#444}table{width:100%;border-collapse:collapse}th,td{border:1px solid #bbb;padding:4px 6px;text-align:left}th{background:#0b6bb8;color:#fff}tr:nth-child(even) td{background:#f2f6fb}td.t{font-weight:700;font-family:monospace;font-size:13px}.bad{background:#ffd9d4!important;font-weight:700}.warn{background:#fff1c2!important}.tag{border:1px solid #333;border-radius:3px;font-size:10px;padding:0 3px;margin-left:4px}td.chk{width:22px}</style></head><body>
+<h1>Run sheet · ${esc(nm)}</h1><p>${esc(fmtLong(d))} · ${OPS.ads} min ads and trailers before each film · ${shows.length} showings</p>
+<table><thead><tr><th>Doors / ads</th><th>Screen</th><th>Film</th><th>Film starts</th><th>Ends</th><th>Next in screen</th><th>Changeover</th><th>✓</th></tr></thead><tbody>
+${shows.map(x=>`<tr><td class="t">${ohm(x.start)}</td><td>${esc(x.screen)}</td><td>${esc(x.title)}${x.cert?`<span class="tag">${esc(x.cert)}</span>`:""}${x.luxx?'<span class="tag">LUXX</span>':""}${x.kids?'<span class="tag">Kids Club</span>':""}${x.relaxed?'<span class="tag">Relaxed</span>':""}</td><td class="t">${ohm(x.filmStart)}</td><td class="t">${x.guess?"~":""}${ohm(x.end)}</td><td>${x.next?ohm(x.next.start):"–"}</td><td class="${x.gap!=null&&x.gap<15?"bad":x.gap!=null&&x.gap<25?"warn":""}">${x.gap==null?"Last show":x.gap+" min"}</td><td class="chk"></td></tr>`).join("")}
+</tbody></table><p style="margin-top:8px">~ running time not listed on imc.ie; 2 hours assumed. Printed from the IMC hub.</p><script>window.onload=()=>setTimeout(()=>print(),300)<\/script></body></html>`;
+  const w=window.open("","imc-print");if(!w){toast("Allow pop-ups for this site to print");return}w.document.open();w.document.write(html);w.document.close()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-opsday]");if(b){OPS.day=b.dataset.opsday;renderOps()}});
 
 /* ---------- start panel: the common jobs, one click each ---------- */
 function startPanel(){const se=hSeasonNow()[0];

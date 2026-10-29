@@ -88,6 +88,80 @@ Both shrink themselves to fit on one sheet.
 
 **🔔 Remind me on my phone** (Planner and Week ahead) downloads your planned posts for the next two weeks as a calendar file. Open it on your phone or computer and each post becomes an alert at its posting time, with the caption inside. It works with iPhone, Android, Outlook and Google Calendar.
 
+## Foyer screen player (foyer.html)
+
+The foyer player loops through:
+
+- each film's **showtimes card**, then its trailer
+- a **"Now showing" board**
+- **deals and offers slides**
+- welcome videos
+
+An **info strip** runs along the bottom the whole time.
+
+- **Showtimes cards:**
+  - the poster, a NEW badge in a film's first week, and tags for LUXX, Kids Club, Relaxed and 3D
+  - each time shows its screen number, or LUXX for a LUXX showing
+  - the next show is highlighted, with a "Next show in 25 min · Screen 7" or "Now seating" chip
+  - a **QR code that books that exact showing**
+- **During trailers:**
+  - the film's name and today's times appear for the first few seconds
+  - the booking QR code fades in for the last 25 seconds
+- **"Now showing" board:** every remaining show today, with time, certificate, film, screen and a live status:
+  - **Now seating** (up to 20 minutes before)
+  - **In 35 min**
+  - **Book now**
+  - **Started**
+  
+  It fits as many rows as the screen allows and pages through the rest.
+- **Deals and offers slides** are made from imc.ie's live data:
+  - the **Wednesday Meal Deal** with its price and the popcorn combo photo (Monday to Wednesday, "Today only" on Wednesday)
+  - **Kids Club** posters with days and times
+  - **LUXX** with the from-price and today's LUXX films
+  - **Coming soon** posters with dates
+  - **Book on your phone** with a big QR code
+  - any **messages you type** in the hub
+- **Info strip:**
+  - the IMC logo and a clock
+  - the next show ("Now seating · Screen 4 · 13:30 Shaun the Sheep")
+  - a scrolling ticker with your messages, the Wednesday Meal Deal, Kids Club and LUXX prices, and tonight's last film
+- **Opening and closing:**
+  - before the first show it says good morning and lists today's films
+  - after the last show it says "Thanks for visiting" and shows tomorrow's films and times
+- **Reliability:**
+  - works on upright (portrait) TVs as well as normal ones
+  - keeps the screen awake where the browser allows
+  - keeps running from a saved copy if the internet drops, with a small "offline" note
+  - reloads itself if anything ever gets stuck for 7 minutes, and refreshes at 5am
+  - on very slow PCs it turns off the heavy effects automatically
+- **Keys:** → skip · B jump to the board · F full screen · M sound on/off
+
+Set it up in the hub under **Foyer trailers → Screens between trailers**:
+
+- how often the board appears (or off)
+- deals slides on or off
+- info strip on or off
+- whether to show screen numbers
+- up to six of your own messages
+
+All of it travels in the TV link, so just copy the link again after changing anything.
+
+## Screens & run sheet (Run the cinema)
+
+In the menu under **Run the cinema**. For today or any of the next six days it shows:
+
+- **Summary:** the number of showings, the first show, roughly when the last film finishes, the most screens running at once, and how many tight changeovers there are.
+- **Screen timeline:** one row per screen with a bar for every show. The lighter start of each bar is ads and trailers, and you can set how long those last (10–30 minutes). A red line marks now, and finished shows fade out. LUXX shows are navy and Kids Club shows orange.
+- **Changeovers to watch:** where the next show in a screen starts less than 25 minutes after the film before it ends. Under 15 minutes is red.
+- **Busy times this week:** a heatmap of how many screens are running each hour for the next 7 days, for planning staff rotas.
+- **🖨️ Print run sheet:** an A4 list of every show with:
+  - start (doors and ads), screen, film and tags
+  - when the film starts and ends
+  - the next show in that screen and the changeover time
+  - a tick column for staff
+
+End times come from imc.ie's running times. Where one is missing, 2 hours is assumed and marked with ~.
+
 ## Photo & video editor
 
 - **Background:** your photo or video, an official poster (**Whole poster** shows the full poster over a blurred copy of itself), or an IMC background (IMC stage, Sky, Midnight, Sunset).

@@ -6,105 +6,233 @@
 <title>IMC Foyer Trailers</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:wght@700&family=Figtree:wght@500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:wght@700&family=Figtree:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-/* Full-screen foyer player: a showtimes card, then the film's official trailer, then the next film. Built for TVs, so everything scales with the screen. */
-:root{--ink:#fff;--muted:#b9c3e6;--gold:#ffd84a;--blue:#1fa0de;--bg:#070a1c;--stripe:linear-gradient(90deg,#ffd84a,#f39a2b 55%,#e2452e);
-  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--f-body:"Figtree",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,monospace}
+/* Full-screen foyer player for TVs. It loops: showtimes card → trailer → next film, with a "Now showing" departures board,
+   promo slides and welcome videos in between, and a live strip along the bottom with the clock, the next show and a ticker.
+   Everything is sized from the screen, so it works on any TV, landscape or portrait. */
+:root{--ink:#fff;--muted:#b9c3e6;--gold:#ffd84a;--amber:#f39a2b;--red:#e2452e;--green:#46d17a;--blue:#1fa0de;--bg:#070a1c;--panel:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);
+  --stripe:linear-gradient(90deg,#ffd84a,#f39a2b 55%,#e2452e);--lux:#ffc23d;
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--f-body:"Figtree",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,monospace;--strip:9vh}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--f-body);overflow:hidden;cursor:none}
 body.pointer{cursor:default}
 #stage{position:fixed;inset:0}
-.layer{position:absolute;inset:0;transition:opacity .8s ease}
+.layer{position:absolute;inset:0 0 var(--strip) 0;transition:opacity .9s ease}
+body.nostrip .layer{bottom:0}
 .layer[hidden]{display:block!important;opacity:0;pointer-events:none}
+.layer.full{bottom:0}
 #ident{background:#000}#ident canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 #yt-wrap{overflow:hidden;background:#000}
-/* The trailer is drawn slightly larger than the screen so YouTube's title bar (top) and logo / "Watch on YouTube" (bottom) sit off-screen. */
+/* The trailer is drawn slightly larger than its area so YouTube's title bar and logo sit off-screen. */
 #yt,#yt iframe{position:absolute;top:-9%;left:-9%;width:118%;height:118%;border:0;background:#000;pointer-events:none}
-/* Nothing on the TV can click or hover the player, so its pop-ups never appear. The curtain hides the player while it loads, pauses or ends. */
 #ytshield{position:absolute;inset:0;z-index:1}
 #ytcurtain{position:absolute;inset:0;z-index:2;background:#000;opacity:1;transition:opacity .5s}
 #ytcurtain.off{opacity:0}
-#tlabel{z-index:3}
-/* showtimes card */
-#card{display:grid;grid-template-columns:auto 1fr;gap:4vw;align-items:center;padding:6vh 6vw 10vh;overflow:hidden}
-#card .bgimg{position:absolute;inset:-6%;background-size:cover;background-position:center;filter:blur(40px) brightness(.38) saturate(1.25);transform:scale(1.1)}
-#card .shade{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(7,10,28,.2),rgba(7,10,28,.85) 75%)}
-#card .poster{position:relative;height:74vh;aspect-ratio:2/3;border-radius:1.2vh;background:#111 center/cover;box-shadow:0 3vh 8vh rgba(0,0,0,.6);animation:drift 12s ease-in-out infinite alternate}
-#card .info{position:relative;min-width:0;display:flex;flex-direction:column;gap:2.4vh}
-.kicker{font-family:var(--f-mono);font-size:2.2vh;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+#tlabel{position:absolute;z-index:3;left:3vw;top:3.5vh;display:flex;align-items:center;gap:1.2vw;padding:1.2vh 1.6vw;border-radius:1.2vh;background:rgba(5,7,20,.72);font-family:var(--f-display);font-weight:800;font-size:3.8vh;text-transform:uppercase;letter-spacing:.04em;transition:opacity .6s}
+#tlabel small{font:600 2vh var(--f-mono);letter-spacing:.12em;color:var(--gold)}
+#tqr{position:absolute;z-index:3;right:3vw;bottom:3vh;display:flex;align-items:center;gap:1vw;padding:1.2vh;border-radius:1.4vh;background:rgba(5,7,20,.78);transition:opacity .6s}
+#tqr svg{width:13vh;height:13vh;border-radius:.6vh}#tqr span{font:700 2.2vh var(--f-body);max-width:12ch;line-height:1.2}#tqr b{display:block;color:var(--gold);font:600 2.8vh var(--f-mono)}
+
+/* ---------- showtimes card ---------- */
+#card{display:grid;grid-template-columns:auto 1fr;gap:4vw;align-items:center;padding:5vh 5vw 4vh;overflow:hidden}
+#card .bgimg{position:absolute;inset:-6%;background-size:cover;background-position:center;filter:blur(40px) brightness(.36) saturate(1.25);transform:scale(1.1)}
+body.lite #card .bgimg{filter:none;opacity:.22}
+#card .shade{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(7,10,28,.15),rgba(7,10,28,.88) 75%)}
+#card .poster{position:relative;height:78vh;aspect-ratio:2/3;border-radius:1.2vh;background:#111 center/cover;box-shadow:0 3vh 8vh rgba(0,0,0,.6);animation:drift 14s ease-in-out infinite alternate}
+#card .info{position:relative;min-width:0;display:flex;flex-direction:column;gap:2.2vh}
+#card.in .info>*{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+#card.in .info>*:nth-child(2){animation-delay:.08s}#card.in .info>*:nth-child(3){animation-delay:.16s}#card.in .info>*:nth-child(4){animation-delay:.24s}#card.in .info>*:nth-child(5){animation-delay:.32s}#card.in .info>*:nth-child(6){animation-delay:.4s}
+#card.in .poster{animation:pin 1s cubic-bezier(.2,.8,.2,1) both,drift 14s 1s ease-in-out infinite alternate}
+.kicker{font-family:var(--f-mono);font-size:2.2vh;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:flex;gap:1.4vw;align-items:center;flex-wrap:wrap}
+.kicker .new{background:var(--red);color:#fff;letter-spacing:.15em;padding:.4vh .8vw;border-radius:.6vh;font-weight:600}
 .title{font-family:var(--f-display);font-weight:900;font-size:11vh;line-height:.92;text-transform:uppercase;text-wrap:balance;margin:0}
-.meta{display:flex;gap:1.6vw;align-items:center;font-size:2.8vh;color:var(--muted);font-weight:600}
+.title.long{font-size:8.5vh}.title.xlong{font-size:6.8vh}
+.meta{display:flex;gap:1.4vw;align-items:center;font-size:2.8vh;color:var(--muted);font-weight:600;flex-wrap:wrap}
 .meta img{height:5.5vh;width:auto}
-.meta .luxx{color:#ffd98a;font-family:"Georgia",serif;letter-spacing:.35em;border:1px solid rgba(255,217,138,.6);padding:.4vh 1vw}
-.when{font-size:2.6vh;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-top:1vh}
+.tag{font:700 2.2vh var(--f-body);letter-spacing:.12em;text-transform:uppercase;padding:.5vh .9vw;border-radius:.7vh;border:1px solid var(--line)}
+.tag.luxx{color:#ffd98a;font-family:Georgia,serif;letter-spacing:.35em;border-color:rgba(255,217,138,.6)}
+.tag.kids{background:var(--gold);color:#2a1800;border-color:var(--gold)}
+.tag.relaxed{background:#3d6cf0;border-color:#3d6cf0}.tag.td{border-color:var(--blue);color:#8fd6ff}
+.when{font-size:2.5vh;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-top:.6vh}
 .times{display:flex;flex-wrap:wrap;gap:1.2vh}
-.times span{font-family:var(--f-mono);font-size:4.2vh;padding:1vh 1.6vw;border-radius:1vh;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-variant-numeric:tabular-nums}
-.book{font-size:3vh;font-weight:700;margin-top:1.5vh}
-.book b{color:var(--gold)}
-#bar{position:absolute;left:0;right:0;bottom:0;height:9vh;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:linear-gradient(0deg,rgba(0,0,0,.65),transparent)}
-#bar::before{content:"";position:absolute;left:0;right:0;top:0;height:.5vh;background:var(--stripe);opacity:.9}
-#bar img{height:6vh}
-#bar span{font-family:var(--f-mono);letter-spacing:.25em;font-size:2vh;color:var(--muted);text-transform:uppercase}
-#bar .prog{position:absolute;left:0;bottom:0;height:.45vh;background:rgba(255,255,255,.55);width:0}
-/* trailer label shown over the video for the first few seconds */
-#tlabel{position:absolute;left:4vw;top:4vh;padding:1.2vh 1.6vw;border-radius:1vh;background:rgba(0,0,0,.55);font-family:var(--f-display);font-weight:800;font-size:4vh;text-transform:uppercase;letter-spacing:.04em;transition:opacity .6s}
-/* start screen and notices */
-#start{display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 50% 40%,#1a2150,#070a1c 70%);cursor:pointer}
+.times span{position:relative;font-family:var(--f-mono);font-weight:600;font-size:4.2vh;padding:1vh 1.5vw;border-radius:1vh;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-variant-numeric:tabular-nums;display:flex;flex-direction:column;align-items:center;line-height:1.05}
+.times span small{font:600 1.6vh var(--f-body);letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-top:.3vh}
+.times span.lx{border-color:rgba(255,194,61,.7);background:rgba(255,194,61,.12)}.times span.lx small{color:var(--lux)}
+.times span.kc{border-color:var(--gold);background:rgba(255,216,74,.18)}
+.times span.next{background:var(--gold);color:#1a1030;border-color:var(--gold);box-shadow:0 0 0 .5vh rgba(255,216,74,.25)}.times span.next small{color:#4a3500}
+.soonchip{font:700 2.6vh var(--f-body);color:#1a1030;background:var(--green);padding:.8vh 1.2vw;border-radius:99px;align-self:flex-start;animation:pulse 2s ease-in-out infinite}
+.soonchip.warm{background:var(--gold)}
+.bookrow{display:flex;align-items:center;gap:2vw;margin-top:1vh}
+.book{font-size:3vh;font-weight:700}.book b{color:var(--gold)}
+.qrbox{display:flex;align-items:center;gap:1.2vw;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:1.4vh;padding:1.2vh 1.4vw 1.2vh 1.2vh}
+.qrbox svg{width:14vh;height:14vh;border-radius:.6vh;flex:none}.qrbox span{font-weight:700;font-size:2.3vh;line-height:1.25}.qrbox b{display:block;color:var(--gold);font:600 3vh var(--f-mono)}
+
+/* ---------- Now showing board ---------- */
+#board{padding:4.5vh 5vw 3vh;background:radial-gradient(ellipse at 50% -20%,#1d2a6e,var(--bg) 65%);display:flex;flex-direction:column;gap:2.4vh}
+.bhead{display:flex;justify-content:space-between;align-items:flex-end;gap:2vw}
+.bhead h2{margin:0;font-family:var(--f-display);font-weight:900;font-size:8.5vh;line-height:.9;text-transform:uppercase}
+.bhead h2 em{font-style:normal;color:var(--gold)}
+.bhead p{margin:.8vh 0 0;font:600 2.4vh var(--f-body);color:var(--muted)}
+.bpage{font:600 2vh var(--f-mono);color:var(--muted);letter-spacing:.2em}
+.rows{display:flex;flex-direction:column;gap:1vh;flex:1;min-height:0;overflow:hidden}
+.brow{display:grid;grid-template-columns:13vh 6vh minmax(0,1fr) auto 12vh 26vh;gap:1.6vw;align-items:center;padding:1.15vh 1.4vw;border-radius:1.2vh;background:var(--panel);border:1px solid var(--line);animation:flip .6s cubic-bezier(.2,.8,.2,1) both}
+.brow .t{font:600 4.4vh var(--f-mono);font-variant-numeric:tabular-nums;color:var(--gold)}
+.brow .c img{height:4.6vh;display:block}.brow .c span{font:700 2vh var(--f-body);border:2px solid #fff;border-radius:.6vh;padding:.2vh .4vw}
+.brow .f{font:800 3.8vh var(--f-display);text-transform:uppercase;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brow .g{display:flex;gap:.6vw}.brow .g .tag{font-size:1.6vh;padding:.3vh .6vw}
+.brow .s{font:600 2.2vh var(--f-body);color:var(--muted);text-align:center;line-height:1}.brow .s b{display:block;font:800 4.4vh var(--f-display);color:#fff}
+.brow .st{justify-self:end;font:800 2.3vh var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:1vh 1.2vw;border-radius:99px;text-align:center;min-width:22vh}
+.st.seat{background:var(--green);color:#062614;animation:pulse 2s ease-in-out infinite}
+.st.soon{background:var(--gold);color:#2a1800}
+.st.book{background:rgba(31,160,222,.18);color:#8fd6ff;border:1px solid rgba(31,160,222,.6)}
+.st.gone{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.brow.started{opacity:.55}
+.brow.lx{border-color:rgba(255,194,61,.45);background:linear-gradient(90deg,rgba(255,194,61,.1),transparent 60%),var(--panel)}
+.bfoot{display:flex;justify-content:space-between;align-items:center;font:600 2.2vh var(--f-body);color:var(--muted)}
+.bfoot .qrmini{display:flex;align-items:center;gap:1vw}.bfoot svg{width:10vh;height:10vh;border-radius:.6vh}
+
+/* ---------- promo slides ---------- */
+#promo{overflow:hidden;display:grid;place-items:center;padding:6vh 6vw}
+#promo .pbg{position:absolute;inset:0}
+#promo .pin{position:relative;display:grid;grid-template-columns:1fr auto;gap:5vw;align-items:center;width:100%}
+#promo .pin.one{grid-template-columns:1fr}
+#promo .pk{font:600 2.6vh var(--f-mono);letter-spacing:.35em;text-transform:uppercase;color:var(--gold)}
+#promo h2{margin:1.5vh 0;font:900 13vh/.88 var(--f-display);text-transform:uppercase;text-wrap:balance}
+#promo .pl{font:600 3.4vh/1.35 var(--f-body);color:#e9edff;max-width:34ch}
+#promo .pl li{margin:.6vh 0}#promo ul{padding-left:3.6vh;margin:1vh 0}
+#promo .price{display:inline-grid;place-items:center;text-align:center;width:36vh;height:36vh;border-radius:50%;background:var(--red);color:#fff;font:900 9vh/1 var(--f-display);transform:rotate(-8deg);box-shadow:0 2vh 6vh rgba(0,0,0,.45);animation:pop .9s .3s cubic-bezier(.2,1.4,.4,1) both}
+#promo .price small{display:block;font:800 2.4vh var(--f-body);letter-spacing:.18em;margin-bottom:.8vh}
+#promo .price.mini{width:22vh;height:22vh;font-size:5.6vh;margin-top:2vh}#promo .price.mini small{font-size:1.7vh}
+#promo .prodwrap{position:relative;width:62vh;animation:rise 1s .1s cubic-bezier(.2,.8,.2,1) both}#promo .prodwrap img{width:100%;display:block;border-radius:3vh;transform:rotate(2deg);box-shadow:0 3vh 6vh rgba(0,0,0,.5);background:#fff}#promo .prodwrap .price{position:absolute;right:-5vh;top:-6vh;width:28vh;height:28vh;font-size:7vh}
+#promo.luxx .price{background:linear-gradient(135deg,#ffd98a,#c9902a);color:#1a1030}
+#promo .posters{display:flex;gap:2vw;align-items:flex-end}
+#promo .posters div{width:22vh;aspect-ratio:2/3;border-radius:1vh;background:#111 center/cover;box-shadow:0 2vh 5vh rgba(0,0,0,.5);animation:rise .9s cubic-bezier(.2,.8,.2,1) both;position:relative}
+#promo .posters div b{position:absolute;left:0;right:0;bottom:-5vh;text-align:center;font:700 2.2vh var(--f-body);color:var(--gold);white-space:nowrap}
+#promo .posters div:nth-child(2){animation-delay:.12s}#promo .posters div:nth-child(3){animation-delay:.24s}#promo .posters div:nth-child(4){animation-delay:.36s}
+#promo .bigqr{background:#fff;padding:2vh;border-radius:2vh;box-shadow:0 2vh 6vh rgba(0,0,0,.45)}#promo .bigqr svg{width:44vh;height:44vh;display:block}
+#promo.wed .pbg{background:radial-gradient(circle at 75% 45%,#ff7a3d55,transparent 45%),linear-gradient(135deg,#2a0f3e,#120a2b 55%,#060816)}
+#promo.kids .pbg{background:radial-gradient(circle at 20% 20%,#ffd84a44,transparent 40%),linear-gradient(160deg,#0b6bb8,#0a3f86 60%,#071a40)}
+#promo.luxx .pbg{background:radial-gradient(circle at 70% 30%,#ffc23d22,transparent 45%),linear-gradient(160deg,#141026,#05040b)}
+#promo.luxx h2{font-family:"Playfair Display",Georgia,serif;letter-spacing:.06em;color:#ffd98a}
+#promo.scan .pbg{background:radial-gradient(circle at 70% 50%,#1fa0de33,transparent 50%),linear-gradient(135deg,#0b1240,#060816)}
+#promo.soon .pbg{background:radial-gradient(ellipse at 50% 0%,#e2452e33,transparent 55%),linear-gradient(180deg,#140a26,#060816)}
+#promo.msg .pbg{background:linear-gradient(135deg,#1d2a6e,#070a1c)}
+
+/* ---------- opening / closed screen ---------- */
+#hours{display:grid;place-items:center;text-align:center;padding:6vh 6vw;background:radial-gradient(circle at 50% 30%,#1a2150,#070a1c 70%)}
+#hours h2{margin:0;font:900 12vh/.9 var(--f-display);text-transform:uppercase}#hours h2 em{font-style:normal;color:var(--gold)}
+#hours p{font:600 3vh var(--f-body);color:var(--muted);margin:2vh 0 4vh}
+#hours .hl{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4vh 2vw;max-width:150vh}
+#hours .hl span{background:var(--panel);border:1px solid var(--line);border-radius:1.2vh;padding:1.2vh 1.6vw;font:700 2.6vh var(--f-body)}#hours .hl b{font-family:var(--f-mono);color:var(--gold);margin-right:.8vw}
+
+/* ---------- live strip: logo · ticker · next show · clock ---------- */
+#strip{position:absolute;left:0;right:0;bottom:0;height:var(--strip);display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:2.2vw;padding:0 2.4vw;background:#05071a;z-index:5}
+#strip::before{content:"";position:absolute;left:0;right:0;top:0;height:.5vh;background:var(--stripe)}
+#strip img{height:5.6vh}
+.ticker{overflow:hidden;white-space:nowrap;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.ticker div{display:inline-block;padding-left:100%;font:600 2.6vh var(--f-body);color:#e9edff;animation:tick linear infinite}
+.ticker i{font-style:normal;color:var(--gold);margin:0 2.4vw}
+.nextshow{font:600 2.1vh var(--f-body);color:var(--muted);text-align:right;line-height:1.2;max-width:46vh}.nextshow b{display:block;color:#fff;font:800 2.7vh var(--f-display);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.clock{font:600 4.6vh var(--f-mono);font-variant-numeric:tabular-nums;padding-left:2vw;border-left:1px solid var(--line)}
+#prog{position:absolute;left:0;bottom:0;height:.45vh;background:rgba(255,255,255,.45);width:0}
+body.nostrip #strip{display:none}
+
+/* start screen */
+#start{display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 50% 40%,#1a2150,#070a1c 70%);cursor:pointer;z-index:6;bottom:0}
 #start h1{font-family:var(--f-display);font-size:9vh;margin:0 0 2vh;text-transform:uppercase}
 #start p{font-size:2.6vh;color:var(--muted);max-width:60ch;margin:1vh auto}
 #start button{font:700 3vh var(--f-body);padding:2vh 4vw;border-radius:1.2vh;border:0;background:var(--stripe);color:#1a1030;cursor:pointer;margin-top:3vh}
-#help{position:fixed;right:2vw;bottom:11vh;font-size:1.8vh;color:var(--muted);background:rgba(0,0,0,.6);padding:1vh 1.2vw;border-radius:.8vh;opacity:0;transition:opacity .4s}
+#help{position:fixed;right:2vw;bottom:calc(var(--strip) + 2vh);font-size:1.8vh;color:var(--muted);background:rgba(0,0,0,.7);padding:1vh 1.2vw;border-radius:.8vh;opacity:0;transition:opacity .4s;z-index:7}
 body.pointer #help{opacity:1}
+#offline{position:fixed;top:2vh;right:2vw;z-index:7;font:600 1.6vh var(--f-body);color:var(--muted);background:rgba(0,0,0,.6);padding:.6vh 1vw;border-radius:99px}
+
 @keyframes drift{from{transform:scale(1) translateY(0)}to{transform:scale(1.04) translateY(-1vh)}}
-@media (prefers-reduced-motion:reduce){#card .poster{animation:none}.layer{transition:none}}
+@keyframes rise{from{opacity:0;transform:translateY(3vh)}to{opacity:1;transform:none}}
+@keyframes pin{from{opacity:0;transform:translateX(-4vw) rotate(-3deg) scale(.96)}to{opacity:1;transform:none}}
+@keyframes flip{from{opacity:0;transform:perspective(80vh) rotateX(-70deg)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:rotate(-30deg) scale(.4)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
+@keyframes pulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.25)}}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+/* upright (portrait) TVs */
+@media (orientation:portrait){
+  :root{--strip:7vh}
+  #card{grid-template-columns:1fr;grid-template-rows:auto 1fr;justify-items:center;text-align:center;padding:4vh 5vw}
+  #card .poster{height:44vh}#card .info{align-items:center}.meta,.times,.kicker{justify-content:center}.title{font-size:7vh}.title.long{font-size:5.6vh}.title.xlong{font-size:4.6vh}
+  .times span{font-size:3vh}.bookrow{flex-direction:column}
+  .bhead h2{font-size:10vw}.bhead p{font-size:3.4vw}.bpage{font-size:2.6vw;white-space:nowrap}.brow{grid-template-columns:15vw minmax(0,1fr) 11vw 25vw;gap:2vw;padding:1.2vw 2vw}.brow .c,.brow .g{display:none}
+  .brow .t{font-size:5.4vw}.brow .f{font-size:4.6vw}.brow .s{font-size:2.2vw}.brow .s b{font-size:5vw}.brow .st{min-width:0;font-size:2.4vw;padding:1.4vw 1.6vw}
+  .bfoot{font-size:2.6vw}.bfoot svg{width:14vw;height:14vw}#card .poster{height:36vh}.qrbox svg{width:11vh;height:11vh}
+  #promo .pin{grid-template-columns:1fr;text-align:center;justify-items:center}#promo h2{font-size:8vh}#promo .pl{font-size:2.6vh}#promo .posters div{width:15vh}#promo .bigqr svg{width:32vh;height:32vh}
+  #strip{grid-template-columns:auto minmax(0,1fr) auto}.nextshow{display:none}.clock{font-size:3.4vh}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.layer{transition:none}}
+body.lite *{animation-duration:.01s!important}body.lite .ticker div{animation-duration:var(--td)!important}body.lite .st.seat,body.lite .soonchip{animation:none!important}
 </style>
 </head>
 <body>
 <div id="stage">
-  <div id="yt-wrap" class="layer" hidden><div id="yt"></div><div id="ytshield"></div><div id="ytcurtain"></div><div id="tlabel"></div></div>
+  <div id="yt-wrap" class="layer" hidden><div id="yt"></div><div id="ytshield"></div><div id="ytcurtain"></div><div id="tlabel"></div><div id="tqr" style="opacity:0"></div></div>
   <div id="ident" class="layer" hidden><canvas id="icv" width="1920" height="1080" aria-label="Welcome to IMC"></canvas></div>
   <div id="card" class="layer" hidden><div class="bgimg"></div><div class="shade"></div><div class="poster" role="img"></div>
-    <div class="info"><div class="kicker" id="ck"></div><h1 class="title" id="ct"></h1><div class="meta" id="cm"></div><div class="when" id="cw"></div><div class="times" id="cx"></div><div class="book">Book at <b>imc.ie</b></div></div></div>
-  <div id="start" class="layer"><div><h1>Foyer trailers</h1><p id="sinfo">Loading the latest listings…</p><button id="go" hidden>Start</button><p style="font-size:2vh">Tip: press F for full screen, → to skip. Leave this tab open; it updates itself every day.</p></div></div>
-  <div id="bar"><img src="imc-logo.png" alt="IMC Cinemas"><span id="bname"></span><div class="prog" id="prog"></div></div>
+    <div class="info"><div class="kicker" id="ck"></div><h1 class="title" id="ct"></h1><div class="meta" id="cm"></div><div id="cs"></div><div><div class="when" id="cw"></div><div class="times" id="cx"></div></div><div class="bookrow" id="cb"></div></div></div>
+  <div id="board" class="layer" hidden></div>
+  <div id="promo" class="layer" hidden></div>
+  <div id="hours" class="layer" hidden></div>
+  <div id="start" class="layer"><div><h1>Foyer screen</h1><p id="sinfo">Loading the latest listings…</p><button id="go" hidden>Start</button><p style="font-size:2vh">Tip: press F for full screen, → to skip, B for the board. Leave this tab open; it updates itself.</p></div></div>
+  <div id="strip"><img src="imc-logo.png" alt="IMC Cinemas"><div class="ticker" aria-hidden="true"><div id="tick"></div></div><div class="nextshow" id="nextshow"></div><div class="clock" id="clock"></div><div id="prog"></div></div>
 </div>
-<div id="help">→ skip · F full screen · M sound on/off</div>
+<div id="help">→ skip · B board · F full screen · M sound on/off</div>
+<div id="offline" hidden>Showing saved listings (offline)</div>
 <script>try{if(!window.name)window.name=new URLSearchParams(location.search).get("luxx")==="1"?"imc-lounge":"imc-foyer"}catch(e){}</script>
 <script src="ident.js"></script>
+<script src="qr.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
 const Q=new URLSearchParams(location.search);
 const SITE=Q.get("c")||"enniskillen",MODE=Q.get("mode")||"auto",IDS=(Q.get("ids")||"").split(",").filter(Boolean),OK=new Set((Q.get("ok")||"").split(",").filter(Boolean));
 const CARD=Math.max(5,Math.min(30,+Q.get("card")||10)),SOUND=Q.get("sound")!=="0",TRAILERS=Q.get("trailers")!=="0",SOON=Q.get("soon")==="1";
+/* new screens: the board every N films (0 = off), promo slides, the live strip, screen numbers, your ticker messages */
+const BOARD_EVERY=Q.has("bd")?Math.max(0,+Q.get("bd")||0):3,PROMOS=Q.get("pr")!=="0",STRIP=Q.get("strip")!=="0",SCREENS=Q.get("scr")!=="0";
+const MSGS=(Q.get("msg")||"").split("|").map(s=>s.trim()).filter(Boolean).slice(0,6);
+const LITE=Q.get("lite")==="1"||(Q.get("lite")!=="0"&&((navigator.hardwareConcurrency||4)<=2||(navigator.deviceMemory||8)<=2));
 const RAW="https://raw.githubusercontent.com/popcorn483/imc/main/";
 const NI=["enniskillen","ballymena","banbridge","newtownards"];
-/* foyer-safe certificates: trailers for these films are made for all audiences */
 const SAFE={bbfc:["U","PG","12A","12"],ifco:["G","PG","12A"]};
 const RED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
- /* welcome videos made in the hub travel in the link, since the TV can't see the hub's saved settings */
 const LOUNGE=Q.get("luxx")==="1";
-/* trailers you linked yourself in the hub, for films whose imc.ie trailer is missing or unsuitable */
 const MYTR=Object.fromEntries((Q.get("tl")||"").split("|").map(x=>x.split("~")).filter(x=>x.length===2&&/^[\w-]{11}$/.test(x[1])));
-/* your own trailers from the hub, in your order: id~title|id~title */
 const EXTRA=(Q.get("x")||"").split("|").map(x=>{const i=x.indexOf("~"),id=i<0?x:x.slice(0,i);return{id,title:i<0?"":x.slice(i+1)}}).filter(x=>/^[\w-]{11}$/.test(x.id)&&!RED.test(x.title)),ONLY=Q.get("only")==="1"&&EXTRA.length>0;
 const WEL=(window.IMCIdent?IMCIdent.decode(Q.get("w")||""):[]).filter(w=>!LOUNGE||w.brand==="luxx"),WF=Q.get("wf")||(WEL.length?"r":"0");
-let since=0,justIdent=false,lastIdent=-1,idAssets=null,idRaf=0;
+if(!STRIP)document.body.classList.add("nostrip");if(LITE)document.body.classList.add("lite");
+let since=0,lastIdent=-1,idAssets=null,idRaf=0;
 const newGap=()=>WF==="r"?2+Math.floor(Math.random()*3):Math.max(1,+WF||1);let gap=newGap();
-let D=null,T={},base="",queue=[],qi=-1,player=null,timer=null,ytReady=null,muted=!SOUND,lastLoad=0;
+let D=null,T={},base="",queue=[],steps=[],si=0,player=null,timer=null,ytReady=null,muted=!SOUND,lastLoad=0,lastStep=Date.now(),promoI=0,offline=false;
 
-function londonNow(){const p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()))p[x.type]=x.value;return{date:`${p.year}-${p.month}-${p.day}`,hm:`${p.hour}:${p.minute}`}}
+/* ---------- time and data ---------- */
+function londonNow(){const p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date()))p[x.type]=x.value;return{date:`${p.year}-${p.month}-${p.day}`,hm:`${p.hour}:${p.minute}`,s:+p.second}}
+const mins=hm=>{const[a,b]=hm.split(":").map(Number);return a*60+b};
+const addDays=(d,n)=>{const x=new Date(d+"T12:00");x.setDate(x.getDate()+n);return x.toISOString().slice(0,10)};
+const CK="imc-foyer-cache-"+SITE;
 async function getJson(path){for(const u of[RAW+path+"?ts="+Date.now(),path]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json();j._base=u.startsWith(RAW)?RAW:"";return j}}catch(e){}}return null}
 const asset=p=>!p?"":/^https?:/.test(p)?p:base+p;
 const ytId=u=>{const m=/(?:v=|youtu\.be\/|embed\/)([\w-]{6,})/.exec(u||"");return m?m[1]:null};
-/* every film with its upcoming sessions, merged across the importer's lists */
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmtDay=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"});
+const shortDay=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"});
+const cleanTitle=t=>String(t||"").replace(/^sensory\s*:?\s*/i,"").replace(/\s+-\s+luxx$/i,"").trim();
+const isSensory=f=>/^sensory/i.test(f.title||"")||!!f.sensory;
+function qrSvg(url){try{const q=IMCQR.make(url),n=q.size+8;let d="";for(let y=0;y<q.size;y++)for(let x=0;x<q.size;x++)if(q.get(x,y))d+=`M${x+4} ${y+4}h1v1h-1z`;return`<svg viewBox="0 0 ${n} ${n}" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><rect width="${n}" height="${n}" fill="#fff"/><path d="${d}" fill="#000"/></svg>`}catch(e){return""}}
+const TIMES_URL=()=>"https://imc.ie/"+(LOUNGE?"luxx":"film-times")+"/"+((D&&D.slug)||SITE)+"/";
+
+/* every film with its sessions, merged across the importer's lists (one entry per film; LUXX sessions kept in luxxS) */
 function films(){const m=new Map();
   for(const[src,list]of[["today",D.today||[]],["soon",D.comingSoon||[]],["kids",D.kidsClub||[]],["luxx",D.luxx||[]],...(D.days||[]).map(d=>["day",d.films||[]])])
     for(const f of list){if(!f.title)continue;const k=(f.slug||f.title.toLowerCase())+(f.luxx?"|l":"");const p=m.get(k)||{...f,key:k,sources:new Set(),sessions:[]};p.sources.add(src);
-      for(const s of f.sessions||[])if(!p.sessions.some(x=>x.date===s.date&&x.time===s.time))p.sessions.push(s);for(const key of["poster","posterFile","cert","certIcon","certSystem","runtime","trailer","releaseDate"])p[key]=p[key]||f[key];m.set(k,p)}
-  /* one entry per film: the LUXX listing shares the standard one's trailer */
-  const out=new Map();for(const f of m.values()){const k=f.slug||f.title.toLowerCase(),o=out.get(k);if(!o)out.set(k,{...f,key:k,luxxToo:!!f.luxx,luxxS:f.luxx?[...f.sessions]:[]});else{o.luxxToo=o.luxxToo||!!f.luxx;if(f.luxx)for(const s of f.sessions)if(!o.luxxS.some(x=>x.date===s.date&&x.time===s.time))o.luxxS.push(s);for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s)}}
+      for(const s of f.sessions||[])if(!p.sessions.some(x=>x.date===s.date&&x.time===s.time))p.sessions.push({...s,luxx:s.luxx||!!f.luxx});for(const key of["poster","posterFile","cert","certIcon","certSystem","runtime","trailer","releaseDate","status"])p[key]=p[key]||f[key];m.set(k,p)}
+  const out=new Map();for(const f of m.values()){const k=f.slug||f.title.toLowerCase(),o=out.get(k);if(!o)out.set(k,{...f,key:k,luxxToo:!!f.luxx,luxxS:f.luxx?[...f.sessions]:[]});else{o.luxxToo=o.luxxToo||!!f.luxx;if(f.luxx)for(const s of f.sessions)if(!o.luxxS.some(x=>x.date===s.date&&x.time===s.time))o.luxxS.push(s);for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s);for(const key of["poster","posterFile","cert","certIcon","runtime","trailer"])o[key]=o[key]||f[key]}}
   for(const f of out.values())if(MYTR[f.key]){f.trailer="https://www.youtube.com/watch?v="+MYTR[f.key];f.mine=true}
   return[...out.values()]}
 function safety(f){const t=f.mine?{}:T[f.trailer]||{};const sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
@@ -113,69 +241,175 @@ function safety(f){const t=f.mine?{}:T[f.trailer]||{};const sys=f.certSystem||(N
   if(f.extra)return{ok:true};if(!c||c==="TBC")return OK.has(f.key)?{ok:true}:{ok:false,review:true,why:"no certificate yet"};
   return(SAFE[sys]||SAFE.bbfc).includes(c)?{ok:true}:{ok:false,why:"rated "+c}}
 function upcoming(f){const n=londonNow();return f.sessions.filter(s=>s.date&&(s.date>n.date||(s.date===n.date&&s.time>n.hm))).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))}
-function buildQueue(){const n=londonNow(),all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.length).map(f=>({...f,sessions:f.luxxS})):films(),in7=new Date(Date.now()+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
+function buildQueue(){const all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.length).map(f=>({...f,sessions:f.luxxS})):films(),in7=new Date(Date.now()+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
   let list=MODE==="pick"&&IDS.length?IDS.map(k=>all.find(f=>f.key===k)).filter(Boolean):all.filter(f=>{const u=upcoming(f);return u.length&&u[0].date<=in7||(SOON&&f.sources.has("soon"))});
-  /* special screenings (sensory, fancy dress…) share their film's trailer: show each trailer once */
   const nt=t=>String(t||"").toLowerCase().replace(/^(sensory|autism friendly|parent (and|&) baby)[:\s-]*/,"").replace(/\s+-\s+.*$|\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
   list=list.filter(f=>safety(f).ok).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer||nt(x.title)===nt(f.title))===i);
   list.sort((a,b)=>{const ua=upcoming(a)[0],ub=upcoming(b)[0];return(ua?ua.date+ua.time:"9"+(a.releaseDate||"")).localeCompare(ub?ub.date+ub.time:"9"+(b.releaseDate||""))});
   if(ONLY)list=[];if(!TRAILERS)return list;
   const seen=new Set(list.map(f=>ytId(f.trailer)));for(const x of EXTRA)if(!seen.has(x.id)){seen.add(x.id);list.push({key:"x:"+x.id,title:x.title||"Coming soon",trailer:"https://www.youtube.com/watch?v="+x.id,extra:true,sessions:[]})}
   return list}
-function fmtDay(d){return new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"})}
-function showCard(f){const u=upcoming(f),n=londonNow(),day=u[0]?u[0].date:null,times=day?u.filter(s=>s.date===day).map(s=>s.time):[];
+
+/* every showing on a day as a board row (all films, including ones whose trailers aren't foyer-safe: it's just the listings) */
+function dayRows(date){const rows=[],seen=new Set();
+  for(const f of films())for(const s of(LOUNGE?f.luxxS:f.sessions)){if(s.date!==date)continue;const k=cleanTitle(f.title)+s.time+(s.screen||"");if(seen.has(k))continue;seen.add(k);
+    rows.push({time:s.time,title:cleanTitle(f.title),cert:f.cert&&f.cert!=="TBC"?f.cert:"",icon:f.certIcon,screen:s.screen||"",luxx:!!s.luxx,kids:(s.tags||[]).includes("kidsclub"),relaxed:isSensory(f),td:!!s.threeD,book:s.book,runtime:f.runtime})}
+  return rows.sort((a,b)=>a.time.localeCompare(b.time)||a.title.localeCompare(b.title))}
+function dayState(){const n=londonNow(),today=dayRows(n.date),now=mins(n.hm);
+  const left=today.filter(r=>mins(r.time)>now-15);const first=today[0],last=today[today.length-1];
+  if(!today.length||!left.length){let d=addDays(n.date,1),r=dayRows(d);for(let i=2;!r.length&&i<7;i++){d=addDays(n.date,i);r=dayRows(d)}return{phase:"closed",date:d,rows:r}}
+  if(first&&mins(first.time)-now>45)return{phase:"opening",date:n.date,rows:today,first};
+  return{phase:"open",date:n.date,rows:left,last}}
+
+/* ---------- layers ---------- */
+const LAYERS=["card","yt-wrap","start","ident","board","promo","hours"];
+function show(id){if(id!=="ident")cancelAnimationFrame(idRaf);for(const l of LAYERS)$("#"+l).hidden=l!==id;lastStep=Date.now()}
+function progress(sec){const p=$("#prog");p.style.transition="none";p.style.width="0";requestAnimationFrame(()=>requestAnimationFrame(()=>{p.style.transition=`width ${sec}s linear`;p.style.width="100%"}))}
+function retrigger(el){el.classList.remove("in");void el.offsetWidth;el.classList.add("in")}
+const certHtml=(r,cls)=>r.icon?`<img src="${esc(asset(r.icon))}" alt="Rated ${esc(r.cert)}">`:r.cert?`<span>${esc(r.cert)}</span>`:"";
+
+function showCard(f){const u=upcoming(f),n=londonNow(),day=u[0]?u[0].date:null,ses=day?u.filter(s=>s.date===day):[];
   const poster=asset(f.posterFile)||f.poster;$("#card .poster").style.backgroundImage=`url("${poster}")`;$("#card .bgimg").style.backgroundImage=`url("${poster}")`;$("#card .poster").setAttribute("aria-label",f.title+" poster");
-  $("#ck").textContent=day?(day===n.date?"Showing today":"Showing "+fmtDay(day)):f.releaseDate?"Coming "+fmtDay(f.releaseDate):"Coming soon";
-  $("#ct").textContent=f.title;
-  const icon=f.certIcon?`<img src="${asset(f.certIcon)}" alt="Rated ${f.cert}">`:f.cert?`<span>${f.cert}</span>`:"";
-  $("#cm").innerHTML=icon+(f.runtime?`<span>${f.runtime} min</span>`:"")+(f.luxxToo?`<span class="luxx">LUXX</span>`:"");
-  $("#cw").textContent=times.length>1?"Showtimes":times.length?"Showtime":"";
-  $("#cx").innerHTML=times.slice(0,8).map(t=>`<span>${t}</span>`).join("");
-  show("card")}
-function show(id){if(id!=="ident")cancelAnimationFrame(idRaf);for(const l of["card","yt-wrap","start","ident"])$("#"+(l)).hidden=l!==id}
-function progress(sec){const p=$("#prog");p.style.transition="none";p.style.width="0";requestAnimationFrame(()=>{p.style.transition=`width ${sec}s linear`;p.style.width="100%"})}
-function loadYT(){if(ytReady)return ytReady;ytReady=new Promise(res=>{window.onYouTubeIframeAPIReady=()=>res(true);const s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";s.onerror=()=>res(false);document.head.appendChild(s);setTimeout(()=>res(!!window.YT&&!!window.YT.Player),12000)});return ytReady}
-async function next(){clearTimeout(timer);
-  if(Date.now()-lastLoad>6*3600e3)await load();
-  if(!queue.length){show("start");$("#sinfo").textContent="No foyer-safe trailers to show right now. Checking again in 10 minutes.";timer=setTimeout(async()=>{await load();next()},600e3);return}
-  /* now and then, a welcome video between films */
-  if(WEL.length&&WF!=="0"&&!justIdent&&qi>=0&&(qi%2===1||!TRAILERS)){since++;if(since>=gap){since=0;gap=newGap();justIdent=true;return playIdent()}}
-  justIdent=false;
-  qi=(qi+1)%(queue.length*2);if(!TRAILERS&&qi%2)qi=(qi+1)%(queue.length*2);const f=queue[Math.floor(qi/2)%queue.length];if(f.extra&&qi%2===0)qi++; /* your own trailers have no showtimes card */
-  if(qi%2===0||!TRAILERS){showCard(f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
-  const ok=await loadYT();if(!ok&&f.extra){timer=setTimeout(next,1000);return}if(!ok){showCard(f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
-  const id=ytId(f.trailer);$("#tlabel").textContent=f.title;$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,5000);
+  const isNew=f.releaseDate&&f.releaseDate<=n.date&&f.releaseDate>=addDays(n.date,-6);
+  $("#ck").innerHTML=(isNew?`<span class="new">NEW</span>`:"")+esc(day?(day===n.date?"Showing today":day===addDays(n.date,1)?"Showing tomorrow":"Showing "+fmtDay(day)):f.releaseDate?"Coming "+fmtDay(f.releaseDate):"Coming soon");
+  const t=cleanTitle(f.title);$("#ct").textContent=t;$("#ct").className="title"+(t.length>34?" xlong":t.length>20?" long":"");
+  const kids=ses.some(s=>(s.tags||[]).includes("kidsclub")),td=ses.some(s=>s.threeD);
+  $("#cm").innerHTML=certHtml({icon:f.certIcon,cert:f.cert})+(f.runtime?`<span>${f.runtime} min</span>`:"")+(f.luxxToo?`<span class="tag luxx">LUXX</span>`:"")+(kids?`<span class="tag kids">Kids Club</span>`:"")+(isSensory(f)?`<span class="tag relaxed">Relaxed</span>`:"")+(td?`<span class="tag td">3D</span>`:"");
+  /* the next show today, counting down when it's close */
+  const nx=ses[0],mto=nx&&day===n.date?mins(nx.time)-mins(n.hm):null;
+  $("#cs").innerHTML=mto!=null&&mto<=90?`<div class="soonchip${mto>20?" warm":""}">${mto<=20?"Now seating":"Next show in "+(mto>=60?"1 hr "+(mto-60?mto-60+" min":""):mto+" min")}${SCREENS&&nx.screen?" · Screen "+esc(nx.screen):""}</div>`:"";
+  $("#cw").textContent=ses.length>1?"Showtimes":ses.length?"Showtime":"";
+  $("#cx").innerHTML=ses.slice(0,8).map((s,i)=>`<span class="${i===0&&mto!=null&&mto<=90?"next ":""}${s.luxx?"lx ":""}${(s.tags||[]).includes("kidsclub")?"kc":""}">${s.time}${s.luxx?"<small>LUXX</small>":SCREENS&&s.screen?`<small>Screen ${esc(s.screen)}</small>`:""}</span>`).join("");
+  const bk=nx&&nx.book,qr=bk?qrSvg(bk):"";
+  $("#cb").innerHTML=qr?`<div class="qrbox">${qr}<span>Scan to book<b>${nx.time}</b>${day===n.date?"today":shortDay(day)}</span></div>`:`<div class="book">Book at <b>imc.ie</b></div>`;
+  show("card");retrigger($("#card"))}
+
+/* "Now showing" board: today's remaining shows with a live status, two pages if there are lots */
+function boardHtml(ds,page,pages,rows){const n=londonNow(),now=mins(n.hm),today=ds.date===n.date;
+  const head=ds.phase==="closed"?`${ds.date===addDays(n.date,1)?"Tomorrow":esc(fmtDay(ds.date).split(" ")[0])} <em>at IMC</em>`:LOUNGE?`LUXX <em>today</em>`:`Now <em>showing</em>`;
+  const sub=ds.phase==="closed"?"We're closed for tonight. Thanks for visiting!":ds.phase==="opening"?`Doors open soon · first film at ${ds.first.time}`:esc(fmtDay(ds.date));
+  const st=r=>{if(!today)return`<div class="st book">Book now</div>`;const m=mins(r.time)-now;if(m<0)return`<div class="st gone">Started</div>`;if(m<=20)return`<div class="st seat">Now seating</div>`;if(m<=60)return`<div class="st soon">In ${m} min</div>`;return`<div class="st book">Book now</div>`};
+  return`<div class="bhead"><div><h2>${head}</h2><p>${sub}</p></div>${pages>1?`<div class="bpage">${page+1} / ${pages}</div>`:""}</div>
+  <div class="rows">${rows.map((r,i)=>`<div class="brow${today&&mins(r.time)<now?" started":""}${r.luxx?" lx":""}" style="animation-delay:${i*.06}s"><div class="t">${r.time}</div><div class="c">${certHtml(r)}</div><div class="f">${esc(r.title)}</div>
+    <div class="g">${r.luxx?'<span class="tag luxx">LUXX</span>':""}${r.kids?'<span class="tag kids">Kids Club</span>':""}${r.relaxed?'<span class="tag relaxed">Relaxed</span>':""}${r.td?'<span class="tag td">3D</span>':""}</div>
+    <div class="s">${SCREENS&&r.screen?`Screen<b>${esc(r.screen)}</b>`:""}</div>${st(r)}</div>`).join("")}</div>
+  <div class="bfoot"><span>Times can change. Ask at the box office or book on imc.ie</span><div class="qrmini"><span>Scan to book</span>${qrSvg(TIMES_URL())}</div></div>`}
+function playBoard(){const ds=dayState();if(!ds.rows.length){next();return}
+  let per=matchMedia("(orientation:portrait)").matches?14:9,pages=1,p=0,secs=13;const el=$("#board");
+  const draw=()=>{el.innerHTML=boardHtml(ds,p,pages,ds.rows.slice(p*per,p*per+per))};
+  el.hidden=false;for(;;){pages=Math.min(3,Math.ceil(ds.rows.length/per));draw();const r=el.querySelector(".rows");if(!r||r.scrollHeight<=r.clientHeight+2||per<=3)break;per--}
+  secs=pages>1?9:13;progress(secs);show("board");timer=setTimeout(function flip(){p++;if(p<pages){draw();progress(secs);timer=setTimeout(flip,secs*1000)}else next()},secs*1000)}
+
+/* ---------- promo slides, made from the live data ---------- */
+function prices(){const P=D&&D.prices&&!Array.isArray(D.prices)?D.prices:null;return(P&&P.tickets)||[]}
+function promos(){const n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out=[],tk=prices(),all=films();
+  const wed=tk.find(t=>/wednesday/i.test(t.name)&&/meal/i.test(t.name)&&!/luxx/i.test(t.name));
+  const P=D&&D.prices&&!Array.isArray(D.prices)?D.prices:{},mc=(P.products||[]).find(x=>/^medium combo$/i.test(x.name)&&x.file),hd=f=>f?f.replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/hd/$1.png"):"";
+  if(!LOUNGE&&wed&&dow>=1&&dow<=3)out.push({k:"wed",img:mc&&asset(hd(mc.file)),imgFb:mc&&asset(mc.file),kick:dow===3?"Today only":"Every Wednesday",title:"Wednesday Meal Deal",lines:["Cinema ticket","Medium popcorn","Medium drink"],price:wed.price,priceSub:"ALL FOR"});
+  const kidsF=[],in7=addDays(n.date,6);for(const f of all){const ss=f.sessions.filter(s=>(s.tags||[]).includes("kidsclub")&&s.date>=n.date&&s.date<=in7&&(s.date>n.date||s.time>n.hm));if(ss.length)kidsF.push({f,ss})}
+  const kc=tk.find(t=>/^kids club$/i.test(t.name));
+  if(!LOUNGE&&kidsF.length)out.push({k:"kids",kick:"Kids Club",title:dow===0||dow>=4?"This weekend":"Coming up",lines:kidsF.slice(0,3).map(x=>cleanTitle(x.f.title)),posters:kidsF.slice(0,4).map(x=>({p:asset(x.f.posterFile)||x.f.poster,b:shortDay(x.ss[0].date).split(" ")[0]+" "+x.ss[0].time})),price:kc&&kc.price,priceSub:"TICKETS"});
+  const lxs=all.filter(f=>f.luxxS.some(s=>s.date===n.date&&s.time>n.hm)),lxp=tk.filter(t=>/luxx/i.test(t.name)&&!/meal|voucher|combo/i.test(t.name)).map(t=>t.price).sort((a,b)=>parseFloat(a.slice(1))-parseFloat(b.slice(1)))[0];
+  if(lxs.length)out.push({k:"luxx",kick:"Upgrade your seat",title:"LUXX",lines:["Full electric recliners","Extra legroom","Showing today: "+lxs.slice(0,3).map(f=>cleanTitle(f.title)).join(", ")],price:!LOUNGE&&lxp,priceSub:"FROM"});
+  const soon=all.filter(f=>{const d=f.releaseDate||(f.sessions.map(s=>s.date).sort()[0]);return d&&d>n.date&&!isSensory(f)}).map(f=>({f,d:f.releaseDate&&f.releaseDate>n.date?f.releaseDate:f.sessions.map(s=>s.date).sort()[0]})).sort((a,b)=>a.d.localeCompare(b.d)).slice(0,4);
+  if(!LOUNGE&&soon.length>1)out.push({k:"soon",kick:"Coming soon",title:"Coming soon",lines:[],posters:soon.map(x=>({p:asset(x.f.posterFile)||x.f.poster,b:shortDay(x.d)}))});
+  out.push({k:"scan",kick:"Skip the queue",title:"Book on your phone",lines:["Scan the code with your phone camera","Choose your film, time and seats","Show your ticket at the door"],qr:TIMES_URL()});
+  for(const m of MSGS)out.push({k:"msg",kick:(D&&D.cinema)||"IMC",title:m,lines:[]});
+  return out}
+function playPromo(){const L=promos();if(!L.length){next();return}const p=L[promoI++%L.length],el=$("#promo");el.className="layer "+p.k;
+  const right=p.img&&p.price?`<div class="prodwrap"><img src="${esc(p.img)}" alt="" onerror="if(this.src!=='${esc(p.imgFb||"")}')this.src='${esc(p.imgFb||"")}'"><div class="price"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div></div>`:p.qr?`<div class="bigqr">${qrSvg(p.qr)}</div>`:p.posters?`<div class="posters">${p.posters.map(x=>`<div style="background-image:url('${esc(x.p)}')">${x.b?`<b>${esc(x.b)}</b>`:""}</div>`).join("")}</div>`:p.price?`<div class="price"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div>`:"";
+  const priceLeft=p.price&&(p.qr||p.posters)?`<div class="price mini"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div>`:"";
+  el.innerHTML=`<div class="pbg"></div><div class="pin${right?"":" one"}"><div><div class="pk">${esc(p.kick)}</div><h2 style="${p.k==="msg"&&p.title.length>40?"font-size:8vh":""}">${esc(p.title)}</h2>${p.lines.length?`<ul class="pl">${p.lines.map(l=>`<li>${esc(l)}</li>`).join("")}</ul>`:""}${priceLeft}</div>${right}</div>`;
+  el.querySelectorAll(".pin>div").forEach((d,i)=>{d.style.animation=`rise .9s ${i*.15}s cubic-bezier(.2,.8,.2,1) both`});
+  show("promo");progress(10);timer=setTimeout(next,10000)}
+
+/* opening and closed screens */
+function playHours(ds){const n=londonNow(),el=$("#hours"),rows=ds.rows;
+  const list=[...new Map(rows.map(r=>[r.title,r])).values()].slice(0,12).map(r=>`<span><b>${rows.filter(x=>x.title===r.title).map(x=>x.time).slice(0,3).join(" · ")}</b>${esc(r.title)}</span>`).join("");
+  el.innerHTML=ds.phase==="closed"?`<div><h2>Thanks for <em>visiting</em></h2><p>${ds.date===addDays(n.date,1)?"Tomorrow":esc(fmtDay(ds.date))} at ${esc((D&&D.cinema)||"IMC")}. Book now at imc.ie</p><div class="hl">${list}</div></div>`
+    :`<div><h2>Good ${mins(n.hm)<720?"morning":"afternoon"}! <em>Today's films</em></h2><p>First film at ${ds.first.time}. Book at imc.ie or at the box office.</p><div class="hl">${list}</div></div>`;
+  show("hours");progress(12);timer=setTimeout(next,12000)}
+
+/* ---------- the running order ---------- */
+function buildSteps(){const s=[],ds=dayState();
+  if(ds.phase!=="open")s.push({k:"hours"});else if(BOARD_EVERY)s.push({k:"board"});
+  queue.forEach((f,i)=>{if(!f.extra)s.push({k:"card",f});if(TRAILERS&&!(ONLY&&!f.extra))s.push({k:"trailer",f});
+    if(BOARD_EVERY&&(i+1)%BOARD_EVERY===0&&i<queue.length-1)s.push({k:"board"});
+    if(PROMOS&&(i+1)%2===0)s.push({k:"promo"});
+    if(WEL.length&&WF!=="0"){since++;if(since>=gap){since=0;gap=newGap();s.push({k:"ident"})}}});
+  if(!queue.length){if(BOARD_EVERY||ds.phase!=="open")s.push({k:"board"});if(PROMOS)s.push({k:"promo"},{k:"promo"});if(WEL.length&&WF!=="0")s.push({k:"ident"})}
+  return s}
+async function next(){clearTimeout(timer);try{if(player&&player._done)player._done()}catch(e){}
+  if(si>=steps.length){if(Date.now()-lastLoad>3*3600e3)await load();else queue=buildQueue();steps=buildSteps();si=0;
+    if(!steps.length){show("start");$("#sinfo").textContent="Nothing to show right now. Checking again in 10 minutes.";timer=setTimeout(async()=>{await load();next()},600e3);return}}
+  const st=steps[si++];
+  if(st.k==="board")return playBoard();
+  if(st.k==="hours")return playHours(dayState());
+  if(st.k==="promo")return playPromo();
+  if(st.k==="ident")return playIdent();
+  if(st.k==="card"){if(!upcoming(st.f).length&&!st.f.sources?.has("soon"))return next();showCard(st.f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
+  if(st.k==="trailer")return playTrailer(st.f)}
+async function playTrailer(f){const ok=await loadYT();if(!ok){timer=setTimeout(next,300);return}
+  const id=ytId(f.trailer),u=f.extra?[]:upcoming(f),nx=u[0],n=londonNow();
+  $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
+  const q=nx&&nx.book?qrSvg(nx.book):"";$("#tqr").innerHTML=q?q+`<span>Scan to book<b>${nx.time}</b></span>`:"";$("#tqr").style.opacity=0;
   show("yt-wrap");progress(0.01);
   let started=false,over=false;const cur=$("#ytcurtain");cur.classList.remove("off");
-  /* leave just before the end, so YouTube's end screen and suggested videos never get a chance to show */
-  const watch=setInterval(()=>{try{const d=player.getDuration(),t=player.getCurrentTime();if(started&&d>5&&t>=d-1.2)finish()}catch(e){}},250);
-  const finish=()=>{if(over)return;over=true;cur.classList.remove("off");done();try{player.pauseVideo()}catch(e){}setTimeout(next,500)};
+  const watch=setInterval(()=>{try{const d=player.getDuration(),t=player.getCurrentTime();if(started&&d>5){if(t>=d-1.2)finish();$("#tqr").style.opacity=q&&t>d-25?1:0;lastStep=Date.now()}}catch(e){}},250);
+  const finish=()=>{if(over)return;over=true;cur.classList.remove("off");done();try{player.pauseVideo()}catch(e){}$("#tqr").style.opacity=0;setTimeout(next,500)};
   const guard=setTimeout(()=>{if(!started)finish()},15000),cap=setTimeout(finish,5*60e3);
-  const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch)};
+  const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch);player._done=null};
   if(player&&player.loadVideoById){player.loadVideoById(id);if(muted)player.mute();else player.unMute()}
   else player=new YT.Player("yt",{host:"https://www.youtube-nocookie.com",videoId:id,playerVars:{autoplay:1,controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,fs:0,cc_load_policy:0,mute:muted?1:0,origin:location.origin},
     events:{onReady:e=>{if(muted)e.target.mute();e.target.playVideo()},onStateChange:e=>{const h=player._h;if(h)h(e.data)},onError:()=>{const x=player._x;if(x)x()}}});
-  /* playing: lift the curtain once the title has had time to fade; paused/ended: drop it straight away */
   player._h=st=>{if(over)return;if(st===1){if(!started){started=true;setTimeout(()=>{if(!over)cur.classList.add("off")},400)}else cur.classList.add("off")}
     else if(st===2){cur.classList.remove("off");try{player.playVideo()}catch(e){}}else if(st===0)finish()};
   player._x=finish;player._done=done}
+function loadYT(){if(ytReady)return ytReady;ytReady=new Promise(res=>{window.onYouTubeIframeAPIReady=()=>res(true);const s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";s.onerror=()=>res(false);document.head.appendChild(s);setTimeout(()=>res(!!window.YT&&!!window.YT.Player),12000)});return ytReady}
 async function playIdent(){try{if(player&&player.stopVideo)player.stopVideo()}catch(e){}
   if(!idAssets)idAssets=await IMCIdent.loadAssets("");let i=Math.floor(Math.random()*WEL.length);if(WEL.length>1&&i===lastIdent)i=(i+1)%WEL.length;lastIdent=i;
   const w=WEL[i],cv=$("#icv"),c=cv.getContext("2d"),secs=w.dur||8,t0=performance.now();show("ident");progress(secs);
   const step=()=>{const t=Math.min(1,(performance.now()-t0)/(secs*1000));IMCIdent.draw(c,1920,1080,t,w,idAssets);if(t<1)idRaf=requestAnimationFrame(step)};step();
   timer=setTimeout(next,secs*1000+150)}
-async function load(){D=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json");T=(await getJson("data/trailers.json"))||{};base=D?D._base:"";lastLoad=Date.now();
-  if(!D){queue=[];return}queue=buildQueue();$("#bname").textContent=(D.cinema||"IMC")+(LOUNGE?" · LUXX":"")+" · Book at imc.ie";document.title=(D.cinema||"IMC")+(LOUNGE?" LUXX lounge":" foyer trailers");if(LOUNGE){const h=$("#start h1");if(h)h.textContent="LUXX lounge"}}
-async function start(){if(SOUND){muted=false}show("card");qi=-1;next()}
-document.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){if(player&&player._done)player._done();next()}if(e.key==="f"||e.key==="F"){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}
+
+/* ---------- live strip: clock, next show, ticker ---------- */
+function tickerItems(){const tk=prices(),n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out=[...MSGS];
+  const wed=tk.find(t=>/wednesday/i.test(t.name)&&/meal/i.test(t.name)&&!/luxx/i.test(t.name));if(wed&&!LOUNGE)out.push(`${dow===3?"TODAY: ":""}Wednesday Meal Deal: ticket, medium popcorn and medium drink for ${wed.price}`);
+  const kc=tk.find(t=>/^kids club$/i.test(t.name));if(kc&&!LOUNGE)out.push(`Kids Club: family films for ${kc.price} a ticket`);
+  const lx=tk.filter(t=>/luxx/i.test(t.name)&&!/meal|voucher|combo/i.test(t.name)).map(t=>t.price).sort((a,b)=>parseFloat(a.slice(1))-parseFloat(b.slice(1)))[0];if(lx)out.push(`Upgrade to LUXX recliners from ${lx}`);
+  out.push("Book online at imc.ie and skip the queue");if(D){const ds=dayState();if(ds.phase==="open"&&ds.last)out.push(`Last film tonight: ${ds.last.title} at ${ds.last.time}`)}
+  return out}
+let tickKey="";
+function renderTicker(){const items=tickerItems(),k=items.join("|");if(k===tickKey)return;tickKey=k;const el=$("#tick");el.innerHTML=items.map(esc).join("<i>●</i>");
+  requestAnimationFrame(()=>{const secs=Math.max(20,el.scrollWidth/90);el.style.animationDuration=secs+"s";el.style.setProperty("--td",secs+"s")})}
+function tickStrip(){const n=londonNow();$("#clock").textContent=n.hm;if(!D)return;const ds=dayState(),now=mins(n.hm);
+  if(ds.phase==="closed"){const r=ds.rows[0];$("#nextshow").innerHTML=r?`Open again ${ds.date===addDays(n.date,1)?"tomorrow":esc(shortDay(ds.date))}<b>${r.time} ${esc(r.title)}</b>`:"";return}
+  const r=ds.rows.find(x=>mins(x.time)>=now);if(!r){$("#nextshow").innerHTML="";return}const m=mins(r.time)-now;
+  $("#nextshow").innerHTML=`${m<=0?"Starting now":m<=20?"Now seating":"Next"}${m>20&&m<=60?` · in ${m} min`:""}${SCREENS&&r.screen?" · Screen "+esc(r.screen):""}<b>${r.time} ${esc(r.title)}</b>`}
+
+/* ---------- loading, with a saved copy for when the internet drops ---------- */
+async function load(){let d=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json"),t=await getJson("data/trailers.json");
+  if(d){try{localStorage.setItem(CK,JSON.stringify({d,t,at:Date.now()}))}catch(e){}offline=false}
+  else{try{const c=JSON.parse(localStorage.getItem(CK)||"null");if(c){d=c.d;t=c.t;offline=true}}catch(e){}}
+  $("#offline").hidden=!offline;D=d;T=t||{};base=D?D._base:"";lastLoad=Date.now();
+  if(!D){queue=[];return}queue=buildQueue();renderTicker();tickStrip();
+  document.title=(D.cinema||"IMC")+(LOUNGE?" LUXX lounge":" foyer screen");if(LOUNGE){const h=$("#start h1");if(h)h.textContent="LUXX lounge"}}
+async function start(){if(SOUND)muted=false;si=steps.length;wake();next()}
+/* keep the TV awake, and recover if anything ever gets stuck */
+let lock=null;async function wake(){try{if("wakeLock" in navigator&&!lock){lock=await navigator.wakeLock.request("screen");lock.addEventListener("release",()=>{lock=null})}}catch(e){}}
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)wake()});
+setInterval(()=>{if($("#start").hidden&&Date.now()-lastStep>7*60e3)location.reload()},60e3);
+setInterval(()=>{tickStrip();if(londonNow().s<15)renderTicker()},15e3);setInterval(()=>{$("#clock").textContent=londonNow().hm},5e3);
+setInterval(()=>{const n=londonNow();if(n.hm==="05:00")location.reload()},60e3);
+document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")next();if(e.key==="b"||e.key==="B"){clearTimeout(timer);try{player&&player._done&&player._done();player&&player.pauseVideo&&player.pauseVideo()}catch(x){}playBoard()}
+  if(e.key==="f"||e.key==="F"){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}
   if(e.key==="m"||e.key==="M"){muted=!muted;if(player&&player.mute){muted?player.mute():player.unMute()}}});
 let mv;document.addEventListener("mousemove",()=>{document.body.classList.add("pointer");clearTimeout(mv);mv=setTimeout(()=>document.body.classList.remove("pointer"),2500)});
-/* refresh once a day before opening so times are right */
-setInterval(()=>{const n=londonNow();if(n.hm==="05:00")location.reload()},60e3);
-(async()=>{await load();if(!D){$("#sinfo").textContent="Couldn't load the listings. Check the internet connection; retrying in a minute.";setTimeout(()=>location.reload(),60e3);return}
-  const n=queue.length,nx=queue.filter(f=>f.extra).length,nf=n-nx;$("#sinfo").textContent=n?`${ONLY?`${nx} of your trailers on a loop`:`${nf} foyer-safe film${nf===1?"":"s"}${nx?` and ${nx} of your trailers`:""}`} for ${D.cinema}. ${ONLY?"":TRAILERS?"Each film's trailer plays after its showtimes card.":"Showtimes cards only."}${SOUND?" Click Start to play with sound.":""}`:"No foyer-safe trailers to show right now.";
-  $("#go").hidden=false;$("#go").focus();$("#go").onclick=start;
-  if(!SOUND)start()})();
+(async()=>{$("#clock").textContent=londonNow().hm;await load();if(!D){$("#sinfo").textContent="Couldn't load the listings. Check the internet connection; retrying in a minute.";setTimeout(()=>location.reload(),60e3);return}
+  const n=queue.length,nx=queue.filter(f=>f.extra).length,nf=n-nx;
+  $("#sinfo").textContent=`${ONLY?`${nx} of your trailers on a loop`:`${nf} foyer-safe film${nf===1?"":"s"}${nx?` and ${nx} of your trailers`:""}`} for ${D.cinema}${BOARD_EVERY?", the Now showing board":""}${PROMOS?", deals and offers":""}.${SOUND&&TRAILERS?" Click Start to play with sound.":""}`;
+  $("#go").hidden=false;$("#go").focus();$("#go").onclick=start;$("#start").onclick=e=>{if(e.target.id!=="go")start()};
+  if(!SOUND||!TRAILERS)start()})();
 })();
 </script>
 </body>
