@@ -569,6 +569,36 @@ for (const cin of CINEMAS) {
   await fs.writeFile(file, JSON.stringify(known, null, 2));
   console.log(`trailers: ${urls.size} listed, ${n} newly checked`);
 }
+// film shots for the editor: the trailer's thumbnail and two frames from the video, from YouTube's image server.
+// Saved as data/stills/<youtube id>-<n>.jpg with data/stills/index.json listing what exists. Only new trailers are fetched;
+// shots for trailers no longer listed are removed so the repo stays small.
+{
+  const dir = path.join(OUT, "stills"), idxFile = path.join(dir, "index.json");
+  const idx = await fs.readFile(idxFile, "utf8").then(JSON.parse).catch(() => ({}));
+  const ids = new Set();
+  for (const c of summary) {
+    const d = await fs.readFile(c.file, "utf8").then(JSON.parse).catch(() => null);
+    if (d) for (const list of [d.today || [], d.comingSoon || [], d.kidsClub || [], d.luxx || [], ...(d.days || []).map((x) => x.films || [])]) for (const f of list) {
+      const m = /(?:v=|youtu\.be\/|embed\/)([\w-]{11})/.exec(f.trailer || ""); if (m) ids.add(m[1]);
+    }
+  }
+  await fs.mkdir(dir, { recursive: true });
+  let added = 0;
+  const grab = async (url) => { try { const r = await fetch(url, { headers: { "user-agent": UA } }); if (!r.ok) return null; const b = Buffer.from(await r.arrayBuffer()); return b.length > 6000 ? b : null; } catch { return null; } };
+  for (const id of ids) {
+    if (idx[id] && idx[id].length) continue;
+    const files = [];
+    const tries = [["maxresdefault", "sddefault", "hqdefault"], ["maxres1", "sd1"], ["maxres2", "sd2"]];
+    for (let n = 0; n < tries.length; n++) {
+      for (const name of tries[n]) { const b = await grab(`https://i.ytimg.com/vi/${id}/${name}.jpg`); if (b) { const f = `${id}-${n}.jpg`; await fs.writeFile(path.join(dir, f), b); files.push(`${OUT}/stills/${f}`); break; } }
+      await sleep(150);
+    }
+    idx[id] = files; if (files.length) added++;
+  }
+  for (const id of Object.keys(idx)) if (!ids.has(id)) { for (const f of idx[id]) await fs.rm(path.join(dir, path.basename(f)), { force: true }); delete idx[id]; }
+  await fs.writeFile(idxFile, JSON.stringify(idx, null, 1));
+  console.log(`stills: ${ids.size} trailers, ${added} newly saved`);
+}
 // cinema building photos from imc.ie's cinema list (used for LUXX and "visit us" designs): data/sites/<id>.<ext>
 const SITE_PICS = {};
 {
