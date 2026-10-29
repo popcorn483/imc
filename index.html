@@ -4,7 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Plan, design, caption and track social media ads for IMC Cinema Enniskillen.">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}
+.bestp{margin-bottom:16px;border-color:rgba(255,194,61,.45)}
+.ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.idea{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg);display:flex;flex-direction:column;gap:8px;min-width:0}
+.idea.best{border-color:var(--gold,#ffc23d);box-shadow:0 0 0 1px rgba(255,194,61,.35) inset;background:linear-gradient(180deg,rgba(255,194,61,.08),transparent 70%),var(--bg)}
+.ihead{display:flex;gap:10px;align-items:flex-start}.ii{font-size:26px;line-height:1}.ihead b{display:block;font-size:15.5px;line-height:1.25}.ihead small{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:12.5px;margin-top:3px}
+.bestpill{background:var(--gold,#ffc23d);color:#2a1800;font-weight:800;font-size:11px;padding:2px 7px;border-radius:999px}
+.idea .why{margin:0;color:var(--muted);font-size:13.5px;line-height:1.45}.idea .row-btns{margin-top:auto}
+.planned{font-size:12.5px;color:#46d17a;padding:4px 6px;font-weight:700}
+.pweek{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.pday{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}.pday.now{border-color:rgba(255,194,61,.5)}
+.pdh{display:flex;justify-content:space-between;align-items:baseline}.pdh b{font-size:18px}.pdh span{color:var(--muted);font-size:13px}
+.bestp details.more summary,.pday details.more summary{cursor:pointer;color:var(--muted);font-size:13.5px;padding:4px 0}.bestp details.more{margin-top:10px}.bestp details.more .ideas{margin-top:8px}.pday details.more[open]{display:flex;flex-direction:column;gap:8px}.pday details.more[open] summary{margin-bottom:2px}
+@media (max-width:640px){.pweek,.ideas{grid-template-columns:1fr}}
+</style>
 <title>IMC Hub</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -379,6 +393,7 @@ body.menuopen{overflow:hidden}
     <div class="brand"><img src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span id="brandsite">Enniskillen</span></b></div>
     <nav class="quick" aria-label="Shortcuts">
       <button class="qtab" data-view="today">Today</button>
+      <button class="qtab" data-view="plan">Week ahead</button>
       <button class="qtab" data-view="deals">Deals</button>
       <button class="qtab" data-view="luxx">LUXX</button>
       <button class="qtab" data-view="studio">Create a post</button>
@@ -400,6 +415,7 @@ body.menuopen{overflow:hidden}
       <a class="navlink" href="editor.html" target="imc-editor">Photo &amp; video editor ↗<small>Designs, Reels, clips and video</small></a>
       <button data-view="releases">Upcoming releases<small>Films to announce</small></button>
       <h3>Plan &amp; track</h3>
+      <button data-view="plan">Week ahead<small>The best post for each day</small></button>
       <button data-view="dashboard">Planner<small>Your week of posts</small></button>
       <button data-view="library">Posts <span class="count" id="cnt"></span><small>Drafts and scheduled posts</small></button>
       <button data-view="calendar">Ideas calendar<small>Key dates and what to post</small></button>
@@ -420,6 +436,15 @@ body.menuopen{overflow:hidden}
         <div><h1>Today at <span class="sitename">IMC Enniskillen</span></h1><p><span id="todayDate"></span> · <span id="todayStamp"></span></p></div>
       </div>
       <div id="todayBody"></div>
+    </section>
+
+    <!-- WEEK AHEAD -->
+    <section id="v-plan" hidden>
+      <div class="head">
+        <div><h1>Week ahead</h1><p>The best post for each day, picked from what's on at <span class="sitename">IMC Enniskillen</span>. Tap a button to make it.</p></div>
+        <button class="btn primary" id="planAll">Add every best post to the planner</button>
+      </div>
+      <div id="planBody"></div>
     </section>
 
     <!-- WHAT'S ON -->
@@ -812,7 +837,7 @@ async function remove(id){
 const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
 /* ---------- navigation ---------- */
-function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="luxx")renderLuxx();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button,.qtab").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));menu(false);if(v==="studio")drawPoster();window.scrollTo(0,0)}
+function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="luxx")renderLuxx();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();if(v==="plan")renderPlan();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button,.qtab").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));menu(false);if(v==="studio")drawPoster();window.scrollTo(0,0)}
 $("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view);else if(e.target.closest("a"))menu(false)});
 $(".quick").addEventListener("click",e=>{const b=e.target.closest("[data-view]");if(b)go(b.dataset.view)});
 /* hamburger menu: a drawer from the left, closed with ✕, Esc or a click outside */
@@ -1237,10 +1262,10 @@ function stamp(){if(!IMC||!IMC.updated)return"";const f=d=>new Date(d).toLocaleS
 function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").textContent=fmtLong(todayIso());$("#todayStamp").textContent=stamp();
   if(!IMC){el.innerHTML=startPanel()+noData();return}
   const films=keyed(filmsOn(todayIso())),soon=keyed(allFilms().filter(f=>{const d=firstDate(f);return d&&d>todayIso()}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))).slice(0,6));
-  el.innerHTML=startPanel()+kidsPanel()+`<div class="panel" style="margin-top:16px"><div class="ph"><h2>Showing today</h2>${films.some(f=>(f.kidsTimes||[]).length)?'<span class="kclegend"><span class="kc"><i>Kids Club</i></span> showings are highlighted</span>':""}<div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
+  el.innerHTML=bestToday()+startPanel()+kidsPanel()+`<div class="panel" style="margin-top:16px"><div class="ph"><h2>Showing today</h2>${films.some(f=>(f.kidsTimes||[]).length)?'<span class="kclegend"><span class="kc"><i>Kids Club</i></span> showings are highlighted</span>':""}<div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
     ${films.length?`<div class="films">${films.map(f=>filmCard(f,f.sources?.has("kids")&&!f.sources?.has("today")?"kids":f.luxx?"luxx":"now")).join("")}</div>`:(filmsOn(todayIso(),true).length?`<p class="tip">Every show today has started. Tomorrow\'s times are under <button class="btn small ghost" data-wo="week">What\'s on → Next 7 days</button></p>`:`<p class="tip">No times for today in the latest import. ${IMC.today&&IMC.today.length===0?"The imc.ie film-times page may have been unavailable; the next import runs within 3 hours.":""}</p>`)}</div>
     <div class="grid two" style="margin-top:16px"><div class="panel"><div class="ph"><h2>Opening soon</h2><button class="btn small ghost" data-wo="soon">All coming soon →</button></div><div class="films compact">${soon.map(f=>filmCard(f,"soon")).join("")||'<p class="tip">Nothing announced yet.</p>'}</div></div>
-    <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):imcMatch(d.name)?esc(imcMatch(d.name).price)+' <em>(imc.ie)</em>':'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
+    <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):dealOut(d).price?esc(dealOut(d).price)+' <em>(imc.ie)</em>':imcMatch(d.name)?esc(imcMatch(d.name).price)+' <em>(imc.ie)</em>':'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
     ${(IMC.banners||[]).length?`<h2 style="margin-top:18px">imc.ie graphics</h2><div class="banners">${IMC.banners.slice(0,6).map(b=>`<button data-banner="${esc(asset(b.file))}" title="Open in the photo editor"><img src="${esc(asset(b.file))}" alt="imc.ie banner" loading="lazy"></button>`).join("")}</div>`:""}</div></div>`;hydrateSvgs(el)}
 document.addEventListener("click",e=>{const t=e.target.closest("[data-times]");if(t){makeTimes(todayIso(),t.dataset.times);return}
   const b=e.target.closest("[data-banner]");if(b){openEditor({kind:"image",url:b.dataset.banner});return}
@@ -1277,6 +1302,7 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-daytimes]"
 
 /* ---------- Deals ---------- */
 const DEFAULT_DEALS=[
+  {id:"wednesday",name:"Wednesday Meal Deal",items:["1X Cinema ticket","1X Medium popcorn","1X Medium drink"],price:"",was:"",small:"Wednesdays only",products:["ticket","popcorn","drink"]},
   {id:"family",name:"Family Combo Deal",items:["2X Adult tickets","2X Child tickets","1X Share combo","2X Kids combo"],price:"",was:"",small:"",products:["popcorn","drink","drink","ticket","tray","tray"]},
   {id:"kids",name:"Kids Tray",items:["Kids popcorn","Kids drink","Sweet treat"],price:"",was:"",small:"",products:["tray"]},
   {id:"share",name:"Share Combo",items:["Large sharing popcorn","2 regular drinks"],price:"",was:"",small:"",products:["popcorn","drink","drink"]},
@@ -1287,7 +1313,7 @@ const PRODUCT_NAMES={popcorn:"Popcorn box",drink:"Drink",tray:"Kids tray",ticket
 const DEAL_ITEMS=[["Adult ticket","Adult tickets","ticket"],["Child ticket","Child tickets","ticket"],["Family ticket","Family tickets","ticket"],["Popcorn","Popcorn","popcorn"],["Drink","Drinks","drink"],["Share combo","Share combos","popcorn"],["Kids combo","Kids combos","tray"],["Kids tray","Kids trays","tray"],["Nachos","Nachos","nachos"],["Hot dog","Hot dogs","hotdog"],["Sweet bag","Sweet bags","sweets"],["Candy King pick 'n' mix","Candy King pick 'n' mix","pickmix"],["Scoop of ice cream","Scoops of ice cream","icescoop"],["Ice cream tub","Ice cream tubs","icetub"]];
 const curSym=()=>S().ni?"£":"€";
 /* what the editor gets: the deal plus its photo addresses resolved for the editor page */
-function dealOut(d){const m=d.real===false?null:(d.photos&&d.photos.length?null:imcMatch(d.name));return{...d,cur:curSym(),photos:(d.photos&&d.photos.length?d.photos:m&&m.file?[{src:m.file,label:m.name}]:[]).map(p=>({...p,src:asset(p.src)}))}}
+function dealOut(d){if(!d.price){const o=imcOffers().find(x=>x.name.toLowerCase()===String(d.name).toLowerCase());if(o)d={...d,price:o.price}}const m=d.real===false?null:(d.photos&&d.photos.length?null:imcMatch(d.name));return{...d,cur:curSym(),photos:(d.photos&&d.photos.length?d.photos:m&&m.file?[{src:m.file,label:m.name}]:[]).map(p=>({...p,src:asset(p.src)}))}}
 function addDealItem(d,i){const[one,many,pic]=DEAL_ITEMS[i],items=d.items||[],low=x=>x.toLowerCase();
   const j=items.findIndex(l=>{const m=/^(\d+)\s*[x×]\s*(.+)$/i.exec(l.trim());const name=low(m?m[2]:l.trim());return name===low(one)||name===low(many)});
   if(j>=0){const m=/^(\d+)\s*[x×]/i.exec(items[j]),n=(m?+m[1]:1)+1;items[j]=`${n}X ${n>1?many:one}`}else items.push(`1X ${one}`);
@@ -1728,6 +1754,84 @@ const HSEASONS=[["halloween","Halloween",[[1001,1101]]],["fireworks","Fireworks 
 function hSeasonNow(){const d=new Date(todayIso()+"T12:00"),v=(d.getMonth()+1)*100+d.getDate();return HSEASONS.filter(([,,w])=>w.some(([a,b])=>v>=a&&v<=b))}
 function seasonDesign(key,fmt,title){openEditor({kind:"season",key,fmt:fmt||"square",title:title||""})}
 
+/* ---------- Wednesday Meal Deal: always on hand, with imc.ie's price when the importer has found it ---------- */
+const WED_DEFAULT={id:"wednesday",name:"Wednesday Meal Deal",items:["1X Cinema ticket","1X Medium popcorn","1X Medium drink"],price:"",was:"",small:"Wednesdays only",products:["ticket","popcorn","drink"]};
+function wedOffer(){return imcOffers().find(x=>/^wednesday meal deal$/i.test(x.name))||null}
+function wedDeal(){const o=wedOffer(),mine=getDeals().find(d=>/wednesday meal/i.test(d.name)&&!/luxx/i.test(d.name));
+  if(mine)return{...mine,price:mine.price||(o&&o.price)||"",small:mine.small||"Wednesdays only"};return o?offerDeal(o):{...WED_DEFAULT}}
+function wedPrice(){return wedDeal().price||""}
+function makeWed(fmt,anim){openEditor({kind:"deal",deal:dealOut(wedDeal()),animated:anim!==false,fmt:fmt||"square"})}
+/* add it to "Your deals" once for anyone whose saved list is missing it */
+(function(){try{const key=sk("imc-deals-wed");if(localStorage.getItem(key))return;const raw=localStorage.getItem(sk("imc-deals"));if(raw){const d=JSON.parse(raw);if(Array.isArray(d)&&!d.some(x=>/wednesday meal/i.test(x.name))){d.unshift({...WED_DEFAULT,id:newId()});localStorage.setItem(sk("imc-deals"),JSON.stringify(d))}}localStorage.setItem(key,"1")}catch(e){}})();
+document.addEventListener("click",e=>{const b=e.target.closest("[data-wed]");if(b)makeWed(b.dataset.wed||"square",b.dataset.anim!=="0")});
+
+/* ---------- best post each day: ranks the ideas for any date in the next week, from the real listings ---------- */
+const WDAY=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"long"});
+/* a film's opening day is the earliest date across all its listings (the LUXX copy of a film can lack the release date) */
+const fbase=t=>String(t).toLowerCase().replace(/\s+-\s+.*$/,"").replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
+function openDates(){const m=new Map();for(const f of allFilms()){if(/^sensory/i.test(f.title))continue;const d=firstDate(f),k=fbase(f.title);if(!d)continue;const o=m.get(k);if(!o||d<o.d||(d===o.d&&o.f.luxx&&!f.luxx))m.set(k,{d,f})}return[...m.values()]}
+function opensOn(date){return keyed(openDates().filter(x=>x.d===date).map(x=>x.f))}
+function nextOpening(after){const L=openDates().filter(x=>x.d>after).sort((a,b)=>a.d.localeCompare(b.d));return L[0]?keyed([L[0].f])[0]:null}
+const KEYDAYS={"10-31":["halloween","Halloween"],"11-05":["fireworks","Bonfire Night"],"12-25":["christmas","Christmas Day"],"12-24":["christmas","Christmas Eve"],"12-31":["newyear","New Year's Eve"],"02-14":["valentines","Valentine's Day"],"03-17":["stpatricks","St Patrick's Day"]};
+function dayIdeas(date){const T=todayIso(),dow=DOW(date),nm=S().name,tags=S().tags||"",out=[],wd=WDAY(date),isT=date===T;
+  const add=(o)=>out.push({tags,...o});
+  const films=filmsOn(date,!isT),luxx=films.filter(f=>f.luxx),kidsDay=films.filter(f=>(f.kidsTimes||[]).length);
+  /* a big date in the calendar always wins */
+  const kd=KEYDAYS[date.slice(5)];if(kd)add({k:"key-"+kd[0],score:11,icon:"✨",type:"event",title:kd[1]+" post",why:`It's ${kd[1]}. Posts that join in on the day get shared the most.`,time:"10:00",make:fmt=>seasonDesign(kd[0],fmt),fmts:["square","story"],
+    headline:kd[1]+" at "+nm,cap:`✨ Happy ${kd[1]} from all of us at ${nm}! What are you watching today? 🍿\n🎟️ Book at imc.ie`});
+  /* new releases opening that day */
+  const op=opensOn(date);op.slice(0,2).forEach((f,i)=>add({k:"open-"+f._k,score:10-i,icon:"🎬",type:"now",title:`${f.title} opens ${isT?"today":"on "+wd}`,why:"Opening day is when people are most excited to book. Post it in the afternoon before the evening shows.",time:"16:00",film:f,
+    make:fmt=>makeFilm(f,"now",fmt),fmts:["square","story","portrait"],headline:f.title,cap:`🎬 ${f.title} is out ${isT?"TODAY":wd} at ${nm}!${f.cert&&f.cert!=="TBC"?" ("+f.cert+")":""}\nWho are you bringing? Tag them below 👇\n🎟️ Book at imc.ie`}));
+  /* the day before an opening */
+  const tm=opensOn(addDays(date,1))[0];if(tm)add({k:"eve-"+tm._k,score:7,icon:"👀",type:"soon",title:`${tm.title} opens tomorrow`,why:"A 'tomorrow' post builds excitement and gets early bookings.",time:"19:30",film:tm,make:fmt=>makeFilm(tm,"soon",fmt),fmts:["square","story"],
+    headline:tm.title,cap:`👀 Just one more sleep… ${tm.title} opens TOMORROW at ${nm}!\nDrop a 🍿 if you're going.\n🎟️ Book now at imc.ie`});
+  /* Wednesday Meal Deal on Wednesdays, and a teaser on Tuesday evening */
+  const wp=wedPrice(),wdeal=wedDeal();
+  if(dow===3)add({k:"wed",score:10.5,icon:"🍿",type:"offer",title:"Wednesday Meal Deal",why:"It's on today. Post at lunchtime when people are making evening plans.",time:"12:00",make:fmt=>makeWed(fmt,true),fmts:["square","story","portrait"],
+    headline:"Wednesday Meal Deal",price:wp,details:wdeal.items.join(" + "),cap:`🍿 It's WEDNESDAY, so that means the Meal Deal is back at ${nm}!\n${wdeal.items.map(x=>"✅ "+x.replace(/^1X\s*/i,"")).join("\n")}${wp?"\nAll for just "+wp+".":""}\nTag who you're bringing tonight 👇\n🎟️ Book at imc.ie`});
+  if(dow===2)add({k:"wedtease",score:6.5,icon:"🍿",type:"offer",title:"Wednesday Meal Deal is tomorrow",why:"A heads-up the night before helps people plan a midweek trip.",time:"19:00",make:fmt=>makeWed(fmt,true),fmts:["story","square"],
+    headline:"Wednesday Meal Deal",price:wp,details:"Tomorrow",cap:`📣 Midweek plans sorted: our Wednesday Meal Deal is on TOMORROW at ${nm}.${wp?" Ticket, popcorn and drink for "+wp+".":""}\n🎟️ Book at imc.ie`});
+  /* Kids Club: sell the weekend on Thursday evening and again on Friday */
+  if(dow===4||dow===5){const k=kidsChosen("weekend");if(k.films.length)add({k:"kids",score:dow===4?9:7.5,icon:"🧸",type:"kids",title:"Kids Club this weekend",why:dow===4?"Parents plan weekends on Thursday evening, so this is the best time to post it.":"A Friday reminder catches parents still planning the weekend.",time:"18:00",make:fmt=>kidsAd("weekend",fmt),fmts:["square","story","portrait"],
+    headline:"Kids Club",details:k.films.map(f=>f.t).join(", "),cap:kidsCaption("weekend")||`🧸 Kids Club is on this weekend at ${nm}! 🎟️ Book at imc.ie`})}
+  if(kidsDay.length&&(dow===6||dow===0))add({k:"kidsday",score:5,icon:"🧸",type:"kids",title:"Kids Club this morning",why:"A quick morning Story reminds families it's on.",time:"08:30",make:()=>kidsAd("weekend","story"),fmts:["story"],headline:"Kids Club today",cap:`🧸 Kids Club is on this morning at ${nm}: ${kidsDay.map(f=>f.title).join(", ")}.\n🎟️ Book at imc.ie`});
+  /* LUXX at the weekend */
+  if(luxx.length&&(dow===5||dow===6)){const lp=lxPrice();add({k:"luxx",score:dow===6?8:6,icon:"💺",type:"now",title:"LUXX recliners this weekend",why:"Weekend evenings are when people treat themselves. Show off the recliners.",time:"11:00",make:fmt=>{const td=lxRowsToday();openEditor({kind:"luxxkit",tpl:"week",fmt,price:lp,heading:td.heading,rows:td.rows,week:lxWeek().map(f=>({t:f.t,cert:f.cert,system:f.system,times:f.slots.slice(0,3).map(s=>(s.d===todayIso()?"Today":dShort(s.d))+" "+s.t)}))})},fmts:["square","story"],
+    headline:"LUXX",price:lp,cap:`💺 Treat yourself this weekend: full recliners, more legroom and the comfiest seats in town at ${nm}.${lp?" From "+lp+".":""}\nShowing in LUXX: ${luxx.slice(0,4).map(f=>f.title).join(", ")}\n🎟️ Book at imc.ie`})}
+  /* coming soon, early in the week */
+  if(dow===1||dow===2){const f=nextOpening(addDays(date,1));if(f)add({k:"soon-"+f._k,score:dow===1?7:5,icon:"📅",type:"soon",title:`Coming soon: ${f.title}`,why:"Quieter days are perfect for building excitement about the next big film.",time:"19:30",film:f,make:fmt=>makeFilm(f,"soon",fmt),fmts:["square","story","portrait"],
+    headline:f.title,cap:`👀 Coming soon to ${nm}: ${f.title}, from ${fmtLong(firstDate(f))}.\nWho's coming with you? 👇\n🎟️ Tickets at imc.ie`})}
+  /* the season, on a Sunday or when nothing else is on */
+  const md=(()=>{const x=new Date(date+"T12:00");return(x.getMonth()+1)*100+x.getDate()})(),se=HSEASONS.find(([k,,w])=>w.some(([a,b])=>md>=a&&md<=b)&&!(k==="halloween"&&md>1031)&&!(k==="christmas"&&md>1225));if(se&&!kd)add({k:"season-"+se[0],score:dow===0?6:3,icon:"✨",type:"event",title:se[1]+" post",why:`${se[1]} is on. A seasonal post keeps your page feeling current.`,time:"12:00",make:fmt=>seasonDesign(se[0],fmt),fmts:["square","story"],headline:se[1]+" at "+nm,cap:`✨ ${se[1]} at ${nm}! What's on your watch list? 🍿\n🎟️ Book at imc.ie`});
+  /* film times: always worth a Story */
+  if(films.length)add({k:"times",score:dow===5||dow===6?5.5:4,icon:"🕒",type:"now",title:`${isT?"Today's":wd+"'s"} film times`,why:"A times Story every day gives people a quick reason to book.",time:dow===6||dow===0?"10:00":"11:00",make:fmt=>makeTimes(date,fmt),fmts:["story","square"],
+    headline:(isT?"Today":wd)+" at "+nm,details:films.slice(0,6).map(f=>f.title).join(", "),cap:`🍿 ${isT?"Today":wd} at ${nm}:\n${films.slice(0,8).map(f=>"🎬 "+f.title+" · "+f.times.slice(0,3).join(", ")).join("\n")}\n🎟️ Book at imc.ie`});
+  const seen=new Set();return out.filter(o=>!seen.has(o.k)&&seen.add(o.k)).sort((a,b)=>b.score-a.score)}
+const IDEAS={};function ideaFor(date,k){return(IDEAS[date]||(IDEAS[date]=dayIdeas(date))).find(x=>x.k===k)}
+function ideaPost(date,o){return{...blank(),id:newId(),type:o.type,headline:o.headline||o.title,kicker:(TPL[o.type]&&TPL[o.type].kicker)||"",sub:"",details:o.details||"",price:o.price||"",cta:"Book at imc.ie",caption:o.cap,tags:o.tags,date,time:o.time,status:"draft",plan:o.k}}
+function planned(date,o){return posts.some(p=>p.date===date&&(p.plan===o.k||(p.headline||"").toLowerCase()===(o.headline||o.title).toLowerCase()))}
+const fmtWord={square:"Post",story:"Story",portrait:"Tall post",wide:"Foyer TV"};
+function ideaCard(date,o,best){const pl=planned(date,o);
+  return`<div class="idea${best?" best":""}"><div class="ihead"><span class="ii" aria-hidden="true">${o.icon}</span><div><b>${esc(o.title)}</b><small>${best?'<span class="bestpill">★ Best post</span>':""}Post at ${esc(o.time)}</small></div></div>
+    <p class="why">${esc(o.why)}</p>
+    <div class="row-btns">${o.fmts.map((f,i)=>`<button class="btn small${i?"":" primary"}" data-idea="${esc(o.k)}" data-date="${date}" data-fmt="${f}">${i?"":"Make "}${fmtWord[f]}</button>`).join("")}
+      <button class="btn small ghost" data-ideacap="${esc(o.k)}" data-date="${date}">Copy caption</button>
+      ${pl?'<span class="planned">In planner ✓</span>':`<button class="btn small ghost" data-ideaplan="${esc(o.k)}" data-date="${date}">+ Planner</button>`}</div></div>`}
+function bestToday(){if(!IMC)return"";const T=todayIso(),L=IDEAS[T]=dayIdeas(T);if(!L.length)return"";
+  const wide=matchMedia("(min-width:641px)").matches,alt=L.slice(1,3).map(o=>ideaCard(T,o,false)).join("");
+  return`<div class="panel bestp"><div class="ph"><h2>Best post today</h2><button class="btn small ghost" data-go="plan">Week ahead →</button></div>
+    ${wide?`<div class="ideas">${ideaCard(T,L[0],true)}${alt}</div>`:`${ideaCard(T,L[0],true)}${alt?`<details class="more"><summary>${L.slice(1,3).length} more ideas for today</summary><div class="ideas">${alt}</div></details>`:""}`}</div>`}
+function renderPlan(){const el=$("#planBody");if(!el)return;if(!IMC){el.innerHTML=noData();return}const T=todayIso();let h="",n=0;
+  for(let i=0;i<7;i++){const d=addDays(T,i),L=IDEAS[d]=dayIdeas(d);if(!L.length)continue;n++;
+    h+=`<div class="pday${i===0?" now":""}"><div class="pdh"><b>${i===0?"Today":i===1?"Tomorrow":WDAY(d)}</b><span>${esc(fmtShort(d))}</span></div>${ideaCard(d,L[0],true)}${L.length>1?`<details class="more"><summary>${L.length-1} more idea${L.length>2?"s":""} for this day</summary>${L.slice(1).map(o=>ideaCard(d,o,false)).join("")}</details>`:""}</div>`}
+  el.innerHTML=n?`<div class="pweek">${h}</div>`:`<p class="tip">No listings for the coming week yet. The next import runs within 3 hours.</p>`}
+document.addEventListener("click",async e=>{let b;
+  if(b=e.target.closest("[data-idea]")){const o=ideaFor(b.dataset.date,b.dataset.idea);if(o)o.make(b.dataset.fmt);return}
+  if(b=e.target.closest("[data-ideacap]")){const o=ideaFor(b.dataset.date,b.dataset.ideacap);if(!o)return;const t=o.cap+(o.tags?"\n\n"+o.tags:"");navigator.clipboard?.writeText(t).then(()=>toast("Caption copied"),()=>prompt("Copy this caption",t));return}
+  if(b=e.target.closest("[data-ideaplan]")){const o=ideaFor(b.dataset.date,b.dataset.ideaplan);if(!o)return;await persist(ideaPost(b.dataset.date,o));toast(`Added to the planner for ${fmtShort(b.dataset.date)} at ${o.time}`);rerenderIdeas();return}
+  if(e.target.closest("#planAll")){const T=todayIso();let c=0;for(let i=0;i<7;i++){const d=addDays(T,i),o=(IDEAS[d]||dayIdeas(d))[0];if(o&&!planned(d,o)){await persist(ideaPost(d,o));c++}}toast(c?`Added ${c} best post${c>1?"s":""} to the planner as drafts`:"They're all in the planner already");rerenderIdeas()}});
+function rerenderIdeas(){if(view==="plan")renderPlan();if(view==="today")renderToday()}
+
 /* ---------- start panel: the common jobs, one click each ---------- */
 function startPanel(){const se=hSeasonNow()[0];
   const t=(icon,label,sub,attr)=>`<button class="start" ${attr}><span class="si" aria-hidden="true">${icon}</span><b>${label}</b><small>${sub}</small></button>`;
@@ -1735,6 +1839,7 @@ function startPanel(){const se=hSeasonNow()[0];
     ${t("🕒","Today's film times","Square post from imc.ie",'data-times="square"')}
     ${t("📱","Times for Stories","9:16 for Instagram & Facebook",'data-times="story"')}
     ${se?t("✨",se[1]+" post","Seasonal look with animation",`data-seasonpost="${se[0]}"`):""}
+    ${t("🍿","Wednesday Meal Deal",(DOW(todayIso())===3?"On today! ":"")+(wedPrice()?wedPrice()+" · ":"")+"Animated post",'data-wed="square"')}
     ${t("🍿","Promote a deal","Real prices & photos from imc.ie",'data-go="deals"')}
     ${t("🎬","Coming-soon film","Pick a film to announce",'data-wo="soon"')}
     ${t("🧸","Kids Club ad","This weekend's Kids Club films & times",'data-kidsad="weekend" data-fmt="square"')}

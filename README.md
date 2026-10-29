@@ -27,6 +27,33 @@ There's no account or server to run. GitHub Pages hosts the site, and a GitHub A
 | **Go-viral playbook** | Tactics that work for a town cinema, each opening a ready-made ad. |
 | **Photo & video editor** | The design tool. See below. |
 
+## Week ahead and the best post each day
+
+The **Today** page opens with **Best post today**: the one post most worth making today, the time to post it, and why. Two other good ideas sit beside it (folded away on a phone). **Week ahead** (in the menu under Plan & track, and in the top bar) does the same for each of the next 7 days.
+
+The picks come from the real imc.ie listings:
+
+- a big date (Halloween, Bonfire Night, Christmas Eve and Day, New Year's Eve, Valentine's Day, St Patrick's Day) wins on the day
+- **Wednesday Meal Deal** at 12:00 every Wednesday, with a heads-up Story on Tuesday evening
+- a film's opening day at 16:00, and an "opens tomorrow" post the evening before
+- **Kids Club this weekend** at 18:00 on Thursday, with a reminder on Friday and a morning Story at the weekend
+- **LUXX recliners** on Friday and Saturday when LUXX has showings
+- a **coming-soon** film early in the week
+- the current season's post (Fireworks night, Christmas and so on)
+- the day's **film times** as a Story
+
+Each idea has buttons to make it (Post, Story or Tall post), **Copy caption** and **+ Planner**, which adds it as a draft with the date and time filled in. **Add every best post to the planner** does all seven days in one go.
+
+## Wednesday Meal Deal
+
+It's always in **Your deals**, added for anyone whose saved list was missing it, and has its own button on the Today page. The price and contents come from imc.ie's booking page (ticket, medium popcorn and medium drink, £12.50 when last checked). Edit it under Deals if anything changes.
+
+## Premium editor tools
+
+- **Scan-to-book QR code** (Add → Scan-to-book QR code): a white card with a QR code and "Scan to book" under it. By default it opens this cinema's film times on imc.ie. You can switch it to the LUXX page, imc.ie, one showing's booking page or your own link. It's made on your computer with no outside service, and it scans in every size. Keep it at least 2.5 cm wide on paper.
+- **All sizes in one go** (Video, GIF & more → All sizes in one go): previews the design as a post, tall post, Story and foyer screen, then downloads the ones you tick as one zip file.
+- **✓ Check** (top bar, and in Easy mode before saving): checks for leftover placeholder words, text too small for a phone, anything cut off the edge, words hidden behind the Story buttons, a missing "Book at imc.ie", a missing film certificate, a missing logo, too many words, a QR code too small to scan, and video length. Most problems have a **Fix it** button. The red number on the button shows how many checks need attention.
+
 ## Photo & video editor
 
 - **Background:** your photo or video, an official poster (**Whole poster** shows the full poster over a blurred copy of itself), or an IMC background (IMC stage, Sky, Midnight, Sunset).
