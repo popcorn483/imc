@@ -2138,7 +2138,13 @@ function renderOwn(){const g=$("#ownGrid");if(!g)return;g.innerHTML=OWN_KEYS.map
 /* ---------- LUXX kit: your LUXX photos (added in the hub's LUXX page or here) + ready-made LUXX ads ---------- */
 let LXP=[],SITEPICS={};
 const lxKey=()=>"luxxpics:"+ownSite();
-async function loadLuxxPics(){LXP.forEach(p=>URL.revokeObjectURL(p.url));const a=await idbGet(lxKey());LXP=(Array.isArray(a)?a:[]).map(p=>({...p,url:URL.createObjectURL(p.blob)}));for(const k in PPH)if(k.startsWith("lx:"))delete PPH[k];renderLxEd()}
+/* built-in LUXX photos (data/luxx/index.json): copied into this browser's LUXX photos once, if it has none */
+async function lxSeed(site,get,set){const flag="luxxpics-seeded:"+site;try{const cur=await get("luxxpics:"+site);if(Array.isArray(cur)&&cur.length)return false;if(await get(flag))return false;
+  let idx=null,base="";for(const u of[RAW+"data/luxx/index.json?ts="+Date.now(),"data/luxx/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){idx=await r.json();base=u.startsWith(RAW)?RAW:"";break}}catch(e){}}
+  const L=(idx&&idx[site])||[];if(!L.length)return false;const out=[];
+  for(const x of L){try{const r=await fetch(base+x.file);if(r.ok)out.push({id:"lxb"+Math.random().toString(36).slice(2,9),blob:await r.blob(),label:x.label||"Seats"})}catch(e){}}
+  if(!out.length)return false;await set("luxxpics:"+site,out);await set(flag,1);return true}catch(e){return false}}
+async function loadLuxxPics(){LXP.forEach(p=>URL.revokeObjectURL(p.url));await lxSeed(ownSite(),idbGet,idbSet);const a=await idbGet(lxKey());LXP=(Array.isArray(a)?a:[]).map(p=>({...p,url:URL.createObjectURL(p.blob)}));for(const k in PPH)if(k.startsWith("lx:"))delete PPH[k];renderLxEd()}
 async function loadSitePics(){for(const u of[RAW+"data/sites/index.json?ts="+Date.now(),"data/sites/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){SITEPICS=await r.json();SITEPICS._base=u.startsWith(RAW)?RAW:"";return}}catch(e){}}}
 const sitePic=()=>{const f=SITEPICS[ownSite()];return f?(SITEPICS._base||"")+f:null};
 const lxSeats=()=>{const s=LXP.filter(p=>p.label==="Seats");return s.length?[...s,...LXP.filter(p=>p.label!=="Seats")]:LXP};

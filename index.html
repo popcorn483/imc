@@ -1874,7 +1874,14 @@ async function edbSet(k,v){try{const d=await edb();await new Promise((res,rej)=>
 const lxKey=()=>"luxxpics:"+site;
 const LX_LABELS=["Seats","Screen","Lounge","Other"];
 let lxUrls=[];
-async function lxGet(){const a=await edbGet(lxKey());return Array.isArray(a)?a:[]}
+/* built-in LUXX photos (data/luxx/index.json): copied into this browser's LUXX photos once, if it has none */
+async function lxSeed(site,get,set){const flag="luxxpics-seeded:"+site;try{const cur=await get("luxxpics:"+site);if(Array.isArray(cur)&&cur.length)return false;if(await get(flag))return false;
+  let idx=null,base="";for(const u of[RAW+"data/luxx/index.json?ts="+Date.now(),"data/luxx/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){idx=await r.json();base=u.startsWith(RAW)?RAW:"";break}}catch(e){}}
+  const L=(idx&&idx[site])||[];if(!L.length)return false;const out=[];
+  for(const x of L){try{const r=await fetch(base+x.file);if(r.ok)out.push({id:"lxb"+Math.random().toString(36).slice(2,9),blob:await r.blob(),label:x.label||"Seats"})}catch(e){}}
+  if(!out.length)return false;await set("luxxpics:"+site,out);await set(flag,1);return true}catch(e){return false}}
+const LXSEEDED=new Set();
+async function lxGet(){if(!LXSEEDED.has(site)){LXSEEDED.add(site);await lxSeed(site,edbGet,edbSet)}const a=await edbGet(lxKey());return Array.isArray(a)?a:[]}
 /* shrink big phone photos to 2400px so storage stays small */
 function lxShrink(file){return new Promise(res=>{const u=URL.createObjectURL(file),im=new Image();im.onload=()=>{const k=Math.min(1,2400/Math.max(im.width,im.height));if(k>=1&&file.size<2.5e6){URL.revokeObjectURL(u);return res(file)}const c=document.createElement("canvas");c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext("2d").drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);c.toBlob(b=>res(b||file),"image/jpeg",.9)};im.onerror=()=>{URL.revokeObjectURL(u);res(null)};im.src=u})}
 async function renderLxPics(){const a=await lxGet();lxUrls.forEach(u=>URL.revokeObjectURL(u));lxUrls=[];
