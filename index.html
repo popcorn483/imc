@@ -18,6 +18,15 @@
 .pdh{display:flex;justify-content:space-between;align-items:baseline}.pdh b{font-size:18px}.pdh span{color:var(--muted);font-size:13px}
 .bestp details.more summary,.pday details.more summary{cursor:pointer;color:var(--muted);font-size:13.5px;padding:4px 0}.bestp details.more{margin-top:10px}.bestp details.more .ideas{margin-top:8px}.pday details.more[open]{display:flex;flex-direction:column;gap:8px}.pday details.more[open] summary{margin-bottom:2px}
 @media (max-width:640px){.pweek,.ideas{grid-template-columns:1fr}}
+
+.pollpick{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end}.pvs{font-weight:900;color:#e2452e;padding-bottom:10px}.pollpick select,#pollQ{width:100%}
+.pollprev{display:flex;justify-content:center;align-items:center;gap:14px;margin:12px 0}.pollprev img,.pollprev span{width:96px;aspect-ratio:2/3;object-fit:cover;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.25);background:var(--line)}.pollprev b{color:#e2452e;font-size:20px}
+.rgrid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:16px;align-items:start}
+.rqs{display:flex;flex-direction:column;gap:6px}.rq{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:10px;align-items:center;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);font-weight:600;font-size:14.5px}
+.rq span{font-size:20px}.rq[aria-pressed="true"]{border-color:#0b6bb8;box-shadow:0 0 0 2px rgba(11,107,184,.25) inset}.rq:focus-visible{outline:3px solid #0b6bb8}
+.ranswer{display:flex;flex-direction:column;gap:12px;position:sticky;top:80px}.ranswer textarea{width:100%;font:15px/1.5 inherit;min-height:220px}.ranswer select{width:100%}
+.rday{display:flex;gap:6px;flex-wrap:wrap}.rday button{all:unset;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:14px}.rday button[aria-pressed="true"]{background:#0b6bb8;color:#fff;border-color:#0b6bb8}
+@media (max-width:760px){.rgrid{grid-template-columns:1fr}.rqs{display:grid;grid-template-columns:1fr 1fr}.rq{font-size:13px;padding:10px}.ranswer{position:static}.pollpick{grid-template-columns:1fr}.pvs{display:none}}
 </style>
 <title>IMC Hub</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -385,6 +394,7 @@ body.menuopen{overflow:hidden}
 @media (max-width:560px){.headacts{flex-wrap:wrap;flex:1 1 100%}.sitepick{flex:1 1 100%}}
 </style>
 
+<script src="qr.js"></script>
 </head>
 <body>
 <div class="app">
@@ -410,6 +420,7 @@ body.menuopen{overflow:hidden}
       <button data-view="whatson">What's on<small>All films, coming soon, Kids Club, LUXX</small></button>
       <button data-view="deals">Deals<small>Snack and ticket deals with prices</small></button>
       <button data-view="luxx">LUXX<small>Recliner ads, Reels, photos and captions</small></button>
+      <button data-view="replies">Reply helper<small>Answers to comments and messages</small></button>
       <h3>Make</h3>
       <button data-view="studio">Create a post<small>Quick poster and caption</small></button>
       <a class="navlink" href="editor.html" target="imc-editor">Photo &amp; video editor ↗<small>Designs, Reels, clips and video</small></a>
@@ -442,9 +453,15 @@ body.menuopen{overflow:hidden}
     <section id="v-plan" hidden>
       <div class="head">
         <div><h1>Week ahead</h1><p>The best post for each day, picked from what's on at <span class="sitename">IMC Enniskillen</span>. Tap a button to make it.</p></div>
-        <button class="btn primary" id="planAll">Add every best post to the planner</button>
+        <div class="row-btns"><button class="btn primary" id="planAll">Add every best post to the planner</button><button class="btn" data-ics title="Download your planned posts as calendar alerts">🔔 Remind me on my phone</button><button class="btn" data-print="week">🖨️ Print this week's films</button></div>
       </div>
       <div id="planBody"></div>
+    </section>
+
+    <!-- REPLY HELPER -->
+    <section id="v-replies" hidden>
+      <div class="head"><div><h1>Reply helper</h1><p>Pick the question someone asked. The answer is filled in with today's times and prices from imc.ie, ready to copy.</p></div></div>
+      <div id="replyBody"></div>
     </section>
 
     <!-- WHAT'S ON -->
@@ -570,7 +587,7 @@ body.menuopen{overflow:hidden}
     <section id="v-dashboard" hidden>
       <div class="head">
         <div><h1>Planner</h1><p>Your content plan for <span class="sitename">IMC Enniskillen</span>. Ideas, drafts, scheduled posts and results, all in one place.</p></div>
-        <button class="btn primary" data-go="studio">+ New ad</button>
+        <div class="row-btns"><button class="btn" data-ics title="Download your planned posts as calendar alerts">🔔 Remind me on my phone</button><button class="btn primary" data-go="studio">+ New ad</button></div>
       </div>
       <div class="grid stats" id="stats"></div>
       <div class="grid two" style="margin-top:16px">
@@ -691,6 +708,13 @@ body.menuopen{overflow:hidden}
   </main>
 </div>
 
+<div class="modal" id="pollDlg" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="pollT" style="max-width:560px;width:100%;max-height:92vh;overflow:auto">
+    <div class="ph"><h2 id="pollT">This or that poll</h2><button class="btn small ghost" id="pollClose">Close</button></div>
+    <p class="tip" style="margin-top:0">Two films side by side. People vote with ❤️ or 👍, which gets lots of comments and helps your page.</p>
+    <div id="pollBody"></div>
+  </div>
+</div>
 <div class="modal" id="mmodal" hidden>
   <div class="panel" role="dialog" aria-modal="true" aria-labelledby="mtitle">
     <h2 id="mtitle">Add results</h2>
@@ -837,7 +861,7 @@ async function remove(id){
 const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
 /* ---------- navigation ---------- */
-function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="luxx")renderLuxx();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();if(v==="plan")renderPlan();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button,.qtab").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));menu(false);if(v==="studio")drawPoster();window.scrollTo(0,0)}
+function go(v){view=v;if(v==="whatson")renderWhatsOn();if(v==="foyer")renderFoyer();if(v==="welcome")renderWelcome();if(v==="luxx")renderLuxx();if(v==="calendar")renderCalendar();if(v==="toolkit")renderToolkit();if(v==="deals")renderDeals();if(v==="today")renderToday();if(v==="plan")renderPlan();if(v==="replies")renderReplies();$$("main>section").forEach(s=>s.hidden=s.id!=="v-"+v);$$("#nav button,.qtab").forEach(b=>b.setAttribute("aria-current",b.dataset.view===v));menu(false);if(v==="studio")drawPoster();window.scrollTo(0,0)}
 $("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.view);else if(e.target.closest("a"))menu(false)});
 $(".quick").addEventListener("click",e=>{const b=e.target.closest("[data-view]");if(b)go(b.dataset.view)});
 /* hamburger menu: a drawer from the left, closed with ✕, Esc or a click outside */
@@ -1233,12 +1257,12 @@ function writeFilmPost(f,mode){startNew();const d=firstDate(f);
   cur.caption=capFor(cur);fillForm();go("studio");toast("Post drafted. Check it, then save")}
 
 /* ---------- film cards ---------- */
-function filmCard(f,mode){const d=firstDate(f),poster=asset(f.posterFile)||f.poster;
+function filmCard(f,mode){const d=mode==="soon"?((openDates().find(x=>fbase(x.f.title)===fbase(f.title))||{}).d||firstDate(f)):firstDate(f),poster=asset(f.posterFile)||f.poster;
   const when=mode==="soon"?`<span class="opens">Opens ${esc(fmtShort(d))}</span>`:`<div class="ftimes">${(f.times||[]).map(t=>(f.kidsTimes||[]).includes(t)?`<span class="kc" title="Kids Club showing">${t}<i>Kids Club</i></span>`:`<span>${t}</span>`).join("")}</div>`;
   return`<article class="film"><div class="fposter">${poster?`<img src="${esc(poster)}" alt="${esc(f.title)} poster" loading="lazy">`:""}</div>
   <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${(()=>{const r=certShown(f);return r&&r.src?`<img class="certimg" data-svg="${esc(r.src)}" alt="Rated ${esc(r.cert)}" width="24" height="24">`:r?`<span class="cert">${esc(r.cert)}</span>`:""})()}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${(f.kidsTimes||[]).length?'<span class="kcb">Kids Club</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
   ${when}
-  <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button><button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
+  <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button>${mode==="soon"?`<button class="btn small" data-countdown="${esc(f._k)}">Countdown</button>`:""}<button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
   ${(f.book||f.sessions?.[0]?.book)?`<a class="btn small ghost" href="${esc(f.book||f.sessions[0].book)}" target="imc-web">Book ↗</a>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="imc-web">Trailer ↗</a>`:""}</div></div></article>`}
 const SVGURL={};
 let ratingSys=pickRating();
@@ -1261,8 +1285,8 @@ function stamp(){if(!IMC||!IMC.updated)return"";const f=d=>new Date(d).toLocaleS
 /* ---------- Today ---------- */
 function renderToday(){const el=$("#todayBody");if(!el)return;$("#todayDate").textContent=fmtLong(todayIso());$("#todayStamp").textContent=stamp();
   if(!IMC){el.innerHTML=startPanel()+noData();return}
-  const films=keyed(filmsOn(todayIso())),soon=keyed(allFilms().filter(f=>{const d=firstDate(f);return d&&d>todayIso()}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))).slice(0,6));
-  el.innerHTML=bestToday()+startPanel()+kidsPanel()+`<div class="panel" style="margin-top:16px"><div class="ph"><h2>Showing today</h2>${films.some(f=>(f.kidsTimes||[]).length)?'<span class="kclegend"><span class="kc"><i>Kids Club</i></span> showings are highlighted</span>':""}<div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button></div></div>
+  const films=keyed(filmsOn(todayIso())),soon=keyed(openDates().filter(x=>x.d>todayIso()).sort((a,b)=>a.d.localeCompare(b.d)).slice(0,6).map(x=>x.f));
+  el.innerHTML=bestToday()+startPanel()+kidsPanel()+`<div class="panel" style="margin-top:16px"><div class="ph"><h2>Showing today</h2>${films.some(f=>(f.kidsTimes||[]).length)?'<span class="kclegend"><span class="kc"><i>Kids Club</i></span> showings are highlighted</span>':""}<div class="row-btns">${ratingSwitch()}<button class="btn small primary" data-times="square">Times graphic</button><button class="btn small" data-times="story">Times Story</button><button class="btn small" data-luxxad="square">LUXX ad</button><button class="btn small" data-luxxad="story">LUXX Story</button><button class="btn small ghost" data-print="today">🖨️ Print today</button></div></div>
     ${films.length?`<div class="films">${films.map(f=>filmCard(f,f.sources?.has("kids")&&!f.sources?.has("today")?"kids":f.luxx?"luxx":"now")).join("")}</div>`:(filmsOn(todayIso(),true).length?`<p class="tip">Every show today has started. Tomorrow\'s times are under <button class="btn small ghost" data-wo="week">What\'s on → Next 7 days</button></p>`:`<p class="tip">No times for today in the latest import. ${IMC.today&&IMC.today.length===0?"The imc.ie film-times page may have been unavailable; the next import runs within 3 hours.":""}</p>`)}</div>
     <div class="grid two" style="margin-top:16px"><div class="panel"><div class="ph"><h2>Opening soon</h2><button class="btn small ghost" data-wo="soon">All coming soon →</button></div><div class="films compact">${soon.map(f=>filmCard(f,"soon")).join("")||'<p class="tip">Nothing announced yet.</p>'}</div></div>
     <div class="panel"><div class="ph"><h2>Deals</h2><button class="btn small ghost" data-go="deals">Edit deals →</button></div><div class="dealquick">${getDeals().map((d,i)=>`<div class="dq"><b>${esc(d.name)}</b><span>${d.price?esc(d.price):dealOut(d).price?esc(dealOut(d).price)+' <em>(imc.ie)</em>':imcMatch(d.name)?esc(imcMatch(d.name).price)+' <em>(imc.ie)</em>':'<em>Price not set</em>'}</span><button class="btn small" data-dealmake="${i}" data-anim="0">Still</button><button class="btn small primary" data-dealmake="${i}" data-anim="1">Animated</button></div>`).join("")}</div>
@@ -1284,7 +1308,7 @@ function renderWhatsOn(){const el=$("#woBody");if(!el)return;$("#woStamp").textC
   const all=allFilms(),T=todayIso();let html="";
   if(woTab==="today"){const f=keyed(filmsOn(T));html=f.length?`<div class="films">${f.map(x=>filmCard(x,x.luxx?"luxx":"now")).join("")}</div>`:filmsOn(T,true).length?'<p class="tip">Every show today has started. See Next 7 days for tomorrow.</p>':'<p class="tip">No times for today in the latest import.</p>'}
   else if(woTab==="week"){for(let i=0;i<7;i++){const d=addDays(T,i),f=keyed(filmsOn(d));if(!f.length)continue;html+=`<div class="dayhead"><h2>${esc(fmtLong(d))}</h2><div class="row-btns"><button class="btn small" data-daytimes="${d}" data-fmt="square">Times graphic</button><button class="btn small" data-daytimes="${d}" data-fmt="story">Story</button></div></div><div class="films">${f.map(x=>filmCard(x,x.luxx?"luxx":"now")).join("")}</div>`}html=html||'<p class="tip">No sessions found for the next 7 days.</p>'}
-  else if(woTab==="soon"){const f=keyed(all.filter(x=>{const d=firstDate(x);return d&&d>T}).sort((a,b)=>firstDate(a).localeCompare(firstDate(b))));html=f.length?`<div class="films">${f.map(x=>filmCard(x,"soon")).join("")}</div>`:'<p class="tip">Nothing announced yet.</p>'}
+  else if(woTab==="soon"){const f=keyed(openDates().filter(x=>x.d>T).sort((a,b)=>a.d.localeCompare(b.d)).map(x=>x.f));html=f.length?`<div class="films">${f.map(x=>filmCard(x,"soon")).join("")}</div>`:'<p class="tip">Nothing announced yet.</p>'}
   else{const pick=woTab==="kids"?x=>x.sources.has("kids"):woTab==="luxx"?x=>x.luxx:x=>x.sensory;const f=keyed(all.filter(pick).map(x=>{const up=x.sessions.filter(s=>notStarted(s.date,s.time)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));return{...x,times:up.filter(s=>s.date===up[0]?.date).map(s=>s.time),nextDate:up[0]?.date}}));
     html=f.length?`<div class="films">${f.map(x=>filmCard({...x,times:x.times.length?[fmtShort(x.nextDate),...x.times]:[]},woTab==="kids"?"kids":woTab==="luxx"?"luxx":"now")).join("")}</div>`:'<p class="tip">None listed right now.</p>'}
   if(woTab==="kids")html=kidsPanel()+html;
@@ -1798,6 +1822,12 @@ function dayIdeas(date){const T=todayIso(),dow=DOW(date),nm=S().name,tags=S().ta
   /* LUXX at the weekend */
   if(luxx.length&&(dow===5||dow===6)){const lp=lxPrice();add({k:"luxx",score:dow===6?8:6,icon:"💺",type:"now",title:"LUXX recliners this weekend",why:"Weekend evenings are when people treat themselves. Show off the recliners.",time:"11:00",make:fmt=>{const td=lxRowsToday();openEditor({kind:"luxxkit",tpl:"week",fmt,price:lp,heading:td.heading,rows:td.rows,week:lxWeek().map(f=>({t:f.t,cert:f.cert,system:f.system,times:f.slots.slice(0,3).map(s=>(s.d===todayIso()?"Today":dShort(s.d))+" "+s.t)}))})},fmts:["square","story"],
     headline:"LUXX",price:lp,cap:`💺 Treat yourself this weekend: full recliners, more legroom and the comfiest seats in town at ${nm}.${lp?" From "+lp+".":""}\nShowing in LUXX: ${luxx.slice(0,4).map(f=>f.title).join(", ")}\n🎟️ Book at imc.ie`})}
+  /* countdown three days before a film opens */
+  opensOn(addDays(date,3)).slice(0,1).forEach(f=>add({k:"cd-"+f._k,score:6.5,icon:"⏳",type:"soon",title:`Countdown: 3 days to ${f.title}`,why:"Countdown posts build excitement and remind people to book early.",time:"19:00",film:f,make:fmt=>makeCountdown(f,fmt,date),fmts:["square","story"],
+    headline:f.title,details:"3 days to go",cap:`⏳ 3 DAYS TO GO! ${f.title} opens at ${nm} on ${fmtLong(addDays(date,3))}.\nWho's coming? 👇\n🎟️ Book now at imc.ie`}));
+  /* a "this or that" poll on Sunday to get people talking */
+  if(dow===0){const wf=weekFilms();if(wf.length>1)add({k:"poll",score:5.5,icon:"🗳️",type:"poll",title:`Poll: ${wf[0].title} or ${wf[1].title}?`,why:"Polls get lots of comments and reactions, which helps all your other posts get seen.",time:"18:00",make:fmt=>openEditor({kind:"poll",fmt,a:filmMini(wf[0]),b:filmMini(wf[1])}),fmts:["square","story"],
+    headline:"Which are you seeing?",cap:`🗳️ Which are you seeing?\n❤️ for ${wf[0].title}\n👍 for ${wf[1].title}\n\nVote with a reaction! Both showing now at ${nm}.\n🎟️ Book at imc.ie`})}
   /* coming soon, early in the week */
   if(dow===1||dow===2){const f=nextOpening(addDays(date,1));if(f)add({k:"soon-"+f._k,score:dow===1?7:5,icon:"📅",type:"soon",title:`Coming soon: ${f.title}`,why:"Quieter days are perfect for building excitement about the next big film.",time:"19:30",film:f,make:fmt=>makeFilm(f,"soon",fmt),fmts:["square","story","portrait"],
     headline:f.title,cap:`👀 Coming soon to ${nm}: ${f.title}, from ${fmtLong(firstDate(f))}.\nWho's coming with you? 👇\n🎟️ Tickets at imc.ie`})}
@@ -1832,6 +1862,109 @@ document.addEventListener("click",async e=>{let b;
   if(e.target.closest("#planAll")){const T=todayIso();let c=0;for(let i=0;i<7;i++){const d=addDays(T,i),o=(IDEAS[d]||dayIdeas(d))[0];if(o&&!planned(d,o)){await persist(ideaPost(d,o));c++}}toast(c?`Added ${c} best post${c>1?"s":""} to the planner as drafts`:"They're all in the planner already");rerenderIdeas()}});
 function rerenderIdeas(){if(view==="plan")renderPlan();if(view==="today")renderToday()}
 
+/* ==================== more tools: countdowns, polls, reply helper, printable listings, phone reminders ==================== */
+const filmMini=f=>({title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert&&f.cert!=="TBC"?f.cert:"",certSystem:f.certSystem||"bbfc"});
+const dayDiff=(a,b)=>Math.round((new Date(b+"T12:00")-new Date(a+"T12:00"))/864e5);
+const upDate=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}).replace(",","").toUpperCase();
+/* ---------- countdown ---------- */
+function makeCountdown(f,fmt,from){const od=(openDates().find(x=>fbase(x.f.title)===fbase(f.title))||{}).d||firstDate(f),n=dayDiff(from||todayIso(),od);
+  if(!od||n<1){makeFilm(f,"soon",fmt);return}openEditor({kind:"countdown",fmt:fmt||"square",film:filmMini(f),days:n,dateLabel:upDate(od)})}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-countdown]");if(!b)return;const f=FILMKEYS.get(b.dataset.countdown);if(f)makeCountdown(f,b.dataset.fmt||"square")});
+/* ---------- this or that poll ---------- */
+function weekFilms(){const T=todayIso(),in7=addDays(T,6),m=new Map();for(const f of allFilms()){if(/^sensory/i.test(f.title)||f.sensory)continue;const n=f.sessions.filter(s=>s.date>=T&&s.date<=in7).length;if(!n)continue;const k=fbase(f.title),o=m.get(k);if(!o||(o.f.luxx&&!f.luxx))m.set(k,{f,n:(o?o.n:0)+n});else o.n+=n}
+  return keyed([...m.values()].sort((a,b)=>b.n-a.n).map(x=>x.f))}
+const POLL_Q=["Which are you seeing?","Date night pick?","Family film night: which one?","Popcorn or pick 'n' mix film?","Which one first?"];
+let POLL={};
+function pollOpen(a,b){const L=weekFilms();if(L.length<2){toast("Need at least two films showing this week");return}POLL={a:a||L[0]._k,b:b||L[1]._k,q:POLL_Q[0],fmt:"square"};
+  const opts=sel=>L.map(f=>`<option value="${esc(f._k)}" ${f._k===sel?"selected":""}>${esc(f.title)}</option>`).join("");
+  $("#pollBody").innerHTML=`<div class="pollpick"><label class="field"><span class="flabel">❤️ Film one</span><select id="pollA">${opts(POLL.a)}</select></label><span class="pvs">VS</span><label class="field"><span class="flabel">👍 Film two</span><select id="pollB">${opts(POLL.b)}</select></label></div>
+    <div class="pollprev" id="pollPrev"></div>
+    <label class="field"><span class="flabel">Question</span><select id="pollQ">${POLL_Q.map(q=>`<option>${esc(q)}</option>`).join("")}</select></label>
+    <div class="row-btns" style="margin-top:14px"><button class="btn primary" data-pollgo="square">Make post</button><button class="btn" data-pollgo="story">Story</button><button class="btn" data-pollgo="portrait">Tall post</button><button class="btn ghost" id="pollCap">Copy caption</button></div>`;
+  pollPrev();$("#pollDlg").hidden=false}
+function pollPrev(){const a=FILMKEYS.get(POLL.a),b=FILMKEYS.get(POLL.b),im=f=>f&&(asset(f.posterFile)||f.poster)?`<img src="${esc(asset(f.posterFile)||f.poster)}" alt="">`:"<span></span>";$("#pollPrev").innerHTML=im(a)+"<b>VS</b>"+im(b)}
+function pollCaption(){const a=FILMKEYS.get(POLL.a),b=FILMKEYS.get(POLL.b);return`🗳️ ${POLL.q.replace(/\?*$/,"?")}\n❤️ for ${a.title}\n👍 for ${b.title}\n\nVote with a reaction and tag who you're bringing! Both showing now at ${S().name}.\n🎟️ Book at imc.ie\n\n${S().tags||""}`}
+$("#pollDlg").addEventListener("change",e=>{if(e.target.id==="pollA")POLL.a=e.target.value;if(e.target.id==="pollB")POLL.b=e.target.value;if(e.target.id==="pollQ")POLL.q=e.target.value;pollPrev()});
+$("#pollDlg").addEventListener("click",e=>{if(e.target===$("#pollDlg")||e.target.id==="pollClose"){$("#pollDlg").hidden=true;return}
+  if(e.target.id==="pollCap"){const t=pollCaption();navigator.clipboard?.writeText(t).then(()=>toast("Caption copied"),()=>prompt("Copy this caption",t));return}
+  const g=e.target.closest("[data-pollgo]");if(g){if(POLL.a===POLL.b){toast("Pick two different films");return}const a=FILMKEYS.get(POLL.a),b=FILMKEYS.get(POLL.b);openEditor({kind:"poll",fmt:g.dataset.pollgo,a:filmMini(a),b:filmMini(b),q:POLL.q});$("#pollDlg").hidden=true}});
+document.addEventListener("click",e=>{if(e.target.closest("[data-poll]"))pollOpen()});
+
+/* ---------- reply helper: answers to the questions people ask in comments and messages, filled in from imc.ie ---------- */
+const RQ=[["times","🕒","What time is a film on?"],["today","📅","What's on today / tomorrow?"],["prices","🎟️","How much are tickets?"],["wed","🍿","What's the Wednesday Meal Deal?"],["kids","🧸","When is Kids Club?"],["luxx","💺","What is LUXX?"],["soon","👀","When is a film out?"],["relaxed","💙","Do you do relaxed screenings?"],["group","🎉","Birthday parties and groups"],["sorry","🙏","Replying to a complaint"],["thanks","💛","Thanking someone for a nice comment"]];
+let RS={q:"times"};
+const sign=()=>`\n\n– The team at ${S().name}`;
+function rTimes(f,days){const T=todayIso(),out=[];for(let i=0;i<(days||7)&&out.length<4;i++){const d=addDays(T,i),t=f.sessions.filter(s=>s.date===d&&(i||notStarted(d,s.time))).map(s=>s.time).sort();if(t.length)out.push(`${i===0?"Today":i===1?"Tomorrow":fmtShort(d)}: ${[...new Set(t)].join(", ")}`)}return out}
+function replyText(){const q=RS.q,nm=S().name,P=imcPrices(),T=todayIso();
+  if(q==="times"){const f=FILMKEYS.get(RS.film);if(!f)return"";const L=[...weekFilms()].filter(x=>fbase(x.title)===fbase(f.title));const all=allFilms().filter(x=>fbase(x.title)===fbase(f.title));
+    const lines=all.flatMap(x=>{const r=rTimes(x);return r.length?(all.length>1?[(x.luxx?"In LUXX":"Standard seats")+":",...r]:r):[]});
+    return lines.length?`Hi! ${f.title} is showing at ${nm}:\n${lines.join("\n")}\n\nYou can book at imc.ie 🎟️${sign()}`:`Hi! We don't have any times for ${f.title} at the moment. Keep an eye on imc.ie for updates.${sign()}`}
+  if(q==="today"){const d=RS.day||T,fs=filmsOn(d,d!==T);return fs.length?`Hi! Here's what's on ${d===T?"today":d===addDays(T,1)?"tomorrow":"on "+fmtLong(d)} at ${nm}:\n${fs.map(f=>`🎬 ${f.title}${f.luxx?" (LUXX)":""}: ${f.times.join(", ")}`).join("\n")}\n\nBook at imc.ie 🎟️${sign()}`:`Hi! There are no more showings ${d===T?"today":"that day"} yet. See imc.ie for the latest times.${sign()}`}
+  if(q==="prices"){const tk=((P&&P.tickets)||[]).filter(t=>!/deal|meal|kids club|luxx|voucher/i.test(t.name));if(!tk.length)return`Hi! You'll find all our ticket prices when you book at imc.ie.${sign()}`;
+    const lx=lxPrice(),w=wedPrice();return`Hi! Our ticket prices at ${nm} are:\n${tk.map(t=>`• ${offerName(t.name)}: ${t.price}${t.days&&t.days.length<7&&((P.sampledDays||[]).length>=5)?" ("+offerWhen(t,P).replace(/ only$/,"")+")":""}`).join("\n")}${lx?`\n• LUXX recliner: from ${lx}`:""}${w?`\n\nOn Wednesdays our Meal Deal is ${w} for a ticket, popcorn and a drink.`:""}\n\nBook at imc.ie 🎟️${sign()}`}
+  if(q==="wed"){const d=wedDeal();return`Hi! Our Wednesday Meal Deal${d.price?" is "+d.price+" and":""} gets you ${d.items.map(x=>x.replace(/^1X\s*/i,"a ").toLowerCase()).join(", ").replace(/, ([^,]+)$/," and $1")}. It's on every Wednesday at ${nm}. Book at imc.ie 🍿${sign()}`}
+  if(q==="kids"){const k=kidsPayload("week");return k.films.length?`Hi! Kids Club at ${nm} in the next week:\n${k.films.map(f=>`🧸 ${f.t}: ${k.everyDay&&!/\s/.test(f.times[0])?k.everyDay.replace(/, ([^,]+)$/," & $1")+" at ":""}${f.times.join(", ")}`).join("\n")}${k.price?`\nTickets are ${k.price} each.`:""}\n\nBook at imc.ie${sign()}`:`Hi! There's no Kids Club in the next week. Keep an eye on imc.ie and our page for the next one!${sign()}`}
+  if(q==="luxx"){const lx=lxPrice(),w=lxWeek();return`Hi! LUXX is our premium screen with full electric recliners and extra legroom.${lx?` Tickets are from ${lx}.`:""}${w.length?`\nShowing in LUXX this week: ${w.slice(0,5).map(f=>f.t).join(", ")}.`:""}\n\nBook at imc.ie 💺${sign()}`}
+  if(q==="soon"){const f=FILMKEYS.get(RS.soon);if(!f)return"";const od=(openDates().find(x=>fbase(x.f.title)===fbase(f.title))||{}).d||firstDate(f);return`Hi! ${f.title} opens at ${nm} on ${fmtLong(od)}.${od&&dayDiff(T,od)<=14?" Tickets are on imc.ie now.":" Keep an eye on imc.ie for tickets."} 🎬${sign()}`}
+  if(q==="relaxed"){const in14=addDays(T,13),s=allFilms().filter(f=>(/^sensory/i.test(f.title)||f.sensory)&&f.sessions.some(x=>x.date>=T&&x.date<=in14&&notStarted(x.date,x.time))).filter(f=>rTimes(f,14).length);
+    return s.length?`Hi! Yes, we run relaxed screenings with the lights up a little and the sound down a little, and it's fine to move about. Coming up:\n${s.map(f=>`💙 ${f.title.replace(/^sensory\s*:?\s*/i,"")}: ${rTimes(f,14).join("; ")}`).join("\n")}\n\nBook at imc.ie${sign()}`:`Hi! Yes, we run relaxed screenings with the lights up a little and the sound down a little. There isn't one in the next two weeks, but keep an eye on imc.ie and our page for the next one.${sign()}`}
+  if(q==="group")return`Hi! Thanks for thinking of us! Send us a private message with the date, the film and how many are coming, and we'll help you sort it out. You can also ask at the box office.${sign()}`;
+  if(q==="sorry")return`Hi, thank you for letting us know, and we're really sorry your visit wasn't what it should have been. Could you send us a private message with the date and time of your film so we can look into it properly?${sign()}`;
+  if(q==="thanks")return`Thank you so much! 💛 We're delighted you enjoyed it, and we can't wait to see you again soon.${sign()}`;
+  return""}
+function renderReplies(){const el=$("#replyBody");if(!el)return;const T=todayIso();
+  const fl=weekFilms(),soon=keyed(openDates().filter(x=>x.d>T).sort((a,b)=>a.d.localeCompare(b.d)).map(x=>x.f));
+  if(RS.q==="times"&&!FILMKEYS.get(RS.film))RS.film=fl[0]&&fl[0]._k;if(RS.q==="soon"&&!FILMKEYS.get(RS.soon))RS.soon=soon[0]&&soon[0]._k;
+  const extra=RS.q==="times"?`<label class="field"><span class="flabel">Which film?</span><select id="rFilm">${fl.map(f=>`<option value="${esc(f._k)}" ${f._k===RS.film?"selected":""}>${esc(f.title)}</option>`).join("")}</select></label>`
+    :RS.q==="soon"?`<label class="field"><span class="flabel">Which film?</span><select id="rSoon">${soon.map(f=>`<option value="${esc(f._k)}" ${f._k===RS.soon?"selected":""}>${esc(f.title)}</option>`).join("")}</select></label>`
+    :RS.q==="today"?`<div class="seg rday">${[0,1,2].map(i=>{const d=addDays(T,i);return`<button data-rday="${d}" aria-pressed="${(RS.day||T)===d}">${i===0?"Today":i===1?"Tomorrow":WDAY(d)}</button>`}).join("")}</div>`:"";
+  el.innerHTML=`<div class="rgrid"><div class="rqs">${RQ.map(([k,i,n])=>`<button class="rq" data-rq="${k}" aria-pressed="${RS.q===k}"><span>${i}</span>${esc(n)}</button>`).join("")}</div>
+    <div class="panel ranswer">${extra}<label class="field"><span class="flabel">Your reply (change anything you like)</span><textarea id="rText" rows="10">${esc(IMC||!["times","today","kids","soon","relaxed"].includes(RS.q)?replyText():"Loading the listings…")}</textarea></label>
+    <div class="row-btns"><button class="btn primary" id="rCopy">Copy reply</button><span class="tip" style="margin:0;border:0;padding:4px">Paste it into Facebook, Instagram or Messenger.</span></div></div></div>`}
+document.addEventListener("click",e=>{let b;if(b=e.target.closest("[data-rq]")){RS.q=b.dataset.rq;renderReplies();if(matchMedia("(max-width:760px)").matches)$(".ranswer").scrollIntoView({behavior:"smooth",block:"start"});return}
+  if(b=e.target.closest("[data-rday]")){RS.day=b.dataset.rday;renderReplies();return}
+  if(e.target.id==="rCopy"){const t=$("#rText").value;navigator.clipboard?.writeText(t).then(()=>toast("Reply copied"),()=>{$("#rText").select();toast("Press Ctrl+C to copy")})}});
+document.addEventListener("change",e=>{if(e.target.id==="rFilm"){RS.film=e.target.value;renderReplies()}if(e.target.id==="rSoon"){RS.soon=e.target.value;renderReplies()}});
+
+/* ---------- printable listings: an A4 poster for the window or foyer ---------- */
+function qrSvg(url){try{const q=IMCQR.make(url),n=q.size+8;let d="";for(let y=0;y<q.size;y++)for(let x=0;x<q.size;x++)if(q.get(x,y))d+=`M${x+4} ${y+4}h1v1h-1z`;return`<svg viewBox="0 0 ${n} ${n}" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><rect width="${n}" height="${n}" fill="#fff"/><path d="${d}" fill="#000"/></svg>`}catch(e){return""}}
+function printListings(span){const T=todayIso(),days=span==="today"?[T]:[...Array(7)].map((_,i)=>addDays(T,i)),abs=p=>p?new URL(p,location.href).href:"";
+  /* one row per film: LUXX times sit in the same row, marked in black and gold */
+  const m=new Map();for(const d of days)for(const f of filmsOn(d,true)){if(/^sensory/i.test(f.title))continue;const k=f.title.toLowerCase().replace(/\s+-\s+luxx$/,"").trim(),o=m.get(k)||{f,by:{},lx:false,kids:new Set()};if(!f.luxx||!m.has(k))o.f=o.f.luxx&&!f.luxx?f:o.f;
+    const cur=o.by[d]||[];o.by[d]=[...cur,...f.times.map(t=>({t,l:!!f.luxx,k:(f.kidsTimes||[]).includes(t)}))].sort((a,b)=>a.t.localeCompare(b.t));if(f.luxx)o.lx=true;m.set(k,o)}
+  const rows=[...m.values()].sort((a,b)=>a.f.title.localeCompare(b.f.title));if(!rows.length){toast("No listings to print yet");return}
+  const nm=S().name,logo=abs(document.querySelector(".brand img")?.getAttribute("src")||"imc-logo.svg"),one=days.length===1;
+  const cell=(r,d)=>(r.by[d]||[]).map(x=>`<span class="${x.l?"l":""}${x.k?" k":""}">${x.t}</span>`).join(" ");
+  const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(nm)} listings</title><style>
+@page{size:A4 ${one?"portrait":"landscape"};margin:10mm}*{box-sizing:border-box}body{margin:0;font:13px/1.3 Arial,Helvetica,sans-serif;color:#111}
+header{display:flex;align-items:center;gap:14px;border-bottom:4px solid #0b6bb8;padding-bottom:8px;margin-bottom:10px}header img{height:46px}header h1{margin:0;font-size:${one?34:28}px;letter-spacing:.5px;text-transform:uppercase}header p{margin:2px 0 0;color:#444;font-size:14px}
+table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{border:1px solid #bbb;padding:4px 6px;vertical-align:middle}th{background:#0b6bb8;color:#fff;font-size:13px;text-align:left}th.f{width:${one?60:24}%}
+td.f b{font-size:${one?24:14}px;margin-right:6px}td.f .tag{vertical-align:2px}td.f small{color:#555}tr:nth-child(even) td{background:#f2f6fb}td span{display:inline-block;font-weight:700;font-size:${one?26:13}px;margin:0 8px 2px 0}${one?"th,td{padding:12px 10px!important}th{font-size:16px!important}.tag{font-size:13px!important}":""}td span.k{background:#ffd84a;padding:0 3px;border-radius:3px}td span.l{background:#111;color:#ffc23d;padding:0 3px;border-radius:3px}
+.tag{display:inline-block;border:1px solid #333;border-radius:3px;font-size:10px;font-weight:700;padding:0 3px;margin-right:4px}.tag.l{background:#111;color:#ffc23d;border-color:#111}
+footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:13px}footer .qr{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}footer svg{width:30mm;height:30mm}
+.bar{position:fixed;top:0;left:0;right:0;background:#111;color:#fff;padding:10px;text-align:center;font:15px Arial}.bar button{font:700 15px Arial;padding:8px 18px;margin-left:10px;border-radius:6px;border:0;background:#ffd84a;cursor:pointer}@media print{.bar{display:none}}@media screen{body{padding:60px 0 20px;max-width:${one?718:1047}px;margin:auto}}
+</style></head><body><div class="bar">This is how it will print. <button onclick="print()">Print</button><span id="pz" hidden></span></div>
+<header><img src="${esc(logo)}" alt=""><div><h1>${one?"Today at "+esc(nm):"What's on at "+esc(nm)}</h1><p>${one?esc(fmtLong(T)):esc(fmtLong(days[0])+" to "+fmtLong(days[6]))}</p></div></header>
+<table><thead><tr><th class="f">Film</th>${days.map(d=>`<th>${one?"Times":esc(fmtShort(d))}</th>`).join("")}</tr></thead><tbody>
+${rows.map(r=>{const f=r.f;return`<tr><td class="f"><b>${esc(f.title.replace(/\s+-\s+LUXX$/i,""))}</b>${f.cert&&f.cert!=="TBC"?`<span class="tag">${esc(f.cert)}</span>`:""}${r.lx?'<span class="tag l">LUXX</span>':""}${one&&f.runtime?`<small> ${f.runtime} min</small>`:""}</td>${days.map(d=>`<td>${cell(r,d)}</td>`).join("")}</tr>`}).join("")}
+</tbody></table><footer><div>${rows.some(r=>Object.values(r.by).some(L=>L.some(x=>x.k)))?'<span style="background:#ffd84a;padding:0 4px;font-weight:700">Yellow</span> = Kids Club. ':""}${rows.some(r=>r.lx)?'<span style="background:#111;color:#ffc23d;padding:0 4px;font-weight:700">Black</span> = LUXX recliners. ':""}Times can change. Please check imc.ie before you travel.</div><div class="qr">Scan to book${qrSvg("https://imc.ie/film-times/"+((IMC&&IMC.slug)||site)+"/")}</div></footer>
+<script>/* shrink to one A4 page */(function(){var page=${one?1047:718},w=${one?720:1047},b=document.body,bar=document.querySelector(".bar");function fit(){b.style.zoom=1;var r=b.getBoundingClientRect(),h=b.scrollHeight-(bar?bar.offsetHeight+40:0),k=Math.min(1,page/h,w/Math.max(w,b.scrollWidth));b.dataset.fit=(k*.9).toFixed(3);b.style.zoom="";document.getElementById("pz").textContent=k.toFixed(3)}
+var st=document.createElement("style");st.id="pzs";document.head.appendChild(st);function apply(){fit();st.textContent="@media print{body{zoom:"+b.dataset.fit+"}}"}window.addEventListener("load",apply);window.addEventListener("beforeprint",apply);apply()})()<\/script></body></html>`;
+  const w=window.open("","imc-print");if(!w){toast("Allow pop-ups for this site to print");return}w.document.open();w.document.write(html);w.document.close()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-print]");if(b)printListings(b.dataset.print)});
+
+/* ---------- phone reminders: planned posts as calendar alerts (.ics works with iPhone, Android, Outlook and Google Calendar) ---------- */
+function icsReminders(){const T=todayIso(),to=addDays(T,13),L=posts.filter(p=>p.status!=="posted"&&p.date>=T&&p.date<=to).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+  if(!L.length){toast("Nothing planned for the next two weeks yet. Add ideas from Week ahead first");return}
+  const z=s=>String(s||"").replace(/\\/g,"\\\\").replace(/;/g,"\;").replace(/,/g,"\\,").replace(/\r?\n/g,"\\n"),fold=l=>{let o="",i=0;while(l.length-i>73){o+=l.slice(i,i+73)+"\r\n ";i+=73}return o+l.slice(i)};
+  const dt=(d,t)=>d.replace(/-/g,"")+"T"+(t||"12:00").replace(":","")+"00",now=new Date().toISOString().replace(/[-:]/g,"").slice(0,15)+"Z";
+  const ev=L.map(p=>{const[h,m]=(p.time||"12:00").split(":").map(Number),e=String(h).padStart(2,"0")+":"+String((m+15)%60).padStart(2,"0"),end=m+15>=60?String(h+1).padStart(2,"0")+":"+String((m+15)%60).padStart(2,"0"):e;
+    return["BEGIN:VEVENT","UID:"+p.id+"@imc-hub","DTSTAMP:"+now,"DTSTART;TZID=Europe/London:"+dt(p.date,p.time),"DTEND;TZID=Europe/London:"+dt(p.date,end),"SUMMARY:"+z("📣 Post: "+(p.headline||TPL[p.type]?.name||"IMC post")),"DESCRIPTION:"+z((p.caption||"")+"\n\nMake it in the IMC hub: "+location.href.split("#")[0]),"BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:"+z("Time to post: "+(p.headline||"IMC post")),"TRIGGER:PT0M","END:VALARM","END:VEVENT"].map(fold).join("\r\n")}).join("\r\n");
+  const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//IMC hub//EN","CALSCALE:GREGORIAN","X-WR-CALNAME:IMC posts",ev,"END:VCALENDAR"].join("\r\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));a.download="imc-post-reminders.ics";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);
+  toast(`${L.length} reminder${L.length>1?"s":""} ready. Open the file to add them to your calendar`)}
+document.addEventListener("click",e=>{if(e.target.closest("[data-ics]"))icsReminders()});
+
 /* ---------- start panel: the common jobs, one click each ---------- */
 function startPanel(){const se=hSeasonNow()[0];
   const t=(icon,label,sub,attr)=>`<button class="start" ${attr}><span class="si" aria-hidden="true">${icon}</span><b>${label}</b><small>${sub}</small></button>`;
@@ -1842,6 +1975,9 @@ function startPanel(){const se=hSeasonNow()[0];
     ${t("🍿","Wednesday Meal Deal",(DOW(todayIso())===3?"On today! ":"")+(wedPrice()?wedPrice()+" · ":"")+"Animated post",'data-wed="square"')}
     ${t("🍿","Promote a deal","Real prices & photos from imc.ie",'data-go="deals"')}
     ${t("🎬","Coming-soon film","Pick a film to announce",'data-wo="soon"')}
+    ${t("🗳️","This or that poll","Two films, vote with a reaction",'data-poll')}
+    ${t("💬","Reply helper","Answers to comments & messages",'data-go="replies"')}
+    ${t("🖨️","Print this week's films","A4 poster for the window",'data-print="week"')}
     ${t("🧸","Kids Club ad","This weekend's Kids Club films & times",'data-kidsad="weekend" data-fmt="square"')}
     ${t("💺","LUXX ad","Today's LUXX showings",'data-luxxad="square"')}
     ${t("🎞️","Cinema Reel","9:16 video for Reels, TikTok & Stories",'data-reelgo="0"')}

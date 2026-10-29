@@ -2333,6 +2333,41 @@ function filmLayers(fm,mode){const L=[];
   return L}
 async function applyFilm(fm,mode){FLOGO_FILM=fm.title;S.filmTitle=fm.title;flLoad(flKey(fm.title)).then(()=>{if(EASY)renderEasy()});S.label=fm.title+(mode==="soon"?" coming soon":"");S.bg="photo";S.photo={...S.photo,fit:"poster",zoom:1,ox:0,oy:-.035};S.frame={...S.frame,style:"brandbar",logo:true};S.layers=filmLayers(fm,mode);S.motion={...S.motion,fx:mode==="soon"?{spotlights:true,sparkle:true}:mode==="luxx"?{sparkle:true}:{}};selId=null;syncAll();
   if(fm.poster)await loadUrlAsPhoto(fm.poster);commit();toast(fm.title+" ready. Everything can be moved and edited")}
+/* ---------- countdown: "3 DAYS TO GO" for a film that's coming soon ---------- */
+function applyCountdown(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,port=!tall&&ar<.95,wide=ar>1.4,fm=h.film||{},n=Math.max(1,h.days|0);
+  FLOGO_FILM=fm.title;S.filmTitle=fm.title;flLoad(flKey(fm.title||"")).then(()=>{if(EASY)renderEasy()});
+  const num=String(n),word=n===1?"DAY TO GO":"DAYS TO GO",tt=String(fm.title||"FILM TITLE").toUpperCase(),L=[];
+  const poster=o=>fm.poster?{id:uid(),kind:"pphoto",src:fm.poster,label:fm.title+" poster",card:true,ar:.667,x:.5,y:.5,s:1,r:-.03,o:1,anim:"drop",...o}:null;
+  const rp=fm.cert?ratingPick(fm.cert,fm.certSystem||"bbfc",ratingSys):null;if(rp&&rp.src)loadRating(rp.src);
+  const cert=o=>rp&&rp.src?mk("rating",null,{src:rp.src,cert:rp.cert,system:rp.system,s:.42,...o}):null;
+  const u=Math.min(f.w,f.h)/1080,dy=px=>px*u/f.h;
+  const col=(x,y0,w,big,ws,ts,dsub)=>{big=fitSize(num,"display",big,120,w);ws=fitSize(word,"display",ws,36,w);const tz=fitSize(tt,"body",ts,24,w);
+    const wy=y0+dy(.4*big+.4*ws+22),ty=wy+dy(.4*ws+.5*tz+24),by=ty+dy(.5*tz+90);
+    L.push(mk("text","title",{text:num,x,y:y0,size:big,c1:"#ffd84a",anim:"slam",delay:.1}),mk("text","title",{text:word,x,y:wy,size:ws,anim:"slide",delay:.2}),
+      mk("text","sub",{text:tt.length>26?fm.title:tt,x,y:ty,size:tz,upper:false,anim:"slide",delay:.26}),mk("badge","date",{text:h.dateLabel||"SOON",sub:dsub||"IN CINEMAS",x,y:by,s:.62,anim:"pop",delay:.34}))};
+  const P={square:{p:[.29,.47,1.25],c:[.72,.3,460,300,92,50],ct:[.47,.7],sm:.855},portrait:{p:[.29,.47,1.5],c:[.72,.32,460,300,92,50],ct:[.5,.68],sm:.86},
+    story:{p:[.5,.29,1.4],c:[.5,.555,900,240,100,56,"BOOK AT IMC.IE"],ct:[.8,.17],sm:0},wide:{p:[.27,.47,1.4],c:[.65,.3,900,320,96,56],ct:[.42,.74],sm:.845}}[tall?"story":wide?"wide":port?"portrait":"square"];
+  L.push(poster({x:P.p[0],y:P.p[1],s:P.p[2]}));col(...P.c);const c=cert({x:P.ct[0],y:P.ct[1]});if(c)L.push(c);
+  if(P.sm)L.push(mk("text","small",{text:"BOOK NOW AT IMC.IE",y:P.sm,size:24,anim:"fade",delay:.4}));
+  S.label=fm.title+" countdown";S.bg="midnight";S.frame={...S.frame,style:"brandbar",logo:true};S.layers=L.filter(Boolean);S.motion={...S.motion,dur:5,fx:{spotlights:true,sparkle:true},amt:.8};
+  if(tall)showSafe=true;selId=null;syncAll();commit();toast(n+" "+word.toLowerCase()+": countdown ready. Click the number to change it")}
+/* ---------- this or that: two films side by side, vote with a reaction ---------- */
+function applyPoll(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1.4,a=h.a||{},b=h.b||{},L=[];
+  const q=(h.q||"WHICH ARE YOU SEEING?").toUpperCase();
+  const card=(fm,x,y,s,r,d)=>fm.poster?{id:uid(),kind:"pphoto",src:fm.poster,label:fm.title+" poster",card:true,ar:.667,x,y,s,r,o:1,anim:"drop",delay:d}:mk("text","title",{text:String(fm.title||"FILM").toUpperCase(),x,y,size:60});
+  const vote=(e,x,y,sz,d)=>mk("text","title",{text:e,x,y,size:sz,shadow:false,upper:false,anim:"pop",delay:d});
+  const name=(fm,x,y,w,d)=>mk("text","sub",{text:fm.title||"",x,y,size:fitSize(fm.title||"","body",40,22,w),upper:false,anim:"fade",delay:d});
+  if(tall){L.push(mk("text","title",{text:q,y:.17,size:fitSize(q,"display",104,48,900),anim:"slide"}));
+    L.push(card(a,.27,.4,1.38,-.04,.1),card(b,.73,.4,1.38,.04,.18));L.push(name(a,.27,.585,440,.25),name(b,.73,.585,440,.28));
+    L.push(vote("❤️",.27,.66,110,.32),vote("👍",.73,.66,110,.36));L.push(mk("badge","price",{text:"VS",sub:"",x:.5,y:.4,s:.62,r:-.08,anim:"slam",delay:.3}))}
+  else if(wide){L.push(mk("text","title",{text:q,y:.15,size:fitSize(q,"display",96,40,1500),anim:"slide"}));
+    L.push(card(a,.3,.52,1.05,-.04,.1),card(b,.7,.52,1.05,.04,.18));L.push(vote("❤️",.13,.55,120,.32),vote("👍",.87,.55,120,.36));L.push(mk("badge","price",{text:"VS",sub:"",x:.5,y:.52,s:.55,r:-.08,anim:"slam",delay:.3}))}
+  else{const port=ar<.95;L.push(mk("text","title",{text:q,y:port?.12:.13,size:fitSize(q,"display",96,40,960),anim:"slide"}));
+    L.push(card(a,.28,port?.45:.47,port?1.22:1.04,-.04,.1),card(b,.72,port?.45:.47,port?1.22:1.04,.04,.18));
+    L.push(vote("❤️",.28,port?.77:.765,96,.32),vote("👍",.72,port?.77:.765,96,.36));L.push(mk("badge","price",{text:"VS",sub:"",x:.5,y:port?.45:.47,s:.5,r:-.08,anim:"slam",delay:.3}))}
+  L.push(mk("text","small",{text:"VOTE WITH A REACTION · BOOK AT IMC.IE",y:tall?.735:.85,size:tall?28:22,anim:"fade",delay:.4}));
+  S.label="This or that";S.filmTitle="";S.bg="stage";S.frame={...S.frame,style:"brandbar",logo:true};S.layers=L.filter(Boolean);S.motion={...S.motion,dur:5,fx:{sparkle:true},amt:.7};
+  if(tall)showSafe=true;selId=null;syncAll();commit();toast("Poll ready. Click the question to change the words")}
 function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-handoff")||"null");localStorage.removeItem("imc-handoff")}catch(e){}
   if(!h||Date.now()-(h.at||0)>10*60*1000)return false;
   if(h.easy)setEasy(true);
@@ -2347,6 +2382,8 @@ function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-ha
   else if(h.kind==="reel"){applyPreset(REELS[h.i|0]||REELS[0],true);const b=$('[data-tab="layouts"]');if(b){b.click();setTimeout(()=>{const r=$("#reels");if(r)r.closest(".sec").scrollIntoView({block:"start"})},300)}}
   else if(h.kind==="preset")applyPreset(ANIM_PRESETS[h.i|0]||ANIM_PRESETS[0],false);
   else if(h.kind==="film")applyFilm(h.film,h.mode);
+  else if(h.kind==="countdown")applyCountdown(h);
+  else if(h.kind==="poll")applyPoll(h);
   else if(h.kind==="image"&&h.url)loadUrlAsPhoto(h.url);
   return true}
 

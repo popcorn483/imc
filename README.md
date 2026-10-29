@@ -54,6 +54,40 @@ It's always in **Your deals**, added for anyone whose saved list was missing it,
 - **All sizes in one go** (Video, GIF & more → All sizes in one go): previews the design as a post, tall post, Story and foyer screen, then downloads the ones you tick as one zip file.
 - **✓ Check** (top bar, and in Easy mode before saving): checks for leftover placeholder words, text too small for a phone, anything cut off the edge, words hidden behind the Story buttons, a missing "Book at imc.ie", a missing film certificate, a missing logo, too many words, a QR code too small to scan, and video length. Most problems have a **Fix it** button. The red number on the button shows how many checks need attention.
 
+## Reply helper
+
+In the menu under Every day, and on the Today page. Pick the question someone asked in a comment or message and the answer is written for you, using imc.ie's latest listings and prices. You can change any of the words before copying it. The questions covered are:
+
+- what time a film is on (standard and LUXX times listed separately)
+- what's on today, tomorrow or the day after
+- ticket prices
+- the Wednesday Meal Deal
+- Kids Club
+- LUXX
+- when a film comes out
+- relaxed screenings
+- birthday parties and groups
+- complaints
+- thank-yous
+
+## Countdown and "this or that" poll posts
+
+- **Countdown:** on any coming-soon film, press **Countdown** for a "3 DAYS TO GO" post with the poster, the film's certificate and the opening date. The number is worked out for you. Week ahead suggests one three days before each opening.
+- **This or that poll:** on the Today page. Pick two films showing this week and a question ("Which are you seeing?", "Date night pick?" and others). People vote with ❤️ or 👍. Week ahead suggests one on Sundays, using the two films with the most showings.
+
+Both work as a post, tall post, Story and foyer screen, and come with a caption.
+
+## Printable listings
+
+- **Print this week's films** (Today page, and Week ahead) makes an A4 landscape poster of every film and time for the next seven days. Each film has one row, and its LUXX times are marked in black and gold. Kids Club times are in yellow. A "Scan to book" QR code is at the bottom.
+- **🖨️ Print today** (on Showing today) does the same for one day, in bigger print on A4 portrait.
+
+Both shrink themselves to fit on one sheet.
+
+## Phone reminders
+
+**🔔 Remind me on my phone** (Planner and Week ahead) downloads your planned posts for the next two weeks as a calendar file. Open it on your phone or computer and each post becomes an alert at its posting time, with the caption inside. It works with iPhone, Android, Outlook and Google Calendar.
+
 ## Photo & video editor
 
 - **Background:** your photo or video, an official poster (**Whole poster** shows the full poster over a blurred copy of itself), or an IMC background (IMC stage, Sky, Midnight, Sunset).
