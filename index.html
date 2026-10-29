@@ -421,6 +421,127 @@ body.menuopen{overflow:hidden}
 @media (max-width:560px){.headacts{flex-wrap:wrap;flex:1 1 100%}.sitepick{flex:1 1 100%}}
 </style>
 
+<style id="premium">
+/* ==================== Premium layer ====================
+   One bold idea: the cinema's marquee. The top bar and each page's title band are deep navy, lit by IMC's gold-to-red strip
+   and set in tall condensed capitals, like the lettering over a cinema door. Everything you work in stays quiet: white
+   panels, fine borders, one blue for actions, navy for "selected", gold only for things that matter. No blur or heavy
+   effects, so it stays quick on older PCs. */
+:root{
+  --bg:#f4f6fb;--panel:#ffffff;--ink:#11152e;--muted:#5a6383;--line:#e3e7f0;--line-2:#d3d9e6;--chip:#eef1f8;
+  --velvet:#0b63b0;--velvet-ink:#ffffff;--velvet-hover:#08518f;--navy:#0e1230;--navy-2:#1a2058;--gold:#ffc93c;--red:#e2452e;
+  --sh-1:0 1px 2px rgba(17,21,46,.06),0 1px 1px rgba(17,21,46,.03);--sh-2:0 10px 30px -12px rgba(17,21,46,.28),0 2px 6px rgba(17,21,46,.06);
+  --ring:0 0 0 3px rgba(11,99,176,.28);--r:16px;--rc:10px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0a0d20;--panel:#131735;--ink:#eef1fb;--muted:#a3acd0;--line:#252b54;--line-2:#323a6b;--chip:#1c2148;--velvet:#3ba8e8;--velvet-ink:#07102a;--velvet-hover:#5cbbf0;--navy:#060818;--navy-2:#141a46;
+  --sh-1:0 1px 2px rgba(0,0,0,.3);--sh-2:0 12px 32px -12px rgba(0,0,0,.6);--ring:0 0 0 3px rgba(59,168,232,.35)}}
+:root[data-theme="dark"]{--bg:#0a0d20;--panel:#131735;--ink:#eef1fb;--muted:#a3acd0;--line:#252b54;--line-2:#323a6b;--chip:#1c2148;--velvet:#3ba8e8;--velvet-ink:#07102a;--velvet-hover:#5cbbf0;--navy:#060818;--navy-2:#141a46;--sh-1:0 1px 2px rgba(0,0,0,.3);--sh-2:0 12px 32px -12px rgba(0,0,0,.6);--ring:0 0 0 3px rgba(59,168,232,.35)}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-size:15px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+::selection{background:rgba(255,201,60,.45)}
+
+/* ---- the marquee: top bar ---- */
+.topbar{background:var(--navy);color:#fff;border-bottom:0;box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 8px 24px -16px rgba(0,0,0,.6);padding-top:9px;padding-bottom:9px}
+.topbar::after{height:3px}
+.topbar .brand b{color:#fff;letter-spacing:.03em}.topbar .brand b span{color:#7fd0ff}
+.menubtn{color:#fff;border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.04)}.menubtn:hover{background:rgba(255,255,255,.1)}
+nav.quick button,.qtab{color:rgba(255,255,255,.72)!important;background:transparent!important;border-radius:9px;font-weight:600;transition:background .15s,color .15s}
+nav.quick button:hover{color:#fff!important;background:rgba(255,255,255,.08)!important}
+nav.quick button[aria-current="true"]{color:#fff!important;background:rgba(255,255,255,.1)!important;box-shadow:inset 0 -2px 0 var(--gold)}
+.topright .sitepick select{background-color:var(--navy-2);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.topright .sitepick select option{color:#11152e;background:#fff}
+.topbar .btn.primary.edlink{background:#fff;color:var(--navy);border-color:#fff}.topbar .btn.primary.edlink:hover{background:#eef4ff;filter:none}
+.topbar .ezbtn{box-shadow:0 0 0 1px rgba(255,255,255,.12) inset}
+
+/* ---- the marquee: each page's title band ---- */
+main{padding-top:22px}
+main>section>.head{position:relative;overflow:hidden;align-items:center;margin:0 0 22px;padding:26px 30px;border-radius:20px;color:#fff;
+  background:radial-gradient(120% 160% at 100% 0%,rgba(255,201,60,.17),transparent 52%),radial-gradient(90% 120% at 0% 100%,rgba(31,160,222,.22),transparent 55%),linear-gradient(135deg,var(--navy),var(--navy-2));box-shadow:var(--sh-2)}
+main>section>.head::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--stripe)}
+main>section>.head h1{color:#fff;font-size:clamp(30px,4.2vw,46px);letter-spacing:.015em;line-height:.95}
+main>section>.head p{color:rgba(255,255,255,.74);font-size:15px;max-width:68ch}
+main>section>.head .sitename{color:#fff;font-weight:700}
+main>section>.head .btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff;box-shadow:none}
+main>section>.head .btn:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.4)}
+main>section>.head .btn.primary{background:var(--gold);border-color:var(--gold);color:#1d1400}
+main>section>.head .btn.primary:hover{background:#ffd666;filter:none}
+main>section>.head p span:not(.sitename){color:inherit}
+
+/* ---- type ---- */
+h2{font-family:var(--f-body);font-weight:750;font-size:18px;letter-spacing:-.01em;text-transform:none}
+.panel>h2,.ph h2{display:flex;align-items:baseline;gap:8px}
+h3{font-weight:700;letter-spacing:-.005em}
+.ph{margin-bottom:14px}
+.tip{color:var(--muted)}
+
+/* ---- surfaces ---- */
+.panel{border-radius:var(--r);border-color:var(--line);box-shadow:var(--sh-1);padding:20px}
+.grid{gap:16px}
+.stat .n{letter-spacing:.01em}
+.stat .l{text-transform:none;letter-spacing:0;font-size:13px;font-weight:600;line-height:1.35;margin-top:6px}
+.film{border-radius:14px;border-color:var(--line);box-shadow:var(--sh-1);transition:box-shadow .2s,border-color .2s}
+.film:hover{box-shadow:var(--sh-2);border-color:var(--line-2)}
+.fposter img{border-radius:8px}
+.start{background:var(--panel)!important;border-color:var(--line);box-shadow:var(--sh-1);border-radius:14px;transition:border-color .15s,box-shadow .15s,transform .15s}
+.start:hover{border-color:var(--velvet);box-shadow:var(--sh-2)}
+.idea{background:var(--panel)}
+.pday,.idea.best{box-shadow:var(--sh-1)}
+.pday{border-radius:var(--r)}
+
+/* ---- controls ---- */
+.btn{border-radius:var(--rc);border-color:var(--line-2);box-shadow:var(--sh-1);min-height:38px;padding:8px 14px;font-weight:650;letter-spacing:-.005em;transition:background .15s,border-color .15s,box-shadow .15s,color .15s}
+.btn:hover{border-color:#aab3ca;background:var(--chip)}
+.btn.small{min-height:32px;padding:5px 11px;font-size:13px;border-radius:9px}
+.btn.primary{background:var(--velvet);border-color:var(--velvet);color:var(--velvet-ink);box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 1px 2px rgba(11,99,176,.35)}
+.btn.primary:hover{background:var(--velvet-hover);border-color:var(--velvet-hover);filter:none}
+.btn.ghost{background:transparent;box-shadow:none;border-color:transparent}.btn.ghost:hover{background:var(--chip);border-color:var(--line)}
+.btn:focus-visible,.start:focus-visible,.rq:focus-visible,nav button:focus-visible,.opstabs button:focus-visible,.opsdays button:focus-visible,.eztile:focus-visible{outline:none;box-shadow:var(--ring)}
+input,select,textarea{background:var(--panel);border-color:var(--line-2);border-radius:var(--rc);padding:9px 11px;transition:border-color .15s,box-shadow .15s}
+input:hover,select:hover,textarea:hover{border-color:#aab3ca}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--velvet);box-shadow:var(--ring)}
+input[type=checkbox],input[type=radio]{box-shadow:none}
+.flabel,.field label{font-size:12.5px;font-weight:650;color:var(--muted);letter-spacing:0;text-transform:none}
+
+/* ---- selected states: navy across pills, tabs and the menu ---- */
+.opsdays button,.rday button{background:var(--panel);border-color:var(--line-2);box-shadow:var(--sh-1);transition:background .15s,border-color .15s}
+.opsdays button:hover,.rday button:hover{border-color:#aab3ca}
+.opsdays button[aria-pressed="true"],.rday button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:inset 0 -2px 0 var(--gold)}
+.opstabs{border-bottom-color:var(--line);gap:4px}
+.opstabs button{border-radius:10px 10px 0 0;padding:10px 14px;margin-bottom:-11px;border-bottom:2px solid transparent}
+.opstabs button[aria-selected="true"]{background:transparent;box-shadow:none;border-bottom-color:var(--velvet);color:var(--ink)}
+.rq{background:var(--panel);box-shadow:var(--sh-1);border-color:var(--line)}
+.rq[aria-pressed="true"]{border-color:var(--navy);box-shadow:inset 3px 0 0 var(--gold),var(--sh-1)}
+
+/* ---- menu drawer ---- */
+.drawer{background:var(--panel);box-shadow:24px 0 60px -20px rgba(8,10,30,.45)}
+.drawer nav h3{text-transform:none;letter-spacing:0;font-size:12.5px;font-weight:700;color:var(--muted);margin:18px 12px 6px}
+.drawer nav button{border-radius:10px;color:var(--ink);font-weight:650}
+.drawer nav button:hover{background:var(--chip)}
+.drawer nav button[aria-current="true"]{background:var(--navy);color:#fff;box-shadow:inset 3px 0 0 var(--gold)}
+.drawer nav .navlink{border-radius:10px}
+
+/* ---- tables ---- */
+.btab th,.stab th,.rtab th{text-transform:none;letter-spacing:0;font-size:12.5px;font-weight:650}
+.btab tbody tr:hover td,.stab tbody tr:hover td,.rtab tbody tr:hover td{background:var(--chip)}
+
+/* ---- feedback ---- */
+.toast{background:var(--navy);color:#fff;border-radius:12px;padding:12px 18px;box-shadow:var(--sh-2);border:1px solid rgba(255,255,255,.08)}
+.modal{background:rgba(10,13,36,.58)}
+.modal>.panel,.modal .panel{border-radius:20px;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);border:0}
+.planned{color:#1f8a52}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.topright .sitepick select{max-width:210px}
+nav.quick button{padding:7px 10px}
+.ph .tip{border:0;padding:0;margin:0}
+/* ---- phones ---- */
+@media (max-width:640px){
+  main{padding-top:14px}
+  main>section>.head{padding:20px 18px;border-radius:16px;margin-bottom:16px}
+  main>section>.head h1{font-size:27px}
+  main>section>.head p{font-size:14px}
+  .panel{padding:16px;border-radius:14px}}
+</style>
 <script src="qr.js"></script>
 </head>
 <body>
