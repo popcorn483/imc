@@ -2320,18 +2320,19 @@ $("#addListing").onclick=()=>{const rows=todayRows();if(rows.length){applyListin
 /* ---------- film poster graphics (from the hub) ---------- */
 async function loadUrlAsPhoto(url){try{const r=await fetch(url);if(!r.ok)throw 0;await setPhotoBlob(await r.blob(),false,{fromLib:true,quiet:true});return true}catch(e){toast("Couldn't load the poster. Use the Photo tab to add it.");return false}}
 function filmLayers(fm,mode){const L=[];
-  const badge=mode==="soon"?"coming":mode==="kids"?"kids":mode==="luxx"?"luxx":"now";
+  const badge=mode==="soon"?"coming":mode==="kids"?"kids":mode==="luxx"?"luxx":mode==="last"?"last":"now";
+  if(badge==="last")L.push(mk("badge","tonight",{text:"LAST CHANCE",sub:"FINAL SHOWINGS",x:.5,y:.11,s:.78,r:-.06,c1:"#e2452e",c2:"#ffffff",anim:"slam"}));
   if(badge==="now")L.push(mk("badge","now",{x:.5,y:.1,s:.62,anim:"slide"}));
   else if(badge==="luxx")L.push(mk("badge","luxx",{y:.1,s:.62,anim:"shine"}));
   else if(badge==="kids")L.push(mk("badge","kids",{x:.83,y:.17,s:.72,anim:"pop"}));
-  else L.push(mk("badge","coming",{y:.085,s:.82,anim:"shine"}));
-  const dline=mode==="soon"?{text:fm.dateLabel||"SOON",sub:"IN CINEMAS"}:{text:(fm.times||[]).slice(0,4).join(" · ")||"BOOK NOW",sub:mode==="kids"?"KIDS CLUB":"TODAY"};
+  else if(badge==="coming")L.push(mk("badge","coming",{y:.085,s:.82,anim:"shine"}));
+  const dline=mode==="soon"?{text:fm.dateLabel||"SOON",sub:"IN CINEMAS"}:mode==="last"?{text:fm.dateLabel||"THIS WEEK",sub:"LAST SHOW"}:{text:(fm.times||[]).slice(0,4).join(" · ")||"BOOK NOW",sub:mode==="kids"?"KIDS CLUB":"TODAY"};
   L.push(mk("badge","date",{...dline,y:.835,s:Math.min(.85,6.2/Math.max(6,(dline.text||"").length)),anim:"pop",delay:.2}));
   const rp=fm.cert?ratingPick(fm.cert,fm.certSystem||"bbfc",ratingSys):null;
   if(rp&&(rp.src||IMC&&IMC.ratings)){if(rp.src)loadRating(rp.src);L.push(mk("rating",null,{src:rp.src,cert:rp.cert,system:rp.system,x:.88,y:.83,s:.52}))}
   else if(fm.cert)L.push(mk("badge","fast",{text:"CERT "+fm.cert,x:.86,y:.84,s:.45}));
   return L}
-async function applyFilm(fm,mode){FLOGO_FILM=fm.title;S.filmTitle=fm.title;flLoad(flKey(fm.title)).then(()=>{if(EASY)renderEasy()});S.label=fm.title+(mode==="soon"?" coming soon":"");S.bg="photo";S.photo={...S.photo,fit:"poster",zoom:1,ox:0,oy:-.035};S.frame={...S.frame,style:"brandbar",logo:true};S.layers=filmLayers(fm,mode);S.motion={...S.motion,fx:mode==="soon"?{spotlights:true,sparkle:true}:mode==="luxx"?{sparkle:true}:{}};selId=null;syncAll();
+async function applyFilm(fm,mode){FLOGO_FILM=fm.title;S.filmTitle=fm.title;flLoad(flKey(fm.title)).then(()=>{if(EASY)renderEasy()});S.label=fm.title+(mode==="soon"?" coming soon":mode==="last"?" last chance":"");S.bg="photo";S.photo={...S.photo,fit:"poster",zoom:1,ox:0,oy:-.035};S.frame={...S.frame,style:"brandbar",logo:true};S.layers=filmLayers(fm,mode);S.motion={...S.motion,fx:mode==="last"?{spotlights:true}:mode==="soon"?{spotlights:true,sparkle:true}:mode==="luxx"?{sparkle:true}:{}};selId=null;syncAll();
   if(fm.poster)await loadUrlAsPhoto(fm.poster);commit();toast(fm.title+" ready. Everything can be moved and edited")}
 /* ---------- countdown: "3 DAYS TO GO" for a film that's coming soon ---------- */
 function applyCountdown(h){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,port=!tall&&ar<.95,wide=ar>1.4,fm=h.film||{},n=Math.max(1,h.days|0);

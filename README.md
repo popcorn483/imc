@@ -162,6 +162,41 @@ In the menu under **Run the cinema**. For today or any of the next six days it s
 
 End times come from imc.ie's running times. Where one is missing, 2 hours is assumed and marked with ~.
 
+## Run the cinema: briefing, staffing, group prices, weekly report
+
+The **Run the cinema** page (menu, under Run the cinema) has five tabs:
+
+- **Screens & changeovers:** the screen timeline, changeovers to watch, busy-times heatmap and printable run sheet.
+- **Staff briefing:** for any day this week:
+  - what's on today (the Wednesday Meal Deal on Wednesdays, Kids Club prices and meal deal)
+  - every film with its certificate and **who can watch** it (for example "Under 12s must be with an adult")
+  - running time, every time with its screen and when the film ends
+  - New, Last chance, LUXX, Kids Club and Relaxed tags
+  - a certificates-today box
+  - notes for the team (saved on that device)
+  
+  **Print briefing** makes an A4 landscape sheet for the staff room.
+- **Staffing guide:** suggested people on shift each hour, worked out from the shows starting, films ending and screens running. You can change the ratios: managers always on, shows per box office/kiosk person, films ending per usher, and the fewest people in the building. Printable.
+- **Group prices:** for birthday and group enquiries.
+  - Pick the day, standard, Kids Club or LUXX, then type how many adults, children, teens, students and seniors, plus kids trays and combos.
+  - It totals everything from imc.ie's prices, warns if a ticket wasn't listed for that day, and writes a reply ready to copy.
+- **Weekly report:**
+  - showings, films, openings, the busiest day and posts planned
+  - the programme table, with shows, days, LUXX and Kids Club for each film
+  - highlights (openings, last chances, deals, Kids Club)
+  - your social media numbers from the planner
+  
+  **Copy as text** pastes neatly into an email to management, or print it.
+
+## Last chance to see
+
+A film counts as leaving when its last listed showing is within four days and imc.ie's published listings carry on for at least two days after it. Advance bookings for single later shows don't count.
+
+- What's on shows a red **Last chance · ends Sun** chip and a **Last chance post** button. The editor's design has a LAST CHANCE stamp and the last show date.
+- Week ahead suggests a last-chance post the evening before the final day.
+- The foyer player adds a **Last chance to see** slide with the posters and last show days.
+- The staff briefing and weekly report list them.
+
 ## Photo & video editor
 
 - **Background:** your photo or video, an official poster (**Whole poster** shows the full poster over a blurred copy of itself), or an IMC background (IMC stage, Sky, Midnight, Sunset).

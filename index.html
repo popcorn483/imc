@@ -42,6 +42,17 @@
 .heat{overflow-x:auto}.heat table{border-collapse:separate;border-spacing:3px;font-size:12px;width:100%}.heat th{font-weight:600;color:var(--muted);text-align:center;padding:2px}.heat tbody th{text-align:left;white-space:nowrap}
 .heat td{height:28px;min-width:24px;text-align:center;border-radius:5px;font-weight:700;background:rgba(11,107,184,calc(.06 + var(--v)*.9));color:color-mix(in srgb,var(--ink) calc(100% - var(--v)*100%),#fff)}
 @media (max-width:900px){.grid.stats.opsstats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.opstabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px;border-bottom:1px solid var(--line);padding-bottom:10px}.opstabs button{all:unset;cursor:pointer;display:flex;gap:6px;align-items:center;padding:9px 14px;border-radius:10px;font-weight:700;font-size:14.5px;color:var(--muted)}.opstabs button span{font-size:17px}.opstabs button[aria-selected="true"]{background:var(--panel);color:var(--ink);box-shadow:0 0 0 1px var(--line),0 2px 6px rgba(0,0,0,.06)}.opstabs button:focus-visible{outline:3px solid #0b6bb8}
+.brief .bh h2{margin:0}.brief .bh p{margin:4px 0 12px;color:var(--muted)}.bbox{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}.bbox ul{margin:6px 0 0 18px;padding:0}.bbox.gold{background:rgba(255,216,74,.14);border-color:#e6b800}.bbox textarea{width:100%;margin-top:6px}.bbox small{color:var(--muted)}
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btab,.stab,.gtab,.rtab{width:100%;border-collapse:collapse;font-size:13.5px}.btab th,.btab td,.stab th,.stab td,.rtab th,.rtab td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}.btab th,.stab th,.rtab th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.bt{display:inline-block;margin-left:6px;font-size:10.5px;font-weight:800;text-transform:uppercase;padding:1px 6px;border-radius:99px;border:1px solid var(--line)}.bt.new{background:#e2452e;color:#fff;border-color:#e2452e}.bt.last{background:#1a1440;color:#fff}.bt.lx{background:#1a1440;color:#ffc23d}.bt.kc{background:#f39a2b;color:#2a1800;border-color:#f39a2b}.bt.rx{background:#3d6cf0;color:#fff;border-color:#3d6cf0}
+.bts{display:inline-block;margin:0 10px 4px 0;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}.bts small{font-weight:500;color:var(--muted)}.bts.lx{color:#b8860b}.bts.kc{background:rgba(255,216,74,.3);border-radius:4px;padding:0 3px}
+.stab tr.pk td{background:rgba(11,107,184,.07)}.sbar{display:inline-block;height:12px;border-radius:6px;background:#0b6bb8;vertical-align:middle}.scfg{margin-bottom:12px}.scfg .field{max-width:190px}.scfg input{width:90px}
+.gq{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}.gq span{font-weight:600}.gq small{display:block;color:var(--muted);font-weight:500}.gq input{width:90px;font-size:16px;text-align:center}
+.gtab td{padding:7px 4px;border-bottom:1px solid var(--line)}.gtab td:last-child{text-align:right}.gtab tr.gt td{font-weight:800;font-size:18px;border-bottom:0}.gwarn{background:rgba(243,154,43,.14);border:1px solid #f39a2b;border-radius:10px;padding:8px 10px;font-size:13px;margin:8px 0}.gqout textarea{width:100%}
+.rlist{margin:6px 0 12px 0;padding-left:18px}.rlist li{margin:4px 0}
+@media (max-width:760px){.bgrid{grid-template-columns:1fr}.btab td:nth-child(3),.btab th:nth-child(3){display:none}.stab th:nth-child(2),.stab td:nth-child(2),.stab th:nth-child(3),.stab td:nth-child(3),.stab th:nth-child(9),.stab td:nth-child(9){display:none}.opstabs button{font-size:13px;padding:8px 10px}}
 </style>
 <title>IMC Hub</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -229,6 +240,7 @@ canvas#poster{max-width:100%;max-height:68vh;height:auto;border-radius:4px;box-s
 .ftimes span.kc,.kclegend .kc{background:color-mix(in srgb,var(--amber) 24%,var(--panel));box-shadow:inset 0 0 0 1.5px var(--amber);display:inline-flex;align-items:center;gap:6px}
 .kc i{font-style:normal;font-family:var(--f-body);font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:99px;background:var(--amber);color:#2a1800}
 .kclegend{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;margin-right:auto;margin-left:12px}.kclegend .kc{padding:2px 4px;border-radius:6px}
+.lastc{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:1px 7px;border-radius:99px;background:#e2452e;color:#fff}
 .kcb{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:1px 7px;border-radius:99px;background:var(--amber);color:#2a1800}
 .opens{font-weight:700;color:var(--velvet);font-size:14px}
 .facts{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;align-items:center}.facts a.btn.ghost{border:0;padding:4px 6px;font-size:12.5px;color:var(--muted)}.facts a.btn.ghost:hover{color:var(--ink)}
@@ -446,7 +458,7 @@ body.menuopen{overflow:hidden}
       <button data-view="library">Posts <span class="count" id="cnt"></span><small>Drafts and scheduled posts</small></button>
       <button data-view="calendar">Ideas calendar<small>Key dates and what to post</small></button>
       <h3>Run the cinema</h3>
-      <button data-view="ops">Screens &amp; run sheet<small>Timeline, changeovers, busy times</small></button>
+      <button data-view="ops">Run the cinema<small>Screens, staff briefing, staffing, group prices, weekly report</small></button>
       <h3>Foyer TVs</h3>
       <button data-view="foyer">Foyer trailers<small>Safe trailer loop and packs</small></button>
       <button data-view="welcome">Welcome videos<small>IMC and LUXX logo reveals</small></button>
@@ -477,7 +489,7 @@ body.menuopen{overflow:hidden}
 
     <!-- RUN THE CINEMA -->
     <section id="v-ops" hidden>
-      <div class="head"><div><h1>Screens &amp; run sheet</h1><p>Every showing at <span class="sitename">IMC Enniskillen</span> by screen, with when each film ends, the time between films and the busiest times of the week. Worked out from imc.ie's listings and running times.</p></div></div>
+      <div class="head"><div><h1>Run the cinema</h1><p>Screens, staff briefings, staffing, group prices and the weekly report for <span class="sitename">IMC Enniskillen</span>, worked out from imc.ie's listings, running times and prices.</p></div></div>
       <div id="opsBody"></div>
     </section>
 
@@ -1239,7 +1251,7 @@ function firstDate(f){const ds=f.sessions.map(s=>s.date).filter(Boolean).sort();
 /* ---------- open the photo editor with something ready ---------- */
 function openEditor(h){try{localStorage.setItem("imc-handoff",JSON.stringify({...h,...(EASY_NEXT?{easy:true}:{}),at:Date.now()}))}catch(e){toast("Couldn't pass this to the editor. Browser storage is blocked.");return}
   const a=document.createElement("a");a.href="editor.html";a.target="imc-editor";document.body.appendChild(a);a.click();a.remove()}
-function filmPayload(f,mode){const d=firstDate(f);return{title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert||"",certIcon:f.certIcon||null,certSystem:f.certSystem||null,times:mode==="soon"?[]:(f.times||[]),dateLabel:d?new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}).toUpperCase():"SOON",luxx:!!f.luxx}}
+function filmPayload(f,mode){if(mode==="last"){const ld=lastDateOf(f);return{...filmPayload(f,"now"),dateLabel:ld?upDate(ld):"THIS WEEK"}}const d=firstDate(f);return{title:f.title,poster:asset(f.posterFile)||f.poster,cert:f.cert||"",certIcon:f.certIcon||null,certSystem:f.certSystem||null,times:mode==="soon"?[]:(f.times||[]),dateLabel:d?new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}).toUpperCase():"SOON",luxx:!!f.luxx}}
 function makeFilm(f,mode,fmt){openEditor({kind:"film",mode,fmt,film:filmPayload(f,mode)})}
 function makeTimes(date,fmt){const films=filmsOn(date);if(!films.length){toast("No film times for that day yet");return}
   openEditor({kind:"listing",fmt,heading:date===todayIso()?"Today at "+S().name:"At "+S().name,sub:fmtLong(date),date,rows:films.map(f=>({t:f.title,times:f.times,kids:f.kidsTimes||[],cert:f.cert&&f.cert!=="TBC"?f.cert:"",system:f.certSystem||"",luxx:!!f.luxx}))})}
@@ -1289,9 +1301,9 @@ function writeFilmPost(f,mode){startNew();const d=firstDate(f);
 function filmCard(f,mode){const d=mode==="soon"?((openDates().find(x=>fbase(x.f.title)===fbase(f.title))||{}).d||firstDate(f)):firstDate(f),poster=asset(f.posterFile)||f.poster;
   const when=mode==="soon"?`<span class="opens">Opens ${esc(fmtShort(d))}</span>`:`<div class="ftimes">${(f.times||[]).map(t=>(f.kidsTimes||[]).includes(t)?`<span class="kc" title="Kids Club showing">${t}<i>Kids Club</i></span>`:`<span>${t}</span>`).join("")}</div>`;
   return`<article class="film"><div class="fposter">${poster?`<img src="${esc(poster)}" alt="${esc(f.title)} poster" loading="lazy">`:""}</div>
-  <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${(()=>{const r=certShown(f);return r&&r.src?`<img class="certimg" data-svg="${esc(r.src)}" alt="Rated ${esc(r.cert)}" width="24" height="24">`:r?`<span class="cert">${esc(r.cert)}</span>`:""})()}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${(f.kidsTimes||[]).length?'<span class="kcb">Kids Club</span>':""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
+  <div class="fbody"><h3>${esc(f.title)}</h3><div class="fmeta">${(()=>{const r=certShown(f);return r&&r.src?`<img class="certimg" data-svg="${esc(r.src)}" alt="Rated ${esc(r.cert)}" width="24" height="24">`:r?`<span class="cert">${esc(r.cert)}</span>`:""})()}${f.runtime?`<span>${f.runtime} min</span>`:""}${f.luxx?'<span class="lux">LUXX</span>':""}${(f.kidsTimes||[]).length?'<span class="kcb">Kids Club</span>':""}${mode!=="soon"&&isLeaving(f)?`<span class="lastc">Last chance · ends ${esc(fmtShort(isLeaving(f).last).split(" ")[0])}</span>`:""}${f.sensory?'<span class="sens">Relaxed</span>':""}</div>
   ${when}
-  <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button>${mode==="soon"?`<button class="btn small" data-countdown="${esc(f._k)}">Countdown</button>`:""}<button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
+  <div class="facts"><button class="btn small primary" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="square">Make post</button><button class="btn small" data-film="${esc(f._k)}" data-mode="${mode}" data-fmt="story">Story</button>${mode==="soon"?`<button class="btn small" data-countdown="${esc(f._k)}">Countdown</button>`:""}${mode!=="soon"&&isLeaving(f)?`<button class="btn small" data-film="${esc(f._k)}" data-mode="last" data-fmt="square">Last chance post</button>`:""}<button class="btn small" data-write="${esc(f._k)}" data-mode="${mode}">Write caption</button>
   ${(f.book||f.sessions?.[0]?.book)?`<a class="btn small ghost" href="${esc(f.book||f.sessions[0].book)}" target="imc-web">Book ↗</a>`:""}${f.trailer?`<a class="btn small ghost" href="${esc(f.trailer)}" target="imc-web">Trailer ↗</a>`:""}</div></div></article>`}
 const SVGURL={};
 let ratingSys=pickRating();
@@ -1851,6 +1863,9 @@ function dayIdeas(date){const T=todayIso(),dow=DOW(date),nm=S().name,tags=S().ta
   /* LUXX at the weekend */
   if(luxx.length&&(dow===5||dow===6)){const lp=lxPrice();add({k:"luxx",score:dow===6?8:6,icon:"💺",type:"now",title:"LUXX recliners this weekend",why:"Weekend evenings are when people treat themselves. Show off the recliners.",time:"11:00",make:fmt=>{const td=lxRowsToday();openEditor({kind:"luxxkit",tpl:"week",fmt,price:lp,heading:td.heading,rows:td.rows,week:lxWeek().map(f=>({t:f.t,cert:f.cert,system:f.system,times:f.slots.slice(0,3).map(s=>(s.d===todayIso()?"Today":dShort(s.d))+" "+s.t)}))})},fmts:["square","story"],
     headline:"LUXX",price:lp,cap:`💺 Treat yourself this weekend: full recliners, more legroom and the comfiest seats in town at ${nm}.${lp?" From "+lp+".":""}\nShowing in LUXX: ${luxx.slice(0,4).map(f=>f.title).join(", ")}\n🎟️ Book at imc.ie`})}
+  /* last chance: the day before (or the day of) a film's final listed showing */
+  for(const x of lastChance()){const dl=dayDiff(date,x.last);if(dl===1||(dl===0&&date===T)){add({k:"last-"+x.f._k,score:dl===1?8.5:7.5,icon:"⏳",type:"now",title:`Last chance: ${x.f.title}`,why:dl===1?"Its final showings are tomorrow. A 'last chance' post gets people who've been meaning to go to book.":"It's the final day. One last reminder catches the people who've left it late.",time:dl===1?"18:00":"10:00",film:x.f,make:fmt=>makeFilm(x.f,"last",fmt),fmts:["square","story"],
+    headline:x.f.title,details:"Last chance to see",cap:`⏳ LAST CHANCE! ${x.f.title} leaves ${nm} after ${dl===1?"tomorrow":"today"}. Don't miss it on the big screen.\n🎟️ Book now at imc.ie`});break}}
   /* countdown three days before a film opens */
   opensOn(addDays(date,3)).slice(0,1).forEach(f=>add({k:"cd-"+f._k,score:6.5,icon:"⏳",type:"soon",title:`Countdown: 3 days to ${f.title}`,why:"Countdown posts build excitement and remind people to book early.",time:"19:00",film:f,make:fmt=>makeCountdown(f,fmt,date),fmts:["square","story"],
     headline:f.title,details:"3 days to go",cap:`⏳ 3 DAYS TO GO! ${f.title} opens at ${nm} on ${fmtLong(addDays(date,3))}.\nWho's coming? 👇\n🎟️ Book now at imc.ie`}));
@@ -2009,7 +2024,8 @@ function opsShows(date){const out=[],seen=new Set();
   for(const L of Object.values(by))L.forEach((x,i)=>{const n=L[i+1];x.next=n||null;x.gap=n?n.start-x.end:null});
   return{shows:out,by}}
 function screensRunning(shows,m){return new Set(shows.filter(x=>x.start<=m&&x.end>m).map(x=>x.screen)).size}
-function renderOps(){const el=$("#opsBody");if(!el)return;if(!IMC){el.innerHTML=noData();return}const T=todayIso(),d=OPS.day||T,{shows,by}=opsShows(d),n=cinemaNow?cinemaNow():null;
+function renderOps(){const root=$("#opsBody");if(!root)return;if(!IMC){root.innerHTML=noData();return}root.innerHTML=opsTabs()+'<div id="opsInner"></div>';const el=$("#opsInner");if(OPS.tab!=="screens"){renderOpsTab(el);return}opsScreens(el)}
+function opsScreens(el){const T=todayIso(),d=OPS.day||T,{shows,by}=opsShows(d),n=cinemaNow?cinemaNow():null;
   const days=[...Array(7)].map((_,i)=>addDays(T,i)),screens=Object.keys(by).sort((a,b)=>(+a||99)-(+b||99));
   const dayPills=`<div class="opsdays">${days.map((x,i)=>`<button data-opsday="${x}" aria-pressed="${x===d}">${i===0?"Today":i===1?"Tomorrow":esc(fmtShort(x))}</button>`).join("")}</div>`;
   if(!shows.length){el.innerHTML=dayPills+`<p class="tip">No showings listed for that day yet.</p>`;return}
@@ -2048,6 +2064,137 @@ ${shows.map(x=>`<tr><td class="t">${ohm(x.start)}</td><td>${esc(x.screen)}</td><
 </tbody></table><p style="margin-top:8px">~ running time not listed on imc.ie; 2 hours assumed. Printed from the IMC hub.</p><script>window.onload=()=>setTimeout(()=>print(),300)<\/script></body></html>`;
   const w=window.open("","imc-print");if(!w){toast("Allow pop-ups for this site to print");return}w.document.open();w.document.write(html);w.document.close()}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-opsday]");if(b){OPS.day=b.dataset.opsday;renderOps()}});
+
+/* ==================== more for running the cinema: last chance, staff briefing, staffing guide, group prices, weekly report ==================== */
+/* "last chance": films whose last listed showing is soon, while imc.ie's listings run on for days after it */
+/* the last day of imc.ie's published listings grid (advance bookings for single later shows don't count) */
+function listHorizon(){let h="";for(const d of(IMC&&IMC.days)||[])if((d.films||[]).length>=3&&d.date>h)h=d.date;return h}
+function lastDateOf(f){const ss=allFilms().filter(x=>fbase(x.title)===fbase(f.title)).flatMap(x=>x.sessions.map(s=>s.date)).sort();return ss[ss.length-1]||null}
+let LCC={k:"",v:[]};
+function lastChance(){const T=todayIso(),key=T+"|"+(IMC&&IMC.updated)+"|"+site;if(LCC.k===key)return LCC.v;const H=listHorizon();if(!H)return[];const out=[],seen=new Set();
+  for(const f of allFilms()){if(/^sensory/i.test(f.title)||f.sensory)continue;const k=fbase(f.title);if(seen.has(k))continue;seen.add(k);
+    const last=lastDateOf(f);if(!last||last<T)continue;const od=(openDates().find(x=>fbase(x.f.title)===k)||{}).d;
+    if(dayDiff(last,H)>=2&&dayDiff(T,last)<=4&&!(od&&od>=addDays(T,-2))){const left=allFilms().filter(x=>fbase(x.title)===k).flatMap(x=>x.sessions.filter(s=>s.date>=T&&(s.date>T||notStarted(s.date,s.time)))).length;if(left)out.push({f:keyed([f])[0],last,left})}}
+  LCC={k:key,v:out.sort((a,b)=>a.last.localeCompare(b.last))};return LCC.v}
+const isLeaving=f=>lastChance().find(x=>fbase(x.f.title)===fbase(f.title));
+
+/* ---------- certificate guide for staff ---------- */
+const CERT_RULE={U:"Suitable for all",G:"Suitable for all",PG:"All ages; some scenes may upset young children","12A":"Under 12s must be with an adult (18+)","12":"No one under 12","15A":"Under 15s must be with an adult (18+)","15":"No one under 15","16":"No one under 16","18":"No one under 18"};
+const certRule=c=>CERT_RULE[String(c||"").toUpperCase()]||"Check the certificate";
+
+/* ---------- tabs on the Run the cinema page ---------- */
+const OPS_TABS=[["screens","🎞️","Screens & changeovers"],["brief","📋","Staff briefing"],["staff","👥","Staffing guide"],["group","🎉","Group prices"],["report","📊","Weekly report"]];
+OPS.tab=OPS.tab||"screens";
+function opsTabs(){return`<div class="opstabs" role="tablist">${OPS_TABS.map(([k,i,n])=>`<button role="tab" data-opstab="${k}" aria-selected="${OPS.tab===k}"><span>${i}</span>${n}</button>`).join("")}</div>`}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-opstab]");if(b){OPS.tab=b.dataset.opstab;renderOps()}});
+
+/* ---------- daily staff briefing ---------- */
+function briefData(d){const{shows}=opsShows(d),dow=DOW(d),tk=((imcPrices()||{}).tickets)||[],films=new Map();
+  for(const x of shows){const o=films.get(x.title)||{title:x.title,cert:x.cert,times:[],luxx:false,kids:false,relaxed:x.relaxed,runtime:0};o.times.push(x);if(x.luxx)o.luxx=true;if(x.kids)o.kids=true;films.set(x.title,o)}
+  const fl=[...films.values()].sort((a,b)=>a.times[0].start-b.times[0].start);for(const o of fl){const f=allFilms().find(z=>fbase(z.title)===fbase(o.title));o.runtime=f&&f.runtime;o.last=f&&isLeaving(f);o.isNew=f&&(()=>{const od=(openDates().find(z=>fbase(z.f.title)===fbase(o.title))||{}).d;return od&&od<=d&&od>=addDays(d,-6)})()}
+  const deals=[];const wed=wedDeal();if(dow===3)deals.push(`Wednesday Meal Deal${wed.price?" "+wed.price:""}: ${wed.items.map(x=>x.replace(/^1X\s*/i,"")).join(", ")}`);
+  const kcm=tk.find(t=>/kids club meal/i.test(t.name)),kc=tk.find(t=>/^kids club$/i.test(t.name));if(shows.some(x=>x.kids))deals.push(`Kids Club tickets ${kc?kc.price:""}${kcm?` · Kids Club Meal Deal ${kcm.price}`:""}`.trim());
+  if(dow===2)deals.push("Tomorrow is the Wednesday Meal Deal: mention it at the till");
+  const last=shows.length?Math.max(...shows.map(x=>x.end)):0;
+  return{d,shows,fl,deals,first:shows[0],last}}
+function briefHtml(B,print){const nm=S().name;if(!B.shows.length)return`<p class="tip">No showings listed for that day.</p>`;
+  const certs=[...new Set(B.fl.map(f=>f.cert).filter(Boolean))];
+  return`<div class="brief${print?" pr":""}">
+  <div class="bh"><div><h2>${print?"Staff briefing · "+esc(nm):"Staff briefing"}</h2><p>${esc(fmtLong(B.d))} · ${B.shows.length} showings · first show ${ohm(B.first.start)} · last film out ~${ohm(B.last)} · ${OPS.ads} min ads before each film</p></div></div>
+  ${B.deals.length?`<div class="bbox gold"><b>On today</b><ul>${B.deals.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
+  <table class="btab"><thead><tr><th>Film</th><th>Cert</th><th>Who can watch</th><th>Length</th><th>Times (screen) → film ends</th></tr></thead><tbody>
+  ${B.fl.map(f=>`<tr><td><b>${esc(f.title)}</b>${f.isNew?'<span class="bt new">New</span>':""}${f.last?'<span class="bt last">Last chance</span>':""}${f.luxx?'<span class="bt lx">LUXX</span>':""}${f.kids?'<span class="bt kc">Kids Club</span>':""}${f.relaxed?'<span class="bt rx">Relaxed</span>':""}</td><td>${esc(f.cert||"–")}</td><td>${esc(f.cert?certRule(f.cert):"No certificate listed: check")}</td><td>${f.runtime?f.runtime+" min":"–"}</td>
+    <td>${f.times.map(x=>`<span class="bts${x.luxx?" lx":""}${x.kids?" kc":""}">${ohm(x.start)} <small>(S${esc(x.screen)}) → ${x.guess?"~":""}${ohm(x.end)}</small></span>`).join(" ")}</td></tr>`).join("")}</tbody></table>
+  <div class="bgrid"><div class="bbox"><b>Certificates today</b><ul>${certs.map(c=>`<li><b>${esc(c)}</b>: ${esc(certRule(c))}</li>`).join("")}</ul><small>If someone looks under the age for a film, ask for ID. Northern Ireland uses BBFC certificates.</small></div>
+  <div class="bbox"><b>Notes</b>${print?'<div class="lines"></div>':`<textarea id="briefNotes" rows="4" placeholder="Anything the team should know today: VIP visit, a screen out of action, a school group…">${esc(briefNotes(B.d))}</textarea>`}</div></div></div>`}
+function briefNotes(d,v){const k=sk("imc-brief-"+d);try{if(v!=null){localStorage.setItem(k,v);return v}return localStorage.getItem(k)||""}catch(e){return v||""}}
+function opsPrint(title,body,land){const w=window.open("","imc-print");if(!w){toast("Allow pop-ups for this site to print");return}
+  w.document.open();w.document.write(`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(title)}</title><style>@page{size:A4 ${land?"landscape":"portrait"};margin:10mm}body{font:12px/1.4 Arial,sans-serif;color:#111;margin:0}@media screen{body{max-width:${land?1060:760}px;margin:20px auto}}
+h2{font-size:20px;margin:0}p{margin:2px 0 8px;color:#444}table{width:100%;border-collapse:collapse;margin:8px 0}th,td{border:1px solid #bbb;padding:4px 6px;text-align:left;vertical-align:top}th{background:#0b6bb8;color:#fff}tr:nth-child(even) td{background:#f2f6fb}
+.bt{display:inline-block;border:1px solid #333;border-radius:3px;font-size:10px;padding:0 3px;margin-left:4px}.bts{display:inline-block;margin:0 8px 2px 0;font-weight:700;white-space:nowrap}.bts small{font-weight:400}.bbox{border:1px solid #bbb;border-radius:6px;padding:8px 10px;margin:8px 0}.bbox ul{margin:4px 0 0 18px;padding:0}.gold{background:#fff6d6;border-color:#e6b800}
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.lines{height:110px;background:repeating-linear-gradient(transparent 0 21px,#bbb 21px 22px)}.bar{display:inline-block;height:10px;background:#0b6bb8;vertical-align:middle}.chip{display:inline-block;padding:1px 6px;border-radius:9px;background:#eef}</style></head><body>${body}<script>window.onload=()=>setTimeout(()=>print(),300)<\/script></body></html>`);w.document.close()}
+
+/* ---------- staffing guide: suggested people on shift each hour ---------- */
+const STAFF_DEF={mgr:1,kiosk:2,usher:2,min:2};
+function staffCfg(){try{return{...STAFF_DEF,...JSON.parse(localStorage.getItem(sk("imc-staffcfg"))||"{}")}}catch(e){return{...STAFF_DEF}}}
+function staffPlan(d){const{shows}=opsShows(d),c=staffCfg();if(!shows.length)return[];const from=Math.floor((shows[0].start-30)/60),to=Math.ceil(Math.max(...shows.map(x=>x.end))/60);const out=[];
+  for(let h=from;h<to;h++){const a=h*60,b=a+60;
+    /* people arrive in the 30 minutes before a show; screens need clearing in the 20 minutes after a film ends */
+    const arriving=shows.filter(x=>x.start-30<b&&x.start>a).length,ending=shows.filter(x=>x.end>=a&&x.end<b).length,running=Math.max(...[0,15,30,45].map(m=>screensRunning(shows,a+m)));
+    const kiosk=arriving?Math.ceil(arriving/c.kiosk):running?1:0,usher=ending?Math.ceil(ending/c.usher):0,total=Math.max(c.min,c.mgr+kiosk+usher);
+    out.push({h,arriving,ending,running,mgr:c.mgr,kiosk,usher,total})}
+  return out}
+function staffHtml(d,print){const P=staffPlan(d),c=staffCfg();if(!P.length)return`<p class="tip">No showings listed for that day.</p>`;const mx=Math.max(...P.map(x=>x.total));
+  const peak=P.reduce((a,b)=>b.total>a.total?b:a,P[0]);
+  return`${print?`<h2>Staffing guide · ${esc(S().name)}</h2><p>${esc(fmtLong(d))}</p>`:""}
+  <p class="${print?"":"tip"}" style="margin-top:0">Busiest hour: <b>${String(peak.h).padStart(2,"0")}:00</b> with ${peak.total} people suggested. Open from about <b>${String(P[0].h).padStart(2,"0")}:00</b> (half an hour before the first show) until the last film ends.</p>
+  <table class="stab"><thead><tr><th>Hour</th><th>Shows starting</th><th>Films ending</th><th>Screens running</th><th>Manager</th><th>Box office &amp; kiosk</th><th>Ushers &amp; cleaning</th><th>Total</th><th></th></tr></thead><tbody>
+  ${P.map(x=>`<tr${x.total===mx?' class="pk"':""}><td><b>${String(x.h).padStart(2,"0")}:00</b></td><td>${x.arriving||""}</td><td>${x.ending||""}</td><td>${x.running||""}</td><td>${x.mgr}</td><td>${x.kiosk||""}</td><td>${x.usher||""}</td><td><b>${x.total}</b></td><td style="width:30%"><span class="sbar" style="width:${(x.total/mx*100).toFixed(0)}%"></span></td></tr>`).join("")}</tbody></table>
+  <p class="${print?"":"tip"}">A starting point, not a rule: ${c.mgr} manager always on, one box office/kiosk person for every ${c.kiosk} shows starting in the hour, one usher for every ${c.usher} films ending, and never fewer than ${c.min} people in the building.</p>`}
+
+/* ---------- group and party prices ---------- */
+let GQ={day:null,luxx:false,n:{},add:{}};
+function groupTickets(){const tk=((imcPrices()||{}).tickets)||[];const pick=re=>tk.find(t=>re.test(t.name));
+  return GQ.luxx?[["adult","Adult (LUXX)",pick(/^luxx recliner$/i)],["conc","Child, student or senior (LUXX)",pick(/^luxx child/i)]]
+    :GQ.kids?[["kcchild","Kids Club child",pick(/^kids club$/i)],["kcadult","Kids Club adult",pick(/^kids club adult$/i)]]
+    :[["adult","Adult",pick(/^adult$/i)],["child","Child",pick(/^child$/i)],["teen","Teen",pick(/^teen$/i)],["student","Student",pick(/^student$/i)],["senior","Senior",pick(/^senior$/i)]]}
+function groupExtras(){const P=imcPrices()||{},pr=[...(P.products||[])];const f=re=>pr.find(x=>re.test(x.name));
+  return[["tray","Kids tray",f(/^kids tray/i)],["kcmeal","Kids Club Meal Deal",((P.tickets||[]).find(t=>/kids club meal/i.test(t.name)))],["medium","Medium combo",f(/^medium combo$/i)],["large","Large combo",f(/^large combo$/i)],["share","Share combo",f(/^share combo/i)]].filter(x=>x[2]&&x[2].price)}
+const pnum=p=>parseFloat(String(p||"").replace(/[^0-9.]/g,""))||0;
+function groupCalc(){const day=GQ.day||todayIso(),dk=new Date(day+"T12:00").toLocaleDateString("en-GB",{weekday:"short"}).slice(0,3),lines=[],warn=[];let tot=0;
+  for(const[k,n,t]of groupTickets()){const q=+GQ.n[k]||0;if(!q)continue;if(!t){warn.push(`${n}: no price found on imc.ie`);continue}const v=pnum(t.price)*q;tot+=v;lines.push([`${q} × ${n} ticket${q>1?"s":""}`,t.price,v]);if(t.days&&t.days.length&&!t.days.includes(dk))warn.push(`imc.ie didn't list the ${n.toLowerCase()} ticket for a ${dk} when last checked, so check the price for that day`)}
+  for(const[k,n,p]of groupExtras()){const q=+GQ.add[k]||0;if(!q)continue;const v=pnum(p.price)*q;tot+=v;lines.push([`${q} × ${n}`,p.price,v])}
+  return{day,lines,tot,warn}}
+function groupHtml(){const day=GQ.day||todayIso(),R=groupCalc(),cur=curSym(),days=[...Array(14)].map((_,i)=>addDays(todayIso(),i));
+  const num=(k,n,t,grp)=>`<label class="gq"><span>${esc(n)}<small>${t&&t.price?esc(t.price):"price not found"}</small></span><input type="number" min="0" max="500" inputmode="numeric" data-g${grp}="${k}" value="${(grp==="n"?GQ.n:GQ.add)[k]||""}" placeholder="0"></label>`;
+  return`<div class="grid two gqgrid"><div class="panel"><h2>Who's coming</h2>
+    <div class="row-btns" style="margin-bottom:10px"><label class="field" style="margin:0"><span class="flabel">Day</span><select id="gDay">${days.map(d=>`<option value="${d}" ${d===day?"selected":""}>${esc(fmtShort(d))}</option>`).join("")}</select></label>
+      <label class="check"><input type="checkbox" id="gKids" ${GQ.kids?"checked":""}> Kids Club showing</label><label class="check"><input type="checkbox" id="gLuxx" ${GQ.luxx?"checked":""}> LUXX recliners</label></div>
+    ${groupTickets().map(([k,n,t])=>num(k,n,t,"n")).join("")}
+    <h3 style="margin-top:14px">Food and drink</h3>${groupExtras().map(([k,n,p])=>num(k,n,p,"add")).join("")||'<p class="tip">No snack prices from imc.ie yet.</p>'}</div>
+  <div class="panel gqout"><h2>Price</h2>${R.lines.length?`<table class="gtab">${R.lines.map(l=>`<tr><td>${esc(l[0])}</td><td>${esc(l[1])} each</td><td><b>${cur}${l[2].toFixed(2)}</b></td></tr>`).join("")}<tr class="gt"><td colspan="2">Total</td><td>${cur}${R.tot.toFixed(2)}</td></tr></table>`:`<p class="tip">Type how many of each are coming.</p>`}
+    ${R.warn.length?`<div class="gwarn">${R.warn.map(esc).join("<br>")}</div>`:""}
+    ${R.lines.length?`<label class="field"><span class="flabel">Reply to send</span><textarea id="gText" rows="8">${esc(groupReply(R))}</textarea></label><div class="row-btns"><button class="btn primary" id="gCopy">Copy reply</button><button class="btn ghost" id="gClear">Start again</button></div>`:""}
+    <p class="tip">Prices are imc.ie's normal prices from the last check. Any group or party discount is up to the cinema, so change the reply if you offer one.</p></div></div>`}
+function groupReply(R){const nm=S().name;return`Hi! Thanks for getting in touch about your visit to ${nm} on ${fmtLong(R.day)}.\n\nHere's what it would cost at our normal prices:\n${R.lines.map(l=>`• ${l[0]}: ${curSym()}${l[2].toFixed(2)}`).join("\n")}\n\nTotal: ${curSym()}${R.tot.toFixed(2)}\n\nYou can book at imc.ie, or send us a message with the film and time you'd like and we'll help you sort it out.\n\n– The team at ${nm}`}
+document.addEventListener("input",e=>{const t=e.target;if(t.dataset.gn!=null){GQ.n[t.dataset.gn]=t.value;groupRefresh()}else if(t.dataset.gadd!=null){GQ.add[t.dataset.gadd]=t.value;groupRefresh()}});
+document.addEventListener("change",e=>{const t=e.target;if(t.id==="gDay"){GQ.day=t.value;groupRefresh(true)}else if(t.id==="gKids"){GQ.kids=t.checked;if(t.checked)GQ.luxx=false;GQ.n={};groupRefresh(true)}else if(t.id==="gLuxx"){GQ.luxx=t.checked;if(t.checked)GQ.kids=false;GQ.n={};groupRefresh(true)}
+  else if(t.id==="briefNotes"){briefNotes(OPS.day||todayIso(),t.value);toast("Notes saved on this device")}
+  else if(t.dataset.scfg){const c=staffCfg();c[t.dataset.scfg]=Math.max(1,+t.value||1);try{localStorage.setItem(sk("imc-staffcfg"),JSON.stringify(c))}catch(x){}renderOps()}});
+document.addEventListener("click",e=>{if(e.target.id==="gCopy"){const t=$("#gText").value;navigator.clipboard?.writeText(t).then(()=>toast("Reply copied"),()=>{$("#gText").select();toast("Press Ctrl+C to copy")})}if(e.target.id==="gClear"){GQ={day:GQ.day,n:{},add:{}};renderOps()}});
+function groupRefresh(full){const out=$(".gqout");if(full||!out){renderOps();return}const tmp=document.createElement("div");tmp.innerHTML=groupHtml();out.replaceWith(tmp.querySelector(".gqout"))}
+
+/* ---------- weekly report ---------- */
+function reportData(){const T=todayIso(),days=[...Array(7)].map((_,i)=>addDays(T,i)),per=new Map();let total=0,busiest=null;
+  for(const d of days){const{shows}=opsShows(d);total+=shows.length;if(!busiest||shows.length>busiest.n)busiest={d,n:shows.length};
+    for(const x of shows){const o=per.get(x.title)||{title:x.title,cert:x.cert,n:0,luxx:0,kids:0,days:new Set()};o.n++;if(x.luxx)o.luxx++;if(x.kids)o.kids++;o.days.add(d);per.set(x.title,o)}}
+  const films=[...per.values()].sort((a,b)=>b.n-a.n),opens=openDates().filter(x=>x.d>=T&&x.d<=days[6]).sort((a,b)=>a.d.localeCompare(b.d)),last=lastChance();
+  const wk=posts.filter(p=>p.date>=T&&p.date<=days[6]),past=posts.filter(p=>p.date<T&&p.date>=addDays(T,-7)&&p.status==="posted");
+  const m=k=>past.reduce((a,p)=>a+(+(p.metrics||{})[k]||0),0);
+  return{T,days,total,busiest,films,opens,last,wk,past,reach:m("reach"),react:m("react"),comm:m("comm"),share:m("share"),wed:wedPrice()}}
+function reportHtml(R,print){const nm=S().name;
+  return`<div class="rep">${print?`<h2>Weekly report · ${esc(nm)}</h2>`:""}<p class="${print?"":"tip"}" style="margin-top:0">${esc(fmtLong(R.days[0]))} to ${esc(fmtLong(R.days[6]))}</p>
+  <div class="grid stats opsstats"><div class="panel stat"><div class="n">${R.total}</div><div class="l">showings this week</div></div><div class="panel stat"><div class="n">${R.films.length}</div><div class="l">films</div></div>
+   <div class="panel stat"><div class="n">${R.opens.length}</div><div class="l">opening this week</div></div><div class="panel stat"><div class="n">${R.busiest?esc(fmtShort(R.busiest.d).split(" ")[0]):"–"}</div><div class="l">busiest day (${R.busiest?R.busiest.n:0} shows)</div></div>
+   <div class="panel stat"><div class="n">${R.wk.length}</div><div class="l">posts planned</div></div></div>
+  <div class="grid two" style="margin-top:12px"><div class="panel"><h3>Programme</h3><table class="rtab"><thead><tr><th>Film</th><th>Shows</th><th>Days</th><th>LUXX</th><th>Kids Club</th></tr></thead><tbody>${R.films.map(f=>`<tr><td>${esc(f.title)}${f.cert?` <small>(${esc(f.cert)})</small>`:""}</td><td><b>${f.n}</b></td><td>${f.days.size}</td><td>${f.luxx||""}</td><td>${f.kids||""}</td></tr>`).join("")}</tbody></table></div>
+  <div class="panel"><h3>Highlights</h3><ul class="rlist">${R.opens.map(x=>`<li>🎬 <b>${esc(x.f.title)}</b> opens ${esc(fmtShort(x.d))}</li>`).join("")}${R.last.map(x=>`<li>⏳ Last chance: <b>${esc(x.f.title)}</b> (last show ${esc(fmtShort(x.last))})</li>`).join("")}${R.wed?`<li>🍿 Wednesday Meal Deal ${esc(R.wed)}</li>`:""}${R.films.some(f=>f.kids)?`<li>🧸 Kids Club: ${R.films.filter(f=>f.kids).map(f=>esc(f.title)).join(", ")}</li>`:""}</ul>
+   <h3>Social media</h3><ul class="rlist"><li>${R.wk.length} post${R.wk.length===1?"":"s"} planned for this week (${R.wk.filter(p=>p.status==="scheduled").length} scheduled, ${R.wk.filter(p=>p.status==="draft").length} drafts)</li>
+   <li>Last 7 days: ${R.past.length} post${R.past.length===1?"":"s"} published${R.reach?`, ${R.reach.toLocaleString("en-GB")} people reached, ${R.react.toLocaleString("en-GB")} reactions, ${R.comm} comments, ${R.share} shares`:" (add results in the planner to see reach here)"}</li></ul></div></div></div>`}
+function reportText(R){return`Weekly report: ${S().name}\n${fmtLong(R.days[0])} to ${fmtLong(R.days[6])}\n\n${R.total} showings of ${R.films.length} films. Busiest day: ${R.busiest?fmtLong(R.busiest.d):"-"} (${R.busiest?R.busiest.n:0} shows).\n\nOpening: ${R.opens.map(x=>x.f.title+" ("+fmtShort(x.d)+")").join(", ")||"nothing new"}\nLast chance: ${R.last.map(x=>x.f.title+" (last show "+fmtShort(x.last)+")").join(", ")||"none"}\n\nMost showings:\n${R.films.slice(0,8).map(f=>`- ${f.title}: ${f.n} shows`).join("\n")}\n\nSocial media: ${R.wk.length} posts planned this week. Last 7 days: ${R.past.length} posted${R.reach?`, ${R.reach} reached, ${R.react} reactions`:""}.`}
+
+/* ---------- the page ---------- */
+function renderOpsTab(el){const T=todayIso(),d=OPS.day||T,days=[...Array(7)].map((_,i)=>addDays(T,i));
+  const pills=`<div class="opsdays">${days.map((x,i)=>`<button data-opsday="${x}" aria-pressed="${x===d}">${i===0?"Today":i===1?"Tomorrow":esc(fmtShort(x))}</button>`).join("")}</div>`;
+  if(OPS.tab==="brief"){el.innerHTML=pills+`<div class="row-btns" style="margin-bottom:12px"><button class="btn primary" id="briefPrint">🖨️ Print briefing</button></div><div class="panel">${briefHtml(briefData(d))}</div>`;
+    $("#briefPrint").onclick=()=>{const B=briefData(d);opsPrint("Staff briefing "+d,briefHtml(B,true).replace('<div class="lines"></div>',briefNotes(d)?`<div>${esc(briefNotes(d)).replace(/\n/g,"<br>")}</div><div class="lines" style="height:60px"></div>`:'<div class="lines"></div>'),true)};return}
+  if(OPS.tab==="staff"){const c=staffCfg();el.innerHTML=pills+`<div class="panel"><div class="ph"><h2>Staffing guide</h2><div class="row-btns"><button class="btn" id="staffPrint">🖨️ Print</button></div></div>
+    <div class="row-btns scfg"><label class="field"><span class="flabel">Managers always on</span><input type="number" min="1" max="5" data-scfg="mgr" value="${c.mgr}"></label><label class="field"><span class="flabel">Shows per box office/kiosk person</span><input type="number" min="1" max="8" data-scfg="kiosk" value="${c.kiosk}"></label><label class="field"><span class="flabel">Films ending per usher</span><input type="number" min="1" max="8" data-scfg="usher" value="${c.usher}"></label><label class="field"><span class="flabel">Fewest people in the building</span><input type="number" min="1" max="10" data-scfg="min" value="${c.min}"></label></div>${staffHtml(d)}</div>`;
+    $("#staffPrint").onclick=()=>opsPrint("Staffing "+d,staffHtml(d,true).replace(/class="sbar" style="width:(\d+)%"/g,'class="bar" style="width:$1%"'),false);return}
+  if(OPS.tab==="group"){el.innerHTML=groupHtml();return}
+  if(OPS.tab==="report"){const R=reportData();el.innerHTML=`<div class="row-btns" style="margin-bottom:12px"><button class="btn primary" id="repCopy">Copy as text (for email)</button><button class="btn" id="repPrint">🖨️ Print</button></div>${reportHtml(R)}`;
+    $("#repCopy").onclick=()=>{const t=reportText(R);navigator.clipboard?.writeText(t).then(()=>toast("Report copied. Paste it into an email"),()=>prompt("Copy this report",t))};
+    $("#repPrint").onclick=()=>opsPrint("Weekly report",reportHtml(R,true).replace(/class="grid stats opsstats"/,'style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px"').replace(/class="panel stat"/g,'class="bbox"').replace(/class="grid two"[^>]*>/,'class="bgrid">').replace(/class="panel"/g,'class="bbox"'),false);return}}
 
 /* ---------- start panel: the common jobs, one click each ---------- */
 function startPanel(){const se=hSeasonNow()[0];

@@ -117,6 +117,7 @@ body.lite #card .bgimg{filter:none;opacity:.22}
 #promo.luxx h2{font-family:"Playfair Display",Georgia,serif;letter-spacing:.06em;color:#ffd98a}
 #promo.scan .pbg{background:radial-gradient(circle at 70% 50%,#1fa0de33,transparent 50%),linear-gradient(135deg,#0b1240,#060816)}
 #promo.soon .pbg{background:radial-gradient(ellipse at 50% 0%,#e2452e33,transparent 55%),linear-gradient(180deg,#140a26,#060816)}
+#promo.last .pbg{background:radial-gradient(circle at 80% 30%,#e2452e44,transparent 50%),linear-gradient(160deg,#2a0b14,#070a1c)}
 #promo.msg .pbg{background:linear-gradient(135deg,#1d2a6e,#070a1c)}
 
 /* ---------- opening / closed screen ---------- */
@@ -313,6 +314,10 @@ function promos(){const n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out
   if(lxs.length)out.push({k:"luxx",kick:"Upgrade your seat",title:"LUXX",lines:["Full electric recliners","Extra legroom","Showing today: "+lxs.slice(0,3).map(f=>cleanTitle(f.title)).join(", ")],price:!LOUNGE&&lxp,priceSub:"FROM"});
   const soon=all.filter(f=>{const d=f.releaseDate||(f.sessions.map(s=>s.date).sort()[0]);return d&&d>n.date&&!isSensory(f)}).map(f=>({f,d:f.releaseDate&&f.releaseDate>n.date?f.releaseDate:f.sessions.map(s=>s.date).sort()[0]})).sort((a,b)=>a.d.localeCompare(b.d)).slice(0,4);
   if(!LOUNGE&&soon.length>1)out.push({k:"soon",kick:"Coming soon",title:"Coming soon",lines:[],posters:soon.map(x=>({p:asset(x.f.posterFile)||x.f.poster,b:shortDay(x.d)}))});
+  /* last chance: final listed showings within 3 days while the listings run on after them */
+  let H="";for(const d of D.days||[])if((d.films||[]).length>=3&&d.date>H)H=d.date;
+  const leaving=LOUNGE?[]:all.filter(f=>!isSensory(f)).map(f=>{const ds=f.sessions.map(x=>x.date).sort(),last=ds[ds.length-1],rel=f.releaseDate||ds[0];return{f,last,rel}}).filter(x=>x.last&&x.last>=n.date&&x.last<=addDays(n.date,3)&&x.last<=addDays(H,-2)&&!(x.rel&&x.rel>=addDays(n.date,-2))).slice(0,4);
+  if(leaving.length)out.push({k:"last",kick:"Don't miss out",title:"Last chance to see",lines:leaving.map(x=>cleanTitle(x.f.title)),posters:leaving.map(x=>({p:asset(x.f.posterFile)||x.f.poster,b:"Last show "+shortDay(x.last).split(" ")[0]}))});
   out.push({k:"scan",kick:"Skip the queue",title:"Book on your phone",lines:["Scan the code with your phone camera","Choose your film, time and seats","Show your ticket at the door"],qr:TIMES_URL()});
   for(const m of MSGS)out.push({k:"msg",kick:(D&&D.cinema)||"IMC",title:m,lines:[]});
   return out}
