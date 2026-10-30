@@ -325,7 +325,7 @@ The playful styles are no longer offered in the pickers: neon, marquee lights, t
 - **Badges:** Coming Soon, New Release, LUXX, Premier, Now Showing, Book Now, release date, Tonight, corner sash, Kids Club, price burst, Selling Fast.
 - **Deal pieces:** price ticket, "What's included" card, Save ribbon.
 - **IMC images:** IMC's own cinema photos and graphics from imc.ie, and IMC's product and deal photos from the booking pages (AI-upscaled 4× for sharpness by the *Upscale product photos* job), under Photo → IMC images, as a background or placed on the design. Deals and video clips always picture IMC's real product photos; only the gold ticket is a graphic.
-- **Food, drink & tickets (drawn, for custom designs):** the IMC ♥ movies popcorn box, drink, the red kids tray with popcorn and a juice bottle, nachos, hot dog, sweet bag, pick 'n' mix, scooped ice cream, ice cream tub and a cinema ticket that shows how many tickets the deal includes. They're drawn in code, and every colour and label can be changed.
+- **Food & drink (real photos):** IMC's own product photos: Medium, Large and Share Combo, Kids Tray, Nachos, IMC Twist, Oreo and 99 soft-serve, Maltesers, Minstrels and Tahila water, with the white background removed automatically. Your own uploads (for example your Candy King pick 'n' mix stand or hot dogs) appear first. The only drawing left is a clean, flat cinema ticket. Older designs that used the drawn food open with the matching photo in the same place (popcorn and drinks become one combo photo); pick 'n' mix and hot dogs only ever use your own photo.
 - **Film times:** a panel listing films and times, filled from imc.ie and editable.
 - **Motion:** slow zoom, light rays, spotlights, bokeh, marquee chase, gold sparkle, popcorn burst, fizz bubbles, confetti, snow, old projector.
 - **Per-item animation:** Pop in, Slam in, Slide up, Zoom in, Fade in, Drop & bounce, Spin in, Flip in, Type on (text), Shine, Pulse, Heartbeat, Glow, Swing, Wiggle, Shake, Float or Blink, each with a start time so items arrive in sequence.
@@ -362,7 +362,7 @@ Posts, deals, layouts, your uploaded media and your current design are saved **i
 
 ## Images
 
-Use official posters and trailer stills, your own photos and videos from the cinema, or the built-in graphics. The food and drink pictures are drawn in code as illustrations. The app flags any post marked as using an AI-generated image.
+Use official posters and trailer stills, your own photos and videos from the cinema, or the built-in graphics. Food and drink pictures are IMC's own product photos or your uploads. The app flags any post marked as using an AI-generated image.
 
 ## Logo
 
