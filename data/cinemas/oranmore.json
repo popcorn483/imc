@@ -2,75 +2,76 @@
   "id": "oranmore",
   "cinema": "IMC Oranmore",
   "source": "https://imc.ie/galway-oranmore",
-  "updated": "2026-10-29T21:58:26.109Z",
+  "updated": "2026-10-30T21:39:23.481Z",
   "today": [
     {
       "certSystem": "ifco",
       "certFile": "16",
-      "title": "Clayface",
-      "luxx": true,
+      "title": "Clayface Galactic",
+      "luxx": false,
       "sensory": false,
       "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/115573.jpg",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
       "cert": "16",
       "runtime": 120,
-      "release": "October 23, 2026",
-      "releaseDate": "2026-10-23",
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
       "director": "James Watkins",
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-      "date": "2026-10-29",
+      "date": "2026-10-30",
       "times": [
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79758",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80103",
       "sessions": [
         {
-          "day": "Thu 29 October",
-          "date": "2026-10-29",
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79758",
-          "luxx": true,
-          "screen": "1",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80103",
+          "luxx": false,
+          "screen": "2",
           "threeD": false,
           "tags": [
             "new",
             "evening",
-            "seating-lux"
+            "seating-standard",
+            "screen-galactic"
           ]
         }
       ],
-      "slug": "clayface",
-      "posterFile": "data/posters/clayface.jpg",
+      "slug": "clayface-galactic",
+      "posterFile": "data/posters/clayface-galactic.jpg",
       "certIcon": "data/ratings/ifco-16.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
       "certSystem": "ifco",
-      "certFile": "12A",
-      "title": "Ghosts: The Possession Of Button House",
+      "certFile": "15A",
+      "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
       "luxx": false,
       "sensory": false,
       "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-      "cert": "12A",
-      "runtime": 100,
-      "release": "October 23, 2026",
-      "releaseDate": "2026-10-23",
-      "director": "Simon Hynd",
-      "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-      "trailer": null,
-      "date": "2026-10-29",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
+      "cert": "15A",
+      "runtime": 102,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+      "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+      "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+      "date": "2026-10-30",
       "times": [
-        "20:45"
+        "20:25"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79991",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80252",
       "sessions": [
         {
-          "day": "Thu 29 October",
-          "date": "2026-10-29",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79991",
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "20:25",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80252",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -81,39 +82,121 @@
           ]
         }
       ],
-      "slug": "ghosts-the-possession-of-button-house",
-      "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
+      "slug": "jak-zyc-zeby-nie-zwariowac",
+      "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Primetime",
+      "luxx": true,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+      "cert": "16",
+      "runtime": 104,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Lance Oppenheim",
+      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+      "date": "2026-10-30",
+      "times": [
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80249",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80249",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "primetime",
+      "posterFile": "data/posters/primetime.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
       "certSystem": "ifco",
       "certFile": "15A",
-      "title": "Verity",
+      "title": "Wicker",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+      "cert": "15A",
+      "runtime": 100,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Alex Huston Fischer, Eleanor Wilson",
+      "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+      "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+      "date": "2026-10-30",
+      "times": [
+        "20:35"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80195",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80195",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "wicker",
+      "posterFile": "data/posters/wicker.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Wildwood",
       "luxx": false,
       "sensory": false,
       "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/110405.jpg",
-      "cert": "15A",
-      "runtime": 117,
-      "release": "October 16, 2026",
-      "releaseDate": "2026-10-16",
-      "director": "Michael Showalter",
-      "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
-      "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-      "date": "2026-10-29",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+      "cert": "12A",
+      "runtime": 131,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+      "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+      "date": "2026-10-30",
       "times": [
-        "20:45"
+        "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79959",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80200",
       "sessions": [
         {
-          "day": "Thu 29 October",
-          "date": "2026-10-29",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79959",
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80200",
           "luxx": false,
-          "screen": "3",
+          "screen": "5",
           "threeD": false,
           "tags": [
             "released",
@@ -122,795 +205,18 @@
           ]
         }
       ],
-      "slug": "verity",
-      "posterFile": "data/posters/verity.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
+      "slug": "wildwood",
+      "posterFile": "data/posters/wildwood.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "days": [
     {
-      "label": "Thu 29 Oct",
-      "url": "https://imc.ie/film-times/galway-oranmore/29-10-2026#dateD",
-      "date": "2026-10-29",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115573.jpg",
-          "cert": "16",
-          "runtime": 120,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "James Watkins",
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-          "date": "2026-10-29",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79758",
-          "sessions": [
-            {
-              "day": "Thu 29 October",
-              "date": "2026-10-29",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79758",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "12A",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-29",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79991",
-          "sessions": [
-            {
-              "day": "Thu 29 October",
-              "date": "2026-10-29",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79991",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Heart Of The Beast",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
-          "cert": "15A",
-          "runtime": 102,
-          "release": "September 23, 2026",
-          "releaseDate": "2026-09-23",
-          "director": "David Ayer",
-          "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
-          "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-          "date": "2026-10-29",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80008",
-          "sessions": [
-            {
-              "day": "Thu 29 October",
-              "date": "2026-10-29",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80008",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "heart-of-the-beast",
-          "posterFile": "data/posters/heart-of-the-beast.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Street Fighter Galactic",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115993.jpg",
-          "cert": "12A",
-          "runtime": 119,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Kitao Sakurai",
-          "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-          "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
-          "date": "2026-10-29",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79944",
-          "sessions": [
-            {
-              "day": "Thu 29 October",
-              "date": "2026-10-29",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79944",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "street-fighter-galactic",
-          "posterFile": "data/posters/street-fighter-galactic.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Verity",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110405.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Michael Showalter",
-          "synopsis": "Adapted from Colleen Hoover's best-selling novel, this seductive, psychological thriller follows renowned author Verity Crawford and Lowen Ashleigh, a struggling writer who relocates to the remote Crawford estate to ghostwrite for Verity. After Lowen uncovers what appears to be Verity's chilling autobiographical notes, she wrestles with the disturbing and twisted confessions about Verity?s husband Jeremy, and finds it hard to separate fiction from reality, manipulation from attraction, and opportunity from obsession.",
-          "trailer": "https://www.youtube.com/watch?v=wbMNy_djxGk",
-          "date": "2026-10-29",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79959",
-          "sessions": [
-            {
-              "day": "Thu 29 October",
-              "date": "2026-10-29",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79959",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "verity",
-          "posterFile": "data/posters/verity.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-29",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79981",
-          "sessions": [
-            {
-              "day": "Thu 29 October",
-              "date": "2026-10-29",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79981",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
-    {
       "label": "Fri 30 Oct",
       "url": "https://imc.ie/film-times/galway-oranmore/30-10-2026#dateD",
       "date": "2026-10-30",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Arnie and Barney",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
-          "cert": "G",
-          "runtime": 77,
-          "release": "October 24, 2026",
-          "releaseDate": "2026-10-24",
-          "director": "Sean Heuston",
-          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
-          "date": "2026-10-30",
-          "times": [
-            "14:15",
-            "16:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80198",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "14:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80198",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "16:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80125",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "arnie-and-barney",
-          "posterFile": "data/posters/arnie-and-barney.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface Galactic",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
-          "cert": "16",
-          "runtime": 120,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "James Watkins",
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-          "date": "2026-10-30",
-          "times": [
-            "15:45",
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80101",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80101",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "matinee",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80123",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80103",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            }
-          ],
-          "slug": "clayface-galactic",
-          "posterFile": "data/posters/clayface-galactic.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-10-30",
-          "times": [
-            "14:45",
-            "17:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80202",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "14:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80202",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "17:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80203",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
-          "cert": "15A",
-          "runtime": 102,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
-          "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
-          "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
-          "date": "2026-10-30",
-          "times": [
-            "18:10",
-            "20:25"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80251",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80251",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:25",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80252",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "jak-zyc-zeby-nie-zwariowac",
-          "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Primetime",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "16",
-          "runtime": 109,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Lance Oppenheim",
-          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-          "date": "2026-10-30",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80204",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80204",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "primetime",
-          "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Primetime",
-          "luxx": true,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
-          "cert": "16",
-          "runtime": 104,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Lance Oppenheim",
-          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
-          "date": "2026-10-30",
-          "times": [
-            "15:45",
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80250",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80250",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "matinee",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80248",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80249",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "primetime",
-          "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Tad and the Magic Lamp",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-          "cert": "G",
-          "runtime": 94,
-          "release": "October 17, 2026",
-          "releaseDate": "2026-10-17",
-          "director": "Enrique Gato",
-          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-          "trailer": null,
-          "date": "2026-10-30",
-          "times": [
-            "15:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80197",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80197",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "tad-and-the-magic-lamp",
-          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wicker",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Alex Huston Fischer, Eleanor Wilson",
-          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-          "date": "2026-10-30",
-          "times": [
-            "18:10",
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80196",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80196",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80195",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wicker",
-          "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-30",
-          "times": [
-            "14:20",
-            "17:10",
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80201",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "14:20",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80201",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "17:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80199",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80200",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
+      "films": []
     },
     {
       "label": "Sat 31 Oct",
@@ -995,7 +301,7 @@
           "title": "Clayface Galactic",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
           "cert": "16",
           "runtime": 120,
@@ -1022,7 +328,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -1037,7 +343,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -1052,7 +358,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -1067,7 +373,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -1157,7 +463,7 @@
           "title": "Ghosts: The Possession Of Button House",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
           "cert": "12A",
           "runtime": 100,
@@ -1181,7 +487,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1198,7 +504,7 @@
           "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
           "cert": "15A",
           "runtime": 102,
@@ -1223,7 +529,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1237,7 +543,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1254,7 +560,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
           "runtime": 109,
@@ -1278,7 +584,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1295,7 +601,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -1322,7 +628,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1336,7 +642,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1350,7 +656,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1364,7 +670,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1438,7 +744,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -1463,7 +769,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1477,7 +783,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1494,7 +800,7 @@
           "title": "Wildwood",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
           "cert": "12A",
           "runtime": 131,
@@ -1520,7 +826,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1534,7 +840,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1548,7 +854,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1644,7 +950,7 @@
           "title": "Clayface Galactic",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
           "cert": "16",
           "runtime": 120,
@@ -1671,7 +977,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -1686,7 +992,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -1701,7 +1007,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -1716,7 +1022,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -1806,7 +1112,7 @@
           "title": "Ghosts: The Possession Of Button House",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
           "cert": "12A",
           "runtime": 100,
@@ -1830,7 +1136,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1847,7 +1153,7 @@
           "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
           "cert": "15A",
           "runtime": 102,
@@ -1872,7 +1178,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1886,7 +1192,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1903,7 +1209,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
           "runtime": 109,
@@ -1927,7 +1233,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1944,7 +1250,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -1971,7 +1277,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1985,7 +1291,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1999,7 +1305,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2013,7 +1319,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2087,7 +1393,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -2112,7 +1418,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2126,7 +1432,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2143,7 +1449,7 @@
           "title": "Wildwood",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
           "cert": "12A",
           "runtime": 131,
@@ -2169,7 +1475,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2183,7 +1489,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2197,7 +1503,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2221,7 +1527,7 @@
           "title": "Clayface Galactic",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
           "cert": "16",
           "runtime": 120,
@@ -2246,7 +1552,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -2261,7 +1567,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -2361,7 +1667,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
           "runtime": 109,
@@ -2385,7 +1691,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2402,7 +1708,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -2427,7 +1733,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2441,7 +1747,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2458,7 +1764,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -2483,7 +1789,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2497,7 +1803,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2514,7 +1820,7 @@
           "title": "Wildwood",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
           "cert": "12A",
           "runtime": 131,
@@ -2538,7 +1844,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2562,7 +1868,7 @@
           "title": "Clayface Galactic",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
           "cert": "16",
           "runtime": 120,
@@ -2587,7 +1893,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -2602,7 +1908,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -2702,7 +2008,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
           "runtime": 109,
@@ -2726,7 +2032,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2743,7 +2049,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -2768,7 +2074,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2782,7 +2088,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2799,7 +2105,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -2824,7 +2130,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2838,7 +2144,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2855,7 +2161,7 @@
           "title": "Wildwood",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
           "cert": "12A",
           "runtime": 131,
@@ -2879,7 +2185,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2903,7 +2209,7 @@
           "title": "Clayface Galactic",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
           "cert": "16",
           "runtime": 120,
@@ -2928,7 +2234,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -2943,7 +2249,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard",
                 "screen-galactic"
@@ -3043,7 +2349,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
           "runtime": 109,
@@ -3067,7 +2373,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3084,7 +2390,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -3109,7 +2415,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3123,7 +2429,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3140,7 +2446,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -3165,7 +2471,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3179,7 +2485,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3259,7 +2565,7 @@
           "title": "Clayface Galactic",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115646.jpg",
           "cert": "16",
           "runtime": 120,
@@ -3284,7 +2590,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3298,7 +2604,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3315,7 +2621,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "16",
           "runtime": 109,
@@ -3339,7 +2645,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3356,7 +2662,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -3381,7 +2687,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3395,7 +2701,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3453,7 +2759,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -3478,7 +2784,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3492,7 +2798,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3560,6 +2866,12 @@
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
+    },
+    {
+      "label": "Fri 06 Nov",
+      "url": "https://imc.ie/film-times/galway-oranmore/06-11-2026#dateD",
+      "date": "2026-11-06",
+      "films": []
     }
   ],
   "comingSoon": [
@@ -3822,34 +3134,6 @@
             "seating-standard",
             "screen-galactic"
           ]
-        },
-        {
-          "day": "Thu 24 December",
-          "date": "2026-12-24",
-          "time": "16:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80046",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 24 December",
-          "date": "2026-12-24",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80047",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
         }
       ],
       "slug": "avengers-doomsday-galactic",
@@ -4102,34 +3386,6 @@
             "evening",
             "seating-standard"
           ]
-        },
-        {
-          "day": "Thu 24 December",
-          "date": "2026-12-24",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80049",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 24 December",
-          "date": "2026-12-24",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80048",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
         }
       ],
       "slug": "avengers-doomsday",
@@ -4208,7 +3464,7 @@
         {
           "day": "Sat 31 October",
           "date": "2026-10-31",
-          "time": "13:15",
+          "time": "13:05",
           "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80105",
           "luxx": false,
           "screen": "2",
@@ -4268,8 +3524,8 @@
         {
           "day": "Sun 1 November",
           "date": "2026-11-01",
-          "time": "13:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80109",
+          "time": "13:05",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80214",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -4284,7 +3540,7 @@
           "day": "Sun 1 November",
           "date": "2026-11-01",
           "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80108",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80211",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -4299,7 +3555,7 @@
           "day": "Sun 1 November",
           "date": "2026-11-01",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80110",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80212",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -4314,7 +3570,7 @@
           "day": "Sun 1 November",
           "date": "2026-11-01",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80111",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80213",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -4359,7 +3615,7 @@
           "day": "Tue 3 November",
           "date": "2026-11-03",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80158",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80237",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -4374,7 +3630,7 @@
           "day": "Tue 3 November",
           "date": "2026-11-03",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80159",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80236",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -4679,39 +3935,307 @@
             "evening",
             "seating-lux"
           ]
-        },
-        {
-          "day": "Thu 24 December",
-          "date": "2026-12-24",
-          "time": "16:55",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80044",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Thu 24 December",
-          "date": "2026-12-24",
-          "time": "20:10",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80045",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
         }
       ],
       "slug": "dune-part-three",
       "posterFile": "data/posters/dune-part-three.jpg",
       "certIcon": "data/ratings/ifco-TBC.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Ebenezer - Galactic",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116628.jpg",
+      "cert": "12A",
+      "runtime": 120,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": "Ti West",
+      "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+      "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+      "date": "2026-11-13",
+      "times": [
+        "18:10",
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80282",
+      "sessions": [
+        {
+          "day": "Fri 13 November",
+          "date": "2026-11-13",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80282",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Fri 13 November",
+          "date": "2026-11-13",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80283",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "13:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80296",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80297",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80284",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80285",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sun 15 November",
+          "date": "2026-11-15",
+          "time": "13:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80298",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sun 15 November",
+          "date": "2026-11-15",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80299",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sun 15 November",
+          "date": "2026-11-15",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80286",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sun 15 November",
+          "date": "2026-11-15",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80287",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80288",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80289",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Tue 17 November",
+          "date": "2026-11-17",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80290",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Tue 17 November",
+          "date": "2026-11-17",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80291",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Wed 18 November",
+          "date": "2026-11-18",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80292",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Wed 18 November",
+          "date": "2026-11-18",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80293",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Thu 19 November",
+          "date": "2026-11-19",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80294",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 19 November",
+          "date": "2026-11-19",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80295",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ebenezer-galactic",
+      "posterFile": "data/posters/ebenezer-galactic.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -4923,6 +4447,538 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
+      "cert": "15A",
+      "runtime": 102,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+      "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+      "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+      "date": "2026-10-30",
+      "times": [
+        "18:10",
+        "20:25"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80251",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80251",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "20:25",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80252",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80257",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "20:25",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80253",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80259",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "20:25",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80260",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "jak-zyc-zeby-nie-zwariowac",
+      "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Primetime",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+      "cert": "16",
+      "runtime": 109,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Lance Oppenheim",
+      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+      "date": "2026-10-30",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80204",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80204",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80210",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80226",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80232",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Tue 3 November",
+          "date": "2026-11-03",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80241",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 4 November",
+          "date": "2026-11-04",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80243",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80245",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "primetime",
+      "posterFile": "data/posters/primetime.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Primetime",
+      "luxx": true,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+      "cert": "16",
+      "runtime": 104,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Lance Oppenheim",
+      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+      "date": "2026-10-30",
+      "times": [
+        "15:45",
+        "18:15",
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80250",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80250",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80248",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80249",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "13:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80258",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80254",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80255",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80256",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "13:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80264",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80261",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80262",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80263",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80265",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80266",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Tue 3 November",
+          "date": "2026-11-03",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80267",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Tue 3 November",
+          "date": "2026-11-03",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80268",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 4 November",
+          "date": "2026-11-04",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80269",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 4 November",
+          "date": "2026-11-04",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80270",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80272",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80271",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "primetime",
+      "posterFile": "data/posters/primetime.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "TBC",
       "title": "Ramayana: Rise of a Legend",
       "luxx": false,
@@ -4965,29 +5021,296 @@
     {
       "certSystem": "ifco",
       "certFile": "12A",
-      "title": "Street Fighter",
+      "title": "The Hunger Games: Sunrise On The Reaping",
       "luxx": false,
       "sensory": false,
       "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
+      "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
       "cert": "12A",
-      "runtime": 119,
+      "runtime": 158,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": null,
+      "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+      "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+      "date": "2026-11-20",
+      "times": [
+        "16:40",
+        "20:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80301",
+      "sessions": [
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80301",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80302",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80315",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80303",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80304",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 22 November",
+          "date": "2026-11-22",
+          "time": "13:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80316",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 22 November",
+          "date": "2026-11-22",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80305",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 22 November",
+          "date": "2026-11-22",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80306",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80307",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80308",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80309",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80310",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80311",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80312",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 26 November",
+          "date": "2026-11-26",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80313",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 26 November",
+          "date": "2026-11-26",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80314",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "the-hunger-games-sunrise-on-the-reaping",
+      "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Wicker",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+      "cert": "15A",
+      "runtime": 100,
       "release": "October 30, 2026",
       "releaseDate": "2026-10-30",
-      "director": "Kitao Sakurai",
-      "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
-      "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
+      "director": "Alex Huston Fischer, Eleanor Wilson",
+      "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+      "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
       "date": "2026-10-30",
       "times": [
-        "20:30"
+        "18:10",
+        "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80112",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80196",
       "sessions": [
         {
           "day": "Fri 30 October",
           "date": "2026-10-30",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80112",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80196",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80195",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -5000,8 +5323,22 @@
         {
           "day": "Sat 31 October",
           "date": "2026-10-31",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80115",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80208",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80205",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -5014,8 +5351,22 @@
         {
           "day": "Sun 1 November",
           "date": "2026-11-01",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80119",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80224",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80221",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -5028,8 +5379,22 @@
         {
           "day": "Mon 2 November",
           "date": "2026-11-02",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80168",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80230",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80231",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -5042,8 +5407,8 @@
         {
           "day": "Tue 3 November",
           "date": "2026-11-03",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80170",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80239",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -5052,11 +5417,81 @@
             "evening",
             "seating-standard"
           ]
+        },
+        {
+          "day": "Tue 3 November",
+          "date": "2026-11-03",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80240",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 4 November",
+          "date": "2026-11-04",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80244",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 4 November",
+          "date": "2026-11-04",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80242",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80246",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80247",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
         }
       ],
-      "slug": "street-fighter",
-      "posterFile": "data/posters/street-fighter.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
+      "slug": "wicker",
+      "posterFile": "data/posters/wicker.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -5141,6 +5576,159 @@
       "slug": "wild-horse-nine",
       "posterFile": "data/posters/wild-horse-nine.jpg",
       "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "TBC",
+      "title": "You Can See Everything",
+      "luxx": true,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
+      "cert": "TBC",
+      "runtime": 174,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": "Nathan Fielder",
+      "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+      "trailer": null,
+      "date": "2026-11-20",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80273",
+      "sessions": [
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80273",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80275",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80274",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 22 November",
+          "date": "2026-11-22",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80276",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 22 November",
+          "date": "2026-11-22",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80277",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80278",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80279",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80280",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Thu 26 November",
+          "date": "2026-11-26",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80281",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "you-can-see-everything",
+      "posterFile": "data/posters/you-can-see-everything.jpg",
+      "certIcon": "data/ratings/ifco-TBC.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
@@ -5234,223 +5822,14 @@
       "director": "James Watkins",
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-      "date": "2026-10-24",
+      "date": "2026-10-29",
       "times": [
+        "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79745",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79760",
       "sessions": [
-        {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79745",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sat 24 October",
-          "date": "2026-10-24",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79744",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "13:25",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80079",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79748",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79747",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79746",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Mon 26 October",
-          "date": "2026-10-26",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79751",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Mon 26 October",
-          "date": "2026-10-26",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79750",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Mon 26 October",
-          "date": "2026-10-26",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79749",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79754",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79753",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79752",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79757",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79756",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=79755",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        },
         {
           "day": "Thu 29 October",
           "date": "2026-10-29",
@@ -5729,12 +6108,41 @@
             "evening",
             "seating-lux"
           ]
-        },
+        }
+      ],
+      "slug": "dune-part-three",
+      "posterFile": "data/posters/dune-part-three.jpg",
+      "certIcon": "data/ratings/ifco-TBC.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Primetime",
+      "luxx": true,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
+      "cert": "16",
+      "runtime": 104,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Lance Oppenheim",
+      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
+      "date": "2026-10-30",
+      "times": [
+        "15:45",
+        "18:15",
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80250",
+      "sessions": [
         {
-          "day": "Thu 24 December",
-          "date": "2026-12-24",
-          "time": "16:55",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80044",
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80250",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -5745,10 +6153,248 @@
           ]
         },
         {
-          "day": "Thu 24 December",
-          "date": "2026-12-24",
-          "time": "20:10",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80045",
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80248",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80249",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "13:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80258",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80254",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80255",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80256",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "13:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80264",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80261",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80262",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80263",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80265",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80266",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Tue 3 November",
+          "date": "2026-11-03",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80267",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Tue 3 November",
+          "date": "2026-11-03",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80268",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 4 November",
+          "date": "2026-11-04",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80269",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 4 November",
+          "date": "2026-11-04",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80270",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80272",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80271",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -5759,8 +6405,161 @@
           ]
         }
       ],
-      "slug": "dune-part-three",
-      "posterFile": "data/posters/dune-part-three.jpg",
+      "slug": "primetime",
+      "posterFile": "data/posters/primetime.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "TBC",
+      "title": "You Can See Everything",
+      "luxx": true,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
+      "cert": "TBC",
+      "runtime": 174,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": "Nathan Fielder",
+      "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+      "trailer": null,
+      "date": "2026-11-20",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80273",
+      "sessions": [
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80273",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80275",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80274",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 22 November",
+          "date": "2026-11-22",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80276",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 22 November",
+          "date": "2026-11-22",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80277",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80278",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80279",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80280",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Thu 26 November",
+          "date": "2026-11-26",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80281",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "you-can-see-everything",
+      "posterFile": "data/posters/you-can-see-everything.jpg",
       "certIcon": "data/ratings/ifco-TBC.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     }
@@ -5817,110 +6616,24 @@
   ],
   "log": [
     "home: 0 films parsed",
-    "today: 3 films parsed",
-    "day-29-10-2026-dated: 6 films parsed",
-    "day-30-10-2026-dated: 9 films parsed",
+    "today: 5 films parsed",
+    "day-30-10-2026-dated: 0 films parsed",
     "day-31-10-2026-dated: 10 films parsed",
     "day-01-11-2026-dated: 10 films parsed",
     "day-02-11-2026-dated: 7 films parsed",
     "day-03-11-2026-dated: 7 films parsed",
     "day-04-11-2026-dated: 7 films parsed",
     "day-05-11-2026-dated: 6 films parsed",
-    "advance: 10 films parsed",
+    "day-06-11-2026-dated: 0 films parsed",
+    "advance: 16 films parsed",
     "kids: 1 films parsed",
-    "luxx: 2 films parsed",
-    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
-    "prices: 17 ticket types, 4 bundles, 9 products",
+    "luxx: 4 films parsed",
+    "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu)",
+    "prices: 16 ticket types, 4 bundles, 9 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
-      {
-        "name": "Adult Matinee",
-        "price": "€10.50",
-        "days": [
-          "Fri"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Teen",
-        "price": "€10.50",
-        "days": [
-          "Fri",
-          "Sat",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Child Matinee",
-        "price": "€9.50",
-        "days": [
-          "Fri"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Student",
-        "price": "€10.50",
-        "days": [
-          "Fri",
-          "Sat",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Family",
-        "price": "€36.50",
-        "days": [
-          "Fri",
-          "Sat",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "OAP",
-        "price": "€10.50",
-        "days": [
-          "Fri",
-          "Sat",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
       {
         "name": "Adult Peak",
         "price": "€12.50",
@@ -5936,7 +6649,63 @@
         ]
       },
       {
+        "name": "Teen",
+        "price": "€10.50",
+        "days": [
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
         "name": "Child Peak",
+        "price": "€10.50",
+        "days": [
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Student",
+        "price": "€10.50",
+        "days": [
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Family",
+        "price": "€36.50",
+        "days": [
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "OAP",
         "price": "€10.50",
         "days": [
           "Sat",
@@ -5993,40 +6762,11 @@
         ]
       },
       {
-        "name": "Kids Club",
-        "price": "€5.00",
-        "days": [
-          "Fri"
-        ],
-        "seenOn": [
-          "kids"
-        ]
-      },
-      {
-        "name": "Kids Club Adult",
-        "price": "€5.00",
-        "days": [
-          "Fri"
-        ],
-        "seenOn": [
-          "kids"
-        ]
-      },
-      {
-        "name": "Kids Club Meal Deal",
-        "price": "€9.50",
-        "days": [
-          "Fri"
-        ],
-        "seenOn": [
-          "kids"
-        ]
-      },
-      {
         "name": "LUXX Recliner",
         "price": "€15.50",
         "days": [
-          "Fri"
+          "Fri",
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -6036,10 +6776,51 @@
         "name": "LUXX Child/Student/OAP",
         "price": "€12.50",
         "days": [
-          "Fri"
+          "Fri",
+          "Sat"
         ],
         "seenOn": [
           "luxx"
+        ]
+      },
+      {
+        "name": "Teen Club",
+        "price": "€6.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
+        "name": "Kids Club",
+        "price": "€5.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Adult",
+        "price": "€5.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Meal Deal",
+        "price": "€9.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
         ]
       }
     ],
@@ -6050,7 +6831,6 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -6058,8 +6838,7 @@
           "Thu"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ],
         "file": "data/products/t1mcb.jpg"
       },
@@ -6069,7 +6848,6 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -6078,8 +6856,7 @@
           "Thu"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ],
         "file": "data/products/t1scb.jpg"
       },
@@ -6089,7 +6866,8 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Fri",
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -6102,7 +6880,8 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Fri",
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -6116,19 +6895,19 @@
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
+          "luxx",
           "matinee",
-          "kids",
-          "luxx"
+          "kids"
         ],
         "file": "data/products/flexi.jpg"
       },
@@ -6137,19 +6916,19 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
+          "luxx",
           "matinee",
-          "kids",
-          "luxx"
+          "kids"
         ],
         "file": "data/products/maltesers.jpg"
       },
@@ -6158,19 +6937,19 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
+          "luxx",
           "matinee",
-          "kids",
-          "luxx"
+          "kids"
         ],
         "file": "data/products/minstrels.jpg"
       },
@@ -6179,19 +6958,19 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
+          "luxx",
           "matinee",
-          "kids",
-          "luxx"
+          "kids"
         ],
         "file": "data/products/ttc.jpg"
       },
@@ -6200,19 +6979,19 @@
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
+          "luxx",
           "matinee",
-          "kids",
-          "luxx"
+          "kids"
         ],
         "file": "data/products/combotest.jpg"
       },
@@ -6221,19 +7000,19 @@
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
+          "luxx",
           "matinee",
-          "kids",
-          "luxx"
+          "kids"
         ],
         "file": "data/products/lccc.jpg"
       },
@@ -6242,19 +7021,19 @@
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
+          "luxx",
           "matinee",
-          "kids",
-          "luxx"
+          "kids"
         ],
         "file": "data/products/onkt.jpg"
       },
@@ -6263,19 +7042,19 @@
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
+          "luxx",
           "matinee",
-          "kids",
-          "luxx"
+          "kids"
         ],
         "file": "data/products/scon.jpg"
       },
@@ -6284,26 +7063,25 @@
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
+          "luxx",
           "matinee",
-          "kids",
-          "luxx"
+          "kids"
         ],
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-10-29T21:58:51.567Z",
+    "checked": "2026-10-30T21:39:52.159Z",
     "sampledDays": [
-      "Fri",
       "Sat",
       "Sun",
       "Mon",
@@ -6312,7 +7090,7 @@
       "Thu"
     ]
   },
-  "checked": "2026-10-29T21:59:06.287Z",
+  "checked": "2026-10-30T21:40:06.255Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
