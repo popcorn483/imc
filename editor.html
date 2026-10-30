@@ -8,7 +8,7 @@
 <title>IMC Photo Editor</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@700&family=Fredoka:wght@500;600;700&display=swap">
 <style>
 /* Layout: dark editing suite. Tools left, canvas centre, properties + layers right. Single dark theme so photos read true. */
 :root{
@@ -323,6 +323,8 @@ html.a-rm *{transition:none!important;animation:none!important}
 .pal i{display:inline-block;width:24px;height:24px;border-radius:50%;border:2px solid var(--panel)}.pal i+i{margin-left:-6px}.pal span{flex-basis:100%}
 .pal[aria-pressed="true"]{border-color:var(--gold);color:var(--ink);background:rgba(255,216,74,.08)}.pal:focus-visible{box-shadow:0 0 0 3px rgba(59,168,232,.45)}
 .lkcols{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}.lkcols label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}.lkcols input[type=color]{width:38px;height:30px;padding:0;border:1px solid var(--line);border-radius:6px;background:none}
+.lkgroups{display:flex;gap:4px;margin:0 0 10px;padding:3px;border-radius:10px;background:var(--panel2)}.lkgroups [role=tab]{all:unset;cursor:pointer;flex:1;text-align:center;padding:7px 6px;border-radius:8px;font-weight:650;font-size:13px;color:var(--muted)}.lkgroups [role=tab][aria-selected="true"]{background:var(--panel);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.3)}.lkgroups [role=tab]:focus-visible{box-shadow:0 0 0 3px rgba(59,168,232,.45)}
+.pals{grid-template-columns:repeat(4,1fr)}
 /* phones: the toolbar scrolls sideways, but Save stays pinned to the right edge so it's always one tap away */
 @media (max-width:760px){.top{overflow-x:auto;scrollbar-width:none}.top::-webkit-scrollbar{display:none}
   #png{position:sticky;right:0;z-index:3;box-shadow:-10px 0 0 0 var(--panel),14px 0 0 0 var(--panel),-22px 0 14px -4px var(--panel)}}
@@ -568,11 +570,11 @@ if(document.body.dataset.standalone)$("#back").hidden=false;
 
 /* ---------- constants ---------- */
 const FORMATS={square:{n:"Feed 1:1",w:1080,h:1080},portrait:{n:"Feed 4:5",w:1080,h:1350},story:{n:"Story / Reel 9:16",w:1080,h:1920},wide:{n:"Foyer 16:9",w:1920,h:1080},event:{n:"FB event",w:1920,h:1005},cover:{n:"FB cover",w:1640,h:624},a4:{n:"Print A4/A3",w:2480,h:3508},a4l:{n:"Print landscape",w:3508,h:2480}};
-const FONTS={display:'"Big Shoulders Display","Arial Narrow",Impact,sans-serif',poster:'"Bebas Neue","Big Shoulders Display",Impact,sans-serif',serif:'"Playfair Display",Georgia,serif',body:'"Figtree",system-ui,sans-serif',mono:'"IBM Plex Mono",ui-monospace,monospace'};
+const FONTS={display:'"Big Shoulders Display","Arial Narrow",Impact,sans-serif',poster:'"Bebas Neue","Big Shoulders Display",Impact,sans-serif',serif:'"Playfair Display",Georgia,serif',body:'"Figtree",system-ui,sans-serif',mono:'"IBM Plex Mono",ui-monospace,monospace',fun:'"Fredoka","Baloo 2","Arial Rounded MT Bold",system-ui,sans-serif'};
 const SITE_TOWN=(()=>{const T={"enniskillen": "ENNISKILLEN", "ballymena": "BALLYMENA", "banbridge": "BANBRIDGE", "newtownards": "NEWTOWNARDS", "athlone": "ATHLONE", "ballina": "BALLINA", "ballincollig": "BALLINCOLLIG", "blackpool": "BLACKPOOL", "carlow": "CARLOW", "clonmel": "CLONMEL", "dundalk": "DUNDALK", "dunlaoghaire": "DÚN LAOGHAIRE", "galway": "GALWAY", "oranmore": "ORANMORE", "kilkenny": "KILKENNY", "mullingar": "MULLINGAR", "santry": "SANTRY", "savoy": "SAVOY", "thurles": "THURLES", "tullamore": "TULLAMORE"};let k="enniskillen";try{k=localStorage.getItem("imc-hub-site")||k}catch(e){}return T[k]||"ENNISKILLEN"})();
 const SITE_NAME=SITE_TOWN==="SAVOY"?"Savoy Cinema":"IMC "+SITE_TOWN.charAt(0)+SITE_TOWN.slice(1).toLowerCase().replace(/ (\w)/g,(m,x)=>" "+x.toUpperCase());
 const FONT_NAMES={display:"Big Shoulders (bold condensed)",poster:"Bebas Neue (poster)",serif:"Playfair (elegant)",body:"Figtree (clean)",mono:"Plex Mono (small print)"};
-const WEIGHT={display:900,poster:400,serif:700,body:800,mono:500};
+const WEIGHT={display:900,poster:400,serif:700,body:800,mono:500,fun:700};
 const SWATCHES=["#1fa0de","#0b6bb8","#3a2560","#ffd84a","#f39a2b","#e2452e","#ffffff","#0b0a1e","#1a1440"];
 const BADGES={
   coming:{n:"Coming soon",style:"ribbon",text:"COMING SOON",sub:"",c1:"#0b6bb8",c2:"#ffffff"},
@@ -1620,7 +1622,7 @@ let thumbT=0;function thumbsSoon(){clearTimeout(thumbT);thumbT=setTimeout(render
    A look is made of plain parts: the film's poster or a shot from its trailer, solid banners and bars, fine rules and
    borders, a title, a small label and a line of times or a date. Every part has a role, so the Style controls (font,
    main colour, accent, animation) restyle the whole design in one go without losing your edits. */
-const LOOK_FONTS=[["display","Condensed"],["poster","Poster"],["serif","Serif"],["body","Clean sans"]];
+const LOOK_FONTS=[["display","Condensed"],["poster","Poster"],["serif","Serif"],["body","Clean sans"],["fun","Rounded"]];
 const PALETTES=[
   {k:"imc",n:"IMC navy",main:"#0d1238",ink:"#ffffff",acc:"#ffc93c"},
   {k:"black",n:"Black & white",main:"#0a0a0c",ink:"#ffffff",acc:"#ffffff"},
@@ -1629,8 +1631,12 @@ const PALETTES=[
   {k:"emerald",n:"Emerald",main:"#0b3529",ink:"#f3efe4",acc:"#d6b46a"},
   {k:"luxx",n:"LUXX gold",main:"#0b0906",ink:"#f4e3b9",acc:"#d4a64a"},
   {k:"red",n:"IMC red",main:"#15171e",ink:"#ffffff",acc:"#e2452e"},
-  {k:"light",n:"Light",main:"#f3f5f9",ink:"#0d1238",acc:"#0b63b0"}];
-const LOOK_ANIMS=[["none","None"],["fade","Fade"],["rise","Rise"],["wipe","Wipe"],["zoom","Slow zoom"]];
+  {k:"light",n:"Light",main:"#f3f5f9",ink:"#0d1238",acc:"#0b63b0"},
+  {k:"kids",n:"Kids blue",main:"#1673d6",ink:"#ffffff",acc:"#ffd84a"},
+  {k:"party",n:"Party purple",main:"#5b23c9",ink:"#ffffff",acc:"#ffd84a"},
+  {k:"sunny",n:"Sunny",main:"#ff9f1a",ink:"#2a1450",acc:"#ffffff"},
+  {k:"mint",n:"Mint",main:"#0fa595",ink:"#ffffff",acc:"#ffe14d"}];
+const LOOK_ANIMS=[["none","None"],["fade","Fade"],["rise","Rise"],["wipe","Wipe"],["zoom","Slow zoom"],["pop","Bounce"]];
 const LOOKS=[
   {k:"cinematic",n:"Cinematic",d:"Full-picture shot, title low on the left",font:"display",pic:"still"},
   {k:"poster",n:"Poster card",d:"Poster on a darkened shot, details beside it",font:"display",pic:"poster"},
@@ -1639,9 +1645,16 @@ const LOOKS=[
   {k:"letterbox",n:"Letterbox",d:"Cinema bars top and bottom",font:"display",pic:"still"},
   {k:"frame",n:"Fine frame",d:"Thin border, centred title",font:"serif",pic:"still"},
   {k:"editorial",n:"Editorial",d:"Big serif title, magazine style",font:"serif",pic:"still"},
-  {k:"times",n:"Showtimes",d:"Today's times as clean chips",font:"display",pic:"still"}];
+  {k:"times",n:"Showtimes",d:"Today's times as clean chips",font:"display",pic:"still"},
+  {k:"kidsweek",n:"Kids Club week",grp:"kids",font:"fun",pic:"none",pal:"kids",anim:"pop"},
+  {k:"kidsfilm",n:"Kids Club film",grp:"kids",font:"fun",pic:"still",pal:"kids",anim:"pop"},
+  {k:"kidsmeal",n:"Kids Club Meal Deal",grp:"kids",font:"fun",pic:"none",pal:"sunny",anim:"pop"},
+  {k:"party",n:"Birthday parties",grp:"groups",font:"fun",pic:"none",pal:"party",anim:"pop"},
+  {k:"schools",n:"Schools & clubs",grp:"groups",font:"display",pic:"screen",pal:"kids",anim:"rise"},
+  {k:"gang",n:"Bring the gang",grp:"groups",font:"display",pic:"seats",pal:"party",anim:"rise"}];
+const LOOK_GROUPS=[["film","Films"],["kids","Kids Club"],["groups","Group bookings"]];
 const LOOKDEF={id:null,film:null,font:"auto",pal:"imc",main:"#0d1238",ink:"#ffffff",acc:"#ffc93c",anim:"rise",pic:"auto"};
-let STILLIDX=null,LOOKFILMS=null;
+let STILLIDX=null,LOOKFILMS=null,LOOKTAB=null;
 async function loadStillIdx(){if(STILLIDX)return STILLIDX;for(const u of[RAW+"data/stills/index.json?ts="+Date.now(),"data/stills/index.json"]){try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const j=await r.json(),b=u.startsWith(RAW)?RAW:"";STILLIDX={};for(const k in j)STILLIDX[k]=j[k].map(f=>b+f);return STILLIDX}}catch(e){}}STILLIDX={};return STILLIDX}
 const ytIdOf=u=>{const m=/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/.exec(u||"");return m?m[1]:null};
 /* every film with its details, newest listings first; LUXX copies and special screenings fold into the main film */
@@ -1665,6 +1678,10 @@ const lum=h=>{const m=/^#?([0-9a-f]{6})$/i.exec(h||"");if(!m)return 0;const n=pa
 /* ---------- shape layers: banners, bars, rules, borders ---------- */
 let LW=0,LH=0,LU=0;
 function drawShape(c,L){const f=FORMATS[S.fmt],W=LW||f.w,H=LH||f.h,u=LU||Math.min(W,H)/1080,w=(L.w||1)*W/u,h=(L.h||.1)*H/u;
+  if(L.shape==="circle"||L.shape==="star"||L.shape==="balloon"){const r=w/2;c.fillStyle=L.c1;c.beginPath();
+    if(L.shape==="circle")c.arc(0,0,r,0,TAU);else if(L.shape==="star"){for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,q=i%2?r*.45:r;c.lineTo(Math.cos(a)*q,Math.sin(a)*q)}c.closePath()}
+    else{c.ellipse(0,0,r,r*1.22,0,0,TAU);c.fill();c.beginPath();c.moveTo(-r*.14,r*1.3);c.lineTo(r*.14,r*1.3);c.lineTo(0,r*1.18);c.closePath();c.fill();c.beginPath();c.fillStyle="rgba(255,255,255,.35)";c.ellipse(-r*.38,-r*.45,r*.18,r*.3,-.5,0,TAU)}
+    c.fill();return{w:r*2,h:L.shape==="balloon"?r*2.7:r*2}}
   if(L.shape==="line"){const th=L.th||4;c.fillStyle=L.c1;c.fillRect(-w/2,-th/2,w,th);return{w,h:Math.max(th,14)}}
   if(L.shape==="border"){const th=L.th||4;c.strokeStyle=L.c1;c.lineWidth=th;
     if(L.corners){const k=Math.min(w,h)*.09;c.beginPath();for(const[sx,sy]of[[-1,-1],[1,-1],[1,1],[-1,1]]){const x=sx*(w/2-th/2),y=sy*(h/2-th/2);c.moveTo(x,y-sy*k);c.lineTo(x,y);c.lineTo(x-sx*k,y)}c.stroke()}
@@ -1676,6 +1693,51 @@ function drawShape(c,L){const f=FORMATS[S.fmt],W=LW||f.w,H=LH||f.h,u=LU||Math.mi
   return{w,h}}
 const shape=(o)=>({id:uid(),kind:"shape",shape:"rect",c1:"#000",x:.5,y:.5,w:1,h:.1,s:1,r:0,o:1,...o});
 
+/* ---------- Kids Club and group bookings looks: bright and friendly, still clean ---------- */
+function kidsInfo(){const T=lnow().date,now=lnow().hm,dow=new Date(T+"T12:00").getDay(),end=addDaysE(T,6),out=[];
+  for(const f of lookFilms()){const ss=f.sessions.filter(s=>(s.tags||[]).includes("kidsclub")&&s.date<=end&&(s.date>T||(s.date===T&&s.time>now)));if(ss.length)out.push({f,ss})}
+  out.sort((a,b)=>(a.ss[0].date+a.ss[0].time).localeCompare(b.ss[0].date+b.ss[0].time));
+  const P=(IMC&&IMC.prices&&!Array.isArray(IMC.prices))?IMC.prices:{},tk=P.tickets||[],pr=n=>(tk.find(t=>t.name.toLowerCase()===n)||{}).price||"";
+  const DN=["SUN","MON","TUE","WED","THU","FRI","SAT"],when=x=>{const days=[...new Set(x.ss.map(s=>DN[new Date(s.date+"T12:00").getDay()]))],times=[...new Set(x.ss.map(s=>s.time))].sort();return(days.length>2?days[0]+"–"+days[days.length-1]:days.join(" & "))+"\n"+times.slice(0,2).join(" & ")};
+  const tray=(P.products||[]).find(p=>/kids tray/i.test(p.name)&&p.file);
+  return{films:out.slice(0,4).map(x=>({...x,when:when(x)})),price:pr("kids club"),adult:pr("kids club adult"),meal:pr("kids club meal deal"),span:dow===0||dow>=5?"THIS WEEKEND":"THIS WEEK",tray:tray?asset(tray.file.replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/hd/$1.png")):null,trayFb:tray?asset(tray.file):null}}
+const GROUP_PICS=[["screen","Screen photo","data/luxx/enniskillen/luxx-5-screen.jpg"],["seats","Seats photo","data/luxx/enniskillen/luxx-1-seats.jpg"],["building","Cinema building","data/sites/enniskillen.webp"],["none","Colour only",""]];
+function kidsGroupLayers(k,th,f,u,W,H,tall,wide,port,safeT,safeB,m,font,title,label,line,rule,logo,book,card){const L=[],kc=kidsInfo(),deco=[th.acc,"#ffffff",th.ink,"#ff7ab6","#7bd8ff","#8ee06b"];
+  const dot=(x,y,d,i,o)=>shape({shape:"circle",w:d,c1:deco[i%deco.length],x,y,role:"deco",di:i,lock:true,...o}),star=(x,y,d,i,o)=>shape({shape:"star",w:d,c1:deco[i%deco.length],x,y,r:(i%5)*.3,role:"deco",di:i,lock:true,...o});
+  const confetti=(n,seed)=>{let s=seed;const r=()=>(s=(s*9301+49297)%233280)/233280;for(let i=0;i<n;i++){const x=r(),y=r();if(y>safeT+.05&&y<safeB-.05&&x>.15&&x<.85)continue;L.push((i%3?dot:star)(x,y,.012+r()*.022,i,{}))}};
+  const sticker=(text,sub,o)=>shape({w:tall?.42:wide?.2:.32,h:tall?.06:wide?.12:.09,rad:60,c1:th.acc,role:"chip",text,c2:lum(th.acc)>.6?"#1b1340":"#ffffff",font:"fun",size:tall?52:46,sp:2,...o});
+  const priceBall=(price,sub,o)=>price?{...mk("badge","price",{text:price,sub,c1:"#e2452e",c2:"#ffffff",r:-.12,s:tall?.95:.8,role:"price"}),...o}:null;
+  if(k==="kidsweek"){L.push(shape({c1:th.main,x:.5,y:.5,w:1,h:1,role:"panel",lock:true}));confetti(tall?26:22,7);
+    L.push(title("KIDS CLUB",{y:tall?.235:.15,max:tall?190:wide?170:150,fitW:tall?900:wide?900:640}),sticker(kc.span,"",{y:tall?.305:.26,r:-.03}));
+    const fs=kc.films.slice(0,tall?3:wide?4:3),n=Math.max(1,fs.length),cy=tall?.53:wide?.56:.5,cs=tall?(n>2?.88:1.1):wide?1.05:n>2?.85:1;
+    fs.forEach((x,i)=>{const cx=n===1?.5:(wide?.18:tall?.19:.2)+i*((wide?.64:tall?.62:.6)/(n-1));const c=x.f.poster?{id:uid(),kind:"pphoto",src:asset(x.f.poster),label:x.f.title+" poster",card:true,ar:.667,x:cx,y:cy,s:cs,r:(i%2?.05:-.05),o:1,role:"card"}:null;if(c)L.push(c);
+      L.push(line(x.when,{x:cx,y:cy+(tall?.13:wide?.29:.22),size:tall?26:wide?28:26,font:"fun",sp:1,role:"text"}))});
+    if(!fs.length)L.push(line("FAMILY FILMS EVERY WEEKEND",{y:.5,font:"fun"}));
+    const pb=priceBall(kc.price,kc.adult&&kc.adult===kc.price?"KIDS & ADULTS":"PER TICKET",{x:tall?.84:wide?.88:.87,y:tall?.33:wide?.15:.27,s:tall?.72:wide?.8:.68});if(pb)L.push(pb);
+    L.push(book({y:tall?safeB-.01:.93,size:tall?28:22,font:"fun",sp:3}));L.push(logo(tall?{x:.5,y:safeT+.01,size:80}:{x:m+.05,y:safeT+.03,size:80}))}
+  else if(k==="kidsfilm"){const x=kc.films[0],fm=x&&x.f;L.push(shape({grad:"down",c1:th.main,ga:.95,x:.5,w:1,h:.6,y:.7,role:"scrim",lock:true}));confetti(12,3);
+    const bx=.5,by=tall?.66:wide?.72:.72;L.push(shape({w:tall?.84:wide?.6:.86,h:tall?.2:wide?.34:.3,rad:46,c1:"#ffffff",x:bx,y:by,role:"cardbg",lock:true}));
+    L.push(sticker("KIDS CLUB","",{x:tall?.5:.5,y:by-(tall?.1:wide?.17:.15),r:-.04}));
+    L.push(title(fm?fm.title.toUpperCase():"FAMILY FILM",{y:by-(tall?.02:.03),max:tall?110:100,fitW:tall?820:wide?1000:820,c1:th.main,role:"title2"}),line(x?x.when.replace("\n","  "):"EVERY WEEKEND",{y:by+(tall?.05:.08),c1:th.main,font:"fun",role:"text2"}));
+    const pb=priceBall(kc.price,"PER TICKET",{x:tall?.82:wide?.86:.85,y:tall?by-.13:by-.2});if(pb)L.push(pb);L.push(logo({x:m+.05,y:safeT+.03,size:tall?100:80}));
+    if(fm)L._still=fm}
+  else if(k==="kidsmeal"){L.push(shape({c1:th.main,x:.5,y:.5,w:1,h:1,role:"panel",lock:true}));confetti(18,11);
+    L.push(title("KIDS CLUB",{y:tall?.235:.14,max:tall?150:130,fitW:900}),title("MEAL DEAL",{y:tall?.3:.25,max:tall?120:100,fitW:900,c1:th.acc,role:"title3"}));
+    if(kc.tray)L.push({id:uid(),kind:"pphoto",src:kc.tray,label:"Kids tray",card:false,x:tall?.5:wide?.3:.36,y:tall?.47:.58,s:tall?1.15:wide?1.1:1.15,r:-.03,o:1,role:"card"});
+    L.push(line("TICKET + KIDS TRAY\nPOPCORN, DRINK & A SWEET TREAT",{x:tall?.5:wide?.68:.7,y:tall?.635:.52,size:tall?34:wide?32:30,font:"fun",sp:1}));
+    const pb=priceBall(kc.meal,"KIDS CLUB",{x:tall?.5:wide?.68:.7,y:tall?.72:.76,r:-.08,s:tall?.74:.9});if(pb)L.push(pb);L.push(book({y:tall?safeB+.005:.93,size:tall?26:20,font:"fun"}));L.push(logo(tall?{x:.5,y:safeT+.01,size:80}:{x:m+.05,y:safeT+.03,size:80}))}
+  else if(k==="party"){L.push(shape({c1:th.main,x:.5,y:.5,w:1,h:1,role:"panel",lock:true}));
+    [[.12,.32],[.88,.28],[.2,.18],[.8,.14],[.9,.62],[.1,.66]].forEach(([x,y],i)=>{if(tall)y=y*.75+.1;L.push(shape({shape:"line",w:.002,th:3,c1:"#ffffff",o:.5,x,y:y+.09,h:.1,role:"deco",lock:true}),shape({shape:"balloon",w:tall?.11:.08,c1:deco[i%deco.length],x,y,role:"deco",di:i,lock:true}))});
+    L.push(label("BIRTHDAY PARTIES",{y:tall?.32:.3,size:tall?34:28,font:"fun",c1:th.acc}),title("PARTY AT THE PICTURES",{y:tall?.42:.42,max:tall?130:120,fitW:tall?860:wide?1300:780}));
+    L.push(line("Your choice of film\nKids trays for everyone\nWe'll help you plan the day",{y:tall?.56:.6,size:tall?38:32,font:"fun",upper:false,sp:0}));
+    L.push(sticker("MESSAGE US TO BOOK","",{y:tall?.69:.8,w:tall?.62:wide?.3:.5,size:tall?40:34}));L.push(logo({x:.5,y:tall?safeT+.04:.12,size:tall?110:90}))}
+  else if(k==="schools"){L.push(shape({c1:th.main,x:.5,y:tall?.68:wide?.5:.62,w:wide?.5:1,h:tall?.36:wide?1:.5,role:"panel",lock:true}));if(wide)L[L.length-1].x=.75;
+    const cx=wide?.75:.5,y0=tall?.56:wide?.28:.44;L.push(label("SCHOOLS · CLUBS · TEAMS",{x:cx,y:y0,size:tall?30:24,font:"fun",c1:th.acc}),title("GROUP TRIPS",{x:cx,y:y0+(tall?.07:.1),max:tall?140:120,fitW:wide?800:900}),rule({x:cx,y:y0+(tall?.12:.18)}));
+    L.push(line("Private screenings and group visits\nAsk us about a price for your group",{x:cx,y:y0+(tall?.17:.27),size:tall?34:28,font:"body",upper:false,sp:0}));L.push(sticker("MESSAGE US OR ASK AT THE BOX OFFICE","",{x:cx,y:y0+(tall?.24:.4),w:tall?.86:wide?.42:.74,size:tall?30:26}));L.push(logo({x:m+.05,y:safeT+.03,size:tall?100:80}))}
+  else if(k==="gang"){L.push(shape({grad:"down",c1:th.main,ga:.96,x:.5,w:1,h:.7,y:.65,role:"scrim",lock:true}));confetti(10,5);
+    L.push(title("BRING THE GANG",{y:tall?.55:.56,max:tall?150:140,fitW:wide?1400:900}),line("Group nights out, office trips and team treats",{y:tall?.62:.67,size:tall?36:30,font:"body",upper:false,sp:0}));
+    L.push(sticker("GOT A GROUP? GET IN TOUCH","",{y:tall?.7:.8,w:tall?.74:wide?.34:.6,size:tall?36:30}));L.push(logo({x:m+.05,y:safeT+.03,size:tall?100:80}))}
+  return L}
 /* place a text layer so its left edge (or right edge) sits at x, by measuring it */
 function edge(L,x,side){const f=FORMATS[S.fmt],u=Math.min(f.w,f.h)/1080,d=drawLayer(mctx,L),half=d.w*L.s*u/2/f.w;L.x=side==="right"?x-half:x+half;L.align=side==="right"?"right":"left";return L}
 
@@ -1722,6 +1784,7 @@ function lookLayers(id,o){const f=FORMATS[S.fmt],ar=f.w/f.h,tall=ar<.7,wide=ar>1
     const top=tall?.42:.52;L.push(label(tx.day?`${tx.day} AT ${SITE_NAME.toUpperCase()}`:tx.label,{y:tall?.24:.2}),title(tx.title,{y:tall?.32:.33,max:120,fitW:wide?1500:900}),rule({y:tall?.37:.42}));
     (tx.times.length?tx.times:["BOOK"]).forEach((t,i)=>{const r=Math.floor(i/cols),cI=i%cols,inRow=Math.min(cols,n-r*cols),x=.5+(cI-(inRow-1)/2)*(cw+gap),y=top+r*(ch+gap*(tall?.5:1.6));L.push(shape({c1:th.acc,x,y,w:cw,h:ch,rad:12,role:"chip",text:t,c2:lum(th.acc)>.6?"#0b0d1e":"#ffffff",font:"mono",size:tall?52:wide?46:42}))});
     L.push(book({y:Math.min(safeB-.02,top+rows*(ch+gap*(tall?.5:1.6))+.04),size:tall?26:22}));L.push(logo({x:m+.05,y:safeT+.03,size:80}))}
+  if(lk.grp&&lk.grp!=="film")L.push(...kidsGroupLayers(k,th,f,u,W,H,tall,wide,port,safeT,safeB,m,font,title,label,line,rule,logo,book,card));
   return L.filter(Boolean)}
 function lookPic(id,th){const lk=LOOKS.find(x=>x.k===id)||LOOKS[0],p=(th&&th.pic)||"auto";return p==="auto"?(lk.pic==="poster"?"still":lk.pic):p}
 
@@ -1729,23 +1792,36 @@ function lookPic(id,th){const lk=LOOKS.find(x=>x.k===id)||LOOKS[0],p=(th&&th.pic
 function restyle(){const th={...LOOKDEF,...(S.look||{})},lk=LOOKS.find(x=>x.k===th.id),font=th.font==="auto"?(lk?lk.font:"display"):th.font;
   for(const L of S.layers){if(!L.role)continue;
     if(L.role==="panel"||L.role==="scrim")L.c1=th.main;else if(L.role==="accent")L.c1=th.acc;else if(L.role==="label")L.c1=th.acc;else if(L.role==="text")L.c1=th.ink;
-    else if(L.role==="chip"){L.c1=th.acc;L.c2=lum(th.acc)>.6?"#0b0d1e":"#ffffff"}
+    else if(L.role==="chip"){L.c1=th.acc;L.c2=lum(th.acc)>.6?"#1b1340":"#ffffff"}
+    else if(L.role==="deco"&&L.di!=null)L.c1=[th.acc,"#ffffff",th.ink,"#ff7ab6","#7bd8ff","#8ee06b"][L.di%6];
+    else if(L.role==="title2"||L.role==="title3"){L.c1=L.role==="title2"?th.main:th.acc;L.font=font;if(L.fitW)L.size=fitSize(L.text,font,L.maxS||130,40,L.fitW)}
+    else if(L.role==="text2")L.c1=th.main
     else if(L.role==="title"){L.c1=th.ink;L.font=font;L.sp=font==="serif"?0:2;if(L.fitW)L.size=fitSize(L.text,font,L.maxS||130,40,L.fitW)}
     L._w=0}
   /* left-aligned blocks keep their left edge after a font change */
   applyLookAnim();syncAll()}
 function applyLookAnim(){const a=(S.look&&S.look.anim)||"rise";let i=0;S.motion={...S.motion,dur:Math.max(4,S.motion.dur||4),fx:{...(S.motion.fx||{}),kenburns:a==="zoom"}};
-  for(const L of S.layers){if(!L.role)continue;const bg=L.role==="panel"||L.role==="scrim"||L.role==="bars";
+  for(const L of S.layers){if(!L.role)continue;const bg=L.role==="panel"||L.role==="scrim"||L.role==="bars"||L.role==="cardbg";
     if(a==="none"){L.anim="none";L.delay=0;continue}
+    if(L.role==="deco"){L.anim=a==="none"?"none":a==="pop"?"pop":"fade";L.delay=.02+((L.di||0)%6)*.012;L.ilen=.6;continue}
+    if(a==="pop"){L.anim=bg?"fade":"pop";L.delay=bg?0:Math.min(.3,.03+(i++)*.035);L.ilen=.7;continue}
     L.anim=bg?"fade":a==="wipe"?((L.kind==="shape"||L.role==="title"||L.role==="label")?"wipe":"fade"):a==="zoom"?"fade":a==="rise"?"rise":"fade";
-    L.delay=bg?0:.03+(i++)*.035;L.ilen=.55}}
+    L.delay=bg?0:Math.min(.3,.03+(i++)*.035);L.ilen=.55}}
 
-async function applyLook(id,keepFilm){const th={...LOOKDEF,...(S.look||{}),id},film=lookFilm();S.look=th;if(film){S.look.film=norm(film.title);S.filmTitle=film.title;FLOGO_FILM=film.title}
+async function applyLook(id,keepFilm){const lk0=LOOKS.find(x=>x.k===id)||LOOKS[0],grp=lk0.grp||"film",prev=(S.look||{}).grp||"film";let th={...LOOKDEF,...(S.look||{}),id,grp};
+  if(grp!==prev||(grp!=="film"&&th.pal!==lk0.pal&&!th.palSet)){const p=PALETTES.find(x=>x.k===(lk0.pal||"imc"));if(p)th={...th,pal:p.k,main:p.main,ink:p.ink,acc:p.acc,font:"auto",anim:lk0.anim||th.anim,palSet:false}}
+  S.look=th;if(grp!=="film")return applyGroupLook(id,lk0,th);const film=lookFilm();if(film){S.look.film=norm(film.title);S.filmTitle=film.title;FLOGO_FILM=film.title}
   const pic=lookPic(id,th);let src=null;if(film){const st=(await loadStillIdx())[ytIdOf(film.trailer)]||[];src=/^still(\d)?$/.test(pic)&&st.length?(pic==="still"?st[1]||st[0]:st[+pic.slice(5)]||st[0]):asset(film.poster)}
   S.label=(film?film.title+" · ":"")+(LOOKS.find(x=>x.k===id)||{}).n;S.frame={...S.frame,style:"none",logo:false};S.bg="photo";
   const isPoster=src&&film&&src===asset(film.poster);S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:isPoster?-.1:0,shade:id==="poster"||id==="times"?0:12,b:100,c:105,s:100};
   if(src)await loadStillAsPhoto(src);
   S.layers=lookLayers(id);selId=null;applyLookAnim();clampPhoto();syncAll();commit();renderLookPanel();toast((LOOKS.find(x=>x.k===id)||{}).n+" ready. Change the style on the left, or click any words to edit them")}
+async function applyGroupLook(id,lk,th){let src=null;
+  if(id==="kidsfilm"){const x=kidsInfo().films[0];if(x){S.filmTitle=x.f.title;const st=(await loadStillIdx())[ytIdOf(x.f.trailer)]||[];src=st[1]||st[0]||asset(x.f.poster)}}
+  else if(lk.grp==="groups"){const g=th.gpic||lk.pic,gp=GROUP_PICS.find(p=>p[0]===g);src=gp&&gp[2]?asset(gp[2]):null}
+  S.label=lk.n;S.frame={...S.frame,style:"none",logo:false};S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:0,shade:id==="schools"?20:12,b:100,c:100,s:100};
+  if(src&&await loadStillAsPhoto(src))S.bg="photo";else S.bg="midnight";
+  S.layers=lookLayers(id);selId=null;applyLookAnim();clampPhoto();syncAll();commit();renderLookPanel();toast(lk.n+" ready. Change the colours on the left, or click any words to edit them")}
 /* a new size: lay the look out again for that shape, keeping any words you changed */
 function relayoutLook(){const keep={};for(const L of S.layers)if(L.role&&L.kind==="text"){(keep[L.role]=keep[L.role]||[]).push(L.text)}
   const NL=lookLayers(S.look.id),seen={};for(const L of NL)if(L.role&&L.kind==="text"&&keep[L.role]){const i=seen[L.role]=(seen[L.role]||0);if(keep[L.role][i]!=null&&keep[L.role][i]!==L.text){L.text=keep[L.role][i];if(L.fitW)L.size=fitSize(L.text,L.font,L.maxS||130,40,L.fitW)}seen[L.role]++}
@@ -1759,13 +1835,19 @@ async function trimBars(blob){try{const im=await blobToImg(blob),w=im.naturalWid
 /* ---------- the Film looks panel ---------- */
 async function renderLookPanel(){const el=$("#lookPanel");if(!el)return;const films=lookFilms(),film=lookFilm(),th={...LOOKDEF,...(S.look||{})},st=film?((await loadStillIdx())[ytIdOf(film.trailer)]||[]):[];
   const pics=film?[["poster","Poster",asset(film.poster)],...st.map((u,i)=>["still"+i,i?"Shot "+i:"Thumbnail",u])]:[];const curPic=th.pic==="auto"?(th.id?lookPic(th.id,th):"auto"):th.pic;
-  el.innerHTML=`<label class="lbl" for="lkFilm">Film</label><select id="lkFilm">${films.length?films.map(f=>`<option value="${esc(norm(f.title))}" ${film&&norm(f.title)===norm(film.title)?"selected":""}>${esc(f.title)}${f.soon?" (coming soon)":""}</option>`).join(""):'<option>Listings still loading…</option>'}</select>
+  const G=LOOKTAB||th.grp||"film";
+  if(G!=="film"){const kc=G==="kids"?kidsInfo():null,gp=th.gpic||"";
+    el.innerHTML=`<div class="lkgroups" role="tablist">${LOOK_GROUPS.map(([k,n])=>`<button role="tab" data-lkgrp="${k}" aria-selected="${G===k}">${n}</button>`).join("")}</div>
+      ${kc?`<p class="note">${kc.films.length?`Kids Club ${kc.span.toLowerCase()}: ${kc.films.map(x=>esc(x.f.title)).join(", ")}. Tickets ${esc(kc.price||"")}${kc.meal?`, Meal Deal ${esc(kc.meal)}`:""}.`:"No Kids Club showings in the next 7 days, so the designs say \"every weekend\"."}</p>`:`<div class="lbl" style="margin-top:8px">Picture</div><div class="lkpics">${GROUP_PICS.map(([k,n,u])=>`<button type="button" class="lkpic" data-lkgpic="${k}" aria-pressed="${(gp||(th.id&&(LOOKS.find(x=>x.k===th.id)||{}).pic))===k}" title="${n}">${u?`<img src="${esc(asset(u))}" alt="" loading="lazy">`:'<img alt="" style="background:linear-gradient(135deg,#5b23c9,#1673d6)">'}<span>${n}</span></button>`).join("")}</div>`}
+      <div class="lbl" style="margin-top:12px">Look</div><div class="tiles looks" id="looks">${LOOKS.filter(l=>l.grp===G).map(l=>`<button class="tile" data-look="${l.k}" aria-pressed="${th.id===l.k}"><canvas width="320" height="320"></canvas><span>${l.n}</span></button>`).join("")}</div>`;
+    renderStylePanel();renderLookThumbs();return}
+  el.innerHTML=`<div class="lkgroups" role="tablist">${LOOK_GROUPS.map(([k,n])=>`<button role="tab" data-lkgrp="${k}" aria-selected="${G===k}">${n}</button>`).join("")}</div><label class="lbl" for="lkFilm">Film</label><select id="lkFilm">${films.length?films.map(f=>`<option value="${esc(norm(f.title))}" ${film&&norm(f.title)===norm(film.title)?"selected":""}>${esc(f.title)}${f.soon?" (coming soon)":""}</option>`).join(""):'<option>Listings still loading…</option>'}</select>
     ${pics.length?`<div class="lbl" style="margin-top:10px">Picture</div><div class="lkpics">${pics.map(([k,n,u])=>`<button type="button" class="lkpic" data-lkpic="${k}" aria-pressed="${curPic===k||(curPic==="still"&&k===(st.length>1?"still1":"still0"))}" title="${n}"><img src="${esc(u)}" alt="" loading="lazy"><span>${n}</span></button>`).join("")}</div>`:""}
     ${film&&!st.length?'<p class="note">Shots from this film\'s trailer appear here after the next listings update.</p>':""}
-    <div class="lbl" style="margin-top:12px">Look</div><div class="tiles looks" id="looks">${LOOKS.map(l=>`<button class="tile" data-look="${l.k}" aria-pressed="${th.id===l.k}"><canvas width="320" height="320"></canvas><span>${l.n}</span></button>`).join("")}</div>`;
+    <div class="lbl" style="margin-top:12px">Look</div><div class="tiles looks" id="looks">${LOOKS.filter(l=>!l.grp).map(l=>`<button class="tile" data-look="${l.k}" aria-pressed="${th.id===l.k}"><canvas width="320" height="320"></canvas><span>${l.n}</span></button>`).join("")}</div>`;
   renderStylePanel();renderLookThumbs()}
-function renderLookThumbs(){const th={...LOOKDEF,...(S.look||{})};$$("#looks .tile").forEach(t=>{const c=t.querySelector("canvas"),id=t.dataset.look,save=S.fmt;S.fmt="square";const layers=lookLayers(id);S.fmt=save;
-  qrender(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",bg:"photo",frame:{...S.frame,style:"none",logo:false},photo:{...S.photo,fit:"cover",zoom:1,ox:0,oy:0},layers,motion:{fx:{}}})})}
+function renderLookThumbs(){const th={...LOOKDEF,...(S.look||{})};$$("#looks .tile").forEach(t=>{const c=t.querySelector("canvas"),id=t.dataset.look,lk=LOOKS.find(x=>x.k===id)||{},save=S.fmt;S.fmt="square";const pp=lk.grp&&lk.grp!==(th.grp||"film")?PALETTES.find(x=>x.k===lk.pal):null;const layers=lookLayers(id,pp?{main:pp.main,ink:pp.ink,acc:pp.acc,font:"auto"}:{});S.fmt=save;
+  qrender(c.getContext("2d"),320,320,{noPhoto:!photoImg},{fmt:"square",bg:lk.pic==="none"?"midnight":"photo",frame:{...S.frame,style:"none",logo:false},photo:{...S.photo,fit:"cover",zoom:1,ox:0,oy:0},layers,motion:{fx:{}}})})}
 function renderStylePanel(){const el=$("#stylePanel");if(!el)return;const th={...LOOKDEF,...(S.look||{})};
   el.innerHTML=`<div class="lbl">Font</div><div class="seg wrap" id="lkFont">${[["auto","Look's own"],...LOOK_FONTS].map(([k,n])=>`<button data-lkfont="${k}" aria-pressed="${th.font===k}" style="font-family:${k==="auto"?"inherit":FONTS[k]};${k==="display"||k==="poster"?"letter-spacing:.04em;text-transform:uppercase":""}">${n}</button>`).join("")}</div>
     <div class="lbl" style="margin-top:12px">Colours</div><div class="pals">${PALETTES.map(p=>`<button class="pal" data-lkpal="${p.k}" aria-pressed="${th.pal===p.k}" title="${p.n}" aria-label="${p.n}"><i style="background:${p.main}"></i><i style="background:${p.acc}"></i><span>${p.n}</span></button>`).join("")}</div>
@@ -1774,9 +1856,11 @@ function renderStylePanel(){const el=$("#stylePanel");if(!el)return;const th={..
     <p class="note">${th.id?"These change the whole design at once. Your own words stay.":"Pick a look above first; then try fonts and colours here."}</p>`}
 document.addEventListener("click",async e=>{let b;
   if(b=e.target.closest("[data-look]")){stopTileAnim&&stopTileAnim();await applyLook(b.dataset.look);return}
+  if(b=e.target.closest("[data-lkgrp]")){LOOKTAB=b.dataset.lkgrp;renderLookPanel();return}
+  if(b=e.target.closest("[data-lkgpic]")){S.look={...LOOKDEF,...(S.look||{}),gpic:b.dataset.lkgpic};const cur=LOOKS.find(x=>x.k===S.look.id);if(cur&&cur.grp==="groups")await applyLook(cur.k);else renderLookPanel();return}
   if(b=e.target.closest("[data-lkpic]")){S.look={...LOOKDEF,...(S.look||{}),pic:b.dataset.lkpic};if(S.look.id)await applyLook(S.look.id);else renderLookPanel();return}
   if(b=e.target.closest("[data-lkfont]")){S.look={...LOOKDEF,...(S.look||{}),font:b.dataset.lkfont};restyle();commit();renderStylePanel();renderLookThumbs();return}
-  if(b=e.target.closest("[data-lkpal]")){const p=PALETTES.find(x=>x.k===b.dataset.lkpal);S.look={...LOOKDEF,...(S.look||{}),pal:p.k,main:p.main,ink:p.ink,acc:p.acc};restyle();commit();renderStylePanel();renderLookThumbs();return}
+  if(b=e.target.closest("[data-lkpal]")){const p=PALETTES.find(x=>x.k===b.dataset.lkpal);S.look={...LOOKDEF,...(S.look||{}),palSet:true,pal:p.k,main:p.main,ink:p.ink,acc:p.acc};restyle();commit();renderStylePanel();renderLookThumbs();return}
   if(b=e.target.closest("[data-lkanim]")){S.look={...LOOKDEF,...(S.look||{}),anim:b.dataset.lkanim};applyLookAnim();syncAll();commit();renderStylePanel();return}});
 document.addEventListener("change",async e=>{const t=e.target;if(t.id==="lkFilm"){S.look={...LOOKDEF,...(S.look||{}),film:t.value,pic:"auto"};if(S.look.id)await applyLook(S.look.id);else renderLookPanel()}});
 document.addEventListener("input",e=>{const t=e.target,map={lkMain:"main",lkAcc:"acc",lkInk:"ink"};if(map[t.id]){S.look={...LOOKDEF,...(S.look||{}),pal:"custom",[map[t.id]]:t.value};restyle();commitSoon();$$("[data-lkpal]").forEach(x=>x.setAttribute("aria-pressed","false"))}});

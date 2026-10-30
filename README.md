@@ -298,6 +298,21 @@ Professional, clean designs built from the film you pick.
   - **Colours:** IMC navy, Black & white, Midnight blue, Crimson, Emerald, LUXX gold, IMC red or Light, or pick your own main, accent and text colours
   - **Animation:** None, Fade, Rise, Wipe or Slow zoom. These are short, staggered entrances.
 
+### Kids Club and group booking designs
+
+Film looks has three tabs: **Films**, **Kids Club** and **Group bookings**. These designs are brighter and friendlier, still built from clean shapes, with a rounded font, confetti dots, stars and balloons, and a **Bounce** animation.
+
+- **Kids Club week:** the posters of this week's (or this weekend's) Kids Club films with their days and times, a "This weekend" sticker and the Kids Club price (shown as "Kids & adults" when both prices match).
+- **Kids Club film:** a shot from the first Kids Club film with a rounded white card, a Kids Club sticker, the times and the price.
+- **Kids Club Meal Deal:** the kids tray photo, what's included and the Meal Deal price from imc.ie.
+- **Birthday parties:** "Party at the pictures" with balloons, what's included and "Message us to book".
+- **Schools & clubs:** "Group trips" for schools, clubs and teams, with "Ask us about a price for your group".
+- **Bring the gang:** for group nights out, office trips and team treats.
+
+Group designs can use the screen photo, the seats photo, the cinema building or plain colour. They don't state any group prices or minimum numbers, so you can say what suits. Click any words to change them.
+
+New palettes: Kids blue, Party purple, Sunny and Mint. The Rounded font and the Bounce animation can also be used on the film looks.
+
 The banners, bars, lines and borders are their own layers ("Banner", "Cinema bar", "Accent line", "Border", "Time chip"). Click one in the Layers list to change its colour. Big background parts let clicks through to the picture; untick "Keep in place" to move them.
 
 The playful styles are no longer offered in the pickers: neon, marquee lights, ticket and film-strip frames, popcorn, balloons, confetti and similar effects, and wiggle, slam and spin animations. Designs that already use them still open as before.
