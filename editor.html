@@ -899,10 +899,10 @@ function candy(c,x,y,s,col,kind,r){col=col||CANDY[Math.floor(r()*CANDY.length)];
   c.fillStyle="rgba(255,255,255,.5)";c.beginPath();c.arc(-s*.3,-s*.3,s*.2,0,TAU);c.fill();c.restore()}
 const PRODUCT_LABEL={ticket:"Ticket text"};
 /* Food and drink are real IMC product photos, or your own uploads. The only drawing left is a clean, flat cinema ticket. */
-const FOOD=[["combo_medium","data/products/combotest.jpg","Medium Combo"],["combo_large","data/products/lccc.jpg","Large Combo"],["combo_share","data/products/scon.jpg","Share Combo"],["tray","data/products/onkt.jpg","Kids Tray"],["nachos","data/products/nacholargchese.jpg","Nachos"],["ice_twist","data/products/softserve1.jpg","IMC Twist"],["ice_oreo","data/products/softserve2.jpg","IMC Oreo"],["ice_99","data/products/softserve3.jpg","IMC 99"],["maltesers","data/products/maltesers.jpg","Maltesers"],["minstrels","data/products/minstrels.jpg","Minstrels"],["water","data/products/ttc.jpg","Tahila Water"]];
+const FOOD=[["combo_medium","data/products/combotest.jpg","Medium Combo"],["combo_large","data/products/lccc.jpg","Large Combo"],["combo_share","data/products/scon.jpg","Share Combo"],["tray","data/products/onkt.jpg","Kids Tray"],["nachos","data/products/nacholargchese.jpg","Nachos"],["ice_twist","data/products/softserve1.jpg","IMC Twist"],["ice_oreo","data/products/softserve2.jpg","IMC Oreo"],["ice_99","data/products/softserve3.jpg","IMC 99"],["maltesers","data/products/maltesers.jpg","Maltesers"],["minstrels","data/products/minstrels.jpg","Minstrels"],["water","data/products/ttc.jpg","Tahila Water"],["pickmix","data/products/candyking.png","Candy King pick 'n' mix"]];
 const foodPhoto=k=>{const f=FOOD.find(x=>x[0]===k);return f?{src:f[1],label:f[2]}:null};
-/* what an old drawn item becomes: your own photo for that item first, then IMC's. Pick 'n' mix (Candy King) and hot dogs come only from your own photos */
-const OLD_FOOD={popcorn:"combo_large",drink:"combo_medium",nachos:"nachos",sweets:"maltesers",icescoop:"ice_twist",icetub:"ice_twist",tray:"tray",pickmix:null,hotdog:null};
+/* what an old drawn item becomes: your own photo for that item first, then IMC's. Pick 'n' mix is always Candy King; hot dogs come only from your own photos */
+const OLD_FOOD={popcorn:"combo_large",drink:"combo_medium",nachos:"nachos",sweets:"maltesers",icescoop:"ice_twist",icetub:"ice_twist",tray:"tray",pickmix:"pickmix",hotdog:null};
 function foodVisual(k){const own=ownVisual(k==="icescoop"||k==="icetub"?"icecream":k);if(own)return own;const f=OLD_FOOD[k];return f?foodPhoto(f):null}
 const PRODUCTS={
   ticket:{n:"Cinema ticket",c1:"#ffc23d",c2:"#1a1440",draw(c,L){
@@ -2368,13 +2368,13 @@ function dealVisuals(d){if(d.real===false)return null;if(d.photos&&d.photos.leng
     else if(k==="drink")v=null;
     else if(k==="tray")v=own(it(/kids tray/i))||anyImc("tray");
     else if(k==="nachos")v=own(it(/nacho/i))||anyImc("nachos");
-    else if(k==="pickmix")v=own(it(/pick|mix|candy king/i));   /* Candy King pick 'n' mix: your own photo or IMC's, never another brand */
+    else if(k==="pickmix")v=own(it(/pick|mix|candy king/i))||foodPhoto("pickmix");   /* Candy King pick 'n' mix: your own photo, IMC's, or the Candy King cup; never another brand */
     else if(k==="sweets")v=own(it(/sweet|malteser|minstrel|haribo/i))||anyImc("sweets");
     else if(k==="icescoop"||k==="icetub")v=own(imcItems().find(x=>/soft ?serve|ice ?cream|sundae/i.test(x.file+" "+x.name)))||anyImc("icecream");
     else if(k==="hotdog")v=null;else if(k==="ticket")v={draw:"ticket"};
     /* no drawn food: anything without a real photo is simply left out (the gold ticket graphic is the only drawing) */
     if(!v)continue;const key=v.src||v.draw;if(!seen.has(key)){seen.add(key);out.push(v)}}
-  if(!out.some(v=>v.src)&&!P.includes("pickmix")){const g=anyImc("combo_large");if(g)out.unshift(g)}
+  if(!out.some(v=>v.src)){const g=anyImc("combo_large");if(g)out.unshift(g)}
   return out.some(v=>v.src)?out.slice(0,4):null}
 /* the same items as photos from the IMC catalogue (used when imc.ie matching is switched off for a deal) */
 function foodVis(P){const out=[],seen=new Set(),drinks=P.filter(x=>x==="drink").length,pop=P.includes("popcorn");
@@ -2571,7 +2571,7 @@ function upgradeFood(layers){const F=layers.filter(l=>l.kind==="product"&&l.key!
     if(mergeDrinks&&l===pop&&drinks.length){const xs=[l,...drinks].map(q=>q.x);o.x=(Math.min(...xs)+Math.max(...xs))/2;o.s=(l.s||1)*1.15}
     out.push(o)}
   layers.splice(0,layers.length,...out);return lost}
-function syncAll(){if(OWN_READY){const lost=upgradeFood(S.layers);if(lost.length)setTimeout(()=>toast(lost.includes("pickmix")?"Pick 'n' mix only uses your own Candy King photo: upload it in Add, Your product photos":"Hot dogs need your own photo: upload one in Add, Your product photos"),400)}checkSoon();syncMotion();ensureLoop();syncTimeline();if(EASY&&!(document.activeElement&&document.activeElement.closest&&document.activeElement.closest("#easyPanel")))renderEasy();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
+function syncAll(){if(OWN_READY){const lost=upgradeFood(S.layers);if(lost.length)setTimeout(()=>toast("Hot dogs need your own photo: upload one in Add, Your product photos"),400)}checkSoon();syncMotion();ensureLoop();syncTimeline();if(EASY&&!(document.activeElement&&document.activeElement.closest&&document.activeElement.closest("#easyPanel")))renderEasy();syncFmt();syncPhoto();syncFrame();syncLayers();renderProps();fit();thumbsSoon()}
 async function boot(){buildMotionUI();
   try{const t=localStorage.getItem("imc-editor-tab");if(t){const b=$(`#tabs [data-tab="${t}"]`);if(b)b.click()}}catch(e){}
   let saved=null;try{saved=JSON.parse(fixSite(localStorage.getItem("imc-editor-state")||"null"))}catch(e){}
