@@ -7535,21 +7535,13 @@
     }
   ],
   "log": [
-    "home: 1 films parsed",
-    "today: 7 films parsed",
-    "day-29-10-2026-dated: 0 films parsed",
-    "day-30-10-2026-dated: 13 films parsed",
-    "day-31-10-2026-dated: 14 films parsed",
-    "day-01-11-2026-dated: 13 films parsed",
-    "day-02-11-2026-dated: 8 films parsed",
-    "day-03-11-2026-dated: 8 films parsed",
-    "day-04-11-2026-dated: 8 films parsed",
-    "day-05-11-2026-dated: 8 films parsed",
-    "advance: 15 films parsed",
-    "kids: 4 films parsed",
-    "luxx: 3 films parsed",
-    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
-    "prices: 12 ticket types, 4 bundles, 8 products",
+    "imc.ie showed a browser check on home; stopping this run and keeping the previous listings",
+    "kept previous today",
+    "kept previous days",
+    "kept previous comingSoon",
+    "kept previous kidsClub",
+    "kept previous luxx",
+    "kept previous banners",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -7961,8 +7953,8 @@
       "Thu"
     ]
   },
-  "checked": "2026-10-29T21:50:03.222Z",
-  "blocked": false,
+  "checked": "2026-10-30T12:55:24.456Z",
+  "blocked": true,
   "ratings": {
     "bbfc": {
       "12": "data/ratings/bbfc-12.svg",
