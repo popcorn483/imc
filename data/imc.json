@@ -2,7 +2,7 @@
   "id": "enniskillen",
   "cinema": "IMC Enniskillen",
   "source": "https://imc.ie/enniskillen",
-  "updated": "2026-10-31T16:45:04.177Z",
+  "updated": "2026-10-31T17:01:16.413Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -7094,6 +7094,22 @@
         ]
       },
       {
+        "name": "Child",
+        "price": "£7.00",
+        "days": [
+          "Sat",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Sun"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
+      },
+      {
         "name": "Student",
         "price": "£7.50",
         "days": [
@@ -7111,6 +7127,22 @@
         ]
       },
       {
+        "name": "Family",
+        "price": "£26.00",
+        "days": [
+          "Sat",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Sun"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
+      },
+      {
         "name": "Senior",
         "price": "£7.50",
         "days": [
@@ -7121,36 +7153,6 @@
           "Wed",
           "Thu",
           "Fri"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Child",
-        "price": "£7.00",
-        "days": [
-          "Mon",
-          "Tue",
-          "Wed",
-          "Thu",
-          "Sun"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Family",
-        "price": "£26.00",
-        "days": [
-          "Mon",
-          "Tue",
-          "Wed",
-          "Thu",
-          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -7455,7 +7457,7 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-10-31T16:45:27.015Z",
+    "checked": "2026-10-31T17:01:44.651Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -7466,7 +7468,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-10-31T16:45:42.215Z",
+  "checked": "2026-10-31T17:01:58.871Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
