@@ -7,12 +7,12 @@ import path from "node:path";
 // name shown in the hub, and the channel's @handle (or a channel id starting UC)
 export const DISTRIBUTORS = [
   ["Warner Bros.", "@warnerbrosuktrailers"],
-  ["Disney", "@DisneyUK"],
+  ["Disney", "@disney", { us: true, strict: true }],   // main channel: also posts Disney+ shows, so only trailers that say "in cinemas/theaters"
   ["Universal", "@UniversalPicturesUK"],
   ["Sony Pictures", "UCJJap_3RGZ2UxqLTLz0K39g"],
-  ["Paramount", "@paramountpictures"],
+  ["Paramount", "@paramountpictures", { us: true }],
   ["StudioCanal", "@StudiocanalUK"],
-  ["Lionsgate", "@lionsgatemovies"],
+  ["Lionsgate", "@lionsgatemovies", { us: true }],
   ["Searchlight", "@SearchlightUK"],
   ["Pathé", "@PatheUK"],
   ["Altitude", "@AltitudeFilms"],
@@ -22,6 +22,8 @@ export const DISTRIBUTORS = [
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 const RED = /red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
 const NOT_CINEMA = /on digital|digital now|disney\+|streaming|netflix|prime video|apple tv|now on|blu-?ray|dvd|disney vault/i;
+const STREAMING = /disney\s*\+|disneyplus|hulu|streaming|stream (?:it|now|on)|original series|limited series|docuseries|\bseason \d|\bepisode|\bseries\b|on digital|paramount\s*\+|apple tv|netflix|prime video|max original|peacock/i;
+const IN_CINEMAS = /\b(?:in|only in|exclusively in|coming to|in uk(?: and irish)?)\s+(?:cinemas|theatres|theaters)\b|theatrical (?:release|trailer)/i;
 const NOT_TRAILER = /reaction|review|breakdown|recap|featurette|behind[\s-]the[\s-]scenes|interview|in conversation|\bclip\b|\bspot\b|#shorts|tomorrow|countdown|first look at|\bvlog\b|soundtrack|lyric|premiere live|livestream/i;
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -117,8 +119,8 @@ export async function buildRecommended(outDir) {
   const prev = await fs.readFile(file, "utf8").then(JSON.parse).catch(() => ({}));
   const cache = prev.channels || {}, channels = {}, dists = [], items = [], since = Date.now() - 150 * 864e5;
   const known = prev.known || {}, knownNow = {};
-  const keepOld = (prev.items || []).filter((x) => DISTRIBUTORS.some(([n]) => n === x.dist));
-  for (const [name, handle] of DISTRIBUTORS) {
+  const keepOld = (prev.items || []).filter((x) => DISTRIBUTORS.some(([n, , o = {}]) => n === x.dist && (!o.strict || (x.release && !STREAMING.test(x.title)))));
+  for (const [name, handle, opt = {}] of DISTRIBUTORS) {
     const id = await channelId(handle, cache);
     if (!id) { dists.push({ name, handle, ok: false, why: "channel not found" }); continue; }
     channels[handle] = id;
@@ -156,10 +158,12 @@ export async function buildRecommended(outDir) {
     for (const v of found.values()) {
       const { title, desc = "", published } = v;
       if (!/trailer|teaser/i.test(title) || NOT_TRAILER.test(title) || RED.test(title + " " + desc.slice(0, 300)) || NOT_CINEMA.test(title)) continue;
+      /* strict channels (Disney's main one): only trailers that say they're in cinemas, and nothing that mentions streaming */
+      if (opt.strict && (!IN_CINEMAS.test(title + " " + desc) || STREAMING.test(title + " " + desc.slice(0, 600)))) continue;
       if (!published || Date.parse(published) < since) continue;
       const rel = releaseHint(desc, published) || releaseHint(title, published);
       const bbfc = ratingHint(desc) || ratingHint(title) || (prev.items || []).find((x) => x.id === v.id)?.bbfc || null;
-      items.push({ id: v.id, title, film: filmName(title), dist: name, published, ...(bbfc ? { bbfc } : {}), ...(v.approx ? { approx: true } : {}), ...(v.checked ? { checked: true } : {}), views: v.views || 0, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
+      items.push({ id: v.id, title, film: filmName(title), dist: name, published, ...(opt.us ? { us: true } : {}), ...(bbfc ? { bbfc } : {}), ...(v.approx ? { approx: true } : {}), ...(v.checked ? { checked: true } : {}), views: v.views || 0, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
       n++;
     }
     dists.push({ name, handle, id, ok: found.size > 0, count: n, rss, pages: diag.join(" "), looked, ...(found.size ? {} : { why: "nothing could be read" }) });

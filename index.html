@@ -1791,7 +1791,7 @@ async function renderRec(st){const g=$("#recgrid");if(!g)return;if(!REC)REC=(awa
   const ign=new Set(st.recIgnore||[]);
   const shown=L.filter(x=>recIgnShow?ign.has(x.id):!ign.has(x.id));
   if(!shown.length){g.innerHTML=`<p class="tip" style="margin:0">${recIgnShow?"Nothing ignored.":"Nothing matches those filters."}</p>`}
-  else g.innerHTML=shown.slice(0,recShow).map(x=>{const rel=x.releaseDate?"In cinemas "+fmtShort(x.releaseDate):x.out?"In cinemas now":x.release||"",rt=recRating(x);
+  else g.innerHTML=shown.slice(0,recShow).map(x=>{const rel=x.releaseDate?(x.us?"US release ":"In cinemas ")+fmtShort(x.releaseDate):x.out?"In cinemas now":x.release||"",rt=recRating(x);
     return`<div class="reccard${ign.has(x.id)?" recign":""}"><a class="recthumb" href="https://www.youtube.com/watch?v=${esc(x.id)}" data-recwatch="${esc(x.id)}" title="Watch the trailer"><img src="https://i.ytimg.com/vi/${esc(x.id)}/mqdefault.jpg" alt="" loading="lazy"><span>▶ Watch</span></a>
       <div class="recbody"><b>${esc(x.film||x.title)}</b><div class="tt" title="${esc(x.title)}">${esc(x.title)}</div><div class="m">${esc(x.dist)} · ${esc(recAgo(x.published))}${x.views?" · "+recViews(x.views):""}</div>
       <div class="rectags">${rt.c?`<span class="r${rt.high?"":" ok"}">${esc(rt.label)}</span>`:`<span>${esc(rt.label)}</span>`}${rel?`<span>${esc(rel)}</span>`:""}${x.imc?'<span class="imc">On imc.ie</span>':""}</div>${ign.has(x.id)?"":recRateSel(x)}
@@ -1810,7 +1810,7 @@ function recActs(x,have,ign){if(ign.has(x.id))return`<button class="btn small" d
   if(rt.high)return`<span class="m">Rated ${esc(rt.c)}: too high for the foyer</span>`+ig;
   return(x.imc?`<button class="btn small primary" data-recuse="${esc(x.id)}" data-key="${esc(x.imc.key)}">Use as its trailer</button>`:`<button class="btn small primary" data-recadd="${esc(x.id)}">Add to loop</button>`)+watch+ig}
 function recOpen(id){const st=foyState(),x=(REC.items||[]).map(y=>({...y,imc:recFilm(y,foyFilms())})).find(y=>y.id===id);if(!x)return;
-  const have=new Set([...(st.extra||[]).map(y=>y.id),...Object.values(st.links||{}).map(v=>v.id)]),ign=new Set(st.recIgnore||[]),rt=recRating(x),rel=x.releaseDate?"In cinemas "+fmtShort(x.releaseDate):x.release||"";
+  const have=new Set([...(st.extra||[]).map(y=>y.id),...Object.values(st.links||{}).map(v=>v.id)]),ign=new Set(st.recIgnore||[]),rt=recRating(x),rel=x.releaseDate?(x.us?"US release ":"In cinemas ")+fmtShort(x.releaseDate):x.release||"";
   $("#recDlgT").textContent=x.film||x.title;$("#recFrame").src=`https://www.youtube-nocookie.com/embed/${encodeURIComponent(x.id)}?autoplay=1&rel=0&modestbranding=1`;
   recDlgInfo(x,have,ign,rt,rel);$("#recDlg").hidden=false;$("#recDlg").dataset.id=id;$("#recDlgClose").focus()}
 function recDlgInfo(x,have,ign,rt,rel){$("#recDlgInfo").innerHTML=`<div class="m">${esc(x.title)}<br>${esc(x.dist)} · ${esc(rt.label)}${rel?" · "+esc(rel):""}${ign.has(x.id)?"":recRateSel(x)}</div><div class="acts">${recActs(x,have,ign).replace(/<button class="btn small ghost" data-recwatch="[^"]*">▶ Watch<\/button>/,"")}</div>`}
@@ -1825,14 +1825,14 @@ function recClick(e){const d=e.target.closest("[data-recdist]");if(d){recDist=d.
   if(!$("#recDlg").hidden)recClose();
   if(u){st.links={...(st.links||{}),[u.dataset.key]:{id:x.id,title:x.title}};foySave(st);renderFoyer();toast(`${x.film}: this trailer now plays on the foyer TVs`);return}
   if((st.extra||[]).length>=XMAX){toast(`The loop holds up to ${XMAX} of your own trailers. Remove some first.`);return}
-  st.extra=[...(st.extra||[]),{id:x.id,title:x.film||x.title,by:x.dist,...(x.releaseDate?{releaseDate:x.releaseDate}:{})}];foySave(st);renderFoyer();toast(`${x.film} added to the loop`+(x.releaseDate?`, until it opens on ${fmtShort(x.releaseDate)}`:". Add its release date in Your own trailers, if you know it"))}
+  st.extra=[...(st.extra||[]),{id:x.id,title:x.film||x.title,by:x.dist,...(x.releaseDate?{releaseDate:x.releaseDate}:{})}];foySave(st);renderFoyer();toast(`${x.film} added to the loop`+(x.releaseDate&&x.us?`. ${fmtShort(x.releaseDate)} is the US date: check the UK date and change it in Your own trailers`:x.releaseDate?`, until it opens on ${fmtShort(x.releaseDate)}`:". Add its release date in Your own trailers, if you know it"))}
 $("#recPanel").addEventListener("click",recClick);$("#recDlg").addEventListener("click",e=>{if(e.target===$("#recDlg")||e.target.id==="recDlgClose"){recClose();return}recClick(e)});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#recDlg").hidden)recClose()});
 function recRateChange(e){const t=e.target.closest("[data-recrate]");if(!t)return;const st=foyState(),r={...(st.recRate||{})};if(t.value)r[t.dataset.recrate]=t.value;else delete r[t.dataset.recrate];st.recRate=r;
   const id=t.dataset.recrate,it=(REC.items||[]).find(y=>y.id===id);let pulled=false;
   if(it&&recRating({...it,imc:recFilm(it,foyFilms())}).high){const n0=(st.extra||[]).length+Object.keys(st.links||{}).length;st.extra=(st.extra||[]).filter(x=>x.id!==id);st.links=Object.fromEntries(Object.entries(st.links||{}).filter(([,v])=>v.id!==id));pulled=(st.extra.length+Object.keys(st.links).length)<n0}
   foySave(st);if(pulled)renderFoyer();else renderRec(st);
-  if(!$("#recDlg").hidden&&$("#recDlg").dataset.id===t.dataset.recrate){const x=(REC.items||[]).map(y=>({...y,imc:recFilm(y,foyFilms())})).find(y=>y.id===t.dataset.recrate);if(x){const have=new Set([...(st.extra||[]).map(y=>y.id),...Object.values(st.links||{}).map(v=>v.id)]);recDlgInfo(x,have,new Set(st.recIgnore||[]),recRating(x),x.releaseDate?"In cinemas "+fmtShort(x.releaseDate):x.release||"")}}
+  if(!$("#recDlg").hidden&&$("#recDlg").dataset.id===t.dataset.recrate){const x=(REC.items||[]).map(y=>({...y,imc:recFilm(y,foyFilms())})).find(y=>y.id===t.dataset.recrate);if(x){const have=new Set([...(st.extra||[]).map(y=>y.id),...Object.values(st.links||{}).map(v=>v.id)]);recDlgInfo(x,have,new Set(st.recIgnore||[]),recRating(x),x.releaseDate?(x.us?"US release ":"In cinemas ")+fmtShort(x.releaseDate):x.release||"")}}
   toast(t.value?`Rating set to ${t.value}`+(pulled?": taken off the foyer TVs":""):"Rating back to automatic")}
 $("#recgrid").addEventListener("change",recRateChange);$("#recDlgInfo").addEventListener("change",recRateChange);
 $("#recimc").addEventListener("change",()=>renderRec(foyState()));$("#recnew").addEventListener("change",()=>renderRec(foyState()));
