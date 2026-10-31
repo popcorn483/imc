@@ -2,8 +2,80 @@
   "id": "oranmore",
   "cinema": "IMC Oranmore",
   "source": "https://imc.ie/galway-oranmore",
-  "updated": "2026-10-30T21:39:23.481Z",
+  "updated": "2026-10-31T12:37:18.578Z",
   "today": [
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "G",
+      "runtime": 77,
+      "release": "October 24, 2026",
+      "releaseDate": "2026-10-24",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+      "date": "2026-10-31",
+      "times": [
+        "12:15",
+        "14:15",
+        "16:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80129",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80129",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80127",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "16:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80128",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
     {
       "certSystem": "ifco",
       "certFile": "16",
@@ -19,17 +91,65 @@
       "director": "James Watkins",
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "13:05",
+        "15:45",
+        "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80103",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80105",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "13:05",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80105",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80104",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80106",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80103",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80107",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -48,6 +168,119 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-10-31",
+      "times": [
+        "12:15",
+        "14:45",
+        "17:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80151",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80151",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80149",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80207",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Ghosts: The Possession Of Button House",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+      "cert": "12A",
+      "runtime": 100,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Simon Hynd",
+      "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+      "trailer": null,
+      "date": "2026-10-31",
+      "times": [
+        "12:10"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80142",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80142",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ghosts-the-possession-of-button-house",
+      "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "15A",
       "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
       "luxx": false,
@@ -61,17 +294,32 @@
       "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
       "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
       "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "18:10",
         "20:25"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80252",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80257",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80257",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:25",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80252",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80253",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -91,6 +339,47 @@
       "certSystem": "ifco",
       "certFile": "16",
       "title": "Primetime",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+      "cert": "16",
+      "runtime": 109,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Lance Oppenheim",
+      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+      "date": "2026-10-31",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80210",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80210",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "primetime",
+      "posterFile": "data/posters/primetime.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Primetime",
       "luxx": true,
       "sensory": false,
       "status": "New Release",
@@ -102,17 +391,62 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "13:15",
+        "15:45",
+        "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80249",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80258",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "13:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80258",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80254",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80255",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80249",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80256",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -130,6 +464,63 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "G",
+      "runtime": 94,
+      "release": "October 17, 2026",
+      "releaseDate": "2026-10-17",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-10-31",
+      "times": [
+        "13:20",
+        "15:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80206",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "13:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80206",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80209",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "15A",
       "title": "Wicker",
       "luxx": false,
@@ -143,17 +534,32 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "18:10",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80195",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80208",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80208",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80195",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80205",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -184,17 +590,47 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "14:20",
+        "17:15",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80200",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80135",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80135",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80136",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80200",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80137",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -213,12 +649,6 @@
   ],
   "days": [
     {
-      "label": "Fri 30 Oct",
-      "url": "https://imc.ie/film-times/galway-oranmore/30-10-2026#dateD",
-      "date": "2026-10-30",
-      "films": []
-    },
-    {
       "label": "Sat 31 Oct",
       "url": "https://imc.ie/film-times/galway-oranmore/31-10-2026#dateD",
       "date": "2026-10-31",
@@ -229,7 +659,7 @@
           "title": "Arnie and Barney",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
           "cert": "G",
           "runtime": 77,
@@ -240,27 +670,11 @@
           "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
           "date": "2026-10-31",
           "times": [
-            "12:15",
             "14:15",
             "16:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80129",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80127",
           "sessions": [
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80129",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
@@ -270,7 +684,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -284,7 +698,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -402,27 +816,11 @@
           "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
           "date": "2026-10-31",
           "times": [
-            "12:15",
             "14:45",
             "17:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80151",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80149",
           "sessions": [
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80151",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 31 October",
               "date": "2026-10-31",
@@ -455,47 +853,6 @@
           "slug": "forgotten-island",
           "posterFile": "data/posters/forgotten-island.jpg",
           "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "12A",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-31",
-          "times": [
-            "12:10"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80142",
-          "sessions": [
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "12:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80142",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -2871,6 +3228,12 @@
       "label": "Fri 06 Nov",
       "url": "https://imc.ie/film-times/galway-oranmore/06-11-2026#dateD",
       "date": "2026-11-06",
+      "films": []
+    },
+    {
+      "label": "Sat 07 Nov",
+      "url": "https://imc.ie/film-times/galway-oranmore/07-11-2026#dateD",
+      "date": "2026-11-07",
       "films": []
     }
   ],
@@ -6616,20 +6979,20 @@
   ],
   "log": [
     "home: 0 films parsed",
-    "today: 5 films parsed",
-    "day-30-10-2026-dated: 0 films parsed",
-    "day-31-10-2026-dated: 10 films parsed",
+    "today: 10 films parsed",
+    "day-31-10-2026-dated: 9 films parsed",
     "day-01-11-2026-dated: 10 films parsed",
     "day-02-11-2026-dated: 7 films parsed",
     "day-03-11-2026-dated: 7 films parsed",
     "day-04-11-2026-dated: 7 films parsed",
     "day-05-11-2026-dated: 6 films parsed",
     "day-06-11-2026-dated: 0 films parsed",
+    "day-07-11-2026-dated: 0 films parsed",
     "advance: 16 films parsed",
     "kids: 1 films parsed",
     "luxx: 4 films parsed",
     "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu)",
-    "prices: 16 ticket types, 4 bundles, 9 products",
+    "prices: 19 ticket types, 6 bundles, 9 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -6784,8 +7147,38 @@
         ]
       },
       {
-        "name": "Teen Club",
-        "price": "€6.00",
+        "name": "Galactic Adult",
+        "price": "€14.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
+        "name": "Galactic Teen",
+        "price": "€11.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
+        "name": "Galactic Student",
+        "price": "€11.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
+        "name": "Galactic OAP",
+        "price": "€11.50",
         "days": [
           "Sat"
         ],
@@ -6887,6 +7280,30 @@
           "luxx"
         ],
         "file": "data/products/t1scbluxx.jpg"
+      },
+      {
+        "name": "Medium Combo Bundle GalacticDetails1 Adult Ticket + a Medium Combo",
+        "price": "€20.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBG.jpg",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ],
+        "file": "data/products/t1mcbg.jpg"
+      },
+      {
+        "name": "Share Combo Bundle GalacticDetails2 Adult Tickets + a Share Combo",
+        "price": "€33.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBG.jpg",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ],
+        "file": "data/products/t1scbg.jpg"
       }
     ],
     "products": [
@@ -7080,7 +7497,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-10-30T21:39:52.159Z",
+    "checked": "2026-10-31T12:37:45.406Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -7090,7 +7507,7 @@
       "Thu"
     ]
   },
-  "checked": "2026-10-30T21:40:06.255Z",
+  "checked": "2026-10-31T12:37:59.392Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

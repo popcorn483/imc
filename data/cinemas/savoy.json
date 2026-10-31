@@ -2,8 +2,82 @@
   "id": "savoy",
   "cinema": "Savoy Cinema",
   "source": "https://imc.ie/savoy",
-  "updated": "2026-10-30T21:42:10.261Z",
+  "updated": "2026-10-31T12:40:00.026Z",
   "today": [
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Bad Apples",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113503.jpg",
+      "cert": "15A",
+      "runtime": 101,
+      "release": "September 5, 2026",
+      "releaseDate": "2026-09-05",
+      "director": "Jonathan Etzler",
+      "synopsis": "A frustrated primary school teacher gets into a physical altercation with one of her troubled pupils, leading her to hold him hostage in her basement in this comedy thriller.",
+      "trailer": "https://www.youtube.com/watch?v=4nhu80EmVQE",
+      "date": "2026-10-31",
+      "times": [
+        "15:00",
+        "17:30",
+        "19:50"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167144",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167144",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167145",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "19:50",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167146",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "bad-apples",
+      "posterFile": "data/posters/bad-apples.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
     {
       "certSystem": "ifco",
       "certFile": "16",
@@ -19,17 +93,51 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "14:30",
+        "17:20",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166972",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166973",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:30",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166973",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:20",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166974",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166972",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166975",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -49,6 +157,191 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-10-31",
+      "times": [
+        "13:40",
+        "16:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167015",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "13:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167015",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "16:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167016",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Ghosts: The Possession Of Button House",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+      "cert": "12A",
+      "runtime": 100,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Simon Hynd",
+      "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+      "trailer": null,
+      "date": "2026-10-31",
+      "times": [
+        "13:40",
+        "15:50"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167159",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "13:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167159",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:50",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167160",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ghosts-the-possession-of-button-house",
+      "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Heart Of The Beast",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
+      "cert": "15A",
+      "runtime": 102,
+      "release": "September 23, 2026",
+      "releaseDate": "2026-09-23",
+      "director": "David Ayer",
+      "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
+      "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
+      "date": "2026-10-31",
+      "times": [
+        "15:00",
+        "17:20",
+        "19:40"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167216",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167216",
+          "luxx": false,
+          "screen": "13",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:20",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167217",
+          "luxx": false,
+          "screen": "13",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "19:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167218",
+          "luxx": false,
+          "screen": "13",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "heart-of-the-beast",
+      "posterFile": "data/posters/heart-of-the-beast.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "15A",
       "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
       "luxx": false,
@@ -62,17 +355,17 @@
       "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
       "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
       "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
         "20:05"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167255",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167256",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:05",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167255",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167256",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -91,6 +384,62 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "M",
+      "title": "Klara And The Sun",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112474.jpg",
+      "cert": "M",
+      "runtime": 116,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "Based on the bestselling novel from Nobel Prize-winner Kazuo Ishiguro and written and directed by Academy Award-winner Taika Waititi, Klara And The Sun introduces audiences to Klara, an Artificial Friend who wants nothing more than to find the perfect home. When Klara meets Josie, each immediately senses a kindred spirit in the other. Josie has a fraught relationship with her mother and they?ve suffered great loss, but Klara?s innocent wonder and unwavering loyalty begin to heal the family and bring light to Josie?s complicated world.",
+      "trailer": null,
+      "date": "2026-10-31",
+      "times": [
+        "14:40",
+        "17:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167073",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167073",
+          "luxx": true,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167074",
+          "luxx": true,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "klara-and-the-sun",
+      "posterFile": "data/posters/klara-and-the-sun.jpg",
+      "certIcon": null,
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "15A",
       "title": "Other Mommy",
       "luxx": false,
@@ -104,17 +453,33 @@
       "director": "Rob Savage",
       "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
       "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "18:15",
         "20:20"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167010",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167013",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167013",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:20",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167010",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167014",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -134,6 +499,47 @@
     {
       "certSystem": "ifco",
       "certFile": "16",
+      "title": "Pan's Labyrinth (20th Anniversary)",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114493.jpg",
+      "cert": "16",
+      "runtime": 118,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Guillermo del Toro",
+      "synopsis": "Celebrate the 20th Anniversary of Guillermo del Toro?s Academy Award?winning masterpiece with a return to the big screen. Set against the backdrop of post?Civil War Spain, Pan?s Labyrinth follows young Ofelia as she escapes into a haunting fantasy realm, where a mysterious faun sets her on a dangerous quest. A visually stunning and emotionally powerful film, this re-release offers audiences a rare opportunity to experience a modern classic in theaters?perfect for prestige programming, genre fans, and awards-season retrospectives.",
+      "trailer": null,
+      "date": "2026-10-31",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167086",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167086",
+          "luxx": true,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "pan-s-labyrinth-20th-anniversary",
+      "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
       "title": "Primetime",
       "luxx": false,
       "sensory": false,
@@ -146,17 +552,97 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "14:00",
+        "14:45",
+        "16:30",
+        "17:30",
+        "19:00",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166918",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167035",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167035",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166919",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "16:30",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167036",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166920",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "19:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167048",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166918",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166921",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -175,6 +661,224 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Resident Evil",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/110404.jpg",
+      "cert": "16",
+      "runtime": 93,
+      "release": "September 18, 2026",
+      "releaseDate": "2026-09-18",
+      "director": "Zach Cregger",
+      "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
+      "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
+      "date": "2026-10-31",
+      "times": [
+        "13:40",
+        "15:45",
+        "17:45",
+        "19:50"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167189",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "13:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167189",
+          "luxx": false,
+          "screen": "12",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167190",
+          "luxx": false,
+          "screen": "12",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167191",
+          "luxx": false,
+          "screen": "12",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "19:50",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167192",
+          "luxx": false,
+          "screen": "12",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "resident-evil",
+      "posterFile": "data/posters/resident-evil.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Sense And Sensibility",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112473.jpg",
+      "cert": "PG",
+      "runtime": 131,
+      "release": "September 25, 2026",
+      "releaseDate": "2026-09-25",
+      "director": "Georgia Oakley",
+      "synopsis": "An irresistible new take on Jane Austen?s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood starring Daisy Edgar-Jones and Esmé Creed-Miles. Sisters Elinor and Marianne Dashwood must leave their Sussex estate following the sudden loss of their wealthy father and are forced to move in with a distant relative. The two sisters attempt to find security and happiness whilst navigating their vastly different approaches to love.",
+      "trailer": null,
+      "date": "2026-10-31",
+      "times": [
+        "14:00",
+        "17:00",
+        "19:50"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167055",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167055",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167056",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "19:50",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167057",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "sense-and-sensibility",
+      "posterFile": "data/posters/sense-and-sensibility.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Street Fighter",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113529.jpg",
+      "cert": "12A",
+      "runtime": 119,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Kitao Sakurai",
+      "synopsis": "Street Fighters Ryu and Ken reunite when Chun-Li recruits them for the World Warrior Tournament. As they face a hidden conspiracy, they must confront each other and their past-or face destruction.",
+      "trailer": "https://www.youtube.com/watch?v=Xt4X4FvXk2A",
+      "date": "2026-10-31",
+      "times": [
+        "14:20",
+        "17:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166993",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:20",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166993",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166994",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "street-fighter",
+      "posterFile": "data/posters/street-fighter.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "15A",
       "title": "The Social Reckoning",
       "luxx": false,
@@ -188,17 +892,32 @@
       "director": "Aaron Sorkin",
       "synopsis": "Inspired by true events and the whistleblower who started the social media reckoning we?re seeing play out today, this Aaron Sorkin original screenplay is a companion piece to the hit film The Social Network and a true David and Goliath story. Frances Haugen (Madison), a young Facebook engineer, enlists the help of Jeff Horwitz (White), a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network?s most guarded secrets.",
       "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "17:55",
         "20:10"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167158",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167161",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:55",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167161",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:10",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167158",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167162",
           "luxx": false,
           "screen": "11",
           "threeD": false,
@@ -229,17 +948,62 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "13:40",
+        "15:45",
+        "18:00",
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167095",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167096",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "13:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167096",
+          "luxx": true,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167097",
+          "luxx": true,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167098",
+          "luxx": true,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167095",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167099",
           "luxx": true,
           "screen": "8",
           "threeD": false,
@@ -270,17 +1034,49 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "times": [
+        "14:00",
+        "17:00",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167122",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167123",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167123",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "17:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167124",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167122",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167125",
           "luxx": false,
           "screen": "9",
           "threeD": false,
@@ -299,306 +1095,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Fri 30 Oct",
-      "url": "https://imc.ie/film-times/savoy/30-10-2026#dateD",
-      "date": "2026-10-30",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
-          "cert": "16",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": null,
-          "date": "2026-10-30",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166972",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166972",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
-          "cert": "15A",
-          "runtime": 102,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
-          "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
-          "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
-          "date": "2026-10-30",
-          "times": [
-            "20:05"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167255",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:05",
-              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167255",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "jak-zyc-zeby-nie-zwariowac",
-          "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Other Mommy",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 9, 2026",
-          "releaseDate": "2026-10-09",
-          "director": "Rob Savage",
-          "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
-          "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-          "date": "2026-10-30",
-          "times": [
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167010",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167010",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "other-mommy",
-          "posterFile": "data/posters/other-mommy.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Primetime",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "16",
-          "runtime": 109,
-          "release": "October 28, 2026",
-          "releaseDate": "2026-10-28",
-          "director": "Lance Oppenheim",
-          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-          "date": "2026-10-30",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166918",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166918",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "primetime",
-          "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "The Social Reckoning",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115561.jpg",
-          "cert": "15A",
-          "runtime": 112,
-          "release": "October 9, 2026",
-          "releaseDate": "2026-10-09",
-          "director": "Aaron Sorkin",
-          "synopsis": "Inspired by true events and the whistleblower who started the social media reckoning we?re seeing play out today, this Aaron Sorkin original screenplay is a companion piece to the hit film The Social Network and a true David and Goliath story. Frances Haugen (Madison), a young Facebook engineer, enlists the help of Jeff Horwitz (White), a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network?s most guarded secrets.",
-          "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
-          "date": "2026-10-30",
-          "times": [
-            "20:10"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167158",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:10",
-              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167158",
-              "luxx": false,
-              "screen": "11",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-social-reckoning",
-          "posterFile": "data/posters/the-social-reckoning.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wicker",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Alex Huston Fischer, Eleanor Wilson",
-          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-          "date": "2026-10-30",
-          "times": [
-            "20:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167095",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167095",
-              "luxx": true,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "wicker",
-          "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-10-30",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167122",
-          "sessions": [
-            {
-              "day": "Fri 30 October",
-              "date": "2026-10-30",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167122",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
     {
       "label": "Sat 31 Oct",
       "url": "https://imc.ie/film-times/savoy/31-10-2026#dateD",
@@ -946,7 +1442,7 @@
           "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
           "cert": "15A",
           "runtime": 102,
@@ -970,7 +1466,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -7094,6 +7590,238 @@
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
+    },
+    {
+      "label": "Sat 07 Nov",
+      "url": "https://imc.ie/film-times/savoy/07-11-2026#dateD",
+      "date": "2026-11-07",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Godzilla Minus Zero",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
+          "cert": "TBC",
+          "runtime": 135,
+          "release": "November 5, 2026",
+          "releaseDate": "2026-11-05",
+          "director": "Takashi Yamazaki",
+          "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
+          "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
+          "date": "2026-11-07",
+          "times": [
+            "13:50",
+            "16:50",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166952",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "13:50",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166952",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "16:50",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166953",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166954",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            }
+          ],
+          "slug": "godzilla-minus-zero",
+          "posterFile": "data/posters/godzilla-minus-zero.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "TBC",
+          "runtime": 128,
+          "release": "November 6, 2026",
+          "releaseDate": "2026-11-06",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-07",
+          "times": [
+            "14:15",
+            "17:15",
+            "20:05"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167237",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167237",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167238",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "20:05",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167239",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wild Horse Nine",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+          "cert": "15A",
+          "runtime": 117,
+          "release": "November 4, 2026",
+          "releaseDate": "2026-11-04",
+          "director": "Martin McDonagh",
+          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
+          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "date": "2026-11-07",
+          "times": [
+            "14:15",
+            "17:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166897",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166897",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166898",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166899",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wild-horse-nine",
+          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -11958,8 +12686,7 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 7 films parsed",
-    "day-30-10-2026-dated: 7 films parsed",
+    "today: 16 films parsed",
     "day-31-10-2026-dated: 16 films parsed",
     "day-01-11-2026-dated: 16 films parsed",
     "day-02-11-2026-dated: 14 films parsed",
@@ -11967,6 +12694,7 @@
     "day-04-11-2026-dated: 15 films parsed",
     "day-05-11-2026-dated: 16 films parsed",
     "day-06-11-2026-dated: 3 films parsed",
+    "day-07-11-2026-dated: 3 films parsed",
     "advance: 12 films parsed",
     "kids: 0 films parsed",
     "luxx: 4 films parsed",
@@ -12401,7 +13129,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-10-30T21:42:36.335Z",
+    "checked": "2026-10-31T12:40:25.554Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -12412,7 +13140,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-10-30T21:42:49.161Z",
+  "checked": "2026-10-31T12:40:38.179Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
