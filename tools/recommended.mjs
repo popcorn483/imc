@@ -6,10 +6,10 @@ import path from "node:path";
 
 // name shown in the hub, and the channel's @handle (or a channel id starting UC)
 export const DISTRIBUTORS = [
-  ["Warner Bros.", "@WarnerBrosUK"],
+  ["Warner Bros.", "@warnerbrosuktrailers"],
   ["Disney", "@DisneyUK"],
   ["Universal", "@UniversalPicturesUK"],
-  ["Sony Pictures", "@SonyPicturesUK"],
+  ["Sony Pictures", "UCJJap_3RGZ2UxqLTLz0K39g"],
   ["Paramount", "@ParamountPicturesUK"],
   ["StudioCanal", "@StudiocanalUK"],
   ["Lionsgate", "@LionsgateUK"],
@@ -55,10 +55,25 @@ function pageVideos(html) {
       seen.add(v.videoId);
       out.push({ id: v.videoId, title: txt(v.title), ago: txt(v.publishedTimeText), views: +(txt(v.viewCountText).replace(/[^\d]/g, "") || 0), desc: txt(v.descriptionSnippet) || (v.detailedMetadataSnippets || []).map((x) => txt(x.snippetText)).join(" ") });
     }
-    for (const k in o) if (k !== "videoRenderer") walk(o[k], d + 1);
+    const lv = o.lockupViewModel;
+    if (lv && /VIDEO/.test(lv.contentType || "") && /^[\w-]{11}$/.test(lv.contentId || "") && !seen.has(lv.contentId)) {
+      seen.add(lv.contentId);
+      const md = lv.metadata?.lockupMetadataViewModel, rows = (md?.metadata?.contentMetadataViewModel?.metadataRows || []).flatMap((r) => (r.metadataParts || []).map((p) => p.text?.content || ""));
+      out.push({ id: lv.contentId, title: md?.title?.content || "", ago: rows.find((t) => /ago/.test(t)) || "", views: +((rows.find((t) => /views?/.test(t)) || "").replace(/[^\d]/g, "") || 0), desc: "" });
+    }
+    for (const k in o) if (k !== "videoRenderer" && k !== "lockupViewModel") walk(o[k], d + 1);
   };
   walk(data, 0);
   return out;
+}
+// a trailer's own page: exact upload date and the full description (for "In cinemas 14 November")
+async function watchInfo(id) {
+  const html = await text(`https://www.youtube.com/watch?v=${id}`);
+  if (!html) return null;
+  const date = /"uploadDate":"([^"]+)"/.exec(html)?.[1] || /itemprop="uploadDate" content="([^"]+)"/.exec(html)?.[1] || /"publishDate":"([^"]+)"/.exec(html)?.[1];
+  let desc = /"shortDescription":"((?:[^"\\]|\\.)*)"/.exec(html)?.[1] || "";
+  try { desc = JSON.parse(`"${desc}"`); } catch {}
+  return { published: date ? new Date(date).toISOString() : null, desc };
 }
 // "3 weeks ago" → an ISO date that far back
 function agoDate(t) {
@@ -116,16 +131,29 @@ export async function buildRecommended(outDir) {
       diag.push(`${html ? html.length : 0}b/${html && html.includes("ytInitialData") ? "data" : "nodata"}/${vs.length}v${html && /consent\.youtube|before you continue/i.test(html) ? "/consent" : ""}`);
       for (const v of vs) if (!found.has(v.id)) found.set(v.id, { ...v, published: agoDate(v.ago), approx: true });
     }
+    /* trailers found on the pages: look up their real date and description once (remembered on later runs) */
+    let looked = 0;
+    for (const v of found.values()) {
+      if (!v.approx || !/trailer|teaser/i.test(v.title) || NOT_TRAILER.test(v.title) || NOT_CINEMA.test(v.title)) continue;
+      const old = (prev.items || []).find((x) => x.id === v.id);
+      if (old && !old.approx) { Object.assign(v, { published: old.published, approx: false, desc: old.release ? old.release : v.desc }); continue; }
+      if (old && old.checked) { v.published = old.published; continue; }
+      if (looked >= 15) continue;
+      looked++; await sleep(600);
+      const w = await watchInfo(v.id);
+      if (w && w.published) Object.assign(v, { published: w.published, desc: w.desc || v.desc, approx: false });
+      else v.checked = true;
+    }
     let n = 0;
     for (const v of found.values()) {
       const { title, desc = "", published } = v;
       if (!/trailer|teaser/i.test(title) || NOT_TRAILER.test(title) || RED.test(title + " " + desc.slice(0, 300)) || NOT_CINEMA.test(title)) continue;
       if (!published || Date.parse(published) < since) continue;
       const rel = releaseHint(desc, published) || releaseHint(title, published);
-      items.push({ id: v.id, title, film: filmName(title), dist: name, published, ...(v.approx ? { approx: true } : {}), views: v.views || 0, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
+      items.push({ id: v.id, title, film: filmName(title), dist: name, published, ...(v.approx ? { approx: true } : {}), ...(v.checked ? { checked: true } : {}), views: v.views || 0, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
       n++;
     }
-    dists.push({ name, handle, id, ok: found.size > 0, count: n, rss, pages: diag.join(" "), ...(found.size ? {} : { why: "nothing could be read" }) });
+    dists.push({ name, handle, id, ok: found.size > 0, count: n, rss, pages: diag.join(" "), looked, ...(found.size ? {} : { why: "nothing could be read" }) });
   }
   /* keep trailers found on earlier runs (the channels only show their newest videos), unless they're now too old */
   const fresh = new Set(items.map((x) => x.id));
