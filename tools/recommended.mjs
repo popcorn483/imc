@@ -21,7 +21,7 @@ export const DISTRIBUTORS = [
 
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 const RED = /red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
-const NOT_CINEMA = /on digital|digital now|disney\+|streaming|netflix|prime video|apple tv|now on|blu-?ray|dvd|disney vault/i;
+const NOT_CINEMA = /fan edit|stream only|only on |platforms|on digital|digital now|disney\+|streaming|netflix|prime video|apple tv|now on|blu-?ray|dvd|disney vault/i;
 const STREAMING = /disney\s*\+|disneyplus|hulu|streaming|stream (?:it|now|on)|original series|limited series|docuseries|\bseason \d|\bepisode|\bseries\b|on digital|paramount\s*\+|apple tv|netflix|prime video|max original|peacock/i;
 const IN_CINEMAS = /\b(?:in|only in|exclusively in|coming to|in uk(?: and irish)?)\s+(?:cinemas|theatres|theaters)\b|theatrical (?:release|trailer)/i;
 const NOT_TRAILER = /reaction|review|breakdown|recap|featurette|behind[\s-]the[\s-]scenes|interview|in conversation|\bclip\b|\bspot\b|#shorts|tomorrow|countdown|first look at|\bvlog\b|soundtrack|lyric|premiere live|livestream/i;
@@ -110,6 +110,7 @@ export function releaseHint(desc, published) {
     let y = +(dm[3] || dm[6]) || base.getUTCFullYear();
     if (!(dm[3] || dm[6]) && Date.UTC(y, mon, day) < base.getTime() - 30 * 864e5) y++;
     out.date = new Date(Date.UTC(y, mon, day)).toISOString().slice(0, 10);
+    if (dm[3] || dm[6]) out.year = true;
   } else if (/^now\b/i.test(rest)) out.now = true;
   return out;
 }
@@ -162,13 +163,15 @@ export async function buildRecommended(outDir) {
       /* no upload date (YouTube often hides it from servers): keep it if it's on the channel's latest-videos page, names this year or later, or opens soon */
       let datelessOk = false;
       if (!published) { const rh = releaseHint(desc, null) || releaseHint(title, null), yrs = (title.match(/\b(19|20)\d\d\b/g) || []).map(Number), y = new Date().getUTCFullYear();
-        datelessOk = (yrs.length ? Math.max(...yrs) >= y : v.latest || !!(rh && rh.date && rh.date >= new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10))); }
+        /* a date without a year ("In cinemas October 22") can't tell an old trailer from a new one, so only a stated year counts */
+        datelessOk = yrs.length ? Math.max(...yrs) >= y : v.latest || !!(rh && rh.year && rh.date >= new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10)); }
       const why = !/trailer|teaser/i.test(title) ? "noword" : NOT_TRAILER.test(title) ? "notTrailer" : RED.test(title + " " + desc.slice(0, 300)) ? "red" : NOT_CINEMA.test(title) ? "notCinema"
         : opt.strict && !IN_CINEMAS.test(title + " " + desc) ? "noCinemaWord" : opt.strict && STREAMING.test(title + " " + desc.slice(0, 600)) ? "streaming" : !published && !datelessOk ? "noDate" : !published ? "" : Date.parse(published) < since ? "old" : "";
       if (why) { rej[why] = (rej[why] || 0) + 1; if (why !== "noword" && samples.length < 4) samples.push(why + ": " + title.slice(0, 60) + (why === "red" ? " :: " + (RED.exec(title + " " + desc.slice(0, 300)) || [""])[0] : "")); continue; }
-      const rel = releaseHint(desc, published) || releaseHint(title, published);
+      let rel = releaseHint(desc, published) || releaseHint(title, published);
+      if (rel && !published && !rel.year) rel = { text: rel.text };   /* no upload date and no year: show the words, don't guess the date */
       const bbfc = ratingHint(desc) || ratingHint(title) || (prev.items || []).find((x) => x.id === v.id)?.bbfc || null;
-      items.push({ id: v.id, title, film: filmName(title), dist: name, published, ...(opt.us ? { us: true } : {}), ...(bbfc ? { bbfc } : {}), ...(v.approx ? { approx: true } : {}), ...(v.checked ? { checked: true } : {}), views: v.views || 0, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
+      items.push({ id: v.id, title, film: filmName(title), dist: name, published, ...(opt.us ? { us: true } : {}), ...(bbfc ? { bbfc } : {}), ...(v.approx ? { approx: true } : {}), ...(v.checked ? { checked: true } : {}), views: v.views || 0, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.year ? { yg: true } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
       n++;
     }
     dists.push({ name, handle, id, ok: found.size > 0, count: n, rss, pages: diag.join(" "), looked, rej, samples, ...(found.size ? {} : { why: "nothing could be read" }) });
@@ -176,7 +179,7 @@ export async function buildRecommended(outDir) {
   /* keep trailers found on earlier runs (the channels only show their newest videos), unless they're now too old */
   const fresh = new Set(items.map((x) => x.id));
   const soonOk = (x) => x.releaseDate && x.releaseDate >= new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10);
-  for (const x of keepOld) if (!fresh.has(x.id) && (Date.parse(x.published) >= since || (!x.published && soonOk(x))) && !NOT_CINEMA.test(x.title) && !NOT_TRAILER.test(x.title)) items.push(x);
+  for (const x of keepOld) if (!fresh.has(x.id) && (Date.parse(x.published) >= since || (!x.published && x.yg && soonOk(x))) && !NOT_CINEMA.test(x.title) && !NOT_TRAILER.test(x.title)) items.push(x);
   const seen = new Set(), byFilm = new Map();
   items.sort((a, b) => String(b.published || "").localeCompare(String(a.published || "")));
   const list = [];
