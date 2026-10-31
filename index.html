@@ -315,6 +315,7 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .frow .acts{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
 .xadd{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}.xadd textarea{flex:1 1 280px;min-height:46px;font-size:13px}
 .svadd{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:10px 14px;align-items:end}.svadd .field{margin:0}.svbtns{grid-column:1/-1;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.svbtns input{flex:1 1 260px;min-width:0}.svor{color:var(--muted);font-size:13px}
+.svremind{margin-top:12px;padding:10px 12px;border-radius:10px;background:rgba(255,194,61,.14);border:1px solid rgba(255,194,61,.45);font-size:13.5px;line-height:1.45}
 .svthumb{width:96px;aspect-ratio:16/9;border-radius:8px;background:#000 center/cover;display:grid;place-items:center;color:#fff;font-size:20px;overflow:hidden}.svthumb video{width:100%;height:100%;object-fit:cover}
 .svprev{grid-column:1/-1}.svprev video{width:100%;max-width:560px;border-radius:10px;background:#000;display:block}
 .srclist{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.srcitem{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:999px;padding:2px 4px 2px 2px}.srcitem a{text-decoration:none}.srcitem button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:14px;padding:4px 8px;border-radius:999px}.srcitem button:hover{color:var(--ink,inherit)}
@@ -778,7 +779,8 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         </form>
         <div id="svstat" class="tip" hidden></div>
         <div id="svlist" class="xlist"></div>
-        <p class="tip" style="margin-bottom:0"><b>Video files are kept on this computer only</b>, so add them on the PC that runs the foyer TV: open this hub on that PC, in the same browser, and add them there. Links work on every foyer PC. Films rated 15 or 18 still stay off the foyer TVs.</p></div>
+        <div class="svremind" role="note"><b>📁 Reminder:</b> trailer files must be stored on the <b>foyer PC</b>, in the <b>TRAILERS</b> folder on its desktop, and added here <b>from the foyer PC</b> (open this hub on that PC). A file added on any other computer only plays on that computer, not on the foyer TVs.</div>
+        <p class="tip" style="margin-bottom:0">Download links work on every foyer PC. Films rated 15 or 18 still stay off the foyer TVs.</p></div>
       <div class="panel" style="margin-top:16px"><div class="ph"><h2>Trailer and poster sites</h2></div>
         <p class="tip" style="margin-top:0">Quick links to the sites you get trailers and posters from. <b>Passwords aren't kept here:</b> when you sign in, let your browser save the password (Chrome and Edge offer to) and it's filled in for you next time. Downloaded posters and artwork go in the photo editor under <b>Photo › Your media</b>, ready for any design.</p>
         <div id="srclist" class="srclist"></div>
@@ -1757,7 +1759,7 @@ function renderStudio(){const sel=$("#svfilm");if(!sel)return;const keep=sel.opt
   if(keep!==null&&[...sel.options].some(o=>o.value===keep))sel.value=keep;$("#svtitleF").hidden=sel.value!=="";
   const L=STUD,el=$("#svlist");$("#svcount").textContent=L.length?`${L.length} trailer${L.length===1?"":"s"}`:"";
   el.innerHTML=L.length?L.map(x=>{const f=x.film&&fl.find(y=>y.key===x.film),sf=f?foySafety(f,foyState()):null;
-    return`<div class="xrow"><span class="n">${x.url?"🔗":"🎞"}</span><div class="svthumb" aria-hidden="true">▶</div><div style="min-width:0"><b>${esc(f?f.title:x.title||"Trailer")}</b><div class="m">${x.url?"Download link · plays on every foyer PC":`${esc(x.name||"Video file")} · ${fmtMB(x.size||0)} · on this computer`}${x.len?" · "+fmtLen(x.len):""}${x.until?" · until "+fmtShort(x.until):""}${!x.film?" · plays after the films":""}</div>${svOld(x)?'<div class="m" style="color:#e2452e">Finished: no longer playing</div>':sf&&!sf.ok?`<div class="m" style="color:#e2452e">${esc(sf.label)}</div>`:x.film&&!f?'<div class="m">This film isn\'t in the latest listings, so it isn\'t playing</div>':""}</div>
+    return`<div class="xrow"><span class="n">${x.url?"🔗":"🎞"}</span><div class="svthumb" aria-hidden="true">▶</div><div style="min-width:0"><b>${esc(f?f.title:x.title||"Trailer")}</b><div class="m">${x.url?"Download link · plays on every foyer PC":`${esc(x.name||"Video file")} · ${fmtMB(x.size||0)} · on this computer (keep it in TRAILERS on the foyer PC's desktop)`}${x.len?" · "+fmtLen(x.len):""}${x.until?" · until "+fmtShort(x.until):""}${!x.film?" · plays after the films":""}</div>${svOld(x)?'<div class="m" style="color:#e2452e">Finished: no longer playing</div>':sf&&!sf.ok?`<div class="m" style="color:#e2452e">${esc(sf.label)}</div>`:x.film&&!f?'<div class="m">This film isn\'t in the latest listings, so it isn\'t playing</div>':""}</div>
       <div class="acts"><button class="btn small ghost" data-svplay="${esc(x.id)}">Preview</button><button class="btn small ghost danger" data-svdel="${esc(x.id)}">Remove</button></div><div class="svprev" id="svp-${esc(x.id)}" hidden></div></div>`}).join(""):'<p class="tip" style="margin:0">No studio trailers yet.</p>';
   renderSources()}
 const SRC_DEF=[{n:"WB360",u:"https://www.wb360.com/login#/"}];
@@ -1905,7 +1907,7 @@ $("#svfile").addEventListener("change",async e=>{const f=e.target.files[0];e.tar
   if(ok===false){svStat("");toast("That video won't play in a web browser. On the studio site, download the MP4 (H.264) version instead.");return}
   try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(x){}
   svStat(`Saving ${fmtMB(f.size)} to this computer…`);const entry={id:"sv"+Date.now().toString(36),film:who.film,title:who.title,name:f.name,size:f.size,len:ok&&ok.d||0,until:$("#svuntil").value||"",added:Date.now()};
-  if(!await svAdd(entry,f))return;svStat("");$("#svuntil").value="";await renderFoyer();toast(`Trailer added for ${who.title}. It plays on this PC's foyer player`)});
+  if(!await svAdd(entry,f))return;svStat("");$("#svuntil").value="";await renderFoyer();toast(`Trailer added for ${who.title}. Reminder: the file must be in the TRAILERS folder on the foyer PC's desktop and added from the foyer PC`)});
 $("#svlinkBtn").addEventListener("click",async()=>{const raw=$("#svlink").value,url=svDirect(raw);if(!url){toast("Paste the full link, starting https://");$("#svlink").focus();return}
   if(/drive\.google\.com|onedrive|sharepoint|1drv\.ms/i.test(url)){toast("Google Drive and OneDrive links don't play directly. Download the video and choose the file instead.");return}
   const who=svFilmPick();if(!who)return;svStat("Checking the link plays…");const ok=await svCheck(url);svStat("");

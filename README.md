@@ -527,7 +527,7 @@ In **Foyer trailers**, the **Studio trailers** panel takes trailers downloaded f
 
 - Pick the film (or "Not on imc.ie yet" and type its name), then **Choose video file** (MP4/H.264, WebM or a browser-playable MOV) or paste a **download link** (a Dropbox share link works; it's turned into a direct link). Each one is checked to make sure it plays in a web browser first.
 - A studio trailer replaces that film's YouTube trailer on the foyer player and plays even when the internet is down. Trailers for films not on imc.ie yet play after the films, labelled "Coming soon". An optional "Stop playing after" date takes it off automatically.
-- **Video files are kept in the browser on that computer** (IndexedDB), so add them on the PC that runs the foyer TV. Links go into the foyer player's address, so they work on every foyer PC.
+- **Video files are kept in the browser on that computer** (IndexedDB). Store each trailer file in the **TRAILERS** folder on the foyer PC's desktop and add it from the foyer PC; the panel and the confirmation message remind you. Links go into the foyer player's settings, so they work on every foyer PC.
 - The usual foyer rules still apply: films rated 15 or 18 stay off, and anything that looks red-band is left out.
 
 **Trailer and poster sites** keeps quick links (WB360 by default; add Disney Box and others). The app never stores portal usernames or passwords: it's a public website, so anything saved in it isn't a safe place for them. Let the browser's password manager remember them instead. Downloaded posters and artwork go in the editor's **Photo › Your media**.
