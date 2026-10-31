@@ -484,6 +484,21 @@ The **Playlist** at the top of the Foyer trailers page lists everything playing 
 - **Shuffle now** mixes up the order once. **Shuffle on the TVs every time round** makes the foyer player shuffle each loop. **Reset order** goes back to films by next showing, then your trailers.
 - The order, the trailers taken out and the shuffle setting are sent to the foyer player in its address (`ord`, `hide`, `shuf`), so reopen or re-copy the player link after changing them. New films that turn up later join the end of the list.
 
+### What plays between the trailers
+
+- With **Show what plays in between** ticked, the Playlist also shows the Now showing board, deals and offers slides, adverts, your messages and welcome videos where they fall between trailers. The hub gets this from the foyer player itself (`foyer.html?…&list=1` in a hidden frame), so it matches the TVs. Slides take turns, so the end of the list names the ones that come round next.
+- **Between the trailers** lets you switch each slide on or off: Wednesday Meal Deal, Kids Club, LUXX, Coming soon, Last chance and Scan to book. It also lets you switch off or reword each line on the bottom strip (`px`, `tx` and `tt` in the player address). Reworded lines stay as typed, prices included.
+
+### Music
+
+**Music under the cards and slides** (Cinematic, Chilled, Upbeat or none, plus a volume, with **▶ Listen** to preview) plays soft background music made live by `music.js`, so it isn't anyone's recording. It fades out when a trailer starts and back in for the showtimes cards, board, slides and welcome videos. It needs Sound on (click Start once on the TV), and M mutes it with everything else (`mu` and `mv` in the player address).
+
+### Other foyer changes
+
+- No more "Now seating": the board and strip say "Starts soon" (5 minutes or less) or "In 20 min", because the player can't know when doors actually open.
+- The keyboard-hint bar no longer appears when the mouse moves. The keys still work.
+- YouTube trailers are now cropped at the top only, so subtitles and captions at the bottom of a trailer aren't cut off above the info strip.
+
 ## Recommended trailers (new releases from distributors)
 
 The **Recommended: new trailers** section on the Foyer trailers page lists the newest public trailers from the distributors' official UK YouTube channels: Warner Bros., Disney (its main channel, @disney, strictly filtered: only trailers that say they're in cinemas or theaters, and nothing mentioning Disney+ or streaming), Universal, Sony Pictures, Paramount (@paramountpictures), StudioCanal, Lionsgate (@lionsgatemovies), Searchlight, Pathé, Altitude and Vertigo.

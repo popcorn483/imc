@@ -24,8 +24,10 @@ body.nostrip .layer{bottom:0}
 .layer.full{bottom:0}
 #ident{background:#000}#ident canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 #yt-wrap{overflow:hidden;background:#000}
-/* The trailer is drawn slightly larger than its area so YouTube's title bar and logo sit off-screen. */
-#yt,#yt iframe{position:absolute;top:-9%;left:-9%;width:118%;height:118%;border:0;background:#000;pointer-events:none}
+/* The trailer is drawn slightly larger than its area, pushed up, so YouTube's title bar sits off the top of the screen
+   while the bottom of the picture (subtitles, captions, release dates) stays fully in view above the info strip. */
+#yt{position:absolute;top:-9%;left:-4.5%;width:109%;height:109%;border:0;background:#000;pointer-events:none}
+#yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;pointer-events:none}
 #ytshield{position:absolute;inset:0;z-index:1}
 #ytcurtain{position:absolute;inset:0;z-index:2;background:#000;opacity:1;transition:opacity .5s}
 #ytcurtain.off{opacity:0}
@@ -147,8 +149,6 @@ body.nostrip #strip{display:none}
 #start h1{font-family:var(--f-display);font-size:9vh;margin:0 0 2vh;text-transform:uppercase}
 #start p{font-size:2.6vh;color:var(--muted);max-width:60ch;margin:1vh auto}
 #start button{font:700 3vh var(--f-body);padding:2vh 4vw;border-radius:1.2vh;border:0;background:var(--stripe);color:#1a1030;cursor:pointer;margin-top:3vh}
-#help{position:fixed;right:2vw;bottom:calc(var(--strip) + 2vh);font-size:1.8vh;color:var(--muted);background:rgba(0,0,0,.7);padding:1vh 1.2vw;border-radius:.8vh;opacity:0;transition:opacity .4s;z-index:7}
-body.pointer #help{opacity:1}
 #offline{position:fixed;top:2vh;right:2vw;z-index:7;font:600 1.6vh var(--f-body);color:var(--muted);background:rgba(0,0,0,.6);padding:.6vh 1vw;border-radius:99px}
 
 @keyframes drift{from{transform:scale(1) translateY(0)}to{transform:scale(1.04) translateY(-1vh)}}
@@ -187,11 +187,11 @@ body.lite *{animation-duration:.01s!important}body.lite .ticker div{animation-du
   <div id="start" class="layer"><div><h1>Foyer screen</h1><p id="sinfo">Loading the latest listings…</p><button id="go" hidden>Start</button><p style="font-size:2vh">Tip: press F for full screen, → to skip, B for the board. Leave this tab open; it updates itself.</p></div></div>
   <div id="strip"><img src="imc-logo.png" alt="IMC Cinemas"><div class="ticker" aria-hidden="true"><div id="tick"></div></div><div class="nextshow" id="nextshow"></div><div class="clock" id="clock"></div><div id="prog"></div></div>
 </div>
-<div id="help">→ skip · B board · F full screen · M sound on/off</div>
 <div id="offline" hidden>Showing saved listings (offline)</div>
 <script>try{if(!window.name)window.name=new URLSearchParams(location.search).get("luxx")==="1"?"imc-lounge":"imc-foyer"}catch(e){}</script>
 <script src="ident.js"></script>
 <script src="qr.js"></script>
+<script src="music.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -259,6 +259,12 @@ function safety(f){if(f.studio){const c=String(f.cert||"").toUpperCase(),sys=f.c
   return(SAFE[sys]||SAFE.bbfc).includes(c)?{ok:true}:{ok:false,why:"rated "+c}}
 function upcoming(f){const n=londonNow();return f.sessions.filter(s=>s.date&&(s.date>n.date||(s.date===n.date&&s.time>n.hm))).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))}
 /* the hub's playlist: its order, the trailers taken out, and shuffle-every-loop */
+/* slides and bottom-strip lines you've switched off or reworded in the hub */
+const PX=new Set((Q.get("px")||"").split(",").filter(Boolean)),TX=new Set((Q.get("tx")||"").split(",").filter(Boolean));
+const TT=(()=>{try{const b=(Q.get("tt")||"").replace(/-/g,"+").replace(/_/g,"/");return b?JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))):{}}catch(e){return{}}})();
+/* background music under the cards and slides (music.js), off during trailers */
+const MU=Q.get("mu")||"cinema",MV=Q.has("mv")?+Q.get("mv"):35;let music=null;
+function musicFor(id){if(!music)return;if(muted||id==="yt-wrap"||id==="start")music.off();else music.on()}
 const ORD=(Q.get("ord")||"").split(",").filter(Boolean),HIDE=new Set((Q.get("hide")||"").split(",").filter(Boolean)),SHUF=Q.get("shuf")==="1";
 function buildQueue(){let L=queueList().filter(f=>!HIDE.has(f.key));
   if(SHUF){for(let i=L.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[L[i],L[j]]=[L[j],L[i]]}}
@@ -287,7 +293,7 @@ function dayState(){const n=londonNow(),today=dayRows(n.date),now=mins(n.hm);
 
 /* ---------- layers ---------- */
 const LAYERS=["card","yt-wrap","start","ident","board","promo","hours"];
-function show(id){if(id!=="ident")cancelAnimationFrame(idRaf);for(const l of LAYERS)$("#"+l).hidden=l!==id;lastStep=Date.now()}
+function show(id){if(id!=="ident")cancelAnimationFrame(idRaf);for(const l of LAYERS)$("#"+l).hidden=l!==id;lastStep=Date.now();musicFor(id)}
 function progress(sec){const p=$("#prog");p.style.transition="none";p.style.width="0";requestAnimationFrame(()=>requestAnimationFrame(()=>{p.style.transition=`width ${sec}s linear`;p.style.width="100%"}))}
 function retrigger(el){el.classList.remove("in");void el.offsetWidth;el.classList.add("in")}
 const certHtml=(r,cls)=>r.icon?`<img src="${esc(asset(r.icon))}" alt="Rated ${esc(r.cert)}">`:r.cert?`<span>${esc(r.cert)}</span>`:"";
@@ -301,7 +307,7 @@ function showCard(f){const u=upcoming(f),n=londonNow(),day=u[0]?u[0].date:null,s
   $("#cm").innerHTML=certHtml({icon:f.certIcon,cert:f.cert})+(f.runtime?`<span>${f.runtime} min</span>`:"")+(f.luxxToo?`<span class="tag luxx">LUXX</span>`:"")+(kids?`<span class="tag kids">Kids Club</span>`:"")+(isSensory(f)?`<span class="tag relaxed">Relaxed</span>`:"")+(td?`<span class="tag td">3D</span>`:"");
   /* the next show today, counting down when it's close */
   const nx=ses[0],mto=nx&&day===n.date?mins(nx.time)-mins(n.hm):null;
-  $("#cs").innerHTML=mto!=null&&mto<=90?`<div class="soonchip${mto>20?" warm":""}">${mto<=20?"Now seating":"Next show in "+(mto>=60?"1 hr "+(mto-60?mto-60+" min":""):mto+" min")}${SCREENS&&nx.screen?" · Screen "+esc(nx.screen):""}</div>`:"";
+  $("#cs").innerHTML=mto!=null&&mto<=90?`<div class="soonchip${mto>20?" warm":""}">${mto<=5?"Next show starts soon":"Next show in "+(mto>=60?"1 hr "+(mto-60?mto-60+" min":""):mto+" min")}${SCREENS&&nx.screen?" · Screen "+esc(nx.screen):""}</div>`:"";
   $("#cw").textContent=ses.length>1?"Showtimes":ses.length?"Showtime":"";
   $("#cx").innerHTML=ses.slice(0,8).map((s,i)=>`<span class="${i===0&&mto!=null&&mto<=90?"next ":""}${s.luxx?"lx ":""}${(s.tags||[]).includes("kidsclub")?"kc":""}">${s.time}${s.luxx?"<small>LUXX</small>":SCREENS&&s.screen?`<small>Screen ${esc(s.screen)}</small>`:""}</span>`).join("");
   const bk=nx&&nx.book,qr=bk?qrSvg(bk):"";
@@ -312,7 +318,7 @@ function showCard(f){const u=upcoming(f),n=londonNow(),day=u[0]?u[0].date:null,s
 function boardHtml(ds,page,pages,rows){const n=londonNow(),now=mins(n.hm),today=ds.date===n.date;
   const head=ds.phase==="closed"?`${ds.date===addDays(n.date,1)?"Tomorrow":esc(fmtDay(ds.date).split(" ")[0])} <em>at IMC</em>`:LOUNGE?`LUXX <em>today</em>`:`Now <em>showing</em>`;
   const sub=ds.phase==="closed"?"We're closed for tonight. Thanks for visiting!":ds.phase==="opening"?`Doors open soon · first film at ${ds.first.time}`:esc(fmtDay(ds.date));
-  const st=r=>{if(!today)return`<div class="st book">Book now</div>`;const m=mins(r.time)-now;if(m<0)return`<div class="st gone">Started</div>`;if(m<=20)return`<div class="st seat">Now seating</div>`;if(m<=60)return`<div class="st soon">In ${m} min</div>`;return`<div class="st book">Book now</div>`};
+  const st=r=>{if(!today)return`<div class="st book">Book now</div>`;const m=mins(r.time)-now;if(m<0)return`<div class="st gone">Started</div>`;if(m<=5)return`<div class="st soon">Starts soon</div>`;if(m<=60)return`<div class="st soon">In ${m} min</div>`;return`<div class="st book">Book now</div>`};
   return`<div class="bhead"><div><h2>${head}</h2><p>${sub}</p></div>${pages>1?`<div class="bpage">${page+1} / ${pages}</div>`:""}</div>
   <div class="rows">${rows.map((r,i)=>`<div class="brow${today&&mins(r.time)<now?" started":""}${r.luxx?" lx":""}" style="animation-delay:${i*.06}s"><div class="t">${r.time}</div><div class="c">${certHtml(r)}</div><div class="f">${esc(r.title)}</div>
     <div class="g">${r.luxx?'<span class="tag luxx">LUXX</span>':""}${r.kids?'<span class="tag kids">Kids Club</span>':""}${r.relaxed?'<span class="tag relaxed">Relaxed</span>':""}${r.td?'<span class="tag td">3D</span>':""}</div>
@@ -326,7 +332,7 @@ function playBoard(){const ds=dayState();if(!ds.rows.length){next();return}
 
 /* ---------- promo slides, made from the live data ---------- */
 function prices(){const P=D&&D.prices&&!Array.isArray(D.prices)?D.prices:null;return(P&&P.tickets)||[]}
-function promos(){const n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out=[],tk=prices(),all=films();
+function promos(every){const n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out=[],tk=prices(),all=films();
   const wed=tk.find(t=>/wednesday/i.test(t.name)&&/meal/i.test(t.name)&&!/luxx/i.test(t.name));
   const P=D&&D.prices&&!Array.isArray(D.prices)?D.prices:{},mc=(P.products||[]).find(x=>/^medium combo$/i.test(x.name)&&x.file),hd=f=>f?f.replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/hd/$1.png"):"";
   if(!LOUNGE&&wed&&dow>=1&&dow<=3)out.push({k:"wed",img:mc&&asset(hd(mc.file)),imgFb:mc&&asset(mc.file),kick:dow===3?"Today only":"Every Wednesday",title:"Wednesday Meal Deal",lines:["Cinema ticket","Medium popcorn","Medium drink"],price:wed.price,priceSub:"ALL FOR"});
@@ -344,7 +350,7 @@ function promos(){const n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out
   out.push({k:"scan",kick:"Skip the queue",title:"Book on your phone",lines:["Scan the code with your phone camera","Choose your film, time and seats","Show your ticket at the door"],qr:TIMES_URL()});
   for(const a of ADVERTS)if((!a.from||a.from<=n.date)&&(!a.to||a.to>=n.date))for(let i=0;i<a.often;i++)out.push({k:"ad",title:a.title,img:/^https?:/.test(a.src)?a.src:asset(a.src),secs:a.secs,adv:a.adv,lines:[]});
   for(const m of MSGS)out.push({k:"msg",kick:(D&&D.cinema)||"IMC",title:m,lines:[]});
-  return out}
+  return every?out:out.filter(p=>!PX.has(p.k))}
 function playPromo(){const L=promos();if(!L.length){next();return}const p=L[promoI++%L.length],el=$("#promo");el.className="layer "+p.k;
   if(p.k==="ad"){el.innerHTML=`<div class="pbg" style="background-image:url('${esc(p.img)}')"></div><img class="adimg" src="${esc(p.img)}" alt="${esc(p.title)}">${p.adv?`<span class="adtag">Advert · ${esc(p.adv)}</span>`:""}`;
     el.querySelector(".adimg").onerror=()=>{clearTimeout(timer);next()};show("promo");progress(p.secs);timer=setTimeout(next,p.secs*1000);return}
@@ -420,19 +426,20 @@ async function playIdent(){try{if(player&&player.stopVideo)player.stopVideo()}ca
   timer=setTimeout(next,secs*1000+150)}
 
 /* ---------- live strip: clock, next show, ticker ---------- */
-function tickerItems(){const tk=prices(),n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out=[...MSGS];
-  const wed=tk.find(t=>/wednesday/i.test(t.name)&&/meal/i.test(t.name)&&!/luxx/i.test(t.name));if(wed&&!LOUNGE)out.push(`${dow===3?"TODAY: ":""}Wednesday Meal Deal: ticket, medium popcorn and medium drink for ${wed.price}`);
-  const kc=tk.find(t=>/^kids club$/i.test(t.name));if(kc&&!LOUNGE)out.push(`Kids Club: family films for ${kc.price} a ticket`);
-  const lx=tk.filter(t=>/luxx/i.test(t.name)&&!/meal|voucher|combo/i.test(t.name)).map(t=>t.price).sort((a,b)=>parseFloat(a.slice(1))-parseFloat(b.slice(1)))[0];if(lx)out.push(`Upgrade to LUXX recliners from ${lx}`);
-  out.push("Book online at imc.ie and skip the queue");if(D){const ds=dayState();if(ds.phase==="open"&&ds.last)out.push(`Last film tonight: ${ds.last.title} at ${ds.last.time}`)}
+function tickerAll(){const tk=prices(),n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out=MSGS.map((m,i)=>({k:"m"+i,t:m,mine:true}));
+  const wed=tk.find(t=>/wednesday/i.test(t.name)&&/meal/i.test(t.name)&&!/luxx/i.test(t.name));if(wed&&!LOUNGE)out.push({k:"wed",t:`${dow===3?"TODAY: ":""}Wednesday Meal Deal: ticket, medium popcorn and medium drink for ${wed.price}`});
+  const kc=tk.find(t=>/^kids club$/i.test(t.name));if(kc&&!LOUNGE)out.push({k:"kids",t:`Kids Club: family films for ${kc.price} a ticket`});
+  const lx=tk.filter(t=>/luxx/i.test(t.name)&&!/meal|voucher|combo/i.test(t.name)).map(t=>t.price).sort((a,b)=>parseFloat(a.slice(1))-parseFloat(b.slice(1)))[0];if(lx)out.push({k:"luxx",t:`Upgrade to LUXX recliners from ${lx}`});
+  out.push({k:"book",t:"Book online at imc.ie and skip the queue"});if(D){const ds=dayState();if(ds.phase==="open"&&ds.last)out.push({k:"last",t:`Last film tonight: ${ds.last.title} at ${ds.last.time}`})}
   return out}
+function tickerItems(){return tickerAll().filter(x=>!TX.has(x.k)).map(x=>x.mine?x.t:(TT[x.k]||x.t))}
 let tickKey="";
 function renderTicker(){const items=tickerItems(),k=items.join("|");if(k===tickKey)return;tickKey=k;const el=$("#tick");el.innerHTML=items.map(esc).join("<i>●</i>");
   requestAnimationFrame(()=>{const secs=Math.max(20,el.scrollWidth/90);el.style.animationDuration=secs+"s";el.style.setProperty("--td",secs+"s")})}
 function tickStrip(){const n=londonNow();$("#clock").textContent=n.hm;if(!D)return;const ds=dayState(),now=mins(n.hm);
   if(ds.phase==="closed"){const r=ds.rows[0];$("#nextshow").innerHTML=r?`Open again ${ds.date===addDays(n.date,1)?"tomorrow":esc(shortDay(ds.date))}<b>${r.time} ${esc(r.title)}</b>`:"";return}
   const r=ds.rows.find(x=>mins(x.time)>=now);if(!r){$("#nextshow").innerHTML="";return}const m=mins(r.time)-now;
-  $("#nextshow").innerHTML=`${m<=0?"Starting now":m<=20?"Now seating":"Next"}${m>20&&m<=60?` · in ${m} min`:""}${SCREENS&&r.screen?" · Screen "+esc(r.screen):""}<b>${r.time} ${esc(r.title)}</b>`}
+  $("#nextshow").innerHTML=`${m<=5?"Next · starts soon":"Next"}${m>5&&m<=60?` · in ${m} min`:""}${SCREENS&&r.screen?" · Screen "+esc(r.screen):""}<b>${r.time} ${esc(r.title)}</b>`}
 
 /* ---------- loading, with a saved copy for when the internet drops ---------- */
 async function load(){await loadStudio();let d=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json"),t=await getJson("data/trailers.json");
@@ -441,7 +448,7 @@ async function load(){await loadStudio();let d=await getJson(SITE==="enniskillen
   $("#offline").hidden=!offline;D=d;T=t||{};base=D?D._base:"";lastLoad=Date.now();
   if(!D){queue=[];return}queue=buildQueue();renderTicker();tickStrip();
   document.title=(D.cinema||"IMC")+(LOUNGE?" LUXX lounge":" foyer screen");if(LOUNGE){const h=$("#start h1");if(h)h.textContent="LUXX lounge"}}
-async function start(){if(SOUND)muted=false;si=steps.length;wake();next()}
+async function start(){if(SOUND)muted=false;if(MU!=="off"&&!music&&window.IMCMusic&&!muted){music=IMCMusic.create(MU,MV);music.start()}si=steps.length;wake();next()}
 /* keep the TV awake, and recover if anything ever gets stuck */
 let lock=null;async function wake(){try{if("wakeLock" in navigator&&!lock){lock=await navigator.wakeLock.request("screen");lock.addEventListener("release",()=>{lock=null})}}catch(e){}}
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)wake()});
@@ -450,9 +457,16 @@ setInterval(()=>{tickStrip();if(londonNow().s<15)renderTicker()},15e3);setInterv
 setInterval(()=>{const n=londonNow();if(n.hm==="05:00")location.reload()},60e3);
 document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")next();if(e.key==="b"||e.key==="B"){clearTimeout(timer);try{player&&player._done&&player._done();player&&player.pauseVideo&&player.pauseVideo()}catch(x){}try{vidStop&&vidStop()}catch(x){}playBoard()}
   if(e.key==="f"||e.key==="F"){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}
-  if(e.key==="m"||e.key==="M"){muted=!muted;$("#svid").muted=muted;if(player&&player.mute){muted?player.mute():player.unMute()}}});
+  if(e.key==="m"||e.key==="M"){muted=!muted;$("#svid").muted=muted;if(!muted&&!music&&MU!=="off"&&window.IMCMusic){music=IMCMusic.create(MU,MV);music.start()}musicFor($("#yt-wrap").hidden?"x":"yt-wrap");if(player&&player.mute){muted?player.mute():player.unMute()}}});
 let mv;document.addEventListener("mousemove",()=>{document.body.classList.add("pointer");clearTimeout(mv);mv=setTimeout(()=>document.body.classList.remove("pointer"),2500)});
-(async()=>{$("#clock").textContent=londonNow().hm;await load();if(!D){$("#sinfo").textContent="Couldn't load the listings. Check the internet connection; retrying in a minute.";setTimeout(()=>location.reload(),60e3);return}
+/* list mode (foyer.html?…&list=1, used by the hub's playlist): work out the running order and send it to the hub without playing anything */
+if(Q.get("list")==="1"){(async()=>{await load();const out=[];if(D){steps=buildSteps();const P=promos();let pi=0;
+  for(const st of steps){if(st.k==="trailer")out.push({k:"trailer",key:st.f.key,t:cleanTitle(st.f.title)});else if(st.k==="card")out.push({k:"card",key:st.f.key});
+    else if(st.k==="board")out.push({k:"board",t:LOUNGE?"LUXX today board":"Now showing board"});else if(st.k==="hours")out.push({k:"hours",t:"Opening times (shown while closed)"});
+    else if(st.k==="ident")out.push({k:"ident",t:WEL.length>1?`Welcome video (one of your ${WEL.length}, picked at random)`:"Welcome video: "+((WEL[0]&&(WEL[0].kicker+" "+WEL[0].title))||"Welcome").trim()});
+    else if(st.k==="promo"&&P.length){const p=P[pi++%P.length];out.push({k:"promo",type:p.k,t:p.title,kick:p.kick||"",lines:(p.lines||[]).slice(0,4),price:p.price||"",adv:p.adv||"",secs:p.secs||10})}}}
+  try{(window.opener||window.parent).postMessage({imcRunning:out,ok:!!D,slides:D?promos().map(p=>({type:p.k,t:p.k==="ad"?"Advert: "+p.title:p.title})):[],allSlides:D?promos(true).filter((p,i,a)=>p.k!=="ad"&&p.k!=="msg"&&a.findIndex(q=>q.k===p.k)===i).map(p=>({type:p.k,t:p.title,kick:p.kick||"",lines:(p.lines||[]).slice(0,4),price:p.price||""})):[],ticker:D?tickerAll().filter(x=>!x.mine):[]},location.origin)}catch(e){}})()}
+else (async()=>{$("#clock").textContent=londonNow().hm;await load();if(!D){$("#sinfo").textContent="Couldn't load the listings. Check the internet connection; retrying in a minute.";setTimeout(()=>location.reload(),60e3);return}
   const n=queue.length,nx=queue.filter(f=>f.extra).length,nf=n-nx;
   $("#sinfo").textContent=`${ONLY?`${nx} of your trailers on a loop`:`${nf} foyer-safe film${nf===1?"":"s"}${nx?` and ${nx} of your trailers`:""}`} for ${D.cinema}${BOARD_EVERY?", the Now showing board":""}${PROMOS?", deals and offers":""}.${SOUND&&TRAILERS?" Click Start to play with sound.":""}`;
   $("#go").hidden=false;$("#go").focus();$("#go").onclick=start;$("#start").onclick=e=>{if(e.target.id!=="go")start()};

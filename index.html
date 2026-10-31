@@ -326,10 +326,15 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .recdlg{width:min(900px,100%)!important;max-height:94vh;overflow:auto}.recplayer{aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden}.recplayer iframe{width:100%;height:100%;border:0;display:block}.recdlginfo{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}.recdlginfo .m{font-size:13px;color:var(--muted)}.recdlginfo .acts{display:flex;gap:8px;flex-wrap:wrap}
 .rectags .r{background:rgba(226,69,46,.16)}.rectags .r.ok{background:rgba(70,180,90,.2)}.recign{opacity:.55}.recrate{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-top:4px}.recrate select{font-size:12px;padding:3px 6px;width:auto}.recdlginfo .recrate{margin-top:6px}
 .xdate{font-size:12px;padding:4px 6px;max-width:150px}.xlist label.m{white-space:nowrap}
+.musicrow{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;margin-top:8px}
+.btwgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.btwh{font-size:14px;margin:0 0 6px}.btwrow{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;padding:8px 0;border-top:1px solid var(--line)}.btwrow:first-child{border-top:0}.btwrow b{font-size:14px}.btwrow .m{font-size:12px;color:var(--muted)}.btwrow.off b,.btwrow.off .m{opacity:.5}.btwrow input[type=text]{width:100%;font-size:13px;padding:6px 8px;margin-top:4px}.btwrow .rst{font-size:12px;margin-top:4px}
+@media (max-width:820px){.btwgrid{grid-template-columns:minmax(0,1fr)}}
 .plbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:10px}
 .pllist{list-style:none;margin:0;padding:0;counter-reset:pl}.plrow{display:grid;grid-template-columns:22px 26px 72px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 6px;border-top:1px solid var(--line);border-radius:8px;background:var(--panel,transparent)}.plrow:first-child{border-top:0}
 .plrow .h{cursor:grab;color:var(--muted);font-size:18px;text-align:center;user-select:none}.plrow .n{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;text-align:right}.plrow img,.plrow .ph0{width:72px;aspect-ratio:16/9;object-fit:cover;border-radius:6px;background:#111;display:grid;place-items:center;color:#fff;font-size:14px}
 .plrow b{display:block;font-size:14px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.plrow .m{font-size:12px;color:var(--muted)}.plrow .acts{display:flex;gap:2px}.plrow .acts button{min-width:34px}
+.plgap{list-style:none;display:flex;gap:10px;align-items:baseline;padding:5px 6px 5px 58px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line)}.plgap .i{width:20px;text-align:center;flex:none}.plgap b{color:var(--ink,inherit);font-weight:600}.plgap .k{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-right:4px;opacity:.8}.plgap.ad b{color:inherit}.plend{list-style:none;padding:8px 6px 0 58px;font-size:12px;color:var(--muted);border-top:1px dashed var(--line)}
+@media (max-width:640px){.plgap,.plend{padding-left:22px}}
 .plrow.drag{opacity:.4}.plrow.over{box-shadow:inset 0 3px 0 var(--accent,#ffc23d)}.plk{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:999px;margin-right:6px;background:rgba(31,160,222,.18)}.plk.yt{background:rgba(255,194,61,.22)}.plk.st{background:rgba(70,180,90,.2)}
 @media (max-width:640px){.plrow{grid-template-columns:18px 56px minmax(0,1fr) auto}.plrow .n{display:none}.plrow img,.plrow .ph0{width:56px}}
 .xlist{margin-top:10px}.xrow{display:grid;grid-template-columns:26px 96px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.xrow:first-child{border-top:0}
@@ -602,6 +607,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
 @media (max-width:640px){.lxpgrid{grid-template-columns:repeat(3,1fr)}}
 </style>
 <script src="qr.js"></script>
+<script src="music.js"></script>
 </head>
 <body>
 <div class="app">
@@ -717,8 +723,11 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
       </div>
       <div class="panel" id="plPanel"><div class="ph"><h2>Playlist</h2><span class="tip" id="plcount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">Everything playing on the foyer TVs, in order. Drag a trailer (or use the arrows) to move it, ✕ to take it out. Films from imc.ie also get their showtimes card before the trailer.</p>
-        <div class="plbar"><button class="btn small" type="button" id="plShuffle">⤮ Shuffle now</button><button class="btn small ghost" type="button" id="plReset">Reset order</button><label class="check"><input type="checkbox" id="plShuf"> Shuffle on the TVs every time round</label></div>
+        <div class="plbar"><button class="btn small" type="button" id="plShuffle">⤮ Shuffle now</button><button class="btn small ghost" type="button" id="plReset">Reset order</button><label class="check"><input type="checkbox" id="plShuf"> Shuffle on the TVs every time round</label><label class="check"><input type="checkbox" id="plAll" checked> Show what plays in between (deals, adverts, board…)</label></div>
         <ol class="pllist" id="plList"></ol><div id="plOut"></div></div>
+      <div class="panel" id="btwPanel" style="margin-top:16px"><div class="ph"><h2>Between the trailers</h2><span class="tip" id="btwcount" style="margin:0"></span></div>
+        <p class="tip" style="margin-top:0">Choose which slides play between trailers, and what scrolls along the strip at the bottom of the screen. Adverts are set up on the Adverts page; your own messages are in the box under “Screens between trailers” below.</p>
+        <div class="btwgrid"><div><h3 class="btwh">Slides</h3><div id="btwSlides"><p class="tip">Loading…</p></div></div><div><h3 class="btwh">Bottom strip</h3><div id="btwTick"><p class="tip">Loading…</p></div></div></div></div>
       <div class="panel foyopts" style="margin-top:16px">
         <div class="foygrid">
           <fieldset><legend>Which films</legend>
@@ -728,6 +737,9 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
           <fieldset><legend>Player</legend>
             <label class="check"><input type="checkbox" id="ftrail" checked> Play each film's trailer after its showtimes card</label>
             <label class="check"><input type="checkbox" id="fsound" checked> Sound on (click Start once on the TV)</label>
+            <div class="musicrow"><label class="field" style="max-width:240px;margin:0"><span class="flabel">Music under the cards and slides</span><select id="fmu"><option value="cinema">Cinematic (calm)</option><option value="chill">Chilled</option><option value="bright">Upbeat</option><option value="off">No music</option></select></label>
+              <label class="field" style="max-width:200px;margin:0"><span class="flabel">Music volume</span><input type="range" id="fmv" min="5" max="100" step="5" value="35" aria-label="Music volume"></label><button class="btn small" type="button" id="fmuPlay">▶ Listen</button></div>
+            <p class="tip" style="margin:4px 0 0">The music is made by the player itself (it isn't anyone's recording). It fades out when a trailer starts and back in for the showtimes cards, board and slides.</p>
             <label class="field" style="max-width:220px"><span class="flabel">Showtimes card length</span><select id="fcard"><option value="8">8 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option></select></label>
             <label class="field" style="max-width:300px"><span class="flabel">Welcome videos between trailers</span><select class="wfreq"></select></label><button class="btn small" data-go="welcome" style="align-self:flex-start">Make welcome videos →</button></fieldset>
           <fieldset><legend>Screens between trailers</legend>
@@ -1748,7 +1760,9 @@ function foyChosen(st){const in7=addDays(todayIso(),7),hid=new Set(st.hide||[]);
   if(st.mode==="pick")return st.pick.includes(f.key);return(f.next&&f.next.date<=in7)||(st.soon&&!f.next&&f.sources&&f.sources.has("soon"))}).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer)===i)}
 function foyUrl(st,lounge){const u=new URL("foyer.html",location.href),P=u.searchParams;if(lounge)P.set("luxx","1");P.set("c",site);P.set("mode",st.mode);if(st.mode==="pick")P.set("ids",foyChosen(st).map(f=>f.key).join(","));
   if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=(st.extra||[]);if(xs.length)P.set("x",xs.filter(x=>!x.releaseDate||x.releaseDate>=todayIso()).map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)+(x.releaseDate?"~"+x.releaseDate:"")).join("|"));const svl=STUD.filter(x=>x.url&&!svOld(x)).map(x=>[x.film,x.title||"",x.url]);if(svl.length)P.set("sv",btoa(unescape(encodeURIComponent(JSON.stringify(svl)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));if(st.what==="mine"&&(xs.length||STUD.some(x=>!x.film)))P.set("only","1");
-  {const keys=plItems(st,true).map(x=>x.key),ord=(st.order||[]).filter(k=>keys.includes(k)),hd=(st.hide||[]).filter(k=>keys.includes(k));if(ord.length)P.set("ord",ord.join(","));if(hd.length)P.set("hide",hd.join(","));if(st.shuf)P.set("shuf","1")}if((st.bd??3)!==3)P.set("bd",st.bd);if(st.pr===false)P.set("pr","0");if(st.strip===false)P.set("strip","0");if(st.scr===false)P.set("scr","0");const ms=String(st.msg||"").split("\n").map(x=>x.trim().replace(/\|/g,"/")).filter(Boolean).slice(0,6);if(ms.length)P.set("msg",ms.join("|"));const T0=todayIso(),al=(st.ads||[]).filter(a=>a.on!==false&&(!a.to||a.to>=T0)).map(a=>[a.src,a.title,a.from||"",a.to||"",a.secs||10,a.often||1,a.adv||""]);if(al.length)P.set("ad",btoa(unescape(encodeURIComponent(JSON.stringify(al)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
+  {const keys=plItems(st,true).map(x=>x.key),ord=(st.order||[]).filter(k=>keys.includes(k)),hd=(st.hide||[]).filter(k=>keys.includes(k));if(ord.length)P.set("ord",ord.join(","));if(hd.length)P.set("hide",hd.join(","));if(st.shuf)P.set("shuf","1")}
+  if((st.px||[]).length)P.set("px",st.px.join(","));if((st.tx||[]).length)P.set("tx",st.tx.join(","));if(st.tt&&Object.keys(st.tt).length)P.set("tt",btoa(unescape(encodeURIComponent(JSON.stringify(st.tt)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));
+  if(st.mu&&st.mu!=="cinema")P.set("mu",st.mu);if(st.mv!=null&&st.mv!==35)P.set("mv",st.mv);if((st.bd??3)!==3)P.set("bd",st.bd);if(st.pr===false)P.set("pr","0");if(st.strip===false)P.set("strip","0");if(st.scr===false)P.set("scr","0");const ms=String(st.msg||"").split("\n").map(x=>x.trim().replace(/\|/g,"/")).filter(Boolean).slice(0,6);if(ms.length)P.set("msg",ms.join("|"));const T0=todayIso(),al=(st.ads||[]).filter(a=>a.on!==false&&(!a.to||a.to>=T0)).map(a=>[a.src,a.title,a.from||"",a.to||"",a.secs||10,a.often||1,a.adv||""]);if(al.length)P.set("ad",btoa(unescape(encodeURIComponent(JSON.stringify(al)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
 /* ---------- playlist: what plays, in order (films, your trailers, studio trailers); order, hide and shuffle go to the foyer player ---------- */
 function plItems(st,withHidden){const out=[],today=todayIso(),hid=new Set(st.hide||[]),mine=st.what==="mine"&&((st.extra||[]).length||STUD.some(x=>!x.film));
   if(!mine)for(const f of foyChosen({...st,hide:withHidden?[]:st.hide})){const nx=f.next;out.push({key:f.key,title:f.title,kind:f.studio?"studio":"film",img:asset(f.posterFile)||f.poster||"",sub:(f.cert?f.cert+" · ":"")+(nx?(nx.date===today?"Today ":fmtShort(nx.date)+" ")+nx.time:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"")+(f.studio?" · studio trailer":"")})}
@@ -1759,9 +1773,45 @@ function plItems(st,withHidden){const out=[],today=todayIso(),hid=new Set(st.hid
 function renderPlaylist(st){const el=$("#plList");if(!el)return;const L=plItems(st),all=plItems(st,true),hid=new Set(st.hide||[]),gone=all.filter(x=>hid.has(x.key));
   $("#plShuf").checked=!!st.shuf;$("#plcount").textContent=L.length?`${L.length} trailer${L.length===1?"":"s"}${st.shuf?" · shuffled on the TVs":""}`:"";
   const kind={film:'<span class="plk">imc.ie</span>',yt:'<span class="plk yt">Your trailer</span>',studio:'<span class="plk st">Studio</span>'};
-  el.innerHTML=L.length?L.map((x,i)=>`<li class="plrow" draggable="true" data-pl="${esc(x.key)}"><span class="h" aria-hidden="true" title="Drag to move">⠿</span><span class="n">${i+1}</span>${x.img?`<img src="${esc(x.img)}" alt="" loading="lazy">`:'<span class="ph0">🎞</span>'}<div style="min-width:0"><b>${esc(x.title)}</b><div class="m">${kind[x.kind]||""}${esc(x.sub||"")}</div></div>
-    <div class="acts"><button class="btn small ghost" data-plmv="${i}" data-d="-1" ${i?"":"disabled"} aria-label="Move ${esc(x.title)} up">↑</button><button class="btn small ghost" data-plmv="${i}" data-d="1" ${i<L.length-1?"":"disabled"} aria-label="Move ${esc(x.title)} down">↓</button><button class="btn small ghost danger" data-plrm="${esc(x.key)}" aria-label="Take ${esc(x.title)} out of the playlist">✕</button></div></li>`).join(""):'<li class="tip" style="list-style:none">Nothing in the playlist yet. Tick films below, or add trailers from Recommended.</li>';
+  const gaps=$("#plAll").checked&&RUN&&RUN.url===foyUrl(st)?RUN.gaps:null,gapHtml=g=>(g||[]).map(plGap).join("");
+  el.innerHTML=L.length?L.map((x,i)=>gapHtml(gaps&&gaps.before[x.key])+`<li class="plrow" draggable="true" data-pl="${esc(x.key)}"><span class="h" aria-hidden="true" title="Drag to move">⠿</span><span class="n">${i+1}</span>${x.img?`<img src="${esc(x.img)}" alt="" loading="lazy">`:'<span class="ph0">🎞</span>'}<div style="min-width:0"><b>${esc(x.title)}</b><div class="m">${kind[x.kind]||""}${esc(x.sub||"")}</div></div>
+    <div class="acts"><button class="btn small ghost" data-plmv="${i}" data-d="-1" ${i?"":"disabled"} aria-label="Move ${esc(x.title)} up">↑</button><button class="btn small ghost" data-plmv="${i}" data-d="1" ${i<L.length-1?"":"disabled"} aria-label="Move ${esc(x.title)} down">↓</button><button class="btn small ghost danger" data-plrm="${esc(x.key)}" aria-label="Take ${esc(x.title)} out of the playlist">✕</button></div></li>`).join("")+(gaps?gapHtml(gaps.end)+'<li class="plend">↻ Then it starts again from the top'+(st.shuf?", in a new random order":"")+'.'+(RUN.slides.length>1?` The deals and offers slides take turns in the breaks, so each time round shows the next ones: ${RUN.slides.map(x=>esc(x.t)).join(" · ")}.`:"")+'</li>':""):'<li class="tip" style="list-style:none">Nothing in the playlist yet. Tick films below, or add trailers from Recommended.</li>';
+  if(!RUN||RUN.url!==foyUrl(st))plRunSoon(st);renderBetween(st);
   $("#plOut").innerHTML=gone.length?`<details class="fgroup" style="margin-top:8px"><summary>Taken out <span>${gone.length} · not playing</span></summary>${gone.map(x=>`<div class="plrow" style="grid-template-columns:72px minmax(0,1fr) auto">${x.img?`<img src="${esc(x.img)}" alt="" loading="lazy">`:'<span class="ph0">🎞</span>'}<div style="min-width:0"><b>${esc(x.title)}</b><div class="m">${esc(x.sub||"")}</div></div><div class="acts"><button class="btn small" data-plback="${esc(x.key)}">Put back</button></div></div>`).join("")}</details>`:""}
+/* what plays between the trailers: asked from the foyer player itself (foyer.html?…&list=1 in a hidden frame), so it matches the TVs */
+let RUN=null,runT=0,runFrame=null;
+const PL_ICON={board:"🗓",hours:"🕘",ident:"✨",wed:"🍿",kids:"🧒",luxx:"🛋",soon:"🎬",last:"⏳",scan:"📱",ad:"📣",msg:"💬"};
+function plGap(g){const ic=PL_ICON[g.type||g.k]||"•";
+  if(g.k==="promo"){const what=g.type==="ad"?`<span class="k">Advert</span><b>${esc(g.t)}</b>${g.adv?" · "+esc(g.adv):""} · ${g.secs}s`:g.type==="msg"?`<span class="k">Your message</span><b>${esc(g.t)}</b>`:`<span class="k">${esc(g.kick||"Offer")}</span><b>${esc(g.t)}</b>${g.lines&&g.lines.length?" · "+esc(g.lines.join(" · ")):""}${g.price?" · "+esc(g.price):""}`;
+    return`<li class="plgap ${g.type==="ad"?"ad":""}"><span class="i" aria-hidden="true">${ic}</span><span>${what}</span></li>`}
+  return`<li class="plgap"><span class="i" aria-hidden="true">${ic}</span><span><b>${esc(g.t)}</b></span></li>`}
+function plRunSoon(st){clearTimeout(runT);runT=setTimeout(()=>plRunFetch(foyState()),500)}
+function plRunFetch(st){const url=foyUrl(st);if(runFrame)runFrame.remove();runFrame=document.createElement("iframe");runFrame.hidden=true;runFrame.setAttribute("aria-hidden","true");runFrame.tabIndex=-1;
+  runFrame.src=url+(url.includes("?")?"&":"?")+"list=1";runFrame.dataset.url=url;document.body.appendChild(runFrame)}
+window.addEventListener("message",e=>{if(e.origin!==location.origin||!e.data||!e.data.imcRunning||!runFrame||e.source!==runFrame.contentWindow)return;
+  const url=runFrame.dataset.url,before={},end=[];let pend=[];
+  for(const it of e.data.imcRunning){if(it.k==="card")continue;if(it.k==="trailer"){if(pend.length)before[it.key]=(before[it.key]||[]).concat(pend);pend=[];continue}pend.push(it)}
+  end.push(...pend);RUN={url,gaps:{before,end},slides:e.data.slides||[],allSlides:e.data.allSlides||[],ticker:e.data.ticker||[]};runFrame.remove();runFrame=null;renderPlaylist(foyState())});
+const SLIDE_NAMES={wed:"Wednesday Meal Deal",kids:"Kids Club",luxx:"LUXX upgrade",soon:"Coming soon posters",last:"Last chance to see",scan:"Scan to book"};
+const TICK_NAMES={wed:"Wednesday Meal Deal",kids:"Kids Club",luxx:"LUXX upgrade",book:"Book online",last:"Last film tonight"};
+function renderBetween(st){const sl=$("#btwSlides"),tk=$("#btwTick");if(!sl||!RUN)return;const px=new Set(st.px||[]),tx=new Set(st.tx||[]),tt=st.tt||{};
+  const A=RUN.allSlides||[];
+  sl.innerHTML=A.length?A.map(x=>`<label class="btwrow${px.has(x.type)?" off":""}"><input type="checkbox" data-btwslide="${esc(x.type)}" ${px.has(x.type)?"":"checked"}><span><b>${esc(SLIDE_NAMES[x.type]||x.t)}</b><div class="m">${esc([x.kick&&x.kick!==x.t?x.kick:"",x.t,...(x.lines||[])].filter(Boolean).join(" · "))}${x.price?" · "+esc(x.price):""}</div></span></label>`).join("")+'<p class="tip" style="margin:6px 0 0">Slides only appear when they apply: Kids Club when there are Kids Club showings, Wednesday Meal Deal Monday to Wednesday, and so on.</p>':'<p class="tip">No slides apply right now.</p>';
+  const T=RUN.ticker||[];
+  tk.innerHTML=T.length?T.map(x=>`<div class="btwrow${tx.has(x.k)?" off":""}"><input type="checkbox" data-btwtick="${esc(x.k)}" ${tx.has(x.k)?"":"checked"} aria-label="Show ${esc(TICK_NAMES[x.k]||x.k)} on the strip"><span><b>${esc(TICK_NAMES[x.k]||x.k)}</b><input type="text" data-btwtext="${esc(x.k)}" value="${esc(tt[x.k]||x.t)}" maxlength="140" aria-label="Wording for ${esc(TICK_NAMES[x.k]||x.k)}">${tt[x.k]?`<button class="btn small ghost rst" type="button" data-btwreset="${esc(x.k)}">Use the automatic wording</button>`:""}</span></div>`).join("")+'<p class="tip" style="margin:6px 0 0">Prices in the automatic wording come from imc.ie. If you change the wording, it stays as you typed it.</p>':'<p class="tip">Nothing on the strip right now.</p>';
+  $("#btwcount").textContent=`${A.filter(x=>!px.has(x.type)).length} of ${A.length} slides on`}
+$("#btwPanel").addEventListener("change",e=>{const t=e.target,st=foyState();
+  if(t.dataset.btwslide){const k=t.dataset.btwslide;st.px=t.checked?(st.px||[]).filter(x=>x!==k):[...new Set([...(st.px||[]),k])]}
+  else if(t.dataset.btwtick){const k=t.dataset.btwtick;st.tx=t.checked?(st.tx||[]).filter(x=>x!==k):[...new Set([...(st.tx||[]),k])]}
+  else if(t.dataset.btwtext){const k=t.dataset.btwtext,v=t.value.trim(),def=((RUN&&RUN.ticker)||[]).find(x=>x.k===k);st.tt={...(st.tt||{})};if(!v||(def&&v===def.t))delete st.tt[k];else st.tt[k]=v.slice(0,140);toast("Strip wording saved")}
+  else return;foySave(st);renderFoyer()});
+$("#btwPanel").addEventListener("click",e=>{const b=e.target.closest("[data-btwreset]");if(!b)return;const st=foyState();st.tt={...(st.tt||{})};delete st.tt[b.dataset.btwreset];foySave(st);renderFoyer()});
+/* music: settings and a short preview */
+let musicPrev=null,musicPrevT=0;
+$("#fmuPlay").onclick=()=>{const st=foyState();if(musicPrev&&musicPrev.playing){musicPrev.off(.4);clearTimeout(musicPrevT);$("#fmuPlay").textContent="▶ Listen";return}
+  if(st.mu==="off"){toast("Music is off. Choose a style first");return}if(!window.IMCMusic)return;if(musicPrev)musicPrev.stop();musicPrev=IMCMusic.create(st.mu||"cinema",st.mv??35);musicPrev.start();musicPrev.on(.8);$("#fmuPlay").textContent="■ Stop";
+  musicPrevT=setTimeout(()=>{musicPrev.off(1.5);$("#fmuPlay").textContent="▶ Listen"},20000)};
+$("#fmv").addEventListener("input",e=>{if(musicPrev)musicPrev.setVolume(+e.target.value)});
 function plSetOrder(keys){const st=foyState();st.order=keys;foySave(st);renderFoyer()}
 $("#plList").addEventListener("click",e=>{const mv=e.target.closest("[data-plmv]"),rm=e.target.closest("[data-plrm]");const st=foyState(),keys=plItems(st).map(x=>x.key);
   if(mv){const i=+mv.dataset.plmv,j=i+ +mv.dataset.d;if(j<0||j>=keys.length)return;[keys[i],keys[j]]=[keys[j],keys[i]];plSetOrder(keys);return}
@@ -1769,6 +1819,7 @@ $("#plList").addEventListener("click",e=>{const mv=e.target.closest("[data-plmv]
 $("#plOut").addEventListener("click",e=>{const b=e.target.closest("[data-plback]");if(!b)return;const st=foyState();st.hide=(st.hide||[]).filter(k=>k!==b.dataset.plback);foySave(st);renderFoyer();toast("Back in the playlist")});
 $("#plShuffle").onclick=()=>{const keys=plItems(foyState()).map(x=>x.key);for(let i=keys.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[keys[i],keys[j]]=[keys[j],keys[i]]}plSetOrder(keys);toast("Shuffled")};
 $("#plReset").onclick=()=>{plSetOrder([]);toast("Back to the usual order: films by next showing, then your trailers")};
+$("#plAll").addEventListener("change",()=>renderPlaylist(foyState()));
 $("#plShuf").addEventListener("change",e=>{const st=foyState();st.shuf=e.target.checked;foySave(st);renderFoyer()});
 /* drag and drop to reorder */
 let plDrag=null;
@@ -1781,7 +1832,7 @@ async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts
   if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}STUD=await studGet();
   const st=foyState(),fl=foyFilms(),chosen=new Set(foyChosen(st).map(f=>f.key));
   $$("input[name=fmode]").forEach(r=>r.checked=r.value===st.mode);$("#fsoon").checked=st.soon;$("#ftrail").checked=st.trail;$("#fsound").checked=st.sound;$("#fcard").value=String(st.card);$("#fbd").value=String(st.bd??3);$("#fpr").checked=st.pr!==false;$("#fstrip").checked=st.strip!==false;$("#fscr").checked=st.scr!==false;if(document.activeElement!==$("#fmsg"))$("#fmsg").value=st.msg||"";
-  wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=st.what==="mine"&&(st.extra||[]).length?"Not playing: only your trailers are on":`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;$("#fwhat").value=st.what||"both";renderExtra(st);renderStudio();renderRec(st);renderPlaylist(st);
+  wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=st.what==="mine"&&(st.extra||[]).length?"Not playing: only your trailers are on":`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;$("#fwhat").value=st.what||"both";$("#fmu").value=st.mu||"cinema";$("#fmv").value=String(st.mv??35);renderExtra(st);renderStudio();renderRec(st);renderPlaylist(st);
   const row=f=>{const sf=foySafety(f,st),t=(TRAIL||{})[f.trailer]||{},nx=f.next?`${f.next.date===todayIso()?"Today":fmtShort(f.next.date)} ${f.next.time}`:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"No upcoming times";
     return`<div class="frow"><input type="checkbox" aria-label="Include ${esc(f.title)}" data-fpick="${esc(f.key)}" ${chosen.has(f.key)?"checked":""} ${sf.ok&&st.mode==="pick"?"":"disabled"}>
       <img class="p" src="${esc(asset(f.posterFile)||f.poster||"")}" alt="" loading="lazy">
@@ -1894,7 +1945,7 @@ $("#xlist").addEventListener("click",e=>{const mv=e.target.closest("[data-xmove]
   if(mv){const i=+mv.dataset.xmove,j=i+ +mv.dataset.d;if(j<0||j>=xs.length)return;[xs[i],xs[j]]=[xs[j],xs[i]]}else xs.splice(+dl.dataset.xdel,1);st.extra=xs;foySave(st);renderFoyer()});
 $("#v-foyer").addEventListener("change",e=>{const st=foyState(),t=e.target;
   if(t.name==="fmode"){st.mode=t.value;if(st.mode==="pick"&&!st.pick.length)st.pick=foyChosen({...st,mode:"auto"}).map(f=>f.key)}
-  else if(t.id==="fsoon")st.soon=t.checked;else if(t.id==="ftrail")st.trail=t.checked;else if(t.id==="fsound")st.sound=t.checked;else if(t.id==="fcard")st.card=+t.value;else if(t.id==="fbd")st.bd=+t.value;else if(t.id==="fpr")st.pr=t.checked;else if(t.id==="fstrip")st.strip=t.checked;else if(t.id==="fscr")st.scr=t.checked;else if(t.id==="fmsg")st.msg=t.value.slice(0,600);else if(t.id==="fwhat")st.what=t.value;else if(t.dataset.xdate){const x=(st.extra||[])[+t.dataset.xdate];if(!x)return;if(t.value)x.releaseDate=t.value;else delete x.releaseDate}
+  else if(t.id==="fsoon")st.soon=t.checked;else if(t.id==="ftrail")st.trail=t.checked;else if(t.id==="fsound")st.sound=t.checked;else if(t.id==="fcard")st.card=+t.value;else if(t.id==="fbd")st.bd=+t.value;else if(t.id==="fpr")st.pr=t.checked;else if(t.id==="fstrip")st.strip=t.checked;else if(t.id==="fscr")st.scr=t.checked;else if(t.id==="fmsg")st.msg=t.value.slice(0,600);else if(t.id==="fwhat")st.what=t.value;else if(t.id==="fmu"){st.mu=t.value;if(musicPrev&&musicPrev.playing)musicPrev.setMood(t.value)}else if(t.id==="fmv")st.mv=+t.value;else if(t.dataset.xdate){const x=(st.extra||[])[+t.dataset.xdate];if(!x)return;if(t.value)x.releaseDate=t.value;else delete x.releaseDate}
   else if(t.dataset.fpick){const k=t.dataset.fpick;st.pick=t.checked?[...new Set([...st.pick,k])]:st.pick.filter(x=>x!==k);if(t.checked)st.hide=(st.hide||[]).filter(x=>x!==k)}
   else if(t.dataset.fok){if(t.checked){st.ok=[...new Set([...st.ok,t.dataset.fok])];if(st.mode==="pick")st.pick=[...new Set([...st.pick,t.dataset.fok])]}}
   else return;foySave(st);renderFoyer()});
@@ -2628,7 +2679,7 @@ function renderManager(){const el=$("#mgrBody");if(!el)return;if(!IMC){el.innerH
   el.innerHTML=`
   <div class="mnow">
     <div class="mcell"><span>Right now</span><b>${n.hm}</b><small>${esc(fmtLong(T))}</small></div>
-    <div class="mcell"><span>Screens running</span><b>${running}</b><small>${seating.length?`${seating.length} seating now`:"none seating now"}</small></div>
+    <div class="mcell"><span>Screens running</span><b>${running}</b><small>${seating.length?`${seating.length} starting within 20 min`:"none starting within 20 min"}</small></div>
     <div class="mcell"><span>Next show</span><b>${nextShow?ohm(nextShow.start):"–"}</b><small>${nextShow?esc(nextShow.title)+(nextShow.screen?` · Screen ${esc(nextShow.screen)}`:""):"No more shows today"}</small></div>
     <div class="mcell"><span>Team needed this hour</span><b>${hr?hr.total:"–"}</b><small>${hr?`${hr.kiosk} on box office and kiosk, ${hr.usher} usher${hr.usher===1?"":"s"}`:"Outside opening hours"}</small></div>
   </div>
