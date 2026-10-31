@@ -154,19 +154,18 @@ export async function buildRecommended(outDir) {
       else v.checked = true;
       knownNow[v.id] = v.checked ? null : v.published;
     }
-    let n = 0;
+    let n = 0;const rej = {}, samples = [];
     for (const v of found.values()) {
       const { title, desc = "", published } = v;
-      if (!/trailer|teaser/i.test(title) || NOT_TRAILER.test(title) || RED.test(title + " " + desc.slice(0, 300)) || NOT_CINEMA.test(title)) continue;
-      /* strict channels (Disney's main one): only trailers that say they're in cinemas, and nothing that mentions streaming */
-      if (opt.strict && (!IN_CINEMAS.test(title + " " + desc) || STREAMING.test(title + " " + desc.slice(0, 600)))) continue;
-      if (!published || Date.parse(published) < since) continue;
+      const why = !/trailer|teaser/i.test(title) ? "noword" : NOT_TRAILER.test(title) ? "notTrailer" : RED.test(title + " " + desc.slice(0, 300)) ? "red" : NOT_CINEMA.test(title) ? "notCinema"
+        : opt.strict && !IN_CINEMAS.test(title + " " + desc) ? "noCinemaWord" : opt.strict && STREAMING.test(title + " " + desc.slice(0, 600)) ? "streaming" : !published ? "noDate" : Date.parse(published) < since ? "old" : "";
+      if (why) { rej[why] = (rej[why] || 0) + 1; if (why !== "noword" && samples.length < 4) samples.push(why + ": " + title.slice(0, 60) + (why === "red" ? " :: " + (RED.exec(title + " " + desc.slice(0, 300)) || [""])[0] : "")); continue; }
       const rel = releaseHint(desc, published) || releaseHint(title, published);
       const bbfc = ratingHint(desc) || ratingHint(title) || (prev.items || []).find((x) => x.id === v.id)?.bbfc || null;
       items.push({ id: v.id, title, film: filmName(title), dist: name, published, ...(opt.us ? { us: true } : {}), ...(bbfc ? { bbfc } : {}), ...(v.approx ? { approx: true } : {}), ...(v.checked ? { checked: true } : {}), views: v.views || 0, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
       n++;
     }
-    dists.push({ name, handle, id, ok: found.size > 0, count: n, rss, pages: diag.join(" "), looked, ...(found.size ? {} : { why: "nothing could be read" }) });
+    dists.push({ name, handle, id, ok: found.size > 0, count: n, rss, pages: diag.join(" "), looked, rej, samples, ...(found.size ? {} : { why: "nothing could be read" }) });
   }
   /* keep trailers found on earlier runs (the channels only show their newest videos), unless they're now too old */
   const fresh = new Set(items.map((x) => x.id));
