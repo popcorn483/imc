@@ -599,6 +599,8 @@ for (const cin of CINEMAS) {
   await fs.writeFile(idxFile, JSON.stringify(idx, null, 1));
   console.log(`stills: ${ids.size} trailers, ${added} newly saved`);
 }
+// newest public trailers from the distributors' official YouTube channels, for the hub's "Recommended" list
+try { const { buildRecommended } = await import("./recommended.mjs"); await buildRecommended(OUT); } catch (e) { console.log("recommended failed: " + e.message); }
 // cinema building photos from imc.ie's cinema list (used for LUXX and "visit us" designs): data/sites/<id>.<ext>
 const SITE_PICS = {};
 {
