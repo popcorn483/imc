@@ -469,6 +469,7 @@ body{background:var(--bg);color:var(--ink);font-size:15px;-webkit-font-smoothing
 .topbar .brand b{color:#fff;letter-spacing:.03em}.topbar .brand b span{color:#7fd0ff}
 .menubtn{color:#fff;border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.04)}.menubtn:hover{background:rgba(255,255,255,.1)}
 nav.quick button,.qtab{color:rgba(255,255,255,.72)!important;background:transparent!important;border-radius:9px;font-weight:600;transition:background .15s,color .15s}
+nav.quick a.qtab{display:inline-flex;align-items:center;padding:7px 12px;white-space:nowrap;text-decoration:none;font-size:inherit}nav.quick a.qplay{color:var(--gold,#ffc23d)!important}nav.quick a.qtab:hover{color:#fff!important;background:rgba(255,255,255,.08)!important}
 nav.quick button:hover{color:#fff!important;background:rgba(255,255,255,.08)!important}
 nav.quick button[aria-current="true"]{color:#fff!important;background:rgba(255,255,255,.1)!important;box-shadow:inset 0 -2px 0 var(--gold)}
 .topright .sitepick select{background-color:var(--navy-2);color:#fff;border:1px solid rgba(255,255,255,.2)}
@@ -620,6 +621,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
       <button class="qtab" data-view="plan">Week ahead</button>
       <button class="qtab" data-view="ads">Adverts</button>
       <button class="qtab" data-view="foyer">Foyer TVs</button>
+      <a class="qtab qplay" id="qFoyerPlay" href="foyer.html" target="imc-foyer" title="Open the foyer TV player in its own tab">▶ Foyer player ↗</a>
     </nav>
     <div class="topright"><div class="a11ywrap"><button class="btn a11ybtn" id="a11yBtn" type="button" aria-expanded="false" aria-haspopup="dialog" title="Easier to read: text size and contrast" aria-label="Easier to read: text size and contrast">Aa</button></div><button class="btn ezbtn" data-easy type="button">✨ <span>Easy mode</span></button><div class="sitepick"><label for="sitesel">Cinema</label><select id="sitesel"></select></div><a class="btn primary edlink" href="editor.html" target="imc-editor">Editor ↗</a></div>
   </header>
@@ -648,6 +650,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
       <button data-view="calendar">Ideas calendar<small>Key dates and what to post</small></button>
       <h3>Foyer TVs</h3>
       <button data-view="foyer">Foyer trailers<small>Safe trailer loop and packs</small></button>
+      <a class="navlink" id="dFoyerPlay" href="foyer.html" target="imc-foyer">▶ Foyer TV player ↗<small>Opens the player for the foyer TVs</small></a>
       <button data-view="welcome">Welcome videos<small>IMC and LUXX logo reveals</small></button>
       <h3>Help &amp; settings</h3>
       <button data-view="toolkit">Toolkit<small>Captions, hashtags, sizes, brand settings</small></button>
@@ -1827,12 +1830,17 @@ $("#plList").addEventListener("dragstart",e=>{const r=e.target.closest("[data-pl
 $("#plList").addEventListener("dragover",e=>{if(!plDrag)return;const r=e.target.closest("[data-pl]");if(!r)return;e.preventDefault();$$("#plList .over").forEach(x=>x.classList.remove("over"));if(r.dataset.pl!==plDrag)r.classList.add("over")});
 $("#plList").addEventListener("drop",e=>{const r=e.target.closest("[data-pl]");if(!plDrag||!r)return;e.preventDefault();const keys=plItems(foyState()).map(x=>x.key),from=keys.indexOf(plDrag);if(from<0)return;keys.splice(from,1);keys.splice(keys.indexOf(r.dataset.pl),0,plDrag);plDrag=null;plSetOrder(keys)});
 $("#plList").addEventListener("dragend",()=>{plDrag=null;$$("#plList .drag,#plList .over").forEach(x=>x.classList.remove("drag","over"))});
+/* live updates: the foyer player on this computer reads these and changes itself between screens (no need to reopen it) */
+let liveReady=false;
+async function foyLiveSave(){if(!IMC)return;try{if(!liveReady){STUD=await studGet();if(!TRAIL)TRAIL=(await getJson("data/trailers.json"))||{};liveReady=true}
+  const st=foyState(),fu=foyUrl(st);for(const id of["qFoyerPlay","dFoyerPlay"]){const a=document.getElementById(id);if(a)a.href=fu}localStorage.setItem("imc-foyer-live:"+site,new URL(foyUrl(st)).search.slice(1));localStorage.setItem("imc-foyer-live:"+site+":luxx",new URL(foyUrl(st,true)).search.slice(1))}catch(e){}}
+setInterval(foyLiveSave,20e3);setTimeout(foyLiveSave,4000);
 async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
   if(!IMC){el.innerHTML=noData();return}
-  if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}STUD=await studGet();
+  if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}STUD=await studGet();liveReady=true;
   const st=foyState(),fl=foyFilms(),chosen=new Set(foyChosen(st).map(f=>f.key));
   $$("input[name=fmode]").forEach(r=>r.checked=r.value===st.mode);$("#fsoon").checked=st.soon;$("#ftrail").checked=st.trail;$("#fsound").checked=st.sound;$("#fcard").value=String(st.card);$("#fbd").value=String(st.bd??3);$("#fpr").checked=st.pr!==false;$("#fstrip").checked=st.strip!==false;$("#fscr").checked=st.scr!==false;if(document.activeElement!==$("#fmsg"))$("#fmsg").value=st.msg||"";
-  wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=st.what==="mine"&&(st.extra||[]).length?"Not playing: only your trailers are on":`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;$("#fwhat").value=st.what||"both";$("#fmu").value=st.mu||"cinema";$("#fmv").value=String(st.mv??35);renderExtra(st);renderStudio();renderRec(st);renderPlaylist(st);
+  wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=st.what==="mine"&&(st.extra||[]).length?"Not playing: only your trailers are on":`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;foyLiveSave();$("#fwhat").value=st.what||"both";$("#fmu").value=st.mu||"cinema";$("#fmv").value=String(st.mv??35);renderExtra(st);renderStudio();renderRec(st);renderPlaylist(st);
   const row=f=>{const sf=foySafety(f,st),t=(TRAIL||{})[f.trailer]||{},nx=f.next?`${f.next.date===todayIso()?"Today":fmtShort(f.next.date)} ${f.next.time}`:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"No upcoming times";
     return`<div class="frow"><input type="checkbox" aria-label="Include ${esc(f.title)}" data-fpick="${esc(f.key)}" ${chosen.has(f.key)?"checked":""} ${sf.ok&&st.mode==="pick"?"":"disabled"}>
       <img class="p" src="${esc(asset(f.posterFile)||f.poster||"")}" alt="" loading="lazy">

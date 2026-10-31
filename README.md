@@ -499,6 +499,15 @@ The **Playlist** at the top of the Foyer trailers page lists everything playing 
 - The keyboard-hint bar no longer appears when the mouse moves. The keys still work.
 - YouTube trailers are now cropped at the top only, so subtitles and captions at the bottom of a trailer aren't cut off above the info strip.
 
+### Hands-off running (no need to touch the foyer PC)
+
+- **Live settings:** the hub saves the foyer player's settings in the browser (`imc-foyer-live:<cinema>`, every 20 seconds and on every change). A foyer player open on the same computer and browser picks up changes between screens, without reloading, so sound keeps working. Settings changed on a different computer reach the TVs when the player is next opened from that computer's link.
+- **Listings** are re-read every 30 minutes, or every 2 minutes while the internet is down. **A new version of the player** is noticed within 15 minutes, and the page reloads itself between screens.
+- **After any reload** (a new version, the 5 a.m. refresh, or the stuck-screen watchdog) it starts again on its own. Browsers only allow sound after one click, so after a PC restart the trailers play silently with a small "click anywhere to turn it on" note until someone clicks. To have sound with no click at all, start Chrome on the foyer PC with `--autoplay-policy=no-user-gesture-required` (for example in the shortcut's Target box).
+- **No internet:** `foyer-sw.js` keeps a copy of the player, its scripts, the listings and every picture it has shown, so after a restart with no internet it still opens and runs. YouTube trailers and studio links are left out of the loop until the internet is back: showtimes cards, the board, slides, welcome videos and studio trailer files saved on that PC carry on. A small "No internet: showing saved listings" note shows in the corner.
+- **Subtitles:** YouTube captions are switched off for English trailers. Trailers that look like another language (Polish, Indian languages, Japanese, Korean and so on) get English subtitles. Subtitles burned into the video can't be removed.
+- The top bar and the menu have a **▶ Foyer player** link that opens the player with the current settings.
+
 ## Recommended trailers (new releases from distributors)
 
 The **Recommended: new trailers** section on the Foyer trailers page lists the newest public trailers from the distributors' official UK YouTube channels: Warner Bros., Disney (its main channel, @disney, strictly filtered: only trailers that say they're in cinemas or theaters, and nothing mentioning Disney+ or streaming), Universal, Sony Pictures, Paramount (@paramountpictures), StudioCanal, Lionsgate (@lionsgatemovies), Searchlight, Pathé, Altitude and Vertigo.
