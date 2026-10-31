@@ -23,6 +23,8 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # the latest code, even when this run was queued behind another
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -37,5 +39,6 @@ jobs:
           git add data
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "Update IMC listings from imc.ie"
-          git pull --rebase
+          # a run that waited in the queue may overlap with the last one: its newer data wins
+          git pull --rebase -X theirs
           git push
