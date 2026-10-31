@@ -478,7 +478,7 @@ Your trailer then plays on the foyer player (it travels in the TV link) and goes
 
 ## Recommended trailers (new releases from distributors)
 
-The **Recommended: new trailers** section on the Foyer trailers page lists the newest public trailers from the distributors' official UK YouTube channels: Warner Bros., Disney, Universal, Sony Pictures, Paramount, StudioCanal, Lionsgate, Searchlight, Pathé, Altitude and Vertigo.
+The **Recommended: new trailers** section on the Foyer trailers page lists the newest public trailers from the distributors' official UK YouTube channels: Warner Bros., Disney, Universal, Sony Pictures, Paramount, StudioCanal, Lionsgate (its main channel, @lionsgatemovies), Searchlight, Pathé, Altitude and Vertigo.
 
 - The importer (`tools/recommended.mjs`, run with each import) reads each channel's public feed, its Videos tab and its trailer search. It looks up each new trailer's upload date and description once, and keeps earlier finds for 150 days. The results go in `data/recommended.json`. To add a distributor, add its name and YouTube @handle (or channel id) to `DISTRIBUTORS`.
 - It leaves out red-band trailers, clips, featurettes, reviews and digital or streaming releases. The release date ("In cinemas 21 November") and the rating ("Rated 12A") are read from the trailer's description when the distributor gives them.

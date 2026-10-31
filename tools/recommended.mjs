@@ -12,7 +12,7 @@ export const DISTRIBUTORS = [
   ["Sony Pictures", "UCJJap_3RGZ2UxqLTLz0K39g"],
   ["Paramount", "@ParamountPicturesUK"],
   ["StudioCanal", "@StudiocanalUK"],
-  ["Lionsgate", "@LionsgateUK"],
+  ["Lionsgate", "@lionsgatemovies"],
   ["Searchlight", "@SearchlightUK"],
   ["Pathé", "@PatheUK"],
   ["Altitude", "@AltitudeFilms"],
