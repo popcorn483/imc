@@ -476,6 +476,17 @@ On the Foyer trailers page, any film with no trailer on imc.ie (or whose trailer
 
 Your trailer then plays on the foyer player (it travels in the TV link) and goes in the pack's trailer list. "Remove my link" undoes it.
 
+## Studio trailers (WB360, Disney Box and other portals)
+
+In **Foyer trailers**, the **Studio trailers** panel takes trailers downloaded from the studios' own sites:
+
+- Pick the film (or "Not on imc.ie yet" and type its name), then **Choose video file** (MP4/H.264, WebM or a browser-playable MOV) or paste a **download link** (a Dropbox share link works; it's turned into a direct link). Each one is checked to make sure it plays in a web browser first.
+- A studio trailer replaces that film's YouTube trailer on the foyer player and plays even when the internet is down. Trailers for films not on imc.ie yet play after the films, labelled "Coming soon". An optional "Stop playing after" date takes it off automatically.
+- **Video files are kept in the browser on that computer** (IndexedDB), so add them on the PC that runs the foyer TV. Links go into the foyer player's address, so they work on every foyer PC.
+- The usual foyer rules still apply: films rated 15 or 18 stay off, and anything that looks red-band is left out.
+
+**Trailer and poster sites** keeps quick links (WB360 by default; add Disney Box and others). The app never stores portal usernames or passwords: it's a public website, so anything saved in it isn't a safe place for them. Let the browser's password manager remember them instead. Downloaded posters and artwork go in the editor's **Photo › Your media**.
+
 ## Welcome videos (foyer logo reveals)
 
 The hub's **Welcome videos** page makes "Welcome to IMC" logo reveals for the foyer TVs. There are 10 reveals: spotlight, curtain up, film countdown, lens flare wipe, popcorn burst, starfield zoom, marquee lights, gold particles, film strip and neon sign. You can change the top line, big line, message, background, accent colour, extra effect (sparkle, confetti, snow, bats, hearts, fireworks) and length (6–12 seconds). Each one downloads as a 1920 × 1080 video.

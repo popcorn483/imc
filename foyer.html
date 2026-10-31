@@ -29,6 +29,7 @@ body.nostrip .layer{bottom:0}
 #ytshield{position:absolute;inset:0;z-index:1}
 #ytcurtain{position:absolute;inset:0;z-index:2;background:#000;opacity:1;transition:opacity .5s}
 #ytcurtain.off{opacity:0}
+#svid{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:1}#svid[hidden]{display:none}
 #tlabel{position:absolute;z-index:3;left:3vw;top:3.5vh;display:flex;align-items:center;gap:1.2vw;padding:1.2vh 1.6vw;border-radius:1.2vh;background:rgba(5,7,20,.72);font-family:var(--f-display);font-weight:800;font-size:3.8vh;text-transform:uppercase;letter-spacing:.04em;transition:opacity .6s}
 #tlabel small{font:600 2vh var(--f-mono);letter-spacing:.12em;color:var(--gold)}
 #tqr{position:absolute;z-index:3;right:3vw;bottom:3vh;display:flex;align-items:center;gap:1vw;padding:1.2vh;border-radius:1.4vh;background:rgba(5,7,20,.78);transition:opacity .6s}
@@ -176,7 +177,7 @@ body.lite *{animation-duration:.01s!important}body.lite .ticker div{animation-du
 </head>
 <body>
 <div id="stage">
-  <div id="yt-wrap" class="layer" hidden><div id="yt"></div><div id="ytshield"></div><div id="ytcurtain"></div><div id="tlabel"></div><div id="tqr" style="opacity:0"></div></div>
+  <div id="yt-wrap" class="layer" hidden><div id="yt"></div><video id="svid" playsinline preload="auto" hidden></video><div id="ytshield"></div><div id="ytcurtain"></div><div id="tlabel"></div><div id="tqr" style="opacity:0"></div></div>
   <div id="ident" class="layer" hidden><canvas id="icv" width="1920" height="1080" aria-label="Welcome to IMC"></canvas></div>
   <div id="card" class="layer" hidden><div class="bgimg"></div><div class="shade"></div><div class="poster" role="img"></div>
     <div class="info"><div class="kicker" id="ck"></div><h1 class="title" id="ct"></h1><div class="meta" id="cm"></div><div id="cs"></div><div><div class="when" id="cw"></div><div class="times" id="cx"></div></div><div class="bookrow" id="cb"></div></div></div>
@@ -210,12 +211,20 @@ const SAFE={bbfc:["U","PG","12A","12"],ifco:["G","PG","12A"]};
 const RED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
 const LOUNGE=Q.get("luxx")==="1";
 const MYTR=Object.fromEntries((Q.get("tl")||"").split("|").map(x=>x.split("~")).filter(x=>x.length===2&&/^[\w-]{11}$/.test(x[1])));
-const EXTRA=(Q.get("x")||"").split("|").map(x=>{const i=x.indexOf("~"),id=i<0?x:x.slice(0,i);return{id,title:i<0?"":x.slice(i+1)}}).filter(x=>/^[\w-]{11}$/.test(x.id)&&!RED.test(x.title)),ONLY=Q.get("only")==="1"&&EXTRA.length>0;
+const EXTRA=(Q.get("x")||"").split("|").map(x=>{const i=x.indexOf("~"),id=i<0?x:x.slice(0,i);return{id,title:i<0?"":x.slice(i+1)}}).filter(x=>/^[\w-]{11}$/.test(x.id)&&!RED.test(x.title));let ONLY=Q.get("only")==="1"&&EXTRA.length>0;
+/* studio trailers (WB360, Disney Box and so on): video files saved on this PC from the hub, plus download links sent in the address as sv=[film key, title, link] */
+const SVLINKS=(()=>{try{const b=(Q.get("sv")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&/^https:\/\//.test(a[2]||"")).map((a,i)=>({id:"l"+i,film:String(a[0]||""),title:String(a[1]||""),url:a[2]}))}catch(e){return[]}})();
+let STUDIO=[];
+function sdb(){return new Promise((res,rej)=>{const r=indexedDB.open("imc-editor",1);r.onupgradeneeded=()=>r.result.createObjectStore("kv");r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+async function sget(k){try{const d=await sdb();return await new Promise((res,rej)=>{const q=d.transaction("kv").objectStore("kv").get(k);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)})}catch(e){return null}}
+async function loadStudio(){const mine=await sget("studio:"+SITE),L=(Array.isArray(mine)?mine:[]).filter(x=>!x.until||x.until>=londonNow().date),urls=new Set(L.map(x=>x.url).filter(Boolean));
+  STUDIO=[...L,...SVLINKS.filter(x=>!urls.has(x.url))].filter(x=>!RED.test(x.title||""));ONLY=Q.get("only")==="1"&&(EXTRA.length+STUDIO.filter(x=>!x.film).length)>0}
+
 const WEL=(window.IMCIdent?IMCIdent.decode(Q.get("w")||""):[]).filter(w=>!LOUNGE||w.brand==="luxx"),WF=Q.get("wf")||(WEL.length?"r":"0");
 if(!STRIP)document.body.classList.add("nostrip");if(LITE)document.body.classList.add("lite");
 let since=0,lastIdent=-1,idAssets=null,idRaf=0;
 const newGap=()=>WF==="r"?2+Math.floor(Math.random()*3):Math.max(1,+WF||1);let gap=newGap();
-let D=null,T={},base="",queue=[],steps=[],si=0,player=null,timer=null,ytReady=null,muted=!SOUND,lastLoad=0,lastStep=Date.now(),promoI=0,offline=false;
+let vidStop=null,D=null,T={},base="",queue=[],steps=[],si=0,player=null,timer=null,ytReady=null,muted=!SOUND,lastLoad=0,lastStep=Date.now(),promoI=0,offline=false;
 
 /* ---------- time and data ---------- */
 function londonNow(){const p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date()))p[x.type]=x.value;return{date:`${p.year}-${p.month}-${p.day}`,hm:`${p.hour}:${p.minute}`,s:+p.second}}
@@ -240,8 +249,10 @@ function films(){const m=new Map();
       for(const s of f.sessions||[])if(!p.sessions.some(x=>x.date===s.date&&x.time===s.time))p.sessions.push({...s,luxx:s.luxx||!!f.luxx});for(const key of["poster","posterFile","cert","certIcon","certSystem","runtime","trailer","releaseDate","status"])p[key]=p[key]||f[key];m.set(k,p)}
   const out=new Map();for(const f of m.values()){const k=f.slug||f.title.toLowerCase(),o=out.get(k);if(!o)out.set(k,{...f,key:k,luxxToo:!!f.luxx,luxxS:f.luxx?[...f.sessions]:[]});else{o.luxxToo=o.luxxToo||!!f.luxx;if(f.luxx)for(const s of f.sessions)if(!o.luxxS.some(x=>x.date===s.date&&x.time===s.time))o.luxxS.push(s);for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s);for(const key of["poster","posterFile","cert","certIcon","runtime","trailer"])o[key]=o[key]||f[key]}}
   for(const f of out.values())if(MYTR[f.key]){f.trailer="https://www.youtube.com/watch?v="+MYTR[f.key];f.mine=true}
+  for(const f of out.values()){const st=STUDIO.find(x=>x.film===f.key);if(st){f.studio=st;f.trailer="studio:"+st.id}}
   return[...out.values()]}
-function safety(f){const t=f.mine?{}:T[f.trailer]||{};const sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
+function safety(f){if(f.studio){const c=String(f.cert||"").toUpperCase(),sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco");return!c||c==="TBC"||f.extra||(SAFE[sys]||SAFE.bbfc).includes(c)?{ok:true}:{ok:false,why:"rated "+c}}
+  const t=f.mine?{}:T[f.trailer]||{};const sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
   if(!f.trailer||!ytId(f.trailer))return{ok:false,why:"no trailer"};if(t.unavailable)return{ok:false,why:"trailer unavailable"};
   if(t.red||RED.test(t.title||""))return{ok:false,why:"red-band trailer"};
   if(f.extra)return{ok:true};if(!c||c==="TBC")return OK.has(f.key)?{ok:true}:{ok:false,review:true,why:"no certificate yet"};
@@ -254,6 +265,7 @@ function buildQueue(){const all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.leng
   list.sort((a,b)=>{const ua=upcoming(a)[0],ub=upcoming(b)[0];return(ua?ua.date+ua.time:"9"+(a.releaseDate||"")).localeCompare(ub?ub.date+ub.time:"9"+(b.releaseDate||""))});
   if(ONLY)list=[];if(!TRAILERS)return list;
   const seen=new Set(list.map(f=>ytId(f.trailer)));for(const x of EXTRA)if(!seen.has(x.id)){seen.add(x.id);list.push({key:"x:"+x.id,title:x.title||"Coming soon",trailer:"https://www.youtube.com/watch?v="+x.id,extra:true,sessions:[]})}
+  for(const x of STUDIO)if(!x.film&&!seen.has("s"+x.id)){seen.add("s"+x.id);list.push({key:"s:"+x.id,title:x.title||"Coming soon",trailer:"studio:"+x.id,studio:x,extra:true,sessions:[]})}
   return list}
 
 /* every showing on a day as a board row (all films, including ones whose trailers aren't foyer-safe: it's just the listings) */
@@ -352,7 +364,7 @@ function buildSteps(){const s=[],ds=dayState();
     if(WEL.length&&WF!=="0"){since++;if(since>=gap){since=0;gap=newGap();s.push({k:"ident"})}}});
   if(!queue.length){if(BOARD_EVERY||ds.phase!=="open")s.push({k:"board"});if(PROMOS)s.push({k:"promo"},{k:"promo"});if(WEL.length&&WF!=="0")s.push({k:"ident"})}
   return s}
-async function next(){clearTimeout(timer);try{if(player&&player._done)player._done()}catch(e){}
+async function next(){clearTimeout(timer);try{if(player&&player._done)player._done()}catch(e){}try{if(vidStop)vidStop()}catch(e){}
   if(si>=steps.length){if(Date.now()-lastLoad>3*3600e3)await load();else queue=buildQueue();steps=buildSteps();si=0;
     if(!steps.length){show("start");$("#sinfo").textContent="Nothing to show right now. Checking again in 10 minutes.";timer=setTimeout(async()=>{await load();next()},600e3);return}}
   const st=steps[si++];
@@ -361,7 +373,7 @@ async function next(){clearTimeout(timer);try{if(player&&player._done)player._do
   if(st.k==="promo")return playPromo();
   if(st.k==="ident")return playIdent();
   if(st.k==="card"){if(!upcoming(st.f).length&&!st.f.sources?.has("soon"))return next();showCard(st.f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
-  if(st.k==="trailer")return playTrailer(st.f)}
+  if(st.k==="trailer")return st.f.studio?playStudio(st.f):playTrailer(st.f)}
 async function playTrailer(f){const ok=await loadYT();if(!ok){timer=setTimeout(next,300);return}
   const id=ytId(f.trailer),u=f.extra?[]:upcoming(f),nx=u[0],n=londonNow();
   $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
@@ -378,6 +390,22 @@ async function playTrailer(f){const ok=await loadYT();if(!ok){timer=setTimeout(n
   player._h=st=>{if(over)return;if(st===1){if(!started){started=true;setTimeout(()=>{if(!over)cur.classList.add("off")},400)}else cur.classList.add("off")}
     else if(st===2){cur.classList.remove("off");try{player.playVideo()}catch(e){}}else if(st===0)finish()};
   player._x=finish;player._done=done}
+/* a studio trailer file (saved on this PC) or download link, played in the same frame as YouTube trailers */
+async function playStudio(f){const v=$("#svid"),x=f.studio;let src=x.url||"",obj="";
+  if(!src){const b=await sget("studiofile:"+x.id);if(!b){timer=setTimeout(next,300);return}obj=src=URL.createObjectURL(b)}
+  try{if(player&&player.pauseVideo)player.pauseVideo()}catch(e){}
+  const u=f.extra?[]:upcoming(f),nx=u[0],n=londonNow();
+  $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:f.extra?"<small>COMING SOON</small>":"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
+  const q=nx&&nx.book?qrSvg(nx.book):"";$("#tqr").innerHTML=q?q+`<span>Scan to book<b>${nx.time}</b></span>`:"";$("#tqr").style.opacity=0;
+  $("#yt").style.visibility="hidden";v.hidden=false;show("yt-wrap");progress(0.01);
+  const cur=$("#ytcurtain");cur.classList.remove("off");let over=false;
+  const stop=()=>{clearTimeout(guard);clearTimeout(cap);vidStop=null;v.onplaying=v.onended=v.onerror=v.ontimeupdate=null;try{v.pause()}catch(e){}v.removeAttribute("src");try{v.load()}catch(e){}if(obj)URL.revokeObjectURL(obj);v.hidden=true;$("#yt").style.visibility=""};
+  const finish=()=>{if(over)return;over=true;cur.classList.remove("off");$("#tqr").style.opacity=0;setTimeout(()=>{stop();next()},500)};
+  const guard=setTimeout(()=>{if(!v.currentTime)finish()},20000),cap=setTimeout(finish,6*60e3);
+  vidStop=()=>{over=true;stop()};
+  v.onplaying=()=>cur.classList.add("off");v.onended=finish;v.onerror=finish;
+  v.ontimeupdate=()=>{lastStep=Date.now();if(v.duration>5)$("#tqr").style.opacity=q&&v.duration-v.currentTime<25?1:0};
+  v.muted=muted;v.src=src;v.play().catch(()=>{v.muted=true;v.play().catch(finish)})}
 function loadYT(){if(ytReady)return ytReady;ytReady=new Promise(res=>{window.onYouTubeIframeAPIReady=()=>res(true);const s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";s.onerror=()=>res(false);document.head.appendChild(s);setTimeout(()=>res(!!window.YT&&!!window.YT.Player),12000)});return ytReady}
 async function playIdent(){try{if(player&&player.stopVideo)player.stopVideo()}catch(e){}
   if(!idAssets)idAssets=await IMCIdent.loadAssets("");let i=Math.floor(Math.random()*WEL.length);if(WEL.length>1&&i===lastIdent)i=(i+1)%WEL.length;lastIdent=i;
@@ -401,7 +429,7 @@ function tickStrip(){const n=londonNow();$("#clock").textContent=n.hm;if(!D)retu
   $("#nextshow").innerHTML=`${m<=0?"Starting now":m<=20?"Now seating":"Next"}${m>20&&m<=60?` · in ${m} min`:""}${SCREENS&&r.screen?" · Screen "+esc(r.screen):""}<b>${r.time} ${esc(r.title)}</b>`}
 
 /* ---------- loading, with a saved copy for when the internet drops ---------- */
-async function load(){let d=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json"),t=await getJson("data/trailers.json");
+async function load(){await loadStudio();let d=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json"),t=await getJson("data/trailers.json");
   if(d){try{localStorage.setItem(CK,JSON.stringify({d,t,at:Date.now()}))}catch(e){}offline=false}
   else{try{const c=JSON.parse(localStorage.getItem(CK)||"null");if(c){d=c.d;t=c.t;offline=true}}catch(e){}}
   $("#offline").hidden=!offline;D=d;T=t||{};base=D?D._base:"";lastLoad=Date.now();
@@ -414,9 +442,9 @@ document.addEventListener("visibilitychange",()=>{if(!document.hidden)wake()});
 setInterval(()=>{if($("#start").hidden&&Date.now()-lastStep>7*60e3)location.reload()},60e3);
 setInterval(()=>{tickStrip();if(londonNow().s<15)renderTicker()},15e3);setInterval(()=>{$("#clock").textContent=londonNow().hm},5e3);
 setInterval(()=>{const n=londonNow();if(n.hm==="05:00")location.reload()},60e3);
-document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")next();if(e.key==="b"||e.key==="B"){clearTimeout(timer);try{player&&player._done&&player._done();player&&player.pauseVideo&&player.pauseVideo()}catch(x){}playBoard()}
+document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")next();if(e.key==="b"||e.key==="B"){clearTimeout(timer);try{player&&player._done&&player._done();player&&player.pauseVideo&&player.pauseVideo()}catch(x){}try{vidStop&&vidStop()}catch(x){}playBoard()}
   if(e.key==="f"||e.key==="F"){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}
-  if(e.key==="m"||e.key==="M"){muted=!muted;if(player&&player.mute){muted?player.mute():player.unMute()}}});
+  if(e.key==="m"||e.key==="M"){muted=!muted;$("#svid").muted=muted;if(player&&player.mute){muted?player.mute():player.unMute()}}});
 let mv;document.addEventListener("mousemove",()=>{document.body.classList.add("pointer");clearTimeout(mv);mv=setTimeout(()=>document.body.classList.remove("pointer"),2500)});
 (async()=>{$("#clock").textContent=londonNow().hm;await load();if(!D){$("#sinfo").textContent="Couldn't load the listings. Check the internet connection; retrying in a minute.";setTimeout(()=>location.reload(),60e3);return}
   const n=queue.length,nx=queue.filter(f=>f.extra).length,nf=n-nx;
