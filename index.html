@@ -1895,7 +1895,7 @@ function recRateSel(x){const ni=S().ni,cur=(foyState().recRate||{})[x.id]||"",op
   return`<label class="recrate"><span>Rating</span><select data-recrate="${esc(x.id)}" aria-label="Rating for ${esc(x.film||x.title)}"><option value="">Auto${cur?"":" ("+esc(recRating({...x,_:1}).c||"not known")+")"}</option>${opts.map(o=>`<option ${cur===o?"selected":""}>${o}</option>`).join("")}</select></label>`}
 function recActs(x,have,ign){if(ign.has(x.id))return`<button class="btn small" data-recunign="${esc(x.id)}">Bring back</button>`;
   const rt=recRating(x),watch=`<button class="btn small ghost" data-recwatch="${esc(x.id)}">▶ Watch</button>`,ig=`<button class="btn small ghost" data-recignore="${esc(x.id)}">Ignore</button>`;
-  if(have.has(x.id))return'<button class="btn small" disabled>Added ✓</button>'+watch;
+  if(have.has(x.id))return'<button class="btn small" disabled>Added ✓</button>'+`<button class="btn small ghost danger" data-recremove="${esc(x.id)}">Remove</button>`+watch;
   if(rt.high)return`<span class="m">Rated ${esc(rt.c)}: too high for the foyer</span>`+ig;
   return(x.imc?`<button class="btn small primary" data-recuse="${esc(x.id)}" data-key="${esc(x.imc.key)}">Use as its trailer</button>`:`<button class="btn small primary" data-recadd="${esc(x.id)}">Add to loop</button>`)+watch+ig}
 function recOpen(id){const st=foyState(),x=(REC.items||[]).map(y=>({...y,imc:recFilm(y,foyFilms())})).find(y=>y.id===id);if(!x)return;
@@ -1908,6 +1908,8 @@ function recClick(e){const d=e.target.closest("[data-recdist]");if(d){recDist=d.
   if(e.target.closest("[data-recmore]")){recShow+=12;renderRec(foyState());return}
   if(e.target.closest("[data-recign-show]")){recIgnShow=!recIgnShow;renderRec(foyState());return}
   const w=e.target.closest("[data-recwatch]");if(w){e.preventDefault();recOpen(w.dataset.recwatch);return}
+  const rm=e.target.closest("[data-recremove]");
+  if(rm){const st=foyState(),id=rm.dataset.recremove;st.extra=(st.extra||[]).filter(x=>x.id!==id);st.links=Object.fromEntries(Object.entries(st.links||{}).filter(([,v])=>v.id!==id));st.hide=(st.hide||[]).filter(k=>k!=="x:"+id);foySave(st);if(!$("#recDlg").hidden)recClose();renderFoyer();toast("Removed: it's no longer on the foyer TVs");return}
   const ig=e.target.closest("[data-recignore]"),ui=e.target.closest("[data-recunign]");
   if(ig||ui){const st=foyState(),id=(ig||ui).dataset[ig?"recignore":"recunign"];st.recIgnore=ig?[...new Set([...(st.recIgnore||[]),id])]:(st.recIgnore||[]).filter(x=>x!==id);foySave(st);if(!$("#recDlg").hidden)recClose();renderRec(st);toast(ig?"Ignored: it won't show in Recommended again":"Back in Recommended");return}
   const a=e.target.closest("[data-recadd]"),u=e.target.closest("[data-recuse]");if(!a&&!u)return;const x=(REC.items||[]).find(y=>y.id===(a||u).dataset[a?"recadd":"recuse"]);if(!x)return;const st=foyState();
