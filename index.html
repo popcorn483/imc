@@ -1793,7 +1793,7 @@ async function renderRec(st){const g=$("#recgrid");if(!g)return;if(!REC)REC=(awa
   if(!shown.length){g.innerHTML=`<p class="tip" style="margin:0">${recIgnShow?"Nothing ignored.":"Nothing matches those filters."}</p>`}
   else g.innerHTML=shown.slice(0,recShow).map(x=>{const rel=x.releaseDate?(x.us?"US release ":"In cinemas ")+fmtShort(x.releaseDate):x.out?"In cinemas now":x.release||"",rt=recRating(x);
     return`<div class="reccard${ign.has(x.id)?" recign":""}"><a class="recthumb" href="https://www.youtube.com/watch?v=${esc(x.id)}" data-recwatch="${esc(x.id)}" title="Watch the trailer"><img src="https://i.ytimg.com/vi/${esc(x.id)}/mqdefault.jpg" alt="" loading="lazy"><span>▶ Watch</span></a>
-      <div class="recbody"><b>${esc(x.film||x.title)}</b><div class="tt" title="${esc(x.title)}">${esc(x.title)}</div><div class="m">${esc(x.dist)} · ${esc(recAgo(x.published))}${x.views?" · "+recViews(x.views):""}</div>
+      <div class="recbody"><b>${esc(x.film||x.title)}</b><div class="tt" title="${esc(x.title)}">${esc(x.title)}</div><div class="m">${esc(x.dist)}${x.published?" · "+esc(recAgo(x.published)):""}${x.views?" · "+recViews(x.views):""}</div>
       <div class="rectags">${rt.c?`<span class="r${rt.high?"":" ok"}">${esc(rt.label)}</span>`:`<span>${esc(rt.label)}</span>`}${rel?`<span>${esc(rel)}</span>`:""}${x.imc?'<span class="imc">On imc.ie</span>':""}</div>${ign.has(x.id)?"":recRateSel(x)}
       <div class="acts">${recActs(x,have,ign)}</div></div></div>`}).join("");
   const ni=L.filter(x=>ign.has(x.id)).length;

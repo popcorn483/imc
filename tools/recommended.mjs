@@ -137,7 +137,7 @@ export async function buildRecommended(outDir) {
       await sleep(700);
       const html = await text(u), vs = pageVideos(html);
       diag.push(`${html ? html.length : 0}b/${html && html.includes("ytInitialData") ? "data" : "nodata"}/${vs.length}v${html && /consent\.youtube|before you continue/i.test(html) ? "/consent" : ""}`);
-      for (const v of vs) if (!found.has(v.id)) found.set(v.id, { ...v, published: agoDate(v.ago), approx: true });
+      for (const v of vs) if (!found.has(v.id)) found.set(v.id, { ...v, published: agoDate(v.ago), approx: true, latest: u.endsWith("/videos") });
     }
     /* trailers found on the pages: look up their real date and description once (remembered on later runs) */
     let looked = 0;
@@ -145,20 +145,26 @@ export async function buildRecommended(outDir) {
       if (!v.approx || !/trailer|teaser/i.test(v.title) || NOT_TRAILER.test(v.title) || NOT_CINEMA.test(v.title)) continue;
       const old = (prev.items || []).find((x) => x.id === v.id);
       if (old && !old.approx) { Object.assign(v, { published: old.published, approx: false, desc: old.release ? old.release : v.desc }); continue; }
-      if (v.id in known) { knownNow[v.id] = known[v.id]; if (known[v.id]) Object.assign(v, { published: known[v.id], approx: false }); else v.checked = true; continue; }
+      const kn = known[v.id], failedAt = typeof kn === "string" && kn.startsWith("none:") ? kn.slice(5) : kn === null ? "2000-01-01" : null;
+      if (kn && !failedAt) { knownNow[v.id] = kn; Object.assign(v, { published: kn, approx: false }); continue; }
+      if (failedAt && Date.now() - Date.parse(failedAt) < 7 * 864e5) { knownNow[v.id] = kn; v.checked = true; continue; }   /* page couldn't be read: try again in a week */
       if (v.published && Date.parse(v.published) < since - 45 * 864e5) continue;   /* clearly older than we list */
       if (looked >= 20) continue;
       looked++; await sleep(600);
       const w = await watchInfo(v.id);
       if (w && w.published) Object.assign(v, { published: w.published, desc: w.desc || v.desc, approx: false });
       else v.checked = true;
-      knownNow[v.id] = v.checked ? null : v.published;
+      knownNow[v.id] = v.checked ? "none:" + new Date().toISOString().slice(0, 10) : v.published;
     }
     let n = 0;const rej = {}, samples = [];
     for (const v of found.values()) {
       const { title, desc = "", published } = v;
+      /* no upload date (YouTube often hides it from servers): keep it if it's on the channel's latest-videos page, names this year or later, or opens soon */
+      let datelessOk = false;
+      if (!published) { const rh = releaseHint(desc, null) || releaseHint(title, null), yrs = (title.match(/\b(19|20)\d\d\b/g) || []).map(Number), y = new Date().getUTCFullYear();
+        datelessOk = (yrs.length ? Math.max(...yrs) >= y : v.latest || !!(rh && rh.date && rh.date >= new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10))); }
       const why = !/trailer|teaser/i.test(title) ? "noword" : NOT_TRAILER.test(title) ? "notTrailer" : RED.test(title + " " + desc.slice(0, 300)) ? "red" : NOT_CINEMA.test(title) ? "notCinema"
-        : opt.strict && !IN_CINEMAS.test(title + " " + desc) ? "noCinemaWord" : opt.strict && STREAMING.test(title + " " + desc.slice(0, 600)) ? "streaming" : !published ? "noDate" : Date.parse(published) < since ? "old" : "";
+        : opt.strict && !IN_CINEMAS.test(title + " " + desc) ? "noCinemaWord" : opt.strict && STREAMING.test(title + " " + desc.slice(0, 600)) ? "streaming" : !published && !datelessOk ? "noDate" : !published ? "" : Date.parse(published) < since ? "old" : "";
       if (why) { rej[why] = (rej[why] || 0) + 1; if (why !== "noword" && samples.length < 4) samples.push(why + ": " + title.slice(0, 60) + (why === "red" ? " :: " + (RED.exec(title + " " + desc.slice(0, 300)) || [""])[0] : "")); continue; }
       const rel = releaseHint(desc, published) || releaseHint(title, published);
       const bbfc = ratingHint(desc) || ratingHint(title) || (prev.items || []).find((x) => x.id === v.id)?.bbfc || null;
@@ -169,9 +175,10 @@ export async function buildRecommended(outDir) {
   }
   /* keep trailers found on earlier runs (the channels only show their newest videos), unless they're now too old */
   const fresh = new Set(items.map((x) => x.id));
-  for (const x of keepOld) if (!fresh.has(x.id) && Date.parse(x.published) >= since && !NOT_CINEMA.test(x.title) && !NOT_TRAILER.test(x.title)) items.push(x);
+  const soonOk = (x) => x.releaseDate && x.releaseDate >= new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10);
+  for (const x of keepOld) if (!fresh.has(x.id) && (Date.parse(x.published) >= since || (!x.published && soonOk(x))) && !NOT_CINEMA.test(x.title) && !NOT_TRAILER.test(x.title)) items.push(x);
   const seen = new Set(), byFilm = new Map();
-  items.sort((a, b) => String(b.published).localeCompare(String(a.published)));
+  items.sort((a, b) => String(b.published || "").localeCompare(String(a.published || "")));
   const list = [];
   for (const x of items) {
     if (seen.has(x.id)) continue; seen.add(x.id);
