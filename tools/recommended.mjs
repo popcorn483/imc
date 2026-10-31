@@ -170,7 +170,18 @@ export async function buildRecommended(outDir) {
     if (o) { if (!o.releaseDate && x.releaseDate) Object.assign(o, { release: x.release, releaseDate: x.releaseDate }); continue; }
     byFilm.set(k, x); list.push(x);
   }
-  await fs.writeFile(file, JSON.stringify({ updated: new Date().toISOString(), known: knownNow, channels, distributors: dists, items: list }, null, 1));
+  /* temporary: see how bbfc.co.uk's search page is built, so ratings can be read from it */
+  let bbfcProbe = null;
+  try {
+    const html = await text("https://www.bbfc.co.uk/search?q=" + encodeURIComponent(list[0] ? list[0].film : "Dune Part Three"));
+    if (html) {
+      const nd = /<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/.exec(html);
+      const links = [...new Set([...html.matchAll(/href="(\/release\/[^"]+)"/g)].map((m) => m[1]))].slice(0, 8);
+      const ri = html.search(/"(?:ageRating|rating|classification|certificate)"/i);
+      bbfcProbe = { q: list[0] && list[0].film, len: html.length, next: !!nd, nextKeys: nd ? Object.keys(JSON.parse(nd[1]).props?.pageProps || {}) : [], links, ratingSnippet: ri >= 0 ? html.slice(Math.max(0, ri - 300), ri + 500) : "", apis: [...new Set([...html.matchAll(/https?:\/\/[a-z0-9.-]*bbfc[a-z0-9./_-]*/gi)].map((m) => m[0]))].slice(0, 15), head: html.slice(0, 1500), mid: html.slice(html.indexOf("<main") > 0 ? html.indexOf("<main") : 20000, (html.indexOf("<main") > 0 ? html.indexOf("<main") : 20000) + 4000) };
+    }
+  } catch (e) { bbfcProbe = { error: e.message }; }
+  await fs.writeFile(file, JSON.stringify({ updated: new Date().toISOString(), bbfcProbe, known: knownNow, channels, distributors: dists, items: list }, null, 1));
   console.log(`recommended: ${list.length} trailers from ${dists.filter((d) => d.ok).length}/${dists.length} distributors` + dists.filter((d) => !d.ok).map((d) => `; ${d.name}: ${d.why}`).join(""));
 }
 
