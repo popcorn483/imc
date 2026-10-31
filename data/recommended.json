@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T16:34:09.844Z",
+ "updated": "2026-10-31T16:36:49.213Z",
  "channels": {
   "@WarnerBrosUK": "UC18-frCUyYyy7Uv_TqcoaXA",
   "@DisneyUK": "UCQphRgAhj5UxktrQNP3WF5g",
@@ -18,15 +18,16 @@
    "name": "Warner Bros.",
    "handle": "@WarnerBrosUK",
    "id": "UC18-frCUyYyy7Uv_TqcoaXA",
-   "ok": true,
-   "count": 0
+   "ok": false,
+   "count": 0,
+   "why": "nothing could be read"
   },
   {
    "name": "Disney",
    "handle": "@DisneyUK",
    "id": "UCQphRgAhj5UxktrQNP3WF5g",
    "ok": true,
-   "count": 1
+   "count": 0
   },
   {
    "name": "Universal",
@@ -89,13 +90,7 @@
    "handle": "@VertigoReleasing",
    "id": "UCefhESyKGOoCELWYdR_S4Wg",
    "ok": true,
-   "count": 8
-  },
-  {
-   "name": "Entertainment Film",
-   "handle": "@EntertainmentFilmDist",
-   "ok": false,
-   "why": "channel not found"
+   "count": 5
   }
  ],
  "items": [
@@ -151,7 +146,9 @@
    "film": "THE MAN WHO FELL TO EARTH",
    "dist": "StudioCanal",
    "published": "2026-10-23T18:00:16+00:00",
-   "views": 93187
+   "views": 93199,
+   "release": "In cinemas 13 November 2026",
+   "releaseDate": "2026-11-13"
   },
   {
    "id": "auvPMJdysHc",
@@ -159,7 +156,9 @@
    "film": "PAN'S LABYRINTH (20th Anniversary)",
    "dist": "StudioCanal",
    "published": "2026-10-12T14:00:30+00:00",
-   "views": 278658
+   "views": 278658,
+   "release": "In cinemas 30 October 2026",
+   "releaseDate": "2026-10-30"
   },
   {
    "id": "X4OQGAEmUIE",
@@ -200,16 +199,6 @@
    "releaseDate": "2026-10-02"
   },
   {
-   "id": "XmMyQD-BDEE",
-   "title": "EXTRA GEOGRAPHY - Official Trailer | In Cinemas Now",
-   "film": "EXTRA GEOGRAPHY",
-   "dist": "Vertigo",
-   "published": "2026-09-01T15:51:01+00:00",
-   "views": 295071,
-   "release": "In cinemas October 2nd",
-   "releaseDate": "2026-10-02"
-  },
-  {
    "id": "cJWQgeKQvoI",
    "title": "Idiots - Official Trailer (2026) | On Digital Now",
    "film": "Idiots",
@@ -226,14 +215,6 @@
    "views": 19942,
    "release": "In cinemas 4th September 2026",
    "releaseDate": "2026-09-04"
-  },
-  {
-   "id": "7T64gVlcc1I",
-   "title": "Behemoth! Official Teaser | Coming Soon",
-   "film": "Behemoth!",
-   "dist": "Searchlight",
-   "published": "2026-07-14T13:00:12+00:00",
-   "views": 11118
   }
  ]
 }
