@@ -258,7 +258,13 @@ function safety(f){if(f.studio){const c=String(f.cert||"").toUpperCase(),sys=f.c
   if(f.extra)return{ok:true};if(!c||c==="TBC")return OK.has(f.key)?{ok:true}:{ok:false,review:true,why:"no certificate yet"};
   return(SAFE[sys]||SAFE.bbfc).includes(c)?{ok:true}:{ok:false,why:"rated "+c}}
 function upcoming(f){const n=londonNow();return f.sessions.filter(s=>s.date&&(s.date>n.date||(s.date===n.date&&s.time>n.hm))).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))}
-function buildQueue(){const all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.length).map(f=>({...f,sessions:f.luxxS})):films(),in7=new Date(Date.now()+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
+/* the hub's playlist: its order, the trailers taken out, and shuffle-every-loop */
+const ORD=(Q.get("ord")||"").split(",").filter(Boolean),HIDE=new Set((Q.get("hide")||"").split(",").filter(Boolean)),SHUF=Q.get("shuf")==="1";
+function buildQueue(){let L=queueList().filter(f=>!HIDE.has(f.key));
+  if(SHUF){for(let i=L.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[L[i],L[j]]=[L[j],L[i]]}}
+  else if(ORD.length){const ix=k=>{const i=ORD.indexOf(k);return i<0?1e6:i};L=L.map((f,i)=>[f,i]).sort((a,b)=>ix(a[0].key)-ix(b[0].key)||a[1]-b[1]).map(a=>a[0])}
+  return L}
+function queueList(){const all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.length).map(f=>({...f,sessions:f.luxxS})):films(),in7=new Date(Date.now()+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
   let list=MODE==="pick"&&IDS.length?IDS.map(k=>all.find(f=>f.key===k)).filter(Boolean):all.filter(f=>{const u=upcoming(f);return u.length&&u[0].date<=in7||(SOON&&f.sources.has("soon"))});
   const nt=t=>String(t||"").toLowerCase().replace(/^(sensory|autism friendly|parent (and|&) baby)[:\s-]*/,"").replace(/\s+-\s+.*$|\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
   list=list.filter(f=>safety(f).ok).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer||nt(x.title)===nt(f.title))===i);

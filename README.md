@@ -476,6 +476,14 @@ On the Foyer trailers page, any film with no trailer on imc.ie (or whose trailer
 
 Your trailer then plays on the foyer player (it travels in the TV link) and goes in the pack's trailer list. "Remove my link" undoes it.
 
+## Foyer playlist
+
+The **Playlist** at the top of the Foyer trailers page lists everything playing on the foyer TVs, in order: films from imc.ie (each gets its showtimes card first), your own trailers and studio trailers, each with a small label.
+
+- Drag a row (or use ↑ ↓) to move it, and ✕ to take it out. Trailers you take out go under **Taken out**, where **Put back** returns them.
+- **Shuffle now** mixes up the order once. **Shuffle on the TVs every time round** makes the foyer player shuffle each loop. **Reset order** goes back to films by next showing, then your trailers.
+- The order, the trailers taken out and the shuffle setting are sent to the foyer player in its address (`ord`, `hide`, `shuf`), so reopen or re-copy the player link after changing them. New films that turn up later join the end of the list.
+
 ## Recommended trailers (new releases from distributors)
 
 The **Recommended: new trailers** section on the Foyer trailers page lists the newest public trailers from the distributors' official UK YouTube channels: Warner Bros., Disney (its main channel, @disney, strictly filtered: only trailers that say they're in cinemas or theaters, and nothing mentioning Disney+ or streaming), Universal, Sony Pictures, Paramount (@paramountpictures), StudioCanal, Lionsgate (@lionsgatemovies), Searchlight, Pathé, Altitude and Vertigo.
