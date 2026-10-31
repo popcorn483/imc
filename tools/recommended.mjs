@@ -22,7 +22,7 @@ export const DISTRIBUTORS = [
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 const RED = /red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
 const NOT_CINEMA = /on digital|digital now|disney\+|streaming|netflix|prime video|apple tv|now on|blu-?ray|dvd|disney vault/i;
-const NOT_TRAILER = /reaction|review|breakdown|recap|featurette|behind[\s-]the[\s-]scenes|interview|in conversation|\bclip\b|\bspot\b|#shorts|first look at|\bvlog\b|soundtrack|lyric|premiere live|livestream/i;
+const NOT_TRAILER = /reaction|review|breakdown|recap|featurette|behind[\s-]the[\s-]scenes|interview|in conversation|\bclip\b|\bspot\b|#shorts|tomorrow|countdown|first look at|\bvlog\b|soundtrack|lyric|premiere live|livestream/i;
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const unxml = (s) => String(s || "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim();
@@ -111,6 +111,7 @@ export async function buildRecommended(outDir) {
   const file = path.join(outDir, "recommended.json");
   const prev = await fs.readFile(file, "utf8").then(JSON.parse).catch(() => ({}));
   const cache = prev.channels || {}, channels = {}, dists = [], items = [], since = Date.now() - 150 * 864e5;
+  const known = prev.known || {}, knownNow = {};
   const keepOld = (prev.items || []).filter((x) => DISTRIBUTORS.some(([n]) => n === x.dist));
   for (const [name, handle] of DISTRIBUTORS) {
     const id = await channelId(handle, cache);
@@ -137,12 +138,14 @@ export async function buildRecommended(outDir) {
       if (!v.approx || !/trailer|teaser/i.test(v.title) || NOT_TRAILER.test(v.title) || NOT_CINEMA.test(v.title)) continue;
       const old = (prev.items || []).find((x) => x.id === v.id);
       if (old && !old.approx) { Object.assign(v, { published: old.published, approx: false, desc: old.release ? old.release : v.desc }); continue; }
-      if (old && old.checked) { v.published = old.published; continue; }
-      if (looked >= 15) continue;
+      if (v.id in known) { knownNow[v.id] = known[v.id]; if (known[v.id]) Object.assign(v, { published: known[v.id], approx: false }); else v.checked = true; continue; }
+      if (v.published && Date.parse(v.published) < since - 45 * 864e5) continue;   /* clearly older than we list */
+      if (looked >= 20) continue;
       looked++; await sleep(600);
       const w = await watchInfo(v.id);
       if (w && w.published) Object.assign(v, { published: w.published, desc: w.desc || v.desc, approx: false });
       else v.checked = true;
+      knownNow[v.id] = v.checked ? null : v.published;
     }
     let n = 0;
     for (const v of found.values()) {
@@ -167,7 +170,7 @@ export async function buildRecommended(outDir) {
     if (o) { if (!o.releaseDate && x.releaseDate) Object.assign(o, { release: x.release, releaseDate: x.releaseDate }); continue; }
     byFilm.set(k, x); list.push(x);
   }
-  await fs.writeFile(file, JSON.stringify({ updated: new Date().toISOString(), channels, distributors: dists, items: list }, null, 1));
+  await fs.writeFile(file, JSON.stringify({ updated: new Date().toISOString(), known: knownNow, channels, distributors: dists, items: list }, null, 1));
   console.log(`recommended: ${list.length} trailers from ${dists.filter((d) => d.ok).length}/${dists.length} distributors` + dists.filter((d) => !d.ok).map((d) => `; ${d.name}: ${d.why}`).join(""));
 }
 
