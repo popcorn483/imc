@@ -469,7 +469,7 @@ async function load(){await loadStudio();savedCopy=false;let d=await getJson(SIT
   if(!D){queue=[];return}queue=buildQueue();renderTicker();tickStrip();
   document.title=(D.cinema||"IMC")+(LOUNGE?" LUXX lounge":" foyer screen");if(LOUNGE){const h=$("#start h1");if(h)h.textContent="LUXX lounge"}}
 async function start(){try{sessionStorage.setItem("imc-foyer-auto","1")}catch(e){}
-  if(SOUND){muted=false;let ok=true;try{const ac=new(window.AudioContext||window.webkitAudioContext)();ok=ac.state==="running";ac.close()}catch(e){}if(!ok){muted=true;soundHint(true)}}if(MU!=="off"&&!music&&window.IMCMusic&&!muted){music=IMCMusic.create(MU,MV);music.start()}si=steps.length;wake();next()}
+  if(SOUND){muted=false;let ok=true;try{const ac=new(window.AudioContext||window.webkitAudioContext)();await Promise.race([ac.resume(),new Promise(r=>setTimeout(r,600))]);ok=ac.state==="running";ac.close()}catch(e){}if(!ok){muted=true;soundHint(true)}}if(MU!=="off"&&!music&&window.IMCMusic&&!muted){music=IMCMusic.create(MU,MV);music.start()}si=steps.length;wake();next()}
 /* keep the TV awake, and recover if anything ever gets stuck */
 let lock=null;async function wake(){try{if("wakeLock" in navigator&&!lock){lock=await navigator.wakeLock.request("screen");lock.addEventListener("release",()=>{lock=null})}}catch(e){}}
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)wake()});
@@ -478,8 +478,14 @@ document.addEventListener("visibilitychange",()=>{if(!document.hidden)wake()});
    listings are re-read every 30 minutes; a new version of the player reloads itself between screens and starts again on its own */
 const LIVE_KEY="imc-foyer-live:"+SITE+(LOUNGE?":luxx":"");
 let pendingQ=null,pendingReload=false,pageSig=null;
-function liveCheck(){if(Q.get("list")==="1")return;let v=null;try{v=localStorage.getItem(LIVE_KEY)}catch(e){}if(!v)return;
-  const want=new URLSearchParams(v);if(want.toString()!==Q.toString()&&want.toString()!==pendingQ)pendingQ=want.toString()}
+/* the newest settings win: from the hub on this computer, or from data/foyer/<cinema>.json (saved by the hub on any computer) */
+let remote=null;
+function liveCheck(){if(Q.get("list")==="1")return;let loc=null;try{const v=localStorage.getItem(LIVE_KEY);if(v){try{loc=JSON.parse(v)}catch(e){loc={q:v,at:0}}}}catch(e){}
+  const best=[loc,remote].filter(x=>x&&x.q).sort((a,b)=>(b.at||0)-(a.at||0))[0];if(!best)return;
+  const want=new URLSearchParams(best.q);if(want.toString()!==Q.toString()&&want.toString()!==pendingQ)pendingQ=want.toString()}
+async function remoteCheck(){if(Q.get("list")==="1")return;const path="data/foyer/"+encodeURIComponent(SITE)+".json";let j=null;
+  try{const r=await fetch("https://api.github.com/repos/popcorn483/imc/contents/"+path+"?ref=main",{headers:{Accept:"application/vnd.github.raw+json"},cache:"no-cache"});if(r.ok)j=await r.json();else if(r.status!==404){const r2=await fetch(RAW+path+"?ts="+Date.now(),{cache:"no-store"});if(r2.ok)j=await r2.json()}}catch(e){}
+  if(j&&(LOUNGE?j.lq:j.q))remote={q:LOUNGE?j.lq:j.q,at:Date.parse(j.updated)||0};liveCheck()}
 async function applyPending(){
   if(pendingReload){try{sessionStorage.setItem("imc-foyer-auto","1")}catch(e){}location.reload();return true}
   if(pendingQ==null)return false;const q=pendingQ;pendingQ=null;const nq=new URLSearchParams(q);
@@ -493,7 +499,7 @@ async function versionCheck(){try{const t=await(await fetch("foyer.html?v="+Date
 if("serviceWorker" in navigator&&location.protocol!=="file:")navigator.serviceWorker.register("foyer-sw.js").catch(()=>{});
 window.addEventListener("online",()=>{ytDownUntil=0;lastLoad=0});
 setInterval(()=>{$("#offline").hidden=!(offline||navigator.onLine===false);},10e3);
-if(Q.get("list")!=="1"){setInterval(liveCheck,15e3);window.addEventListener("storage",e=>{if(e.key===LIVE_KEY)liveCheck()});versionCheck();setInterval(versionCheck,15*60e3)}
+if(Q.get("list")!=="1"){setInterval(liveCheck,15e3);setTimeout(remoteCheck,5000);setInterval(remoteCheck,75e3);window.addEventListener("storage",e=>{if(e.key===LIVE_KEY)liveCheck()});versionCheck();setInterval(versionCheck,15*60e3)}
 /* sound needs one click after the PC restarts (a browser rule); until then trailers play silently and this note shows */
 function soundHint(on){let el=$("#soundhint");if(!el){el=document.createElement("div");el.id="soundhint";el.textContent="🔇 Sound is off: click anywhere on this screen to turn it on";document.body.appendChild(el)}el.hidden=!on}
 document.addEventListener("click",()=>{if(SOUND&&muted&&$("#start").hidden){muted=false;soundHint(false);try{player&&player.unMute&&player.unMute()}catch(e){}$("#svid").muted=false;if(!music&&MU!=="off"&&window.IMCMusic){music=IMCMusic.create(MU,MV);music.start()}musicFor($("#yt-wrap").hidden?"x":"yt-wrap")}});
