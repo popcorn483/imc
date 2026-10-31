@@ -510,6 +510,10 @@ The **Playlist** at the top of the Foyer trailers page lists everything playing 
 - **Subtitles:** YouTube captions are switched off for English trailers. Trailers that look like another language (Polish, Indian languages, Japanese, Korean and so on) get English subtitles. Subtitles burned into the video can't be removed.
 - The top bar and the menu have a **▶ Foyer player** link that opens the player with the current settings.
 
+## Rating badges
+
+`data/ratings/*.svg` are the BBFC and IFCO symbols. The originals drew their white numbers and rings as see-through holes, so on dark or coloured designs the background showed through. They have been redrawn with solid white inside, with only the outside edge left see-through, and saved as an SVG wrapping a 420-pixel picture so every page uses them unchanged. The importer only downloads a badge that's missing, so these stay as they are. If a new certificate ever appears, check it the same way.
+
 ## Recommended trailers (new releases from distributors)
 
 The **Recommended: new trailers** section on the Foyer trailers page lists the newest public trailers from the distributors' official UK YouTube channels: Warner Bros., Disney (its main channel, @disney, strictly filtered: only trailers that say they're in cinemas or theaters, and nothing mentioning Disney+ or streaming), Universal, Sony Pictures, Paramount (@paramountpictures), StudioCanal, Lionsgate (@lionsgatemovies), Searchlight, Pathé, Altitude and Vertigo.
