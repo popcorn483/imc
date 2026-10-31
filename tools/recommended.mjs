@@ -109,9 +109,12 @@ export async function buildRecommended(outDir) {
       if (vid) found.set(vid, { id: vid, title: unxml(/<title>([\s\S]*?)<\/title>/.exec(e)?.[1]), published: /<published>([^<]+)</.exec(e)?.[1], desc: unxml(/<media:description>([\s\S]*?)<\/media:description>/.exec(e)?.[1]), views: +(/<media:statistics views="(\d+)"/.exec(e)?.[1] || 0) });
     }
     const base = /^UC/.test(handle) ? `https://www.youtube.com/channel/${handle}` : `https://www.youtube.com/${handle}`;
+    const rss = found.size, diag = [];
     for (const u of [`${base}/videos`, `${base}/search?query=trailer`]) {
       await sleep(700);
-      for (const v of pageVideos(await text(u))) if (!found.has(v.id)) found.set(v.id, { ...v, published: agoDate(v.ago), approx: true });
+      const html = await text(u), vs = pageVideos(html);
+      diag.push(`${html ? html.length : 0}b/${html && html.includes("ytInitialData") ? "data" : "nodata"}/${vs.length}v${html && /consent\.youtube|before you continue/i.test(html) ? "/consent" : ""}`);
+      for (const v of vs) if (!found.has(v.id)) found.set(v.id, { ...v, published: agoDate(v.ago), approx: true });
     }
     let n = 0;
     for (const v of found.values()) {
@@ -122,11 +125,11 @@ export async function buildRecommended(outDir) {
       items.push({ id: v.id, title, film: filmName(title), dist: name, published, ...(v.approx ? { approx: true } : {}), views: v.views || 0, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
       n++;
     }
-    dists.push({ name, handle, id, ok: found.size > 0, count: n, ...(found.size ? {} : { why: "nothing could be read" }) });
+    dists.push({ name, handle, id, ok: found.size > 0, count: n, rss, pages: diag.join(" "), ...(found.size ? {} : { why: "nothing could be read" }) });
   }
   /* keep trailers found on earlier runs (the channels only show their newest videos), unless they're now too old */
   const fresh = new Set(items.map((x) => x.id));
-  for (const x of keepOld) if (!fresh.has(x.id) && Date.parse(x.published) >= since) items.push(x);
+  for (const x of keepOld) if (!fresh.has(x.id) && Date.parse(x.published) >= since && !NOT_CINEMA.test(x.title) && !NOT_TRAILER.test(x.title)) items.push(x);
   const seen = new Set(), byFilm = new Map();
   items.sort((a, b) => String(b.published).localeCompare(String(a.published)));
   const list = [];
