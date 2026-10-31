@@ -1,5 +1,5 @@
 {
- "run": "2026-10-30T14:30:11Z",
+ "run": "2026-10-31T13:50:50Z",
  "done": [],
  "skipped": [
   "flexi",
@@ -10,8 +10,10 @@
   "t1scbg",
   "t1scbluxx",
   "t2mcb",
+  "t2mcbg",
   "t2mcbluxx",
   "t2scb",
+  "t2scbg",
   "t2scbluxx"
  ],
  "errors": [],
@@ -38,6 +40,11 @@
   },
   {
    "run": "2026-10-30T14:30:11Z",
+   "done": 0,
+   "errors": 0
+  },
+  {
+   "run": "2026-10-31T13:50:50Z",
    "done": 0,
    "errors": 0
   }
