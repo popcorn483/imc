@@ -324,7 +324,7 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .recgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}.reccard{border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}.recthumb{display:block;aspect-ratio:16/9;background:#000;position:relative}.recthumb img{width:100%;height:100%;object-fit:cover;display:block}.recthumb span{position:absolute;inset:auto 8px 8px auto;background:rgba(0,0,0,.75);color:#fff;font-size:12px;padding:3px 8px;border-radius:6px}
 .recbody{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}.recbody b{font-size:15px;line-height:1.25}.recbody .m{font-size:12px;color:var(--muted)}.recbody .tt{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rectags{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}.rectags span{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(255,194,61,.18)}.rectags .imc{background:rgba(31,160,222,.2)}.recbody .acts{margin-top:auto;padding-top:8px;display:flex;gap:6px;flex-wrap:wrap}
 .recdlg{width:min(900px,100%)!important;max-height:94vh;overflow:auto}.recplayer{aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden}.recplayer iframe{width:100%;height:100%;border:0;display:block}.recdlginfo{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}.recdlginfo .m{font-size:13px;color:var(--muted)}.recdlginfo .acts{display:flex;gap:8px;flex-wrap:wrap}
-.rectags .r{background:rgba(226,69,46,.16)}.rectags .r.ok{background:rgba(70,180,90,.2)}.recign{opacity:.55}
+.rectags .r{background:rgba(226,69,46,.16)}.rectags .r.ok{background:rgba(70,180,90,.2)}.recign{opacity:.55}.recrate{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-top:4px}.recrate select{font-size:12px;padding:3px 6px;width:auto}.recdlginfo .recrate{margin-top:6px}
 .xdate{font-size:12px;padding:4px 6px;max-width:150px}.xlist label.m{white-space:nowrap}
 .xlist{margin-top:10px}.xrow{display:grid;grid-template-columns:26px 96px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.xrow:first-child{border-top:0}
 .xrow .n{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:right}.xrow img{width:96px;height:54px;object-fit:cover;border-radius:4px;background:var(--chip)}.xrow b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.xrow .m{font-size:12.5px;color:var(--muted)}
@@ -1794,13 +1794,16 @@ async function renderRec(st){const g=$("#recgrid");if(!g)return;if(!REC)REC=(awa
   else g.innerHTML=shown.slice(0,recShow).map(x=>{const rel=x.releaseDate?"In cinemas "+fmtShort(x.releaseDate):x.out?"In cinemas now":x.release||"",rt=recRating(x);
     return`<div class="reccard${ign.has(x.id)?" recign":""}"><a class="recthumb" href="https://www.youtube.com/watch?v=${esc(x.id)}" data-recwatch="${esc(x.id)}" title="Watch the trailer"><img src="https://i.ytimg.com/vi/${esc(x.id)}/mqdefault.jpg" alt="" loading="lazy"><span>▶ Watch</span></a>
       <div class="recbody"><b>${esc(x.film||x.title)}</b><div class="tt" title="${esc(x.title)}">${esc(x.title)}</div><div class="m">${esc(x.dist)} · ${esc(recAgo(x.published))}${x.views?" · "+recViews(x.views):""}</div>
-      <div class="rectags">${rt.c?`<span class="r${rt.high?"":" ok"}">${esc(rt.label)}</span>`:`<span>${esc(rt.label)}</span>`}${rel?`<span>${esc(rel)}</span>`:""}${x.imc?'<span class="imc">On imc.ie</span>':""}</div>
+      <div class="rectags">${rt.c?`<span class="r${rt.high?"":" ok"}">${esc(rt.label)}</span>`:`<span>${esc(rt.label)}</span>`}${rel?`<span>${esc(rel)}</span>`:""}${x.imc?'<span class="imc">On imc.ie</span>':""}</div>${ign.has(x.id)?"":recRateSel(x)}
       <div class="acts">${recActs(x,have,ign)}</div></div></div>`}).join("");
   const ni=L.filter(x=>ign.has(x.id)).length;
   $("#recmore").innerHTML=(shown.length>recShow?`<button class="btn" type="button" data-recmore>Show more (${shown.length-recShow} more)</button> `:"")+(recIgnShow?`<button class="btn ghost" type="button" data-recign-show>Back to new trailers</button>`:ni?`<button class="btn ghost" type="button" data-recign-show>Show ${ni} ignored</button>`:"")}
 /* rating: imc.ie's certificate if the film is listed, otherwise the BBFC's (from the importer) */
-function recRating(x){const ni=S().ni,c=String((x.imc&&x.imc.cert&&x.imc.cert!=="TBC"?x.imc.cert:"")||(ni?x.bbfc:"")||"").toUpperCase(),sys=x.imc&&x.imc.certSystem||(ni?"bbfc":"ifco");
-  if(!c)return{c:"",label:ni?"BBFC: not rated yet":"Not rated yet"};const high=!(FSAFE[sys]||FSAFE.bbfc).includes(c);return{c,high,label:(sys==="bbfc"?"BBFC ":"IFCO ")+c}}
+function recRating(x){const ni=S().ni,man=(foyState().recRate||{})[x.id],sys=man?(ni?"bbfc":"ifco"):(x.imc&&x.imc.certSystem||(ni?"bbfc":"ifco")),c=String(man||(x.imc&&x.imc.cert&&x.imc.cert!=="TBC"?x.imc.cert:"")||(ni?x.bbfc:"")||"").toUpperCase();
+  if(!c)return{c:"",label:ni?"BBFC: not rated yet":"Not rated yet"};const high=!(FSAFE[sys]||FSAFE.bbfc).includes(c);return{c,high,man:!!man,label:(sys==="bbfc"?"BBFC ":"IFCO ")+c+(man?" (set by you)":"")}}
+/* set the rating yourself when it isn't known (or is wrong): Auto uses imc.ie's or the distributor's */
+function recRateSel(x){const ni=S().ni,cur=(foyState().recRate||{})[x.id]||"",opts=ni?["U","PG","12A","12","15","18"]:["G","PG","12A","15A","16","18"];
+  return`<label class="recrate"><span>Rating</span><select data-recrate="${esc(x.id)}" aria-label="Rating for ${esc(x.film||x.title)}"><option value="">Auto${cur?"":" ("+esc(recRating({...x,_:1}).c||"not known")+")"}</option>${opts.map(o=>`<option ${cur===o?"selected":""}>${o}</option>`).join("")}</select></label>`}
 function recActs(x,have,ign){if(ign.has(x.id))return`<button class="btn small" data-recunign="${esc(x.id)}">Bring back</button>`;
   const rt=recRating(x),watch=`<button class="btn small ghost" data-recwatch="${esc(x.id)}">▶ Watch</button>`,ig=`<button class="btn small ghost" data-recignore="${esc(x.id)}">Ignore</button>`;
   if(have.has(x.id))return'<button class="btn small" disabled>Added ✓</button>'+watch;
@@ -1809,8 +1812,8 @@ function recActs(x,have,ign){if(ign.has(x.id))return`<button class="btn small" d
 function recOpen(id){const st=foyState(),x=(REC.items||[]).map(y=>({...y,imc:recFilm(y,foyFilms())})).find(y=>y.id===id);if(!x)return;
   const have=new Set([...(st.extra||[]).map(y=>y.id),...Object.values(st.links||{}).map(v=>v.id)]),ign=new Set(st.recIgnore||[]),rt=recRating(x),rel=x.releaseDate?"In cinemas "+fmtShort(x.releaseDate):x.release||"";
   $("#recDlgT").textContent=x.film||x.title;$("#recFrame").src=`https://www.youtube-nocookie.com/embed/${encodeURIComponent(x.id)}?autoplay=1&rel=0&modestbranding=1`;
-  $("#recDlgInfo").innerHTML=`<div class="m">${esc(x.title)}<br>${esc(x.dist)} · ${esc(rt.label)}${rel?" · "+esc(rel):""}</div><div class="acts">${recActs(x,have,ign).replace(/<button class="btn small ghost" data-recwatch="[^"]*">▶ Watch<\/button>/,"")}</div>`;
-  $("#recDlg").hidden=false;$("#recDlgClose").focus()}
+  recDlgInfo(x,have,ign,rt,rel);$("#recDlg").hidden=false;$("#recDlg").dataset.id=id;$("#recDlgClose").focus()}
+function recDlgInfo(x,have,ign,rt,rel){$("#recDlgInfo").innerHTML=`<div class="m">${esc(x.title)}<br>${esc(x.dist)} · ${esc(rt.label)}${rel?" · "+esc(rel):""}${ign.has(x.id)?"":recRateSel(x)}</div><div class="acts">${recActs(x,have,ign).replace(/<button class="btn small ghost" data-recwatch="[^"]*">▶ Watch<\/button>/,"")}</div>`}
 function recClose(){$("#recDlg").hidden=true;$("#recFrame").src="about:blank"}
 function recClick(e){const d=e.target.closest("[data-recdist]");if(d){recDist=d.dataset.recdist;recShow=12;renderRec(foyState());return}
   if(e.target.closest("[data-recmore]")){recShow+=12;renderRec(foyState());return}
@@ -1825,6 +1828,13 @@ function recClick(e){const d=e.target.closest("[data-recdist]");if(d){recDist=d.
   st.extra=[...(st.extra||[]),{id:x.id,title:x.film||x.title,by:x.dist,...(x.releaseDate?{releaseDate:x.releaseDate}:{})}];foySave(st);renderFoyer();toast(`${x.film} added to the loop`+(x.releaseDate?`, until it opens on ${fmtShort(x.releaseDate)}`:". Add its release date in Your own trailers, if you know it"))}
 $("#recPanel").addEventListener("click",recClick);$("#recDlg").addEventListener("click",e=>{if(e.target===$("#recDlg")||e.target.id==="recDlgClose"){recClose();return}recClick(e)});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#recDlg").hidden)recClose()});
+function recRateChange(e){const t=e.target.closest("[data-recrate]");if(!t)return;const st=foyState(),r={...(st.recRate||{})};if(t.value)r[t.dataset.recrate]=t.value;else delete r[t.dataset.recrate];st.recRate=r;
+  const id=t.dataset.recrate,it=(REC.items||[]).find(y=>y.id===id);let pulled=false;
+  if(it&&recRating({...it,imc:recFilm(it,foyFilms())}).high){const n0=(st.extra||[]).length+Object.keys(st.links||{}).length;st.extra=(st.extra||[]).filter(x=>x.id!==id);st.links=Object.fromEntries(Object.entries(st.links||{}).filter(([,v])=>v.id!==id));pulled=(st.extra.length+Object.keys(st.links).length)<n0}
+  foySave(st);if(pulled)renderFoyer();else renderRec(st);
+  if(!$("#recDlg").hidden&&$("#recDlg").dataset.id===t.dataset.recrate){const x=(REC.items||[]).map(y=>({...y,imc:recFilm(y,foyFilms())})).find(y=>y.id===t.dataset.recrate);if(x){const have=new Set([...(st.extra||[]).map(y=>y.id),...Object.values(st.links||{}).map(v=>v.id)]);recDlgInfo(x,have,new Set(st.recIgnore||[]),recRating(x),x.releaseDate?"In cinemas "+fmtShort(x.releaseDate):x.release||"")}}
+  toast(t.value?`Rating set to ${t.value}`+(pulled?": taken off the foyer TVs":""):"Rating back to automatic")}
+$("#recgrid").addEventListener("change",recRateChange);$("#recDlgInfo").addEventListener("change",recRateChange);
 $("#recimc").addEventListener("change",()=>renderRec(foyState()));$("#recnew").addEventListener("change",()=>renderRec(foyState()));
 /* your own trailers: any YouTube trailers, played in your order after the films (or on their own) */
 const XMAX=40;
