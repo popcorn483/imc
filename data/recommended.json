@@ -1,10 +1,10 @@
 {
- "updated": "2026-10-31T16:38:42.309Z",
+ "updated": "2026-10-31T16:44:15.373Z",
  "channels": {
-  "@WarnerBrosUK": "UC18-frCUyYyy7Uv_TqcoaXA",
+  "@warnerbrosuktrailers": "UCbxjDfYwfF8RjYBp5htJ38Q",
   "@DisneyUK": "UCQphRgAhj5UxktrQNP3WF5g",
   "@UniversalPicturesUK": "UCQLBOKpgXrSj3nPU-YC3K9Q",
-  "@SonyPicturesUK": "UCKZvvkt2wdeeZX9haZLL35g",
+  "UCJJap_3RGZ2UxqLTLz0K39g": "UCJJap_3RGZ2UxqLTLz0K39g",
   "@ParamountPicturesUK": "UCi_iW2lqB3ADsJOobe_8yeg",
   "@StudiocanalUK": "UCFSILgKCKo35QYGz8Kob51g",
   "@LionsgateUK": "UCQ2QDEN5wRiSJQXMAXRmwHg",
@@ -16,13 +16,13 @@
  "distributors": [
   {
    "name": "Warner Bros.",
-   "handle": "@WarnerBrosUK",
-   "id": "UC18-frCUyYyy7Uv_TqcoaXA",
-   "ok": false,
-   "count": 0,
-   "rss": 0,
-   "pages": "1471443b/data/0v 882224b/data/0v",
-   "why": "nothing could be read"
+   "handle": "@warnerbrosuktrailers",
+   "id": "UCbxjDfYwfF8RjYBp5htJ38Q",
+   "ok": true,
+   "count": 2,
+   "rss": 15,
+   "pages": "1340899b/data/30v 1245095b/data/30v",
+   "looked": 15
   },
   {
    "name": "Disney",
@@ -31,25 +31,28 @@
    "ok": true,
    "count": 0,
    "rss": 15,
-   "pages": "1323906b/data/0v 1233311b/data/29v"
+   "pages": "1326020b/data/29v 1226563b/data/28v",
+   "looked": 15
   },
   {
    "name": "Universal",
    "handle": "@UniversalPicturesUK",
    "id": "UCQLBOKpgXrSj3nPU-YC3K9Q",
    "ok": true,
-   "count": 1,
+   "count": 7,
    "rss": 15,
-   "pages": "1370729b/data/0v 1231745b/data/29v"
+   "pages": "1322897b/data/29v 1231247b/data/29v",
+   "looked": 15
   },
   {
    "name": "Sony Pictures",
-   "handle": "@SonyPicturesUK",
-   "id": "UCKZvvkt2wdeeZX9haZLL35g",
+   "handle": "UCJJap_3RGZ2UxqLTLz0K39g",
+   "id": "UCJJap_3RGZ2UxqLTLz0K39g",
    "ok": true,
-   "count": 0,
-   "rss": 1,
-   "pages": "889102b/data/0v 886887b/data/1v"
+   "count": 5,
+   "rss": 15,
+   "pages": "1336437b/data/30v 1249940b/data/30v",
+   "looked": 15
   },
   {
    "name": "Paramount",
@@ -58,7 +61,8 @@
    "ok": true,
    "count": 0,
    "rss": 15,
-   "pages": "1387537b/data/0v 1238937b/data/29v"
+   "pages": "1345007b/data/30v 1247232b/data/30v",
+   "looked": 15
   },
   {
    "name": "StudioCanal",
@@ -67,7 +71,8 @@
    "ok": true,
    "count": 2,
    "rss": 15,
-   "pages": "1337426b/data/0v 1249093b/data/30v"
+   "pages": "1343381b/data/30v 1241647b/data/30v",
+   "looked": 15
   },
   {
    "name": "Lionsgate",
@@ -76,7 +81,8 @@
    "ok": true,
    "count": 0,
    "rss": 15,
-   "pages": "1324771b/data/0v 1233882b/data/30v"
+   "pages": "1378198b/data/29v 1223781b/data/29v",
+   "looked": 15
   },
   {
    "name": "Searchlight",
@@ -85,7 +91,8 @@
    "ok": true,
    "count": 3,
    "rss": 15,
-   "pages": "1338484b/data/0v 1227623b/data/28v"
+   "pages": "1341777b/data/30v 1225046b/data/28v",
+   "looked": 15
   },
   {
    "name": "Pathé",
@@ -94,7 +101,8 @@
    "ok": true,
    "count": 0,
    "rss": 15,
-   "pages": "1330241b/data/0v 1208166b/data/24v"
+   "pages": "1337099b/data/30v 1206374b/data/24v",
+   "looked": 15
   },
   {
    "name": "Altitude",
@@ -103,7 +111,8 @@
    "ok": true,
    "count": 0,
    "rss": 4,
-   "pages": "989252b/data/0v 899860b/data/2v"
+   "pages": "933155b/data/4v 897809b/data/2v",
+   "looked": 0
   },
   {
    "name": "Vertigo",
@@ -112,7 +121,8 @@
    "ok": true,
    "count": 5,
    "rss": 15,
-   "pages": "1336900b/data/0v 1223219b/data/29v"
+   "pages": "1332901b/data/30v 1222989b/data/29v",
+   "looked": 7
   }
  ],
  "items": [
@@ -132,7 +142,7 @@
    "film": "Buddy",
    "dist": "Vertigo",
    "published": "2026-10-29T15:29:00+00:00",
-   "views": 54496,
+   "views": 54530,
    "release": "In cinemas 27th November 2026",
    "releaseDate": "2026-11-27"
   },
@@ -142,9 +152,61 @@
    "film": "Behemoth!",
    "dist": "Searchlight",
    "published": "2026-10-28T14:48:34+00:00",
-   "views": 643899,
+   "views": 645356,
    "release": "In cinemas December 4",
    "releaseDate": "2026-12-04"
+  },
+  {
+   "id": "rH0xgH0lpUY",
+   "title": "Jumanji: Open World - New Trailer - Only In Cinemas December 23",
+   "film": "Jumanji: Open World",
+   "dist": "Sony Pictures",
+   "published": "2026-10-28T13:00:20+00:00",
+   "views": 1123435,
+   "release": "In cinemas December 23",
+   "releaseDate": "2026-12-23"
+  },
+  {
+   "id": "Jqsq-LFDAjg",
+   "title": "Dune: Part Three - Final Trailer - Warner Bros. UK & Ireland",
+   "film": "Dune: Part Three",
+   "dist": "Warner Bros.",
+   "published": "2026-10-27T16:00:23+00:00",
+   "views": 1537439,
+   "release": "In cinemas and IMAX December 18",
+   "releaseDate": "2026-12-18"
+  },
+  {
+   "id": "bkvGGVHT08M",
+   "title": "Witch on the Holy Night - Theme Song Trailer - Only In Cinemas January 29",
+   "film": "Witch on the Holy Night",
+   "dist": "Sony Pictures",
+   "published": "2026-10-27T13:01:25+00:00",
+   "views": 3039,
+   "release": "In cinemas January 29",
+   "releaseDate": "2027-01-29"
+  },
+  {
+   "id": "Nb8Y7qAi4fk",
+   "title": "They’ve seen the path. You will too. Final Trailer tomorrow. DUNE: PART THREE.",
+   "film": "They’ve seen the path. You will too.",
+   "dist": "Warner Bros.",
+   "published": "2026-10-26T17:30:38+00:00",
+   "views": 30671,
+   "release": "In cinemas & IMAX December 18",
+   "releaseDate": "2026-12-18"
+  },
+  {
+   "id": "mSm7WVH3lW4",
+   "title": "Ramayana: Rise of a Legend - New Trailer - Only In Cinemas November 5",
+   "film": "Ramayana: Rise of a Legend",
+   "dist": "Sony Pictures",
+   "published": "2026-10-26T16:41:42.658Z",
+   "approx": true,
+   "checked": true,
+   "views": 0,
+   "release": "In cinemas November 5",
+   "releaseDate": "2026-11-05"
   },
   {
    "id": "y72dBnyXUho",
@@ -152,9 +214,19 @@
    "film": "THE MAN WHO FELL TO EARTH",
    "dist": "StudioCanal",
    "published": "2026-10-23T18:00:16+00:00",
-   "views": 93199,
+   "views": 93220,
    "release": "In cinemas 13 November 2026",
    "releaseDate": "2026-11-13"
+  },
+  {
+   "id": "fiGytCAGIQY",
+   "title": "Onslaught | Official Trailer (Universal Pictures) - HD",
+   "film": "Onslaught",
+   "dist": "Universal",
+   "published": "2026-10-20T15:57:40.000Z",
+   "views": 0,
+   "release": "In cinemas December 11",
+   "releaseDate": "2026-12-11"
   },
   {
    "id": "auvPMJdysHc",
@@ -167,6 +239,16 @@
    "releaseDate": "2026-10-30"
   },
   {
+   "id": "WFFhIZ95LJw",
+   "title": "The Exorcist: Martyrs | Official Trailer (Universal Pictures) - HD",
+   "film": "The Exorcist: Martyrs",
+   "dist": "Universal",
+   "published": "2026-10-09T22:44:44.000Z",
+   "views": 0,
+   "release": "In cinemas March 12 2027",
+   "releaseDate": "2027-03-12"
+  },
+  {
    "id": "X4OQGAEmUIE",
    "title": "Mārama - Official Trailer (2026) | In Cinemas 11th December",
    "film": "Mārama",
@@ -177,6 +259,16 @@
    "releaseDate": "2026-12-11"
   },
   {
+   "id": "N9jgdblZM80",
+   "title": "WERWULF | Official Trailer 2 - HD",
+   "film": "WERWULF",
+   "dist": "Universal",
+   "published": "2026-09-26T15:00:37.000Z",
+   "views": 0,
+   "release": "In cinemas January 1 2027",
+   "releaseDate": "2027-01-01"
+  },
+  {
    "id": "OrpZYmPEyQI",
    "title": "Wild Horse Nine | Official Trailer | In UK cinemas November 4th",
    "film": "Wild Horse Nine",
@@ -185,6 +277,16 @@
    "views": 930315,
    "release": "In cinemas November 4th",
    "releaseDate": "2026-11-04"
+  },
+  {
+   "id": "sDrmhizqbY0",
+   "title": "Other Mommy | Trailer 2 (Universal Pictures) - HD",
+   "film": "Other Mommy",
+   "dist": "Universal",
+   "published": "2026-09-15T15:00:22.000Z",
+   "views": 0,
+   "release": "In cinemas October 9",
+   "releaseDate": "2026-10-09"
   },
   {
    "id": "4zApfcGWHro",
@@ -205,6 +307,16 @@
    "views": 19942,
    "release": "In cinemas 4th September 2026",
    "releaseDate": "2026-09-04"
+  },
+  {
+   "id": "Hs5PrFL5zgk",
+   "title": "VIOLENT NIGHT 2 | Official Trailer (Universal Pictures) - HD",
+   "film": "VIOLENT NIGHT 2",
+   "dist": "Universal",
+   "published": "2026-08-04T15:00:37.000Z",
+   "views": 0,
+   "release": "In cinemas December 4",
+   "releaseDate": "2026-12-04"
   }
  ]
 }
