@@ -211,7 +211,7 @@ const SAFE={bbfc:["U","PG","12A","12"],ifco:["G","PG","12A"]};
 const RED=/red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
 const LOUNGE=Q.get("luxx")==="1";
 const MYTR=Object.fromEntries((Q.get("tl")||"").split("|").map(x=>x.split("~")).filter(x=>x.length===2&&/^[\w-]{11}$/.test(x[1])));
-const EXTRA=(Q.get("x")||"").split("|").map(x=>{const i=x.indexOf("~"),id=i<0?x:x.slice(0,i);return{id,title:i<0?"":x.slice(i+1)}}).filter(x=>/^[\w-]{11}$/.test(x.id)&&!RED.test(x.title));let ONLY=Q.get("only")==="1"&&EXTRA.length>0;
+const EXTRA=(Q.get("x")||"").split("|").map(x=>{const[id,title="",rel=""]=x.split("~");return{id,title,rel:/^\d{4}-\d{2}-\d{2}$/.test(rel)?rel:""}}).filter(x=>/^[\w-]{11}$/.test(x.id)&&!RED.test(x.title));let ONLY=Q.get("only")==="1"&&EXTRA.length>0;
 /* studio trailers (WB360, Disney Box and so on): video files saved on this PC from the hub, plus download links sent in the address as sv=[film key, title, link] */
 const SVLINKS=(()=>{try{const b=(Q.get("sv")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&/^https:\/\//.test(a[2]||"")).map((a,i)=>({id:"l"+i,film:String(a[0]||""),title:String(a[1]||""),url:a[2]}))}catch(e){return[]}})();
 let STUDIO=[];
@@ -264,7 +264,7 @@ function buildQueue(){const all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.leng
   list=list.filter(f=>safety(f).ok).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer||nt(x.title)===nt(f.title))===i);
   list.sort((a,b)=>{const ua=upcoming(a)[0],ub=upcoming(b)[0];return(ua?ua.date+ua.time:"9"+(a.releaseDate||"")).localeCompare(ub?ub.date+ub.time:"9"+(b.releaseDate||""))});
   if(ONLY)list=[];if(!TRAILERS)return list;
-  const seen=new Set(list.map(f=>ytId(f.trailer)));for(const x of EXTRA)if(!seen.has(x.id)){seen.add(x.id);list.push({key:"x:"+x.id,title:x.title||"Coming soon",trailer:"https://www.youtube.com/watch?v="+x.id,extra:true,sessions:[]})}
+  const seen=new Set(list.map(f=>ytId(f.trailer)));for(const x of EXTRA)if(!seen.has(x.id)&&!(x.rel&&x.rel<londonNow().date)){seen.add(x.id);list.push({key:"x:"+x.id,title:x.title||"Coming soon",trailer:"https://www.youtube.com/watch?v="+x.id,extra:true,rel:x.rel,sessions:[]})}
   for(const x of STUDIO)if(!x.film&&!seen.has("s"+x.id)){seen.add("s"+x.id);list.push({key:"s:"+x.id,title:x.title||"Coming soon",trailer:"studio:"+x.id,studio:x,extra:true,sessions:[]})}
   return list}
 
@@ -376,7 +376,7 @@ async function next(){clearTimeout(timer);try{if(player&&player._done)player._do
   if(st.k==="trailer")return st.f.studio?playStudio(st.f):playTrailer(st.f)}
 async function playTrailer(f){const ok=await loadYT();if(!ok){timer=setTimeout(next,300);return}
   const id=ytId(f.trailer),u=f.extra?[]:upcoming(f),nx=u[0],n=londonNow();
-  $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
+  $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:f.rel?`<small>IN CINEMAS ${shortDay(f.rel).toUpperCase()}</small>`:"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
   const q=nx&&nx.book?qrSvg(nx.book):"";$("#tqr").innerHTML=q?q+`<span>Scan to book<b>${nx.time}</b></span>`:"";$("#tqr").style.opacity=0;
   show("yt-wrap");progress(0.01);
   let started=false,over=false;const cur=$("#ytcurtain");cur.classList.remove("off");

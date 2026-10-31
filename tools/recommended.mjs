@@ -17,11 +17,11 @@ export const DISTRIBUTORS = [
   ["Pathé", "@PatheUK"],
   ["Altitude", "@AltitudeFilms"],
   ["Vertigo", "@VertigoReleasing"],
-  ["Entertainment Film", "@EntertainmentFilmDist"],
 ];
 
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 const RED = /red[\s-]?band|uncensored|unrated|explicit|nsfw|restricted|\b18\+|age[\s-]?restricted/i;
+const NOT_CINEMA = /on digital|digital now|disney\+|streaming|netflix|prime video|apple tv|now on|blu-?ray|dvd|disney vault/i;
 const NOT_TRAILER = /reaction|review|breakdown|recap|featurette|behind[\s-]the[\s-]scenes|interview|in conversation|\bclip\b|\bspot\b|#shorts|first look at|\bvlog\b|soundtrack|lyric|premiere live|livestream/i;
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -40,6 +40,32 @@ async function channelId(handle, cache) {
   const html = await text(`https://www.youtube.com/${handle}`);
   const m = html && (/"externalId":"(UC[\w-]{22})"/.exec(html) || /channel\/(UC[\w-]{22})"/.exec(html) || /"channelId":"(UC[\w-]{22})"/.exec(html));
   return m ? m[1] : null;
+}
+// the channel's Videos tab and its "trailer" search, read from the page's built-in data (lists far more than the 15-video feed)
+function pageVideos(html) {
+  const m = html && /var ytInitialData = (\{.*?\});<\/script>/s.exec(html);
+  if (!m) return [];
+  let data; try { data = JSON.parse(m[1]); } catch { return []; }
+  const out = [], seen = new Set(), txt = (o) => !o ? "" : o.simpleText || (o.runs || []).map((r) => r.text).join("") || o.content || "";
+  const walk = (o, d) => {
+    if (!o || typeof o !== "object" || d > 40) return;
+    if (Array.isArray(o)) { for (const x of o) walk(x, d + 1); return; }
+    const v = o.videoRenderer || o.gridVideoRenderer;
+    if (v && /^[\w-]{11}$/.test(v.videoId || "") && !seen.has(v.videoId)) {
+      seen.add(v.videoId);
+      out.push({ id: v.videoId, title: txt(v.title), ago: txt(v.publishedTimeText), views: +(txt(v.viewCountText).replace(/[^\d]/g, "") || 0), desc: txt(v.descriptionSnippet) || (v.detailedMetadataSnippets || []).map((x) => txt(x.snippetText)).join(" ") });
+    }
+    for (const k in o) if (k !== "videoRenderer") walk(o[k], d + 1);
+  };
+  walk(data, 0);
+  return out;
+}
+// "3 weeks ago" → an ISO date that far back
+function agoDate(t) {
+  const m = /(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago/i.exec(t || "");
+  if (!m) return null;
+  const ms = { second: 1e3, minute: 6e4, hour: 36e5, day: 864e5, week: 6048e5, month: 2592e6, year: 31536e6 }[m[2].toLowerCase()];
+  return new Date(Date.now() - +m[1] * ms).toISOString();
 }
 // "Wicked: For Good | Official Trailer 2" → "Wicked: For Good"
 export function filmName(title) {
@@ -70,26 +96,46 @@ export async function buildRecommended(outDir) {
   const file = path.join(outDir, "recommended.json");
   const prev = await fs.readFile(file, "utf8").then(JSON.parse).catch(() => ({}));
   const cache = prev.channels || {}, channels = {}, dists = [], items = [], since = Date.now() - 150 * 864e5;
+  const keepOld = (prev.items || []).filter((x) => DISTRIBUTORS.some(([n]) => n === x.dist));
   for (const [name, handle] of DISTRIBUTORS) {
     const id = await channelId(handle, cache);
     if (!id) { dists.push({ name, handle, ok: false, why: "channel not found" }); continue; }
     channels[handle] = id;
+    const found = new Map();
     await sleep(500);
     const xml = await text(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`);
-    if (!xml) { dists.push({ name, handle, id, ok: false, why: "feed not available" }); const old = (prev.items || []).filter((x) => x.dist === name); items.push(...old); continue; }
+    for (const e of (xml || "").split("<entry>").slice(1)) {
+      const vid = /<yt:videoId>([\w-]{11})</.exec(e)?.[1];
+      if (vid) found.set(vid, { id: vid, title: unxml(/<title>([\s\S]*?)<\/title>/.exec(e)?.[1]), published: /<published>([^<]+)</.exec(e)?.[1], desc: unxml(/<media:description>([\s\S]*?)<\/media:description>/.exec(e)?.[1]), views: +(/<media:statistics views="(\d+)"/.exec(e)?.[1] || 0) });
+    }
+    const base = /^UC/.test(handle) ? `https://www.youtube.com/channel/${handle}` : `https://www.youtube.com/${handle}`;
+    for (const u of [`${base}/videos`, `${base}/search?query=trailer`]) {
+      await sleep(700);
+      for (const v of pageVideos(await text(u))) if (!found.has(v.id)) found.set(v.id, { ...v, published: agoDate(v.ago), approx: true });
+    }
     let n = 0;
-    for (const e of xml.split("<entry>").slice(1)) {
-      const vid = /<yt:videoId>([\w-]{11})</.exec(e)?.[1], title = unxml(/<title>([\s\S]*?)<\/title>/.exec(e)?.[1]), published = /<published>([^<]+)</.exec(e)?.[1];
-      const desc = unxml(/<media:description>([\s\S]*?)<\/media:description>/.exec(e)?.[1]), views = +(/<media:statistics views="(\d+)"/.exec(e)?.[1] || 0);
-      if (!vid || !/trailer|teaser/i.test(title) || NOT_TRAILER.test(title) || RED.test(title + " " + desc.slice(0, 300))) continue;
-      if (published && Date.parse(published) < since) continue;
-      const rel = releaseHint(desc, published);
-      items.push({ id: vid, title, film: filmName(title), dist: name, published, views, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
+    for (const v of found.values()) {
+      const { title, desc = "", published } = v;
+      if (!/trailer|teaser/i.test(title) || NOT_TRAILER.test(title) || RED.test(title + " " + desc.slice(0, 300)) || NOT_CINEMA.test(title)) continue;
+      if (!published || Date.parse(published) < since) continue;
+      const rel = releaseHint(desc, published) || releaseHint(title, published);
+      items.push({ id: v.id, title, film: filmName(title), dist: name, published, ...(v.approx ? { approx: true } : {}), views: v.views || 0, ...(rel ? { release: rel.text, ...(rel.date ? { releaseDate: rel.date } : {}), ...(rel.now ? { out: true } : {}) } : {}) });
       n++;
     }
-    dists.push({ name, handle, id, ok: true, count: n });
+    dists.push({ name, handle, id, ok: found.size > 0, count: n, ...(found.size ? {} : { why: "nothing could be read" }) });
   }
-  const seen = new Set(), list = items.filter((x) => !seen.has(x.id) && seen.add(x.id)).sort((a, b) => String(b.published).localeCompare(String(a.published)));
+  /* keep trailers found on earlier runs (the channels only show their newest videos), unless they're now too old */
+  const fresh = new Set(items.map((x) => x.id));
+  for (const x of keepOld) if (!fresh.has(x.id) && Date.parse(x.published) >= since) items.push(x);
+  const seen = new Set(), byFilm = new Map();
+  items.sort((a, b) => String(b.published).localeCompare(String(a.published)));
+  const list = [];
+  for (const x of items) {
+    if (seen.has(x.id)) continue; seen.add(x.id);
+    const k = x.dist + "|" + x.film.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(), o = byFilm.get(k);
+    if (o) { if (!o.releaseDate && x.releaseDate) Object.assign(o, { release: x.release, releaseDate: x.releaseDate }); continue; }
+    byFilm.set(k, x); list.push(x);
+  }
   await fs.writeFile(file, JSON.stringify({ updated: new Date().toISOString(), channels, distributors: dists, items: list }, null, 1));
   console.log(`recommended: ${list.length} trailers from ${dists.filter((d) => d.ok).length}/${dists.length} distributors` + dists.filter((d) => !d.ok).map((d) => `; ${d.name}: ${d.why}`).join(""));
 }
