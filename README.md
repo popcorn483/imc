@@ -476,6 +476,16 @@ On the Foyer trailers page, any film with no trailer on imc.ie (or whose trailer
 
 Your trailer then plays on the foyer player (it travels in the TV link) and goes in the pack's trailer list. "Remove my link" undoes it.
 
+## Recommended trailers (new releases from distributors)
+
+The **Recommended: new trailers** section on the Foyer trailers page lists the newest public trailers from the distributors' official UK YouTube channels: Warner Bros., Disney, Universal, Sony Pictures, Paramount, StudioCanal, Lionsgate, Searchlight, Pathé, Altitude and Vertigo.
+
+- The importer (`tools/recommended.mjs`, run with each import) reads each channel's public feed, its Videos tab and its trailer search. It looks up each new trailer's upload date and description once, and keeps earlier finds for 150 days. The results go in `data/recommended.json`. To add a distributor, add its name and YouTube @handle (or channel id) to `DISTRIBUTORS`.
+- It leaves out red-band trailers, clips, featurettes, reviews and digital or streaming releases. The release date ("In cinemas 21 November") and the rating ("Rated 12A") are read from the trailer's description when the distributor gives them.
+- Each card shows the rating: imc.ie's certificate if the film is listed there, otherwise the BBFC rating from the trailer's description, or "not rated yet". Films rated too high for the foyer can't be added.
+- **Watch** plays the trailer in a pop-up on the page before you add it. **Add to loop** puts it in Your own trailers with its release date: it plays on the foyer TVs labelled "In cinemas …" until the film opens. **Use as its trailer** sets it as the trailer for a film already on imc.ie. **Ignore** hides it for good, and "Show ignored" brings it back.
+- Your own trailers each have an **In cinemas** date. A trailer stops playing once its date has passed.
+
 ## Studio trailers (WB360, Disney Box and other portals)
 
 In **Foyer trailers**, the **Studio trailers** panel takes trailers downloaded from the studios' own sites:

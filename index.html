@@ -323,7 +323,9 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .recbar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-bottom:12px}.recchips{display:flex;flex-wrap:wrap;gap:6px}.recchips button{font:600 13px var(--f-body,inherit);padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer}.recchips button[aria-pressed="true"]{background:var(--accent,#ffc23d);border-color:transparent;color:#1a1030}
 .recgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}.reccard{border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}.recthumb{display:block;aspect-ratio:16/9;background:#000;position:relative}.recthumb img{width:100%;height:100%;object-fit:cover;display:block}.recthumb span{position:absolute;inset:auto 8px 8px auto;background:rgba(0,0,0,.75);color:#fff;font-size:12px;padding:3px 8px;border-radius:6px}
 .recbody{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}.recbody b{font-size:15px;line-height:1.25}.recbody .m{font-size:12px;color:var(--muted)}.recbody .tt{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rectags{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}.rectags span{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(255,194,61,.18)}.rectags .imc{background:rgba(31,160,222,.2)}.recbody .acts{margin-top:auto;padding-top:8px;display:flex;gap:6px;flex-wrap:wrap}
-.xdate{font-size:12px;padding:4px 6px;max-width:150px}
+.recdlg{width:min(900px,100%)!important;max-height:94vh;overflow:auto}.recplayer{aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden}.recplayer iframe{width:100%;height:100%;border:0;display:block}.recdlginfo{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}.recdlginfo .m{font-size:13px;color:var(--muted)}.recdlginfo .acts{display:flex;gap:8px;flex-wrap:wrap}
+.rectags .r{background:rgba(226,69,46,.16)}.rectags .r.ok{background:rgba(70,180,90,.2)}.recign{opacity:.55}
+.xdate{font-size:12px;padding:4px 6px;max-width:150px}.xlist label.m{white-space:nowrap}
 .xlist{margin-top:10px}.xrow{display:grid;grid-template-columns:26px 96px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.xrow:first-child{border-top:0}
 .xrow .n{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:right}.xrow img{width:96px;height:54px;object-fit:cover;border-radius:4px;background:var(--chip)}.xrow b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.xrow .m{font-size:12.5px;color:var(--muted)}
 .xrow .acts{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
@@ -953,6 +955,13 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
   </main>
 </div>
 
+<div class="modal" id="recDlg" hidden>
+  <div class="panel recdlg" role="dialog" aria-modal="true" aria-labelledby="recDlgT">
+    <div class="ph"><h2 id="recDlgT">Trailer</h2><button class="btn small ghost" id="recDlgClose">Close</button></div>
+    <div class="recplayer"><iframe id="recFrame" title="Trailer preview" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+    <div id="recDlgInfo" class="recdlginfo"></div>
+  </div>
+</div>
 <div class="modal" id="lxLib" hidden>
   <div class="panel" role="dialog" aria-modal="true" aria-labelledby="lxLibT" style="max-width:780px;width:100%;max-height:92vh;overflow:auto">
     <div class="ph"><h2 id="lxLibT">Choose LUXX photos</h2><button class="btn small ghost" id="lxLibClose">Done</button></div>
@@ -1766,7 +1775,7 @@ $("#srcadd").addEventListener("submit",e=>{e.preventDefault();let u=$("#srcurl")
   const a=srcGet();a.push({n:$("#srcname").value.trim()||new URL(u).hostname,u});try{localStorage.setItem("imc-sources",JSON.stringify(a))}catch(err){}$("#srcname").value="";$("#srcurl").value="";renderSources();toast("Site added")});
 $("#srclist").addEventListener("click",e=>{const b=e.target.closest("[data-srcdel]");if(!b)return;const a=srcGet();a.splice(+b.dataset.srcdel,1);try{localStorage.setItem("imc-sources",JSON.stringify(a))}catch(err){}renderSources()});
 /* ---------- recommended: newest public trailers from distributors (data/recommended.json, from the importer) ---------- */
-let REC=null,recDist="all",recShow=12;
+let REC=null,recDist="all",recShow=12,recIgnShow=false;
 const recNorm=t=>String(t||"").toLowerCase().replace(/&/g,"and").replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").replace(/^the /,"").trim();
 function recFilm(x,fl){const n=recNorm(x.film);if(n.length<3)return null;return fl.find(f=>{const m=recNorm(f.title);return m===n||(m.length>5&&n.length>5&&(m.startsWith(n)||n.startsWith(m)))})||null}
 const recAgo=d=>{const n=Math.max(0,Math.round((Date.now()-Date.parse(d))/864e5));return n===0?"today":n===1?"yesterday":n<14?n+" days ago":n<60?Math.round(n/7)+" weeks ago":Math.round(n/30)+" months ago"};
@@ -1779,19 +1788,43 @@ async function renderRec(st){const g=$("#recgrid");if(!g)return;if(!REC)REC=(awa
   if($("#recimc").checked)L=L.filter(x=>x.imc);if($("#recnew").checked)L=L.filter(x=>!have.has(x.id));
   $("#reccount").textContent=REC.updated?`${items.length} trailers · checked ${recAgo(REC.updated)}`:"";
   if(!items.length){g.innerHTML='<p class="tip" style="margin:0">New trailers appear here after the next daily update.</p>';$("#recmore").innerHTML="";return}
-  if(!L.length){g.innerHTML='<p class="tip" style="margin:0">Nothing matches those filters.</p>';$("#recmore").innerHTML="";return}
-  g.innerHTML=L.slice(0,recShow).map(x=>{const added=have.has(x.id),rel=x.releaseDate?"In cinemas "+fmtShort(x.releaseDate):x.out?"In cinemas now":x.release||"";
-    return`<div class="reccard"><a class="recthumb" href="https://www.youtube.com/watch?v=${esc(x.id)}" target="imc-web" title="Watch on YouTube"><img src="https://i.ytimg.com/vi/${esc(x.id)}/mqdefault.jpg" alt="" loading="lazy"><span>▶ Watch</span></a>
+  const ign=new Set(st.recIgnore||[]);
+  const shown=L.filter(x=>recIgnShow?ign.has(x.id):!ign.has(x.id));
+  if(!shown.length){g.innerHTML=`<p class="tip" style="margin:0">${recIgnShow?"Nothing ignored.":"Nothing matches those filters."}</p>`}
+  else g.innerHTML=shown.slice(0,recShow).map(x=>{const rel=x.releaseDate?"In cinemas "+fmtShort(x.releaseDate):x.out?"In cinemas now":x.release||"",rt=recRating(x);
+    return`<div class="reccard${ign.has(x.id)?" recign":""}"><a class="recthumb" href="https://www.youtube.com/watch?v=${esc(x.id)}" data-recwatch="${esc(x.id)}" title="Watch the trailer"><img src="https://i.ytimg.com/vi/${esc(x.id)}/mqdefault.jpg" alt="" loading="lazy"><span>▶ Watch</span></a>
       <div class="recbody"><b>${esc(x.film||x.title)}</b><div class="tt" title="${esc(x.title)}">${esc(x.title)}</div><div class="m">${esc(x.dist)} · ${esc(recAgo(x.published))}${x.views?" · "+recViews(x.views):""}</div>
-      <div class="rectags">${rel?`<span>${esc(rel)}</span>`:""}${x.imc?`<span class="imc">On imc.ie${x.imc.cert?" · "+esc(x.imc.cert):""}</span>`:""}</div>
-      <div class="acts">${added?'<button class="btn small" disabled>Added ✓</button>':x.imc?`<button class="btn small primary" data-recuse="${esc(x.id)}" data-key="${esc(x.imc.key)}">Use as its trailer</button>`:`<button class="btn small primary" data-recadd="${esc(x.id)}">Add to loop</button>`}</div></div></div>`}).join("");
-  $("#recmore").innerHTML=L.length>recShow?`<button class="btn" type="button" data-recmore>Show more (${L.length-recShow} more)</button>`:""}
-$("#recPanel").addEventListener("click",e=>{const d=e.target.closest("[data-recdist]");if(d){recDist=d.dataset.recdist;recShow=12;renderRec(foyState());return}
+      <div class="rectags">${rt.c?`<span class="r${rt.high?"":" ok"}">${esc(rt.label)}</span>`:`<span>${esc(rt.label)}</span>`}${rel?`<span>${esc(rel)}</span>`:""}${x.imc?'<span class="imc">On imc.ie</span>':""}</div>
+      <div class="acts">${recActs(x,have,ign)}</div></div></div>`}).join("");
+  const ni=L.filter(x=>ign.has(x.id)).length;
+  $("#recmore").innerHTML=(shown.length>recShow?`<button class="btn" type="button" data-recmore>Show more (${shown.length-recShow} more)</button> `:"")+(recIgnShow?`<button class="btn ghost" type="button" data-recign-show>Back to new trailers</button>`:ni?`<button class="btn ghost" type="button" data-recign-show>Show ${ni} ignored</button>`:"")}
+/* rating: imc.ie's certificate if the film is listed, otherwise the BBFC's (from the importer) */
+function recRating(x){const ni=S().ni,c=String((x.imc&&x.imc.cert&&x.imc.cert!=="TBC"?x.imc.cert:"")||(ni?x.bbfc:"")||"").toUpperCase(),sys=x.imc&&x.imc.certSystem||(ni?"bbfc":"ifco");
+  if(!c)return{c:"",label:ni?"BBFC: not rated yet":"Not rated yet"};const high=!(FSAFE[sys]||FSAFE.bbfc).includes(c);return{c,high,label:(sys==="bbfc"?"BBFC ":"IFCO ")+c}}
+function recActs(x,have,ign){if(ign.has(x.id))return`<button class="btn small" data-recunign="${esc(x.id)}">Bring back</button>`;
+  const rt=recRating(x),watch=`<button class="btn small ghost" data-recwatch="${esc(x.id)}">▶ Watch</button>`,ig=`<button class="btn small ghost" data-recignore="${esc(x.id)}">Ignore</button>`;
+  if(have.has(x.id))return'<button class="btn small" disabled>Added ✓</button>'+watch;
+  if(rt.high)return`<span class="m">Rated ${esc(rt.c)}: too high for the foyer</span>`+ig;
+  return(x.imc?`<button class="btn small primary" data-recuse="${esc(x.id)}" data-key="${esc(x.imc.key)}">Use as its trailer</button>`:`<button class="btn small primary" data-recadd="${esc(x.id)}">Add to loop</button>`)+watch+ig}
+function recOpen(id){const st=foyState(),x=(REC.items||[]).map(y=>({...y,imc:recFilm(y,foyFilms())})).find(y=>y.id===id);if(!x)return;
+  const have=new Set([...(st.extra||[]).map(y=>y.id),...Object.values(st.links||{}).map(v=>v.id)]),ign=new Set(st.recIgnore||[]),rt=recRating(x),rel=x.releaseDate?"In cinemas "+fmtShort(x.releaseDate):x.release||"";
+  $("#recDlgT").textContent=x.film||x.title;$("#recFrame").src=`https://www.youtube-nocookie.com/embed/${encodeURIComponent(x.id)}?autoplay=1&rel=0&modestbranding=1`;
+  $("#recDlgInfo").innerHTML=`<div class="m">${esc(x.title)}<br>${esc(x.dist)} · ${esc(rt.label)}${rel?" · "+esc(rel):""}</div><div class="acts">${recActs(x,have,ign).replace(/<button class="btn small ghost" data-recwatch="[^"]*">▶ Watch<\/button>/,"")}</div>`;
+  $("#recDlg").hidden=false;$("#recDlgClose").focus()}
+function recClose(){$("#recDlg").hidden=true;$("#recFrame").src="about:blank"}
+function recClick(e){const d=e.target.closest("[data-recdist]");if(d){recDist=d.dataset.recdist;recShow=12;renderRec(foyState());return}
   if(e.target.closest("[data-recmore]")){recShow+=12;renderRec(foyState());return}
+  if(e.target.closest("[data-recign-show]")){recIgnShow=!recIgnShow;renderRec(foyState());return}
+  const w=e.target.closest("[data-recwatch]");if(w){e.preventDefault();recOpen(w.dataset.recwatch);return}
+  const ig=e.target.closest("[data-recignore]"),ui=e.target.closest("[data-recunign]");
+  if(ig||ui){const st=foyState(),id=(ig||ui).dataset[ig?"recignore":"recunign"];st.recIgnore=ig?[...new Set([...(st.recIgnore||[]),id])]:(st.recIgnore||[]).filter(x=>x!==id);foySave(st);if(!$("#recDlg").hidden)recClose();renderRec(st);toast(ig?"Ignored: it won't show in Recommended again":"Back in Recommended");return}
   const a=e.target.closest("[data-recadd]"),u=e.target.closest("[data-recuse]");if(!a&&!u)return;const x=(REC.items||[]).find(y=>y.id===(a||u).dataset[a?"recadd":"recuse"]);if(!x)return;const st=foyState();
+  if(!$("#recDlg").hidden)recClose();
   if(u){st.links={...(st.links||{}),[u.dataset.key]:{id:x.id,title:x.title}};foySave(st);renderFoyer();toast(`${x.film}: this trailer now plays on the foyer TVs`);return}
   if((st.extra||[]).length>=XMAX){toast(`The loop holds up to ${XMAX} of your own trailers. Remove some first.`);return}
-  st.extra=[...(st.extra||[]),{id:x.id,title:x.film||x.title,by:x.dist,...(x.releaseDate?{releaseDate:x.releaseDate}:{})}];foySave(st);renderFoyer();toast(`${x.film} added to the loop`+(x.releaseDate?`, until it opens on ${fmtShort(x.releaseDate)}`:". Add its release date in Your own trailers, if you know it"))});
+  st.extra=[...(st.extra||[]),{id:x.id,title:x.film||x.title,by:x.dist,...(x.releaseDate?{releaseDate:x.releaseDate}:{})}];foySave(st);renderFoyer();toast(`${x.film} added to the loop`+(x.releaseDate?`, until it opens on ${fmtShort(x.releaseDate)}`:". Add its release date in Your own trailers, if you know it"))}
+$("#recPanel").addEventListener("click",recClick);$("#recDlg").addEventListener("click",e=>{if(e.target===$("#recDlg")||e.target.id==="recDlgClose"){recClose();return}recClick(e)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#recDlg").hidden)recClose()});
 $("#recimc").addEventListener("change",()=>renderRec(foyState()));$("#recnew").addEventListener("change",()=>renderRec(foyState()));
 /* your own trailers: any YouTube trailers, played in your order after the films (or on their own) */
 const XMAX=40;
