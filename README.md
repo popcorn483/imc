@@ -514,6 +514,15 @@ The **Playlist** at the top of the Foyer trailers page lists everything playing 
 
 `data/ratings/*.svg` are the BBFC and IFCO symbols. The originals drew their white numbers and rings as see-through holes, so on dark or coloured designs the background showed through. They have been redrawn with solid white inside, with only the outside edge left see-through, and saved as an SVG wrapping a 420-pixel picture so every page uses them unchanged. The importer only downloads a badge that's missing, so these stay as they are. If a new certificate ever appears, check it the same way.
 
+## Help & tutorials (help.html)
+
+A step-by-step guide to everything in the app, written for people who aren't IT people, with screenshots of the real pages (`help/img/`, 41 small JPGs, loaded only as you scroll). It covers getting started, a daily and weekly routine, every hub page, the photo & video editor, the foyer TVs (setting up a foyer PC, the playlist, slides, recommended and studio trailers, welcome videos, adverts, music, other computers, no internet) and a problems-and-fixes list.
+
+- Open it from **? Help** in the hub's top bar, **Help & tutorials** in the menu, or **? Help** in the editor (which opens the editor section).
+- Search at the top shows only the sections that match. A contents list on the left follows you down the page. Click any picture to see it bigger. It follows the hub's **Aa** settings and prints cleanly.
+- **Open … ↗** buttons go straight to that page of the hub: `index.html#deals` and so on now opens the matching page.
+- When a page changes a lot, retake its screenshot (1280 × 860, saved at 1100 pixels wide, JPEG quality 72) and keep the `width`/`height` on its `<img>`.
+
 ## Recommended trailers (new releases from distributors)
 
 The **Recommended: new trailers** section on the Foyer trailers page lists the newest public trailers from the distributors' official UK YouTube channels: Warner Bros., Disney (its main channel, @disney, strictly filtered: only trailers that say they're in cinemas or theaters, and nothing mentioning Disney+ or streaming), Universal, Sony Pictures, Paramount (@paramountpictures), StudioCanal, Lionsgate (@lionsgatemovies), Searchlight, Pathé, Altitude and Vertigo.

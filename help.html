@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Help &amp; tutorials · IMC</title>
+<link rel="icon" href="imc-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f4f5fa;--panel:#fff;--ink:#151a33;--muted:#5b6380;--line:#e3e6f0;--navy:#0d1240;--navy2:#1a2160;--gold:#ffc23d;--blue:#0b6bb8;--tip:#fff7e0;--tipline:#f3d27a;--warn:#fdecea;--warnline:#f2b8b0;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;--f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body)}
+a{color:var(--blue)}
+img{max-width:100%;height:auto}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--navy);color:#fff;border-bottom:3px solid var(--gold)}
+.top img{width:34px;height:34px}
+.top b{font:900 22px var(--f-display);letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
+.top b span{color:#7fc8ff}
+.top .sp{flex:1}
+.top a.btn{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:9px;padding:7px 12px;font-weight:600;font-size:14px;white-space:nowrap}
+.top a.btn:hover{background:rgba(255,255,255,.1)}
+.search{flex:0 1 340px;min-width:0}
+.search input{width:100%;font:15px var(--f-body);padding:9px 12px;border-radius:10px;border:0;background:#fff;color:var(--ink)}
+.wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;max-width:1240px;margin:0 auto;padding:24px 16px 80px}
+nav.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 100px);overflow:auto;font-size:14px;padding-right:6px}
+nav.toc h4{margin:16px 0 4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+nav.toc a{display:block;padding:4px 10px;border-radius:8px;text-decoration:none;color:var(--ink)}
+nav.toc a:hover,nav.toc a.on{background:#e6e9f5}
+main{min-width:0}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:18px;padding:28px;border-top:3px solid var(--gold);margin-bottom:22px}
+.hero h1{font:900 46px/1 var(--f-display);text-transform:uppercase;margin:0 0 10px}
+.hero p{margin:0;max-width:62ch;color:#d6dbf5}
+.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.parts a{display:block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px;color:#fff;text-decoration:none}
+.parts a b{display:block;font-size:16px}.parts a span{font-size:13px;color:#cfd5f2}
+.parts a:hover{background:rgba(255,255,255,.14)}
+section.g{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+section.g>h2{font:900 30px/1.1 var(--f-display);text-transform:uppercase;margin:0 0 6px;letter-spacing:.01em}
+section.g h3{font-size:18px;margin:22px 0 6px}
+.lead{color:var(--muted);margin:0 0 12px}
+.open{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:7px 12px;border-radius:9px;margin:2px 6px 10px 0}
+.open.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:10px 0}
+ol.steps>li{counter-increment:s;position:relative;padding:4px 0 8px 40px}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:3px;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#1a1030;font-weight:700;display:grid;place-items:center;font-size:14px}
+ul{padding-left:22px}li{margin:3px 0}
+.tip,.warn{border-radius:12px;padding:10px 14px;margin:12px 0;font-size:15px}
+.tip{background:var(--tip);border:1px solid var(--tipline)}.warn{background:var(--warn);border:1px solid var(--warnline)}
+.tip b:first-child,.warn b:first-child{margin-right:4px}
+figure{margin:12px 0 16px}
+figure img{display:block;border-radius:12px;border:1px solid var(--line);box-shadow:0 2px 10px rgba(20,25,60,.08);cursor:zoom-in}
+figure figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.k{display:inline-block;font:600 13px var(--f-body);padding:1px 8px;border-radius:7px;background:#eef0f8;border:1px solid var(--line);white-space:nowrap}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:8px 0}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+details.faq{border:1px solid var(--line);border-radius:12px;padding:0 14px;margin:8px 0;background:#fbfbfe}
+details.faq summary{cursor:pointer;font-weight:600;padding:12px 0}
+details.faq[open]{padding-bottom:10px}
+.check li{list-style:none;position:relative;padding-left:28px}.check li::before{content:"☐";position:absolute;left:0;font-size:18px;line-height:1.4}
+.hide{display:none!important}
+.noresult{display:none;padding:20px;background:var(--panel);border-radius:14px;border:1px dashed var(--line);color:var(--muted)}
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(5,8,25,.88);display:grid;place-items:center;padding:20px;cursor:zoom-out}
+.lightbox img{max-width:min(1400px,100%);max-height:100%;border-radius:10px}
+.backtop{position:fixed;right:18px;bottom:18px;background:var(--navy);color:#fff;border-radius:50%;width:46px;height:46px;display:grid;place-items:center;text-decoration:none;font-size:20px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+/* "Easier to read" from the hub */
+html.a-lg body{font-size:18px}html.a-xl body{font-size:20px}
+html.a-hc{--muted:#2b3150;--line:#9aa1bd}html.a-hc body{background:#fff}
+html.a-rm{scroll-behavior:auto}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}nav.toc{display:none}.parts,.cols{grid-template-columns:minmax(0,1fr)}.hero h1{font-size:36px}.top b{display:none}}
+@media print{.top,nav.toc,.backtop,.open{display:none!important}.wrap{display:block}section.g{break-inside:avoid-page;border:0}}
+</style>
+<script>try{const a=JSON.parse(localStorage.getItem("imc-a11y")||"{}");const h=document.documentElement;if(a.size==="lg")h.classList.add("a-lg");if(a.size==="xl")h.classList.add("a-xl");if(a.hc)h.classList.add("a-hc");if(a.rm)h.classList.add("a-rm")}catch(e){}</script>
+</head>
+<body>
+<header class="top">
+  <img src="imc-logo.png" alt="IMC Cinemas"><b>Help &amp; <span>tutorials</span></b>
+  <div class="sp"></div>
+  <label class="search"><input id="q" type="search" placeholder="Search the help, e.g. “foyer sound” or “deal”" aria-label="Search the help"></label>
+  <a class="btn" href="index.html">← Back to the hub</a>
+</header>
+
+<div class="wrap">
+<nav class="toc" aria-label="Contents" id="toc">
+  <h4>Start here</h4>
+  <a href="#start">The app in 2 minutes</a>
+  <a href="#first">Your first 10 minutes</a>
+  <a href="#daily">Daily and weekly routine</a>
+  <a href="#around">Getting around</a>
+  <h4>Manage</h4>
+  <a href="#manager">Manager home</a>
+  <a href="#adverts">Adverts</a>
+  <a href="#ops">Run the cinema</a>
+  <h4>Every day</h4>
+  <a href="#today">Today</a>
+  <a href="#whatson">What's on</a>
+  <a href="#deals">Deals</a>
+  <a href="#luxx">LUXX</a>
+  <a href="#replies">Reply helper</a>
+  <h4>Make</h4>
+  <a href="#create">Create a post</a>
+  <a href="#editor">Photo &amp; video editor</a>
+  <a href="#saving">Saving and sharing a design</a>
+  <a href="#releases">Upcoming releases</a>
+  <h4>Plan &amp; track</h4>
+  <a href="#weekahead">Week ahead</a>
+  <a href="#planner">Planner and Posts</a>
+  <a href="#calendar">Ideas calendar</a>
+  <h4>Foyer TVs</h4>
+  <a href="#foyer-setup">Set up a foyer PC</a>
+  <a href="#playlist">The playlist</a>
+  <a href="#between">Between the trailers</a>
+  <a href="#recommended">Recommended trailers</a>
+  <a href="#own-trailers">Your own and studio trailers</a>
+  <a href="#welcome">Welcome videos</a>
+  <a href="#tv-adverts">Foyer TV adverts</a>
+  <a href="#music">Music</a>
+  <a href="#connect">Changes from another PC</a>
+  <a href="#offline">No internet</a>
+  <h4>Help &amp; settings</h4>
+  <a href="#toolkit">Toolkit and playbook</a>
+  <a href="#faq">Problems and fixes</a>
+</nav>
+
+<main id="main">
+<p class="noresult" id="noresult">Nothing matches that search. Try a shorter word, like “sound”, “price” or “trailer”.</p>
+
+<!-- ================= START ================= -->
+<div class="hero g-hero" id="start" data-s>
+  <h1>Help &amp; tutorials</h1>
+  <p>Everything the IMC app can do, step by step, with pictures. No computer knowledge needed: if you can use Facebook, you can use this. Pick a topic on the left, or search at the top.</p>
+  <div class="parts">
+    <a href="#manager"><b>📋 The hub</b><span>What's on, deals, posts to make, adverts, staff briefings and the foyer TV settings.</span></a>
+    <a href="#editor"><b>🎨 Photo &amp; video editor</b><span>Turns a film, deal or idea into a finished post, Story, video or poster.</span></a>
+    <a href="#foyer-setup"><b>📺 Foyer TV player</b><span>Plays trailers, showtimes, deals and adverts on the foyer TVs, all day, on its own.</span></a>
+  </div>
+</div>
+
+<section class="g" id="first" data-s>
+  <h2>Your first 10 minutes</h2>
+  <p class="lead">Do these once. After that the app looks after itself.</p>
+  <ol class="steps">
+    <li><b>Open the hub</b> and check the cinema in the top right says <span class="k">IMC Enniskillen</span>. Film times, prices and posters come from imc.ie and update by themselves three times a day.</li>
+    <li><b>Make text bigger if you like:</b> click <span class="k">Aa</span> at the top. <a href="#around">More on this</a>.</li>
+    <li><b>Add your own photos once:</b> your LUXX seats (on the <a href="#luxx">LUXX</a> page), and your Candy King pick 'n' mix stand or kiosk (in the editor's <a href="#editor-photo">Photo tab › Your product photos</a>). Every design uses them from then on.</li>
+    <li><b>Set up each foyer PC:</b> follow <a href="#foyer-setup">Set up a foyer PC</a>. It takes about 5 minutes.</li>
+    <li><b>Connect the manager's PC</b> so changes reach the foyer TVs by themselves: <a href="#connect">Changes from another PC</a>.</li>
+    <li><b>Try Easy mode:</b> on the hub's Today page click <span class="k">Make an ad step by step › Start</span> and follow the questions.</li>
+  </ol>
+  <div class="tip"><b>💾 Where your work is saved:</b> everything you make or change is saved automatically in this browser on this computer, as you go. There's no Save button to forget. To keep a copy, or to move your posts to another computer, use <span class="k">Posts › Export backup</span> (see <a href="#planner">Planner and Posts</a>).</div>
+</section>
+
+<section class="g" id="daily" data-s>
+  <h2>Daily and weekly routine</h2>
+  <div class="cols">
+    <div>
+      <h3>Every day (about 5 minutes)</h3>
+      <ol class="steps">
+        <li>Open <a href="index.html#manager">Manager home</a>. Work down <b>To do today</b> and tick things off.</li>
+        <li>Make today's best post: click <span class="k">Make it</span> (or <span class="k">Make Post</span> on the Today page).</li>
+        <li>In the editor, check the words, then <span class="k">Download PNG</span> or <span class="k">Share to Story</span>.</li>
+        <li>Post it on Facebook or Instagram. Then click <span class="k">Mark posted</span> in Adverts so the planner knows.</li>
+        <li>Leave a <b>handover note</b> for the next manager if anything happened.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>Once a week (about 20 minutes)</h3>
+      <ol class="steps">
+        <li>On Thursday or Sunday, open <a href="index.html#plan">Week ahead</a> and click <span class="k">Add every best post to the planner</span>.</li>
+        <li>Check <a href="index.html#deals">Deals</a> prices are right.</li>
+        <li>Look at <a href="index.html#foyer">Foyer trailers › Recommended</a> for new trailers to add.</li>
+        <li>Print the <a href="#ops">staff briefing</a> and this week's films for the window.</li>
+        <li>Copy the <a href="#ops">weekly report</a> into an email for head office.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="g" id="around" data-s>
+  <h2>Getting around</h2>
+  <p class="lead">The bar along the top is the same on every page of the hub.</p>
+  <figure><img loading="lazy" src="help/img/menu.jpg" width="1100" height="739" alt="The hub with its menu open on the left"><figcaption>Click <b>Menu</b> (top left) to see every page, grouped as Manage, Every day, Make, Plan &amp; track, Foyer TVs and Help.</figcaption></figure>
+  <table>
+    <tr><th>Button</th><th>What it does</th></tr>
+    <tr><td><span class="k">☰ Menu</span></td><td>Opens the list of every page. Click outside it, or press Esc, to close it.</td></tr>
+    <tr><td><span class="k">Manager</span> <span class="k">Today</span> <span class="k">Week ahead</span> <span class="k">Adverts</span> <span class="k">Foyer TVs</span></td><td>Shortcuts to the pages you'll use most.</td></tr>
+    <tr><td><span class="k">Aa</span></td><td><b>Easier to read:</b> Normal, Large or Extra large text, High contrast, and Less movement (turns animations off). It applies to the hub, the editor and this help.</td></tr>
+    <tr><td><span class="k">✨ Easy mode</span></td><td>Builds an ad by asking a few simple questions, one at a time.</td></tr>
+    <tr><td><span class="k">IMC Enniskillen ▾</span></td><td>Which cinema. Each cinema keeps its own deals, posts, photos and foyer settings.</td></tr>
+    <tr><td><span class="k">Editor ↗</span></td><td>Opens the photo &amp; video editor in its own tab.</td></tr>
+    <tr><td><span class="k">▶ Foyer player ↗</span></td><td>Opens the foyer TV player with your current settings.</td></tr>
+    <tr><td><span class="k">? Help</span></td><td>Opens this page.</td></tr>
+  </table>
+  <figure><img loading="lazy" src="help/img/easier-to-read.jpg" width="1100" height="739" alt="The Easier to read panel"><figcaption>The <b>Aa</b> panel. Your choice is remembered on this computer.</figcaption></figure>
+</section>
+
+<!-- ================= MANAGE ================= -->
+<section class="g" id="manager" data-s>
+  <h2>Manager home</h2>
+  <p class="lead">Everything for today in one place: what's happening now, the jobs to do and notes for the next manager.</p>
+  <a class="open" href="index.html#manager">Open Manager home ↗</a>
+  <figure><img loading="lazy" src="help/img/manager.jpg" width="1100" height="739" alt="Manager home"></figure>
+  <ul>
+    <li><b>Right now:</b> the time, how many screens are running, the next show and how many staff the next hour needs.</li>
+    <li><b>To do today:</b> a checklist made from today's films: the best advert to post, the staff briefing to print, tight changeovers, films on their last day. Each has a button that takes you straight to it. Tick each one off as you go.</li>
+    <li><b>Adverts this week:</b> what's planned, and what's next. <span class="k">Plan the week</span> fills it from Week ahead.</li>
+    <li><b>Handover notes:</b> type what happened (a broken seat, a complaint, a delivery) and click <span class="k">Add note</span>. The next manager sees it here.</li>
+  </ul>
+</section>
+
+<section class="g" id="adverts" data-s>
+  <h2>Adverts</h2>
+  <p class="lead">Two tabs: what to post on social media this week, and the adverts that play on the foyer TVs.</p>
+  <a class="open" href="index.html#ads">Open Adverts ↗</a>
+  <h3>Social media adverts</h3>
+  <figure><img loading="lazy" src="help/img/adverts.jpg" width="1100" height="739" alt="Social media adverts list"></figure>
+  <ol class="steps">
+    <li>Click <span class="k">Add adverts from Week ahead</span> to fill the week with the best ideas, or <span class="k">Write one myself</span>.</li>
+    <li>Each day shows its adverts, with a status: <b>To make</b>, <b>Ready</b> or <b>Posted</b>.</li>
+    <li><span class="k">Open</span> takes it to the editor. When it's made, click <span class="k">Mark ready</span>; when it's on Facebook, <span class="k">Mark posted</span>.</li>
+  </ol>
+  <h3>Foyer TV adverts</h3>
+  <p>See <a href="#tv-adverts">Foyer TV adverts</a> below.</p>
+</section>
+
+<section class="g" id="ops" data-s>
+  <h2>Run the cinema</h2>
+  <p class="lead">Worked out from imc.ie's listings and running times. Pick the day along the top of each tab.</p>
+  <a class="open" href="index.html#ops">Open Run the cinema ↗</a>
+  <h3>Screens &amp; changeovers</h3>
+  <figure><img loading="lazy" src="help/img/ops.jpg" width="1100" height="739" alt="Screen timeline"></figure>
+  <ul>
+    <li>A timeline of every screen through the day. Each block is a showing, from the start of the ads to when the film ends.</li>
+    <li>Set <b>Ads and trailers before each film</b> (usually 20 minutes) so finish times are right.</li>
+    <li>Changeovers under 15 minutes are flagged in red, so you can plan cleaning.</li>
+    <li><span class="k">🖨 Print run sheet</span> prints the day for the projection booth or office.</li>
+  </ul>
+  <h3>Staff briefing</h3>
+  <figure><img loading="lazy" src="help/img/ops-briefing.jpg" width="1100" height="739" alt="Staff briefing"></figure>
+  <p>Every film today with its rating, who can watch it, its length, its times and screens, and when each one ends, plus today's offers. Click <span class="k">🖨 Print briefing</span> and pin it up before the first show.</p>
+  <h3>Staffing guide</h3>
+  <figure><img loading="lazy" src="help/img/ops-staffing.jpg" width="1100" height="739" alt="Staffing guide"></figure>
+  <p>How many people each hour needs, based on shows starting and ending. Change the four numbers at the top to match how you work (managers always on, shows per box office person, films ending per usher, fewest people in the building), then <span class="k">Print</span>.</p>
+  <h3>Group prices</h3>
+  <figure><img loading="lazy" src="help/img/ops-groups.jpg" width="1100" height="739" alt="Group prices"></figure>
+  <p>For a party or school group: choose the day, tick Kids Club or LUXX if it applies, then type how many adults, children and so on, and how many trays or combos. The total, and a reply you can copy and send, appear on the right. Prices are imc.ie's normal prices; any group discount is up to you.</p>
+  <h3>Weekly report</h3>
+  <figure><img loading="lazy" src="help/img/ops-report.jpg" width="1100" height="739" alt="Weekly report"></figure>
+  <p>Showings, films, openings and the busiest day this week, the full programme, and highlights (new films, last chances). <span class="k">Copy as text (for email)</span> puts it ready to paste into an email; <span class="k">Print</span> prints it.</p>
+</section>
+
+<!-- ================= EVERY DAY ================= -->
+<section class="g" id="today" data-s>
+  <h2>Today</h2>
+  <p class="lead">Today's film times and the quickest way to a post.</p>
+  <a class="open" href="index.html#today">Open Today ↗</a>
+  <figure><img loading="lazy" src="help/img/today.jpg" width="1100" height="739" alt="Today page"></figure>
+  <ul>
+    <li><b>Best post today:</b> the three best ideas for today, with the best time to post. <span class="k">Make Post</span> opens it in the editor, finished and ready; <span class="k">Story</span> makes the tall Instagram/Facebook Story version; <span class="k">Copy caption</span> copies words to paste with it; <span class="k">+ Planner</span> saves it for later.</li>
+    <li><b>What do you want to make?</b> One click for each common job: today's film times, times for Stories, seasonal posts, the Wednesday Meal Deal, a deal, a coming-soon film, a poll, a printed poster for the window, Kids Club, LUXX, a Cinema Reel video, and more.</li>
+    <li><b>Make an ad step by step:</b> Easy mode. Answer a few questions and it builds the ad for you.</li>
+  </ul>
+</section>
+
+<section class="g" id="whatson" data-s>
+  <h2>What's on</h2>
+  <p class="lead">Every film from imc.ie with its poster, rating and times. Every film can become a post, a Story or a caption in one click.</p>
+  <a class="open" href="index.html#whatson">Open What's on ↗</a>
+  <figure><img loading="lazy" src="help/img/whatson.jpg" width="1100" height="739" alt="What's on"></figure>
+  <ul>
+    <li>Tabs along the top: <b>Today</b>, <b>Next 7 days</b>, <b>Coming soon</b>, <b>Kids Club</b>, <b>LUXX</b> and <b>Relaxed screenings</b>.</li>
+    <li><b>BBFC / IFCO</b> on the right switches which rating badges are shown.</li>
+    <li>Coloured tags: <b>LAST CHANCE</b> (final showings), <b>KIDS CLUB</b>, <b>NEW</b>, <b>LUXX</b>.</li>
+    <li>Buttons on each film: <span class="k">Make post</span>, <span class="k">Story</span>, <span class="k">Write caption</span>, <span class="k">Last chance post</span>, plus <span class="k">Book ↗</span> and <span class="k">Trailer ↗</span> links.</li>
+  </ul>
+</section>
+
+<section class="g" id="deals" data-s>
+  <h2>Deals</h2>
+  <p class="lead">Every deal on imc.ie with its real price, plus your own kiosk deals.</p>
+  <a class="open" href="index.html#deals">Open Deals ↗</a>
+  <figure><img loading="lazy" src="help/img/deals.jpg" width="1100" height="739" alt="Deals"></figure>
+  <ol class="steps">
+    <li><b>From imc.ie:</b> each deal shows its price and when it's on. Click <span class="k">Animated post</span>, <span class="k">Still</span> or <span class="k">Story</span> to make it.</li>
+    <li><b>Add to my deals</b> copies it into <b>Your deals</b> below, where you can change the name, the items, the price and the small print.</li>
+    <li><b>+ Add a deal</b> (top right) makes a new one from scratch. <b>Reset to defaults</b> brings back the starting deals.</li>
+    <li>Deal designs use <b>real IMC product photos</b> (combos, kids trays, nachos, soft-serve, sweets, Candy King pick 'n' mix). Untick “Use real product photos from imc.ie” on a deal to use the general food photos instead.</li>
+  </ol>
+  <div class="tip"><b>🍬 Pick 'n' mix:</b> it's always Candy King. Upload a photo of your own stand once (editor › Photo › Your product photos › Candy King pick 'n' mix) and every pick 'n' mix design uses it.</div>
+</section>
+
+<section class="g" id="luxx" data-s>
+  <h2>LUXX</h2>
+  <p class="lead">Ads, Reels and captions for the LUXX recliner seats, made from your own LUXX photos and this week's LUXX showings.</p>
+  <a class="open" href="index.html#luxx">Open LUXX ↗</a>
+  <figure><img loading="lazy" src="help/img/luxx.jpg" width="1100" height="739" alt="LUXX page"></figure>
+  <ol class="steps">
+    <li><b>Your LUXX photos:</b> the cinema's own LUXX photos are already here. Add more with <span class="k">+ Add LUXX photos</span> or <span class="k">Choose from library</span>. Label each one (Seats, Screen, Lounge, Other); <span class="k">Use first</span> puts that photo first in every ad; ✕ removes it.</li>
+    <li><b>Make a LUXX ad:</b> pick one of the ready-made designs. It opens in the editor with your photo, today's LUXX films and the price.</li>
+    <li>Also on this page: <b>LUXX combo deals</b>, <b>In LUXX this week</b>, and <b>LUXX captions</b> to copy.</li>
+    <li>The buttons at the top make LUXX welcome videos and open the <b>LUXX lounge player</b> (a foyer player for a screen in the LUXX lounge).</li>
+  </ol>
+</section>
+
+<section class="g" id="replies" data-s>
+  <h2>Reply helper</h2>
+  <p class="lead">Ready answers to the questions people ask on Facebook and Messenger, filled in with today's times and prices.</p>
+  <a class="open" href="index.html#replies">Open Reply helper ↗</a>
+  <figure><img loading="lazy" src="help/img/replies.jpg" width="1100" height="739" alt="Reply helper"></figure>
+  <ol class="steps">
+    <li>Pick the question on the left (What time is a film on? How much are tickets? When is Kids Club? Birthday parties, a complaint…).</li>
+    <li>If it asks, pick the film. The reply fills itself in.</li>
+    <li>Change any words you like, click <span class="k">Copy reply</span>, and paste it into Facebook, Instagram or Messenger.</li>
+  </ol>
+</section>
+
+<!-- ================= MAKE ================= -->
+<section class="g" id="create" data-s>
+  <h2>Create a post</h2>
+  <p class="lead">A quick poster and caption, when you know exactly what you want to say.</p>
+  <a class="open" href="index.html#studio">Open Create a post ↗</a>
+  <figure><img loading="lazy" src="help/img/create.jpg" width="1100" height="739" alt="Create a post"></figure>
+  <ol class="steps">
+    <li>Choose the <b>Ad type</b> (Now showing, Coming soon, Offer, Kids Club, Event night, Inclusive, Poll, Guess it).</li>
+    <li>Fill in the headline, top label, supporting line, dates and times, price and call to action. The poster updates as you type.</li>
+    <li>Pick a <b>colour theme</b> and a size: <b>Feed 1:1</b>, <b>Feed 4:5</b>, <b>Story / Reel 9:16</b> or <b>Foyer screen 16:9</b>.</li>
+    <li>Watch the <b>Share-ability</b> score on the right: it tells you what would help more people see it (a question, a local mention, a strong first line, a few hashtags).</li>
+    <li>Click <span class="k">Save post</span>. <span class="k">Start fresh</span> clears it for a new one.</li>
+  </ol>
+  <div class="tip"><b>Tip:</b> for anything fancier (photos, animation, video), use the <a href="#editor">Photo &amp; video editor</a> instead.</div>
+</section>
+
+<section class="g" id="editor" data-s>
+  <h2>Photo &amp; video editor</h2>
+  <p class="lead">Where every design is finished. Most buttons in the hub open their design here, ready to post: often you only need to check it and save it.</p>
+  <a class="open" href="editor.html">Open the editor ↗</a>
+  <h3>Easy mode (the simplest way)</h3>
+  <figure><img loading="lazy" src="help/img/editor-easy.jpg" width="1100" height="739" alt="Editor in Easy mode"></figure>
+  <ol class="steps">
+    <li>Click <span class="k">✨ Easy mode</span> at the top.</li>
+    <li><b>Check the words:</b> change anything that isn't right. Prices and times come from imc.ie.</li>
+    <li><b>Photo</b> (optional): add your own photo as the background, or leave it.</li>
+    <li><b>Save or share:</b> <span class="k">Check my post first</span>, then save. Files go to your Downloads folder.</li>
+    <li><span class="k">Full editor</span> goes back to all the tools.</li>
+  </ol>
+  <h3>The full editor</h3>
+  <figure><img loading="lazy" src="help/img/editor.jpg" width="1100" height="739" alt="The full editor"><figcaption>Tools down the left, your design in the middle, and the settings for whatever you've clicked on the right.</figcaption></figure>
+  <ul>
+    <li><b>Change words:</b> click any text on the design, then type in the box on the right.</li>
+    <li><b>Move something:</b> drag it. <b>Resize:</b> drag a corner. <b>Turn it:</b> drag the dot at the top. <b>Delete:</b> select it and press the Delete key.</li>
+    <li><b>Layers</b> (right): everything on the design, top to bottom. Click one to select it, even if it's hidden behind something.</li>
+    <li><b>Undo / redo:</b> the ↶ ↷ arrows at the top, or Ctrl+Z / Ctrl+Shift+Z.</li>
+    <li><b>Size</b> (top left, e.g. <span class="k">Feed 1:1</span>): switch between post, tall post, Story, foyer screen, Facebook event and cover. The design rearranges itself.</li>
+    <li><b>Check</b> (top): a checklist of anything worth fixing before you post. The red number shows how many. <a href="#saving">More below</a>.</li>
+  </ul>
+  <h3 id="editor-designs">Designs (film looks, Kids Club, group bookings)</h3>
+  <figure><img loading="lazy" src="help/img/editor-designs.jpg" width="1100" height="739" alt="Designs tab with film looks"></figure>
+  <p>Pick a film, then a picture (the poster or a shot from its trailer), then a <b>look</b>: Cinematic, Poster card, Banner, Split panel and more. The title, certificate and times fill in for you. Below the looks you can change the <b>font</b>, <b>colours</b>, <b>accent</b> and a quick <b>animation</b>. The <b>Kids Club</b> and <b>Group bookings</b> tabs have their own fun designs.</p>
+  <h3 id="editor-photo">Photo</h3>
+  <figure><img loading="lazy" src="help/img/editor-photo.jpg" width="1100" height="739" alt="Photo tab"></figure>
+  <ul>
+    <li><b>Background:</b> your photo, or a ready background (IMC stage, Sky, Midnight, Sunset, Spooky, Festive…).</li>
+    <li><span class="k">Upload a photo or video</span>, drag one onto the design, or paste one with Ctrl+V.</li>
+    <li><b>Adjust the photo:</b> zoom, brightness, contrast, saturation, darken. Drag the photo on the design to move it.</li>
+    <li><b>Your media:</b> photos you've used before. <b>IMC images:</b> pictures from IMC's own website: cinemas, food and deal graphics.</li>
+    <li><b>Your product photos:</b> upload your own photo of an item once (Candy King pick 'n' mix, popcorn, hot dogs, LUXX seats, kiosk…) and every deal and clip uses it for that item.</li>
+  </ul>
+  <h3 id="editor-add">Add</h3>
+  <figure><img loading="lazy" src="help/img/editor-add.jpg" width="1100" height="739" alt="Add tab"></figure>
+  <ul>
+    <li><b>Film logo:</b> pick the film, copy its official logo from the distributor's page and paste it here. It's saved for that film.</li>
+    <li><b>Badges:</b> Coming soon, New release, LUXX, Now showing, Book now, price tickets and stickers.</li>
+    <li><b>Text:</b> a title, a line, or small print.</li>
+    <li><b>Food &amp; drink:</b> real IMC product photos (combos, kids tray, nachos, soft-serve, sweets, water, Candy King) and a cinema ticket. The white background is removed for you. Your own uploads show first.</li>
+    <li><b>Products from imc.ie:</b> this cinema's own items with their prices; <span class="k">+ Price</span> adds the price ticket too.</li>
+    <li>Also: <b>ratings</b> (BBFC or IFCO), a <b>QR code</b> to the booking page, and the <b>IMC logo</b>.</li>
+  </ul>
+  <h3>Frame, Animate and Logo</h3>
+  <div class="cols">
+    <figure><img loading="lazy" src="help/img/editor-frame.jpg" width="1100" height="739" alt="Frame tab"><figcaption><b>Frame:</b> the IMC brand bar along the bottom, Premiere, Clean, Photo border or none, and the frame colour.</figcaption></figure>
+    <figure><img loading="lazy" src="help/img/editor-animate.jpg" width="1100" height="739" alt="Animate tab"><figcaption><b>Animate:</b> moving effects (slow zoom, twinkling stars, spotlights, sparkle…). Tap to switch one on; mix a few. They play in video and GIF exports.</figcaption></figure>
+  </div>
+  <figure><img loading="lazy" src="help/img/editor-logo.jpg" width="1100" height="739" alt="Logo tab"><figcaption><b>Logo:</b> the official IMC logo is built in. Only use <b>Use a different logo</b> if you need another version, such as all-white.</figcaption></figure>
+  <h3>Animations and timing</h3>
+  <p>Select something and choose an animation on the right (Rise, Wipe in, Pop in, Slide up…). <span class="k">Pause</span>/<span class="k">Play</span> under the design previews it; <span class="k">⏱ Timings</span> shows a timeline where you can drag when each thing appears.</p>
+</section>
+
+<section class="g" id="saving" data-s>
+  <h2>Saving and sharing a design</h2>
+  <p class="lead">The buttons at the top right of the editor.</p>
+  <table>
+    <tr><th>Button</th><th>What you get</th></tr>
+    <tr><td><span class="k">Download PNG</span></td><td>A sharp picture for Facebook and Instagram. It goes to your Downloads folder.</td></tr>
+    <tr><td><span class="k">Share to Story</span></td><td>Makes the tall 9:16 Story version and opens sharing (on a phone) or downloads it.</td></tr>
+    <tr><td><span class="k">More ways to save ▾</span></td><td><b>All sizes in one go</b> (post, tall post, Story and foyer screen in one zip), <b>Video</b> (MP4 for Reels, Stories and TikTok), <b>Animated GIF</b>, <b>JPG</b> (smaller, for email and websites), <b>PDF</b> (A4/A3 for printing) and <b>Copy image</b> (paste straight into Facebook or a message).</td></tr>
+  </table>
+  <div class="tip"><b>Before posting:</b> click <span class="k">✓ Check</span>. It looks for anything cut off the edge, words hidden behind a phone's Story buttons, a missing “Book at imc.ie”, a missing certificate or IMC logo, too many words, and a QR code that's too small, and tells you how to fix each one.</div>
+</section>
+
+<section class="g" id="releases" data-s>
+  <h2>Upcoming releases</h2>
+  <p class="lead">UK release dates for the next three months, with an idea for how to make each one go further.</p>
+  <a class="open" href="index.html#releases">Open Upcoming releases ↗</a>
+  <figure><img loading="lazy" src="help/img/releases.jpg" width="1100" height="739" alt="Upcoming releases"></figure>
+  <ol class="steps">
+    <li>Filter by type (Family, Blockbuster, Horror, Comedy, Classic re-release, Event cinema, Drama).</li>
+    <li>Mark each film <b>Showing</b>, <b>Maybe</b> or <b>Not showing</b>, then filter to just the ones you're showing.</li>
+    <li>Read the <b>Viral angle</b> for a post idea, then <span class="k">Announce ad</span> or <span class="k">Opening-day ad</span>.</li>
+  </ol>
+</section>
+
+<!-- ================= PLAN ================= -->
+<section class="g" id="weekahead" data-s>
+  <h2>Week ahead</h2>
+  <p class="lead">The best post for each day this week, picked from what's on.</p>
+  <a class="open" href="index.html#plan">Open Week ahead ↗</a>
+  <figure><img loading="lazy" src="help/img/week-ahead.jpg" width="1100" height="739" alt="Week ahead"></figure>
+  <ul>
+    <li>Each day shows its <b>best post</b> with the time to post it, and <b>more ideas</b> underneath.</li>
+    <li><span class="k">Add every best post to the planner</span> plans the whole week in one click.</li>
+    <li><span class="k">🔔 Remind me on my phone</span> downloads calendar reminders: open the file on your phone and the reminders go into your calendar.</li>
+    <li><span class="k">🖨 Print this week's films</span> prints an A4 poster for the window.</li>
+  </ul>
+</section>
+
+<section class="g" id="planner" data-s>
+  <h2>Planner and Posts</h2>
+  <p class="lead">Your week of posts, and every post from first idea to results.</p>
+  <a class="open" href="index.html#dashboard">Open Planner ↗</a> <a class="open alt" href="index.html#library">Open Posts ↗</a>
+  <figure><img loading="lazy" src="help/img/planner.jpg" width="1100" height="739" alt="Planner"></figure>
+  <ul>
+    <li><b>Posting calendar:</b> what's planned each day. Use the arrows to move between weeks. Aim for one post a day and a Story most days.</li>
+    <li><b>What's working:</b> which kinds of post get the most likes, comments and shares, and your top posts.</li>
+  </ul>
+  <figure><img loading="lazy" src="help/img/posts.jpg" width="1100" height="739" alt="Posts list"></figure>
+  <ul>
+    <li><b>Posts</b> lists every post: Ideas, Drafts, Scheduled and Posted. Search, or filter with the tabs.</li>
+    <li><span class="k">Open</span>, <span class="k">Mark posted</span>, <span class="k">Duplicate</span> and <span class="k">Delete</span> on each one.</li>
+    <li><span class="k">Results</span>: after a post has run, type in the numbers from Facebook (reach, reactions, comments, shares). The Planner then shows what works.</li>
+    <li><span class="k">Export backup</span> saves all your posts to a file; <span class="k">Import backup</span> loads them on another computer.</li>
+  </ul>
+</section>
+
+<section class="g" id="calendar" data-s>
+  <h2>Ideas calendar</h2>
+  <p class="lead">Key dates for the next 12 months (holidays, film openings, local events) with what to post and when.</p>
+  <a class="open" href="index.html#calendar">Open Ideas calendar ↗</a>
+  <figure><img loading="lazy" src="help/img/calendar.jpg" width="1100" height="739" alt="Ideas calendar"></figure>
+  <p><span class="k">Design it</span> opens a seasonal design in the editor; <span class="k">Release ad</span> makes an announcement for a film opening; <span class="k">Plan a post</span> adds it to your planner. School holiday dates are approximate, so check them against your local schools.</p>
+</section>
+
+<!-- ================= FOYER ================= -->
+<section class="g" id="foyer-setup" data-s>
+  <h2>Set up a foyer PC</h2>
+  <p class="lead">Do this once on each PC that runs a foyer TV. After that it runs all day on its own: it updates itself, picks up your changes and keeps going if the internet drops.</p>
+  <a class="open" href="foyer.html">Open the foyer player ↗</a> <a class="open alt" href="index.html#foyer">Foyer trailers settings ↗</a>
+  <figure><img loading="lazy" src="help/img/foyer-start.jpg" width="1100" height="739" alt="Foyer player start screen"></figure>
+  <ol class="steps">
+    <li>On the foyer PC, open <b>Chrome</b> (or Edge) and go to the IMC app. Click <span class="k">▶ Foyer player</span> at the top of the hub (or <span class="k">LUXX lounge player</span> for the LUXX lounge screen).</li>
+    <li>Click <span class="k">Start</span>. This one click is what allows sound: browsers don't let pages play sound until someone clicks.</li>
+    <li>Press <span class="k">F</span> for full screen.</li>
+    <li>Leave it. Don't close the tab. It updates its listings every 30 minutes, installs new versions by itself, refreshes at 5 a.m. and starts again on its own, keeping its sound.</li>
+    <li>Make a folder called <b>TRAILERS</b> on the foyer PC's desktop for any trailer files from the studios (see <a href="#own-trailers">studio trailers</a>).</li>
+  </ol>
+  <div class="warn"><b>🔇 After a power cut or restart:</b> the player starts again by itself, but browsers block sound until someone clicks once. Until then, trailers play silently and a small note says “click anywhere to turn it on”. Click once anywhere on the TV picture and the sound comes back.</div>
+  <div class="tip"><b>Sound with no click at all (optional, one-time):</b> right-click the Chrome shortcut on the foyer PC › Properties, and at the end of <b>Target</b>, after the last quote mark, add a space and <span class="k">--autoplay-policy=no-user-gesture-required</span>. Click OK. Always start Chrome on that PC from this shortcut.</div>
+  <div class="cols">
+    <figure><img loading="lazy" src="help/img/foyer-tv-card.jpg" width="1000" height="562" alt="Showtimes card on the foyer TV"><figcaption>A showtimes card: poster, rating, times, screen and a “scan to book” code.</figcaption></figure>
+    <figure><img loading="lazy" src="help/img/foyer-tv-board.jpg" width="1000" height="562" alt="Now showing board"><figcaption>The Now showing board, with screens and “Starts soon” / “Book now”.</figcaption></figure>
+  </div>
+  <h3>Keys on the foyer PC</h3>
+  <p><span class="k">F</span> full screen · <span class="k">→</span> skip to the next screen · <span class="k">B</span> show the board now · <span class="k">M</span> sound on/off.</p>
+</section>
+
+<section class="g" id="playlist" data-s>
+  <h2>The playlist</h2>
+  <p class="lead">At the top of <a href="index.html#foyer">Foyer trailers</a>: exactly what plays on the foyer TVs, in order.</p>
+  <figure><img loading="lazy" src="help/img/foyer-playlist.jpg" width="1100" height="150" alt="Playlist"></figure>
+  <ul>
+    <li>Each trailer has a label: <b>IMC.IE</b> (a film from the listings, with its showtimes card before the trailer), <b>Your trailer</b> or <b>Studio</b>.</li>
+    <li><b>Move:</b> drag a row by its <span class="k">⠿</span> handle, or use <span class="k">↑</span> <span class="k">↓</span>.</li>
+    <li><b>Take out:</b> <span class="k">✕</span>. It moves to <b>Taken out</b> underneath; <span class="k">Put back</span> returns it.</li>
+    <li><span class="k">⤮ Shuffle now</span> mixes the order once. <b>Shuffle on the TVs every time round</b> mixes it fresh each loop. <span class="k">Reset order</span> goes back to films by next showing.</li>
+    <li><b>Show what plays in between</b> lists the board, deals slides, adverts, messages and welcome videos between the trailers, exactly as the TVs will show them.</li>
+  </ul>
+  <p>Which films are included is set under <b>Which films</b> further down: every foyer-safe film in the next 7 days (it updates itself), or only the ones you tick. Films rated 15 or 18 never play; films with no rating yet stay out until you watch the trailer and tick it.</p>
+</section>
+
+<section class="g" id="between" data-s>
+  <h2>Between the trailers</h2>
+  <p class="lead">Which slides play between trailers, and what scrolls along the bottom of the screen.</p>
+  <figure><img loading="lazy" src="help/img/foyer-between.jpg" width="1100" height="198" alt="Between the trailers settings"></figure>
+  <ul>
+    <li><b>Slides:</b> tick or untick Wednesday Meal Deal, Kids Club, LUXX upgrade, Coming soon posters, Last chance to see and Scan to book. Slides only appear when they apply (Kids Club when there are Kids Club showings, and so on).</li>
+    <li><b>Bottom strip:</b> tick or untick each line, and change its wording in the box. A line you've changed stays as you typed it; <span class="k">Use the automatic wording</span> puts it back.</li>
+    <li><b>Your own messages</b> (for example “Halloween fancy dress on Saturday!”) go in the box under <b>Screens between trailers</b>. Each gets its own slide and scrolls along the strip.</li>
+    <li>Also under <b>Screens between trailers</b>: how often the Now showing board appears, deals slides on or off, the info strip, and screen numbers.</li>
+  </ul>
+  <figure><img loading="lazy" src="help/img/foyer-tv-slide.jpg" width="1000" height="562" alt="Kids Club slide on the foyer TV"><figcaption>A slide on the foyer TV.</figcaption></figure>
+</section>
+
+<section class="g" id="recommended" data-s>
+  <h2>Recommended trailers</h2>
+  <p class="lead">The newest public trailers from the film distributors' official YouTube channels (Warner Bros., Disney, Universal, Sony, Paramount, Lionsgate, StudioCanal and more), checked three times a day. Red-band trailers and Disney+ shows are left out.</p>
+  <figure><img loading="lazy" src="help/img/foyer-recommended.jpg" width="1100" height="169" alt="Recommended trailers"></figure>
+  <ol class="steps">
+    <li>Filter by distributor along the top, or tick <b>Only films on imc.ie</b>.</li>
+    <li>Click the picture or <span class="k">▶ Watch</span> to watch it first, in a pop-up.</li>
+    <li><span class="k">Add to loop</span> adds it with its release date: it plays as “In cinemas …” until the film opens, then stops. <span class="k">Use as its trailer</span> (for films already on imc.ie) swaps in this trailer for that film.</li>
+    <li>Changed your mind? <span class="k">Remove</span> next to “Added ✓”. Don't want to see it? <span class="k">Ignore</span> (and “Show ignored” brings it back).</li>
+    <li><b>Rating:</b> shown on each card. If it's not known or is wrong, choose it in the <b>Rating</b> box. Trailers rated 15 or 18 can't be added.</li>
+  </ol>
+  <div class="tip"><b>US dates:</b> Disney, Paramount and Lionsgate cards come from American channels, so their dates say <b>US release</b>. Check the UK date and change it in <b>Your own trailers</b>.</div>
+</section>
+
+<section class="g" id="own-trailers" data-s>
+  <h2>Your own and studio trailers</h2>
+  <h3>Your own trailers (YouTube links)</h3>
+  <ol class="steps">
+    <li>In <b>Your own trailers</b>, paste one or more YouTube links (one per line) and click <span class="k">Add trailers</span>.</li>
+    <li>Set the <b>In cinemas</b> date on each one so it stops when the film opens.</li>
+    <li>Move them with <span class="k">↑</span> <span class="k">↓</span>, or <span class="k">Remove</span>. <b>What plays on the TVs</b> can be “Films from imc.ie, then my trailers” or “Only my trailers”.</li>
+  </ol>
+  <h3>Studio trailers (WB360, Disney Box and others)</h3>
+  <figure><img loading="lazy" src="help/img/foyer-studio.jpg" width="1100" height="340" alt="Studio trailers"></figure>
+  <ol class="steps">
+    <li>On the <b>foyer PC</b>, download the trailer from the studio's site. Choose the <b>MP4 (H.264) HD</b> version. Save it in the <b>TRAILERS</b> folder on the desktop.</li>
+    <li>Still on the foyer PC, open the hub › Foyer trailers › <b>Studio trailers</b>. Pick the film (or “Not on imc.ie yet” and type its name).</li>
+    <li>Click <span class="k">Choose video file</span> and pick it from the TRAILERS folder. It's checked to make sure it plays.</li>
+    <li>Optional: <b>Stop playing after</b> a date.</li>
+  </ol>
+  <div class="warn"><b>📁 Important:</b> trailer files only play on the computer they were added on. Always add them on the foyer PC, from its TRAILERS folder. A <b>download link</b> (for example a Dropbox share link) works on every foyer PC instead.</div>
+  <div class="tip"><b>Passwords for WB360, Disney Box and other sites</b> aren't kept in the app. When you sign in, let Chrome or Edge save the password. <b>Trailer and poster sites</b> on the Foyer trailers page keeps quick links to them.</div>
+</section>
+
+<section class="g" id="welcome" data-s>
+  <h2>Welcome videos</h2>
+  <p class="lead">“Welcome to IMC” logo reveals that play between trailers.</p>
+  <a class="open" href="index.html#welcome">Open Welcome videos ↗</a>
+  <figure><img loading="lazy" src="help/img/welcome.jpg" width="1100" height="739" alt="Welcome videos"></figure>
+  <ol class="steps">
+    <li>Choose <b>IMC</b> or <b>LUXX</b> at the top, then <span class="k">+ New welcome video</span>.</li>
+    <li>Pick a <b>Reveal</b> (Spotlight, Curtain up, Film countdown, Popcorn burst, Marquee lights…).</li>
+    <li>Change the words, logo, background and colours. <span class="k">Replay</span> to watch it.</li>
+    <li>How often they play is set on the Foyer trailers page (<b>Welcome videos between trailers</b>). <span class="k">Download video</span> saves one as a video file.</li>
+  </ol>
+</section>
+
+<section class="g" id="tv-adverts" data-s>
+  <h2>Foyer TV adverts</h2>
+  <p class="lead">Your own promotions, or a local business's advert, full screen between the trailers.</p>
+  <a class="open" href="index.html#ads">Open Adverts ↗</a>
+  <figure><img loading="lazy" src="help/img/adverts-tv.jpg" width="1100" height="739" alt="Foyer TV adverts"></figure>
+  <ol class="steps">
+    <li>Adverts › <b>Foyer TV adverts</b> tab.</li>
+    <li>Type a <b>Name</b>, then add a <b>Picture</b>: <span class="k">Choose from IMC images</span>, or paste the web address of a picture. A 16:9 picture (1920 × 1080) fills the TV best.</li>
+    <li>For an advert you've sold, type the <b>Business name</b> (it shows a small “Advert · business” tag).</li>
+    <li>Set the <b>First day</b> and <b>Last day</b>, the <b>Seconds on screen</b> and <b>How often</b>, then <span class="k">Add advert</span>.</li>
+  </ol>
+  <p>It plays from the first day and stops by itself after the last day.</p>
+</section>
+
+<section class="g" id="music" data-s>
+  <h2>Music</h2>
+  <p class="lead">Soft background music under the showtimes cards, board and slides. It fades out when a trailer starts.</p>
+  <ol class="steps">
+    <li>Foyer trailers › <b>Player</b> › <b>Music under the cards and slides</b>: Cinematic (calm), Chilled, Upbeat or No music.</li>
+    <li>Set the <b>Music volume</b> and click <span class="k">▶ Listen</span> to hear it.</li>
+  </ol>
+  <p>The music is made by the player itself, so it isn't anyone's recording. It needs <b>Sound on</b>.</p>
+</section>
+
+<section class="g" id="connect" data-s>
+  <h2>Changes from another PC</h2>
+  <p class="lead">If you edit on the manager's PC and the TVs run on other PCs, connect once and every change reaches every foyer TV within about a minute and a half. No need to touch the foyer PCs.</p>
+  <figure><img loading="lazy" src="help/img/foyer-connect.jpg" width="1100" height="86" alt="Connect bar"></figure>
+  <ol class="steps">
+    <li>On the manager's PC: Foyer trailers › <span class="k">Connect</span> (at the top).</li>
+    <li>Follow the steps in the box to make a GitHub key: <b>Token name</b> IMC hub, <b>Expiration</b> 1 year, <b>Repository access</b> only popcorn483/imc, <b>Contents</b>: Read and write.</li>
+    <li>Paste the key and click <span class="k">Connect</span>. A <b>green dot</b> means it's working.</li>
+  </ol>
+  <div class="tip"><b>If the dot turns red,</b> the key has probably expired: click <span class="k">Change key</span> and make a new one the same way. <span class="k">Disconnect</span> removes it from this computer.</div>
+  <p>Only connect on the manager's PC: anyone using that computer's browser could use the key to change the app.</p>
+</section>
+
+<section class="g" id="offline" data-s>
+  <h2>No internet</h2>
+  <p class="lead">The foyer TVs keep going.</p>
+  <ul>
+    <li>Each foyer PC keeps its own copy of the player, the listings and every picture it has shown, so it still opens and runs after a restart with no internet.</li>
+    <li>YouTube trailers are skipped (no black screens). Showtimes cards, the board, slides, welcome videos and trailer files saved on that PC carry on.</li>
+    <li>A small note in the corner says “No internet: showing saved listings”. When the internet comes back, it returns to normal by itself.</li>
+  </ul>
+</section>
+
+<!-- ================= HELP ================= -->
+<section class="g" id="toolkit" data-s>
+  <h2>Toolkit and playbook</h2>
+  <a class="open" href="index.html#toolkit">Open Toolkit ↗</a> <a class="open alt" href="index.html#playbook">Open Go-viral playbook ↗</a>
+  <figure><img loading="lazy" src="help/img/toolkit.jpg" width="1100" height="739" alt="Toolkit"></figure>
+  <ul>
+    <li><b>Caption bank:</b> ready captions for new films, family &amp; Kids Club, deals, LUXX, events, seasonal and thank-yous. Swap the [BRACKETS] for your details. <span class="k">Copy</span> or <span class="k">Use in Create ad</span>.</li>
+    <li><b>Hashtag sets:</b> 3 to 6 hashtags is plenty; always include the town.</li>
+    <li><b>Sizes cheat sheet:</b> which size to pick for each place you post.</li>
+    <li><b>Before you post</b> checklist, and the cinema's <b>brand settings</b> (name, page, colours).</li>
+  </ul>
+  <figure><img loading="lazy" src="help/img/playbook.jpg" width="1100" height="739" alt="Go-viral playbook"></figure>
+  <p>The <b>Go-viral playbook</b> has tactics that work for a town cinema (a healthy mix of 40% sell, 35% play, 25% belong; keep it real; tag-a-friend trailer drops…). <span class="k">Build this ad →</span> opens each one ready-made.</p>
+</section>
+
+<section class="g" id="faq" data-s>
+  <h2>Problems and fixes</h2>
+  <details class="faq"><summary>The foyer TV has no sound</summary><p>Click once anywhere on the TV picture (after a restart, browsers need one click). Check the TV's own volume, and that <b>Sound on</b> is ticked on the Foyer trailers page. Press <span class="k">M</span> in case it was muted. For sound without ever clicking, see the tip in <a href="#foyer-setup">Set up a foyer PC</a>.</p></details>
+  <details class="faq"><summary>My changes haven't reached the foyer TV</summary><p>Wait about a minute and a half: the TV applies changes between screens. If you edit on a different computer from the TV, check the dot at the top of Foyer trailers is <b>green</b> (see <a href="#connect">Changes from another PC</a>). If it's grey, click Connect; if it's red, click Change key.</p></details>
+  <details class="faq"><summary>A film or trailer isn't playing on the foyer TV</summary><p>Look in the Foyer trailers <b>Films</b> list: “Rated 15/18” films never play; “No certificate yet” films need you to watch and tick them; “No trailer on imc.ie” needs a YouTube link pasted. Also check it isn't under <b>Taken out</b> in the playlist.</p></details>
+  <details class="faq"><summary>A studio trailer file won't play on the TVs</summary><p>Files only play on the computer they were added on. Add it again on the foyer PC, from the TRAILERS folder on its desktop. If it says it won't play in a web browser, download the MP4 (H.264) version from the studio's site.</p></details>
+  <details class="faq"><summary>Times or prices look wrong or old</summary><p>They come from imc.ie three times a day (early morning, around lunchtime and early evening). If imc.ie has changed something since, it'll update at the next check. Prices on your own deals stay as you typed them: change them on the Deals page.</p></details>
+  <details class="faq"><summary>I can't find a post or design I made</summary><p>Work is saved in the browser on the computer where you made it. Check you're on the same computer and the same browser (Chrome vs Edge), and the right cinema in the top right. Use <b>Posts › Export backup</b> regularly to keep a copy.</p></details>
+  <details class="faq"><summary>A photo is missing on a design</summary><p>The photo may have been on another computer. Add it again in the editor's Photo tab, or choose one from IMC images. LUXX photos are managed on the LUXX page.</p></details>
+  <details class="faq"><summary>The app is slow on this computer</summary><p>Click <span class="k">Aa</span> and tick <b>Less movement</b>. Close other tabs. In the editor, turn off animated effects while you work, and switch them back on before saving a video.</p></details>
+  <details class="faq"><summary>The foyer TV says “No internet: showing saved listings”</summary><p>The internet is down at the cinema. The TV carries on with saved listings and skips YouTube trailers. It goes back to normal by itself when the internet returns: nothing to do.</p></details>
+  <details class="faq"><summary>Something looks broken on the foyer TV</summary><p>Press <span class="k">F5</span> on the foyer PC to reload it (it starts again by itself), then click once for sound. It also recovers by itself if it ever gets stuck for more than 7 minutes.</p></details>
+</section>
+</main>
+</div>
+<a class="backtop" href="#start" aria-label="Back to the top">↑</a>
+
+<script>
+(function(){
+  const q=document.getElementById("q"),secs=[...document.querySelectorAll("[data-s]")],links=[...document.querySelectorAll("#toc a")],none=document.getElementById("noresult");
+  /* search: shows only the sections that contain every word typed */
+  q.addEventListener("input",()=>{const w=q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);let n=0;
+    for(const s of secs){const hit=!w.length||w.every(x=>s.textContent.toLowerCase().includes(x));s.classList.toggle("hide",!hit);if(hit)n++;if(hit&&w.length)s.querySelectorAll("details.faq").forEach(d=>{d.open=w.every(x=>d.textContent.toLowerCase().includes(x))})}
+    for(const a of links){const s=document.querySelector(a.getAttribute("href"));const t=s&&s.closest("[data-s]");a.classList.toggle("hide",!!t&&t.classList.contains("hide"))}
+    none.style.display=n?"none":"block"});
+  /* highlight where you are in the contents */
+  if("IntersectionObserver" in window){const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}},{rootMargin:"-40% 0px -55% 0px"});secs.forEach(s=>io.observe(s))}
+  /* click a picture to see it bigger */
+  document.addEventListener("click",e=>{const i=e.target.closest("figure img");if(i){const b=document.createElement("div");b.className="lightbox";b.innerHTML=`<img src="${i.src}" alt="">`;b.onclick=()=>b.remove();document.body.appendChild(b);return}});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".lightbox").forEach(x=>x.remove())});
+})();
+</script>
+</body>
+</html>

@@ -245,6 +245,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .sec.fold>h3:hover{color:var(--ink)}
 .helpbtn{all:unset;cursor:pointer;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;color:var(--muted);border:1px solid var(--line)}
 .helpbtn:hover{color:var(--ink)}
+.hdhelp{margin-left:12px;color:#d6dbf5;font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:4px 9px;white-space:nowrap}.hdhelp:hover{background:rgba(255,255,255,.1)}@media (max-width:700px){.hdhelp{display:none}}
 .helptip{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.6;color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.4);width:min(360px,90vw);z-index:20}
 .stage{position:relative}
 .tlbtn[aria-pressed="true"]{border-color:var(--gold);color:var(--gold)}
@@ -334,7 +335,7 @@ html.a-rm *{transition:none!important;animation:none!important}
 <body data-standalone="1">
 <div class="app">
   <header class="top">
-    <div class="brandmark"><a id="back" href="index.html" target="imc-hub" hidden>← Hub</a><img id="brandLogo" src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Photo</span> Editor</b></div>
+    <div class="brandmark"><a id="back" href="index.html" target="imc-hub" hidden>← Hub</a><img id="brandLogo" src="imc-logo.png" alt="IMC Cinemas"><b>IMC <span>Photo</span> Editor</b><a class="hdhelp" href="help.html#editor" target="imc-help" title="How to use the editor">? Help</a></div>
     <div class="menuwrap"><button class="btn ddbtn" id="fmtBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fmts"><small>Size</small> <span id="fmtName">Feed 1:1</span> ▾</button><div class="ddmenu" id="fmts" role="menu" aria-label="Size" hidden></div></div>
     <div class="topact">
       <button class="btn ezbtn" id="ezToggle" type="button" title="Easy mode: just the steps you need">✨ <span class="lg">Easy mode</span></button>
