@@ -1751,8 +1751,8 @@ function getDeals(){try{const d=JSON.parse(localStorage.getItem(sk("imc-deals"))
 function putDeals(d){try{localStorage.setItem(sk("imc-deals"),JSON.stringify(d))}catch(e){toast("Couldn't save deals. Browser storage is blocked.")}}
 /* ---------- prices and product photos from imc.ie (read from the booking page by the importer) ---------- */
 const pnorm=t=>String(t||"").toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
-/* product photo, preferring the AI-upscaled HD copy when the upscaling job has made one */
-const hdOf=f=>String(f||"").replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/hd/$1.png");
+/* product photo, preferring the clean cut-out (tools/cutout.py: background and shadow removed, nothing invented) when there is one */
+const hdOf=f=>String(f||"").replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/cut/$1.png");
 const pimg=(f,alt,style)=>`<img src="${esc(asset(hdOf(f)))}" data-fallback="${esc(asset(f))}" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback)this.src=this.dataset.fallback" alt="${esc(alt||"")}" loading="lazy"${style?` style="${style}"`:""}>`;
 function imcPrices(){return(IMC&&IMC.prices&&!Array.isArray(IMC.prices))?IMC.prices:null}
 function imcMatch(name){const P=imcPrices(),n=pnorm(name);if(!P||!n)return null;const all=[...(P.products||[]),...(P.bundles||[])];return all.find(x=>pnorm(x.name)===n)||all.find(x=>!x.details&&(pnorm(x.name).startsWith(n)||n.startsWith(pnorm(x.name))))||null}

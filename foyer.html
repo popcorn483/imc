@@ -112,6 +112,7 @@ body.lite #card .bgimg{filter:none;opacity:.22}
 #promo .price{display:inline-grid;place-items:center;text-align:center;width:36vh;height:36vh;border-radius:50%;background:var(--red);color:#fff;font:900 9vh/1 var(--f-display);transform:rotate(-8deg);box-shadow:0 2vh 6vh rgba(0,0,0,.45);animation:pop .9s .3s cubic-bezier(.2,1.4,.4,1) both}
 #promo .price small{display:block;font:800 2.4vh var(--f-body);letter-spacing:.18em;margin-bottom:.8vh}
 #promo .price.mini{width:22vh;height:22vh;font-size:5.6vh;margin-top:2vh}#promo .price.mini small{font-size:1.7vh}
+#promo .prodwrap.cut img{background:none;box-shadow:none;border-radius:0;transform:none;filter:drop-shadow(0 3vh 3.5vh rgba(0,0,0,.5))}
 #promo .prodwrap{position:relative;width:62vh;animation:rise 1s .1s cubic-bezier(.2,.8,.2,1) both}#promo .prodwrap img{width:100%;display:block;border-radius:3vh;transform:rotate(2deg);box-shadow:0 3vh 6vh rgba(0,0,0,.5);background:#fff}#promo .prodwrap .price{position:absolute;right:-5vh;top:-6vh;width:28vh;height:28vh;font-size:7vh}
 #promo.luxx .price{background:linear-gradient(135deg,#ffd98a,#c9902a);color:#1a1030}
 #promo .posters{display:flex;gap:2vw;align-items:flex-end}
@@ -378,8 +379,8 @@ function playBoard(off=0){const ds=dayState();if(!ds.rows.length){next();return}
 function prices(){const P=D&&D.prices&&!Array.isArray(D.prices)?D.prices:null;return(P&&P.tickets)||[]}
 function promos(every){const n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out=[],tk=prices(),all=films();
   const wed=tk.find(t=>/wednesday/i.test(t.name)&&/meal/i.test(t.name)&&!/luxx/i.test(t.name));
-  const P=D&&D.prices&&!Array.isArray(D.prices)?D.prices:{},mc=(P.products||[]).find(x=>/^medium combo$/i.test(x.name)&&x.file),hd=f=>f?f.replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/hd/$1.png"):"";
-  if(!LOUNGE&&wed&&dow>=1&&dow<=3)out.push({k:"wed",img:mc&&asset(hd(mc.file)),imgFb:mc&&asset(mc.file),kick:dow===3?"Today only":"Every Wednesday",title:"Wednesday Meal Deal",lines:["Cinema ticket","Medium popcorn","Medium drink"],price:wed.price,priceSub:"ALL FOR"});
+  const P=D&&D.prices&&!Array.isArray(D.prices)?D.prices:{},mc=(P.products||[]).find(x=>/^medium combo$/i.test(x.name)&&x.file),hd=f=>f?f.replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/cut/$1.png"):"";
+  if(!LOUNGE&&wed&&dow>=1&&dow<=3)out.push({k:"wed",img:asset("data/products/cut/t1mcb.png"),imgFb:mc&&asset(hd(mc.file)),cut:true,kick:dow===3?"Today only":"Every Wednesday",title:"Wednesday Meal Deal",lines:["Cinema ticket","Medium popcorn","Medium drink"],price:wed.price,priceSub:"ALL FOR"});
   const kidsF=[],in7=addDays(n.date,6);for(const f of all){const ss=f.sessions.filter(s=>(s.tags||[]).includes("kidsclub")&&s.date>=n.date&&s.date<=in7&&(s.date>n.date||s.time>n.hm));if(ss.length)kidsF.push({f,ss})}
   const kc=tk.find(t=>/^kids club$/i.test(t.name));
   if(!LOUNGE&&kidsF.length)out.push({k:"kids",kick:"Kids Club",title:dow===0||dow>=4?"This weekend":"Coming up",lines:kidsF.slice(0,3).map(x=>cleanTitle(x.f.title)),posters:kidsF.slice(0,4).map(x=>({p:asset(x.f.posterFile)||x.f.poster,b:shortDay(x.ss[0].date).split(" ")[0]+" "+x.ss[0].time})),price:kc&&kc.price,priceSub:"TICKETS"});
@@ -408,7 +409,7 @@ function playPrice(b,secs){const el=$("#promo");el.className="layer pricebd";el.
 function playPromo(){const L=promos();if(!L.length){next();return}const p=L[promoI++%L.length],el=$("#promo");el.className="layer "+p.k;
   if(p.k==="ad"){el.innerHTML=`<div class="pbg" style="background-image:url('${esc(p.img)}')"></div><img class="adimg" src="${esc(p.img)}" alt="${esc(p.title)}">${p.adv?`<span class="adtag">Advert · ${esc(p.adv)}</span>`:""}`;
     el.querySelector(".adimg").onerror=()=>{clearTimeout(timer);next()};show("promo");progress(p.secs);timer=setTimeout(next,p.secs*1000);return}
-  const right=p.img&&p.price?`<div class="prodwrap"><img src="${esc(p.img)}" alt="" onerror="if(this.src!=='${esc(p.imgFb||"")}')this.src='${esc(p.imgFb||"")}'"><div class="price"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div></div>`:p.qr?`<div class="bigqr">${qrSvg(p.qr)}</div>`:p.posters?`<div class="posters">${p.posters.map(x=>`<div style="background-image:url('${esc(x.p)}')">${x.b?`<b>${esc(x.b)}</b>`:""}</div>`).join("")}</div>`:p.price?`<div class="price"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div>`:"";
+  const right=p.img&&p.price?`<div class="prodwrap${p.cut?" cut":""}"><img src="${esc(p.img)}" alt="" onerror="if(this.src!=='${esc(p.imgFb||"")}')this.src='${esc(p.imgFb||"")}'"><div class="price"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div></div>`:p.qr?`<div class="bigqr">${qrSvg(p.qr)}</div>`:p.posters?`<div class="posters">${p.posters.map(x=>`<div style="background-image:url('${esc(x.p)}')">${x.b?`<b>${esc(x.b)}</b>`:""}</div>`).join("")}</div>`:p.price?`<div class="price"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div>`:"";
   const priceLeft=p.price&&(p.qr||p.posters)?`<div class="price mini"><div><small>${esc(p.priceSub||"")}</small>${esc(p.price)}</div></div>`:"";
   el.innerHTML=`<div class="pbg"></div><div class="pin${right?"":" one"}"><div><div class="pk">${esc(p.kick)}</div><h2 style="${p.k==="msg"&&p.title.length>40?"font-size:8vh":""}">${esc(p.title)}</h2>${p.lines.length?`<ul class="pl">${p.lines.map(l=>`<li>${esc(l)}</li>`).join("")}</ul>`:""}${priceLeft}</div>${right}</div>`;
   el.querySelectorAll(".pin>div").forEach((d,i)=>{d.style.animation=`rise .9s ${i*.15}s cubic-bezier(.2,.8,.2,1) both`});

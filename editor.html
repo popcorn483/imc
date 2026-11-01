@@ -905,18 +905,42 @@ const foodPhoto=k=>{const f=FOOD.find(x=>x[0]===k);return f?{src:f[1],label:f[2]
 /* what an old drawn item becomes: your own photo for that item first, then IMC's. Pick 'n' mix is always Candy King; hot dogs come only from your own photos */
 const OLD_FOOD={popcorn:"combo_large",drink:"combo_medium",nachos:"nachos",sweets:"maltesers",icescoop:"ice_twist",icetub:"ice_twist",tray:"tray",pickmix:"pickmix",hotdog:null};
 function foodVisual(k){const own=ownVisual(k==="icescoop"||k==="icetub"?"icecream":k);if(own)return own;const f=OLD_FOOD[k];return f?foodPhoto(f):null}
+/* IMC's ticket + combo bundle photos (sharp, with IMC's own gold tickets): used when a deal is a ticket with popcorn and a drink */
+const BUNDLE={1:"data/products/t1mcb.jpg",2:"data/products/t1scb.jpg"};
+function bundleUp(out,P,tk){const tix=out.findIndex(v=>v.draw==="ticket"),cb=out.findIndex(v=>v.src&&/products\/(combotest|lccc|scon)\./.test(v.src));
+  if(tix<0||cb<0||(!P.includes("popcorn")&&!P.includes("drink")))return out;const b={src:BUNDLE[(tk||1)>=2||P.filter(x=>x==="drink").length>=2?2:1],label:"Ticket and combo"};return out.filter((v,i)=>i!==tix&&i!==cb).concat([b]).reverse()}
 const PRODUCTS={
-  ticket:{n:"Cinema ticket",c1:"#ffc23d",c2:"#1a1440",draw(c,L){
-    /* flat admission ticket: one colour, round side notches, a dashed tear line and a stub */
-    const w=400,h=176,R=20,stub=92;
-    c.beginPath();c.moveTo(-w/2,-h/2);c.lineTo(w/2,-h/2);c.lineTo(w/2,-R);c.arc(w/2,0,R,-Math.PI/2,Math.PI/2,true);c.lineTo(w/2,h/2);c.lineTo(-w/2,h/2);c.lineTo(-w/2,R);c.arc(-w/2,0,R,Math.PI/2,-Math.PI/2,true);c.closePath();
-    c.save();c.shadowColor="rgba(0,0,0,.28)";c.shadowBlur=18;c.shadowOffsetY=8;c.fillStyle=L.c1;c.fill();c.restore();
-    c.strokeStyle=L.c2;c.globalAlpha=.35;c.lineWidth=3;c.setLineDash([8,8]);c.beginPath();c.moveTo(w/2-stub,-h/2+12);c.lineTo(w/2-stub,h/2-12);c.stroke();c.setLineDash([]);c.globalAlpha=1;
-    c.fillStyle=L.c2;const t=(L.text||"ADMIT ONE").toUpperCase(),parts=split2(t),room=w-stub-56;let fs=parts.length>1?50:58;c.font=`800 ${fs}px ${FONTS.display}`;while(Math.max(...parts.map(p=>tw(c,p,2)))>room&&fs>22){fs-=2;c.font=`800 ${fs}px ${FONTS.display}`}
-    const cx=-stub/2;parts.forEach((p,i)=>ft(c,p,cx,parts.length>1?(i?fs*.92:-fs*.08):fs*.36,2,"center"));
-    c.save();c.translate(w/2-stub/2,0);c.rotate(-Math.PI/2);c.font=`700 22px ${FONTS.body}`;ft(c,"IMC",0,8,5,"center");c.restore();
+  ticket:{n:"Cinema ticket",c1:"#ffc23d",c2:"#3a2306",draw(c,L){
+    /* a gold foil admission ticket in the style of IMC's own: notched corners, a metallic sheen, punched perforations,
+       engraved lettering and a stub. Drawn once on its own canvas (so the holes are real see-through holes), then placed with a soft shadow. */
+    const w=420,h=184,R=24,stub=96,k=2,pad=4,key=[L.c1,L.c2,L.text||""].join("|");
+    if(!TICKET_CACHE[key]){const cv=document.createElement("canvas");cv.width=(w+pad*2)*k;cv.height=(h+pad*2)*k;const x=cv.getContext("2d");x.scale(k,k);x.translate(w/2+pad,h/2+pad);
+      const shape=(ww,hh,r)=>{x.beginPath();x.moveTo(-ww/2+r,-hh/2);x.lineTo(ww/2-r,-hh/2);x.arc(ww/2,-hh/2,r,Math.PI,Math.PI/2,true);x.lineTo(ww/2,hh/2-r);x.arc(ww/2,hh/2,r,-Math.PI/2,Math.PI,true);x.lineTo(-ww/2+r,hh/2);x.arc(-ww/2,hh/2,r,0,-Math.PI/2,true);x.lineTo(-ww/2,-hh/2+r);x.arc(-ww/2,-hh/2,r,Math.PI/2,0,true);x.closePath()};
+      const base=hexRgb(L.c1),mix=(t)=>{const f=t<0?0:255,a=Math.abs(t);return`rgb(${base.map(v=>Math.round(v+(f-v)*a)).join(",")})`};
+      const g=x.createLinearGradient(-w/2,-h/2,w/2,h/2);[[0,-.55],[.16,.22],[.34,-.28],[.5,.5],[.64,-.22],[.82,.16],[1,-.52]].forEach(([o,t])=>g.addColorStop(o,mix(t)));
+      shape(w,h,R);x.fillStyle=g;x.fill();x.lineWidth=2.4;x.strokeStyle=mix(-.62);x.stroke();
+      /* fine brushed-foil streaks */
+      x.save();shape(w,h,R);x.clip();const rr2=rng(77);x.globalAlpha=.07;for(let i=0;i<70;i++){const yy=-h/2+rr2()*h;x.fillStyle=rr2()<.5?"#fff":"#000";x.fillRect(-w/2,yy,w,.6+rr2()*1.2)}x.restore();
+      /* raised edge: a light line just inside the edge and a darker one inside that */
+      x.lineWidth=2;x.strokeStyle="rgba(255,255,255,.5)";shape(w-6,h-6,R+3);x.stroke();x.strokeStyle="rgba(60,35,5,.38)";x.lineWidth=1.6;shape(w-20,h-20,R+10);x.stroke();
+      /* perforations between ticket and stub, punched right through */
+      x.globalCompositeOperation="destination-out";for(let yy=-h/2+16;yy<=h/2-16;yy+=13){x.beginPath();x.arc(w/2-stub,yy,3.1,0,TAU);x.fill()}x.globalCompositeOperation="source-over";
+      /* engraved lettering: a light edge below, the colour on top */
+      const t=(L.text||"ADMIT ONE").toUpperCase(),parts=split2(t),room=w-stub-70;let fs=parts.length>1?52:60;x.font=`800 ${fs}px ${FONTS.display}`;while(Math.max(...parts.map(p=>tw(x,p,2)))>room&&fs>22){fs-=2;x.font=`800 ${fs}px ${FONTS.display}`}
+      const cx=-stub/2,ys=parts.length>1?[-fs*.06,fs*.86]:[fs*.36];
+      x.fillStyle="rgba(255,248,220,.55)";parts.forEach((p,i)=>ft(x,p,cx,ys[i]+1.6,2,"center"));x.fillStyle=L.c2;parts.forEach((p,i)=>ft(x,p,cx,ys[i],2,"center"));
+      x.strokeStyle=L.c2;x.globalAlpha=.45;x.lineWidth=1.4;for(const yy of[-h/2+30,h/2-30]){x.beginPath();x.moveTo(-w/2+42,yy);x.lineTo(w/2-stub-22,yy);x.stroke()}x.globalAlpha=1;
+      /* stub: IMC, sideways */
+      x.save();x.translate(w/2-stub/2,0);x.rotate(-Math.PI/2);x.font=`800 26px ${FONTS.display}`;x.fillStyle="rgba(255,248,220,.55)";ft(x,"IMC",0,10.6,6,"center");x.fillStyle=L.c2;ft(x,"IMC",0,9,6,"center");x.restore();
+      /* a soft sheen across the foil */
+      x.globalCompositeOperation="source-atop";const sh=x.createLinearGradient(-w/2,-h/2,w*.1,h/2);sh.addColorStop(0,"rgba(255,255,255,0)");sh.addColorStop(.45,"rgba(255,255,255,.28)");sh.addColorStop(.55,"rgba(255,255,255,0)");x.fillStyle=sh;x.fillRect(-w/2,-h/2,w,h);x.globalCompositeOperation="source-over";
+      TICKET_CACHE[key]=cv}
+    const cv=TICKET_CACHE[key];c.save();c.shadowColor="rgba(0,0,0,.42)";c.shadowBlur=26;c.shadowOffsetY=12;c.drawImage(cv,-w/2-pad,-h/2-pad,w+pad*2,h+pad*2);c.restore();
     return{w,h}}}
 };
+window.__imcTest={drawProduct:(...a)=>drawProduct(...a),foodVis:(...a)=>foodVis(...a)};   /* testing only */
+const TICKET_CACHE={};try{document.fonts.ready.then(()=>{for(const k in TICKET_CACHE)delete TICKET_CACHE[k];typeof draw==="function"&&draw()})}catch(e){}   /* redraw tickets once the lettering font has loaded */
+function hexRgb(h){h=String(h||"#ffc23d").replace("#","");if(h.length===3)h=h.split("").map(x=>x+x).join("");const n=parseInt(h,16);return isNaN(n)?[255,194,61]:[n>>16&255,n>>8&255,n&255]}
 function drawProduct(c,L){if(L.key!=="ticket"){const v=foodVisual(L.key);if(!v)return{w:1,h:1};return drawPPhoto(c,{...L,src:v.src,card:!!v.card})}const P=PRODUCTS.ticket;return P.draw(c,{...L,c1:L.c1||P.c1,c2:L.c2||P.c2})}
 
 /* ---------- film times listing ---------- */
@@ -1529,7 +1553,7 @@ function kidsInfo(){const T=lnow().date,now=lnow().hm,dow=new Date(T+"T12:00").g
   const P=(IMC&&IMC.prices&&!Array.isArray(IMC.prices))?IMC.prices:{},tk=P.tickets||[],pr=n=>(tk.find(t=>t.name.toLowerCase()===n)||{}).price||"";
   const DN=["SUN","MON","TUE","WED","THU","FRI","SAT"],when=x=>{const days=[...new Set(x.ss.map(s=>DN[new Date(s.date+"T12:00").getDay()]))],times=[...new Set(x.ss.map(s=>s.time))].sort();return(days.length>2?days[0]+"–"+days[days.length-1]:days.join(" & "))+"\n"+times.slice(0,2).join(" & ")};
   const tray=(P.products||[]).find(p=>/kids tray/i.test(p.name)&&p.file);
-  return{films:out.slice(0,4).map(x=>({...x,when:when(x)})),price:pr("kids club"),adult:pr("kids club adult"),meal:pr("kids club meal deal"),span:dow===0||dow>=5?"THIS WEEKEND":"THIS WEEK",tray:tray?asset(tray.file.replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/hd/$1.png")):null,trayFb:tray?asset(tray.file):null}}
+  return{films:out.slice(0,4).map(x=>({...x,when:when(x)})),price:pr("kids club"),adult:pr("kids club adult"),meal:pr("kids club meal deal"),span:dow===0||dow>=5?"THIS WEEKEND":"THIS WEEK",tray:tray?asset(tray.file.replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/cut/$1.png")):null,trayFb:tray?asset(tray.file):null}}
 const GROUP_PICS=[["screen","Screen photo","data/luxx/enniskillen/luxx-5-screen.jpg"],["seats","Seats photo","data/luxx/enniskillen/luxx-1-seats.jpg"],["building","Cinema building","data/sites/enniskillen.webp"],["none","Colour only",""]];
 function kidsGroupLayers(k,th,f,u,W,H,tall,wide,port,safeT,safeB,m,font,title,label,line,rule,logo,book,card){const L=[],kc=kidsInfo(),deco=[th.acc,"#ffffff",th.ink,"#ff7ab6","#7bd8ff","#8ee06b"];
   const dot=(x,y,d,i,o)=>shape({shape:"circle",w:d,c1:deco[i%deco.length],x,y,role:"deco",di:i,lock:true,...o}),star=(x,y,d,i,o)=>shape({shape:"star",w:d,c1:deco[i%deco.length],x,y,r:(i%5)*.3,role:"deco",di:i,lock:true,...o});
@@ -2204,10 +2228,10 @@ function cutoutWhite(img){const w=img.naturalWidth||img.width,h=img.naturalHeigh
   x.putImageData(d,0,0);
   let x0=W,y0=H,x1=0,y1=0;for(let Y=0;Y<H;Y++)for(let X=0;X<W;X++)if(p[(Y*W+X)*4+3]>60){if(X<x0)x0=X;if(X>x1)x1=X;if(Y<y0)y0=Y;if(Y>y1)y1=Y}
   if(x1<=x0||y1<=y0)return cvs;const t=document.createElement("canvas");t.width=x1-x0+1;t.height=y1-y0+1;t.getContext("2d").drawImage(cvs,-x0,-y0);return t}
-/* HD copy made by the upscaling job (data/products/hd/<name>.png), used when it exists */
-const hdOf=src=>String(src||"").replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)(\?.*)?$/i,"data/products/hd/$1.png");
+/* clean cut-out made by tools/cutout.py (data/products/cut/<name>.png: background and shadow removed, no AI-invented detail), used when it exists */
+const hdOf=src=>String(src||"").replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)(\?.*)?$/i,"data/products/cut/$1.png");
 function ppLoad(src,card){const key=src+(card?"|card":"");if(PPH[key])return PPH[key];if(/^fl:/.test(src)&&!FLOGO[src.slice(3)]){flLoad(src.slice(3)).then(()=>{delete PPH[key];draw()});return{img:null}}if(/^fl:/.test(src))card=true;const e=PPH[key]={img:null};const tries=[...new Set([hdOf(src),src])];
-  const attempt=i=>{if(i>=tries.length){e.err=true;return}const im=new Image();im.crossOrigin="anonymous";im.onload=()=>{try{e.img=card?im:cutoutWhite(im)}catch(err){e.img=im}e.hd=tries[i]!==src;draw();renderThumbs&&renderThumbs()};im.onerror=()=>attempt(i+1);im.src=asset(tries[i])};attempt(0);return e}
+  const attempt=i=>{if(i>=tries.length){e.err=true;return}const im=new Image();im.crossOrigin="anonymous";im.onload=()=>{const cut=tries[i]!==src;try{e.img=card||cut?im:cutoutWhite(im)}catch(err){e.img=im}e.hd=cut;draw();renderThumbs&&renderThumbs()};im.onerror=()=>attempt(i+1);im.src=asset(tries[i])};attempt(0);return e}
 function drawPPhoto(c,L){const e=ppLoad(L.src,L.card),H=440;if(!e.img){c.strokeStyle="rgba(255,255,255,.4)";c.setLineDash([10,8]);c.lineWidth=3;rr(c,-170,-H/2,340,H,24);c.stroke();c.setLineDash([]);return{w:340,h:H}}
   const im=e.img;
   if(L.card){/* real photo as a framed card: cover-cropped 4:5, white border, soft shadow */
@@ -2376,10 +2400,10 @@ function dealVisuals(d){if(d.real===false)return null;if(d.photos&&d.photos.leng
     /* no drawn food: anything without a real photo is simply left out (the gold ticket graphic is the only drawing) */
     if(!v)continue;const key=v.src||v.draw;if(!seen.has(key)){seen.add(key);out.push(v)}}
   if(!out.some(v=>v.src)){const g=anyImc("combo_large");if(g)out.unshift(g)}
-  return out.some(v=>v.src)?out.slice(0,4):null}
+  const o2=bundleUp(out,P,dealTickets(d));return o2.some(v=>v.src)?o2.slice(0,4):null}
 /* the same items as photos from the IMC catalogue (used when imc.ie matching is switched off for a deal) */
 function foodVis(P){const out=[],seen=new Set(),drinks=P.filter(x=>x==="drink").length,pop=P.includes("popcorn");
-  for(const k of P){const v=k==="ticket"?{draw:"ticket"}:(k==="popcorn"||(k==="drink"&&pop))&&!ownVisual(k)?foodPhoto(drinks>=2?"combo_share":"combo_large"):foodVisual(k);if(!v)continue;const key=v.src||v.draw;if(!seen.has(key)){seen.add(key);out.push(v)}}return out.slice(0,4)}
+  for(const k of P){const v=k==="ticket"?{draw:"ticket"}:(k==="popcorn"||(k==="drink"&&pop))&&!ownVisual(k)?foodPhoto(drinks>=2?"combo_share":"combo_large"):foodVisual(k);if(!v)continue;const key=v.src||v.draw;if(!seen.has(key)){seen.add(key);out.push(v)}}return bundleUp(out,P,1).slice(0,4)}
 function dealLayers(d,anim){return dealPhotoLayers(d,anim,dealVisuals(d)||foodVis(d.products&&d.products.length?d.products:["popcorn","drink"]))}
 function dealPhotoLayers(d,anim,vis){const L=[],cur=d.cur||siteCur(),items=d.items||[],title=String(d.name||"Deal").toUpperCase(),list=items.length>=3||items.join("  +  ").length>46,tk=dealTickets(d);let ts=list?108:118;mctx.font=`900 ${ts}px ${FONTS.display}`;while(tw(mctx,title,2)>960&&ts>56){ts-=4;mctx.font=`900 ${ts}px ${FONTS.display}`}
   L.push(mk("text","title",{text:title,y:.11,size:ts,anim:anim?"slide":"none",delay:0}));

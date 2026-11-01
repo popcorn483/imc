@@ -655,7 +655,9 @@ const SITE_PICS = {};
     const sp = SITE_PICS[c.id]; if (sp && !seen.has(sp)) { seen.add(sp); lib.push({ id: sp, cat: "imc", title: (d.cinema || "IMC") + " cinema building", file: sp }); }
     for (const b of d.banners || []) if (b.file && !seen.has(b.file)) { seen.add(b.file); lib.push({ id: b.file, cat: "imc", title: "imc.ie image (" + (d.cinema || "IMC") + ")", file: b.file }); }
     const P = d.prices && !Array.isArray(d.prices) ? d.prices : {};
-    for (const [k, cat] of [["products", "food"], ["bundles", "deals"]]) for (const x of P[k] || []) if (x.file && !/flexi/i.test(x.file) && !seen.has(x.file)) { seen.add(x.file); lib.push({ id: x.file, cat, title: x.name, file: x.file }); }
+    /* the clean cut-out (data/products/cut, made by tools/cutout.py) when there is one */
+    const cutOf = async (f) => { const c = f.replace(/data\/products\/([^/]+)\.(?:jpe?g|png)$/i, "data/products/cut/$1.png"); return c !== f && await fs.access(c).then(() => true, () => false) ? c : f; };
+    for (const [k, cat] of [["products", "food"], ["bundles", "deals"]]) for (const x of P[k] || []) if (x.file && !/flexi/i.test(x.file) && !seen.has(x.file)) { seen.add(x.file); lib.push({ id: x.file, cat, title: x.name, file: await cutOf(x.file) }); }
   }
   await fs.mkdir(path.join(OUT, "library"), { recursive: true });
   await fs.writeFile(path.join(OUT, "library", "index.json"), JSON.stringify(lib, null, 1));
