@@ -29,6 +29,9 @@ body.nostrip .layer{bottom:0}
 #yt{position:absolute;top:-9%;left:-4.5%;width:109%;height:109%;border:0;background:#000;pointer-events:none}
 #yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;pointer-events:none}
 #ytshield{position:absolute;inset:0;z-index:1}
+/* YouTube shows its title and "Watch on YouTube" for the first few seconds of a video (and after a jump): the picture is
+   zoomed in a little then so they're off the edges, and eases back once they've gone */
+#yt{transition:transform 1.4s cubic-bezier(.4,0,.2,1);transform-origin:50% 50%}#yt.zoom{transform:scale(1.32);transition:none}
 #ytcurtain{position:absolute;inset:0;z-index:2;background:#000;opacity:1;transition:opacity .5s}
 #ytcurtain.off{opacity:0}
 #infobox{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:20;background:rgba(5,7,26,.95);color:#fff;border:2px solid var(--gold,#ffc23d);border-radius:1.6vh;padding:2.4vh 2.6vw;font:500 2vh var(--f-body,sans-serif);max-width:80vw}#infobox b{display:block;font-size:2.8vh;margin-bottom:1.2vh}#infobox td{padding:.5vh 1.2vw .5vh 0;vertical-align:top}#infobox td:first-child{color:#aab3d8;white-space:nowrap}#infobox small{display:block;margin-top:1.4vh;color:#aab3d8}
@@ -121,6 +124,7 @@ body.lite #card .bgimg{filter:none;opacity:.22}
 #promo.custom.col-purple .pbg{background:radial-gradient(circle at 75% 30%,#d6a8ff33,transparent 45%),linear-gradient(150deg,#4a1d7a,#2a0f4a 60%,#120621)}
 #promo.custom.col-green .pbg{background:radial-gradient(circle at 75% 30%,#a8ffcc33,transparent 45%),linear-gradient(150deg,#0f6b46,#073d28 60%,#021a10)}
 #promo.custom.col-black .pbg{background:radial-gradient(circle at 75% 30%,#ffc23d1a,transparent 45%),linear-gradient(150deg,#16161c,#08080b)}
+#promo.pricebd{padding:0;display:block}#promo.pricebd .pbwrap{position:absolute;inset:0}
 #promo.custom .cimg{width:62vh;max-height:62vh;animation:rise 1s .1s cubic-bezier(.2,.8,.2,1) both}#promo.custom .cimg img{width:100%;max-height:62vh;object-fit:contain;display:block;border-radius:2.4vh;box-shadow:0 3vh 6vh rgba(0,0,0,.5)}
 #promo .bigqr{background:#fff;padding:2vh;border-radius:2vh;box-shadow:0 2vh 6vh rgba(0,0,0,.45)}#promo .bigqr svg{width:44vh;height:44vh;display:block}
 #promo.wed .pbg{background:radial-gradient(circle at 75% 45%,#ff7a3d55,transparent 45%),linear-gradient(135deg,#2a0f3e,#120a2b 55%,#060816)}
@@ -202,6 +206,7 @@ body.lite *{animation-duration:.01s!important}body.lite .ticker div{animation-du
 <script src="ident.js"></script>
 <script src="qr.js"></script>
 <script src="music.js"></script>
+<script src="priceboard.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -226,7 +231,7 @@ async function loadStudio(){const mine=await sget("studio:"+SITE),L=(Array.isArr
   STUDIO=[...L,...SVLINKS.filter(x=>!urls.has(x.url))].filter(x=>!RED.test(x.title||""));ONLY=Q.get("only")==="1"&&(EXTRA.length+STUDIO.filter(x=>!x.film).length)>0}
 
 /* everything the hub can change, read from the address; read again when the hub changes the settings (see "live updates") */
-let CARDS=[],SYNC,MODE,IDS,OK,CARD,SOUND,TRAILERS,SOON,BOARD_EVERY,PROMOS,STRIP,SCREENS,ADVERTS,MSGS,MYTR,EXTRA,ONLY,SVLINKS,WEL,WF,PX,TX,TT,MU,MV,ORD,HIDE,SHUF;
+let CARDS=[],BOARDS=[],SYNC,MODE,IDS,OK,CARD,SOUND,TRAILERS,SOON,BOARD_EVERY,PROMOS,STRIP,SCREENS,ADVERTS,MSGS,MYTR,EXTRA,ONLY,SVLINKS,WEL,WF,PX,TX,TT,MU,MV,ORD,HIDE,SHUF;
 function readSettings(){
   MODE=Q.get("mode")||"auto",IDS=(Q.get("ids")||"").split(",").filter(Boolean),OK=new Set((Q.get("ok")||"").split(",").filter(Boolean));
   CARD=Math.max(5,Math.min(30,+Q.get("card")||10)),SOUND=Q.get("sound")!=="0",TRAILERS=Q.get("trailers")!=="0",SOON=Q.get("soon")==="1";
@@ -243,6 +248,9 @@ function readSettings(){
   MU=Q.get("mu")||"cinema",MV=Q.has("mv")?+Q.get("mv"):35;
   SYNC=Q.get("sync")!=="0"&&Q.get("list")!=="1";
   /* your own cards from the hub: [id, top line, heading, lines, picture, seconds, first day, last day, colour] */
+  BOARDS=(()=>{try{const b=(Q.get("pb")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];const A=x=>Array.isArray(x)?x:[];
+    return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&a[0]).map(a=>({id:String(a[0]),title:String(a[1]||""),sub:String(a[2]||""),col:String(a[3]||"navy"),secs:Math.max(8,Math.min(90,+a[4]||20)),from:a[5]||"",to:a[6]||"",
+      sections:A(a[7]).map(s=>({name:String(s[0]||""),sizes:A(s[1]).map(String),items:A(s[2]).map(i=>({n:String(i[0]||""),note:String(i[1]||""),p:A(i[2]).map(String)}))}))}))}catch(e){return[]}})();
   CARDS=(()=>{try{const b=(Q.get("cd")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&a[0]&&(a[2]||a[4])).map(a=>({id:String(a[0]),kick:String(a[1]||""),title:String(a[2]||""),lines:(Array.isArray(a[3])?a[3]:[]).map(String).slice(0,5),img:String(a[4]||""),secs:Math.max(5,Math.min(60,+a[5]||10)),from:a[6]||"",to:a[7]||"",col:String(a[8]||"navy")}))}catch(e){return[]}})();
   ORD=(Q.get("ord")||"").split(",").filter(Boolean),HIDE=new Set((Q.get("hide")||"").split(",").filter(Boolean)),SHUF=Q.get("shuf")==="1";
 }
@@ -296,7 +304,7 @@ function upcoming(f){const n=londonNow();return f.sessions.filter(s=>s.date&&(s.
 let music=null;
 function musicFor(id){if(!music)return;if(muted||id==="yt-wrap"||id==="start")music.off();else music.on()}
 function buildQueue(){const today=londonNow().date;
-  let L=queueList().concat(CARDS.filter(c=>(!c.from||c.from<=today)&&(!c.to||c.to>=today)).map(c=>({key:"c:"+c.id,title:c.title||c.kick||"Your card",ccard:c,extra:true,sessions:[]}))).filter(f=>!HIDE.has(f.key));
+  let L=queueList().concat(CARDS.filter(c=>(!c.from||c.from<=today)&&(!c.to||c.to>=today)).map(c=>({key:"c:"+c.id,title:c.title||c.kick||"Your card",ccard:c,extra:true,sessions:[]}))).concat(BOARDS.filter(c=>(!c.from||c.from<=today)&&(!c.to||c.to>=today)).map(c=>({key:"b:"+c.id,title:c.title||"Priceboard",pboard:c,extra:true,sessions:[]}))).filter(f=>!HIDE.has(f.key));
   if(SHUF){for(let i=L.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[L[i],L[j]]=[L[j],L[i]]}}
   else if(ORD.length){const ix=k=>{const i=ORD.indexOf(k);return i<0?1e6:i};L=L.map((f,i)=>[f,i]).sort((a,b)=>ix(a[0].key)-ix(b[0].key)||a[1]-b[1]).map(a=>a[0])}
   return L}
@@ -389,6 +397,10 @@ function playCustom(c,secs){const el=$("#promo");el.className="layer custom col-
   el.innerHTML=`<div class="pbg"></div><div class="pin${pic?"":" one"}"><div>${c.kick?`<div class="pk">${esc(c.kick)}</div>`:""}${c.title?`<h2 style="${c.title.length>40?"font-size:8vh":""}">${esc(c.title)}</h2>`:""}${c.lines.length?`<ul class="pl">${c.lines.map(l=>`<li>${esc(l)}</li>`).join("")}</ul>`:""}</div>${pic}</div>`;
   el.querySelectorAll(".pin>div").forEach((d,i)=>{d.style.animation=`rise .9s ${i*.15}s cubic-bezier(.2,.8,.2,1) both`});
   show("promo");progress(secs||c.secs);if(!(SYNC&&syncOn))timer=setTimeout(next,(secs||c.secs)*1000)}
+/* a priceboard you made in the hub: shop items and prices, full screen */
+function playPrice(b,secs){const el=$("#promo");el.className="layer pricebd";el.innerHTML='<div class="pbwrap"></div>';const w=el.firstChild;
+  if(window.IMCPrice){IMCPrice.render(w,b,{cur:NI.includes(SITE)?"£":"€"});w.firstChild.style.animation="rise .9s cubic-bezier(.2,.8,.2,1) both"}
+  show("promo");if(window.IMCPrice)requestAnimationFrame(()=>IMCPrice.fit(w));progress(secs||b.secs);if(!(SYNC&&syncOn))timer=setTimeout(next,(secs||b.secs)*1000)}
 function playPromo(){const L=promos();if(!L.length){next();return}const p=L[promoI++%L.length],el=$("#promo");el.className="layer "+p.k;
   if(p.k==="ad"){el.innerHTML=`<div class="pbg" style="background-image:url('${esc(p.img)}')"></div><img class="adimg" src="${esc(p.img)}" alt="${esc(p.title)}">${p.adv?`<span class="adtag">Advert · ${esc(p.adv)}</span>`:""}`;
     el.querySelector(".adimg").onerror=()=>{clearTimeout(timer);next()};show("promo");progress(p.secs);timer=setTimeout(next,p.secs*1000);return}
@@ -408,7 +420,7 @@ function playHours(ds){const n=londonNow(),el=$("#hours"),rows=ds.rows;
 /* ---------- the running order ---------- */
 function buildSteps(){const s=[],ds=dayState();
   if(ds.phase!=="open")s.push({k:"hours"});else if(BOARD_EVERY)s.push({k:"board"});
-  queue.forEach((f,i)=>{if(f.ccard){s.push({k:"ccard",f});return}if(!f.extra)s.push({k:"card",f});if(TRAILERS&&!(ONLY&&!f.extra))s.push({k:"trailer",f});
+  queue.forEach((f,i)=>{if(f.ccard){s.push({k:"ccard",f});return}if(f.pboard){s.push({k:"pboard",f});return}if(!f.extra)s.push({k:"card",f});if(TRAILERS&&!(ONLY&&!f.extra))s.push({k:"trailer",f});
     if(BOARD_EVERY&&(i+1)%BOARD_EVERY===0&&i<queue.length-1)s.push({k:"board"});
     if(PROMOS&&(i+1)%2===0)s.push({k:"promo"});
     if(WEL.length&&WF!=="0"){since++;if(since>=gap){since=0;gap=newGap();s.push({k:"ident"})}}});
@@ -425,6 +437,7 @@ async function next(){if(SYNC&&syncOn)return syncTick();clearTimeout(timer);try{
   if(st.k==="hours")return playHours(dayState());
   if(st.k==="promo")return playPromo();
   if(st.k==="ccard")return playCustom(st.f.ccard);
+  if(st.k==="pboard")return playPrice(st.f.pboard);
   if(st.k==="ident")return playIdent();
   if(st.k==="card"){if(!upcoming(st.f).length&&!st.f.sources?.has("soon"))return next();showCard(st.f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
   if(st.k==="trailer")return st.f.studio?playStudio(st.f):playTrailer(st.f)}
@@ -456,6 +469,7 @@ function buildPlan(){const stamp=planStamp(),n=londonNow();PLAN_AT=nowMs()-dayMs
     else if(x.k==="board")sec=bp?bp.pages*bp.secs:0;
     else if(x.k==="hours")sec=12;
     else if(x.k==="ccard")sec=x.f.ccard.secs;
+    else if(x.k==="pboard")sec=x.f.pboard.secs;
     else if(x.k==="promo"){sec=promoSecs;x.pi=pi++}
     else if(x.k==="ident"){sec=identSecs;x.ii=ii++}
     if(sec>0){steps.push(x);d.push(Math.round(sec*1000))}}
@@ -479,6 +493,7 @@ function syncStart(x,loop,off,left){lastStep=Date.now();
   if(x.k==="board"){syncBoard=plan.bp;return playBoard(off)}
   if(x.k==="hours")return playHours(dayState());
   if(x.k==="ccard")return playCustom(x.f.ccard,left/1000);
+  if(x.k==="pboard")return playPrice(x.f.pboard,left/1000);
   if(x.k==="promo"){promoI=loop*plan.nPromo+x.pi;return playPromo()}
   if(x.k==="ident"){forcedIdent=loop*plan.nIdent+x.ii;return playIdent()}
   if(x.k==="trailer"){const local=x.f.studio&&!x.f.studio.url;if(netDown()&&!local){syncBoard=boardPlan();return playBoard()}
@@ -509,6 +524,8 @@ async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout
   const id=ytId(f.trailer),u=f.extra?[]:upcoming(f),nx=u[0],n=londonNow();
   $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:f.rel&&!f.video?`<small>IN CINEMAS ${shortDay(f.rel).toUpperCase()}</small>`:"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
   const q=nx&&nx.book?qrSvg(nx.book):"";$("#tqr").innerHTML=q?q+`<span>Scan to book<b>${nx.time}</b></span>`:"";$("#tqr").style.opacity=0;
+  const yz=$("#yt");let zoomT=0;const zoom=ms=>{yz.classList.add("zoom");clearTimeout(zoomT);zoomT=setTimeout(()=>yz.classList.remove("zoom"),ms)};
+  yz.classList.add("zoom");clearTimeout(zoomT);
   show("yt-wrap");progress(0.01);
   let started=false,over=false;const cur=$("#ytcurtain");cur.classList.remove("off");
   let lastFix=0,lastT=-1,stuckSince=0;
@@ -517,15 +534,15 @@ async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout
   const watch=setInterval(()=>{try{const d=player.getDuration(),t=player.getCurrentTime();
     if(started&&!over){if(Math.abs(t-lastT)<.05){if(!stuckSince)stuckSince=Date.now();else if(Date.now()-stuckSince>6000)return blank("stuck: the picture stopped")}else stuckSince=0;lastT=t}
     /* in step: if buffering left this TV behind (or ahead) of the clock by over a second, catch up */
-    if(SYNC&&syncOn&&started&&stepWall){const exp=(Date.now()-stepWall)/1000;if(Math.abs(t-exp)>1.2&&exp<d-3&&Date.now()-lastFix>5000){lastFix=Date.now();player.seekTo(exp,true)}}if(started&&d>5){if(t>=d-1.2)finish();$("#tqr").style.opacity=q&&t>d-25?1:0;lastStep=Date.now()}}catch(e){}},250);
+    if(SYNC&&syncOn&&started&&stepWall){const exp=(Date.now()-stepWall)/1000;if(Math.abs(t-exp)>1.2&&exp<d-3&&Date.now()-lastFix>5000){lastFix=Date.now();zoom(4000);player.seekTo(exp,true)}}if(started&&d>5){if(t>=d-1.2)finish();$("#tqr").style.opacity=q&&t>d-25?1:0;lastStep=Date.now()}}catch(e){}},250);
   const finish=()=>{if(over)return;over=true;cur.classList.remove("off");done();try{player.pauseVideo()}catch(e){}$("#tqr").style.opacity=0;
     if(SYNC&&syncOn&&slotLeft()>4000){setTimeout(()=>{if(playingKey&&!$("#yt-wrap").hidden)syncFill()},600);return}setTimeout(next,500)};
   const guard=setTimeout(()=>{if(!started)blank("didn't start")},10000),cap=setTimeout(finish,5*60e3);
-  const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch);player._done=null};
+  const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch);clearTimeout(zoomT);player._done=null};
   if(player&&player.loadVideoById){player.loadVideoById({videoId:id,startSeconds:at>2?at:0});if(muted)player.mute();else player.unMute()}
   else player=new YT.Player("yt",{host:"https://www.youtube-nocookie.com",videoId:id,playerVars:{autoplay:1,start:at>2?Math.floor(at):0,controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,fs:0,cc_load_policy:0,mute:muted?1:0,origin:location.origin},
     events:{onReady:e=>{if(muted)e.target.mute();e.target.playVideo()},onStateChange:e=>{const h=player._h;if(h)h(e.data)},onError:()=>{const x=player._x;if(x)x()}}});
-  player._h=st=>{if(over)return;if(st===1){if(!started){started=true;ytFails=0;captionsFor(f);setTimeout(()=>{if(!over)cur.classList.add("off")},400)}else cur.classList.add("off")}
+  player._h=st=>{if(over)return;if(st===1){if(!started){started=true;ytFails=0;captionsFor(f);zoom(4800);setTimeout(()=>{if(!over)cur.classList.add("off")},1000)}else{zoom(3500);setTimeout(()=>{if(!over)cur.classList.add("off")},700)}}
     else if(st===2){cur.classList.remove("off");try{player.playVideo()}catch(e){}}else if(st===0)finish()};
   player._x=()=>blank("YouTube won't play it here (removed, private or not allowed outside YouTube)");player._done=done}
 /* a studio trailer file (saved on this PC) or download link, played in the same frame as YouTube trailers */
@@ -640,7 +657,7 @@ if(Q.get("list")==="1"){(async()=>{await load();const out=[];let pl=null;if(D){
   const P=promos();let pi=0,ii=0;
   for(const[ix,st]of steps.entries()){const at=out.length;
     if(inStep&&st.k==="promo"&&P.length)pi=(loop*plan.nPromo+st.pi);
-    if(st.k==="trailer")out.push({k:"trailer",key:st.f.key,t:cleanTitle(st.f.title)});else if(st.k==="card")out.push({k:"card",key:st.f.key});else if(st.k==="ccard")out.push({k:"trailer",key:st.f.key,t:st.f.title,ccard:true});
+    if(st.k==="trailer")out.push({k:"trailer",key:st.f.key,t:cleanTitle(st.f.title)});else if(st.k==="card")out.push({k:"card",key:st.f.key});else if(st.k==="ccard"||st.k==="pboard")out.push({k:"trailer",key:st.f.key,t:st.f.title,ccard:true});
     else if(st.k==="board")out.push({k:"board",t:LOUNGE?"LUXX today board":"Now showing board"});else if(st.k==="hours")out.push({k:"hours",t:"Opening times (shown while closed)"});
     else if(st.k==="ident")out.push({k:"ident",t:WEL.length>1?`Welcome video (one of your ${WEL.length}, picked at random)`:"Welcome video: "+((WEL[0]&&(WEL[0].kicker+" "+WEL[0].title))||"Welcome").trim()});
     else if(st.k==="promo"&&P.length){const p=P[pi++%P.length];out.push({k:"promo",type:p.k,t:p.title,kick:p.kick||"",lines:(p.lines||[]).slice(0,4),price:p.price||"",adv:p.adv||"",secs:p.secs||10})}
