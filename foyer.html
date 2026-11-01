@@ -115,6 +115,13 @@ body.lite #card .bgimg{filter:none;opacity:.22}
 #promo .posters div{width:22vh;aspect-ratio:2/3;border-radius:1vh;background:#111 center/cover;box-shadow:0 2vh 5vh rgba(0,0,0,.5);animation:rise .9s cubic-bezier(.2,.8,.2,1) both;position:relative}
 #promo .posters div b{position:absolute;left:0;right:0;bottom:-5vh;text-align:center;font:700 2.2vh var(--f-body);color:var(--gold);white-space:nowrap}
 #promo .posters div:nth-child(2){animation-delay:.12s}#promo .posters div:nth-child(3){animation-delay:.24s}#promo .posters div:nth-child(4){animation-delay:.36s}
+#promo.custom .pbg{background:radial-gradient(circle at 75% 30%,#ffffff14,transparent 45%),linear-gradient(150deg,#1a2160,#0d1240 55%,#05071a)}
+#promo.custom.col-red .pbg{background:radial-gradient(circle at 75% 30%,#ff8a6e33,transparent 45%),linear-gradient(150deg,#b3261e,#6b0f12 60%,#2a0507)}
+#promo.custom.col-gold .pbg{background:radial-gradient(circle at 75% 30%,#fff3,transparent 45%),linear-gradient(150deg,#d99a1e,#8a5a08 60%,#3a2403)}
+#promo.custom.col-purple .pbg{background:radial-gradient(circle at 75% 30%,#d6a8ff33,transparent 45%),linear-gradient(150deg,#4a1d7a,#2a0f4a 60%,#120621)}
+#promo.custom.col-green .pbg{background:radial-gradient(circle at 75% 30%,#a8ffcc33,transparent 45%),linear-gradient(150deg,#0f6b46,#073d28 60%,#021a10)}
+#promo.custom.col-black .pbg{background:radial-gradient(circle at 75% 30%,#ffc23d1a,transparent 45%),linear-gradient(150deg,#16161c,#08080b)}
+#promo.custom .cimg{width:62vh;max-height:62vh;animation:rise 1s .1s cubic-bezier(.2,.8,.2,1) both}#promo.custom .cimg img{width:100%;max-height:62vh;object-fit:contain;display:block;border-radius:2.4vh;box-shadow:0 3vh 6vh rgba(0,0,0,.5)}
 #promo .bigqr{background:#fff;padding:2vh;border-radius:2vh;box-shadow:0 2vh 6vh rgba(0,0,0,.45)}#promo .bigqr svg{width:44vh;height:44vh;display:block}
 #promo.wed .pbg{background:radial-gradient(circle at 75% 45%,#ff7a3d55,transparent 45%),linear-gradient(135deg,#2a0f3e,#120a2b 55%,#060816)}
 #promo.kids .pbg{background:radial-gradient(circle at 20% 20%,#ffd84a44,transparent 40%),linear-gradient(160deg,#0b6bb8,#0a3f86 60%,#071a40)}
@@ -219,7 +226,7 @@ async function loadStudio(){const mine=await sget("studio:"+SITE),L=(Array.isArr
   STUDIO=[...L,...SVLINKS.filter(x=>!urls.has(x.url))].filter(x=>!RED.test(x.title||""));ONLY=Q.get("only")==="1"&&(EXTRA.length+STUDIO.filter(x=>!x.film).length)>0}
 
 /* everything the hub can change, read from the address; read again when the hub changes the settings (see "live updates") */
-let SYNC,MODE,IDS,OK,CARD,SOUND,TRAILERS,SOON,BOARD_EVERY,PROMOS,STRIP,SCREENS,ADVERTS,MSGS,MYTR,EXTRA,ONLY,SVLINKS,WEL,WF,PX,TX,TT,MU,MV,ORD,HIDE,SHUF;
+let CARDS=[],SYNC,MODE,IDS,OK,CARD,SOUND,TRAILERS,SOON,BOARD_EVERY,PROMOS,STRIP,SCREENS,ADVERTS,MSGS,MYTR,EXTRA,ONLY,SVLINKS,WEL,WF,PX,TX,TT,MU,MV,ORD,HIDE,SHUF;
 function readSettings(){
   MODE=Q.get("mode")||"auto",IDS=(Q.get("ids")||"").split(",").filter(Boolean),OK=new Set((Q.get("ok")||"").split(",").filter(Boolean));
   CARD=Math.max(5,Math.min(30,+Q.get("card")||10)),SOUND=Q.get("sound")!=="0",TRAILERS=Q.get("trailers")!=="0",SOON=Q.get("soon")==="1";
@@ -228,13 +235,15 @@ function readSettings(){
   .filter(a=>Array.isArray(a)&&a[0]).map(a=>({src:String(a[0]),title:String(a[1]||""),from:a[2]||"",to:a[3]||"",secs:Math.max(5,Math.min(30,+a[4]||10)),often:+a[5]>1?2:1,adv:String(a[6]||"")}))}catch(e){return[]}})();
   MSGS=(Q.get("msg")||"").split("|").map(s=>s.trim()).filter(Boolean).slice(0,6);
   MYTR=Object.fromEntries((Q.get("tl")||"").split("|").map(x=>x.split("~")).filter(x=>x.length===2&&/^[\w-]{11}$/.test(x[1])));
-  EXTRA=(Q.get("x")||"").split("|").map(x=>{const[id,title="",rel=""]=x.split("~");return{id,title,rel:/^\d{4}-\d{2}-\d{2}$/.test(rel)?rel:""}}).filter(x=>/^[\w-]{11}$/.test(x.id)&&!RED.test(x.title));ONLY=Q.get("only")==="1"&&EXTRA.length>0;
+  EXTRA=(Q.get("x")||"").split("|").map(x=>{const[id,title="",rel="",v=""]=x.split("~");return{id,title,rel:/^\d{4}-\d{2}-\d{2}$/.test(rel)?rel:"",video:v==="v"}}).filter(x=>/^[\w-]{11}$/.test(x.id)&&!RED.test(x.title));ONLY=Q.get("only")==="1"&&EXTRA.length>0;
   SVLINKS=(()=>{try{const b=(Q.get("sv")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&/^https:\/\//.test(a[2]||"")).map((a,i)=>({id:"l"+i,film:String(a[0]||""),title:String(a[1]||""),url:a[2]}))}catch(e){return[]}})();
   WEL=(window.IMCIdent?IMCIdent.decode(Q.get("w")||""):[]).filter(w=>!LOUNGE||w.brand==="luxx"),WF=Q.get("wf")||(WEL.length?"r":"0");
   PX=new Set((Q.get("px")||"").split(",").filter(Boolean)),TX=new Set((Q.get("tx")||"").split(",").filter(Boolean));
   TT=(()=>{try{const b=(Q.get("tt")||"").replace(/-/g,"+").replace(/_/g,"/");return b?JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))):{}}catch(e){return{}}})();
   MU=Q.get("mu")||"cinema",MV=Q.has("mv")?+Q.get("mv"):35;
   SYNC=Q.get("sync")!=="0"&&Q.get("list")!=="1";
+  /* your own cards from the hub: [id, top line, heading, lines, picture, seconds, first day, last day, colour] */
+  CARDS=(()=>{try{const b=(Q.get("cd")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&a[0]&&(a[2]||a[4])).map(a=>({id:String(a[0]),kick:String(a[1]||""),title:String(a[2]||""),lines:(Array.isArray(a[3])?a[3]:[]).map(String).slice(0,5),img:String(a[4]||""),secs:Math.max(5,Math.min(60,+a[5]||10)),from:a[6]||"",to:a[7]||"",col:String(a[8]||"navy")}))}catch(e){return[]}})();
   ORD=(Q.get("ord")||"").split(",").filter(Boolean),HIDE=new Set((Q.get("hide")||"").split(",").filter(Boolean)),SHUF=Q.get("shuf")==="1";
 }
 readSettings();
@@ -285,7 +294,8 @@ function upcoming(f){const n=londonNow();return f.sessions.filter(s=>s.date&&(s.
 /* background music under the cards and slides (music.js), off during trailers */
 let music=null;
 function musicFor(id){if(!music)return;if(muted||id==="yt-wrap"||id==="start")music.off();else music.on()}
-function buildQueue(){let L=queueList().filter(f=>!HIDE.has(f.key));
+function buildQueue(){const today=londonNow().date;
+  let L=queueList().concat(CARDS.filter(c=>(!c.from||c.from<=today)&&(!c.to||c.to>=today)).map(c=>({key:"c:"+c.id,title:c.title||c.kick||"Your card",ccard:c,extra:true,sessions:[]}))).filter(f=>!HIDE.has(f.key));
   if(SHUF){for(let i=L.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[L[i],L[j]]=[L[j],L[i]]}}
   else if(ORD.length){const ix=k=>{const i=ORD.indexOf(k);return i<0?1e6:i};L=L.map((f,i)=>[f,i]).sort((a,b)=>ix(a[0].key)-ix(b[0].key)||a[1]-b[1]).map(a=>a[0])}
   return L}
@@ -295,7 +305,7 @@ function queueList(){const all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.lengt
   list=list.filter(f=>safety(f).ok).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer||nt(x.title)===nt(f.title))===i);
   list.sort((a,b)=>{const ua=upcoming(a)[0],ub=upcoming(b)[0];return(ua?ua.date+ua.time:"9"+(a.releaseDate||"")).localeCompare(ub?ub.date+ub.time:"9"+(b.releaseDate||""))});
   if(ONLY)list=[];if(!TRAILERS)return list;
-  const seen=new Set(list.map(f=>ytId(f.trailer)));for(const x of EXTRA)if(!seen.has(x.id)&&!(x.rel&&x.rel<londonNow().date)){seen.add(x.id);list.push({key:"x:"+x.id,title:x.title||"Coming soon",trailer:"https://www.youtube.com/watch?v="+x.id,extra:true,rel:x.rel,sessions:[]})}
+  const seen=new Set(list.map(f=>ytId(f.trailer)));for(const x of EXTRA)if(!seen.has(x.id)&&!(x.rel&&x.rel<londonNow().date)){seen.add(x.id);list.push({key:"x:"+x.id,title:x.title||(x.video?"Video":"Coming soon"),trailer:"https://www.youtube.com/watch?v="+x.id,extra:true,rel:x.rel,video:x.video,sessions:[]})}
   for(const x of STUDIO)if(!x.film&&!seen.has("s"+x.id)){seen.add("s"+x.id);list.push({key:"s:"+x.id,title:x.title||"Coming soon",trailer:"studio:"+x.id,studio:x,extra:true,sessions:[]})}
   return list}
 
@@ -372,6 +382,12 @@ function promos(every){const n=londonNow(),dow=new Date(n.date+"T12:00").getDay(
   for(const a of ADVERTS)if((!a.from||a.from<=n.date)&&(!a.to||a.to>=n.date))for(let i=0;i<a.often;i++)out.push({k:"ad",title:a.title,img:/^https?:/.test(a.src)?a.src:asset(a.src),secs:a.secs,adv:a.adv,lines:[]});
   for(const m of MSGS)out.push({k:"msg",kick:(D&&D.cinema)||"IMC",title:m,lines:[]});
   return every?out:out.filter(p=>!PX.has(p.k))}
+/* one of your own cards */
+function playCustom(c,secs){const el=$("#promo");el.className="layer custom col-"+(c.col||"navy").replace(/[^a-z]/g,"");
+  const pic=c.img?`<div class="cimg"><img src="${esc(/^https?:/.test(c.img)?c.img:asset(c.img))}" alt="" onerror="this.parentNode.remove()"></div>`:"";
+  el.innerHTML=`<div class="pbg"></div><div class="pin${pic?"":" one"}"><div>${c.kick?`<div class="pk">${esc(c.kick)}</div>`:""}${c.title?`<h2 style="${c.title.length>40?"font-size:8vh":""}">${esc(c.title)}</h2>`:""}${c.lines.length?`<ul class="pl">${c.lines.map(l=>`<li>${esc(l)}</li>`).join("")}</ul>`:""}</div>${pic}</div>`;
+  el.querySelectorAll(".pin>div").forEach((d,i)=>{d.style.animation=`rise .9s ${i*.15}s cubic-bezier(.2,.8,.2,1) both`});
+  show("promo");progress(secs||c.secs);if(!(SYNC&&syncOn))timer=setTimeout(next,(secs||c.secs)*1000)}
 function playPromo(){const L=promos();if(!L.length){next();return}const p=L[promoI++%L.length],el=$("#promo");el.className="layer "+p.k;
   if(p.k==="ad"){el.innerHTML=`<div class="pbg" style="background-image:url('${esc(p.img)}')"></div><img class="adimg" src="${esc(p.img)}" alt="${esc(p.title)}">${p.adv?`<span class="adtag">Advert · ${esc(p.adv)}</span>`:""}`;
     el.querySelector(".adimg").onerror=()=>{clearTimeout(timer);next()};show("promo");progress(p.secs);timer=setTimeout(next,p.secs*1000);return}
@@ -391,7 +407,7 @@ function playHours(ds){const n=londonNow(),el=$("#hours"),rows=ds.rows;
 /* ---------- the running order ---------- */
 function buildSteps(){const s=[],ds=dayState();
   if(ds.phase!=="open")s.push({k:"hours"});else if(BOARD_EVERY)s.push({k:"board"});
-  queue.forEach((f,i)=>{if(!f.extra)s.push({k:"card",f});if(TRAILERS&&!(ONLY&&!f.extra))s.push({k:"trailer",f});
+  queue.forEach((f,i)=>{if(f.ccard){s.push({k:"ccard",f});return}if(!f.extra)s.push({k:"card",f});if(TRAILERS&&!(ONLY&&!f.extra))s.push({k:"trailer",f});
     if(BOARD_EVERY&&(i+1)%BOARD_EVERY===0&&i<queue.length-1)s.push({k:"board"});
     if(PROMOS&&(i+1)%2===0)s.push({k:"promo"});
     if(WEL.length&&WF!=="0"){since++;if(since>=gap){since=0;gap=newGap();s.push({k:"ident"})}}});
@@ -407,6 +423,7 @@ async function next(){if(SYNC&&syncOn)return syncTick();clearTimeout(timer);try{
   if(st.k==="board")return playBoard();
   if(st.k==="hours")return playHours(dayState());
   if(st.k==="promo")return playPromo();
+  if(st.k==="ccard")return playCustom(st.f.ccard);
   if(st.k==="ident")return playIdent();
   if(st.k==="card"){if(!upcoming(st.f).length&&!st.f.sources?.has("soon"))return next();showCard(st.f);progress(CARD);timer=setTimeout(next,CARD*1000);return}
   if(st.k==="trailer")return st.f.studio?playStudio(st.f):playTrailer(st.f)}
@@ -437,6 +454,7 @@ function buildPlan(){const stamp=planStamp(),n=londonNow();
     else if(x.k==="trailer")sec=(x.f.studio?(x.f.studio.len||TRAILER_DEFAULT):(DUR[ytId(x.f.trailer)]||TRAILER_DEFAULT))+1.5;
     else if(x.k==="board")sec=bp?bp.pages*bp.secs:0;
     else if(x.k==="hours")sec=12;
+    else if(x.k==="ccard")sec=x.f.ccard.secs;
     else if(x.k==="promo"){sec=promoSecs;x.pi=pi++}
     else if(x.k==="ident"){sec=identSecs;x.ii=ii++}
     if(sec>0){steps.push(x);d.push(Math.round(sec*1000))}}
@@ -458,6 +476,7 @@ function syncStart(x,loop,off,left){lastStep=Date.now();
   if(x.k==="card"){showCard(x.f);progress(left/1000);return}
   if(x.k==="board"){syncBoard=plan.bp;return playBoard(off)}
   if(x.k==="hours")return playHours(dayState());
+  if(x.k==="ccard")return playCustom(x.f.ccard,left/1000);
   if(x.k==="promo"){promoI=loop*plan.nPromo+x.pi;return playPromo()}
   if(x.k==="ident"){forcedIdent=loop*plan.nIdent+x.ii;return playIdent()}
   if(x.k==="trailer"){const local=x.f.studio&&!x.f.studio.url;if(netDown()&&!local){syncBoard=boardPlan();return playBoard()}
@@ -485,7 +504,7 @@ const slotLeft=()=>stepWall&&stepLen?stepWall+stepLen-Date.now():0;
 function syncFill(){if(SYNC&&syncOn){syncBoard=boardPlan();if(syncBoard)playBoard();else show("card");return true}return false}
 async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout(next,50);return}const ok=await loadYT();if(!ok){ytReady=null;ytFailed();ytDownUntil=Date.now()+5*60e3;if(!syncFill())timer=setTimeout(next,300);return}
   const id=ytId(f.trailer),u=f.extra?[]:upcoming(f),nx=u[0],n=londonNow();
-  $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:f.rel?`<small>IN CINEMAS ${shortDay(f.rel).toUpperCase()}</small>`:"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
+  $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:f.rel&&!f.video?`<small>IN CINEMAS ${shortDay(f.rel).toUpperCase()}</small>`:"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
   const q=nx&&nx.book?qrSvg(nx.book):"";$("#tqr").innerHTML=q?q+`<span>Scan to book<b>${nx.time}</b></span>`:"";$("#tqr").style.opacity=0;
   show("yt-wrap");progress(0.01);
   let started=false,over=false;const cur=$("#ytcurtain");cur.classList.remove("off");
@@ -618,7 +637,7 @@ if(Q.get("list")==="1"){(async()=>{await load();const out=[];let pl=null;if(D){
   const P=promos();let pi=0,ii=0;
   for(const[ix,st]of steps.entries()){const at=out.length;
     if(inStep&&st.k==="promo"&&P.length)pi=(loop*plan.nPromo+st.pi);
-    if(st.k==="trailer")out.push({k:"trailer",key:st.f.key,t:cleanTitle(st.f.title)});else if(st.k==="card")out.push({k:"card",key:st.f.key});
+    if(st.k==="trailer")out.push({k:"trailer",key:st.f.key,t:cleanTitle(st.f.title)});else if(st.k==="card")out.push({k:"card",key:st.f.key});else if(st.k==="ccard")out.push({k:"trailer",key:st.f.key,t:st.f.title,ccard:true});
     else if(st.k==="board")out.push({k:"board",t:LOUNGE?"LUXX today board":"Now showing board"});else if(st.k==="hours")out.push({k:"hours",t:"Opening times (shown while closed)"});
     else if(st.k==="ident")out.push({k:"ident",t:WEL.length>1?`Welcome video (one of your ${WEL.length}, picked at random)`:"Welcome video: "+((WEL[0]&&(WEL[0].kicker+" "+WEL[0].title))||"Welcome").trim()});
     else if(st.k==="promo"&&P.length){const p=P[pi++%P.length];out.push({k:"promo",type:p.k,t:p.title,kick:p.kick||"",lines:(p.lines||[]).slice(0,4),price:p.price||"",adv:p.adv||"",secs:p.secs||10})}

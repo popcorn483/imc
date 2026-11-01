@@ -484,6 +484,11 @@ The **Playlist** at the top of the Foyer trailers page lists everything playing 
 - **Shuffle now** mixes up the order once. **Shuffle on the TVs every time round** makes the foyer player shuffle each loop. **Reset order** goes back to films by next showing, then your trailers.
 - The order, the trailers taken out and the shuffle setting are sent to the foyer player in its address (`ord`, `hide`, `shuf`), so reopen or re-copy the player link after changing them. New films that turn up later join the end of the list.
 
+### Your own cards and YouTube videos
+
+- **＋ Add a card** makes a full-screen card for the TVs: a small top line, a heading, up to 5 lines of text, a background colour (navy, red, gold, purple, green, black), an optional picture (from the IMC images in `data/library/index.json`, or a web address), how long it stays on (6–30 seconds) and optional first and last days. A live preview shows how it looks. Cards appear in the playlist as **Your card** with an **Edit** button (Edit also deletes), and can be moved and taken out like trailers. They travel in the player address as `cd` (base64url JSON `[id,kick,title,lines,img,secs,from,to,col]`), play in step and show in the "on the TVs now" bar.
+- **＋ Add a YouTube video** adds any YouTube video (a promo, a local event), checked to play outside YouTube, with its name filled in. It plays full screen with no showtimes card and no "In cinemas" label, and is listed as **Video**. Videos go in `x` with a `~v` flag (`id~title~date~v`).
+
 ### What plays between the trailers
 
 - With **Show what plays in between** ticked, the Playlist also shows the Now showing board, deals and offers slides, adverts, your messages and welcome videos where they fall between trailers. The hub gets this from the foyer player itself (`foyer.html?…&list=1` in a hidden frame), so it matches the TVs. Slides take turns, so the end of the list names the ones that come round next.
