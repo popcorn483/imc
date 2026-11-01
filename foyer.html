@@ -250,7 +250,7 @@ function readSettings(){
   /* your own cards from the hub: [id, top line, heading, lines, picture, seconds, first day, last day, colour] */
   BOARDS=(()=>{try{const b=(Q.get("pb")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];const A=x=>Array.isArray(x)?x:[];
     return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&a[0]).map(a=>({id:String(a[0]),title:String(a[1]||""),sub:String(a[2]||""),col:String(a[3]||"navy"),secs:Math.max(8,Math.min(90,+a[4]||20)),from:a[5]||"",to:a[6]||"",
-      sections:A(a[7]).map(s=>({name:String(s[0]||""),sizes:A(s[1]).map(String),items:A(s[2]).map(i=>({n:String(i[0]||""),note:String(i[1]||""),p:A(i[2]).map(String)}))})),img:String(a[8]||"")}))}catch(e){return[]}})();
+      sections:A(a[7]).map(s=>({name:String(s[0]||""),sizes:A(s[1]).map(String),items:A(s[2]).map(i=>({n:String(i[0]||""),note:String(i[1]||""),p:A(i[2]).map(String)}))})),img:String(a[8]||""),snd:["cinema","chill","bright","none"].includes(a[9])?a[9]:"",chime:a[10]===1}))}catch(e){return[]}})();
   CARDS=(()=>{try{const b=(Q.get("cd")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&a[0]&&(a[2]||a[4])).map(a=>({id:String(a[0]),kick:String(a[1]||""),title:String(a[2]||""),lines:(Array.isArray(a[3])?a[3]:[]).map(String).slice(0,5),img:String(a[4]||""),secs:Math.max(5,Math.min(60,+a[5]||10)),from:a[6]||"",to:a[7]||"",col:String(a[8]||"navy")}))}catch(e){return[]}})();
   ORD=(Q.get("ord")||"").split(",").filter(Boolean),HIDE=new Set((Q.get("hide")||"").split(",").filter(Boolean)),SHUF=Q.get("shuf")==="1";
 }
@@ -302,7 +302,11 @@ function upcoming(f){const n=londonNow();return f.sessions.filter(s=>s.date&&(s.
 /* slides and bottom-strip lines you've switched off or reworded in the hub */
 /* background music under the cards and slides (music.js), off during trailers */
 let music=null;
-function musicFor(id){if(!music)return;if(muted||id==="yt-wrap"||id==="start")music.off();else music.on()}
+function musicFor(id){if(!music)return;if(music._bm){music.setMood(MU==="off"?"cinema":MU);music._bm=0}if(muted||id==="yt-wrap"||id==="start"||MU==="off")music.off();else music.on()}
+/* a priceboard's own sound: its music style (or the usual one, or none) and an optional chime as it comes on */
+function boardSound(b){if(muted||!window.IMCMusic)return;if(!music&&(b.snd!=="none"||b.chime)){music=IMCMusic.create(MU==="off"?"cinema":MU,MV);music.start()}if(!music)return;
+  if(b.snd==="none"||(!b.snd&&MU==="off"))music.off();else{if(b.snd&&b.snd!==MU){music.setMood(b.snd);music._bm=1}music.start();music.on()}
+  if(b.chime)setTimeout(()=>{if(!muted)music.chime()},350)}
 function buildQueue(){const today=londonNow().date;
   let L=queueList().concat(CARDS.filter(c=>(!c.from||c.from<=today)&&(!c.to||c.to>=today)).map(c=>({key:"c:"+c.id,title:c.title||c.kick||"Your card",ccard:c,extra:true,sessions:[]}))).concat(BOARDS.filter(c=>(!c.from||c.from<=today)&&(!c.to||c.to>=today)).map(c=>({key:"b:"+c.id,title:c.title||"Priceboard",pboard:c,extra:true,sessions:[]}))).filter(f=>!HIDE.has(f.key));
   if(SHUF){for(let i=L.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[L[i],L[j]]=[L[j],L[i]]}}
@@ -400,7 +404,7 @@ function playCustom(c,secs){const el=$("#promo");el.className="layer custom col-
 /* a priceboard you made in the hub: shop items and prices, full screen */
 function playPrice(b,secs){const el=$("#promo");el.className="layer pricebd";el.innerHTML='<div class="pbwrap"></div>';const w=el.firstChild;
   if(window.IMCPrice){IMCPrice.render(w,b,{cur:NI.includes(SITE)?"£":"€",asset});w.firstChild.style.animation="rise .9s cubic-bezier(.2,.8,.2,1) both"}
-  show("promo");if(window.IMCPrice)requestAnimationFrame(()=>IMCPrice.fit(w));progress(secs||b.secs);if(!(SYNC&&syncOn))timer=setTimeout(next,(secs||b.secs)*1000)}
+  show("promo");boardSound(b);if(window.IMCPrice)requestAnimationFrame(()=>IMCPrice.fit(w));progress(secs||b.secs);if(!(SYNC&&syncOn))timer=setTimeout(next,(secs||b.secs)*1000)}
 function playPromo(){const L=promos();if(!L.length){next();return}const p=L[promoI++%L.length],el=$("#promo");el.className="layer "+p.k;
   if(p.k==="ad"){el.innerHTML=`<div class="pbg" style="background-image:url('${esc(p.img)}')"></div><img class="adimg" src="${esc(p.img)}" alt="${esc(p.title)}">${p.adv?`<span class="adtag">Advert · ${esc(p.adv)}</span>`:""}`;
     el.querySelector(".adimg").onerror=()=>{clearTimeout(timer);next()};show("promo");progress(p.secs);timer=setTimeout(next,p.secs*1000);return}

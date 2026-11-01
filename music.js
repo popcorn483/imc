@@ -1,6 +1,6 @@
 /* IMC background music: soft music made live in the browser (no recordings, no downloads), for the foyer player's
    showtimes cards, board, deals and welcome screens. Light enough for a slow PC: a handful of oscillators at a time.
-   IMCMusic.create(mood, volume 0-100) → { start(), on(), off(), setMood(m), setVolume(v), stop() }  */
+   IMCMusic.create(mood, volume 0-100) → { start(), on(), off(), setMood(m), setVolume(v), chime(), stop() }  */
 (function () {
   const MOODS = {
     cinema: { n: "Cinematic (calm)", bpm: 68, beatsPerChord: 8, chords: [[57, 60, 64, 69], [53, 57, 60, 65], [48, 55, 60, 64], [55, 59, 62, 67]], bass: [45, 41, 48, 43], arp: [0, 2, 3, 2, 1, 2, 3, 2], arpEvery: 2, arpOct: 12, arpVol: 0.05, cutoff: 1100, drums: false },
@@ -10,7 +10,7 @@
   const mtof = (m) => 440 * Math.pow(2, (m - 69) / 12);
 
   function create(mood, volume) {
-    let ctx = null, master = null, bus = null, wet = null, noise = null, timer = null, playing = false, M = MOODS[mood] || MOODS.cinema, vol = volume == null ? 35 : volume;
+    let conv = null, ctx = null, master = null, bus = null, wet = null, noise = null, timer = null, playing = false, M = MOODS[mood] || MOODS.cinema, vol = volume == null ? 35 : volume;
     let nextTime = 0, step = 0;   /* step = 8th notes */
     const level = () => Math.max(0, Math.min(100, vol)) / 100 * 0.9;
     function setup() {
@@ -23,7 +23,7 @@
       /* small room reverb from decaying noise */
       const len = Math.floor(ctx.sampleRate * 2.4), ir = ctx.createBuffer(2, len, ctx.sampleRate);
       for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3); }
-      const conv = ctx.createConvolver(); conv.buffer = ir; wet = ctx.createGain(); wet.gain.value = 0.32; bus.connect(conv); conv.connect(wet); wet.connect(master);
+      conv = ctx.createConvolver(); conv.buffer = ir; wet = ctx.createGain(); wet.gain.value = 0.32; bus.connect(conv); conv.connect(wet); wet.connect(master);
       const nb = ctx.createBuffer(1, ctx.sampleRate * 0.5, ctx.sampleRate), nd = nb.getChannelData(0); for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1; noise = nb;
       return true;
     }
@@ -63,6 +63,10 @@
       setMood(m) { M = MOODS[m] || M; },
       setVolume(v) { vol = v; if (ctx && playing) master.gain.setTargetAtTime(level(), ctx.currentTime, 0.2); },
       stop() { clearInterval(timer); timer = null; playing = false; if (ctx) { ctx.close(); ctx = null; } },
+      /* a bright three-note chime (for a priceboard coming on screen); plays whether or not the music is on */
+      chime() { if (!setup()) return; if (ctx.state === "suspended") ctx.resume(); const t0 = ctx.currentTime + 0.05, out = ctx.createGain(); out.gain.value = Math.max(0.15, level()) * 0.55; out.connect(ctx.destination); out.connect(conv);
+        [76, 79, 84, 88].forEach((n, i) => { const t = t0 + i * 0.12; for (const [mul, v] of [[1, 1], [2.76, 0.25], [5.4, 0.08]]) { const o = ctx.createOscillator(), g = ctx.createGain(); o.type = "sine"; o.frequency.value = mtof(n) * mul; g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(v * 0.5, t + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, t + (mul > 1 ? 0.5 : 1.7)); o.connect(g); g.connect(out); o.start(t); o.stop(t + 1.8); } }); },
+      get mood() { return M; },
       get playing() { return playing; },
     };
   }

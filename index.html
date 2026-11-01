@@ -361,6 +361,7 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .pbit .ib{display:flex;gap:2px}.pbit .ib button,.pbsectop button{padding:4px 8px;min-width:0}
 .pbtabs{display:flex;gap:6px;margin:6px 0 0}.pbtabs button[aria-pressed="true"]{background:var(--ink,#151a33);color:#fff}.pblib{max-height:260px;grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}.pblib button[aria-pressed="true"]{border-color:#ffc23d;box-shadow:0 0 0 2px #ffc23d}.pblib button span{display:none}
 #pbImg{width:100%;margin-bottom:6px}
+.pbsound{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;margin:4px 0 10px}.pbsound .field{margin:0;flex:1;min-width:220px}.pbck{display:flex;gap:6px;align-items:center;font-weight:600;padding-bottom:10px}.pbsound .btn{margin-bottom:6px}
 .pbchips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
 @media (max-width:900px){.pbgrid{grid-template-columns:1fr}.pbside{position:static;order:-1}.pbrow2{grid-template-columns:1fr}}
 .plbad{display:block;margin-top:3px;color:#b3261e;font-weight:600}
@@ -1066,6 +1067,8 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         <input id="pbImg" type="text" placeholder="…or paste the web address of a picture (https://…)" aria-label="Picture web address">
         <div id="pbSecs"></div>
         <div class="pbadd"><span class="flabel">＋ Add a category</span><div class="pbchips" id="pbChips"></div></div>
+        <div class="pbsound"><label class="field"><span class="flabel">🔊 Sound</span><select id="pbSnd"><option value="">The usual music (as the other slides)</option><option value="bright">Upbeat music</option><option value="chill">Chilled music</option><option value="cinema">Calm cinematic music</option><option value="none">No music</option></select></label>
+          <label class="pbck"><input type="checkbox" id="pbChime"> Play a chime as it comes on</label><button class="btn small" type="button" id="pbListen">▶ Listen</button></div>
         <div class="cdrow"><label class="field"><span class="flabel">Seconds on screen</span><select id="pbSecsOn"><option>10</option><option>15</option><option selected>20</option><option>30</option><option>45</option><option>60</option></select></label>
           <label class="field"><span class="flabel">First day <small>(optional)</small></span><input type="date" id="pbFrom"></label><label class="field"><span class="flabel">Last day <small>(optional)</small></span><input type="date" id="pbTo"></label></div>
       </div>
@@ -1873,7 +1876,7 @@ function foyUrl(st,lounge){const u=new URL("foyer.html",location.href),P=u.searc
   if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.sync===false)P.set("sync","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=(st.extra||[]);if(xs.length)P.set("x",xs.filter(x=>!x.releaseDate||x.releaseDate>=todayIso()).map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)+(x.releaseDate||x.video?"~"+(x.releaseDate||""):"")+(x.video?"~v":"")).join("|"));const svl=STUD.filter(x=>x.url&&!svOld(x)).map(x=>[x.film,x.title||"",x.url]);if(svl.length)P.set("sv",btoa(unescape(encodeURIComponent(JSON.stringify(svl)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));if(st.what==="mine"&&(xs.length||STUD.some(x=>!x.film)))P.set("only","1");
   {const keys=plItems(st,true).map(x=>x.key),ord=(st.order||[]).filter(k=>keys.includes(k)),hd=(st.hide||[]).filter(k=>keys.includes(k));if(ord.length)P.set("ord",ord.join(","));if(hd.length)P.set("hide",hd.join(","));if(st.shuf)P.set("shuf","1")}
   {const cds=(st.cards||[]).filter(c=>!c.to||c.to>=todayIso()).map(c=>[c.id,c.kick||"",c.title||"",(c.lines||[]).slice(0,5),c.img||"",c.secs||10,c.from||"",c.to||"",c.col||"navy"]);if(cds.length)P.set("cd",btoa(unescape(encodeURIComponent(JSON.stringify(cds)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
-  {const pbs=(st.boards||[]).filter(b=>!b.to||b.to>=todayIso()).map(b=>[b.id,b.title||"",b.sub||"",b.col||"navy",b.secs||20,b.from||"",b.to||"",(b.sections||[]).map(x=>[x.name||"",(x.sizes||[]).filter(Boolean),(x.items||[]).filter(i=>i.n).map(i=>[i.n,i.note||"",(i.p||[]).map(v=>String(v||"").trim())])]),b.img||""]);if(pbs.length)P.set("pb",btoa(unescape(encodeURIComponent(JSON.stringify(pbs)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
+  {const pbs=(st.boards||[]).filter(b=>!b.to||b.to>=todayIso()).map(b=>[b.id,b.title||"",b.sub||"",b.col||"navy",b.secs||20,b.from||"",b.to||"",(b.sections||[]).map(x=>[x.name||"",(x.sizes||[]).filter(Boolean),(x.items||[]).filter(i=>i.n).map(i=>[i.n,i.note||"",(i.p||[]).map(v=>String(v||"").trim())])]),b.img||"",b.snd||"",b.chime?1:0]);if(pbs.length)P.set("pb",btoa(unescape(encodeURIComponent(JSON.stringify(pbs)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
   if((st.px||[]).length)P.set("px",st.px.join(","));if((st.tx||[]).length)P.set("tx",st.tx.join(","));if(st.tt&&Object.keys(st.tt).length)P.set("tt",btoa(unescape(encodeURIComponent(JSON.stringify(st.tt)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));
   if(st.mu&&st.mu!=="cinema")P.set("mu",st.mu);if(st.mv!=null&&st.mv!==35)P.set("mv",st.mv);if((st.bd??3)!==3)P.set("bd",st.bd);if(st.pr===false)P.set("pr","0");if(st.strip===false)P.set("strip","0");if(st.scr===false)P.set("scr","0");const ms=String(st.msg||"").split("\n").map(x=>x.trim().replace(/\|/g,"/")).filter(Boolean).slice(0,6);if(ms.length)P.set("msg",ms.join("|"));const T0=todayIso(),al=(st.ads||[]).filter(a=>a.on!==false&&(!a.to||a.to>=T0)).map(a=>[a.src,a.title,a.from||"",a.to||"",a.secs||10,a.often||1,a.adv||""]);if(al.length)P.set("ad",btoa(unescape(encodeURIComponent(JSON.stringify(al)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
 /* ---------- playlist: what plays, in order (films, your trailers, studio trailers); order, hide and shuffle go to the foyer player ---------- */
@@ -2009,11 +2012,12 @@ function pbForm(){const d=pbD;
   pbPreview()}
 function pbOpen(id,copy){const st=foyState(),b=(st.boards||[]).find(x=>x.id===id);
   pbD=b?JSON.parse(JSON.stringify(b)):{title:"",sub:"",col:"navy",secs:20,from:"",to:"",sections:[]};if(copy){pbD.title=(pbD.title+" (copy)").slice(0,40);pbEdit=null}else pbEdit=b?id:null;
-  $("#pbTitle").value=pbD.title;$("#pbSub").value=pbD.sub||"";$("#pbImg").value=pbD.img||"";$("#pbLibWrap").hidden=true;$("#pbSecsOn").value=String(pbD.secs||20);$("#pbFrom").value=pbD.from||"";$("#pbTo").value=pbD.to||"";
+  $("#pbTitle").value=pbD.title;$("#pbSub").value=pbD.sub||"";$("#pbImg").value=pbD.img||"";$("#pbSnd").value=pbD.snd||"";$("#pbChime").checked=!!pbD.chime;$("#pbLibWrap").hidden=true;$("#pbSecsOn").value=String(pbD.secs||20);$("#pbFrom").value=pbD.from||"";$("#pbTo").value=pbD.to||"";
   $("#pbDel").hidden=$("#pbCopy").hidden=!pbEdit;$("#pbDlgT").textContent=pbEdit?"Edit priceboard":"New priceboard";$("#pbDlg").hidden=false;pbForm();$("#pbTitle").focus()}
 $("#plAddPb").onclick=()=>pbOpen(null);
 $("#plList").addEventListener("click",e=>{const b=e.target.closest("[data-pbedit]");if(b)pbOpen(b.dataset.pbedit)});
 $("#pbDlg").addEventListener("input",e=>{const t=e.target,d=pbD;if(!d)return;
+  if(t.id==="pbSnd"){d.snd=t.value;return}if(t.id==="pbChime"){d.chime=t.checked;return}
   if(t.id==="pbImg"){d.img=t.value.trim();if(!$("#pbLibWrap").hidden)pbLibDraw()}else if(t.id==="pbTitle")d.title=t.value;else if(t.id==="pbSub")d.sub=t.value;else if(t.id==="pbSecsOn")d.secs=+t.value;else if(t.id==="pbFrom")d.from=t.value;else if(t.id==="pbTo")d.to=t.value;
   else if(t.dataset.f){const c=d.sections[+t.dataset.pbs];if(!c)return;const it=t.dataset.pbi!=null?c.items[+t.dataset.pbi]:null;
     if(t.dataset.f==="name")c.name=t.value;else if(t.dataset.f==="sizes"){c.sizes=t.value.split(",").map(x=>x.trim()).filter(Boolean).slice(0,4);return pbPreview()}
@@ -2038,6 +2042,14 @@ $("#pbSave").onclick=()=>{const d=pbD;d.title=d.title.trim();if(!d.title){toast(
   if(d.from&&d.to&&d.to<d.from){toast("The last day is before the first day");return}
   const st=foyState(),L=[...(st.boards||[])];if(pbEdit){const i=L.findIndex(x=>x.id===pbEdit);if(i>=0)L[i]={...d,id:pbEdit}}else L.push({...d,id:"p"+Date.now().toString(36)});
   st.boards=L;foySave(st);$("#pbDlg").hidden=true;renderFoyer();toast(pbEdit?"Priceboard saved: the TVs update in about a minute":"Priceboard added to the playlist: drag it where you want it")};
+/* hear a board's sound before saving: its music for a few seconds, with the chime first if ticked */
+let pbAud=null,pbAudT=0;
+$("#pbListen").onclick=()=>{const b=$("#pbListen");if(pbAud){pbAud.stop();pbAud=null;clearTimeout(pbAudT);b.textContent="▶ Listen";return}if(!window.IMCMusic)return;
+  const st=foyState(),snd=$("#pbSnd").value,mood=snd==="none"?null:snd||(st.mu&&st.mu!=="off"?st.mu:null);
+  if(!mood&&!$("#pbChime").checked){toast(snd==="none"?"This board has no music and no chime":"The usual music is off (Player settings). Pick a music style for this board, or tick the chime");return}
+  pbAud=IMCMusic.create(mood||"cinema",st.mv??35);pbAud.start();if($("#pbChime").checked)pbAud.chime();if(mood)setTimeout(()=>pbAud&&pbAud.on(.8),$("#pbChime").checked?500:0);b.textContent="■ Stop";
+  pbAudT=setTimeout(()=>{if(pbAud){pbAud.off(1.2);const a=pbAud;setTimeout(()=>a.stop(),1500);pbAud=null}b.textContent="▶ Listen"},10000)};
+$("#pbDlg").addEventListener("click",e=>{if((e.target===$("#pbDlg")||e.target.id==="pbClose"||e.target.id==="pbSave")&&pbAud){pbAud.stop();pbAud=null;clearTimeout(pbAudT);$("#pbListen").textContent="▶ Listen"}},true);
 $("#pbCopy").onclick=()=>{const id=pbEdit;$("#pbDlg").hidden=true;pbOpen(id,true);toast("This is a copy: change it and click Save")};
 $("#pbDel").onclick=()=>{if(!confirm("Delete this priceboard?"))return;const st=foyState();st.boards=(st.boards||[]).filter(x=>x.id!==pbEdit);st.order=(st.order||[]).filter(k=>k!=="b:"+pbEdit);foySave(st);$("#pbDlg").hidden=true;renderFoyer();toast("Priceboard deleted")};
 function plSetOrder(keys){const st=foyState();st.order=keys;foySave(st);renderFoyer()}
