@@ -359,6 +359,8 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .pbit.hd{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#667)}
 .pbps{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:4px}.pbps input{text-align:right;min-width:0}
 .pbit .ib{display:flex;gap:2px}.pbit .ib button,.pbsectop button{padding:4px 8px;min-width:0}
+.pbtabs{display:flex;gap:6px;margin:6px 0 0}.pbtabs button[aria-pressed="true"]{background:var(--ink,#151a33);color:#fff}.pblib{max-height:260px;grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}.pblib button[aria-pressed="true"]{border-color:#ffc23d;box-shadow:0 0 0 2px #ffc23d}.pblib button span{display:none}
+#pbImg{width:100%;margin-bottom:6px}
 .pbchips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
 @media (max-width:900px){.pbgrid{grid-template-columns:1fr}.pbside{position:static;order:-1}.pbrow2{grid-template-columns:1fr}}
 .plbad{display:block;margin-top:3px;color:#b3261e;font-weight:600}
@@ -1058,6 +1060,10 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         <div class="pbrow2"><label class="field"><span class="flabel">Board name <small>(the big heading)</small></span><input id="pbTitle" maxlength="40" placeholder="e.g. Drinks, Snacks, Deals"></label>
           <label class="field"><span class="flabel">Small line beside it <small>(optional)</small></span><input id="pbSub" maxlength="60" placeholder="e.g. Ask about our offers"></label></div>
         <span class="flabel">Background</span><div class="cdcols" id="pbCols"></div>
+        <span class="flabel" style="margin-top:6px">Picture <small>(optional: shows beside the prices)</small></span>
+        <div class="row-btns" style="margin:4px 0"><button class="btn small" type="button" id="pbPicLib">Choose from our image library</button><button class="btn small ghost" type="button" id="pbPicNone">No picture</button></div>
+        <div class="pblibwrap" id="pbLibWrap" hidden><div class="pbtabs" id="pbTabs"></div><div class="cdlib pblib" id="pbLib"></div></div>
+        <input id="pbImg" type="text" placeholder="…or paste the web address of a picture (https://…)" aria-label="Picture web address">
         <div id="pbSecs"></div>
         <div class="pbadd"><span class="flabel">＋ Add a category</span><div class="pbchips" id="pbChips"></div></div>
         <div class="cdrow"><label class="field"><span class="flabel">Seconds on screen</span><select id="pbSecsOn"><option>10</option><option>15</option><option selected>20</option><option>30</option><option>45</option><option>60</option></select></label>
@@ -1867,7 +1873,7 @@ function foyUrl(st,lounge){const u=new URL("foyer.html",location.href),P=u.searc
   if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.sync===false)P.set("sync","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=(st.extra||[]);if(xs.length)P.set("x",xs.filter(x=>!x.releaseDate||x.releaseDate>=todayIso()).map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)+(x.releaseDate||x.video?"~"+(x.releaseDate||""):"")+(x.video?"~v":"")).join("|"));const svl=STUD.filter(x=>x.url&&!svOld(x)).map(x=>[x.film,x.title||"",x.url]);if(svl.length)P.set("sv",btoa(unescape(encodeURIComponent(JSON.stringify(svl)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));if(st.what==="mine"&&(xs.length||STUD.some(x=>!x.film)))P.set("only","1");
   {const keys=plItems(st,true).map(x=>x.key),ord=(st.order||[]).filter(k=>keys.includes(k)),hd=(st.hide||[]).filter(k=>keys.includes(k));if(ord.length)P.set("ord",ord.join(","));if(hd.length)P.set("hide",hd.join(","));if(st.shuf)P.set("shuf","1")}
   {const cds=(st.cards||[]).filter(c=>!c.to||c.to>=todayIso()).map(c=>[c.id,c.kick||"",c.title||"",(c.lines||[]).slice(0,5),c.img||"",c.secs||10,c.from||"",c.to||"",c.col||"navy"]);if(cds.length)P.set("cd",btoa(unescape(encodeURIComponent(JSON.stringify(cds)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
-  {const pbs=(st.boards||[]).filter(b=>!b.to||b.to>=todayIso()).map(b=>[b.id,b.title||"",b.sub||"",b.col||"navy",b.secs||20,b.from||"",b.to||"",(b.sections||[]).map(x=>[x.name||"",(x.sizes||[]).filter(Boolean),(x.items||[]).filter(i=>i.n).map(i=>[i.n,i.note||"",(i.p||[]).map(v=>String(v||"").trim())])])]);if(pbs.length)P.set("pb",btoa(unescape(encodeURIComponent(JSON.stringify(pbs)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
+  {const pbs=(st.boards||[]).filter(b=>!b.to||b.to>=todayIso()).map(b=>[b.id,b.title||"",b.sub||"",b.col||"navy",b.secs||20,b.from||"",b.to||"",(b.sections||[]).map(x=>[x.name||"",(x.sizes||[]).filter(Boolean),(x.items||[]).filter(i=>i.n).map(i=>[i.n,i.note||"",(i.p||[]).map(v=>String(v||"").trim())])]),b.img||""]);if(pbs.length)P.set("pb",btoa(unescape(encodeURIComponent(JSON.stringify(pbs)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
   if((st.px||[]).length)P.set("px",st.px.join(","));if((st.tx||[]).length)P.set("tx",st.tx.join(","));if(st.tt&&Object.keys(st.tt).length)P.set("tt",btoa(unescape(encodeURIComponent(JSON.stringify(st.tt)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));
   if(st.mu&&st.mu!=="cinema")P.set("mu",st.mu);if(st.mv!=null&&st.mv!==35)P.set("mv",st.mv);if((st.bd??3)!==3)P.set("bd",st.bd);if(st.pr===false)P.set("pr","0");if(st.strip===false)P.set("strip","0");if(st.scr===false)P.set("scr","0");const ms=String(st.msg||"").split("\n").map(x=>x.trim().replace(/\|/g,"/")).filter(Boolean).slice(0,6);if(ms.length)P.set("msg",ms.join("|"));const T0=todayIso(),al=(st.ads||[]).filter(a=>a.on!==false&&(!a.to||a.to>=T0)).map(a=>[a.src,a.title,a.from||"",a.to||"",a.secs||10,a.often||1,a.adv||""]);if(al.length)P.set("ad",btoa(unescape(encodeURIComponent(JSON.stringify(al)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
 /* ---------- playlist: what plays, in order (films, your trailers, studio trailers); order, hide and shuffle go to the foyer player ---------- */
@@ -1980,9 +1986,14 @@ $("#vidAdd").onclick=async()=>{const id=ytIdOf($("#vidLink").value);if(!id){toas
 const PB_TPL={"Deals":{items:[["Meal deal","Describe what's included"]]},"Popcorn":{sizes:["Small","Medium","Large"],items:[["Sweet popcorn"],["Salted popcorn"],["Sweet & salted mix"]]},
   "Drinks":{sizes:["Regular","Large"],items:[["Coca-Cola"],["Diet Coke"],["Fanta Orange"],["Still water"]]},"Hot drinks":{items:[["Tea"],["Coffee"],["Latte"],["Hot chocolate"]]},
   "Pic n Mix":{items:[["Candy King Pic n Mix","per 100g"]]},"Sweets":{items:[[""]]},"Snacks":{items:[["Nachos"],["Hot dog"]]},"Ice cream":{items:[[""]]},"Blank category":{name:"",items:[[""]]}};
-let pbD=null,pbEdit=null,pbPrevT=0;
+let pbD=null,pbEdit=null,pbPrevT=0,pbTab="all",pbLibL=null;
+async function pbLibLoad(){if(!pbLibL){$("#pbLib").innerHTML='<p class="tip">Loading the image library…</p>';const j=await getJson("data/library/index.json");pbLibL=(Array.isArray(j)?j:[]).filter(x=>x.file)}pbLibDraw()}
+function pbLibDraw(){const L=pbLibL||[],tabs=[["all","All"],["food","Food & drink"],["deals","Deals"],["imc","IMC"]];
+  $("#pbTabs").innerHTML=tabs.map(([k,n])=>`<button class="btn small" type="button" data-pbtab="${k}" aria-pressed="${k===pbTab}">${n} <small>(${k==="all"?L.length:L.filter(x=>x.cat===k).length})</small></button>`).join("");
+  const show=L.filter(x=>pbTab==="all"||x.cat===pbTab);
+  $("#pbLib").innerHTML=show.map(x=>`<button type="button" data-pbpic="${esc(x.file)}" title="${esc(x.title||"")}" aria-label="${esc(x.title||"Picture")}" aria-pressed="${pbD&&pbD.img===x.file}"><img src="${esc(asset(x.file))}" alt="" loading="lazy"></button>`).join("")||'<p class="tip">No pictures in this group.</p>'}
 const pbN=sec=>Math.max(1,(sec.sizes||[]).filter(Boolean).length);
-function pbPreview(){clearTimeout(pbPrevT);pbPrevT=setTimeout(()=>{const el=$("#pbPrev");if(!window.IMCPrice||!pbD)return;IMCPrice.render(el,pbD,{cur:curSym()});IMCPrice.fit(el)},120)}
+function pbPreview(){clearTimeout(pbPrevT);pbPrevT=setTimeout(()=>{const el=$("#pbPrev");if(!window.IMCPrice||!pbD)return;IMCPrice.render(el,pbD,{cur:curSym(),asset});IMCPrice.fit(el)},120)}
 function pbForm(){const d=pbD;
   $("#pbCols").innerHTML=Object.entries(CD_COLS).map(([k,v])=>`<button type="button" data-pbcol="${k}" aria-pressed="${k===d.col}" style="background:${v}" aria-label="${k}"></button>`).join("");
   $("#pbSecs").innerHTML=d.sections.map((c,si)=>{const n=pbN(c),hdr=(c.sizes||[]).filter(Boolean);
@@ -1998,12 +2009,12 @@ function pbForm(){const d=pbD;
   pbPreview()}
 function pbOpen(id,copy){const st=foyState(),b=(st.boards||[]).find(x=>x.id===id);
   pbD=b?JSON.parse(JSON.stringify(b)):{title:"",sub:"",col:"navy",secs:20,from:"",to:"",sections:[]};if(copy){pbD.title=(pbD.title+" (copy)").slice(0,40);pbEdit=null}else pbEdit=b?id:null;
-  $("#pbTitle").value=pbD.title;$("#pbSub").value=pbD.sub||"";$("#pbSecsOn").value=String(pbD.secs||20);$("#pbFrom").value=pbD.from||"";$("#pbTo").value=pbD.to||"";
+  $("#pbTitle").value=pbD.title;$("#pbSub").value=pbD.sub||"";$("#pbImg").value=pbD.img||"";$("#pbLibWrap").hidden=true;$("#pbSecsOn").value=String(pbD.secs||20);$("#pbFrom").value=pbD.from||"";$("#pbTo").value=pbD.to||"";
   $("#pbDel").hidden=$("#pbCopy").hidden=!pbEdit;$("#pbDlgT").textContent=pbEdit?"Edit priceboard":"New priceboard";$("#pbDlg").hidden=false;pbForm();$("#pbTitle").focus()}
 $("#plAddPb").onclick=()=>pbOpen(null);
 $("#plList").addEventListener("click",e=>{const b=e.target.closest("[data-pbedit]");if(b)pbOpen(b.dataset.pbedit)});
 $("#pbDlg").addEventListener("input",e=>{const t=e.target,d=pbD;if(!d)return;
-  if(t.id==="pbTitle")d.title=t.value;else if(t.id==="pbSub")d.sub=t.value;else if(t.id==="pbSecsOn")d.secs=+t.value;else if(t.id==="pbFrom")d.from=t.value;else if(t.id==="pbTo")d.to=t.value;
+  if(t.id==="pbImg"){d.img=t.value.trim();if(!$("#pbLibWrap").hidden)pbLibDraw()}else if(t.id==="pbTitle")d.title=t.value;else if(t.id==="pbSub")d.sub=t.value;else if(t.id==="pbSecsOn")d.secs=+t.value;else if(t.id==="pbFrom")d.from=t.value;else if(t.id==="pbTo")d.to=t.value;
   else if(t.dataset.f){const c=d.sections[+t.dataset.pbs];if(!c)return;const it=t.dataset.pbi!=null?c.items[+t.dataset.pbi]:null;
     if(t.dataset.f==="name")c.name=t.value;else if(t.dataset.f==="sizes"){c.sizes=t.value.split(",").map(x=>x.trim()).filter(Boolean).slice(0,4);return pbPreview()}
     else if(it&&t.dataset.f==="p"){it.p=it.p||[];it.p[+t.dataset.k]=t.value}else if(it)it[t.dataset.f]=t.value}
@@ -2011,6 +2022,10 @@ $("#pbDlg").addEventListener("input",e=>{const t=e.target,d=pbD;if(!d)return;
 $("#pbDlg").addEventListener("change",e=>{if(e.target.dataset.f==="sizes")pbForm()});   /* new sizes: redraw the price boxes */
 $("#pbDlg").addEventListener("click",e=>{const d=pbD;if(e.target===$("#pbDlg")||e.target.id==="pbClose"){$("#pbDlg").hidden=true;return}
   const col=e.target.closest("[data-pbcol]");if(col){d.col=col.dataset.pbcol;pbForm();return}
+  if(e.target.id==="pbPicNone"){d.img="";$("#pbImg").value="";$("#pbLibWrap").hidden=true;pbPreview();return}
+  if(e.target.id==="pbPicLib"){const w=$("#pbLibWrap");w.hidden=!w.hidden;if(!w.hidden)pbLibLoad();return}
+  const tab=e.target.closest("[data-pbtab]");if(tab){pbTab=tab.dataset.pbtab;pbLibDraw();return}
+  const pic=e.target.closest("[data-pbpic]");if(pic){d.img=pic.dataset.pbpic;$("#pbImg").value=d.img;pbLibDraw();pbPreview();return}
   const tp=e.target.closest("[data-pbtpl]");if(tp){const T=PB_TPL[tp.dataset.pbtpl];d.sections.push({name:T.name??tp.dataset.pbtpl,sizes:[...(T.sizes||[])],items:T.items.map(([n,note])=>({n:n||"",note:note||"",p:[]}))});pbForm();
     const box=$("#pbSecs").lastElementChild;box.scrollIntoView({block:"nearest",behavior:"smooth"});const f=box.querySelector(T.items[0][0]?'[data-f="p"]':'[data-f="name"]');f&&f.focus();return}
   const a=e.target.closest("[data-pba]");if(!a)return;const si=+a.dataset.pbs,ii=+a.dataset.pbi,c=d.sections[si],mv=(L,i,j)=>{if(j<0||j>=L.length)return;[L[i],L[j]]=[L[j],L[i]]};

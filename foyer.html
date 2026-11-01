@@ -250,7 +250,7 @@ function readSettings(){
   /* your own cards from the hub: [id, top line, heading, lines, picture, seconds, first day, last day, colour] */
   BOARDS=(()=>{try{const b=(Q.get("pb")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];const A=x=>Array.isArray(x)?x:[];
     return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&a[0]).map(a=>({id:String(a[0]),title:String(a[1]||""),sub:String(a[2]||""),col:String(a[3]||"navy"),secs:Math.max(8,Math.min(90,+a[4]||20)),from:a[5]||"",to:a[6]||"",
-      sections:A(a[7]).map(s=>({name:String(s[0]||""),sizes:A(s[1]).map(String),items:A(s[2]).map(i=>({n:String(i[0]||""),note:String(i[1]||""),p:A(i[2]).map(String)}))}))}))}catch(e){return[]}})();
+      sections:A(a[7]).map(s=>({name:String(s[0]||""),sizes:A(s[1]).map(String),items:A(s[2]).map(i=>({n:String(i[0]||""),note:String(i[1]||""),p:A(i[2]).map(String)}))})),img:String(a[8]||"")}))}catch(e){return[]}})();
   CARDS=(()=>{try{const b=(Q.get("cd")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&a[0]&&(a[2]||a[4])).map(a=>({id:String(a[0]),kick:String(a[1]||""),title:String(a[2]||""),lines:(Array.isArray(a[3])?a[3]:[]).map(String).slice(0,5),img:String(a[4]||""),secs:Math.max(5,Math.min(60,+a[5]||10)),from:a[6]||"",to:a[7]||"",col:String(a[8]||"navy")}))}catch(e){return[]}})();
   ORD=(Q.get("ord")||"").split(",").filter(Boolean),HIDE=new Set((Q.get("hide")||"").split(",").filter(Boolean)),SHUF=Q.get("shuf")==="1";
 }
@@ -399,7 +399,7 @@ function playCustom(c,secs){const el=$("#promo");el.className="layer custom col-
   show("promo");progress(secs||c.secs);if(!(SYNC&&syncOn))timer=setTimeout(next,(secs||c.secs)*1000)}
 /* a priceboard you made in the hub: shop items and prices, full screen */
 function playPrice(b,secs){const el=$("#promo");el.className="layer pricebd";el.innerHTML='<div class="pbwrap"></div>';const w=el.firstChild;
-  if(window.IMCPrice){IMCPrice.render(w,b,{cur:NI.includes(SITE)?"£":"€"});w.firstChild.style.animation="rise .9s cubic-bezier(.2,.8,.2,1) both"}
+  if(window.IMCPrice){IMCPrice.render(w,b,{cur:NI.includes(SITE)?"£":"€",asset});w.firstChild.style.animation="rise .9s cubic-bezier(.2,.8,.2,1) both"}
   show("promo");if(window.IMCPrice)requestAnimationFrame(()=>IMCPrice.fit(w));progress(secs||b.secs);if(!(SYNC&&syncOn))timer=setTimeout(next,(secs||b.secs)*1000)}
 function playPromo(){const L=promos();if(!L.length){next();return}const p=L[promoI++%L.length],el=$("#promo");el.className="layer "+p.k;
   if(p.k==="ad"){el.innerHTML=`<div class="pbg" style="background-image:url('${esc(p.img)}')"></div><img class="adimg" src="${esc(p.img)}" alt="${esc(p.title)}">${p.adv?`<span class="adtag">Advert · ${esc(p.adv)}</span>`:""}`;
