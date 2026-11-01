@@ -491,6 +491,15 @@ The **Playlist** at the top of the Foyer trailers page lists everything playing 
 
 - **Press I on a foyer PC** for an information box: the player version, the clock, whether it's following the manager's settings, when it last checked, internet and sound. Once the manager's PC has sent settings (`data/foyer/<cinema>.json`), the TVs always follow those rather than a hub opened on the foyer PC itself; that hub says so in its Foyer trailers status bar.
 
+### IMC Foyer TV app (tv.html), the "child" player for foyer PCs
+
+`tv.html` is the app to run on every foyer PC. The first time, you pick the cinema and Foyer TV or LUXX lounge (saved on that PC) and click Start. After that it opens straight into the player: `foyer.html` in a full-screen frame, in child mode (`child=1`).
+
+- **Child mode** has no settings of its own. It uses only the manager PC's settings (`data/foyer/<cinema>.json`) and never a hub copy on that PC. It starts by itself; if the browser blocks sound, it plays silently with a "click once" note.
+- **Sound stays on:** the outer page never reloads, so the one click keeps working while the player inside updates itself.
+- **Installable** (`tv.webmanifest`, `tv-192.png`, `tv-512.png`): it opens full screen with no browser bars. The set-up screen explains how to start it with Windows (the `shell:startup` folder). It's included in the offline copy (`foyer-sw.js`, cache v2).
+- `tv.html?setup` changes the cinema or screen. The Foyer TVs page in the hub links to it, with a **Copy address** button.
+
 ### All foyer TVs in step
 
 With **Keep all foyer TVs in step** on (the default; `sync=0` in the player address turns it off), every foyer TV shows the same trailer, card or slide at the same moment.

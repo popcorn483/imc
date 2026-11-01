@@ -457,16 +457,17 @@ html.a-rm{scroll-behavior:auto}
 <!-- ================= FOYER ================= -->
 <section class="g" id="foyer-setup" data-s>
   <h2>Set up a foyer PC</h2>
-  <p class="lead">Do this once on each PC that runs a foyer TV. After that it runs all day on its own: it updates itself, picks up your changes and keeps going if the internet drops.</p>
-  <a class="open" href="foyer.html">Open the foyer player ↗</a> <a class="open alt" href="index.html#foyer">Foyer trailers settings ↗</a>
-  <figure><img loading="lazy" src="help/img/foyer-start.jpg" width="1100" height="739" alt="Foyer player start screen"></figure>
+  <p class="lead">Each foyer PC runs the <b>IMC Foyer TV</b> app. It has no settings of its own: it always plays what the manager's computer has set, in step with the other TVs, and it starts by itself. Do this once on each foyer PC (about 5 minutes).</p>
+  <a class="open" href="tv.html">Open the IMC Foyer TV app ↗</a> <a class="open alt" href="index.html#foyer">Foyer trailers settings ↗</a>
   <ol class="steps">
-    <li>On the foyer PC, open <b>Chrome</b> (or Edge) and go to the IMC app. Click <span class="k">▶ Foyer player</span> at the top of the hub (or <span class="k">LUXX lounge player</span> for the LUXX lounge screen).</li>
-    <li>Click <span class="k">Start</span>. This one click is what allows sound: browsers don't let pages play sound until someone clicks.</li>
-    <li>Press <span class="k">F</span> for full screen.</li>
-    <li>Leave it. Don't close the tab. It updates its listings every 30 minutes, installs new versions by itself, refreshes at 5 a.m. and starts again on its own, keeping its sound.</li>
-    <li>Make a folder called <b>TRAILERS</b> on the foyer PC's desktop for any trailer files from the studios (see <a href="#own-trailers">studio trailers</a>).</li>
+    <li>On the foyer PC, open <b>Chrome</b> (or Edge). Go to the IMC app's address and add <b>tv.html</b> at the end. The <b>Foyer TVs</b> page in the hub shows the full address with a <span class="k">Copy address</span> button.</li>
+    <li>Pick the <b>cinema</b> and whether this is a <b>Foyer TV</b> or the <b>LUXX lounge</b>, then click <span class="k">▶ Start this TV</span>. That click also allows sound.</li>
+    <li><b>Install it as an app</b> (recommended): click <span class="k">⬇ Install as an app on this PC</span> on the set-up screen, or in Chrome choose ⋮ › Cast, save and share › <b>Install page as app</b>. An “IMC Foyer TV” icon appears on the desktop and it opens full screen, with no browser bars.</li>
+    <li><b>Make it start when the PC switches on:</b> press <span class="k">Windows key + R</span>, type <b>shell:startup</b> and press Enter. Drag the IMC Foyer TV icon from the desktop into that folder with the <b>right</b> mouse button and choose <b>Create shortcut here</b>.</li>
+    <li>Leave it running. It updates its listings, picks up the manager's changes within about a minute, installs new versions by itself and keeps its sound.</li>
+    <li>If you use trailer files from the studios, make a folder called <b>TRAILERS</b> on this PC's desktop (see <a href="#own-trailers">studio trailers</a>).</li>
   </ol>
+  <div class="tip"><b>Check a TV:</b> press <span class="k">I</span> on the foyer PC. “Settings in use: the manager's (up to date)” means it's following the manager's computer. To change the cinema or screen later, open <b>tv.html?setup</b>.</div>
   <div class="warn"><b>🔇 After a power cut or restart:</b> the player starts again by itself, but browsers block sound until someone clicks once. Until then, trailers play silently and a small note says “click anywhere to turn it on”. Click once anywhere on the TV picture and the sound comes back.</div>
   <div class="tip"><b>Sound with no click at all (optional, one-time):</b> right-click the Chrome shortcut on the foyer PC › Properties, and at the end of <b>Target</b>, after the last quote mark, add a space and <span class="k">--autoplay-policy=no-user-gesture-required</span>. Click OK. Always start Chrome on that PC from this shortcut.</div>
   <div class="cols">

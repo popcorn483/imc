@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IMC Foyer TV</title>
+<link rel="manifest" href="tv.webmanifest">
+<link rel="icon" href="tv-192.png">
+<meta name="theme-color" content="#05071a">
+<style>
+:root{--gold:#ffc23d;--navy:#0d1240}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#05071a;color:#fff;font:18px/1.5 "Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;overflow:hidden}
+#tv{position:fixed;inset:0;width:100%;height:100%;border:0;background:#000}
+#setup{position:fixed;inset:0;display:grid;place-items:center;overflow:auto;padding:24px;background:radial-gradient(circle at 50% 30%,#1a2160,#05071a 70%)}
+.box{width:min(640px,100%);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-top:4px solid var(--gold);border-radius:18px;padding:28px 30px}
+.box img{width:64px;height:64px}
+h1{font-size:34px;line-height:1.1;margin:10px 0 6px}
+p{color:#cfd5f2;margin:8px 0}
+label{display:block;margin:18px 0 6px;font-weight:700}
+select{width:100%;font:inherit;padding:12px;border-radius:10px;border:0;background:#fff;color:#151a33}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg button{font:inherit;padding:14px;border-radius:12px;border:2px solid rgba(255,255,255,.2);background:transparent;color:#fff;cursor:pointer;text-align:left}
+.seg button b{display:block}.seg button span{font-size:14px;color:#aab3d8}
+.seg button[aria-pressed="true"]{border-color:var(--gold);background:rgba(255,194,61,.12)}
+.go{display:block;width:100%;margin-top:24px;font-family:inherit;font-weight:700;font-size:24px;padding:16px;border:0;border-radius:12px;background:linear-gradient(90deg,#ffc23d,#ff8a3d);color:#1a1030;cursor:pointer}
+.small{font-size:14px;color:#aab3d8}
+.steps{margin:10px 0 0;padding-left:22px;color:#cfd5f2;font-size:15px}
+.inst{margin-top:14px;font-family:inherit;font-weight:600;font-size:16px;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer}
+.inst[hidden]{display:none}
+details{margin-top:18px}summary{cursor:pointer;color:#fff;font-weight:600}
+</style>
+</head>
+<body>
+<!-- The IMC Foyer TV app ("child" player). It has no settings of its own: it always plays what the manager's PC has set
+     (data/foyer/<cinema>.json, through foyer.html in child mode). This page never reloads itself, so sound keeps working
+     while the player inside updates itself. -->
+<div id="setup" hidden>
+  <div class="box">
+    <img src="tv-192.png" alt="">
+    <h1>Set up this foyer TV</h1>
+    <p>This TV will play exactly what the manager's computer has set: trailers, showtimes, deals and adverts, in step with the other foyer TVs. Nothing needs changing on this PC.</p>
+    <label for="site">Which cinema?</label>
+    <select id="site"></select>
+    <label>Which screen is this?</label>
+    <div class="seg" role="group" aria-label="Which screen">
+      <button type="button" data-kind="foyer" aria-pressed="true"><b>Foyer TV</b><span>Trailers, times, deals</span></button>
+      <button type="button" data-kind="luxx" aria-pressed="false"><b>LUXX lounge</b><span>LUXX showings and offers</span></button>
+    </div>
+    <button class="go" id="go" type="button">▶ Start this TV</button>
+    <button class="inst" id="install" type="button" hidden>⬇ Install as an app on this PC</button>
+    <details>
+      <summary>Make it start by itself when the PC is switched on</summary>
+      <ol class="steps">
+        <li>Click <b>Install as an app</b> above (or in Chrome: ⋮ menu › Cast, save and share › <b>Install page as app</b>). An “IMC Foyer TV” icon appears on the desktop.</li>
+        <li>Press the <b>Windows key + R</b>, type <b>shell:startup</b> and press Enter. A folder opens.</li>
+        <li>Drag the IMC Foyer TV icon from the desktop into that folder, holding the right mouse button, and choose <b>Create shortcut here</b>.</li>
+        <li>That's it: when the PC starts, the TV starts. Click the screen once for sound after a restart (browsers need one click).</li>
+      </ol>
+    </details>
+    <p class="small" style="margin-top:16px">To change this later, open this page with <b>?setup</b> at the end of the address.</p>
+  </div>
+</div>
+<iframe id="tv" title="IMC foyer TV player" allow="autoplay; fullscreen; screen-wake-lock" hidden></iframe>
+<script>
+(function(){
+const $=s=>document.querySelector(s),KEY="imc-tv";
+let cfg=null;try{cfg=JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){}
+const want=new URLSearchParams(location.search);
+/* the manager's settings, from the GitHub API (fresh) or the website copy */
+async function managerSettings(site){const path="data/foyer/"+encodeURIComponent(site)+".json";
+  for(const u of["https://api.github.com/repos/popcorn483/imc/contents/"+path+"?ref=main",path+"?ts="+Date.now()]){
+    try{const r=await fetch(u,{headers:u.includes("api.github")?{Accept:"application/vnd.github.raw+json"}:{},cache:"no-cache"});if(r.ok){const j=await r.json();if(j&&j.q)return j}}catch(e){}}
+  return null}
+async function play(){$("#setup").hidden=true;const f=$("#tv");f.hidden=false;
+  const j=await managerSettings(cfg.site),q=new URLSearchParams(j?(cfg.kind==="luxx"?j.lq:j.q)||"":"");
+  q.set("c",cfg.site);if(cfg.kind==="luxx")q.set("luxx","1");q.set("child","1");
+  f.src="foyer.html?"+q.toString();f.focus()}
+async function setup(){const sel=$("#site");let list=[["enniskillen","IMC Enniskillen"]];
+  try{const r=await fetch("data/cinemas.json",{cache:"no-cache"});if(r.ok){const j=await r.json();list=(j.cinemas||[]).map(c=>[c.id,c.name])}}catch(e){}
+  let hub="enniskillen";try{hub=localStorage.getItem("imc-hub-site")||hub}catch(e){}
+  sel.innerHTML=list.map(([k,n])=>`<option value="${k}">${n.replace(/[<>&]/g,"")}</option>`).join("");sel.value=(cfg&&cfg.site)||hub;
+  let kind=(cfg&&cfg.kind)||"foyer";const seg=()=>document.querySelectorAll("[data-kind]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.kind===kind));seg();
+  document.querySelectorAll("[data-kind]").forEach(b=>b.onclick=()=>{kind=b.dataset.kind;seg()});
+  $("#setup").hidden=false;
+  $("#go").onclick=()=>{cfg={site:sel.value,kind};try{localStorage.setItem(KEY,JSON.stringify(cfg))}catch(e){}
+    if(want.has("setup"))history.replaceState(null,"","tv.html");
+    document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen().catch(()=>{});play()}}
+/* "Install as an app" when the browser offers it */
+let installEv=null;addEventListener("beforeinstallprompt",e=>{e.preventDefault();installEv=e;$("#install").hidden=false});
+$("#install").onclick=async()=>{if(!installEv)return;installEv.prompt();await installEv.userChoice.catch(()=>{});installEv=null;$("#install").hidden=true};
+/* keep a copy for when the internet is down */
+if("serviceWorker" in navigator)navigator.serviceWorker.register("foyer-sw.js").catch(()=>{});
+if(!cfg||want.has("setup"))setup();else play();
+})();
+</script>
+</body>
+</html>

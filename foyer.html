@@ -199,6 +199,9 @@ body.lite *{animation-duration:.01s!important}body.lite .ticker div{animation-du
 (function(){
 const $=s=>document.querySelector(s);
 let Q=new URLSearchParams(location.search);
+/* child mode (inside the IMC Foyer TV app, tv.html): no settings of its own, always the manager PC's; starts by itself */
+const CHILD=Q.get("child")==="1"||(()=>{try{return sessionStorage.getItem("imc-foyer-child")==="1"}catch(e){return false}})();
+if(CHILD){try{sessionStorage.setItem("imc-foyer-child","1");sessionStorage.setItem("imc-foyer-auto","1")}catch(e){}}Q.delete("child");
 const SITE=Q.get("c")||"enniskillen";
 /* new screens: the board every N films (0 = off), promo slides, the live strip, screen numbers, your ticker messages */
 /* adverts from the hub: [picture, name, first day, last day, seconds, how often, business] */
@@ -537,7 +540,7 @@ const LIVE_KEY="imc-foyer-live:"+SITE+(LOUNGE?":luxx":"");
 let pendingQ=null,pendingReload=false,pageSig=null;
 /* the newest settings win: from the hub on this computer, or from data/foyer/<cinema>.json (saved by the hub on any computer) */
 let remote=null;
-function liveCheck(){if(Q.get("list")==="1")return;let loc=null;try{const v=localStorage.getItem(LIVE_KEY);if(v){try{loc=JSON.parse(v)}catch(e){loc={q:v,at:0}}}}catch(e){}
+function liveCheck(){if(Q.get("list")==="1")return;let loc=null;if(!CHILD)try{const v=localStorage.getItem(LIVE_KEY);if(v){try{loc=JSON.parse(v)}catch(e){loc={q:v,at:0}}}}catch(e){}
   /* once the manager's PC sends settings (data/foyer/<cinema>.json), those always win: a hub opened on the foyer PC itself has its own, older copy */
   const best=remote&&remote.q?remote:loc;if(!best||!best.q)return;
   const want=new URLSearchParams(best.q);if(want.toString()!==Q.toString()&&want.toString()!==pendingQ)pendingQ=want.toString()}

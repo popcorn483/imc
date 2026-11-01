@@ -2,13 +2,13 @@
    The page and its scripts: fresh from the internet when it's there, the saved copy when it isn't.
    Listings: the same. Pictures (posters, food, logos): the saved copy first, so the TVs keep their pictures with no internet.
    YouTube itself can't be saved; the player skips YouTube trailers while the internet is down. */
-const PAGE = "imc-foyer-page-v1", PICS = "imc-foyer-pics-v1", MAX_PICS = 400;
-const CORE = ["foyer.html", "ident.js", "qr.js", "music.js", "imc-logo.png"];
+const PAGE = "imc-foyer-page-v2", PICS = "imc-foyer-pics-v1", MAX_PICS = 400;
+const CORE = ["foyer.html", "tv.html", "tv.webmanifest", "tv-192.png", "ident.js", "qr.js", "music.js", "imc-logo.png"];
 
 self.addEventListener("install", (e) => { e.waitUntil(caches.open(PAGE).then((c) => c.addAll(CORE).catch(() => {})).then(() => self.skipWaiting())); });
 self.addEventListener("activate", (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k.startsWith("imc-foyer-") && k !== PAGE && k !== PICS).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
 
-const fromFoyer = (req) => /\/foyer\.html/.test(req.referrer || "") || /\/foyer\.html/.test(req.url) || /\/(ident|qr|music)\.js/.test(req.url);
+const fromFoyer = (req) => /\/(foyer|tv)\.html/.test(req.referrer || "") || /\/(foyer|tv)\.html/.test(req.url) || /\/(ident|qr|music)\.js|tv\.webmanifest|tv-\d+\.png/.test(req.url);
 const isPic = (u) => /\.(png|jpe?g|webp|gif|svg)(\?|$)/i.test(u.pathname) || u.hostname === "i.ytimg.com";
 
 async function networkFirst(req, cacheName) {
