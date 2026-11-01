@@ -463,6 +463,10 @@ let ytDownUntil=0,ytFails=0;
 const netDown=()=>offline||navigator.onLine===false||Date.now()<ytDownUntil;
 function ytFailed(){if(++ytFails>=2){ytDownUntil=Date.now()+5*60e3;ytFails=0}}
 /* in step mode a trailer that can't play leaves its slot to the board, so the screen is never blank */
+/* trailers that showed nothing (removed, private, not allowed outside YouTube, stuck): kept on this PC for a day, shown with I */
+function markBad(f,why){try{const k="imc-foyer-bad",b=JSON.parse(localStorage.getItem(k)||"{}"),now=Date.now();for(const x in b)if(now-b[x].at>864e5)delete b[x];b[f.trailer||f.key]={title:cleanTitle(f.title),why,at:now};localStorage.setItem(k,JSON.stringify(b))}catch(e){}}
+function badList(){try{return Object.values(JSON.parse(localStorage.getItem("imc-foyer-bad")||"{}")).filter(x=>Date.now()-x.at<864e5)}catch(e){return[]}}
+const slotLeft=()=>stepWall&&stepLen?stepWall+stepLen-Date.now():0;
 function syncFill(){if(SYNC&&syncOn){syncBoard=boardPlan();if(syncBoard)playBoard();else show("card");return true}return false}
 async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout(next,50);return}const ok=await loadYT();if(!ok){ytReady=null;ytFailed();ytDownUntil=Date.now()+5*60e3;if(!syncFill())timer=setTimeout(next,300);return}
   const id=ytId(f.trailer),u=f.extra?[]:upcoming(f),nx=u[0],n=londonNow();
@@ -470,19 +474,23 @@ async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout
   const q=nx&&nx.book?qrSvg(nx.book):"";$("#tqr").innerHTML=q?q+`<span>Scan to book<b>${nx.time}</b></span>`:"";$("#tqr").style.opacity=0;
   show("yt-wrap");progress(0.01);
   let started=false,over=false;const cur=$("#ytcurtain");cur.classList.remove("off");
-  let lastFix=0;
+  let lastFix=0,lastT=-1,stuckSince=0;
+  /* nothing showing: YouTube reported an error, or the picture hasn't moved for 6 seconds */
+  const blank=why=>{if(over)return;markBad(f,why);ytFailed();over=true;done();try{player.pauseVideo()}catch(e){}if(SYNC&&syncOn){syncFill()}else{cur.classList.remove("off");setTimeout(next,300)}};
   const watch=setInterval(()=>{try{const d=player.getDuration(),t=player.getCurrentTime();
+    if(started&&!over){if(Math.abs(t-lastT)<.05){if(!stuckSince)stuckSince=Date.now();else if(Date.now()-stuckSince>6000)return blank("stuck: the picture stopped")}else stuckSince=0;lastT=t}
     /* in step: if buffering left this TV behind (or ahead) of the clock by over a second, catch up */
     if(SYNC&&syncOn&&started&&stepWall){const exp=(Date.now()-stepWall)/1000;if(Math.abs(t-exp)>1.2&&exp<d-3&&Date.now()-lastFix>5000){lastFix=Date.now();player.seekTo(exp,true)}}if(started&&d>5){if(t>=d-1.2)finish();$("#tqr").style.opacity=q&&t>d-25?1:0;lastStep=Date.now()}}catch(e){}},250);
-  const finish=()=>{if(over)return;over=true;cur.classList.remove("off");done();try{player.pauseVideo()}catch(e){}$("#tqr").style.opacity=0;setTimeout(next,500)};
-  const guard=setTimeout(()=>{if(!started){ytFailed();if(SYNC&&syncOn){over=true;done();try{player.pauseVideo()}catch(e){}syncFill()}else finish()}},15000),cap=setTimeout(finish,5*60e3);
+  const finish=()=>{if(over)return;over=true;cur.classList.remove("off");done();try{player.pauseVideo()}catch(e){}$("#tqr").style.opacity=0;
+    if(SYNC&&syncOn&&slotLeft()>4000){setTimeout(()=>{if(playingKey&&!$("#yt-wrap").hidden)syncFill()},600);return}setTimeout(next,500)};
+  const guard=setTimeout(()=>{if(!started)blank("didn't start")},10000),cap=setTimeout(finish,5*60e3);
   const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch);player._done=null};
   if(player&&player.loadVideoById){player.loadVideoById({videoId:id,startSeconds:at>2?at:0});if(muted)player.mute();else player.unMute()}
   else player=new YT.Player("yt",{host:"https://www.youtube-nocookie.com",videoId:id,playerVars:{autoplay:1,start:at>2?Math.floor(at):0,controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,fs:0,cc_load_policy:0,mute:muted?1:0,origin:location.origin},
     events:{onReady:e=>{if(muted)e.target.mute();e.target.playVideo()},onStateChange:e=>{const h=player._h;if(h)h(e.data)},onError:()=>{const x=player._x;if(x)x()}}});
   player._h=st=>{if(over)return;if(st===1){if(!started){started=true;ytFails=0;captionsFor(f);setTimeout(()=>{if(!over)cur.classList.add("off")},400)}else cur.classList.add("off")}
     else if(st===2){cur.classList.remove("off");try{player.playVideo()}catch(e){}}else if(st===0)finish()};
-  player._x=finish;player._done=done}
+  player._x=()=>blank("YouTube won't play it here (removed, private or not allowed outside YouTube)");player._done=done}
 /* a studio trailer file (saved on this PC) or download link, played in the same frame as YouTube trailers */
 async function playStudio(f,at=0){const v=$("#svid"),x=f.studio;let src=x.url||"",obj="";
   if(!src){const b=await sget("studiofile:"+x.id);if(!b){timer=setTimeout(next,300);return}obj=src=URL.createObjectURL(b)}
@@ -494,9 +502,9 @@ async function playStudio(f,at=0){const v=$("#svid"),x=f.studio;let src=x.url||"
   const cur=$("#ytcurtain");cur.classList.remove("off");let over=false;
   const stop=()=>{clearTimeout(guard);clearTimeout(cap);vidStop=null;v.onplaying=v.onended=v.onerror=v.ontimeupdate=null;try{v.pause()}catch(e){}v.removeAttribute("src");try{v.load()}catch(e){}if(obj)URL.revokeObjectURL(obj);v.hidden=true;$("#yt").style.visibility=""};
   const finish=()=>{if(over)return;over=true;cur.classList.remove("off");$("#tqr").style.opacity=0;setTimeout(()=>{stop();next()},500)};
-  const guard=setTimeout(()=>{if(!v.currentTime)finish()},20000),cap=setTimeout(finish,6*60e3);
+  const guard=setTimeout(()=>{if(!v.currentTime){markBad(f,"the video file didn't start");if(SYNC&&syncOn){over=true;stop();syncFill()}else finish()}},10000),cap=setTimeout(finish,6*60e3);
   vidStop=()=>{over=true;stop()};
-  v.onplaying=()=>cur.classList.add("off");v.onended=finish;v.onerror=finish;
+  v.onplaying=()=>cur.classList.add("off");v.onended=()=>{if(SYNC&&syncOn&&slotLeft()>4000){over=true;stop();syncFill()}else finish()};v.onerror=()=>{markBad(f,"the video file can't be played");if(SYNC&&syncOn){over=true;stop();syncFill()}else finish()};
   let lastFix=0;
   v.ontimeupdate=()=>{lastStep=Date.now();if(SYNC&&syncOn&&stepWall){const exp=(Date.now()-stepWall)/1000;if(Math.abs(v.currentTime-exp)>1.2&&exp<(v.duration||0)-3&&Date.now()-lastFix>5000){lastFix=Date.now();try{v.currentTime=exp}catch(e){}}}if(v.duration>5)$("#tqr").style.opacity=q&&v.duration-v.currentTime<25?1:0};
   if(at>2)v.addEventListener("loadedmetadata",()=>{try{v.currentTime=Math.min(at,(v.duration||at+1)-1)}catch(e){}},{once:true});
@@ -561,7 +569,7 @@ function infoBox(){let el=$("#infobox");if(el){el.remove();return}el=document.cr
   const rows=[["Player version",BUILT],["Cinema",(D&&D.cinema)||SITE],["This PC's clock",n.hm+":"+String(n.s).padStart(2,"0")+" (should match the time on your phone)"],
     ["Settings from the manager's PC",remote?"yes, saved "+f(remote.at):lastRemote&&lastRemote.ok===false?"none found yet":"not checked yet"],["Last checked for settings",lastRemote?f(lastRemote.at):"not yet"],
     ["Settings in use",remote&&new URLSearchParams(remote.q).toString()===Q.toString()?"the manager's (up to date)":pendingQ?"new settings waiting: they start at the next screen":"this PC's own"],
-    ["All TVs in step",SYNC?(syncOn?"on":"on (starts after Start)"):"off"],["Internet",offline||navigator.onLine===false?"down: showing saved listings":"ok"],["Listings updated",D&&D.updated?f(D.updated):"unknown"],["Sound",muted?"off (click once to turn on)":"on"]];
+    ["All TVs in step",SYNC?(syncOn?"on":"on (starts after Start)"):"off"],["Internet",offline||navigator.onLine===false?"down: showing saved listings":"ok"],["Listings updated",D&&D.updated?f(D.updated):"unknown"],["Sound",muted?"off (click once to turn on)":"on"],["Trailers that showed nothing today",badList().map(x=>x.title+" ("+x.why+")").join("; ")||"none"]];
   el.innerHTML="<b>Foyer player information</b><table>"+rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(String(r[1]))}</td></tr>`).join("")+"</table><small>Press I again to close. Press F5 to reload if something looks out of date.</small>";document.body.appendChild(el)}
 async function applyPending(){
   if(pendingReload){try{sessionStorage.setItem("imc-foyer-auto","1")}catch(e){}location.reload();return true}
