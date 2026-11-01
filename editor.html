@@ -451,6 +451,7 @@ html.a-rm *{transition:none!important;animation:none!important}
       <div class="sec"><h3>Cinema Reels</h3><p class="note">Vertical 9:16 videos for Instagram &amp; Facebook Reels, TikTok and Stories. Point at one to preview it. Film names and dates fill in from imc.ie.</p><div class="tiles reels" id="reels"></div>
         <label class="check" style="margin-top:10px"><input type="checkbox" id="safeChk"> Show the area Reels buttons and captions cover (editor only)</label></div>
       <div class="sec"><h3>Animated presets</h3><p class="note">Effects, layout and timed animation in one click, at any size. Point at one to preview it.</p><div class="tiles" id="presets"></div></div>
+      <div class="sec"><h3>Gift cards</h3><p class="note">A ready-made gift card post. Pick a theme; click the card afterwards to add an amount or switch theme.</p><div class="tiles" id="gifts"></div></div>
       <div class="sec"><h3>Seasons &amp; occasions</h3><p class="note">One click gives your design a seasonal background, colours and animation. Your photo and text stay.</p><div class="tiles" id="seasons"></div></div>
       <div class="sec"><h3>Starter layouts</h3><p class="note">Swaps the frame and badges. Your photo stays.</p><div class="tiles" id="layouts"></div></div>
       <div class="sec"><h3>Your layouts</h3>
@@ -898,7 +899,76 @@ function candy(c,x,y,s,col,kind,r){col=col||CANDY[Math.floor(r()*CANDY.length)];
   else if(kind===3){c.ellipse(0,0,s*1.2,s*.62,0,0,TAU);c.fill()}
   else{rr(c,-s,-s*.6,s*2,s*1.2,s*.25);c.fill()}
   c.fillStyle="rgba(255,255,255,.5)";c.beginPath();c.arc(-s*.3,-s*.3,s*.2,0,TAU);c.fill();c.restore()}
-const PRODUCT_LABEL={ticket:"Ticket text"};
+const PRODUCT_LABEL={ticket:"Ticket text",giftcard:"Amount or words on the card (e.g. £25)"};
+/* ---------- gift cards: a premium IMC gift card, drawn, in four themes ---------- */
+const GIFT_THEMES={
+  general:{n:"General",card:["#0b1f6b","#123a9e","#06103a"],ribbon:"#d81e2c",foil:"#ffd27a",motif:"stars"},
+  christmas:{n:"Christmas",card:["#8e0f1c","#c8161d","#4a050c"],ribbon:"#d9a93a",foil:"#ffe3a0",motif:"snow"},
+  halloween:{n:"Halloween",card:["#1a0b24","#3a1550","#07030b"],ribbon:"#f39a2b",foil:"#ffb54a",motif:"web"},
+  birthday:{n:"Birthday",card:["#7a1fa8","#e0418f","#3b0f63"],ribbon:"#ffd84a",foil:"#fff0b0",motif:"confetti"}};
+function drawGiftCard(c,L){
+  const th=GIFT_THEMES[L.theme]||GIFT_THEMES.general,w=520,h=328,pad=80,k=3,txt=String(L.text||"").trim(),key=["g3",L.theme,txt,L.c1||"",L.c2||""].join("|");
+  if(!TICKET_CACHE[key]){const cv=document.createElement("canvas");cv.width=(w+pad*2)*k;cv.height=(h+pad*2)*k;const x=cv.getContext("2d");x.scale(k,k);x.translate(w/2+pad,h/2+pad);
+    const card=L.c1?[shade(L.c1,-25),L.c1,shade(L.c1,-60)]:th.card,rib=L.c2||th.ribbon,foil=th.foil;
+    const rr=(X,Y,W,H,r)=>{x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+W,Y,X+W,Y+H,r);x.arcTo(X+W,Y+H,X,Y+H,r);x.arcTo(X,Y+H,X,Y,r);x.arcTo(X,Y,X+W,Y,r);x.closePath()};
+    /* the card */
+    x.save();x.shadowColor="rgba(0,0,0,.45)";x.shadowBlur=30;x.shadowOffsetY=16;rr(-w/2,-h/2,w,h,24);const g=x.createLinearGradient(-w/2,-h/2,w/2,h/2);g.addColorStop(0,card[1]);g.addColorStop(.55,card[0]);g.addColorStop(1,card[2]);x.fillStyle=g;x.fill();x.restore();
+    x.save();rr(-w/2,-h/2,w,h,24);x.clip();
+    const glow=x.createRadialGradient(-w*.25,-h*.55,10,-w*.25,-h*.55,w*.75);glow.addColorStop(0,"rgba(255,255,255,.22)");glow.addColorStop(1,"rgba(255,255,255,0)");x.fillStyle=glow;x.fillRect(-w/2,-h/2,w,h);
+    /* theme motif, faint */
+    const r1=rng(91);x.save();x.globalAlpha=.16;x.strokeStyle=foil;x.fillStyle=foil;
+    if(th.motif==="stars")for(let i=0;i<26;i++){const X=-w/2+r1()*w,Y=-h/2+r1()*h,R=2+r1()*5;x.beginPath();for(let j=0;j<10;j++){const a=j*Math.PI/5-Math.PI/2,q=j%2?R*.42:R;x.lineTo(X+Math.cos(a)*q,Y+Math.sin(a)*q)}x.fill()}
+    if(th.motif==="snow")for(let i=0;i<22;i++){const X=-w/2+r1()*w,Y=-h/2+r1()*h,R=5+r1()*9;x.lineWidth=1.2;for(let j=0;j<3;j++){const a=j*Math.PI/3;x.beginPath();x.moveTo(X-Math.cos(a)*R,Y-Math.sin(a)*R);x.lineTo(X+Math.cos(a)*R,Y+Math.sin(a)*R);x.stroke()}}
+    if(th.motif==="web"){x.lineWidth=1;const cx0=w/2-10,cy0=-h/2+10;for(let j=0;j<9;j++){const a=Math.PI/2+j*Math.PI/16;x.beginPath();x.moveTo(cx0,cy0);x.lineTo(cx0+Math.cos(a)*260,cy0+Math.sin(a)*260);x.stroke()}
+      for(let r=30;r<260;r+=34){x.beginPath();for(let j=0;j<9;j++){const a=Math.PI/2+j*Math.PI/16,q=r*(j%2?0.93:1);j?x.lineTo(cx0+Math.cos(a)*q,cy0+Math.sin(a)*q):x.moveTo(cx0+Math.cos(a)*q,cy0+Math.sin(a)*q)}x.stroke()}
+      for(let i=0;i<5;i++){const X=-w/2+40+r1()*w*.5,Y=-h/2+30+r1()*h*.5;x.save();x.translate(X,Y);x.scale(1.4,1.4);x.beginPath();x.moveTo(-14,0);x.quadraticCurveTo(-8,-8,-4,-2);x.quadraticCurveTo(0,-6,4,-2);x.quadraticCurveTo(8,-8,14,0);x.quadraticCurveTo(8,-2,4,3);x.quadraticCurveTo(0,0,-4,3);x.quadraticCurveTo(-8,-2,-14,0);x.fill();x.restore()}}
+    if(th.motif==="confetti"){const cols=["#ffd84a","#4fd1ff","#ffffff","#ff8fab"];for(let i=0;i<60;i++){x.fillStyle=cols[i%4];x.save();x.translate(-w/2+r1()*w,-h/2+r1()*h);x.rotate(r1()*6);x.fillRect(-4,-1.5,8,3);x.restore()}}
+    x.restore();
+    /* fine diagonal sheen lines */
+    x.globalAlpha=.05;x.strokeStyle="#fff";x.lineWidth=1;for(let X=-w;X<w;X+=7){x.beginPath();x.moveTo(X,-h/2);x.lineTo(X+h*.6,h/2);x.stroke()}x.globalAlpha=1;
+    /* ribbon: a vertical band and a horizontal band, satin shaded */
+    const rx=-w/2+150,ry=-h/2+118,band=34;
+    const satin=(horiz)=>{const gg=horiz?x.createLinearGradient(0,ry-band/2,0,ry+band/2):x.createLinearGradient(rx-band/2,0,rx+band/2,0);gg.addColorStop(0,shade(rib,-35));gg.addColorStop(.35,shade(rib,25));gg.addColorStop(.6,rib);gg.addColorStop(1,shade(rib,-45));return gg};
+    x.shadowColor="rgba(0,0,0,.35)";x.shadowBlur=8;x.fillStyle=satin(true);x.fillRect(-w/2,ry-band/2,w,band);x.fillStyle=satin(false);x.fillRect(rx-band/2,-h/2,band,h);x.shadowBlur=0;
+    x.strokeStyle="rgba(255,255,255,.35)";x.lineWidth=1;for(const d of[-band/2+3,band/2-3]){x.beginPath();x.moveTo(-w/2,ry+d);x.lineTo(w/2,ry+d);x.stroke();x.beginPath();x.moveTo(rx+d,-h/2);x.lineTo(rx+d,h/2);x.stroke()}
+    x.restore();
+    /* card edge: a thin foil line */
+    x.lineWidth=1.5;x.strokeStyle="rgba(255,255,255,.35)";rr(-w/2+1,-h/2+1,w-2,h-2,23);x.stroke();
+    /* the bow, at the crossing: two loops, two tails and a knot */
+    x.save();x.translate(rx,ry);x.shadowColor="rgba(0,0,0,.45)";x.shadowBlur=14;x.shadowOffsetY=6;
+    const loop=(sg)=>{const gg=x.createRadialGradient(sg*40,-6,4,sg*40,-6,70);gg.addColorStop(0,shade(rib,30));gg.addColorStop(.6,rib);gg.addColorStop(1,shade(rib,-50));x.fillStyle=gg;
+      x.beginPath();x.moveTo(0,0);x.bezierCurveTo(sg*30,-70,sg*95,-62,sg*92,-14);x.bezierCurveTo(sg*90,22,sg*40,22,0,0);x.fill();
+      x.shadowBlur=0;x.fillStyle="rgba(0,0,0,.22)";x.beginPath();x.moveTo(sg*8,-4);x.bezierCurveTo(sg*30,-40,sg*70,-40,sg*72,-14);x.bezierCurveTo(sg*60,-24,sg*36,-20,sg*8,-4);x.fill();x.shadowBlur=14};
+    const tail=(sg)=>{const gg=x.createLinearGradient(0,0,sg*50,90);gg.addColorStop(0,rib);gg.addColorStop(1,shade(rib,-40));x.fillStyle=gg;x.beginPath();x.moveTo(-6*sg,4);x.lineTo(sg*30,92);x.lineTo(sg*44,80);x.lineTo(sg*56,94);x.lineTo(sg*18,4);x.closePath();x.fill()};
+    tail(-1);tail(1);loop(-1);loop(1);
+    const kn=x.createRadialGradient(-4,-4,2,0,0,20);kn.addColorStop(0,shade(rib,35));kn.addColorStop(1,shade(rib,-35));x.fillStyle=kn;x.beginPath();x.ellipse(0,0,19,16,0,0,TAU);x.fill();x.restore();
+    /* IMC logo: a blue sphere with white IMC, top-right */
+    const lx=w/2-62,ly=-h/2+58;x.save();x.shadowColor="rgba(0,0,0,.35)";x.shadowBlur=8;const lg=x.createRadialGradient(lx-12,ly-14,4,lx,ly,40);lg.addColorStop(0,"#5fb0ff");lg.addColorStop(.55,"#1257c9");lg.addColorStop(1,"#0a1f6e");x.fillStyle=lg;x.beginPath();x.arc(lx,ly,38,0,TAU);x.fill();x.restore();
+    x.fillStyle="#fff";x.font=`900 27px ${FONTS.display}`;x.textBaseline="middle";ft(x,"IMC",lx,ly+1,1,"center");
+    /* GIFT CARD in foil, the amount or wording, the website */
+    const foilFill=(Y,H)=>{const fg=x.createLinearGradient(0,Y-H,0,Y+H);fg.addColorStop(0,shade(foil,40));fg.addColorStop(.5,foil);fg.addColorStop(1,shade(foil,-35));return fg};
+    x.textBaseline="alphabetic";x.font=`800 20px Montserrat,${FONTS.body}`;x.fillStyle=foilFill(h/2-34,12);ft(x,"GIFT CARD",rx+band/2+22,h/2-30,7,"left");
+    if(txt){let fs=74;x.font=`900 ${fs}px ${FONTS.display}`;while(tw(x,txt,1)>w*.5&&fs>30){fs-=2;x.font=`900 ${fs}px ${FONTS.display}`}
+      x.shadowColor="rgba(0,0,0,.4)";x.shadowBlur=6;x.shadowOffsetY=2;x.fillStyle=foilFill(h/2-40-fs*.3,fs*.4);ft(x,txt,w/2-34,h/2-34,1,"right");x.shadowBlur=0;x.shadowOffsetY=0}
+    x.font=`600 11px ${FONTS.body}`;x.fillStyle="rgba(255,255,255,.7)";ft(x,"imc.ie  ·  #MADABOUTMOVIES",rx+band/2+22,h/2-58,2,"left");
+    /* holographic seal */
+    const hx=rx+band/2+40,hy=h/2-100;const hg=x.createConicGradient?x.createConicGradient(0,hx,hy):null;if(hg){["#ff8fab","#ffd84a","#7bd148","#4fd1ff","#b9a2ff","#ff8fab"].forEach((col,i,a)=>hg.addColorStop(i/(a.length-1),col));x.globalAlpha=.75;x.fillStyle=hg;x.beginPath();x.arc(hx,hy,16,0,TAU);x.fill();x.globalAlpha=1;x.strokeStyle="rgba(255,255,255,.6)";x.lineWidth=1;x.stroke()}
+    /* sheen across the card */
+    x.save();rr(-w/2,-h/2,w,h,24);x.clip();const sh=x.createLinearGradient(-w/2,-h/2,w*.25,h/2);sh.addColorStop(0,"rgba(255,255,255,0)");sh.addColorStop(.45,"rgba(255,255,255,0)");sh.addColorStop(.52,"rgba(255,255,255,.16)");sh.addColorStop(.6,"rgba(255,255,255,0)");x.fillStyle=sh;x.fillRect(-w/2,-h/2,w,h);x.restore();
+    TICKET_CACHE[key]=cv}
+  c.drawImage(TICKET_CACHE[key],-w/2-pad,-h/2-pad,w+pad*2,h+pad*2);return{w,h}}
+/* one-click gift card posts */
+const GIFT_POSTS=[
+  {k:"general",n:"Gift card",bg:"midnight",frame:{style:"premiere",accent:"#ffc23d"},fx:{sparkle:true},badge:{style:"ribbon",text:"IMC GIFT CARDS",c1:"#ffc23d",c2:"#1a1440"},title:"GIVE THE BIG SCREEN",sub:"Gift cards at the kiosk and on imc.ie",amount:""},
+  {k:"christmas",n:"Christmas gift card",bg:"festive",frame:{style:"premiere",accent:"#ffc23d"},fx:{snow:true,lights:true},badge:{style:"ribbon",text:"THE PERFECT CHRISTMAS GIFT",c1:"#c8161d",c2:"#ffffff"},title:"WRAP UP A MOVIE",sub:"IMC gift cards: at the kiosk and on imc.ie",amount:""},
+  {k:"halloween",n:"Halloween gift card",bg:"spooky",frame:{style:"vignette",accent:"#f39a2b"},fx:{bats:true,fog:true},badge:{style:"ribbon",text:"A SPOOKY TREAT",c1:"#f39a2b",c2:"#1a0b24"},title:"TRICK OR TREAT?",sub:"Treat them to a scary movie night",amount:""},
+  {k:"birthday",n:"Birthday gift card",bg:"pastel",frame:{style:"vignette",accent:"#b9a2ff"},fx:{balloons:true,confetti:true},badge:{style:"pill",text:"HAPPY BIRTHDAY",c1:"#ffffff",c2:"#6a4bc4"},title:"THE GIFT OF FILMS",sub:"IMC gift cards: any amount, any film",ink:"#2a1a6e",amount:""}];
+function giftLayers(g){const ink=g.ink||"#ffffff";return[mk("badge","coming",{...g.badge,y:.12,s:g.badge.text.length>18?.78:1,anim:"shine"}),
+  mk("product","giftcard",{theme:g.k,text:g.amount,x:.5,y:.43,s:1.3,r:-.06,anim:"pop",delay:.1}),
+  mk("text","title",{text:g.title,size:fitSize(g.title,"display",110,56,940),y:.7,c1:ink,anim:"slide",delay:.2}),mk("text","sub",{text:g.sub,y:.785,c1:ink,anim:"slide",delay:.28})]}
+function applyGift(k){const g=GIFT_POSTS.find(x=>x.k===k);if(!g)return;S.label=g.n;S.bg=g.bg;S.frame={...S.frame,...g.frame};S.motion={...S.motion,fx:{...g.fx}};S.layers=giftLayers(g);
+  selId=S.layers[1].id;clampPhoto();syncAll();commit();toast(g.n+": click the card to add an amount (e.g. £25) or change its theme")}
+
 /* Food and drink are real IMC product photos, or your own uploads. The only drawing left is a clean, flat cinema ticket. */
 const FOOD=[["combo_medium","data/products/combotest.jpg","Medium Combo"],["combo_large","data/products/lccc.jpg","Large Combo"],["combo_share","data/products/scon.jpg","Share Combo"],["tray","data/products/onkt.jpg","Kids Tray"],["nachos","data/products/nacholargchese.jpg","Nachos"],["ice_twist","data/products/softserve1.jpg","IMC Twist"],["ice_oreo","data/products/softserve2.jpg","IMC Oreo"],["ice_99","data/products/softserve3.jpg","IMC 99"],["maltesers","data/products/maltesers.jpg","Maltesers"],["minstrels","data/products/minstrels.jpg","Minstrels"],["water","data/products/ttc.jpg","Tahila Water"],["pickmix","data/products/candyking.png","Candy King pick 'n' mix"]];
 const foodPhoto=k=>{const f=FOOD.find(x=>x[0]===k);return f?{src:f[1],label:f[2]}:null};
@@ -910,6 +980,7 @@ const BUNDLE={1:"data/products/cut/bundle1.png",2:"data/products/cut/bundle2.png
 function bundleUp(out,P,tk){const tix=out.findIndex(v=>v.draw==="ticket"),cb=out.findIndex(v=>v.src&&/products\/(combotest|lccc|scon)\./.test(v.src));
   if(tix<0||cb<0||(!P.includes("popcorn")&&!P.includes("drink")))return out;const b={src:BUNDLE[(tk||1)>=2||P.filter(x=>x==="drink").length>=2?2:1],label:"Ticket and combo"};return out.filter((v,i)=>i!==tix&&i!==cb).concat([b]).reverse()}
 const PRODUCTS={
+  giftcard:{n:"Gift card",c1:"",c2:""},
   ticket:{n:"Cinema ticket",c1:"#c9a443",c2:"#2a1b05",draw(c,L){
     /* A premium gold cinema ticket in IMC's shape (three round bites in each short end): polished foil with a bevelled
        edge, an engraved double border, a fine guilloche pattern, punched see-through perforations, a stub with IMC and a
@@ -970,10 +1041,10 @@ const PRODUCTS={
     const cv=TICKET_CACHE[key];c.save();c.shadowColor="rgba(0,0,0,.45)";c.shadowBlur=28;c.shadowOffsetY=14;c.drawImage(cv,-w/2-pad,-h/2-pad,w+pad*2,h+pad*2);c.restore();
     return{w:stack?w+30:w,h:stack?h+36:h}}}
 };
-window.__imcTest={drawProduct:(...a)=>drawProduct(...a),foodVis:(...a)=>foodVis(...a)};   /* testing only */
+window.__imcTest={applyGift:k=>applyGift(k),drawProduct:(...a)=>drawProduct(...a),foodVis:(...a)=>foodVis(...a)};   /* testing only */
 const TICKET_CACHE={};try{document.fonts.ready.then(()=>{for(const k in TICKET_CACHE)delete TICKET_CACHE[k];typeof draw==="function"&&draw()})}catch(e){}   /* redraw tickets once the lettering font has loaded */
 function hexRgb(h){h=String(h||"#ffc23d").replace("#","");if(h.length===3)h=h.split("").map(x=>x+x).join("");const n=parseInt(h,16);return isNaN(n)?[255,194,61]:[n>>16&255,n>>8&255,n&255]}
-function drawProduct(c,L){if(L.key!=="ticket"){const v=foodVisual(L.key);if(!v)return{w:1,h:1};return drawPPhoto(c,{...L,src:v.src,card:!!v.card})}const P=PRODUCTS.ticket;return P.draw(c,{...L,c1:L.c1||P.c1,c2:L.c2||P.c2})}
+function drawProduct(c,L){if(L.key==="giftcard")return drawGiftCard(c,L);if(L.key!=="ticket"){const v=foodVisual(L.key);if(!v)return{w:1,h:1};return drawPPhoto(c,{...L,src:v.src,card:!!v.card})}const P=PRODUCTS.ticket;return P.draw(c,{...L,c1:L.c1||P.c1,c2:L.c2||P.c2})}
 
 /* ---------- film times listing ---------- */
 function fitText(c,t,max){if(c.measureText(t).width<=max)return t;let s=t;while(s.length>1&&c.measureText(s+"…").width>max)s=s.slice(0,-1);return s+"…"}
@@ -1494,6 +1565,8 @@ function thumbsFor(t){if(t==="add")renderFlogo();if(!thumbDirty[t])return;thumbD
   const now=seasonNow().map(x=>x.k);
   $("#seasons").innerHTML=SEASONS.map(se=>`<button class="tile" data-season="${se.k}"><canvas width="320" height="320"></canvas><span>${esc(se.n)}${now.includes(se.k)?' <em class="anim">Now</em>':""}</span></button>`).join("");
   $$("#seasons .tile").forEach(t=>{const se=SEASONS.find(x=>x.k===t.dataset.season),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:se.bg,frame:{...S.frame,...se.frame},photo:S.photo,layers:seasonLayers(se,true),motion:{fx:se.fx}})});
+  $("#gifts").innerHTML=GIFT_POSTS.map(g=>`<button class="tile" data-gift="${g.k}"><canvas width="320" height="320"></canvas><span>${esc(g.n)}</span></button>`).join("");
+  $$("#gifts .tile").forEach(t=>{const g=GIFT_POSTS.find(x=>x.k===t.dataset.gift),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:g.bg,frame:{...S.frame,...g.frame},photo:S.photo,layers:giftLayers(g),motion:{fx:g.fx}})});
   $("#presets").innerHTML=ANIM_PRESETS.map((p,i)=>p.hide?"":`<button class="tile" data-preset="${i}"><canvas width="320" height="320"></canvas><span>${esc(p.n)}</span></button>`).join("");
   $("#reels").innerHTML=REELS.map((p,i)=>`<button class="tile" data-reel="${i}"><canvas width="216" height="384"></canvas><span>${esc(p.n)}</span></button>`).join("");
   stopTileAnim();$$("#presets .tile").forEach(t=>{const c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:!photoImg},presetState(ANIM_PRESETS[+t.dataset.preset],"square"))});
@@ -1751,6 +1824,7 @@ document.addEventListener("change",async e=>{const t=e.target;if(t.id==="lkFilm"
 document.addEventListener("input",e=>{const t=e.target,map={lkMain:"main",lkAcc:"acc",lkInk:"ink"};if(map[t.id]){S.look={...LOOKDEF,...(S.look||{}),pal:"custom",[map[t.id]]:t.value};restyle();commitSoon();$$("[data-lkpal]").forEach(x=>x.setAttribute("aria-pressed","false"))}});
 
 /* ---------- layouts ---------- */
+$("#gifts").addEventListener("click",e=>{const t=e.target.closest("[data-gift]");if(t)applyGift(t.dataset.gift)});
 $("#seasons").addEventListener("click",e=>{const t=e.target.closest("[data-season]");if(t)applySeason(t.dataset.season,false)});
 $("#presets").addEventListener("click",e=>{const t=e.target.closest("[data-preset]");if(t){stopTileAnim();applyPreset(ANIM_PRESETS[+t.dataset.preset],false)}});
 $("#reels").addEventListener("click",e=>{const t=e.target.closest("[data-reel]");if(t){stopTileAnim();applyPreset(REELS[+t.dataset.reel],true)}});
@@ -1786,6 +1860,7 @@ function renderProps(){const L=getSel(),P=$("#props");if(selId===BG_ID){P.innerH
     <label class="check"><input type="checkbox" id="pp-box" ${L.box?"checked":""}> Background panel</label>
     ${L.box?colourBlock("Panel colour","c2",L):""}`}
   if(L.kind==="badge"&&L.style==="menu"){h+=`<label class="lbl" for="pp-items">What's included (one per line)</label><textarea id="pp-items" rows="4">${esc(L.items||"")}</textarea>`}
+  if(L.kind==="product"&&L.key==="giftcard")h+=`<label class="lbl">Card theme</label><div class="row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px">${Object.entries(GIFT_THEMES).map(([k,t])=>`<button class="btn small" type="button" data-gtheme="${k}" aria-pressed="${(L.theme||"general")===k}">${t.n}</button>`).join("")}</div>`;
   if(L.kind==="product"){if(PRODUCT_LABEL[L.key])h+=`<label class="lbl" for="pp-text">${PRODUCT_LABEL[L.key]}</label><input id="pp-text" type="text" value="${esc(L.text||"")}">`;h+=colourBlock(L.key==="hotdog"?"Sausage colour":L.key==="nachos"||L.key==="tray"?"Tray colour":L.key==="popcorn"?"Box colour":L.key==="icescoop"?"Cup colour":L.key==="ticket"?"Ticket colour":L.key==="pickmix"?"Stripe colour":L.key==="sweets"?"Bag colour":"Main colour","c1",L)+colourBlock(L.key==="popcorn"?"Heart colour":L.key==="icescoop"?"Top scoop colour":L.key==="icetub"?"Band colour":L.key==="ticket"?"Text colour":L.key==="pickmix"?"Bag colour":L.key==="drink"?"Straw colour":L.key==="hotdog"?"Mustard colour":L.key==="nachos"?"Cheese colour":"Second colour","c2",L)}
   if(L.kind==="listing"){h+=listingPanel(L)}
   if(L.kind==="rating"){const sys=L.system||"bbfc",opts=ratingList(sys).filter(o=>o.cert!==sys.toUpperCase());h+=`<div class="seg" id="pp-rsys" style="width:max-content"><button data-prs="bbfc" aria-pressed="${sys==="bbfc"}">BBFC</button><button data-prs="ifco" aria-pressed="${sys==="ifco"}">IFCO</button></div>`+(opts.length?`<label class="lbl" for="pp-rating">Certificate</label><select id="pp-rating">${!L.src?`<option value="" selected>${esc(L.cert||"Choose")}</option>`:""}${opts.map(o=>`<option value="${esc(o.src)}" ${o.src===L.src?"selected":""}>${esc(o.cert)}</option>`).join("")}</select>`:`<p class="note">Rating symbols load from imc.ie on the live site.</p>`)+(sys==="ifco"?`<p class="note">IFCO certificates can differ from BBFC ones. Check the film's IFCO rating.</p>`:"")}
@@ -1822,7 +1897,7 @@ $("#props").addEventListener("change",e=>{const L=getSel();if(!L)return;const id
   if(id==="pp-font")L.font=e.target.value;else if(id==="pp-upper")L.upper=e.target.checked;else if(id==="pp-shadow")L.shadow=e.target.checked;
   else if(id==="pp-box"){L.box=e.target.checked;renderProps()}else if(id==="pp-lock"){L.lock=e.target.checked}else if(id==="pp-plate")L.plate=e.target.value;else if(id==="pp-anim"){L.anim=e.target.value;renderProps()}else if(id==="pp-rating"){const o=ratingList().find(x=>x.src===e.target.value);if(o){L.src=o.src;L.cert=o.cert;L.system=o.system;loadRating(o.src);syncLayers()}}
   draw();commit()});
-$("#props").addEventListener("click",e=>{const L=getSel();if(!L)return;
+$("#props").addEventListener("click",e=>{const L=getSel();if(!L)return;const gt=e.target.closest("[data-gtheme]");if(gt&&L.key==="giftcard"){L.theme=gt.dataset.gtheme;L.c1="";L.c2="";renderProps();draw();commit();return}
   const sw=e.target.closest("[data-c]");if(sw){const k=sw.closest("[data-colour]").dataset.colour;L[k]=sw.dataset.c;sw.parentElement.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b===sw));sw.parentElement.querySelector("input").value=sw.dataset.c;draw();commit();return}
   const mv=e.target.closest("[data-frmv]"),dl=e.target.closest("[data-frdel]");if((mv||dl)&&L.kind==="listing"){const i=+e.target.closest("[data-fr]").dataset.fr,R=[...L.rows];if(dl){R.splice(i,1);L.rows=R;fitListing(L)}else{const j=i+ +mv.dataset.frmv;if(j>=0&&j<R.length){[R[i],R[j]]=[R[j],R[i]];L.rows=R}}renderProps();draw();commit();return}
   const pls=e.target.closest("[data-pls]");if(pls&&L.kind==="listing"){L.rsys=pls.dataset.pls;(L.rows||[]).forEach(r=>{const p=ratingPick(r.cert,r.system||"bbfc",L.rsys);if(p&&p.src)loadRating(p.src)});renderProps();draw();commit();return}
@@ -2619,9 +2694,9 @@ $("#vidGo").onclick=async()=>{if(vBusy)return;vBusy=true;vCancel=false;$("#vidGo
 
 /* ---------- sync + boot ---------- */
 /* designs saved before food went photo-only: drawn food becomes the matching photo, in the same place (popcorn and its drinks become one combo photo) */
-function upgradeFood(layers){const F=layers.filter(l=>l.kind==="product"&&l.key!=="ticket");if(!F.length)return[];
+function upgradeFood(layers){const F=layers.filter(l=>l.kind==="product"&&l.key!=="ticket"&&l.key!=="giftcard");if(!F.length)return[];
   const drinks=F.filter(l=>l.key==="drink"),pop=F.find(l=>l.key==="popcorn"),mergeDrinks=pop&&!ownVisual("popcorn")&&!ownVisual("drink"),lost=[],out=[];
-  for(const l of layers){if(l.kind!=="product"||l.key==="ticket"){out.push(l);continue}
+  for(const l of layers){if(l.kind!=="product"||l.key==="ticket"||l.key==="giftcard"){out.push(l);continue}
     if(mergeDrinks&&l.key==="drink")continue;
     let v=mergeDrinks&&l===pop?foodPhoto(drinks.length>=2?"combo_share":"combo_large"):foodVisual(l.key);if(!v){lost.push(l.key);continue}
     const{key,c1,c2,text,...rest}=l,o={...rest,kind:"pphoto",src:v.src,label:v.label,card:!!v.card,r:v.card?(l.r||0):0};
