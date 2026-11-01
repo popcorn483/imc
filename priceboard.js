@@ -1,7 +1,7 @@
 /* IMC priceboards: a full-screen menu of shop items and prices, drawn the same way on the foyer TVs and in the hub's preview.
    IMCPrice.render(el, board, {cur:"£"}) then IMCPrice.fit(el) once el is on screen (it picks the column count and text size
    that fill the space best). Light enough for a slow PC: plain HTML and CSS, a few dozen layout checks per board.
-   board = {title, sub, col, img (picture: a web address, or a path that o.asset turns into one), sections:[{name, sizes:[...], items:[{n, note, p:[...]}]}]}  */
+   board = {title, sub, col, imgs (up to 4 pictures: web addresses, or paths that o.asset turns into them), isz (picture size 10-60), ipos (r, l or b), sections:[{name, sizes:[...], items:[{n, note, p:[...]}]}]}  */
 (function () {
   const css = `
 .pbx{position:absolute;inset:0;container-type:size;color:#fff;font-family:Figtree,"Segoe UI",system-ui,sans-serif;overflow:hidden;display:flex;flex-direction:column;padding:4.2cqh 4.4cqw 3.6cqh}
@@ -27,7 +27,10 @@
 .pbx .pbp{display:flex;gap:.3em;flex:none}.pbx .pbp b{font-weight:800;font-variant-numeric:tabular-nums}
 .pbx .pbp b.e{color:#ffffff40}
 .pbx .pbbody{flex:1;min-height:0;display:flex;gap:4cqw}.pbx .pbbody .pbc{flex:1;min-width:0}
-.pbx .pbimg{flex:none;width:30cqw;display:flex;align-items:center;justify-content:center}.pbx .pbimg img{width:100%;height:auto;max-height:100%;object-fit:contain;border-radius:1.6cqh;filter:drop-shadow(0 2cqh 3cqh rgba(0,0,0,.45))}
+.pbx .pbbody.pos-l{flex-direction:row-reverse}.pbx .pbbody.pos-b{flex-direction:column;gap:2.4cqh}
+.pbx .pbimg{flex:none;display:grid;grid-auto-rows:minmax(0,1fr);gap:2cqh 2cqw;min-height:0;align-self:center}.pbx .pos-b .pbimg{width:100%}
+.pbx .pbim{flex:1 1 0;min-height:0;min-width:0;display:flex;align-items:center;justify-content:center}
+.pbx .pbim img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 1.6cqh 2.4cqh rgba(0,0,0,.45))}
 .pbx .pbempty{color:#ffffff99;font-size:3cqh}
 `;
   function addCss() { if (document.getElementById("imc-pb-css")) return; const s = document.createElement("style"); s.id = "imc-pb-css"; s.textContent = css; document.head.appendChild(s); }
@@ -35,7 +38,10 @@
   /* "4.5" → "£4.50"; anything else ("2 for £5", "Free") stays as typed */
   function price(p, cur) { p = String(p || "").trim(); if (/^\d{1,4}([.,]\d{1,2})?$/.test(p)) return cur + Number(p.replace(",", ".")).toFixed(2); return p; }
   function render(el, b, o) {
-    addCss(); const cur = (o && o.cur) || "£", pic = b.img ? (o && o.asset ? o.asset(b.img) : b.img) : "";
+    addCss(); const cur = (o && o.cur) || "£", A = (u) => (o && o.asset ? o.asset(u) : u);
+    const pics = (Array.isArray(b.imgs) ? b.imgs : b.img ? [b.img] : []).filter(Boolean).slice(0, 4).map(A), pos = ["l", "b"].includes(b.ipos) ? b.ipos : "r", sz = Math.max(10, Math.min(60, +b.isz || 30));
+        const gc = pos === "b" ? pics.length : pics.length > 1 && sz >= 35 ? 2 : 1;   /* a wide picture area puts pictures side by side */
+    const pbox = pics.length ? `<div class="pbimg" style="grid-template-columns:repeat(${gc},minmax(0,1fr));${pos === "b" ? `height:${(sz * 0.8).toFixed(1)}cqh` : `width:${sz}cqw;height:${pics.length > gc ? "100%" : Math.min(100, sz * 1.9).toFixed(0) + "%"}`}">${pics.map((u) => `<div class="pbim"><img src="${esc(u)}" alt="" onerror="this.parentNode.remove()"></div>`).join("")}</div>` : "";
     const secs = (b.sections || []).map((s) => ({ ...s, items: (s.items || []).filter((x) => x.n && x.n.trim()) })).filter((s) => s.items.length || s.name);
     const body = secs.map((s) => {
       const n = Math.max(1, (s.sizes || []).length, ...s.items.map((x) => (x.p || []).length));
@@ -43,8 +49,7 @@
       const nm = s.name && s.name.trim().toLowerCase() !== String(b.title || "").trim().toLowerCase() ? s.name : "";   /* no "Deals" under a "Deals" heading */
       return `<section class="pbsec">${nm || sz ? `<div class="pbhd"><h3>${esc(nm)}</h3>${sz}</div>` : ""}${s.items.map((x) => `<div class="pbi"><div class="pbn">${esc(x.n)}${x.note ? `<small>${esc(x.note)}</small>` : ""}</div><span class="pbd"></span><div class="pbp">${Array.from({ length: n }, (_, i) => { const v = price((x.p || [])[i], cur); return `<b class="${v ? "" : "e"}">${v ? esc(v) : "–"}</b>`; }).join("")}</div></div>`).join("")}</section>`;
     }).join("");
-    el.innerHTML = `<div class="pbx col-${esc(String(b.col || "navy").replace(/[^a-z]/g, ""))}"><div class="pbh"><div class="pbt">${esc(b.title || "Price list")}</div>${b.sub ? `<div class="pbs">${esc(b.sub)}</div>` : ""}</div><div class="pbbody"><div class="pbc">${body || '<p class="pbempty">Add some items to see them here.</p>'}</div>${pic ? `<div class="pbimg"><img src="${esc(pic)}" alt="" onerror="this.parentNode.remove()"></div>` : ""}</div></div>`;
-    const im = el.querySelector(".pbimg img"); if (im && !im.complete) im.addEventListener("load", () => fit(el), { once: true });
+    el.innerHTML = `<div class="pbx col-${esc(String(b.col || "navy").replace(/[^a-z]/g, ""))}"><div class="pbh"><div class="pbt">${esc(b.title || "Price list")}</div>${b.sub ? `<div class="pbs">${esc(b.sub)}</div>` : ""}</div><div class="pbbody pos-${pos}"><div class="pbc">${body || '<p class="pbempty">Add some items to see them here.</p>'}</div>${pbox}</div></div>`;
   }
   /* the biggest text that fits, trying 1, 2 and 3 columns */
   function fit(el) {
