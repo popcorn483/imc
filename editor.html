@@ -974,7 +974,7 @@ const GIFT_POSTS=[
   {k:"christmas",n:"Christmas gift card",bg:"festive",frame:{style:"premiere",accent:"#ffc23d"},fx:{snow:true,lights:true},badge:{style:"ribbon",text:"THE PERFECT CHRISTMAS GIFT",c1:"#c8161d",c2:"#ffffff"},title:"WRAP UP A MOVIE",sub:"IMC gift cards: at the kiosk and on imc.ie",amount:""},
   {k:"halloween",n:"Halloween gift card",bg:"spooky",frame:{style:"vignette",accent:"#f39a2b"},fx:{bats:true,fog:true},badge:{style:"ribbon",text:"A SPOOKY TREAT",c1:"#f39a2b",c2:"#1a0b24"},title:"TRICK OR TREAT?",sub:"Treat them to a scary movie night",amount:""},
   {k:"birthday",n:"Birthday gift card",bg:"pastel",frame:{style:"vignette",accent:"#b9a2ff"},fx:{balloons:true,confetti:true},badge:{style:"pill",text:"HAPPY BIRTHDAY",c1:"#ffffff",c2:"#6a4bc4"},title:"THE GIFT OF FILMS",sub:"IMC gift cards: any amount, any film",ink:"#2a1a6e",amount:""}];
-function giftLayers(g){const ink=g.ink||"#ffffff";return[mk("badge","coming",{...g.badge,y:.12,s:g.badge.text.length>18?.78:1,anim:"shine"}),
+function giftLayers(g){const ink=g.ink||"#ffffff";return[mk("badge","coming",{...g.badge,gift:true,y:.12,s:g.badge.text.length>18?.78:1,anim:"shine"}),
   mk("product","giftcard",{theme:"imc",text:g.amount,x:.5,y:.43,s:1.4,r:-.05,anim:"pop",delay:.1}),
   mk("text","title",{text:g.title,size:fitSize(g.title,"display",110,56,940),y:.7,c1:ink,anim:"slide",delay:.2}),mk("text","sub",{text:g.sub,y:.785,c1:ink,anim:"slide",delay:.28})]}
 function applyGift(k){const g=GIFT_POSTS.find(x=>x.k===k);if(!g)return;S.label=g.n;S.bg=g.bg;S.frame={...S.frame,...g.frame};S.motion={...S.motion,fx:{...g.fx}};S.layers=giftLayers(g);
@@ -2107,8 +2107,8 @@ document.addEventListener("click",e=>{if(!e.target.closest("#helpBtn,#helpTip"))
 let tlOpen=false;$("#tlToggle").onclick=()=>{tlOpen=!tlOpen;$("#tlToggle").setAttribute("aria-pressed",tlOpen);syncTimeline()};
 /* ---------- Easy mode in the editor: just three steps (check the words, photo, save or share); the full editor is one click away ---------- */
 let EASY=false;try{EASY=localStorage.getItem("imc-easy")==="1"}catch(e){}
-const ezTextOf=L=>L.kind==="text"||L.kind==="badge"||L.kind==="listing";
-function ezLabel(L){if(L.kind==="listing")return"Film times heading";if(L.kind==="badge"){const n=L.style==="dateline"?"Date or times":BADGES[L.key]?.n||"Badge";return/price/i.test(n)||/^[£€]/.test(L.text||"")?"Price":n}
+const ezTextOf=L=>L.kind==="text"||L.kind==="badge"||L.kind==="listing"||(L.kind==="product"&&L.key==="giftcard");
+function ezLabel(L){if(L.kind==="listing")return"Film times heading";if(L.key==="giftcard")return"Amount on the gift card (e.g. £25, or leave empty)";if(L.gift)return"Top banner";if(L.kind==="badge"){const n=L.style==="dateline"?"Date or times":BADGES[L.key]?.n||"Badge";return/price/i.test(n)||/^[£€]/.test(L.text||"")?"Price":n}
   const t=String(L.text||""),texts=S.layers.filter(l=>!l.hidden&&l.kind==="text").sort((a,b)=>(b.size||0)-(a.size||0));
   if(t.includes("\n"))return"Details (one per line)";if(texts[0]===L)return"Headline";if(L.font==="mono"||(L.size||0)<=34)return"Small print";return"Line of text"}
 function setEasy(on){EASY=on;document.body.classList.toggle("easy",on);try{localStorage.setItem("imc-easy",on?"1":"0")}catch(e){}if(on)renderEasy();if(PHONE.matches)sheet(null);setTimeout(fit,30)}
@@ -2667,6 +2667,7 @@ function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-ha
   else if(h.kind==="luxx")applyLuxx(h);
   else if(h.kind==="luxxkit")applyLuxxKit(h);
   else if(h.kind==="kidsclub")applyKids(h);
+  else if(h.kind==="gift"){applyGift(h.key);const c=S.layers.find(l=>l.key==="giftcard");if(c&&h.amount){c.text=h.amount;draw()}}
   else if(h.kind==="season"){applySeason(h.key,true);if(h.title){const t=S.layers.find(l=>l.kind==="text");if(t)t.text=h.title}}
   else if(h.kind==="listing")applyListing(h);
   else if(h.kind==="reel"){applyPreset(REELS[h.i|0]||REELS[0],true);const b=$('[data-tab="layouts"]');if(b){b.click();setTimeout(()=>{const r=$("#reels");if(r)r.closest(".sec").scrollIntoView({block:"start"})},300)}}

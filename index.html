@@ -2502,6 +2502,7 @@ const EZ_WHAT=[
   ["soon","📅","A film coming soon","Announce a new release"],
   ["luxx","💺","LUXX recliners","Show off the LUXX seats"],
   ["season","✨","A special occasion","Halloween, Christmas and more"],
+  ["gift","🎁","Gift cards","IMC's gift card: general, Christmas, Halloween or birthday"],
   ["welcome","📺","A welcome video for the foyer TVs","Logo reveal between trailers"]];
 const EZ_WHERE={square:["📱","Facebook or Instagram post","Square"],portrait:["📲","Tall Instagram post","4:5"],story:["⬆️","Story or Reel","Tall 9:16 for phones"],wide:["📺","Foyer TV screen","Wide 16:9"],a4:["🖨️","Poster to print","A4 or A3"]};
 let EZ={step:0};
@@ -2513,6 +2514,7 @@ function ezPicks(){const T=todayIso(),w=EZ.what;
   if(w==="kids")return["weekend","week"].map(r=>{const k=kidsChosen(r);return{k:r,icon:r==="weekend"?"🎈":"📆",n:r==="weekend"?"This weekend":"The next 7 days",sub:k.films.length?k.films.map(f=>f.t).join(", "):"No Kids Club showings found",off:!k.films.length}});
   if(w==="deal")return[...imcOffers().map((x,i)=>({k:"o"+i,img:x.file?asset(x.file):"",icon:"🎟️",n:x.name,sub:[x.price,x.when].filter(Boolean).join(" · ")})),...getDeals().filter(d=>!d.imc).map((d,i)=>({k:"d"+getDeals().indexOf(d),icon:"🍿",n:d.name,sub:d.price||"Your deal"}))];
   if(w==="luxx")return LX_TPL.filter(t=>!["foyer","cover"].includes(t.k)).map(t=>({k:t.k,icon:{hero:"🛋️",upgrade:"⬆️",gallery:"🖼️",week:"📅",reel:"🎞️",datenight:"💛"}[t.k]||"💺",n:t.n,sub:t.d}));
+  if(w==="gift"){const m=+todayIso().slice(5,7),first=m===10?"halloween":m>=11?"christmas":"general";return[["general","🎁","Any time","Give the big screen"],["christmas","🎄","Christmas","The perfect Christmas gift"],["halloween","🎃","Halloween","A spooky treat"],["birthday","🎂","Birthday","The gift of films"]].sort((a,b)=>(b[0]===first)-(a[0]===first)).map(([k,icon,n,sub])=>({k,icon,n:n+(k===first?" (now)":""),sub}))}
   if(w==="season"){const now=hSeasonNow().map(x=>x[0]);return[...HSEASONS].sort((a,b)=>(now.includes(b[0])?1:0)-(now.includes(a[0])?1:0)).map(([k,n])=>({k,icon:{halloween:"🎃",fireworks:"🎆",midterm:"🎒",blackfriday:"🏷️",christmas:"🎄",newyear:"🥂",valentines:"💘",stpatricks:"☘️",mothers:"💐",easter:"🐣",fathers:"👔",summer:"☀️",autumn:"🍂"}[k]||"✨",n,sub:now.includes(k)?"On now":""}))}
   return[]}
 function ezFormats(){const w=EZ.what;if(w==="luxx"){const t=LX_TPL.find(x=>x.k===EZ.pick);return t?t.fmts:["square"]}
@@ -2554,7 +2556,8 @@ function easyMake(){const w=EZ.what,p=EZ.pick,fmt=EZ.fmt||"square",mv=EZ.move===
     else if(w==="kids")kidsAd(p,fmt,fmt==="story"&&mv?"reel":undefined);
     else if(w==="deal"){if(p[0]==="o"){const x=imcOffers()[+p.slice(1)];if(x)openEditor({kind:"deal",deal:dealOut(offerDeal(x)),animated:mv,fmt})}else{const d=getDeals()[+p.slice(1)];if(d)openEditor({kind:"deal",deal:dealOut(d),animated:mv,fmt})}}
     else if(w==="luxx"){const td=lxRowsToday();openEditor({kind:"luxxkit",tpl:p,fmt,price:lxPrice(),heading:td.heading,rows:td.rows,week:lxWeek().map(f=>({t:f.t,cert:f.cert,system:f.system,times:f.slots.slice(0,3).map(s=>(s.d===todayIso()?"Today":dShort(s.d))+" "+s.t)}))})}
-    else if(w==="season")seasonDesign(p,fmt)}
+    else if(w==="season")seasonDesign(p,fmt)
+    else if(w==="gift")openEditor({kind:"gift",key:p,fmt})}
   finally{EASY_NEXT=false}
   easyClose()}
 
@@ -3070,6 +3073,7 @@ function startPanel(){const se=hSeasonNow()[0];
     ${se?t("✨",se[1]+" post","Seasonal look with animation",`data-seasonpost="${se[0]}"`):""}
     ${t("🍿","Wednesday Meal Deal",(DOW(todayIso())===3?"On today! ":"")+(wedPrice()?wedPrice()+" · ":"")+"Animated post",'data-wed="square"')}
     ${t("🍿","Promote a deal","Real prices & photos from imc.ie",'data-go="deals"')}
+    ${(()=>{const m=+todayIso().slice(5,7),k=m===10?"halloween":m>=11?"christmas":"general";return t("🎁","Gift card post",{halloween:"Halloween look",christmas:"Christmas look",general:"Your IMC gift card"}[k]+" · animated",`data-giftpost="${k}"`)})()}
     ${t("🎬","Coming-soon film","Pick a film to announce",'data-wo="soon"')}
     ${t("🗳️","This or that poll","Two films, vote with a reaction",'data-poll')}
     ${t("💬","Reply helper","Answers to comments & messages",'data-go="replies"')}
@@ -3082,6 +3086,7 @@ function startPanel(){const se=hSeasonNow()[0];
     ${t("✍️","Caption bank","Ready-to-use captions",'data-go="toolkit"')}
   </div></div>`}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-seasonpost]");if(b)seasonDesign(b.dataset.seasonpost)});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-giftpost]");if(b)openEditor({kind:"gift",key:b.dataset.giftpost,fmt:"square"})});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-reelgo]");if(b)openEditor({kind:"reel",i:+b.dataset.reelgo,fmt:"story"})});
 
 /* ---------- ideas calendar: key dates for the next 12 months, for this cinema's side of the border ---------- */
