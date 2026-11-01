@@ -380,7 +380,7 @@ function prices(){const P=D&&D.prices&&!Array.isArray(D.prices)?D.prices:null;re
 function promos(every){const n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out=[],tk=prices(),all=films();
   const wed=tk.find(t=>/wednesday/i.test(t.name)&&/meal/i.test(t.name)&&!/luxx/i.test(t.name));
   const P=D&&D.prices&&!Array.isArray(D.prices)?D.prices:{},mc=(P.products||[]).find(x=>/^medium combo$/i.test(x.name)&&x.file),hd=f=>f?f.replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)$/i,"data/products/cut/$1.png"):"";
-  if(!LOUNGE&&wed&&dow>=1&&dow<=3)out.push({k:"wed",img:asset("data/products/cut/t1mcb.png"),imgFb:mc&&asset(hd(mc.file)),cut:true,kick:dow===3?"Today only":"Every Wednesday",title:"Wednesday Meal Deal",lines:["Cinema ticket","Medium popcorn","Medium drink"],price:wed.price,priceSub:"ALL FOR"});
+  if(!LOUNGE&&wed&&dow>=1&&dow<=3)out.push({k:"wed",img:asset("data/products/cut/bundle1.png"),imgFb:mc&&asset(hd(mc.file)),cut:true,kick:dow===3?"Today only":"Every Wednesday",title:"Wednesday Meal Deal",lines:["Cinema ticket","Medium popcorn","Medium drink"],price:wed.price,priceSub:"ALL FOR"});
   const kidsF=[],in7=addDays(n.date,6);for(const f of all){const ss=f.sessions.filter(s=>(s.tags||[]).includes("kidsclub")&&s.date>=n.date&&s.date<=in7&&(s.date>n.date||s.time>n.hm));if(ss.length)kidsF.push({f,ss})}
   const kc=tk.find(t=>/^kids club$/i.test(t.name));
   if(!LOUNGE&&kidsF.length)out.push({k:"kids",kick:"Kids Club",title:dow===0||dow>=4?"This weekend":"Coming up",lines:kidsF.slice(0,3).map(x=>cleanTitle(x.f.title)),posters:kidsF.slice(0,4).map(x=>({p:asset(x.f.posterFile)||x.f.poster,b:shortDay(x.ss[0].date).split(" ")[0]+" "+x.ss[0].time})),price:kc&&kc.price,priceSub:"TICKETS"});

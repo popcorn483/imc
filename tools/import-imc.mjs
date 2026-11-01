@@ -659,6 +659,9 @@ const SITE_PICS = {};
     const cutOf = async (f) => { const c = f.replace(/data\/products\/([^/]+)\.(?:jpe?g|png)$/i, "data/products/cut/$1.png"); return c !== f && await fs.access(c).then(() => true, () => false) ? c : f; };
     for (const [k, cat] of [["products", "food"], ["bundles", "deals"]]) for (const x of P[k] || []) if (x.file && !/flexi/i.test(x.file) && !seen.has(x.file)) { seen.add(x.file); lib.push({ id: x.file, cat, title: x.name, file: await cutOf(x.file) }); }
   }
+  /* the combos with the premium gold ticket, made in the repo (data/products/cut/bundle1.png, bundle2.png) */
+  for (const [f, t] of [["data/products/cut/bundle1.png", "Ticket, popcorn and drink"], ["data/products/cut/bundle2.png", "2 tickets, popcorn and 2 drinks"]])
+    if (!seen.has(f) && await fs.access(f).then(() => true, () => false)) { seen.add(f); lib.unshift({ id: f, cat: "deals", title: t, file: f }); }
   await fs.mkdir(path.join(OUT, "library"), { recursive: true });
   await fs.writeFile(path.join(OUT, "library", "index.json"), JSON.stringify(lib, null, 1));
   console.log(`library: ${lib.length} IMC images`);

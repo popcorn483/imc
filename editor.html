@@ -8,7 +8,7 @@
 <title>IMC Photo Editor</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@800&family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@700&family=Fredoka:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@600;700;800&family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@700&family=Fredoka:wght@500;600;700&display=swap">
 <style>
 /* Layout: dark editing suite. Tools left, canvas centre, properties + layers right. Single dark theme so photos read true. */
 :root{
@@ -906,40 +906,69 @@ const foodPhoto=k=>{const f=FOOD.find(x=>x[0]===k);return f?{src:f[1],label:f[2]
 const OLD_FOOD={popcorn:"combo_large",drink:"combo_medium",nachos:"nachos",sweets:"maltesers",icescoop:"ice_twist",icetub:"ice_twist",tray:"tray",pickmix:"pickmix",hotdog:null};
 function foodVisual(k){const own=ownVisual(k==="icescoop"||k==="icetub"?"icecream":k);if(own)return own;const f=OLD_FOOD[k];return f?foodPhoto(f):null}
 /* IMC's ticket + combo bundle photos (sharp, with IMC's own gold tickets): used when a deal is a ticket with popcorn and a drink */
-const BUNDLE={1:"data/products/t1mcb.jpg",2:"data/products/t1scb.jpg"};
+const BUNDLE={1:"data/products/cut/bundle1.png",2:"data/products/cut/bundle2.png"};   /* IMC's combos with the premium gold ticket (tools/rebuild-combos.py + the editor's ticket) */
 function bundleUp(out,P,tk){const tix=out.findIndex(v=>v.draw==="ticket"),cb=out.findIndex(v=>v.src&&/products\/(combotest|lccc|scon)\./.test(v.src));
   if(tix<0||cb<0||(!P.includes("popcorn")&&!P.includes("drink")))return out;const b={src:BUNDLE[(tk||1)>=2||P.filter(x=>x==="drink").length>=2?2:1],label:"Ticket and combo"};return out.filter((v,i)=>i!==tix&&i!==cb).concat([b]).reverse()}
 const PRODUCTS={
-  ticket:{n:"Cinema ticket",c1:"#c9a443",c2:"#1c1408",draw(c,L){
-    /* IMC's own gold ticket, as on their combo photos: brushed gold, three round bites in each short end, a row of punched
-       dots, two thin rules and bold lettering in title case. "2 Tickets" and more get a second ticket stacked behind.
-       Drawn once on its own canvas (cached), then placed with a soft shadow. */
-    const w=420,h=196,pad=60,k=2;let t=String(L.text||"Ticket").trim();if(t===t.toUpperCase())t=t.toLowerCase().replace(/(^|\s)([a-z])/g,(m,a,b)=>a+b.toUpperCase());
-    const n=+((/^(\d+)/.exec(t)||[])[1]||1),stack=n>=2,key=[L.c1,L.c2,t].join("|");
+  ticket:{n:"Cinema ticket",c1:"#c9a443",c2:"#2a1b05",draw(c,L){
+    /* A premium gold cinema ticket in IMC's shape (three round bites in each short end): polished foil with a bevelled
+       edge, an engraved double border, a fine guilloche pattern, punched see-through perforations, a stub with IMC and a
+       serial number, and embossed lettering. "2 Tickets" and more get a second ticket fanned out behind.
+       Drawn once on its own canvas (cached) at 3x, then placed with a soft shadow. */
+    const w=440,h=204,pad=70,k=3;let t=String(L.text||"Ticket").trim();if(t===t.toUpperCase())t=t.toLowerCase().replace(/(^|\s)([a-z])/g,(m,a,b)=>a+b.toUpperCase());
+    const n=+((/^(\d+)/.exec(t)||[])[1]||1),stack=n>=2,key=["v3",L.c1,L.c2,t].join("|");
     if(!TICKET_CACHE[key]){const cv=document.createElement("canvas");cv.width=(w+pad*2)*k;cv.height=(h+pad*2)*k;const x=cv.getContext("2d");x.scale(k,k);x.translate(w/2+pad,h/2+pad);
-      const base=hexRgb(L.c1),mix=t2=>{const f=t2<0?0:255,a=Math.abs(t2);return`rgb(${base.map(v=>Math.round(v+(f-v)*a)).join(",")})`};
-      const shape=()=>{const r=9,bR=13,bs=[-.3,0,.3];x.beginPath();x.moveTo(-w/2+r,-h/2);x.lineTo(w/2-r,-h/2);x.quadraticCurveTo(w/2,-h/2,w/2,-h/2+r);
-        for(const b of bs){const yy=b*h;x.lineTo(w/2,yy-bR);x.arc(w/2,yy,bR,-Math.PI/2,Math.PI/2,true)}
-        x.lineTo(w/2,h/2-r);x.quadraticCurveTo(w/2,h/2,w/2-r,h/2);x.lineTo(-w/2+r,h/2);x.quadraticCurveTo(-w/2,h/2,-w/2,h/2-r);
-        for(const b of[...bs].reverse()){const yy=b*h;x.lineTo(-w/2,yy+bR);x.arc(-w/2,yy,bR,Math.PI/2,-Math.PI/2,true)}
-        x.lineTo(-w/2,-h/2+r);x.quadraticCurveTo(-w/2,-h/2,-w/2+r,-h/2);x.closePath()};
-      const gold=()=>{const g=x.createLinearGradient(-w/2,h/2,w/2,-h/2);[[0,-.38],[.22,.12],[.42,.52],[.6,.08],[.82,-.42],[1,-.2]].forEach(([o,v])=>g.addColorStop(o,mix(v)));return g};
-      const one=front=>{shape();x.fillStyle=gold();x.fill();
-        if(front&&stack){x.lineWidth=5;x.strokeStyle="rgba(15,10,4,.92)";x.stroke()}else{x.lineWidth=1.4;x.strokeStyle="rgba(70,45,8,.45)";x.stroke()}};
-      if(stack){x.save();x.translate(46,30);x.rotate(.035);one(false);x.restore()}
-      one(true);
-      if(true){/* fine brushed streaks across the foil */
-        x.save();shape();x.clip();const rr2=rng(77);x.globalAlpha=.025;for(let i=0;i<60;i++){x.fillStyle=rr2()<.5?"#fff":"#000";x.fillRect(-w/2,-h/2+rr2()*h,w,.6+rr2())}x.restore()}
-      /* punched dots and rules */
-      const dx=w/2-64;x.fillStyle=L.c2;for(let i=0;i<7;i++){x.beginPath();x.arc(dx,-h/2+26+i*(h-52)/6,6.2,0,TAU);x.fill()}
-      x.strokeStyle=L.c2;x.lineWidth=2;x.globalAlpha=.85;x.beginPath();x.moveTo(-w/2+64,-h/2+40);x.lineTo(dx-58,-h/2+40);x.moveTo(-w/2+34,h/2-40);x.lineTo(dx-28,h/2-40);x.stroke();x.globalAlpha=1;
-      /* lettering */
-      const parts=t.length>9?split2(t):[t],room=dx-(-w/2)-70,cx=(-w/2+dx)/2;let fs=parts.length>1?44:56;const F=s2=>`800 ${s2}px Montserrat,${FONTS.body}`;x.font=F(fs);
-      while(Math.max(...parts.map(q=>tw(x,q,0)))>room&&fs>20){fs-=2;x.font=F(fs)}
-      x.fillStyle=L.c2;x.textBaseline="middle";const lh=fs*1.02;parts.forEach((q,i)=>ft(x,q,cx,(i-(parts.length-1)/2)*lh+2,0,"center"));
+      const base=hexRgb(L.c1),mix=v=>{const f=v<0?0:255,a=Math.abs(v);return`rgb(${base.map(q=>Math.round(q+(f-q)*a)).join(",")})`},mixa=(v,al)=>{const f=v<0?0:255,a=Math.abs(v);return`rgba(${base.map(q=>Math.round(q+(f-q)*a)).join(",")},${al})`};
+      const stub=w/2-92;
+      const shape=(ww,hh,r,bR)=>{const bs=[-.3,0,.3];x.beginPath();x.moveTo(-ww/2+r,-hh/2);x.lineTo(ww/2-r,-hh/2);x.quadraticCurveTo(ww/2,-hh/2,ww/2,-hh/2+r);
+        for(const b of bs){const yy=b*hh;x.lineTo(ww/2,yy-bR);x.arc(ww/2,yy,bR,-Math.PI/2,Math.PI/2,true)}
+        x.lineTo(ww/2,hh/2-r);x.quadraticCurveTo(ww/2,hh/2,ww/2-r,hh/2);x.lineTo(-ww/2+r,hh/2);x.quadraticCurveTo(-ww/2,hh/2,-ww/2,hh/2-r);
+        for(const b of[...bs].reverse()){const yy=b*hh;x.lineTo(-ww/2,yy+bR);x.arc(-ww/2,yy,bR,Math.PI/2,-Math.PI/2,true)}
+        x.lineTo(-ww/2,-hh/2+r);x.quadraticCurveTo(-ww/2,-hh/2,-ww/2+r,-hh/2);x.closePath()};
+      const outline=()=>shape(w,h,12,15);
+      const ticket=(back)=>{x.save();
+        /* polished foil: a diagonal run of light and dark bands, then a soft glow top-left */
+        outline();const g=x.createLinearGradient(-w/2,h/2,w/2,-h/2);
+        [[0,-.62],[.14,-.18],[.3,.38],[.4,.05],[.52,-.4],[.66,.18],[.78,.5],[.9,-.12],[1,-.55]].forEach(([o,v])=>g.addColorStop(o,mix(back?v-.18:v)));x.fillStyle=g;x.fill();
+        x.clip();const rg=x.createRadialGradient(-w*.18,-h*.5,10,-w*.18,-h*.5,w*.6);rg.addColorStop(0,"rgba(255,246,205,.28)");rg.addColorStop(1,"rgba(255,250,225,0)");x.fillStyle=rg;x.fillRect(-w/2,-h/2,w,h);
+        /* fine grain */
+        const r1=rng(31);for(let i=0;i<900;i++){x.fillStyle=r1()<.5?"rgba(255,255,255,.07)":"rgba(60,35,0,.07)";x.fillRect(-w/2+r1()*w,-h/2+r1()*h,1,1)}
+        if(!back){
+          /* guilloche: fine interlaced waves, very faint, on the main part */
+          x.save();x.beginPath();x.rect(-w/2,-h/2,stub+w/2,h);x.clip();x.lineWidth=.6;x.strokeStyle=mixa(-.55,.16);
+          for(let j=0;j<14;j++){x.beginPath();for(let X=-w/2;X<=stub;X+=3){const Y=-h/2+14+j*(h-28)/13+Math.sin((X+j*9)/17)*5*Math.sin(X/53+j);X===-w/2?x.moveTo(X,Y):x.lineTo(X,Y)}x.stroke()}x.restore();
+          /* engraved double border, following the ticket's shape */
+          x.lineWidth=1.6;x.strokeStyle=mixa(-.62,.75);shape(w-26,h-26,8,11);x.stroke();
+          x.lineWidth=1;x.strokeStyle="rgba(255,248,215,.55)";shape(w-23,h-23,9,12.5);x.stroke();
+          x.lineWidth=.8;x.strokeStyle=mixa(-.62,.45);shape(w-34,h-34,6,9);x.stroke()}
+        x.restore();
+        /* bevelled edge: light along the top-left, shade along the bottom-right */
+        x.save();outline();x.clip();const bv=x.createLinearGradient(-w/2,-h/2,w/2,h/2);bv.addColorStop(0,"rgba(255,252,235,.9)");bv.addColorStop(.5,"rgba(255,252,235,.15)");bv.addColorStop(.5,"rgba(70,40,0,.15)");bv.addColorStop(1,"rgba(60,35,0,.75)");
+        x.lineWidth=5;x.strokeStyle=bv;outline();x.stroke();x.restore();
+        x.lineWidth=1.2;x.strokeStyle=mixa(-.7,.9);outline();x.stroke()};
+      if(stack){x.save();x.translate(30,-30);x.rotate(.09);ticket(true);x.restore();x.save();x.shadowColor="rgba(0,0,0,.5)";x.shadowBlur=14;x.shadowOffsetY=4;outline();x.fillStyle=mix(-.3);x.fill();x.restore()}
+      ticket(false);
+      /* perforation: a column of round holes punched right through */
+      x.save();x.globalCompositeOperation="destination-out";for(let i=0;i<9;i++){x.beginPath();x.arc(stub,-h/2+20+i*(h-40)/8,3.6,0,TAU);x.fill()}x.restore();
+      x.save();x.strokeStyle=mixa(-.6,.6);x.lineWidth=.8;for(let i=0;i<9;i++){x.beginPath();x.arc(stub,-h/2+20+i*(h-40)/8,3.9,Math.PI*.15,Math.PI*1.15);x.stroke()}x.restore();
+      /* embossed text: a light edge below-right, a dark edge above-left, the ink on top */
+      const emb=(str,X,Y,font,sp,al)=>{x.font=font;x.textBaseline="middle";
+        x.fillStyle="rgba(255,250,225,.7)";ft(x,str,X+.9,Y+1.2,sp,al);x.fillStyle="rgba(40,22,0,.35)";ft(x,str,X-.6,Y-.8,sp,al);x.fillStyle=L.c2;ft(x,str,X,Y,sp,al)};
+      const cx=(-w/2+stub)/2,room=stub-(-w/2)-78;
+      emb("IMC  CINEMAS",cx,-h/2+38,`700 12px Montserrat,${FONTS.body}`,4.5,"center");
+      const parts=t.length>9?split2(t):[t];let fs=parts.length>1?42:54;const F=s2=>`800 ${s2}px Montserrat,${FONTS.body}`;x.font=F(fs);
+      while(Math.max(...parts.map(q=>tw(x,q,.5)))>room&&fs>20){fs-=2;x.font=F(fs)}
+      const lh=fs*1.0;parts.forEach((q,i)=>emb(q,cx,(i-(parts.length-1)/2)*lh+4,F(fs),.5,"center"));
+      x.fillStyle=L.c2;x.font=`700 11px ${FONTS.body}`;emb("★   ★   ★",cx,h/2-36,`700 11px ${FONTS.body}`,0,"center");
+      /* stub: IMC up the middle, a serial number either side */
+      const sx=(stub+w/2)/2,ser=String(100000+((t.split("").reduce((a,ch)=>a*31+ch.charCodeAt(0),7)>>>0)%899999)).slice(0,6);
+      x.save();x.translate(sx,0);x.rotate(-Math.PI/2);emb("IMC",0,2,`800 30px Montserrat,${FONTS.body}`,4,"center");
+      emb("No. "+ser,0,-25,`600 9px ${FONTS.mono}`,1.5,"center");emb("ADMIT",0,27,`700 9px Montserrat,${FONTS.body}`,3,"center");x.restore();
+      /* a polished sheen across the whole ticket */
+      x.save();x.globalCompositeOperation="source-atop";const sh=x.createLinearGradient(-w/2,-h/2,w*.2,h/2);sh.addColorStop(0,"rgba(255,255,255,0)");sh.addColorStop(.42,"rgba(255,255,255,0)");sh.addColorStop(.5,"rgba(255,255,255,.32)");sh.addColorStop(.58,"rgba(255,255,255,0)");x.fillStyle=sh;x.fillRect(-w,-h,w*2,h*2);x.restore();
       TICKET_CACHE[key]=cv}
-    const cv=TICKET_CACHE[key];c.save();c.shadowColor="rgba(0,0,0,.4)";c.shadowBlur=24;c.shadowOffsetY=12;c.drawImage(cv,-w/2-pad,-h/2-pad,w+pad*2,h+pad*2);c.restore();
-    return{w:stack?w+46:w,h:stack?h+30:h}}}
+    const cv=TICKET_CACHE[key];c.save();c.shadowColor="rgba(0,0,0,.45)";c.shadowBlur=28;c.shadowOffsetY=14;c.drawImage(cv,-w/2-pad,-h/2-pad,w+pad*2,h+pad*2);c.restore();
+    return{w:stack?w+30:w,h:stack?h+36:h}}}
 };
 window.__imcTest={drawProduct:(...a)=>drawProduct(...a),foodVis:(...a)=>foodVis(...a)};   /* testing only */
 const TICKET_CACHE={};try{document.fonts.ready.then(()=>{for(const k in TICKET_CACHE)delete TICKET_CACHE[k];typeof draw==="function"&&draw()})}catch(e){}   /* redraw tickets once the lettering font has loaded */
@@ -2234,7 +2263,7 @@ function cutoutWhite(img){const w=img.naturalWidth||img.width,h=img.naturalHeigh
 /* clean cut-out made by tools/cutout.py (data/products/cut/<name>.png: background and shadow removed, no AI-invented detail), used when it exists */
 const hdOf=src=>String(src||"").replace(/data\/products\/([^/?]+)\.(?:jpe?g|png)(\?.*)?$/i,"data/products/cut/$1.png");
 function ppLoad(src,card){const key=src+(card?"|card":"");if(PPH[key])return PPH[key];if(/^fl:/.test(src)&&!FLOGO[src.slice(3)]){flLoad(src.slice(3)).then(()=>{delete PPH[key];draw()});return{img:null}}if(/^fl:/.test(src))card=true;const e=PPH[key]={img:null};const tries=[...new Set([hdOf(src),src])];
-  const attempt=i=>{if(i>=tries.length){e.err=true;return}const im=new Image();im.crossOrigin="anonymous";im.onload=()=>{const cut=tries[i]!==src;try{e.img=card||cut?im:cutoutWhite(im)}catch(err){e.img=im}e.hd=cut;draw();renderThumbs&&renderThumbs()};im.onerror=()=>attempt(i+1);im.src=asset(tries[i])};attempt(0);return e}
+  const attempt=i=>{if(i>=tries.length){e.err=true;return}const im=new Image();im.crossOrigin="anonymous";im.onload=()=>{const cut=tries[i]!==src||/\/cut\//.test(src);try{e.img=card||cut?im:cutoutWhite(im)}catch(err){e.img=im}e.hd=cut;draw();renderThumbs&&renderThumbs()};im.onerror=()=>attempt(i+1);im.src=asset(tries[i])};attempt(0);return e}
 function drawPPhoto(c,L){const e=ppLoad(L.src,L.card),H=440;if(!e.img){c.strokeStyle="rgba(255,255,255,.4)";c.setLineDash([10,8]);c.lineWidth=3;rr(c,-170,-H/2,340,H,24);c.stroke();c.setLineDash([]);return{w:340,h:H}}
   const im=e.img;
   if(L.card){/* real photo as a framed card: cover-cropped 4:5, white border, soft shadow */
