@@ -254,10 +254,11 @@ let seedRnd=null;
 function seeded(str){let h=1779033703^str.length;for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),3432918353);h=h<<13|h>>>19}return()=>{h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return((h^=h>>>16)>>>0)/4294967296}}
 const rand=()=>seedRnd?seedRnd():Math.random();
 const newGap=()=>WF==="r"?2+Math.floor(rand()*3):Math.max(1,+WF||1);let gap=newGap();
-let forcedIdent=null,flipT=0,vidStop=null,D=null,T={},base="",queue=[],steps=[],si=0,player=null,timer=null,ytReady=null,muted=!SOUND,lastLoad=0,lastStep=Date.now(),promoI=0,offline=false;
+let clockOff=0,clockAt=0,forcedIdent=null,flipT=0,vidStop=null,D=null,T={},base="",queue=[],steps=[],si=0,player=null,timer=null,ytReady=null,muted=!SOUND,lastLoad=0,lastStep=Date.now(),promoI=0,offline=false;
 
 /* ---------- time and data ---------- */
-function londonNow(){const p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date()))p[x.type]=x.value;return{date:`${p.year}-${p.month}-${p.day}`,hm:`${p.hour}:${p.minute}`,s:+p.second}}
+let PLAN_AT=null;   /* while a running order is worked out, "now" is the start of the half hour, so every TV gets the same order whenever it starts */
+function londonNow(){const p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date(PLAN_AT??(Date.now()+clockOff))))p[x.type]=x.value;return{date:`${p.year}-${p.month}-${p.day}`,hm:`${p.hour}:${p.minute}`,s:+p.second}}
 const mins=hm=>{const[a,b]=hm.split(":").map(Number);return a*60+b};
 const addDays=(d,n)=>{const x=new Date(d+"T12:00");x.setDate(x.getDate()+n);return x.toISOString().slice(0,10)};
 const CK="imc-foyer-cache-"+SITE;
@@ -299,7 +300,7 @@ function buildQueue(){const today=londonNow().date;
   if(SHUF){for(let i=L.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[L[i],L[j]]=[L[j],L[i]]}}
   else if(ORD.length){const ix=k=>{const i=ORD.indexOf(k);return i<0?1e6:i};L=L.map((f,i)=>[f,i]).sort((a,b)=>ix(a[0].key)-ix(b[0].key)||a[1]-b[1]).map(a=>a[0])}
   return L}
-function queueList(){const all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.length).map(f=>({...f,sessions:f.luxxS})):films(),in7=new Date(Date.now()+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
+function queueList(){const all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.length).map(f=>({...f,sessions:f.luxxS})):films(),in7=new Date((PLAN_AT??(Date.now()+clockOff))+7*864e5).toLocaleDateString("en-CA",{timeZone:"Europe/London"});
   let list=MODE==="pick"&&IDS.length?IDS.map(k=>all.find(f=>f.key===k)).filter(Boolean):all.filter(f=>{const u=upcoming(f);return u.length&&u[0].date<=in7||(SOON&&f.sources.has("soon"))});
   const nt=t=>String(t||"").toLowerCase().replace(/^(sensory|autism friendly|parent (and|&) baby)[:\s-]*/,"").replace(/\s+-\s+.*$|\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
   list=list.filter(f=>safety(f).ok).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer||nt(x.title)===nt(f.title))===i);
@@ -435,7 +436,7 @@ let joined=false,stepWall=0,stepLen=0,DUR={},syncOn=false,syncBoard=null,plan=nu
 const TRAILER_DEFAULT=150;
 /* the website's clock, not this PC's: every TV uses the same time even if a PC clock is a few seconds out.
    Several quick requests narrow down when the server's second ticks over, to within a fraction of a second. */
-let clockOff=0,clockAt=0;
+
 async function syncClock(){let lo=-Infinity,hi=Infinity;
   for(let i=0;i<8;i++){try{const t0=Date.now(),r=await fetch("foyer.html?clk="+t0+i,{method:"HEAD",cache:"no-store"}),t1=Date.now(),d=Date.parse(r.headers.get("date")||"");
     if(d){lo=Math.max(lo,d-t1);hi=Math.min(hi,d+1000-t0)}}catch(e){}await new Promise(r=>setTimeout(r,113+i*37))}
@@ -445,9 +446,9 @@ function dayMs(){const t=nowMs(),p={};for(const x of new Intl.DateTimeFormat("en
 function halfHour(){const n=londonNow();return n.date+"T"+n.hm.slice(0,2)+(+n.hm.slice(3,5)>=30?"b":"a")}
 function planStamp(){return[halfHour(),Q.toString(),D&&(D.updated||D.generated||D.fetched||""),Object.keys(DUR).length,STUDIO.map(x=>x.id+":"+(x.len||0)).join(",")].join("|")}
 function boardPlan(){const ds=dayState();if(!ds.rows.length)return null;const pages=Math.min(3,Math.ceil(ds.rows.length/9));return{pages,secs:pages>1?9:13}}
-function buildPlan(){const stamp=planStamp(),n=londonNow();
-  seedRnd=seeded(n.date+"|"+Q.toString());since=0;gap=newGap();queue=buildQueue();const st=buildSteps();seedRnd=null;
-  const bp=boardPlan(),identSecs=Math.max(8,...WEL.map(w=>w.dur||8))+.3,promoSecs=Math.max(10,...ADVERTS.map(a=>a.secs||10));
+function buildPlan(){const stamp=planStamp(),n=londonNow();PLAN_AT=nowMs()-dayMs()%1800000;
+  try{seedRnd=seeded(n.date+"|"+Q.toString());since=0;gap=newGap();queue=buildQueue();var st=buildSteps(),bp=boardPlan()}finally{seedRnd=null;PLAN_AT=null}
+  const identSecs=Math.max(8,...WEL.map(w=>w.dur||8))+.3,promoSecs=Math.max(10,...ADVERTS.map(a=>a.secs||10));
   let pi=0,ii=0;const steps=[],d=[];
   for(const x of st){let sec=0;
     if(x.k==="card")sec=(upcoming(x.f).length||x.f.sources?.has("soon"))?CARD:0;
@@ -459,7 +460,8 @@ function buildPlan(){const stamp=planStamp(),n=londonNow();
     else if(x.k==="ident"){sec=identSecs;x.ii=ii++}
     if(sec>0){steps.push(x);d.push(Math.round(sec*1000))}}
   const starts=[];let t=0;for(const v of d){starts.push(t);t+=v}
-  plan={stamp,steps,d,starts,L:t,bp,nPromo:pi,nIdent:ii};playingKey=null}
+  let h=7;for(let i=0;i<steps.length;i++)h=Math.imul(h^((steps[i].k+(steps[i].f?steps[i].f.key||"":"")+d[i]).split("").reduce((a,c)=>Math.imul(a,31)+c.charCodeAt(0)|0,0)),2654435761);
+  plan={stamp,steps,d,starts,L:t,bp,nPromo:pi,nIdent:ii,code:(h>>>0).toString(36).slice(-4).toUpperCase()};playingKey=null}
 async function syncTick(){clearTimeout(syncT);
   if(await applyPending())return;
   if(!plan||plan.stamp!==planStamp())buildPlan();
@@ -481,6 +483,7 @@ function syncStart(x,loop,off,left){lastStep=Date.now();
   if(x.k==="ident"){forcedIdent=loop*plan.nIdent+x.ii;return playIdent()}
   if(x.k==="trailer"){const local=x.f.studio&&!x.f.studio.url;if(netDown()&&!local){syncBoard=boardPlan();return playBoard()}
     return x.f.studio?playStudio(x.f,off):playTrailer(x.f,off)}}
+window.__foyerPlanAt=shift=>{const o=clockOff;clockOff=o+shift;buildPlan();const r={hm:londonNow().hm,code:plan.code,n:plan.steps.length,L:plan.L};clockOff=o;plan=null;playingKey=null;return r};   /* testing only: the running order as if it were built "shift" ms later */
 window.__foyerNow=()=>({key:playingKey&&playingKey.split("#")[1],step:plan&&playingKey?plan.steps[+playingKey.split(":").pop()].k:null,L:plan&&plan.L});   /* for checking TVs are in step */
 async function loadDurations(){const j=await getJson("data/durations.json");if(j){delete j._base;DUR=j}}
 /* everyone fetches new listings on the same half hour, so the plan changes on every TV together */
@@ -603,7 +606,7 @@ function infoBox(){let el=$("#infobox");if(el){el.remove();return}el=document.cr
   const rows=[["Player version",BUILT],["Cinema",(D&&D.cinema)||SITE],["Clock",clockAt?`shared clock (this PC's clock is ${Math.abs(clockOff/1000).toFixed(1)} s ${clockOff>0?"slow":"fast"})`:"this PC's own (shared clock not reached yet)"],
     ["Settings from the manager's PC",remote?"yes, saved "+f(remote.at):lastRemote&&lastRemote.ok===false?"none found yet":"not checked yet"],["Last checked for settings",lastRemote?f(lastRemote.at):"not yet"],
     ["Settings in use",remote&&new URLSearchParams(remote.q).toString()===Q.toString()?"the manager's (up to date)":pendingQ?"new settings waiting: they start at the next screen":"this PC's own"],
-    ["All TVs in step",SYNC?(syncOn?"on":"on (starts after Start)"):"off"],["Internet",offline||navigator.onLine===false?"down: showing saved listings":"ok"],["Listings updated",D&&D.updated?f(D.updated):"unknown"],["Sound",muted?"off (click once to turn on)":"on"],["Trailers that showed nothing today",badList().map(x=>x.title+" ("+x.why+")").join("; ")||"none"]];
+    ["All TVs in step",SYNC?(syncOn?"on":"on (starts after Start)"):"off"],...(SYNC&&plan?[["Running order code",plan.code+" (the same on every TV means they have the same running order)"],["Clock vs website",(clockOff>=0?"+":"")+(clockOff/1000).toFixed(1)+" s (corrected for)"]]:[]),["Internet",offline||navigator.onLine===false?"down: showing saved listings":"ok"],["Listings updated",D&&D.updated?f(D.updated):"unknown"],["Sound",muted?"off (click once to turn on)":"on"],["Trailers that showed nothing today",badList().map(x=>x.title+" ("+x.why+")").join("; ")||"none"]];
   el.innerHTML="<b>Foyer player information</b><table>"+rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(String(r[1]))}</td></tr>`).join("")+"</table><small>Press I again to close. Press F5 to reload if something looks out of date.</small>";document.body.appendChild(el)}
 async function applyPending(){
   if(pendingReload){try{sessionStorage.setItem("imc-foyer-auto","1")}catch(e){}location.reload();return true}
