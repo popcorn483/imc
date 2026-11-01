@@ -134,14 +134,15 @@ body.lite #card .bgimg{filter:none;opacity:.22}
 #hours .hl span{background:var(--panel);border:1px solid var(--line);border-radius:1.2vh;padding:1.2vh 1.6vw;font:700 2.6vh var(--f-body)}#hours .hl b{font-family:var(--f-mono);color:var(--gold);margin-right:.8vw}
 
 /* ---------- live strip: logo · ticker · next show · clock ---------- */
-#strip{position:absolute;left:0;right:0;bottom:0;height:var(--strip);display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:2.2vw;padding:0 2.4vw;background:#05071a;z-index:5}
+#strip{position:absolute;left:0;right:0;bottom:0;height:var(--strip);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:2.2vw;padding:0 2.4vw;background:#05071a;z-index:5}
 #strip::before{content:"";position:absolute;left:0;right:0;top:0;height:.5vh;background:var(--stripe)}
 #strip img{height:5.6vh}
 .ticker{overflow:hidden;white-space:nowrap;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
 .ticker div{display:inline-block;padding-left:100%;font:600 2.6vh var(--f-body);color:#e9edff;animation:tick linear infinite}
 .ticker i{font-style:normal;color:var(--gold);margin:0 2.4vw}
 .nextshow{font:600 2.1vh var(--f-body);color:var(--muted);text-align:right;line-height:1.2;max-width:46vh}.nextshow b{display:block;color:#fff;font:800 2.7vh var(--f-display);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.clock{font:600 4.6vh var(--f-mono);font-variant-numeric:tabular-nums;padding-left:2vw;border-left:1px solid var(--line)}
+/* no clock on the foyer TVs (kept in the page for the timers, but never shown) */
+.clock{display:none!important}
 #prog{position:absolute;left:0;bottom:0;height:.45vh;background:rgba(255,255,255,.45);width:0}
 body.nostrip #strip{display:none}
 
@@ -170,7 +171,7 @@ body.nostrip #strip{display:none}
   .brow .t{font-size:5.4vw}.brow .f{font-size:4.6vw}.brow .s{font-size:2.2vw}.brow .s b{font-size:5vw}.brow .st{min-width:0;font-size:2.4vw;padding:1.4vw 1.6vw}
   .bfoot{font-size:2.6vw}.bfoot svg{width:14vw;height:14vw}#card .poster{height:36vh}.qrbox svg{width:11vh;height:11vh}
   #promo .pin{grid-template-columns:1fr;text-align:center;justify-items:center}#promo h2{font-size:8vh}#promo .pl{font-size:2.6vh}#promo .posters div{width:15vh}#promo .bigqr svg{width:32vh;height:32vh}
-  #strip{grid-template-columns:auto minmax(0,1fr) auto}.nextshow{display:none}.clock{font-size:3.4vh}
+  #strip{grid-template-columns:auto minmax(0,1fr)}.nextshow{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important}.layer{transition:none}}
 body.lite *{animation-duration:.01s!important}body.lite .ticker div{animation-duration:var(--td)!important}body.lite .st.seat,body.lite .soonchip{animation:none!important}
