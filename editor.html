@@ -8,7 +8,7 @@
 <title>IMC Photo Editor</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@700&family=Fredoka:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@800&family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@700&family=Fredoka:wght@500;600;700&display=swap">
 <style>
 /* Layout: dark editing suite. Tools left, canvas centre, properties + layers right. Single dark theme so photos read true. */
 :root{
@@ -910,33 +910,36 @@ const BUNDLE={1:"data/products/t1mcb.jpg",2:"data/products/t1scb.jpg"};
 function bundleUp(out,P,tk){const tix=out.findIndex(v=>v.draw==="ticket"),cb=out.findIndex(v=>v.src&&/products\/(combotest|lccc|scon)\./.test(v.src));
   if(tix<0||cb<0||(!P.includes("popcorn")&&!P.includes("drink")))return out;const b={src:BUNDLE[(tk||1)>=2||P.filter(x=>x==="drink").length>=2?2:1],label:"Ticket and combo"};return out.filter((v,i)=>i!==tix&&i!==cb).concat([b]).reverse()}
 const PRODUCTS={
-  ticket:{n:"Cinema ticket",c1:"#ffc23d",c2:"#3a2306",draw(c,L){
-    /* a gold foil admission ticket in the style of IMC's own: notched corners, a metallic sheen, punched perforations,
-       engraved lettering and a stub. Drawn once on its own canvas (so the holes are real see-through holes), then placed with a soft shadow. */
-    const w=420,h=184,R=24,stub=96,k=2,pad=4,key=[L.c1,L.c2,L.text||""].join("|");
+  ticket:{n:"Cinema ticket",c1:"#c9a443",c2:"#1c1408",draw(c,L){
+    /* IMC's own gold ticket, as on their combo photos: brushed gold, three round bites in each short end, a row of punched
+       dots, two thin rules and bold lettering in title case. "2 Tickets" and more get a second ticket stacked behind.
+       Drawn once on its own canvas (cached), then placed with a soft shadow. */
+    const w=420,h=196,pad=60,k=2;let t=String(L.text||"Ticket").trim();if(t===t.toUpperCase())t=t.toLowerCase().replace(/(^|\s)([a-z])/g,(m,a,b)=>a+b.toUpperCase());
+    const n=+((/^(\d+)/.exec(t)||[])[1]||1),stack=n>=2,key=[L.c1,L.c2,t].join("|");
     if(!TICKET_CACHE[key]){const cv=document.createElement("canvas");cv.width=(w+pad*2)*k;cv.height=(h+pad*2)*k;const x=cv.getContext("2d");x.scale(k,k);x.translate(w/2+pad,h/2+pad);
-      const shape=(ww,hh,r)=>{x.beginPath();x.moveTo(-ww/2+r,-hh/2);x.lineTo(ww/2-r,-hh/2);x.arc(ww/2,-hh/2,r,Math.PI,Math.PI/2,true);x.lineTo(ww/2,hh/2-r);x.arc(ww/2,hh/2,r,-Math.PI/2,Math.PI,true);x.lineTo(-ww/2+r,hh/2);x.arc(-ww/2,hh/2,r,0,-Math.PI/2,true);x.lineTo(-ww/2,-hh/2+r);x.arc(-ww/2,-hh/2,r,Math.PI/2,0,true);x.closePath()};
-      const base=hexRgb(L.c1),mix=(t)=>{const f=t<0?0:255,a=Math.abs(t);return`rgb(${base.map(v=>Math.round(v+(f-v)*a)).join(",")})`};
-      const g=x.createLinearGradient(-w/2,-h/2,w/2,h/2);[[0,-.55],[.16,.22],[.34,-.28],[.5,.5],[.64,-.22],[.82,.16],[1,-.52]].forEach(([o,t])=>g.addColorStop(o,mix(t)));
-      shape(w,h,R);x.fillStyle=g;x.fill();x.lineWidth=2.4;x.strokeStyle=mix(-.62);x.stroke();
-      /* fine brushed-foil streaks */
-      x.save();shape(w,h,R);x.clip();const rr2=rng(77);x.globalAlpha=.07;for(let i=0;i<70;i++){const yy=-h/2+rr2()*h;x.fillStyle=rr2()<.5?"#fff":"#000";x.fillRect(-w/2,yy,w,.6+rr2()*1.2)}x.restore();
-      /* raised edge: a light line just inside the edge and a darker one inside that */
-      x.lineWidth=2;x.strokeStyle="rgba(255,255,255,.5)";shape(w-6,h-6,R+3);x.stroke();x.strokeStyle="rgba(60,35,5,.38)";x.lineWidth=1.6;shape(w-20,h-20,R+10);x.stroke();
-      /* perforations between ticket and stub, punched right through */
-      x.globalCompositeOperation="destination-out";for(let yy=-h/2+16;yy<=h/2-16;yy+=13){x.beginPath();x.arc(w/2-stub,yy,3.1,0,TAU);x.fill()}x.globalCompositeOperation="source-over";
-      /* engraved lettering: a light edge below, the colour on top */
-      const t=(L.text||"ADMIT ONE").toUpperCase(),parts=split2(t),room=w-stub-70;let fs=parts.length>1?52:60;x.font=`800 ${fs}px ${FONTS.display}`;while(Math.max(...parts.map(p=>tw(x,p,2)))>room&&fs>22){fs-=2;x.font=`800 ${fs}px ${FONTS.display}`}
-      const cx=-stub/2,ys=parts.length>1?[-fs*.06,fs*.86]:[fs*.36];
-      x.fillStyle="rgba(255,248,220,.55)";parts.forEach((p,i)=>ft(x,p,cx,ys[i]+1.6,2,"center"));x.fillStyle=L.c2;parts.forEach((p,i)=>ft(x,p,cx,ys[i],2,"center"));
-      x.strokeStyle=L.c2;x.globalAlpha=.45;x.lineWidth=1.4;for(const yy of[-h/2+30,h/2-30]){x.beginPath();x.moveTo(-w/2+42,yy);x.lineTo(w/2-stub-22,yy);x.stroke()}x.globalAlpha=1;
-      /* stub: IMC, sideways */
-      x.save();x.translate(w/2-stub/2,0);x.rotate(-Math.PI/2);x.font=`800 26px ${FONTS.display}`;x.fillStyle="rgba(255,248,220,.55)";ft(x,"IMC",0,10.6,6,"center");x.fillStyle=L.c2;ft(x,"IMC",0,9,6,"center");x.restore();
-      /* a soft sheen across the foil */
-      x.globalCompositeOperation="source-atop";const sh=x.createLinearGradient(-w/2,-h/2,w*.1,h/2);sh.addColorStop(0,"rgba(255,255,255,0)");sh.addColorStop(.45,"rgba(255,255,255,.28)");sh.addColorStop(.55,"rgba(255,255,255,0)");x.fillStyle=sh;x.fillRect(-w/2,-h/2,w,h);x.globalCompositeOperation="source-over";
+      const base=hexRgb(L.c1),mix=t2=>{const f=t2<0?0:255,a=Math.abs(t2);return`rgb(${base.map(v=>Math.round(v+(f-v)*a)).join(",")})`};
+      const shape=()=>{const r=9,bR=13,bs=[-.3,0,.3];x.beginPath();x.moveTo(-w/2+r,-h/2);x.lineTo(w/2-r,-h/2);x.quadraticCurveTo(w/2,-h/2,w/2,-h/2+r);
+        for(const b of bs){const yy=b*h;x.lineTo(w/2,yy-bR);x.arc(w/2,yy,bR,-Math.PI/2,Math.PI/2,true)}
+        x.lineTo(w/2,h/2-r);x.quadraticCurveTo(w/2,h/2,w/2-r,h/2);x.lineTo(-w/2+r,h/2);x.quadraticCurveTo(-w/2,h/2,-w/2,h/2-r);
+        for(const b of[...bs].reverse()){const yy=b*h;x.lineTo(-w/2,yy+bR);x.arc(-w/2,yy,bR,Math.PI/2,-Math.PI/2,true)}
+        x.lineTo(-w/2,-h/2+r);x.quadraticCurveTo(-w/2,-h/2,-w/2+r,-h/2);x.closePath()};
+      const gold=()=>{const g=x.createLinearGradient(-w/2,h/2,w/2,-h/2);[[0,-.38],[.22,.12],[.42,.52],[.6,.08],[.82,-.42],[1,-.2]].forEach(([o,v])=>g.addColorStop(o,mix(v)));return g};
+      const one=front=>{shape();x.fillStyle=gold();x.fill();
+        if(front&&stack){x.lineWidth=5;x.strokeStyle="rgba(15,10,4,.92)";x.stroke()}else{x.lineWidth=1.4;x.strokeStyle="rgba(70,45,8,.45)";x.stroke()}};
+      if(stack){x.save();x.translate(46,30);x.rotate(.035);one(false);x.restore()}
+      one(true);
+      if(true){/* fine brushed streaks across the foil */
+        x.save();shape();x.clip();const rr2=rng(77);x.globalAlpha=.025;for(let i=0;i<60;i++){x.fillStyle=rr2()<.5?"#fff":"#000";x.fillRect(-w/2,-h/2+rr2()*h,w,.6+rr2())}x.restore()}
+      /* punched dots and rules */
+      const dx=w/2-64;x.fillStyle=L.c2;for(let i=0;i<7;i++){x.beginPath();x.arc(dx,-h/2+26+i*(h-52)/6,6.2,0,TAU);x.fill()}
+      x.strokeStyle=L.c2;x.lineWidth=2;x.globalAlpha=.85;x.beginPath();x.moveTo(-w/2+64,-h/2+40);x.lineTo(dx-58,-h/2+40);x.moveTo(-w/2+34,h/2-40);x.lineTo(dx-28,h/2-40);x.stroke();x.globalAlpha=1;
+      /* lettering */
+      const parts=t.length>9?split2(t):[t],room=dx-(-w/2)-70,cx=(-w/2+dx)/2;let fs=parts.length>1?44:56;const F=s2=>`800 ${s2}px Montserrat,${FONTS.body}`;x.font=F(fs);
+      while(Math.max(...parts.map(q=>tw(x,q,0)))>room&&fs>20){fs-=2;x.font=F(fs)}
+      x.fillStyle=L.c2;x.textBaseline="middle";const lh=fs*1.02;parts.forEach((q,i)=>ft(x,q,cx,(i-(parts.length-1)/2)*lh+2,0,"center"));
       TICKET_CACHE[key]=cv}
-    const cv=TICKET_CACHE[key];c.save();c.shadowColor="rgba(0,0,0,.42)";c.shadowBlur=26;c.shadowOffsetY=12;c.drawImage(cv,-w/2-pad,-h/2-pad,w+pad*2,h+pad*2);c.restore();
-    return{w,h}}}
+    const cv=TICKET_CACHE[key];c.save();c.shadowColor="rgba(0,0,0,.4)";c.shadowBlur=24;c.shadowOffsetY=12;c.drawImage(cv,-w/2-pad,-h/2-pad,w+pad*2,h+pad*2);c.restore();
+    return{w:stack?w+46:w,h:stack?h+30:h}}}
 };
 window.__imcTest={drawProduct:(...a)=>drawProduct(...a),foodVis:(...a)=>foodVis(...a)};   /* testing only */
 const TICKET_CACHE={};try{document.fonts.ready.then(()=>{for(const k in TICKET_CACHE)delete TICKET_CACHE[k];typeof draw==="function"&&draw()})}catch(e){}   /* redraw tickets once the lettering font has loaded */
