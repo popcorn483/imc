@@ -601,6 +601,32 @@ for (const cin of CINEMAS) {
 }
 // newest public trailers from the distributors' official YouTube channels, for the hub's "Recommended" list
 try { const { buildRecommended } = await import("./recommended.mjs"); await buildRecommended(OUT); } catch (e) { console.log("recommended failed: " + e.message); }
+// trailer lengths (seconds) for every YouTube trailer the foyer TVs might play, so every TV plans the same timings and stays in step:
+// imc.ie's trailers, the Recommended list, and anything in the foyer settings (data/foyer/<cinema>.json). Saved in data/durations.json.
+try {
+  const file = path.join(OUT, "durations.json"), known = await fs.readFile(file, "utf8").then(JSON.parse).catch(() => ({}));
+  const ids = new Set(), yid = (u) => (/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/.exec(u || "") || [])[1];
+  const tr = await fs.readFile(path.join(OUT, "trailers.json"), "utf8").then(JSON.parse).catch(() => ({}));
+  for (const u of Object.keys(tr)) { const i = yid(u); if (i) ids.add(i); }
+  const rec = await fs.readFile(path.join(OUT, "recommended.json"), "utf8").then(JSON.parse).catch(() => ({}));
+  for (const x of rec.items || []) ids.add(x.id);
+  for (const f of await fs.readdir(path.join(OUT, "foyer")).catch(() => [])) {
+    const j = await fs.readFile(path.join(OUT, "foyer", f), "utf8").then(JSON.parse).catch(() => null);
+    for (const q of [j && j.q, j && j.lq]) { if (!q) continue; const P = new URLSearchParams(q);
+      for (const x of (P.get("x") || "").split("|")) { const i = x.split("~")[0]; if (/^[\w-]{11}$/.test(i)) ids.add(i); }
+      for (const x of (P.get("tl") || "").split("|")) { const i = x.split("~")[1]; if (/^[\w-]{11}$/.test(i)) ids.add(i); } }
+  }
+  let n = 0;
+  for (const id of ids) {
+    if (known[id] || n >= 80) continue;
+    n++; await sleep(500);
+    try { const r = await fetch(`https://www.youtube.com/watch?v=${id}`, { headers: { "user-agent": UA, "accept-language": "en-GB,en;q=0.9" } });
+      const h = r.ok ? await r.text() : ""; const m = /"lengthSeconds":"(\d+)"/.exec(h) || /itemprop="duration" content="PT(\d+)M(\d+)S"/.exec(h);
+      if (m) known[id] = m[2] ? (+m[1]) * 60 + (+m[2]) : +m[1]; } catch {}
+  }
+  await fs.writeFile(file, JSON.stringify(known));
+  console.log(`durations: ${Object.keys(known).length} known, ${n} looked up`);
+} catch (e) { console.log("durations failed: " + e.message); }
 // cinema building photos from imc.ie's cinema list (used for LUXX and "visit us" designs): data/sites/<id>.<ext>
 const SITE_PICS = {};
 {

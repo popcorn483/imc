@@ -489,6 +489,15 @@ The **Playlist** at the top of the Foyer trailers page lists everything playing 
 - With **Show what plays in between** ticked, the Playlist also shows the Now showing board, deals and offers slides, adverts, your messages and welcome videos where they fall between trailers. The hub gets this from the foyer player itself (`foyer.html?…&list=1` in a hidden frame), so it matches the TVs. Slides take turns, so the end of the list names the ones that come round next.
 - **Between the trailers** lets you switch each slide on or off: Wednesday Meal Deal, Kids Club, LUXX, Coming soon, Last chance and Scan to book. It also lets you switch off or reword each line on the bottom strip (`px`, `tx` and `tt` in the player address). Reworded lines stay as typed, prices included.
 
+### All foyer TVs in step
+
+With **Keep all foyer TVs in step** on (the default; `sync=0` in the player address turns it off), every foyer TV shows the same trailer, card or slide at the same moment.
+
+- **How the TVs agree without talking to each other:** each TV works out the same running order and the same length for every screen. They all use the same listings, the same settings, the same trailer lengths (`data/durations.json`, looked up by the importer for imc.ie's trailers, the Recommended list and any YouTube links in the foyer settings), and "random" choices made from the date. The time of day then says what's on now: a TV switched on later joins at the right point, mid-trailer or on the right board page.
+- **Changes happen together:** listings are re-read on the hour and half hour, and settings are checked on the minute, so every TV changes at the same moment.
+- **Board slot instead of a blank screen:** a trailer that can't play on one TV (no internet, YouTube down) shows the Now showing board for its slot. A trailer with no known length gets a 150-second slot until the next import finds its length.
+- **Keep it in step:** the foyer PCs' clocks need to be right (Windows sets them automatically). Studio trailer files need adding on every foyer PC, because a file only on one PC changes that PC's running order.
+
 ### Music
 
 **Music under the cards and slides** (Cinematic, Chilled, Upbeat or none, plus a volume, with **▶ Listen** to preview) plays soft background music made live by `music.js`, so it isn't anyone's recording. It fades out when a trailer starts and back in for the showtimes cards, board, slides and welcome videos. It needs Sound on (click Start once on the TV), and M mutes it with everything else (`mu` and `mv` in the player address).
