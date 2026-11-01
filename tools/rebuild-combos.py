@@ -8,12 +8,13 @@ cups. This takes the tickets off, rebuilds each hidden corner from the same cup 
 following the taper; the bottom rim from the visible part, or from the identical neighbouring cup), puts back the real
 ZERO SUGAR / NO CALORIES lettering from whichever photo shows it whole, then cuts out with tools/cutout.py (the photos'
 smeared see-through background and black block are cleared first, along the box edges measured on these two photos).
-The results were checked by eye and saved as data/products/cut/combotest.png, lccc.png and scon.png (see handmade.json).
+Medium: the hidden lower part of its cup is taken from the two-drink photo's left cup (the same cup, fully visible,
+scaled to match) and the right-hand strip from the same cup's own shading. The results were checked by eye and saved as data/products/cut/combotest.png, lccc.png and scon.png (see handmade.json).
 Needs numpy, scipy, pillow and onnxruntime."""
 import os, sys
 WORK = os.environ.get("OUTDIR", "."); MODEL = sys.argv[1] if len(sys.argv) > 1 else "isnet-general-use.onnx"
 
-# ---------- rebuild ----------
+# ---------- rebuild (share) ----------
 import numpy as np
 from PIL import Image, ImageDraw
 from scipy import ndimage as nd
@@ -58,7 +59,7 @@ def rebuild(a,tk,fl,fr,band,ybot_guess,bot=None,rimsrc=None,band2=None):
     """fill the ticket-covered part of one cup: body from a clean band higher up (following the taper), rim from the visible bottom"""
     out=a.copy();H,W,_=a.shape;_,_,wh=cls(a)
     # the ticket's dark outline and shadow inside the cup's lower part count as covered too
-    yy,xx=np.mgrid[0:H,0:W];notred=~cls(a)[0];dark=(a.max(-1)<120)|notred;near=nd.binary_dilation(tk,iterations=10)
+    yy,xx=np.mgrid[0:H,0:W];notred=~cls(a)[0];dark=(a.max(-1)<120)|notred|(a.sum(-1)<240);near=nd.binary_dilation(tk,iterations=10)
     _,gold,_=cls(a)
     edge=(xx>=np.polyval(fr,yy)-14)   # only near the cup's right edge, where the ticket's outline is (the lettering is further in)
     tk=tk|((dark|gold)&near&edge&(xx<=np.polyval(fr,yy)+2)&(yy>band[0]))
@@ -159,16 +160,112 @@ def rim_from_left(y,x):
     if sx>=279: sx=int(round(2*axL-sx))     # the left cup's own right end is behind the right cup: use its mirror image
     return sy,sx
 sh=rebuild(SC,tk2,fl2,fr2,(299,320),369+dy,band2=(286,299),bot=(cL,axL,dx,dy),rimsrc=rim_from_left)
-zs=M[338:352,286:357];zI=Image.fromarray(zs.astype("uint8"));z2=np.asarray(zI.resize((round(zI.width/1.1),round(zI.height/1.1)),Image.LANCZOS)).astype(float)
+zs=M[338:352,286:359];zI=Image.fromarray(zs.astype("uint8"));z2=np.asarray(zI.resize((round(zI.width/1.1),round(zI.height/1.1)),Image.LANCZOS)).astype(float)
 e,y,x=find(SC,z2[:,:24],305,335,215,260)
 B2=(299,320)
 repaint(SC,sh,y+dy-1,x+dx-2,z2.shape[0]+2,z2.shape[1]+4,fl2,fr2,B2,(286,299));paste(sh,z2,y+dy,x+dx)
 repaint(SC,sh,329+dy-1,228+dx-2,band.shape[0]+2,band.shape[1]+4,fl2,fr2,B2,(286,299));paste(sh,band,329+dy,228+dx)
 sh[tk2&~(np.abs(sh-SC).sum(-1)>0)]=0
+# the right cup's bottom: its own bottom-left is clean, the cup is symmetric, so mirror it onto the bottom-right
+base=sh.copy()
+for y in range(340,SC.shape[0]):
+    l,r=np.polyval(fl2,y),np.polyval(fr2,y);ax=(l+r)/2
+    for x in range(int(ax)+1,int(r)+4):
+        xm=2*ax-x;x0=int(np.floor(xm));f=xm-x0
+        if x0<int(l)-3: continue
+        yb=np.polyval(cL,(xm-dx-axL)**2)+dy     # bottom of the cup at the mirror column (the left cup's bottom, moved)
+        if y<yb-9: continue
+        w=float(np.clip((y-(yb-9))/3.0,0,1))
+        sh[y,x]=sh[y,x]*(1-w)+(base[y,x0]*(1-f)+base[y,x0+1]*f)*w
 _,goldS,_=cls(SC);yy,xx=np.mgrid[0:SC.shape[0],0:SC.shape[1]]
 stray=nd.binary_dilation(goldS&(xx>285)&(yy>250),iterations=4)&((xx>np.polyval(fr2,yy)+1)|(yy>np.polyval(cL,(xx-axL-dx)**2)+dy+1));sh[stray]=0
 Image.fromarray(sh.clip(0,255).astype("uint8")).save(S+"/share3.png")
 print("ok",dx,dy)
+
+# ---------- rebuild (medium) ----------
+import numpy as np
+from PIL import Image
+from scipy import ndimage as nd
+S=WORK
+M=np.asarray(Image.open("data/products/t1mcb.jpg").convert("RGB")).astype(float)
+SC=np.asarray(Image.open("data/products/t1scb.jpg").convert("RGB")).astype(float)
+# exact match: t1mcb's ZERO SUGAR (scaled down 1.1) sits on the left cup in t1scb
+zs=M[338:352,286:357];z2=np.asarray(Image.fromarray(zs.astype("uint8")).resize((round(71/1.1),round(14/1.1)),Image.LANCZOS)).astype(float)
+best=None
+for y in range(300,330):
+    for x in range(205,240):
+        e=np.abs(SC[y:y+z2.shape[0],x:x+z2.shape[1]]-z2).mean()
+        if best is None or e<best[0]: best=(e,y,x)
+_,zy,zx=best;print("ZERO SUGAR on the left cup at",zy,zx,round(best[0],1))
+# the left cup's own edges in t1scb, row by row, below its logo
+red=(SC[...,0]>150)&(SC[...,1]<120)
+L={};R={}
+for y in range(296,385):
+    row=SC[y];xs=[x for x in range(200,300) if red[y,x]]
+    if not xs: continue
+    L[y]=min(xs)
+    # right edge: the darkest column between the two cups (where the left cup ends)
+    seg=row[278:302].sum(-1);R[y]=278+int(np.argmin(seg))
+ys=sorted(R);fr=np.polyfit(ys,[R[y] for y in ys],1);ysl=[y for y in ys if y<360];fl=np.polyfit(ysl,[L[y] for y in ysl],1)
+print("left cup L",np.polyval(fl,[300,370]),"R",np.polyval(fr,[300,370]))
+# bottom of the left cup (last rim-white row) per column
+wh=(SC.min(-1)>200)
+bot={x:max([y for y in range(330,395) if wh[y,x]] or [0]) for x in range(int(np.polyval(fl,370))+2,int(np.polyval(fr,370))-1)}
+bx=np.array([x for x in bot if bot[x]>0]);by=np.array([bot[x] for x in bx]);cb=np.polyfit(bx,by,2);print("bottom",np.polyval(cb,[bx.min(),bx.mean(),bx.max()]))
+def samp(a,x,y):
+    x0=int(np.floor(x));y0=int(np.floor(y));fx=x-x0;fy=y-y0
+    return a[y0,x0]*(1-fx)*(1-fy)+a[y0,x0+1]*fx*(1-fy)+a[y0+1,x0]*(1-fx)*fy+a[y0+1,x0+1]*fx*fy
+out=M.copy();Y0=354   # below ZERO SUGAR in t1mcb: keep everything above
+for y in range(Y0-4,M.shape[0]):
+    for x in range(230,470):
+        sx=zx+(x-286)/1.1;sy=zy+(y-338)/1.1
+        if sy>=SC.shape[0]-2: continue
+        l,r=np.polyval(fl,sy),np.polyval(fr,sy)
+        if sx<l-0.5:            # left of the cup: the popcorn box (or background) stays as it is
+            continue
+        if sx>r-0.5 or sy>np.polyval(cb,sx)+1.5: px=np.array([0,0,0.])   # right of / below the cup: background
+        else: px=samp(SC,sx,sy)
+        w=1.0 if y>=Y0 else (y-(Y0-4))/4.0   # blend into the original over 4 rows
+        out[y,x]=out[y,x]*(1-w)+px*w
+# the ticket above the seam at the right edge of the cup
+tk=(M[...,0]>120)&(M[...,1]>85)&(M[...,2]<120)&(M[...,0]-M[...,2]>45)
+yy,xx=np.mgrid[0:M.shape[0],0:M.shape[1]]
+isred=(M[...,0]>120)&(M[...,1]<90)
+out[nd.binary_dilation(tk&(yy>300)&(xx>330),iterations=4)&(yy>300)&(xx>360)&(yy<Y0)&~isred]=0
+# the cup's true edges in t1mcb, from clean rows above the ticket, carried down
+redM=(M[...,0]>150)&(M[...,1]<110)
+def edge_pts(rows,side):
+    pts=[]
+    for y in rows:
+        xs=np.where(redM[y,250:420])[0]+250
+        if len(xs)<30: continue
+        pts.append((y,(xs.min()-0.5) if side=="L" else (xs.max()+0.5)))
+    return np.polyfit([p[0] for p in pts],[p[1] for p in pts],1)
+# right edge: clean rows between the swoosh and the ticket; left edge: where the cup is in front of the box
+frT=edge_pts(range(300,338),"R");flT=np.polyval(fl,zy+(np.arange(354,400)-338)/1.1)*1.1  # unused
+print("t1mcb R edge",np.polyval(frT,[300,340,390]))
+# the transplanted section's right edge in t1mcb coordinates
+srcR=lambda y:286+(np.polyval(fr,zy+(y-338)/1.1)-zx)*1.1
+srcL=lambda y:286+(np.polyval(fl,zy+(y-338)/1.1)-zx)*1.1
+base=out.copy()
+for y in range(336,M.shape[0]):
+    rT=np.polyval(frT,y);lT=srcL(y);ax=(lT+rT)/2
+    start=(srcR(y)-16) if y>=Y0 else 361.0            # below the seam: short of the neighbouring cup's shadow; above it: just past ZERO SUGAR
+    for x in range(int(np.floor(start))-3,int(np.ceil(rT))+3):
+        xm=2*ax-x
+        # where the bottom of the cup is at the mirror column (the cup is symmetric there)
+        sxm=zx+(xm-286)/1.1;ybot=338+(np.polyval(cb,sxm)-zy)*1.1
+        if x>rT+0.5 or y>ybot+1.5: px=np.array([0,0,0.])
+        elif y>ybot-7:                                 # the white rim: mirrored
+            x0=int(np.floor(xm));f=xm-x0;px=base[y,x0]*(1-f)+base[y,x0+1]*f
+        else:                                          # the body: same place across the cup, from clean rows above (right-hand shading)
+            u=(x-lT)/(rT-lT);ys_=300+(y-300)%36;xs_=srcL(ys_)+u*(np.polyval(frT,ys_)-srcL(ys_))
+            x0=int(np.floor(xs_));f=xs_-x0;px=M[ys_,x0]*(1-f)+M[ys_,x0+1]*f
+        w=float(np.clip((x-(start-3))/9.0,0,1))          # blend in over 4 pixels across
+        out[y,x]=out[y,x]*(1-w)+px*w
+Image.fromarray(out.clip(0,255).astype("uint8")).save(S+"/med4.png")
+print("ok")
+im=Image.fromarray(out.clip(0,255).astype("uint8")).crop((240,170,430,430));im.resize((im.width*3,im.height*3),Image.LANCZOS).save(S+"/med4_view.png")
 
 # ---------- cut out ----------
 import sys,numpy as np
@@ -177,17 +274,44 @@ from PIL import Image
 from scipy import ndimage as nd
 src=open('tools/cutout.py').read();ns={}
 exec(src.split("os.makedirs(OUT, exist_ok=True)")[0].replace('if not todo:\n    print("nothing to do"); sys.exit(0)',''),ns)
-from PIL import ImageDraw
+from PIL import ImageDraw, ImageFilter
 # the popcorn box's left and bottom edges, measured on IMC's photos (just inside the dark outline): below/left of these is background
 BOXBG={"combo-share":[(0,0),(37,0),(37,214),(42.5,214),(90,360),(141.5,405),(206,371),(207,500),(0,500)],
        "combo-medium":[(0,0),(79,0),(79,378),(133,378),(137.5,391.5),(197.5,443),(268,413),(269,520),(0,520)]}
 def boxbg(a,name):
     m=Image.new("L",(a.shape[1],a.shape[0]),0);ImageDraw.Draw(m).polygon(BOXBG[name],fill=255);return np.asarray(m)>0
+def directcut(path):
+    """cut-out from the background worked out by whiten(): no guessing, so white cup rims on IMC's black block stay"""
+    big=Image.open(path).convert("RGB");rgb=np.asarray(big).astype("float32")/255
+    keep=nd.binary_opening(~BGMASK,iterations=2)                                          # thin slivers (streaks) go
+    lab,n=nd.label(keep);sz=nd.sum(keep,lab,range(1,n+1));keep=lab==(np.argmax(sz)+1)    # the product: the one big piece
+    keep=nd.binary_fill_holes(keep)
+    # a smooth edge: work at 4x, blur, then back down (anti-aliased like a real cut-out), pulled in half a pixel so no dark fringe
+    K=Image.fromarray((keep*255).astype("uint8")).resize((keep.shape[1]*4,keep.shape[0]*4),Image.BILINEAR).filter(ImageFilter.GaussianBlur(3))
+    K=K.point(lambda v:255 if v>150 else 0).filter(ImageFilter.GaussianBlur(2)).resize((keep.shape[1],keep.shape[0]),Image.LANCZOS)
+    al=np.asarray(K).astype("float32")/255
+    return Image.fromarray((np.dstack([rgb,al])*255).round().astype("uint8"),"RGBA")
+def mycut(path):
+    """tools/cutout.py's cut, but cleaning the edge against the background colour at each pixel (white or grey)"""
+    big=Image.open(path).convert("RGB");rgb=np.asarray(big).astype("float32")/255
+    m=ns['mask'](big);alpha=np.clip((m-0.3)/0.45,0,1);alpha=alpha*alpha*(3-2*alpha)
+    alpha=np.where(nd.binary_fill_holes(alpha>0.5),np.maximum(alpha,1.0),alpha)
+    alpha=np.asarray(Image.fromarray((alpha*255).astype("uint8")).filter(ImageFilter.MinFilter(3))).astype("float32")/255
+    Bc=BGCOL.astype("float32")/255;ae=np.maximum(alpha,1e-3)[...,None]
+    rgb=np.where(alpha[...,None]>0.02,np.clip((rgb-(1-ae)*Bc)/ae,0,1),rgb)
+    return Image.fromarray((np.dstack([rgb,alpha])*255).round().astype("uint8"),"RGBA")
 def whiten(a,name=None):
     """IMC's big photos sit on white with a black block behind the products: make all of that background white"""
     mx=a.max(-1);mn=a.min(-1);bgish=(mx<=7)|(mn>236)
-    lab,n=nd.label(bgish);edge=set(np.unique(np.r_[lab[0],lab[-1],lab[:,0],lab[:,-1]]))-{0}
-    bg=np.isin(lab,list(edge))
+    # white background: white reached from the border through white; black block: black that touches that white background
+    # (separately, so a white cup rim sitting on the black block isn't taken for background)
+    redp=(a[...,0]>150)&(a[...,1]<110)&(a[...,2]<110)
+    under=np.zeros_like(redp)
+    for k in range(1,7): under[k:]|=redp[:-k]
+    rim=(mn>200)&under          # white just below red: a cup's rim, never background
+    lw,_=nd.label((mn>236)&~rim);ew=set(np.unique(np.r_[lw[0],lw[-1],lw[:,0],lw[:,-1]]))-{0};wbg=np.isin(lw,list(ew))
+    lb,_=nd.label(mx<=7);eb=set(np.unique(lb[nd.binary_dilation(wbg,iterations=2)&(mx<=7)]))-{0};bbg=np.isin(lb,list(eb))
+    bg=wbg|bbg;lab=np.where(bbg,1,0);edge={1}
     # IMC's flattened photos have smeared see-through pixels beside the box: runs of one identical, greyish colour
     # coming in from the background. Walk in from the left and from the bottom and take those runs off too.
     H,W,_=a.shape;ai=a.astype(int)
@@ -203,20 +327,46 @@ def whiten(a,name=None):
     for y in range(H):
         r=walk(ai[y],bg[y])
         if r: bg[y,r[0]:r[1]]=True
+    # the same smear running down from the top, above the popcorn: a run of 4+ identical pixels straight after the background
+    if name:
+        for x in range(0,{"combo-share":200,"combo-medium":262}[name]):
+            col=ai[:,x];y=0
+            while y<H and bg[y,x]: y+=1
+            j=y
+            while j<H and np.abs(col[j]-col[y]).max()<=3: j+=1
+            if j-y>=4 and y<H*0.5: bg[y:j,x]=True
     if name: bg|=boxbg(a,name)
-    b=a.copy();b[bg]=255
+    b=a.copy()
+    # where the product's edge blended into IMC's black block, the edge pixels are darkened: give them the colour of the brightest product pixel next to them
+    blk=bbg.copy()
+    lum=b.sum(-1)
+    for _ in range(2):
+        ring=nd.binary_dilation(blk,iterations=1)&~blk&~bg
+        best=np.full(lum.shape,-1.0);sy=np.zeros(lum.shape,int);sx=np.zeros(lum.shape,int);yy,xx=np.mgrid[0:b.shape[0],0:b.shape[1]]
+        for dy in(-1,0,1):
+            for dx in(-1,0,1):
+                if dy==0 and dx==0: continue
+                sh=np.roll(np.roll(lum,-dy,0),-dx,1);ok=np.roll(np.roll(~(blk|bg),-dy,0),-dx,1)&(sh>best)
+                best=np.where(ok,sh,best);sy=np.where(ok,yy+dy,sy);sx=np.where(ok,xx+dx,sx)
+        nb=b[sy.clip(0,b.shape[0]-1),sx.clip(0,b.shape[1]-1)]
+        use=ring&(best>=0)&(nb.min(-1)<190)        # only next to coloured parts: white rims keep their dark edge, so they stay separate from the background
+        ys,xs=np.where(use);b[ys,xs]=nb[ys,xs];lum=b.sum(-1);blk=blk|ring
+    b[bg]=255
+    global BGMASK;BGMASK=bg.copy()
+    global BGCOL;BGCOL=np.full(b.shape,255.0)
     # soften the seam where black met the product
     return b
-for name,f in [("combo-medium",WORK+"/med3.png"),("combo-share",WORK+"/share3.png")]:
+for name,f in [("combo-medium",WORK+"/med4.png"),("combo-share",WORK+"/share3.png")]:
     a=np.asarray(Image.open(f).convert("RGB")).astype(float)
     Image.fromarray(whiten(a,name).astype("uint8")).save(WORK+"/%s.png.jpg"%name,quality=97)
-    out=ns['cut'](WORK+"/%s.png.jpg"%name)
+    out=directcut(WORK+"/%s.png.jpg"%name)
     a=np.asarray(out).copy();al=a[...,3]>150;lab,n=nd.label(nd.binary_opening(al,iterations=2));sz=nd.sum(al,lab,range(1,n+1))
     keep=np.isin(lab,[i+1 for i,v in enumerate(sz) if v>0.02*sz.max()])
     a[...,3]=np.where(nd.binary_dilation(keep,iterations=2),a[...,3],0)
     holes=nd.binary_fill_holes(a[...,3]>128)&(a[...,3]<=128)   # see-through gaps inside the product (pale lettering the model took for background)
     a[...,3]=np.where(holes,255,a[...,3])
-    Image.fromarray(a).save(WORK+"/%s.png"%name);print(name,out.size)
+    im2=Image.fromarray(a);bb=im2.getchannel("A").point(lambda v:255 if v>24 else 0).getbbox();im2=im2.crop((max(0,bb[0]-2),max(0,bb[1]-2),min(im2.width,bb[2]+2),min(im2.height,bb[3]+2)))
+    im2.save(WORK+"/%s.png"%name);print(name,im2.size)
 c=Image.new('RGB',(1400,620),(13,18,64))
 for i,n in enumerate(['combo-medium','combo-share']):
   im=Image.open(WORK+"/%s.png"%n);im=im.resize((im.width*2,im.height*2),Image.LANCZOS);im.thumbnail((680,600));c.paste(im,(10+i*700,10),im)
