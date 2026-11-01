@@ -630,6 +630,10 @@ Product photos are used as clean **cut-outs** in `data/products/cut/` (made by `
 When a deal is a ticket with popcorn and a drink, the editor uses a **bundle picture**: the cleaned-up combo photo with the premium gold ticket in front (`data/products/cut/bundle1.png`; `bundle2.png` is the Share Combo with two fanned tickets). They're also in the image library under Deals, and the foyer's Wednesday Meal Deal slide uses `bundle1`. They were composed with the editor's own ticket drawing, so restyling the ticket means remaking them. The drawn ticket is a premium gold ticket in IMC's shape (three round bites in each short end): polished foil with a bevelled edge, a fine grain and guilloche pattern, an engraved double border, punched see-through perforations, a stub with IMC, ADMIT and a serial number, and embossed Montserrat lettering in title case under "IMC CINEMAS" ("2 TICKETS" shows as "2 Tickets"). Two or more tickets get a second ticket fanned out behind. It takes the colour you pick (e.g. silver).
 
 
+## Undo (editor)
+
+**↶ Undo** and **↷ Redo** are at the top of the editor and at the top of the Easy mode panel; Ctrl+Z / Ctrl+Y (or Ctrl+Shift+Z) work too, even while typing in a box. After a bigger change (deleting a piece, applying a gift card or seasonal look) the message at the bottom has its own **Undo** button. The editor keeps the last 80 changes.
+
 ## Layer order (editor)
 
 Every row in the **Layers** list has ▲ ▼ to move it in front of or behind the others (top of the list is at the front). Easy mode has a **What's in front** step with the same buttons, handy on deal designs where a ticket, a combo photo and the price overlap.

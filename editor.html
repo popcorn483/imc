@@ -155,6 +155,7 @@ input[type=color]{width:30px;height:26px;padding:0;border:1px solid var(--line);
 .layer .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
 .layer .eye{all:unset;cursor:pointer;color:var(--muted);font-size:13px;width:22px;text-align:center}
 .layer.off .nm{opacity:.45}
+.toast .tundo{all:unset;cursor:pointer;margin-left:10px;padding:3px 10px;border-radius:6px;background:var(--bg);color:var(--ink);font-weight:700}
 .toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);font-weight:600;padding:10px 16px;border-radius:8px;z-index:50;max-width:calc(100% - 32px);text-align:center}
 .tile em.anim{font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,180,60,.45);border-radius:99px;padding:0 5px;margin-left:4px;vertical-align:1px}
 .tile.fx canvas{aspect-ratio:1/1}
@@ -259,7 +260,7 @@ body.easy .easypanel{display:block;padding:14px 16px 24px}
 body.easy .app>.right>#props,body.easy .app>.right>.layersec{display:none}
 body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,body.easy #tl,body.easy .stagebar .helpbtn{display:none!important}
 @media (min-width:761px){body.easy .app{grid-template-columns:minmax(0,1fr) 420px!important}body.easy .app>.left{display:none!important}}
-.ezh{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.ezh b{font-size:17px}
+.ezh{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.ezh b{font-size:17px}.ezundo{display:flex;gap:4px;margin-left:auto;margin-right:8px}.ezundo button{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;border:1px solid var(--line)}.ezundo button:hover{background:rgba(127,127,127,.15)}.ezundo button:disabled{opacity:.35;cursor:default}
 .ezfull{all:unset;cursor:pointer;font-size:13px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 12px}.ezfull:hover{color:var(--ink)}
 .ezstep{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid var(--line)}
 .ezn{width:30px;height:30px;border-radius:50%;background:var(--stripe);color:var(--gold-ink);display:grid;place-items:center;font-weight:900;font-size:15px}
@@ -342,8 +343,8 @@ html.a-rm *{transition:none!important;animation:none!important}
     <div class="topact">
       <button class="btn ezbtn" id="ezToggle" type="button" title="Easy mode: just the steps you need">✨ <span class="lg">Easy mode</span></button>
       <button class="btn chkbtn" type="button" title="Check my post for common mistakes">✓ <span class="lg">Check</span></button>
-      <button class="btn icon" id="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
-      <button class="btn icon" id="redo" title="Redo (Ctrl+Shift+Z)" aria-label="Redo">↷</button>
+      <button class="btn undobtn" id="undo" title="Undo the last change (Ctrl+Z)" aria-label="Undo">↶ <span class="lg">Undo</span></button>
+      <button class="btn undobtn" id="redo" title="Redo: put the change back (Ctrl+Y)" aria-label="Redo">↷ <span class="lg">Redo</span></button>
       <div class="menuwrap"><button class="btn ddbtn gifbtn" id="saveBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="saveMenu">More ways to save ▾</button>
         <div class="ddmenu right" id="saveMenu" role="menu" hidden>
           <button role="menuitem" id="allSizes">All sizes in one go<small>Post, tall post, Story and foyer screen, in one zip</small></button>
@@ -569,7 +570,8 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const fixSite=s=>String(s).replace(/https?:\/\/www\.imccinemas\.co\.uk/gi,"https://www.imc.ie").replace(/IMCCINEMAS\.CO\.UK/g,"IMC.IE").replace(/imccinemas\.co\.uk/gi,"imc.ie");
 const uid=()=>"l"+Math.random().toString(36).slice(2,9);
-function toast(t){const el=$("#toast");el.textContent=t;el.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>el.hidden=true,2600)}
+function toast(t,undoable){const el=$("#toast");el.textContent=t;if(undoable){const b=document.createElement("button");b.type="button";b.className="tundo";b.textContent="↶ Undo";b.onclick=()=>{undo();el.hidden=true;toast("Undone")};el.append(" ",b)}
+  el.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>el.hidden=true,undoable?6000:2600)}
 if(document.body.dataset.standalone)$("#back").hidden=false;
 
 /* ---------- constants ---------- */
@@ -731,7 +733,7 @@ function seasonLayers(se,fresh){const ink=se.ink||"#ffffff",L=[mk("badge","comin
 function applySeason(k,fresh){const se=SEASONS.find(x=>x.k===k);if(!se)return;S.label=se.n;
   if(!(photoImg&&S.bg==="photo"))S.bg=se.bg;S.frame={...S.frame,...se.frame};S.motion={...S.motion,fx:{...se.fx}};
   if(fresh||!S.layers.length)S.layers=seasonLayers(se,true);else{S.layers=[...S.layers.filter(l=>!l.season&&!(l.kind==="badge"&&l.y<.25)),...seasonLayers(se,false)];if(S.bg!=="photo")for(const l of S.layers)if(l.kind==="text"&&/^#fff(fff)?$/i.test(l.c1||"#ffffff"))l.c1=se.ink||"#ffffff"}
-  selId=null;clampPhoto();syncAll();commit();toast(se.n+" look applied. Click any text to change it")}
+  selId=null;clampPhoto();syncAll();commit();toast(se.n+" look applied",true)}
 
 /* ---------- state ---------- */
 let S={fmt:"square",bg:"photo",frame:{...DEFAULT_FRAME},photo:{zoom:1,ox:0,oy:0,b:100,c:100,s:100,shade:0,fit:"cover"},layers:[],motion:{fx:{},dur:3}};
@@ -978,7 +980,7 @@ function giftLayers(g){const ink=g.ink||"#ffffff";return[mk("badge","coming",{..
   mk("product","giftcard",{theme:"imc",text:g.amount,x:.5,y:.43,s:1.4,r:-.05,anim:"pop",delay:.1}),
   mk("text","title",{text:g.title,size:fitSize(g.title,"display",110,56,940),y:.7,c1:ink,anim:"slide",delay:.2}),mk("text","sub",{text:g.sub,y:.785,c1:ink,anim:"slide",delay:.28})]}
 function applyGift(k){const g=GIFT_POSTS.find(x=>x.k===k);if(!g)return;S.label=g.n;S.bg=g.bg;S.frame={...S.frame,...g.frame};S.motion={...S.motion,fx:{...g.fx}};S.layers=giftLayers(g);
-  selId=S.layers[1].id;clampPhoto();syncAll();commit();toast(g.n+": click the card to add an amount (e.g. £25) or change its theme")}
+  selId=S.layers[1].id;clampPhoto();syncAll();commit();toast(g.n+": click the card to add an amount (e.g. £25)",true)}
 
 /* Food and drink are real IMC product photos, or your own uploads. The only drawing left is a clean, flat cinema ticket. */
 const FOOD=[["combo_medium","data/products/combotest.jpg","Medium Combo"],["combo_large","data/products/lccc.jpg","Large Combo"],["combo_share","data/products/scon.jpg","Share Combo"],["tray","data/products/onkt.jpg","Kids Tray"],["nachos","data/products/nacholargchese.jpg","Nachos"],["ice_twist","data/products/softserve1.jpg","IMC Twist"],["ice_oreo","data/products/softserve2.jpg","IMC Oreo"],["ice_99","data/products/softserve3.jpg","IMC 99"],["maltesers","data/products/maltesers.jpg","Maltesers"],["minstrels","data/products/minstrels.jpg","Minstrels"],["water","data/products/ttc.jpg","Tahila Water"],["pickmix","data/products/candyking.png","Candy King pick 'n' mix"]];
@@ -1469,10 +1471,10 @@ new ResizeObserver(fit).observe($("#wrap"));
 const clean=st=>JSON.stringify(st,(k,v)=>k.startsWith("_")?undefined:v);
 function commit(){const j=clean(S);if(hist[hi]===j)return;hist=hist.slice(0,hi+1);hist.push(j);if(hist.length>80)hist.shift();hi=hist.length-1;updUndo();save();syncMotion();ensureLoop()}
 let commitT=0;function commitSoon(){checkSoon();clearTimeout(commitT);commitT=setTimeout(commit,350)}
-function restore(j){S=JSON.parse(j);if(!S.layers.find(l=>l.id===selId))selId=null;syncAll()}
+function restore(j){S=JSON.parse(j);if(!S.layers.find(l=>l.id===selId))selId=null;syncAll();if(EASY)renderEasy()}
 function undo(){if(hi>0){hi--;restore(hist[hi]);updUndo();save()}}
 function redo(){if(hi<hist.length-1){hi++;restore(hist[hi]);updUndo();save()}}
-function updUndo(){$("#undo").disabled=hi<=0;$("#redo").disabled=hi>=hist.length-1}
+function updUndo(){$("#undo").disabled=hi<=0;$("#redo").disabled=hi>=hist.length-1;const u=$("#ezUndo"),r=$("#ezRedo");if(u)u.disabled=hi<=0;if(r)r.disabled=hi>=hist.length-1}
 let saveT=0;function save(){clearTimeout(saveT);saveT=setTimeout(()=>{try{localStorage.setItem("imc-editor-state",clean(S))}catch(e){}},300)}
 function idb(){return new Promise((res,rej)=>{const r=indexedDB.open("imc-editor",1);r.onupgradeneeded=()=>r.result.createObjectStore("kv");r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
 async function idbSet(k,v){try{const d=await idb();await new Promise((res,rej)=>{const t=d.transaction("kv","readwrite");v==null?t.objectStore("kv").delete(k):t.objectStore("kv").put(v,k);t.oncomplete=res;t.onerror=()=>rej(t.error)})}catch(e){}}
@@ -1924,7 +1926,7 @@ function act(n){const L=getSel();if(!L)return;const i=S.layers.indexOf(L);
   else if(n==="back"&&i>0){S.layers.splice(i,1);S.layers.splice(i-1,0,L)}
   else if(n==="dup"){const c={...JSON.parse(clean(L)),id:uid(),x:clamp(L.x+.03,0,1),y:clamp(L.y+.03,0,1)};S.layers.splice(i+1,0,c);selId=c.id;renderProps()}
   else if(n==="flat"){L.r=0}
-  else if(n==="del"){S.layers.splice(i,1);selId=null;renderProps()}
+  else if(n==="del"){S.layers.splice(i,1);selId=null;renderProps();setTimeout(()=>toast("Deleted "+layerName(L).slice(0,30),true),0)}
   syncLayers();syncPropNums();draw();commit()}
 
 /* ---------- layer list ---------- */
@@ -1964,8 +1966,9 @@ cv.addEventListener("wheel",e=>{e.preventDefault();const f=Math.exp(-e.deltaY*.0
 
 /* ---------- keyboard ---------- */
 document.addEventListener("keydown",e=>{const typing=e.target.closest&&e.target.closest("input,textarea,select");const mod=e.ctrlKey||e.metaKey;
-  if(mod&&!typing&&e.key.toLowerCase()==="z"){e.preventDefault();e.shiftKey?redo():undo();return}
-  if(mod&&!typing&&e.key.toLowerCase()==="y"){e.preventDefault();redo();return}
+  /* Ctrl+Z / Ctrl+Y always undo and redo the design, even while typing in a box (the typing so far counts as one change) */
+  if(mod&&(e.key.toLowerCase()==="z"||e.key.toLowerCase()==="y")){e.preventDefault();if(typing){clearTimeout(commitT);commit()}if(e.key.toLowerCase()==="y"||e.shiftKey)redo();else undo();
+    if(typing&&EASY){const f=e.target.closest("[data-ezl]");const el=f&&$(`#easyPanel [data-ezl="${f.dataset.ezl}"] [data-ezk="${e.target.dataset.ezk}"]`);renderEasy();const n=f&&$(`#easyPanel [data-ezl="${f.dataset.ezl}"] [data-ezk="${e.target.dataset.ezk}"]`);if(n)n.focus()}else if(typing)renderProps();return}
   if(typing)return;const L=getSel();if(!L)return;
   if(e.key==="Delete"||e.key==="Backspace"){e.preventDefault();act("del")}
   else if(mod&&e.key.toLowerCase()==="d"){e.preventDefault();act("dup")}
@@ -2113,7 +2116,7 @@ function ezLabel(L){if(L.kind==="listing")return"Film times heading";if(L.key===
   if(t.includes("\n"))return"Details (one per line)";if(texts[0]===L)return"Headline";if(L.font==="mono"||(L.size||0)<=34)return"Small print";return"Line of text"}
 function setEasy(on){EASY=on;document.body.classList.toggle("easy",on);try{localStorage.setItem("imc-easy",on?"1":"0")}catch(e){}if(on)renderEasy();if(PHONE.matches)sheet(null);setTimeout(fit,30)}
 function renderEasy(){const el=$("#easyPanel");if(!el||!EASY)return;const Ls=S.layers.filter(l=>!l.hidden&&ezTextOf(l)),anim=hasMotion(),story=!$("#storyBtn").hidden;let n=0;
-  el.innerHTML=`<div class="ezh"><b>✨ Easy mode</b><button class="ezfull" id="ezFull" type="button">Full editor</button></div>
+  el.innerHTML=`<div class="ezh"><b>✨ Easy mode</b><span class="ezundo"><button type="button" id="ezUndo" ${hi<=0?"disabled":""} title="Undo the last change">↶ Undo</button><button type="button" id="ezRedo" ${hi>=hist.length-1?"disabled":""} title="Put the change back">↷ Redo</button></span><button class="ezfull" id="ezFull" type="button">Full editor</button></div>
   <div class="ezstep"><div class="ezn">${++n}</div><div><h4>Check the words</h4><p>Change anything that isn't right. Prices and times come from imc.ie.</p>
     ${Ls.length?Ls.map(L=>`<div class="ezf${L.id===selId?" sel":""}" data-ezl="${L.id}"><label for="ez-${L.id}">${esc(ezLabel(L))}</label>${L.kind==="listing"?`<input id="ez-${L.id}" data-ezk="text" value="${esc(L.text||"")}"><small>${(L.rows||[]).filter(r=>!r.hide).length} films listed. Use Full editor → Edit to change films or times.</small>`:String(L.text||"").includes("\n")||L.kind==="text"&&String(L.text||"").length>28?`<textarea id="ez-${L.id}" data-ezk="text" rows="2">${esc(L.text||"")}</textarea>`:`<input id="ez-${L.id}" data-ezk="text" value="${esc(L.text||"")}">`}
       ${L.kind==="badge"&&L.sub!=null&&L.sub!==""?`<input data-ezk="sub" value="${esc(L.sub||"")}" aria-label="${esc(ezLabel(L))} small line" class="ezsub">`:""}</div>`).join(""):`<p class="ezmuted">No words on this design yet.</p>`}
@@ -2128,7 +2131,7 @@ function renderEasy(){const el=$("#easyPanel");if(!el||!EASY)return;const Ls=S.l
   <p class="ezfoot">Changed your mind? Use the ↶ undo button at the top. For colours, layouts and animation, open the <button class="ezlink" id="ezFull2" type="button">full editor</button>.</p>`}
 $("#easyPanel").addEventListener("input",e=>{const f=e.target.closest("[data-ezl]");if(!f||!e.target.dataset.ezk)return;const L=S.layers.find(l=>l.id===f.dataset.ezl);if(!L)return;L[e.target.dataset.ezk]=e.target.value;L._w=0;draw();commitSoon()});
 $("#easyPanel").addEventListener("focusin",e=>{const f=e.target.closest("[data-ezl]");if(f&&selId!==f.dataset.ezl){selId=f.dataset.ezl;draw();$$("#easyPanel .ezf").forEach(x=>x.classList.toggle("sel",x===f))}});
-$("#easyPanel").addEventListener("click",e=>{const id=e.target.id;const mv=e.target.closest("[data-mv]");if(mv){moveLayer(mv.dataset.ml,+mv.dataset.mv);return}const os=e.target.closest("[data-ezsel]");if(os){select(os.dataset.ezsel);renderEasy();return}
+$("#easyPanel").addEventListener("click",e=>{const id=e.target.id;if(id==="ezUndo"){undo();return}if(id==="ezRedo"){redo();return}const mv=e.target.closest("[data-mv]");if(mv){moveLayer(mv.dataset.ml,+mv.dataset.mv);return}const os=e.target.closest("[data-ezsel]");if(os){select(os.dataset.ezsel);renderEasy();return}
   if(id==="ezFull"||id==="ezFull2"){setEasy(false);toast("Full editor. Switch back any time with ✨ Easy mode at the top")}
   else if(id==="ezPhoto")$("#photoFile").click();else if(id==="ezNoPhoto")$("#photoRemove").click();
   else if(id==="ezLogo"){const k=flKey(FLOGO_FILM);if(FLOGO[k]){flAdd(k);renderEasy()}else{setEasy(false);if(PHONE.matches)sheet("add");else $('#tabs [data-tab="add"]').click();setTimeout(()=>{const b=$("#flBox");if(b){b.closest(".sec").classList.remove("shut");b.scrollIntoView({block:"start"})}},150)}}
