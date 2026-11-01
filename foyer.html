@@ -414,7 +414,7 @@ async function next(){if(SYNC&&syncOn)return syncTick();clearTimeout(timer);try{
    Each TV works out the same running order and the same length for every screen (same listings, same settings, trailer
    lengths from data/durations.json, "random" choices from the date), then the time of day says what's on now.
    Listings and settings are picked up on the same half hour / minute on every TV, so they change together. */
-let DUR={},syncOn=false,syncBoard=null,plan=null,playingKey=null,syncT=0,loadSlot="";
+let joined=false,stepWall=0,stepLen=0,DUR={},syncOn=false,syncBoard=null,plan=null,playingKey=null,syncT=0,loadSlot="";
 const TRAILER_DEFAULT=150;
 function dayMs(){const n=londonNow();return((+n.hm.slice(0,2))*3600+(+n.hm.slice(3,5))*60+(+n.s||0))*1000+Date.now()%1000}
 function halfHour(){const n=londonNow();return n.date+"T"+n.hm.slice(0,2)+(+n.hm.slice(3,5)>=30?"b":"a")}
@@ -440,7 +440,10 @@ async function syncTick(){clearTimeout(syncT);
   if(!plan.L){show("start");$("#sinfo").textContent="Nothing to show right now. Checking again shortly.";syncT=setTimeout(syncTick,60e3);return}
   const t=dayMs(),loop=Math.floor(t/plan.L),p=t-loop*plan.L;let i=0;while(i<plan.starts.length-1&&p>=plan.starts[i]+plan.d[i])i++;
   const key=plan.stamp+"#"+loop+":"+i,left=plan.starts[i]+plan.d[i]-p,off=(p-plan.starts[i])/1000;
-  if(playingKey!==key){playingKey=key;syncStop();syncStart(plan.steps[i],loop,off,left)}
+  if(playingKey!==key){playingKey=key;syncStop();
+    /* a TV that starts (or restarts) part-way through an item waits on the board until the next one, then joins exactly in step */
+    if(!joined&&plan.steps[i].k==="trailer"&&off>1.5&&left>1500){joined=true;lastStep=Date.now();if(!syncFill())show("card");progress(left/1000)}
+    else{joined=true;stepWall=Date.now()-off*1000;stepLen=plan.d[i];syncStart(plan.steps[i],loop,off,left)}}
   syncT=setTimeout(syncTick,Math.max(40,left+25))}
 function syncStop(){clearTimeout(timer);clearTimeout(flipT);try{if(player&&player._done)player._done()}catch(e){}try{player&&player.pauseVideo&&player.pauseVideo()}catch(e){}try{if(vidStop)vidStop()}catch(e){}}
 function syncStart(x,loop,off,left){lastStep=Date.now();
@@ -467,7 +470,10 @@ async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout
   const q=nx&&nx.book?qrSvg(nx.book):"";$("#tqr").innerHTML=q?q+`<span>Scan to book<b>${nx.time}</b></span>`:"";$("#tqr").style.opacity=0;
   show("yt-wrap");progress(0.01);
   let started=false,over=false;const cur=$("#ytcurtain");cur.classList.remove("off");
-  const watch=setInterval(()=>{try{const d=player.getDuration(),t=player.getCurrentTime();if(started&&d>5){if(t>=d-1.2)finish();$("#tqr").style.opacity=q&&t>d-25?1:0;lastStep=Date.now()}}catch(e){}},250);
+  let lastFix=0;
+  const watch=setInterval(()=>{try{const d=player.getDuration(),t=player.getCurrentTime();
+    /* in step: if buffering left this TV behind (or ahead) of the clock by over a second, catch up */
+    if(SYNC&&syncOn&&started&&stepWall){const exp=(Date.now()-stepWall)/1000;if(Math.abs(t-exp)>1.2&&exp<d-3&&Date.now()-lastFix>5000){lastFix=Date.now();player.seekTo(exp,true)}}if(started&&d>5){if(t>=d-1.2)finish();$("#tqr").style.opacity=q&&t>d-25?1:0;lastStep=Date.now()}}catch(e){}},250);
   const finish=()=>{if(over)return;over=true;cur.classList.remove("off");done();try{player.pauseVideo()}catch(e){}$("#tqr").style.opacity=0;setTimeout(next,500)};
   const guard=setTimeout(()=>{if(!started){ytFailed();if(SYNC&&syncOn){over=true;done();try{player.pauseVideo()}catch(e){}syncFill()}else finish()}},15000),cap=setTimeout(finish,5*60e3);
   const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch);player._done=null};
@@ -491,7 +497,8 @@ async function playStudio(f,at=0){const v=$("#svid"),x=f.studio;let src=x.url||"
   const guard=setTimeout(()=>{if(!v.currentTime)finish()},20000),cap=setTimeout(finish,6*60e3);
   vidStop=()=>{over=true;stop()};
   v.onplaying=()=>cur.classList.add("off");v.onended=finish;v.onerror=finish;
-  v.ontimeupdate=()=>{lastStep=Date.now();if(v.duration>5)$("#tqr").style.opacity=q&&v.duration-v.currentTime<25?1:0};
+  let lastFix=0;
+  v.ontimeupdate=()=>{lastStep=Date.now();if(SYNC&&syncOn&&stepWall){const exp=(Date.now()-stepWall)/1000;if(Math.abs(v.currentTime-exp)>1.2&&exp<(v.duration||0)-3&&Date.now()-lastFix>5000){lastFix=Date.now();try{v.currentTime=exp}catch(e){}}}if(v.duration>5)$("#tqr").style.opacity=q&&v.duration-v.currentTime<25?1:0};
   if(at>2)v.addEventListener("loadedmetadata",()=>{try{v.currentTime=Math.min(at,(v.duration||at+1)-1)}catch(e){}},{once:true});
   v.muted=muted;v.src=src;v.play().catch(()=>{v.muted=true;v.play().catch(finish)})}
 /* subtitles: none for English trailers; English subtitles for trailers that look like another language (Polish, Indian, anime…) */
@@ -581,12 +588,19 @@ document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")next();if(e.key=
   if(e.key==="m"||e.key==="M"){muted=!muted;$("#svid").muted=muted;if(!muted&&!music&&MU!=="off"&&window.IMCMusic){music=IMCMusic.create(MU,MV);music.start()}musicFor($("#yt-wrap").hidden?"x":"yt-wrap");if(player&&player.mute){muted?player.mute():player.unMute()}}});
 let mv;document.addEventListener("mousemove",()=>{document.body.classList.add("pointer");clearTimeout(mv);mv=setTimeout(()=>document.body.classList.remove("pointer"),2500)});
 /* list mode (foyer.html?…&list=1, used by the hub's playlist): work out the running order and send it to the hub without playing anything */
-if(Q.get("list")==="1"){(async()=>{await load();const out=[];if(D){steps=buildSteps();const P=promos();let pi=0;
-  for(const st of steps){if(st.k==="trailer")out.push({k:"trailer",key:st.f.key,t:cleanTitle(st.f.title)});else if(st.k==="card")out.push({k:"card",key:st.f.key});
+if(Q.get("list")==="1"){(async()=>{await load();const out=[];let pl=null;if(D){
+  /* in step: list the exact plan the TVs follow (same order, same lengths), so the hub can show what's on now */
+  const inStep=Q.get("sync")!=="0";let loop=0;
+  if(inStep){buildPlan();steps=plan.steps;loop=plan.L?Math.floor(dayMs()/plan.L):0;pl={starts:plan.starts,d:plan.d,L:plan.L,half:halfHour(),loop}}else steps=buildSteps();
+  const P=promos();let pi=0,ii=0;
+  for(const[ix,st]of steps.entries()){const at=out.length;
+    if(inStep&&st.k==="promo"&&P.length)pi=(loop*plan.nPromo+st.pi);
+    if(st.k==="trailer")out.push({k:"trailer",key:st.f.key,t:cleanTitle(st.f.title)});else if(st.k==="card")out.push({k:"card",key:st.f.key});
     else if(st.k==="board")out.push({k:"board",t:LOUNGE?"LUXX today board":"Now showing board"});else if(st.k==="hours")out.push({k:"hours",t:"Opening times (shown while closed)"});
     else if(st.k==="ident")out.push({k:"ident",t:WEL.length>1?`Welcome video (one of your ${WEL.length}, picked at random)`:"Welcome video: "+((WEL[0]&&(WEL[0].kicker+" "+WEL[0].title))||"Welcome").trim()});
-    else if(st.k==="promo"&&P.length){const p=P[pi++%P.length];out.push({k:"promo",type:p.k,t:p.title,kick:p.kick||"",lines:(p.lines||[]).slice(0,4),price:p.price||"",adv:p.adv||"",secs:p.secs||10})}}}
-  try{(window.opener||window.parent).postMessage({imcRunning:out,ok:!!D,slides:D?promos().map(p=>({type:p.k,t:p.k==="ad"?"Advert: "+p.title:p.title})):[],allSlides:D?promos(true).filter((p,i,a)=>p.k!=="ad"&&p.k!=="msg"&&a.findIndex(q=>q.k===p.k)===i).map(p=>({type:p.k,t:p.title,kick:p.kick||"",lines:(p.lines||[]).slice(0,4),price:p.price||""})):[],ticker:D?tickerAll().filter(x=>!x.mine):[]},location.origin)}catch(e){}})()}
+    else if(st.k==="promo"&&P.length){const p=P[pi++%P.length];out.push({k:"promo",type:p.k,t:p.title,kick:p.kick||"",lines:(p.lines||[]).slice(0,4),price:p.price||"",adv:p.adv||"",secs:p.secs||10})}
+    if(inStep&&out.length>at)out[at].pi=ix}}
+  try{(window.opener||window.parent).postMessage({imcRunning:out,plan:pl,ok:!!D,slides:D?promos().map(p=>({type:p.k,t:p.k==="ad"?"Advert: "+p.title:p.title})):[],allSlides:D?promos(true).filter((p,i,a)=>p.k!=="ad"&&p.k!=="msg"&&a.findIndex(q=>q.k===p.k)===i).map(p=>({type:p.k,t:p.title,kick:p.kick||"",lines:(p.lines||[]).slice(0,4),price:p.price||""})):[],ticker:D?tickerAll().filter(x=>!x.mine):[]},location.origin)}catch(e){}})()}
 else (async()=>{$("#clock").textContent=londonNow().hm;await load();if(!D){$("#sinfo").textContent="Couldn't load the listings. Check the internet connection; retrying in a minute.";setTimeout(()=>location.reload(),60e3);return}
   const n=queue.length,nx=queue.filter(f=>f.extra).length,nf=n-nx;
   $("#sinfo").textContent=`${ONLY?`${nx} of your trailers on a loop`:`${nf} foyer-safe film${nf===1?"":"s"}${nx?` and ${nx} of your trailers`:""}`} for ${D.cinema}${BOARD_EVERY?", the Now showing board":""}${PROMOS?", deals and offers":""}.${SOUND&&TRAILERS?" Click Start to play with sound.":""}`;

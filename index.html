@@ -339,6 +339,9 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .plrow b{display:block;font-size:14px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.plrow .m{font-size:12px;color:var(--muted)}.plrow .acts{display:flex;gap:2px}.plrow .acts button{min-width:34px}
 .plgap{list-style:none;display:flex;gap:10px;align-items:baseline;padding:5px 6px 5px 58px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line)}.plgap .i{width:20px;text-align:center;flex:none}.plgap b{color:var(--ink,inherit);font-weight:600}.plgap .k{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-right:4px;opacity:.8}.plgap.ad b{color:inherit}.plend{list-style:none;padding:8px 6px 0 58px;font-size:12px;color:var(--muted);border-top:1px dashed var(--line)}
 @media (max-width:640px){.plgap,.plend{padding-left:22px}}
+.plnowbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 10px;padding:10px 14px;border-radius:12px;background:#0d1240;color:#fff;font-size:14px}.plnowbar .dot{width:10px;height:10px;border-radius:50%;background:#ff4d4d;box-shadow:0 0 0 0 rgba(255,77,77,.7);animation:plpulse 1.6s infinite;flex:none}@keyframes plpulse{70%{box-shadow:0 0 0 9px rgba(255,77,77,0)}100%{box-shadow:0 0 0 0 rgba(255,77,77,0)}}.plnowbar b{font-size:15px}.plnowbar .left{margin-left:auto;font-variant-numeric:tabular-nums;color:#ffd98a;font-weight:700}.plnowbar .bar{flex:1 1 100%;height:4px;border-radius:2px;background:rgba(255,255,255,.18);overflow:hidden}.plnowbar .bar i{display:block;height:100%;background:#ffc23d;width:0}
+.plrow.plnow,.plgap.plnow{background:rgba(255,194,61,.16);box-shadow:inset 4px 0 0 #ffc23d}.plgap.plnow{color:inherit}.plrow .nowtag{display:none;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#b3261e;margin-left:6px}.plrow.plnow .nowtag{display:inline}
+@media (prefers-reduced-motion:reduce){.plnowbar .dot{animation:none}}html.a-rm .plnowbar .dot{animation:none}
 .plrow.drag{opacity:.4}.plrow.over{box-shadow:inset 0 3px 0 var(--accent,#ffc23d)}.plk{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:999px;margin-right:6px;background:rgba(31,160,222,.18)}.plk.yt{background:rgba(255,194,61,.22)}.plk.st{background:rgba(70,180,90,.2)}
 @media (max-width:640px){.plrow{grid-template-columns:18px 56px minmax(0,1fr) auto}.plrow .n{display:none}.plrow img,.plrow .ph0{width:56px}}
 .xlist{margin-top:10px}.xrow{display:grid;grid-template-columns:26px 96px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.xrow:first-child{border-top:0}
@@ -734,6 +737,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
       <div class="panel" id="plPanel" style="margin-top:16px"><div class="ph"><h2>Playlist</h2><span class="tip" id="plcount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">Everything playing on the foyer TVs, in order. Drag a trailer (or use the arrows) to move it, ✕ to take it out. Films from imc.ie also get their showtimes card before the trailer.</p>
         <div class="plbar"><button class="btn small" type="button" id="plShuffle">⤮ Shuffle now</button><button class="btn small ghost" type="button" id="plReset">Reset order</button><label class="check"><input type="checkbox" id="plShuf"> Shuffle on the TVs every time round</label><label class="check"><input type="checkbox" id="plAll" checked> Show what plays in between (deals, adverts, board…)</label></div>
+        <div class="plnowbar" id="plNow" hidden></div>
         <ol class="pllist" id="plList"></ol><div id="plOut"></div></div>
       <div class="panel" id="btwPanel" style="margin-top:16px"><div class="ph"><h2>Between the trailers</h2><span class="tip" id="btwcount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">Choose which slides play between trailers, and what scrolls along the strip at the bottom of the screen. Adverts are set up on the Adverts page; your own messages are in the box under “Screens between trailers” below.</p>
@@ -1805,24 +1809,26 @@ function renderPlaylist(st){const el=$("#plList");if(!el)return;const L=plItems(
   $("#plShuf").checked=!!st.shuf;$("#plcount").textContent=L.length?`${L.length} trailer${L.length===1?"":"s"}${st.shuf?" · shuffled on the TVs":""}`:"";
   const kind={film:'<span class="plk">imc.ie</span>',yt:'<span class="plk yt">Your trailer</span>',studio:'<span class="plk st">Studio</span>'};
   const gaps=$("#plAll").checked&&RUN&&RUN.url===foyUrl(st)?RUN.gaps:null,gapHtml=g=>(g||[]).map(plGap).join("");
-  el.innerHTML=L.length?L.map((x,i)=>gapHtml(gaps&&gaps.before[x.key])+`<li class="plrow" draggable="true" data-pl="${esc(x.key)}"><span class="h" aria-hidden="true" title="Drag to move">⠿</span><span class="n">${i+1}</span>${x.img?`<img src="${esc(x.img)}" alt="" loading="lazy">`:'<span class="ph0">🎞</span>'}<div style="min-width:0"><b>${esc(x.title)}</b><div class="m">${kind[x.kind]||""}${esc(x.sub||"")}</div></div>
+  const pis=k=>RUN&&RUN.pis&&RUN.pis[k]?` data-pis=" ${RUN.pis[k].join(" ")} "`:"";
+  el.innerHTML=L.length?L.map((x,i)=>gapHtml(gaps&&gaps.before[x.key])+`<li class="plrow" draggable="true" data-pl="${esc(x.key)}"${pis(x.key)}><span class="h" aria-hidden="true" title="Drag to move">⠿</span><span class="n">${i+1}</span>${x.img?`<img src="${esc(x.img)}" alt="" loading="lazy">`:'<span class="ph0">🎞</span>'}<div style="min-width:0"><b>${esc(x.title)}<span class="nowtag">● On the TVs now</span></b><div class="m">${kind[x.kind]||""}${esc(x.sub||"")}</div></div>
     <div class="acts"><button class="btn small ghost" data-plmv="${i}" data-d="-1" ${i?"":"disabled"} aria-label="Move ${esc(x.title)} up">↑</button><button class="btn small ghost" data-plmv="${i}" data-d="1" ${i<L.length-1?"":"disabled"} aria-label="Move ${esc(x.title)} down">↓</button><button class="btn small ghost danger" data-plrm="${esc(x.key)}" aria-label="Take ${esc(x.title)} out of the playlist">✕</button></div></li>`).join("")+(gaps?gapHtml(gaps.end)+'<li class="plend">↻ Then it starts again from the top'+(st.shuf?", in a new random order":"")+'.'+(RUN.slides.length>1?` The deals and offers slides take turns in the breaks, so each time round shows the next ones: ${RUN.slides.map(x=>esc(x.t)).join(" · ")}.`:"")+'</li>':""):'<li class="tip" style="list-style:none">Nothing in the playlist yet. Tick films below, or add trailers from Recommended.</li>';
   if(!RUN||RUN.url!==foyUrl(st))plRunSoon(st);renderBetween(st);
   $("#plOut").innerHTML=gone.length?`<details class="fgroup" style="margin-top:8px"><summary>Taken out <span>${gone.length} · not playing</span></summary>${gone.map(x=>`<div class="plrow" style="grid-template-columns:72px minmax(0,1fr) auto">${x.img?`<img src="${esc(x.img)}" alt="" loading="lazy">`:'<span class="ph0">🎞</span>'}<div style="min-width:0"><b>${esc(x.title)}</b><div class="m">${esc(x.sub||"")}</div></div><div class="acts"><button class="btn small" data-plback="${esc(x.key)}">Put back</button></div></div>`).join("")}</details>`:""}
 /* what plays between the trailers: asked from the foyer player itself (foyer.html?…&list=1 in a hidden frame), so it matches the TVs */
 let RUN=null,runT=0,runFrame=null;
 const PL_ICON={board:"🗓",hours:"🕘",ident:"✨",wed:"🍿",kids:"🧒",luxx:"🛋",soon:"🎬",last:"⏳",scan:"📱",ad:"📣",msg:"💬"};
-function plGap(g){const ic=PL_ICON[g.type||g.k]||"•";
+function plGap(g){const ic=PL_ICON[g.type||g.k]||"•",pa=g.pi!=null?` data-pi="${g.pi}"`:"";
   if(g.k==="promo"){const what=g.type==="ad"?`<span class="k">Advert</span><b>${esc(g.t)}</b>${g.adv?" · "+esc(g.adv):""} · ${g.secs}s`:g.type==="msg"?`<span class="k">Your message</span><b>${esc(g.t)}</b>`:`<span class="k">${esc(g.kick||"Offer")}</span><b>${esc(g.t)}</b>${g.lines&&g.lines.length?" · "+esc(g.lines.join(" · ")):""}${g.price?" · "+esc(g.price):""}`;
-    return`<li class="plgap ${g.type==="ad"?"ad":""}"><span class="i" aria-hidden="true">${ic}</span><span>${what}</span></li>`}
-  return`<li class="plgap"><span class="i" aria-hidden="true">${ic}</span><span><b>${esc(g.t)}</b></span></li>`}
+    return`<li class="plgap ${g.type==="ad"?"ad":""}"${pa}><span class="i" aria-hidden="true">${ic}</span><span>${what}</span></li>`}
+  return`<li class="plgap"${pa}><span class="i" aria-hidden="true">${ic}</span><span><b>${esc(g.t)}</b></span></li>`}
 function plRunSoon(st){clearTimeout(runT);runT=setTimeout(()=>plRunFetch(foyState()),500)}
 function plRunFetch(st){const url=foyUrl(st);if(runFrame)runFrame.remove();runFrame=document.createElement("iframe");runFrame.hidden=true;runFrame.setAttribute("aria-hidden","true");runFrame.tabIndex=-1;
   runFrame.src=url+(url.includes("?")?"&":"?")+"list=1";runFrame.dataset.url=url;document.body.appendChild(runFrame)}
 window.addEventListener("message",e=>{if(e.origin!==location.origin||!e.data||!e.data.imcRunning||!runFrame||e.source!==runFrame.contentWindow)return;
   const url=runFrame.dataset.url,before={},end=[];let pend=[];
-  for(const it of e.data.imcRunning){if(it.k==="card")continue;if(it.k==="trailer"){if(pend.length)before[it.key]=(before[it.key]||[]).concat(pend);pend=[];continue}pend.push(it)}
-  end.push(...pend);RUN={url,gaps:{before,end},slides:e.data.slides||[],allSlides:e.data.allSlides||[],ticker:e.data.ticker||[]};runFrame.remove();runFrame=null;renderPlaylist(foyState())});
+  const pis={},items={};
+  for(const it of e.data.imcRunning){if(it.pi!=null)items[it.pi]=it;if(it.k==="card"){if(it.pi!=null)(pis[it.key]=pis[it.key]||[]).push(it.pi);continue}if(it.k==="trailer"){if(it.pi!=null)(pis[it.key]=pis[it.key]||[]).push(it.pi);if(pend.length)before[it.key]=(before[it.key]||[]).concat(pend);pend=[];continue}pend.push(it)}
+  end.push(...pend);RUN={url,plan:e.data.plan||null,pis,items,gaps:{before,end},slides:e.data.slides||[],allSlides:e.data.allSlides||[],ticker:e.data.ticker||[]};runFrame.remove();runFrame=null;renderPlaylist(foyState())});
 const SLIDE_NAMES={wed:"Wednesday Meal Deal",kids:"Kids Club",luxx:"LUXX upgrade",soon:"Coming soon posters",last:"Last chance to see",scan:"Scan to book"};
 const TICK_NAMES={wed:"Wednesday Meal Deal",kids:"Kids Club",luxx:"LUXX upgrade",book:"Book online",last:"Last film tonight"};
 function renderBetween(st){const sl=$("#btwSlides"),tk=$("#btwTick");if(!sl||!RUN)return;const px=new Set(st.px||[]),tx=new Set(st.tx||[]),tt=st.tt||{};
@@ -1843,6 +1849,20 @@ $("#fmuPlay").onclick=()=>{const st=foyState();if(musicPrev&&musicPrev.playing){
   if(st.mu==="off"){toast("Music is off. Choose a style first");return}if(!window.IMCMusic)return;if(musicPrev)musicPrev.stop();musicPrev=IMCMusic.create(st.mu||"cinema",st.mv??35);musicPrev.start();musicPrev.on(.8);$("#fmuPlay").textContent="■ Stop";
   musicPrevT=setTimeout(()=>{musicPrev.off(1.5);$("#fmuPlay").textContent="▶ Listen"},20000)};
 $("#fmv").addEventListener("input",e=>{if(musicPrev)musicPrev.setVolume(+e.target.value)});
+/* what's on the foyer TVs right now: in step, every TV follows the same plan by the clock, so this PC can work it out too */
+function londonMs(){const p=Object.fromEntries(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).map(x=>[x.type,x.value]));return((+p.hour)*3600+(+p.minute)*60+(+p.second))*1000+Date.now()%1000}
+function londonHalf(){const p=Object.fromEntries(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).map(x=>[x.type,x.value]));return`${p.year}-${p.month}-${p.day}T${p.hour}${+p.minute>=30?"b":"a"}`}
+let plNowKey="";
+function plNowTick(){const bar=$("#plNow");if(!bar||view!=="foyer")return;const P=RUN&&RUN.plan,st=foyState();
+  if(!P||!P.L||st.sync===false||!$("#plAll").checked){bar.hidden=true;$$("#plList .plnow").forEach(x=>x.classList.remove("plnow"));return}
+  if(P.half!==londonHalf()){plRunSoon(st);return}
+  const t=londonMs(),loop=Math.floor(t/P.L),p=t-loop*P.L;if(loop!==P.loop){P.loop=loop;plRunSoon(st)}
+  let i=0;while(i<P.starts.length-1&&p>=P.starts[i]+P.d[i])i++;const left=Math.max(0,Math.ceil((P.starts[i]+P.d[i]-p)/1000)),it=RUN.items[i]||{};
+  const what=it.k==="card"?"Showtimes card: "+(foyFilms().find(f=>f.key===it.key)||{}).title:it.k==="trailer"?"Trailer: "+it.t:it.k==="promo"?(it.type==="ad"?"Advert: ":"")+it.t:it.t||"";
+  const key=i+"|"+loop;if(key!==plNowKey){plNowKey=key;$$("#plList .plnow").forEach(x=>x.classList.remove("plnow"));
+    const row=document.querySelector(`#plList [data-pi="${i}"]`)||document.querySelector(`#plList [data-pis~="${i}"]`);if(row)row.classList.add("plnow")}
+  bar.hidden=false;bar.innerHTML=`<span class="dot" aria-hidden="true"></span><span>On the foyer TVs now: <b>${esc(what)}</b></span><span class="left">${Math.floor(left/60)}:${String(left%60).padStart(2,"0")} left</span><span class="bar"><i style="width:${Math.min(100,100*(p-P.starts[i])/P.d[i]).toFixed(1)}%"></i></span>`}
+setInterval(plNowTick,1000);
 function plSetOrder(keys){const st=foyState();st.order=keys;foySave(st);renderFoyer()}
 $("#plList").addEventListener("click",e=>{const mv=e.target.closest("[data-plmv]"),rm=e.target.closest("[data-plrm]");const st=foyState(),keys=plItems(st).map(x=>x.key);
   if(mv){const i=+mv.dataset.plmv,j=i+ +mv.dataset.d;if(j<0||j>=keys.length)return;[keys[i],keys[j]]=[keys[j],keys[i]];plSetOrder(keys);return}
@@ -2943,7 +2963,8 @@ $("#sitesel").addEventListener("change",async e=>{site=e.target.value;try{localS
   await loadImc();imcTried=true;renderToday();renderWhatsOn();if(view==="deals")renderDeals();if(view==="foyer")renderFoyer();if(view==="calendar")renderCalendar();if(view==="toolkit")renderToolkit()});
 fillSitePicker();siteText();
 
-loadImc().finally(()=>{imcTried=true;renderToday();renderWhatsOn()});
+/* once the listings arrive, redraw the page that is open (it may have been opened from the address before they loaded) */
+loadImc().finally(()=>{imcTried=true;renderToday();renderWhatsOn();if(view!=="today"&&view!=="whatson"){const y=window.scrollY;go(view);window.scrollTo(0,y)}});
 
 /* ---------- boot ---------- */
 go("today");fillForm();renderAll();renderDeals();
