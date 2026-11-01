@@ -416,7 +416,15 @@ async function next(){if(SYNC&&syncOn)return syncTick();clearTimeout(timer);try{
    Listings and settings are picked up on the same half hour / minute on every TV, so they change together. */
 let joined=false,stepWall=0,stepLen=0,DUR={},syncOn=false,syncBoard=null,plan=null,playingKey=null,syncT=0,loadSlot="";
 const TRAILER_DEFAULT=150;
-function dayMs(){const n=londonNow();return((+n.hm.slice(0,2))*3600+(+n.hm.slice(3,5))*60+(+n.s||0))*1000+Date.now()%1000}
+/* the website's clock, not this PC's: every TV uses the same time even if a PC clock is a few seconds out.
+   Several quick requests narrow down when the server's second ticks over, to within a fraction of a second. */
+let clockOff=0,clockAt=0;
+async function syncClock(){let lo=-Infinity,hi=Infinity;
+  for(let i=0;i<8;i++){try{const t0=Date.now(),r=await fetch("foyer.html?clk="+t0+i,{method:"HEAD",cache:"no-store"}),t1=Date.now(),d=Date.parse(r.headers.get("date")||"");
+    if(d){lo=Math.max(lo,d-t1);hi=Math.min(hi,d+1000-t0)}}catch(e){}await new Promise(r=>setTimeout(r,113+i*37))}
+  if(isFinite(lo)&&isFinite(hi)&&hi>=lo){clockOff=Math.round((lo+hi)/2);clockAt=Date.now()}}
+const nowMs=()=>Date.now()+clockOff;
+function dayMs(){const t=nowMs(),p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date(t)))p[x.type]=x.value;return((+p.hour)*3600+(+p.minute)*60+(+p.second))*1000+t%1000}
 function halfHour(){const n=londonNow();return n.date+"T"+n.hm.slice(0,2)+(+n.hm.slice(3,5)>=30?"b":"a")}
 function planStamp(){return[halfHour(),Q.toString(),D&&(D.updated||D.generated||D.fetched||""),Object.keys(DUR).length,STUDIO.map(x=>x.id+":"+(x.len||0)).join(",")].join("|")}
 function boardPlan(){const ds=dayState();if(!ds.rows.length)return null;const pages=Math.min(3,Math.ceil(ds.rows.length/9));return{pages,secs:pages>1?9:13}}
@@ -457,7 +465,14 @@ function syncStart(x,loop,off,left){lastStep=Date.now();
 window.__foyerNow=()=>({key:playingKey&&playingKey.split("#")[1],step:plan&&playingKey?plan.steps[+playingKey.split(":").pop()].k:null,L:plan&&plan.L});   /* for checking TVs are in step */
 async function loadDurations(){const j=await getJson("data/durations.json");if(j){delete j._base;DUR=j}}
 /* everyone fetches new listings on the same half hour, so the plan changes on every TV together */
-setInterval(async()=>{if(!SYNC||!syncOn)return;const h=halfHour(),n=londonNow();if(h!==loadSlot&&+n.s>=4){loadSlot=h;await load();syncTick()}},5e3);
+setInterval(async()=>{if(!SYNC||!syncOn)return;const h=halfHour(),n=londonNow();if(h!==loadSlot&&+n.s>=4){loadSlot=h;await load();await syncClock();syncTick()}},5e3);
+/* "Sync all TVs now" from the manager's PC: at the same moment, every TV reloads listings and settings, re-checks the clock and restarts in step */
+let resyncDone=null,resyncT=0;
+function resyncCheck(j){const r=j&&j.resync;if(!r||!r.id)return;let seen=null;try{seen=localStorage.getItem("imc-foyer-resync")}catch(e){}
+  if(r.id===seen||r.id===resyncDone)return;resyncDone=r.id;try{localStorage.setItem("imc-foyer-resync",r.id)}catch(e){}
+  if(Date.now()-r.id>5*60e3)return;   /* an old request: nothing to do */
+  clearTimeout(resyncT);resyncT=setTimeout(resyncNow,Math.max(0,r.at-nowMs()))}
+async function resyncNow(){await syncClock();await load();if(pendingQ!=null)await applyPending();plan=null;playingKey=null;joined=false;syncStop();if(SYNC&&syncOn)syncTick();else{si=steps.length;next()}}
 /* no internet (or YouTube unreachable): skip YouTube trailers straight away and try again in a few minutes */
 let ytDownUntil=0,ytFails=0;
 const netDown=()=>offline||navigator.onLine===false||Date.now()<ytDownUntil;
@@ -544,7 +559,7 @@ async function load(){await loadStudio();await loadDurations();savedCopy=false;l
   if(!D){queue=[];return}queue=buildQueue();renderTicker();tickStrip();
   document.title=(D.cinema||"IMC")+(LOUNGE?" LUXX lounge":" foyer screen");if(LOUNGE){const h=$("#start h1");if(h)h.textContent="LUXX lounge"}}
 async function start(){try{sessionStorage.setItem("imc-foyer-auto","1")}catch(e){}
-  if(SOUND){muted=false;let ok=true;try{const ac=new(window.AudioContext||window.webkitAudioContext)();await Promise.race([ac.resume(),new Promise(r=>setTimeout(r,600))]);ok=ac.state==="running";ac.close()}catch(e){}if(!ok){muted=true;soundHint(true)}}if(MU!=="off"&&!music&&window.IMCMusic&&!muted){music=IMCMusic.create(MU,MV);music.start()}si=steps.length;wake();if(SYNC){syncOn=true;loadSlot=halfHour();syncTick()}else next()}
+  if(SOUND){muted=false;let ok=true;try{const ac=new(window.AudioContext||window.webkitAudioContext)();await Promise.race([ac.resume(),new Promise(r=>setTimeout(r,600))]);ok=ac.state==="running";ac.close()}catch(e){}if(!ok){muted=true;soundHint(true)}}if(MU!=="off"&&!music&&window.IMCMusic&&!muted){music=IMCMusic.create(MU,MV);music.start()}si=steps.length;wake();if(SYNC){await syncClock();syncOn=true;loadSlot=halfHour();syncTick()}else next()}
 /* keep the TV awake, and recover if anything ever gets stuck */
 let lock=null;async function wake(){try{if("wakeLock" in navigator&&!lock){lock=await navigator.wakeLock.request("screen");lock.addEventListener("release",()=>{lock=null})}}catch(e){}}
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)wake()});
@@ -561,12 +576,12 @@ function liveCheck(){if(Q.get("list")==="1")return;let loc=null;if(!CHILD)try{co
   const want=new URLSearchParams(best.q);if(want.toString()!==Q.toString()&&want.toString()!==pendingQ)pendingQ=want.toString()}
 async function remoteCheck(){if(Q.get("list")==="1")return;const path="data/foyer/"+encodeURIComponent(SITE)+".json";let j=null;
   try{const r=await fetch("https://api.github.com/repos/popcorn483/imc/contents/"+path+"?ref=main",{headers:{Accept:"application/vnd.github.raw+json"},cache:"no-cache"});if(r.ok)j=await r.json();else if(r.status!==404){const r2=await fetch(RAW+path+"?ts="+Date.now(),{cache:"no-store"});if(r2.ok)j=await r2.json()}}catch(e){}
-  if(j&&(LOUNGE?j.lq:j.q))remote={q:LOUNGE?j.lq:j.q,at:Date.parse(j.updated)||0};lastRemote={at:Date.now(),ok:!!j,updated:j&&j.updated};liveCheck()}
+  if(j&&(LOUNGE?j.lq:j.q))remote={q:LOUNGE?j.lq:j.q,at:Date.parse(j.updated)||0};resyncCheck(j);lastRemote={at:Date.now(),ok:!!j,updated:j&&j.updated};liveCheck()}
 let lastRemote=null;
 /* press I on the foyer PC: what this player is doing (for checking a TV that isn't following the settings) */
 const BUILT=(()=>{const d=new Date(document.lastModified);return isNaN(d)?document.lastModified:d.toLocaleString("en-GB",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})})();
 function infoBox(){let el=$("#infobox");if(el){el.remove();return}el=document.createElement("div");el.id="infobox";const n=londonNow(),f=t=>t?new Date(t).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit",second:"2-digit"}):"never";
-  const rows=[["Player version",BUILT],["Cinema",(D&&D.cinema)||SITE],["This PC's clock",n.hm+":"+String(n.s).padStart(2,"0")+" (should match the time on your phone)"],
+  const rows=[["Player version",BUILT],["Cinema",(D&&D.cinema)||SITE],["Clock",clockAt?`shared clock (this PC's clock is ${Math.abs(clockOff/1000).toFixed(1)} s ${clockOff>0?"slow":"fast"})`:"this PC's own (shared clock not reached yet)"],
     ["Settings from the manager's PC",remote?"yes, saved "+f(remote.at):lastRemote&&lastRemote.ok===false?"none found yet":"not checked yet"],["Last checked for settings",lastRemote?f(lastRemote.at):"not yet"],
     ["Settings in use",remote&&new URLSearchParams(remote.q).toString()===Q.toString()?"the manager's (up to date)":pendingQ?"new settings waiting: they start at the next screen":"this PC's own"],
     ["All TVs in step",SYNC?(syncOn?"on":"on (starts after Start)"):"off"],["Internet",offline||navigator.onLine===false?"down: showing saved listings":"ok"],["Listings updated",D&&D.updated?f(D.updated):"unknown"],["Sound",muted?"off (click once to turn on)":"on"],["Trailers that showed nothing today",badList().map(x=>x.title+" ("+x.why+")").join("; ")||"none"]];

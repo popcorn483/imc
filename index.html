@@ -737,7 +737,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
       <div class="panel tvapp"><div class="syncrow"><span style="font-size:28px" aria-hidden="true">📺</span><div style="min-width:0;flex:1 1 260px"><b>Setting up a foyer PC?</b><div class="tip" style="margin:2px 0 0">On each foyer PC, open the <b>IMC Foyer TV</b> app: it always plays what's set here, in step with the other TVs, and starts by itself. Address: <code id="tvAddr">tv.html</code></div></div><div class="row-btns" style="margin:0"><a class="btn small primary" href="tv.html" target="imc-tv" style="text-decoration:none">Open the TV app ↗</a><button class="btn small" type="button" id="tvCopy">Copy address</button></div></div></div>
       <div class="panel" id="plPanel" style="margin-top:16px"><div class="ph"><h2>Playlist</h2><span class="tip" id="plcount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">Everything playing on the foyer TVs, in order. Drag a trailer (or use the arrows) to move it, ✕ to take it out. Films from imc.ie also get their showtimes card before the trailer.</p>
-        <div class="plbar"><button class="btn small" type="button" id="plShuffle">⤮ Shuffle now</button><button class="btn small ghost" type="button" id="plReset">Reset order</button><label class="check"><input type="checkbox" id="plShuf"> Shuffle on the TVs every time round</label><label class="check"><input type="checkbox" id="plAll" checked> Show what plays in between (deals, adverts, board…)</label></div>
+        <div class="plbar"><button class="btn small primary" type="button" id="plResync" title="Every foyer TV reloads and restarts together, in step">⟳ Sync all TVs now</button><button class="btn small" type="button" id="plShuffle">⤮ Shuffle now</button><button class="btn small ghost" type="button" id="plReset">Reset order</button><label class="check"><input type="checkbox" id="plShuf"> Shuffle on the TVs every time round</label><label class="check"><input type="checkbox" id="plAll" checked> Show what plays in between (deals, adverts, board…)</label></div>
         <div class="plnowbar" id="plNow" hidden></div>
         <ol class="pllist" id="plList"></ol><div id="plOut"></div></div>
       <div class="panel" id="btwPanel" style="margin-top:16px"><div class="ph"><h2>Between the trailers</h2><span class="tip" id="btwcount" style="margin:0"></span></div>
@@ -1851,7 +1851,10 @@ $("#fmuPlay").onclick=()=>{const st=foyState();if(musicPrev&&musicPrev.playing){
   musicPrevT=setTimeout(()=>{musicPrev.off(1.5);$("#fmuPlay").textContent="▶ Listen"},20000)};
 $("#fmv").addEventListener("input",e=>{if(musicPrev)musicPrev.setVolume(+e.target.value)});
 /* what's on the foyer TVs right now: in step, every TV follows the same plan by the clock, so this PC can work it out too */
-function londonMs(){const p=Object.fromEntries(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).map(x=>[x.type,x.value]));return((+p.hour)*3600+(+p.minute)*60+(+p.second))*1000+Date.now()%1000}
+/* the website's clock (the same one the TVs use), so "now on the TVs" is right even if this PC's clock is out */
+let hubClockOff=0;
+(async()=>{let lo=-Infinity,hi=Infinity;for(let i=0;i<6;i++){try{const t0=Date.now(),r=await fetch("index.html?clk="+t0+i,{method:"HEAD",cache:"no-store"}),t1=Date.now(),d=Date.parse(r.headers.get("date")||"");if(d){lo=Math.max(lo,d-t1);hi=Math.min(hi,d+1000-t0)}}catch(e){}await new Promise(r=>setTimeout(r,120+i*41))}if(isFinite(lo)&&isFinite(hi)&&hi>=lo)hubClockOff=Math.round((lo+hi)/2)})();
+function londonMs(){const t=Date.now()+hubClockOff,p=Object.fromEntries(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date(t)).map(x=>[x.type,x.value]));return((+p.hour)*3600+(+p.minute)*60+(+p.second))*1000+t%1000}
 function londonHalf(){const p=Object.fromEntries(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).map(x=>[x.type,x.value]));return`${p.year}-${p.month}-${p.day}T${p.hour}${+p.minute>=30?"b":"a"}`}
 let plNowKey="";
 function plNowTick(){const bar=$("#plNow");if(!bar||view!=="foyer")return;const P=RUN&&RUN.plan,st=foyState();
@@ -1875,6 +1878,16 @@ $("#plList").addEventListener("click",e=>{const mv=e.target.closest("[data-plmv]
   if(mv){const i=+mv.dataset.plmv,j=i+ +mv.dataset.d;if(j<0||j>=keys.length)return;[keys[i],keys[j]]=[keys[j],keys[i]];plSetOrder(keys);return}
   if(rm){st.hide=[...new Set([...(st.hide||[]),rm.dataset.plrm])];foySave(st);renderFoyer();toast("Taken out of the playlist. Put it back from “Taken out” below the list")}});
 $("#plOut").addEventListener("click",e=>{const b=e.target.closest("[data-plback]");if(!b)return;const st=foyState();st.hide=(st.hide||[]).filter(k=>k!==b.dataset.plback);foySave(st);renderFoyer();toast("Back in the playlist")});
+/* Sync all TVs now: adds a "resync" request to the settings file; every TV picks it up on its next check (on the minute) and restarts together */
+$("#plResync").onclick=async()=>{if(!ghKey()){toast("Connect this computer first (Connect, at the top of this page), so it can reach the foyer TVs");return}
+  const b=$("#plResync");b.disabled=true;b.textContent="Sending…";
+  try{await foyLiveSave();const path="/contents/data/foyer/"+encodeURIComponent(site)+".json";
+    for(let tries=0;tries<3;tries++){const g=await gh(path+"?ref=main",{cache:"no-store"});if(!g.ok)throw new Error("get "+g.status);const cur=await g.json();
+      const j=JSON.parse(decodeURIComponent(escape(atob(cur.content.replace(/\n/g,"")))));const now=Date.now()+hubClockOff,at=Math.ceil((now+8000)/60000)*60000+20000;j.resync={id:Date.now(),at};
+      const r=await gh(path,{method:"PUT",body:JSON.stringify({message:"Sync all foyer TVs ("+site+")",branch:"main",sha:cur.sha,content:b64u(JSON.stringify(j,null,1))})});
+      if(r.ok){toast("Sent. Every foyer TV restarts together at "+new Date(at).toLocaleTimeString("en-GB"));b.textContent="✓ TVs resync at "+new Date(at).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",second:"2-digit"});setTimeout(()=>{b.disabled=false;b.textContent="⟳ Sync all TVs now"},Math.max(5000,at-now+5000));return}
+      if(r.status!==409&&r.status!==422)throw new Error("put "+r.status)}
+    throw new Error("busy")}catch(e){toast("Couldn't reach the TVs just now. Check the internet, then try again");b.disabled=false;b.textContent="⟳ Sync all TVs now"}};
 $("#plShuffle").onclick=()=>{const keys=plItems(foyState()).map(x=>x.key);for(let i=keys.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[keys[i],keys[j]]=[keys[j],keys[i]]}plSetOrder(keys);toast("Shuffled")};
 $("#plReset").onclick=()=>{plSetOrder([]);toast("Back to the usual order: films by next showing, then your trailers")};
 $("#plAll").addEventListener("change",()=>renderPlaylist(foyState()));
@@ -1899,8 +1912,8 @@ const b64u=t=>btoa(unescape(encodeURIComponent(t)));
 async function gh(path,opt={}){return fetch("https://api.github.com/repos/"+GH_REPO+path,{...opt,headers:{Accept:"application/vnd.github+json",Authorization:"Bearer "+ghKey(),"X-GitHub-Api-Version":"2022-11-28",...(opt.headers||{})}})}
 async function syncPush(q,lq){if(!ghKey()||syncBusy)return;const sent=localStorage.getItem("imc-foyer-sent:"+site),body=JSON.stringify({q,lq});if(sent===body&&syncState.ok!==false)return;
   syncBusy=true;try{const path="/contents/data/foyer/"+encodeURIComponent(site)+".json";
-    for(let tries=0;tries<2;tries++){let sha;const g=await gh(path+"?ref=main",{cache:"no-store"});if(g.status===401||g.status===403){syncSet(false,"The GitHub key isn't working (it may have expired). Click Connect to add a new one.");return}if(g.ok)sha=(await g.json()).sha;
-      const r=await gh(path,{method:"PUT",body:JSON.stringify({message:"Foyer TV settings ("+site+")",branch:"main",content:b64u(JSON.stringify({updated:new Date().toISOString(),q,lq},null,1)),...(sha?{sha}:{})})});
+    for(let tries=0;tries<2;tries++){let sha,prev=null;const g=await gh(path+"?ref=main",{cache:"no-store"});if(g.status===401||g.status===403){syncSet(false,"The GitHub key isn't working (it may have expired). Click Connect to add a new one.");return}if(g.ok){const cur=await g.json();sha=cur.sha;try{prev=JSON.parse(decodeURIComponent(escape(atob(cur.content.replace(/\n/g,"")))))}catch(e){}}
+      const r=await gh(path,{method:"PUT",body:JSON.stringify({message:"Foyer TV settings ("+site+")",branch:"main",content:b64u(JSON.stringify({updated:new Date().toISOString(),q,lq,...(prev&&prev.resync?{resync:prev.resync}:{})},null,1)),...(sha?{sha}:{})})});
       if(r.ok){localStorage.setItem("imc-foyer-sent:"+site,body);localStorage.setItem("imc-foyer-sent-at",String(Date.now()));syncSet(true,"");return}
       if(r.status===401||r.status===403){syncSet(false,"The GitHub key can't save files. Check it has Contents: Read and write for popcorn483/imc.");return}
       if(r.status!==409&&r.status!==422)break}
