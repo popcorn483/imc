@@ -903,13 +903,22 @@ function candy(c,x,y,s,col,kind,r){col=col||CANDY[Math.floor(r()*CANDY.length)];
   c.fillStyle="rgba(255,255,255,.5)";c.beginPath();c.arc(-s*.3,-s*.3,s*.2,0,TAU);c.fill();c.restore()}
 const PRODUCT_LABEL={ticket:"Ticket text",giftcard:"Amount or words on the card (e.g. £25)"};
 /* ---------- gift cards: a premium IMC gift card, drawn, in four themes ---------- */
+/* IMC's real gift card (data/products/giftcard-imc.png) is the default; the drawn styles are alternatives */
+const GIFT_IMG=new Image();GIFT_IMG.onload=()=>{try{for(const k in TICKET_CACHE)if(k.startsWith("gimc"))delete TICKET_CACHE[k];draw()}catch(e){}};GIFT_IMG.src="data/products/giftcard-imc.png";
 const GIFT_THEMES={
+  imc:{n:"IMC's card"},
   general:{n:"General",card:["#0b1f6b","#123a9e","#06103a"],ribbon:"#d81e2c",foil:"#ffd27a",motif:"stars"},
   christmas:{n:"Christmas",card:["#8e0f1c","#c8161d","#4a050c"],ribbon:"#d9a93a",foil:"#ffe3a0",motif:"snow"},
   halloween:{n:"Halloween",card:["#1a0b24","#3a1550","#07030b"],ribbon:"#f39a2b",foil:"#ffb54a",motif:"web"},
   birthday:{n:"Birthday",card:["#7a1fa8","#e0418f","#3b0f63"],ribbon:"#ffd84a",foil:"#fff0b0",motif:"confetti"}};
 function drawGiftCard(c,L){
-  const th=GIFT_THEMES[L.theme]||GIFT_THEMES.general,w=520,h=328,pad=80,k=3,txt=String(L.text||"").trim(),key=["g3",L.theme,txt,L.c1||"",L.c2||""].join("|");
+  if((L.theme||"imc")==="imc"){const w=520,h=GIFT_IMG.naturalWidth?Math.round(520*GIFT_IMG.naturalHeight/GIFT_IMG.naturalWidth):278,txt=String(L.text||"").trim();
+    c.save();c.shadowColor="rgba(0,0,0,.45)";c.shadowBlur=30;c.shadowOffsetY=16;if(GIFT_IMG.complete&&GIFT_IMG.naturalWidth)c.drawImage(GIFT_IMG,-w/2,-h/2,w,h);else{c.fillStyle="#fff";c.fillRect(-w/2,-h/2,w,h)}c.restore();
+    if(txt){/* the amount, in IMC red, in the card's empty space between the ribbon and #MADABOUTMOVIES */
+      let fs=60;c.font=`900 ${fs}px ${FONTS.display}`;while(tw(c,txt,1)>w*.4&&fs>24){fs-=2;c.font=`900 ${fs}px ${FONTS.display}`}
+      c.fillStyle="#e3101b";c.textBaseline="alphabetic";ft(c,txt,w*.36,h*.24,1,"right")}
+    return{w,h}}
+  const th=GIFT_THEMES[L.theme]||GIFT_THEMES.general,w=520,h=328,pad=80,k=3,txt=String(L.text||"").trim(),key=["g4",L.theme,txt,L.c1||"",L.c2||""].join("|");
   if(!TICKET_CACHE[key]){const cv=document.createElement("canvas");cv.width=(w+pad*2)*k;cv.height=(h+pad*2)*k;const x=cv.getContext("2d");x.scale(k,k);x.translate(w/2+pad,h/2+pad);
     const card=L.c1?[shade(L.c1,-25),L.c1,shade(L.c1,-60)]:th.card,rib=L.c2||th.ribbon,foil=th.foil;
     const rr=(X,Y,W,H,r)=>{x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+W,Y,X+W,Y+H,r);x.arcTo(X+W,Y+H,X,Y+H,r);x.arcTo(X,Y+H,X,Y,r);x.arcTo(X,Y,X+W,Y,r);x.closePath()};
@@ -950,7 +959,7 @@ function drawGiftCard(c,L){
     /* GIFT CARD in foil, the amount or wording, the website */
     const foilFill=(Y,H)=>{const fg=x.createLinearGradient(0,Y-H,0,Y+H);fg.addColorStop(0,shade(foil,40));fg.addColorStop(.5,foil);fg.addColorStop(1,shade(foil,-35));return fg};
     x.textBaseline="alphabetic";x.font=`800 20px Montserrat,${FONTS.body}`;x.fillStyle=foilFill(h/2-34,12);ft(x,"GIFT CARD",rx+band/2+22,h/2-30,7,"left");
-    if(txt){let fs=74;x.font=`900 ${fs}px ${FONTS.display}`;while(tw(x,txt,1)>w*.5&&fs>30){fs-=2;x.font=`900 ${fs}px ${FONTS.display}`}
+    if(txt){let fs=74;x.font=`900 ${fs}px ${FONTS.display}`;while(tw(x,txt,1)>w*.26&&fs>30){fs-=2;x.font=`900 ${fs}px ${FONTS.display}`}
       x.shadowColor="rgba(0,0,0,.4)";x.shadowBlur=6;x.shadowOffsetY=2;x.fillStyle=foilFill(h/2-40-fs*.3,fs*.4);ft(x,txt,w/2-34,h/2-34,1,"right");x.shadowBlur=0;x.shadowOffsetY=0}
     x.font=`600 11px ${FONTS.body}`;x.fillStyle="rgba(255,255,255,.7)";ft(x,"imc.ie  ·  #MADABOUTMOVIES",rx+band/2+22,h/2-58,2,"left");
     /* holographic seal */
@@ -966,7 +975,7 @@ const GIFT_POSTS=[
   {k:"halloween",n:"Halloween gift card",bg:"spooky",frame:{style:"vignette",accent:"#f39a2b"},fx:{bats:true,fog:true},badge:{style:"ribbon",text:"A SPOOKY TREAT",c1:"#f39a2b",c2:"#1a0b24"},title:"TRICK OR TREAT?",sub:"Treat them to a scary movie night",amount:""},
   {k:"birthday",n:"Birthday gift card",bg:"pastel",frame:{style:"vignette",accent:"#b9a2ff"},fx:{balloons:true,confetti:true},badge:{style:"pill",text:"HAPPY BIRTHDAY",c1:"#ffffff",c2:"#6a4bc4"},title:"THE GIFT OF FILMS",sub:"IMC gift cards: any amount, any film",ink:"#2a1a6e",amount:""}];
 function giftLayers(g){const ink=g.ink||"#ffffff";return[mk("badge","coming",{...g.badge,y:.12,s:g.badge.text.length>18?.78:1,anim:"shine"}),
-  mk("product","giftcard",{theme:g.k,text:g.amount,x:.5,y:.43,s:1.3,r:-.06,anim:"pop",delay:.1}),
+  mk("product","giftcard",{theme:"imc",text:g.amount,x:.5,y:.43,s:1.4,r:-.05,anim:"pop",delay:.1}),
   mk("text","title",{text:g.title,size:fitSize(g.title,"display",110,56,940),y:.7,c1:ink,anim:"slide",delay:.2}),mk("text","sub",{text:g.sub,y:.785,c1:ink,anim:"slide",delay:.28})]}
 function applyGift(k){const g=GIFT_POSTS.find(x=>x.k===k);if(!g)return;S.label=g.n;S.bg=g.bg;S.frame={...S.frame,...g.frame};S.motion={...S.motion,fx:{...g.fx}};S.layers=giftLayers(g);
   selId=S.layers[1].id;clampPhoto();syncAll();commit();toast(g.n+": click the card to add an amount (e.g. £25) or change its theme")}
@@ -1862,7 +1871,7 @@ function renderProps(){const L=getSel(),P=$("#props");if(selId===BG_ID){P.innerH
     <label class="check"><input type="checkbox" id="pp-box" ${L.box?"checked":""}> Background panel</label>
     ${L.box?colourBlock("Panel colour","c2",L):""}`}
   if(L.kind==="badge"&&L.style==="menu"){h+=`<label class="lbl" for="pp-items">What's included (one per line)</label><textarea id="pp-items" rows="4">${esc(L.items||"")}</textarea>`}
-  if(L.kind==="product"&&L.key==="giftcard")h+=`<label class="lbl">Card theme</label><div class="row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px">${Object.entries(GIFT_THEMES).map(([k,t])=>`<button class="btn small" type="button" data-gtheme="${k}" aria-pressed="${(L.theme||"general")===k}">${t.n}</button>`).join("")}</div>`;
+  if(L.kind==="product"&&L.key==="giftcard")h+=`<label class="lbl">Card design</label><div class="row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px">${Object.entries(GIFT_THEMES).map(([k,t])=>`<button class="btn small" type="button" data-gtheme="${k}" aria-pressed="${(L.theme||"imc")===k}">${t.n}</button>`).join("")}</div>`;
   if(L.kind==="product"){if(PRODUCT_LABEL[L.key])h+=`<label class="lbl" for="pp-text">${PRODUCT_LABEL[L.key]}</label><input id="pp-text" type="text" value="${esc(L.text||"")}">`;h+=colourBlock(L.key==="hotdog"?"Sausage colour":L.key==="nachos"||L.key==="tray"?"Tray colour":L.key==="popcorn"?"Box colour":L.key==="icescoop"?"Cup colour":L.key==="ticket"?"Ticket colour":L.key==="pickmix"?"Stripe colour":L.key==="sweets"?"Bag colour":"Main colour","c1",L)+colourBlock(L.key==="popcorn"?"Heart colour":L.key==="icescoop"?"Top scoop colour":L.key==="icetub"?"Band colour":L.key==="ticket"?"Text colour":L.key==="pickmix"?"Bag colour":L.key==="drink"?"Straw colour":L.key==="hotdog"?"Mustard colour":L.key==="nachos"?"Cheese colour":"Second colour","c2",L)}
   if(L.kind==="listing"){h+=listingPanel(L)}
   if(L.kind==="rating"){const sys=L.system||"bbfc",opts=ratingList(sys).filter(o=>o.cert!==sys.toUpperCase());h+=`<div class="seg" id="pp-rsys" style="width:max-content"><button data-prs="bbfc" aria-pressed="${sys==="bbfc"}">BBFC</button><button data-prs="ifco" aria-pressed="${sys==="ifco"}">IFCO</button></div>`+(opts.length?`<label class="lbl" for="pp-rating">Certificate</label><select id="pp-rating">${!L.src?`<option value="" selected>${esc(L.cert||"Choose")}</option>`:""}${opts.map(o=>`<option value="${esc(o.src)}" ${o.src===L.src?"selected":""}>${esc(o.cert)}</option>`).join("")}</select>`:`<p class="note">Rating symbols load from imc.ie on the live site.</p>`)+(sys==="ifco"?`<p class="note">IFCO certificates can differ from BBFC ones. Check the film's IFCO rating.</p>`:"")}
