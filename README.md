@@ -489,6 +489,8 @@ The **Playlist** at the top of the Foyer trailers page lists everything playing 
 - With **Show what plays in between** ticked, the Playlist also shows the Now showing board, deals and offers slides, adverts, your messages and welcome videos where they fall between trailers. The hub gets this from the foyer player itself (`foyer.html?…&list=1` in a hidden frame), so it matches the TVs. Slides take turns, so the end of the list names the ones that come round next.
 - **Between the trailers** lets you switch each slide on or off: Wednesday Meal Deal, Kids Club, LUXX, Coming soon, Last chance and Scan to book. It also lets you switch off or reword each line on the bottom strip (`px`, `tx` and `tt` in the player address). Reworded lines stay as typed, prices included.
 
+- **Press I on a foyer PC** for an information box: the player version, the clock, whether it's following the manager's settings, when it last checked, internet and sound. Once the manager's PC has sent settings (`data/foyer/<cinema>.json`), the TVs always follow those rather than a hub opened on the foyer PC itself; that hub says so in its Foyer trailers status bar.
+
 ### All foyer TVs in step
 
 With **Keep all foyer TVs in step** on (the default; `sync=0` in the player address turns it off), every foyer TV shows the same trailer, card or slide at the same moment.

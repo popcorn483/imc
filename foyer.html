@@ -31,6 +31,7 @@ body.nostrip .layer{bottom:0}
 #ytshield{position:absolute;inset:0;z-index:1}
 #ytcurtain{position:absolute;inset:0;z-index:2;background:#000;opacity:1;transition:opacity .5s}
 #ytcurtain.off{opacity:0}
+#infobox{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:20;background:rgba(5,7,26,.95);color:#fff;border:2px solid var(--gold,#ffc23d);border-radius:1.6vh;padding:2.4vh 2.6vw;font:500 2vh var(--f-body,sans-serif);max-width:80vw}#infobox b{display:block;font-size:2.8vh;margin-bottom:1.2vh}#infobox td{padding:.5vh 1.2vw .5vh 0;vertical-align:top}#infobox td:first-child{color:#aab3d8;white-space:nowrap}#infobox small{display:block;margin-top:1.4vh;color:#aab3d8}
 #soundhint{position:fixed;right:2vw;top:2vh;z-index:9;font:600 1.8vh var(--f-body,sans-serif);background:rgba(0,0,0,.72);color:#fff;padding:1vh 1.2vw;border-radius:1vh}#soundhint[hidden]{display:none}
 #svid{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:1}#svid[hidden]{display:none}
 #tlabel{position:absolute;z-index:3;left:3vw;top:3.5vh;display:flex;align-items:center;gap:1.2vw;padding:1.2vh 1.6vw;border-radius:1.2vh;background:rgba(5,7,20,.72);font-family:var(--f-display);font-weight:800;font-size:3.8vh;text-transform:uppercase;letter-spacing:.04em;transition:opacity .6s}
@@ -537,11 +538,21 @@ let pendingQ=null,pendingReload=false,pageSig=null;
 /* the newest settings win: from the hub on this computer, or from data/foyer/<cinema>.json (saved by the hub on any computer) */
 let remote=null;
 function liveCheck(){if(Q.get("list")==="1")return;let loc=null;try{const v=localStorage.getItem(LIVE_KEY);if(v){try{loc=JSON.parse(v)}catch(e){loc={q:v,at:0}}}}catch(e){}
-  const best=[loc,remote].filter(x=>x&&x.q).sort((a,b)=>(b.at||0)-(a.at||0))[0];if(!best)return;
+  /* once the manager's PC sends settings (data/foyer/<cinema>.json), those always win: a hub opened on the foyer PC itself has its own, older copy */
+  const best=remote&&remote.q?remote:loc;if(!best||!best.q)return;
   const want=new URLSearchParams(best.q);if(want.toString()!==Q.toString()&&want.toString()!==pendingQ)pendingQ=want.toString()}
 async function remoteCheck(){if(Q.get("list")==="1")return;const path="data/foyer/"+encodeURIComponent(SITE)+".json";let j=null;
   try{const r=await fetch("https://api.github.com/repos/popcorn483/imc/contents/"+path+"?ref=main",{headers:{Accept:"application/vnd.github.raw+json"},cache:"no-cache"});if(r.ok)j=await r.json();else if(r.status!==404){const r2=await fetch(RAW+path+"?ts="+Date.now(),{cache:"no-store"});if(r2.ok)j=await r2.json()}}catch(e){}
-  if(j&&(LOUNGE?j.lq:j.q))remote={q:LOUNGE?j.lq:j.q,at:Date.parse(j.updated)||0};liveCheck()}
+  if(j&&(LOUNGE?j.lq:j.q))remote={q:LOUNGE?j.lq:j.q,at:Date.parse(j.updated)||0};lastRemote={at:Date.now(),ok:!!j,updated:j&&j.updated};liveCheck()}
+let lastRemote=null;
+/* press I on the foyer PC: what this player is doing (for checking a TV that isn't following the settings) */
+const BUILT=(()=>{const d=new Date(document.lastModified);return isNaN(d)?document.lastModified:d.toLocaleString("en-GB",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})})();
+function infoBox(){let el=$("#infobox");if(el){el.remove();return}el=document.createElement("div");el.id="infobox";const n=londonNow(),f=t=>t?new Date(t).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit",second:"2-digit"}):"never";
+  const rows=[["Player version",BUILT],["Cinema",(D&&D.cinema)||SITE],["This PC's clock",n.hm+":"+String(n.s).padStart(2,"0")+" (should match the time on your phone)"],
+    ["Settings from the manager's PC",remote?"yes, saved "+f(remote.at):lastRemote&&lastRemote.ok===false?"none found yet":"not checked yet"],["Last checked for settings",lastRemote?f(lastRemote.at):"not yet"],
+    ["Settings in use",remote&&new URLSearchParams(remote.q).toString()===Q.toString()?"the manager's (up to date)":pendingQ?"new settings waiting: they start at the next screen":"this PC's own"],
+    ["All TVs in step",SYNC?(syncOn?"on":"on (starts after Start)"):"off"],["Internet",offline||navigator.onLine===false?"down: showing saved listings":"ok"],["Listings updated",D&&D.updated?f(D.updated):"unknown"],["Sound",muted?"off (click once to turn on)":"on"]];
+  el.innerHTML="<b>Foyer player information</b><table>"+rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(String(r[1]))}</td></tr>`).join("")+"</table><small>Press I again to close. Press F5 to reload if something looks out of date.</small>";document.body.appendChild(el)}
 async function applyPending(){
   if(pendingReload){try{sessionStorage.setItem("imc-foyer-auto","1")}catch(e){}location.reload();return true}
   if(pendingQ==null)return false;const q=pendingQ;pendingQ=null;const nq=new URLSearchParams(q);
@@ -563,7 +574,7 @@ setInterval(()=>{if($("#start").hidden&&Date.now()-lastStep>7*60e3)location.relo
 setInterval(()=>{tickStrip();if(londonNow().s<15)renderTicker()},15e3);setInterval(()=>{$("#clock").textContent=londonNow().hm},5e3);
 setInterval(()=>{const n=londonNow();if(n.hm==="05:00")location.reload()},60e3);
 document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")next();if(e.key==="b"||e.key==="B"){clearTimeout(timer);try{player&&player._done&&player._done();player&&player.pauseVideo&&player.pauseVideo()}catch(x){}try{vidStop&&vidStop()}catch(x){}playBoard()}
-  if(e.key==="f"||e.key==="F"){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}
+  if(e.key==="i"||e.key==="I")infoBox();if(e.key==="f"||e.key==="F"){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}
   if(e.key==="m"||e.key==="M"){muted=!muted;$("#svid").muted=muted;if(!muted&&!music&&MU!=="off"&&window.IMCMusic){music=IMCMusic.create(MU,MV);music.start()}musicFor($("#yt-wrap").hidden?"x":"yt-wrap");if(player&&player.mute){muted?player.mute():player.unMute()}}});
 let mv;document.addEventListener("mousemove",()=>{document.body.classList.add("pointer");clearTimeout(mv);mv=setTimeout(()=>document.body.classList.remove("pointer"),2500)});
 /* list mode (foyer.html?…&list=1, used by the hub's playlist): work out the running order and send it to the hub without playing anything */

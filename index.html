@@ -1877,10 +1877,12 @@ async function syncPush(q,lq){if(!ghKey()||syncBusy)return;const sent=localStora
       if(r.status!==409&&r.status!==422)break}
     syncSet(false,"Couldn't reach GitHub just now. It'll try again in a moment.")}catch(e){syncSet(false,"Couldn't reach GitHub just now. It'll try again in a moment.")}finally{syncBusy=false}}
 function syncSet(ok,msg){syncState={ok,msg};renderSync()}
-function renderSync(){const d=$("#syncDot");if(!d)return;const k=ghKey(),at=+(localStorage.getItem("imc-foyer-sent-at")||0);
+let remoteSet=undefined;
+async function remoteSettings(){if(remoteSet!==undefined)return remoteSet;remoteSet=null;try{const j=await getJson("data/foyer/"+site+".json");remoteSet=j&&j.q?j:null}catch(e){}renderSync();return remoteSet}
+function renderSync(){const d=$("#syncDot");if(!d)return;const k=ghKey(),at=+(localStorage.getItem("imc-foyer-sent-at")||0);if(!k&&remoteSet===undefined)remoteSettings();
   d.className="syncdot"+(k?syncState.ok===false?" bad":" ok":"");$("#syncConnect").textContent=k?"Change key":"Connect";$("#syncOff").hidden=!k;
   $("#syncT").textContent=k?(syncState.ok===false?"Not reaching the other foyer TVs":"Changes reach every foyer TV automatically"):"Foyer TVs on other computers";
-  $("#syncS").textContent=k?(syncState.msg||("Foyer players check for changes about once a minute."+(at?" Last sent "+new Date(at).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"})+".":""))):"Not connected: changes only reach a foyer player open on this computer. Connect once so they reach the foyer PCs too."}
+  $("#syncS").textContent=k?(syncState.msg||("Foyer players check for changes about once a minute."+(at?" Last sent "+new Date(at).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"})+".":""))):(remoteSet?"The foyer TVs follow the settings sent from the manager's computer (last sent "+new Date(remoteSet.updated).toLocaleString("en-GB",{weekday:"short",hour:"2-digit",minute:"2-digit"})+"). Changes made here won't reach them: make changes on that computer.":"Not connected: changes only reach a foyer player open on this computer. Connect once so they reach the foyer PCs too.")}
 $("#syncConnect").onclick=()=>{$("#syncKey").value="";$("#syncDlg").hidden=false;$("#syncKey").focus()};
 $("#syncDlg").addEventListener("click",e=>{if(e.target===$("#syncDlg")||e.target.id==="syncDlgClose")$("#syncDlg").hidden=true});
 $("#syncSave").onclick=async()=>{const k=$("#syncKey").value.trim();if(!/^(github_pat_|ghp_)[\w]{20,}$/.test(k)){toast("That doesn't look like a GitHub key. It starts with github_pat_");return}
