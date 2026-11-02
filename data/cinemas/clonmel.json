@@ -2,7 +2,7 @@
   "id": "clonmel",
   "cinema": "IMC Clonmel",
   "source": "https://imc.ie/clonmel",
-  "updated": "2026-10-31T20:33:28.895Z",
+  "updated": "2026-11-02T15:56:34.887Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -19,17 +19,32 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-10-31",
+      "date": "2026-11-02",
       "times": [
+        "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74822",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74864",
       "sessions": [
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74864",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74822",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74863",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -60,17 +75,32 @@
       "director": "Simon Hynd",
       "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
       "trailer": null,
-      "date": "2026-10-31",
+      "date": "2026-11-02",
       "times": [
-        "20:45"
+        "18:40",
+        "20:55"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74824",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74858",
       "sessions": [
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74824",
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "18:40",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74858",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "20:55",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74859",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -88,6 +118,47 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
+      "cert": "15A",
+      "runtime": 102,
+      "release": "November 1, 2026",
+      "releaseDate": "2026-11-01",
+      "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+      "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+      "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+      "date": "2026-11-02",
+      "times": [
+        "20:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74896",
+      "sessions": [
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74896",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "jak-zyc-zeby-nie-zwariowac",
+      "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "16",
       "title": "Primetime",
       "luxx": false,
@@ -101,17 +172,32 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-10-31",
+      "date": "2026-11-02",
       "times": [
+        "18:10",
         "20:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74819",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74861",
       "sessions": [
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74861",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
           "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74819",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74862",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -142,17 +228,32 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-10-31",
+      "date": "2026-11-02",
       "times": [
+        "18:15",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74829",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74866",
       "sessions": [
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74866",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 2 November",
+          "date": "2026-11-02",
           "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74829",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74865",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -170,768 +271,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Sat 31 Oct",
-      "url": "https://imc.ie/film-times/clonmel/31-10-2026#dateD",
-      "date": "2026-10-31",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
-          "cert": "16",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": null,
-          "date": "2026-10-31",
-          "times": [
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74822",
-          "sessions": [
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74822",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "12A",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-10-31",
-          "times": [
-            "18:35",
-            "19:45",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74825",
-          "sessions": [
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "18:35",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74825",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74910",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74824",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Primetime",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "16",
-          "runtime": 109,
-          "release": "October 28, 2026",
-          "releaseDate": "2026-10-28",
-          "director": "Lance Oppenheim",
-          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-          "date": "2026-10-31",
-          "times": [
-            "20:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74819",
-          "sessions": [
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74819",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "primetime",
-          "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wicker",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Alex Huston Fischer, Eleanor Wilson",
-          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-          "date": "2026-10-31",
-          "times": [
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74829",
-          "sessions": [
-            {
-              "day": "Sat 31 October",
-              "date": "2026-10-31",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74829",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wicker",
-          "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
-    {
-      "label": "Sun 01 Nov",
-      "url": "https://imc.ie/film-times/clonmel/01-11-2026#dateD",
-      "date": "2026-11-01",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Arnie and Barney",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
-          "cert": "G",
-          "runtime": 77,
-          "release": "October 24, 2026",
-          "releaseDate": "2026-10-24",
-          "director": "Sean Heuston",
-          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
-          "date": "2026-11-01",
-          "times": [
-            "13:15",
-            "15:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74853",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "13:15",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74853",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "15:15",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74852",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "arnie-and-barney",
-          "posterFile": "data/posters/arnie-and-barney.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
-          "cert": "16",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": null,
-          "date": "2026-11-01",
-          "times": [
-            "15:45",
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74842",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74842",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74843",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74844",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-11-01",
-          "times": [
-            "13:05",
-            "15:35",
-            "17:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74838",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "13:05",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74838",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "15:35",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74841",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "17:15",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74851",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Ghosts: The Possession Of Button House",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-          "cert": "12A",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Simon Hynd",
-          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-          "trailer": null,
-          "date": "2026-11-01",
-          "times": [
-            "14:05",
-            "18:35",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74849",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "14:05",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74849",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "18:35",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74847",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74846",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ghosts-the-possession-of-button-house",
-          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
-          "cert": "15A",
-          "runtime": 102,
-          "release": "November 1, 2026",
-          "releaseDate": "2026-11-01",
-          "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
-          "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
-          "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
-          "date": "2026-11-01",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74895",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74895",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "jak-zyc-zeby-nie-zwariowac",
-          "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Primetime",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-          "cert": "16",
-          "runtime": 109,
-          "release": "October 28, 2026",
-          "releaseDate": "2026-10-28",
-          "director": "Lance Oppenheim",
-          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-          "date": "2026-11-01",
-          "times": [
-            "16:15",
-            "18:10",
-            "20:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74848",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "16:15",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74848",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74839",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74840",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "primetime",
-          "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
-          "cert": "G",
-          "runtime": 81,
-          "release": "September 12, 2026",
-          "releaseDate": "2026-09-12",
-          "director": "Steve Cox, Matthew Walker",
-          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
-          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
-          "date": "2026-11-01",
-          "times": [
-            "12:10",
-            "13:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74850",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "12:10",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74850",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "13:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74857",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
-          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Tad and the Magic Lamp",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-          "cert": "G",
-          "runtime": 94,
-          "release": "October 17, 2026",
-          "releaseDate": "2026-10-17",
-          "director": "Enrique Gato",
-          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-          "trailer": null,
-          "date": "2026-11-01",
-          "times": [
-            "13:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74845",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "13:30",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74845",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "tad-and-the-magic-lamp",
-          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wicker",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Alex Huston Fischer, Eleanor Wilson",
-          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-          "date": "2026-11-01",
-          "times": [
-            "15:50",
-            "18:15",
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74856",
-          "sessions": [
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "15:50",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74856",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74854",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 1 November",
-              "date": "2026-11-01",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74855",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wicker",
-          "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
     {
       "label": "Mon 02 Nov",
       "url": "https://imc.ie/film-times/clonmel/02-11-2026#dateD",
@@ -1055,7 +394,7 @@
           "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
           "cert": "15A",
           "runtime": 102,
@@ -1079,7 +418,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1327,7 +666,7 @@
           "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
           "cert": "15A",
           "runtime": 102,
@@ -1351,7 +690,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2057,6 +1396,174 @@
       "films": [
         {
           "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-06",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74915",
+          "sessions": [
+            {
+              "day": "Fri 6 November",
+              "date": "2026-11-06",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74915",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 6 November",
+              "date": "2026-11-06",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74916",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "16",
+          "runtime": 109,
+          "release": "October 28, 2026",
+          "releaseDate": "2026-10-28",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-06",
+          "times": [
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74912",
+          "sessions": [
+            {
+              "day": "Fri 6 November",
+              "date": "2026-11-06",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74912",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 6 November",
+              "date": "2026-11-06",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74911",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-06",
+          "times": [
+            "18:15",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74919",
+          "sessions": [
+            {
+              "day": "Fri 6 November",
+              "date": "2026-11-06",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74919",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 6 November",
+              "date": "2026-11-06",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74920",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "15A",
           "title": "Wild Horse Nine",
           "luxx": false,
@@ -2073,17 +1580,32 @@
           "date": "2026-11-06",
           "times": [
             "18:10",
+            "19:45",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74739",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74913",
           "sessions": [
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
               "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74739",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74913",
               "luxx": false,
-              "screen": "3",
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 6 November",
+              "date": "2026-11-06",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74917",
+              "luxx": false,
+              "screen": "4",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2095,9 +1617,9 @@
               "day": "Fri 6 November",
               "date": "2026-11-06",
               "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74740",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74914",
               "luxx": false,
-              "screen": "3",
+              "screen": "2",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2120,6 +1642,460 @@
       "films": [
         {
           "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "G",
+          "runtime": 77,
+          "release": "October 24, 2026",
+          "releaseDate": "2026-10-24",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+          "date": "2026-11-07",
+          "times": [
+            "13:15",
+            "15:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74936",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74936",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "15:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74937",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-07",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74934",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74934",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74925",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74926",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-07",
+          "times": [
+            "13:05",
+            "15:35",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74930",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "13:05",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74930",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74931",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74938",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "12A",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-11-07",
+          "times": [
+            "13:25",
+            "15:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74939",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "13:25",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74939",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "teenclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74940",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "teenclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "16",
+          "runtime": 109,
+          "release": "October 28, 2026",
+          "releaseDate": "2026-10-28",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-07",
+          "times": [
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74922",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74922",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74921",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "September 12, 2026",
+          "releaseDate": "2026-09-12",
+          "director": "Steve Cox, Matthew Walker",
+          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+          "date": "2026-11-07",
+          "times": [
+            "13:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74933",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "13:30",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74933",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "G",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-11-07",
+          "times": [
+            "13:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74935",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "13:30",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74935",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-07",
+          "times": [
+            "18:15",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74928",
+          "sessions": [
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74928",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74929",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "15A",
           "title": "Wild Horse Nine",
           "luxx": false,
@@ -2137,17 +2113,18 @@
           "times": [
             "15:30",
             "18:10",
+            "19:45",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74743",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74932",
           "sessions": [
             {
               "day": "Sat 7 November",
               "date": "2026-11-07",
               "time": "15:30",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74743",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74932",
               "luxx": false,
-              "screen": "3",
+              "screen": "2",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2159,9 +2136,23 @@
               "day": "Sat 7 November",
               "date": "2026-11-07",
               "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74741",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74923",
               "luxx": false,
-              "screen": "3",
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 7 November",
+              "date": "2026-11-07",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74927",
+              "luxx": false,
+              "screen": "4",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2173,9 +2164,802 @@
               "day": "Sat 7 November",
               "date": "2026-11-07",
               "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74742",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74924",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wild-horse-nine",
+          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sun 08 Nov",
+      "url": "https://imc.ie/film-times/clonmel/08-11-2026#dateD",
+      "date": "2026-11-08",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "G",
+          "runtime": 77,
+          "release": "October 24, 2026",
+          "releaseDate": "2026-10-24",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+          "date": "2026-11-08",
+          "times": [
+            "13:15",
+            "15:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74954",
+          "sessions": [
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74954",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "15:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74955",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-08",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74951",
+          "sessions": [
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74951",
               "luxx": false,
               "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74949",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74950",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-08",
+          "times": [
+            "13:05",
+            "15:35",
+            "17:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74943",
+          "sessions": [
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "13:05",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74943",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74944",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74956",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "12A",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-11-08",
+          "times": [
+            "13:25",
+            "15:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74959",
+          "sessions": [
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "13:25",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74959",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "teenclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74960",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "teenclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "16",
+          "runtime": 109,
+          "release": "October 28, 2026",
+          "releaseDate": "2026-10-28",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-08",
+          "times": [
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74941",
+          "sessions": [
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74941",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74942",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "September 12, 2026",
+          "releaseDate": "2026-09-12",
+          "director": "Steve Cox, Matthew Walker",
+          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+          "date": "2026-11-08",
+          "times": [
+            "13:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74948",
+          "sessions": [
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "13:30",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74948",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "G",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-11-08",
+          "times": [
+            "13:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74952",
+          "sessions": [
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "13:30",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74952",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-08",
+          "times": [
+            "18:15",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74957",
+          "sessions": [
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74957",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74958",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wild Horse Nine",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+          "cert": "15A",
+          "runtime": 117,
+          "release": "November 4, 2026",
+          "releaseDate": "2026-11-04",
+          "director": "Martin McDonagh",
+          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
+          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "date": "2026-11-08",
+          "times": [
+            "15:30",
+            "18:10",
+            "19:45",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74947",
+          "sessions": [
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74947",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74945",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74953",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 8 November",
+              "date": "2026-11-08",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74946",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wild-horse-nine",
+          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Mon 09 Nov",
+      "url": "https://imc.ie/film-times/clonmel/09-11-2026#dateD",
+      "date": "2026-11-09",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-09",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74965",
+          "sessions": [
+            {
+              "day": "Mon 9 November",
+              "date": "2026-11-09",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74965",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 9 November",
+              "date": "2026-11-09",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74966",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "16",
+          "runtime": 109,
+          "release": "October 28, 2026",
+          "releaseDate": "2026-10-28",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-09",
+          "times": [
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74962",
+          "sessions": [
+            {
+              "day": "Mon 9 November",
+              "date": "2026-11-09",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74962",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Mon 9 November",
+              "date": "2026-11-09",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74961",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-09",
+          "times": [
+            "18:15",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74968",
+          "sessions": [
+            {
+              "day": "Mon 9 November",
+              "date": "2026-11-09",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74968",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 9 November",
+              "date": "2026-11-09",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74969",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wild Horse Nine",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+          "cert": "15A",
+          "runtime": 117,
+          "release": "November 4, 2026",
+          "releaseDate": "2026-11-04",
+          "director": "Martin McDonagh",
+          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
+          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "date": "2026-11-09",
+          "times": [
+            "18:10",
+            "19:45",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74964",
+          "sessions": [
+            {
+              "day": "Mon 9 November",
+              "date": "2026-11-09",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74964",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 9 November",
+              "date": "2026-11-09",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74967",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 9 November",
+              "date": "2026-11-09",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74963",
+              "luxx": false,
+              "screen": "2",
               "threeD": false,
               "tags": [
                 "advance",
@@ -4912,20 +5696,20 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 4 films parsed",
-    "day-31-10-2026-dated: 4 films parsed",
-    "day-01-11-2026-dated: 9 films parsed",
+    "today: 5 films parsed",
     "day-02-11-2026-dated: 5 films parsed",
     "day-03-11-2026-dated: 5 films parsed",
     "day-04-11-2026-dated: 5 films parsed",
     "day-05-11-2026-dated: 5 films parsed",
-    "day-06-11-2026-dated: 1 films parsed",
-    "day-07-11-2026-dated: 1 films parsed",
+    "day-06-11-2026-dated: 4 films parsed",
+    "day-07-11-2026-dated: 9 films parsed",
+    "day-08-11-2026-dated: 9 films parsed",
+    "day-09-11-2026-dated: 4 films parsed",
     "advance: 11 films parsed",
     "kids: 3 films parsed",
     "luxx: 4 films parsed",
-    "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
-    "prices: 15 ticket types, 4 bundles, 9 products",
+    "booking pages read: 10 (Mon, Tue, Wed, Thu, Fri, Sat, Sun)",
+    "prices: 18 ticket types, 4 bundles, 9 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -4934,100 +5718,68 @@
         "name": "Adult Peak",
         "price": "€12.50",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ]
       },
       {
         "name": "Teen",
         "price": "€10.50",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Fri"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Child Peak",
-        "price": "€10.50",
-        "days": [
+          "Fri",
           "Sat",
-          "Sun",
-          "Wed",
-          "Fri"
+          "Sun"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ]
       },
       {
         "name": "Student",
         "price": "€11.00",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ],
         "prices": {
-          "Sat": "€10.50",
-          "Sun": "€10.50",
           "Mon": "€10.50",
           "Tue": "€10.50",
           "Wed": "€10.50",
-          "Fri": "€10.50"
+          "Fri": "€10.50",
+          "Sat": "€10.50",
+          "Sun": "€10.50"
         }
-      },
-      {
-        "name": "Family",
-        "price": "€36.50",
-        "days": [
-          "Sat",
-          "Sun",
-          "Wed",
-          "Fri"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
       },
       {
         "name": "OAP",
         "price": "€10.50",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ]
       },
       {
@@ -5064,6 +5816,32 @@
         ]
       },
       {
+        "name": "Child Peak",
+        "price": "€10.50",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Family",
+        "price": "€36.50",
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
         "name": "Crazy Thursday",
         "price": "€7.50",
         "days": [
@@ -5074,10 +5852,30 @@
         ]
       },
       {
+        "name": "Adult",
+        "price": "€5.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
+        "name": "Child",
+        "price": "€5.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
         "name": "Kids Club",
         "price": "€5.00",
         "days": [
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "kids"
@@ -5087,7 +5885,7 @@
         "name": "Kids Club Adult",
         "price": "€5.00",
         "days": [
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "kids"
@@ -5097,7 +5895,7 @@
         "name": "Kids Club Meal Deal",
         "price": "€9.50",
         "days": [
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "kids"
@@ -5107,7 +5905,7 @@
         "name": "LUXX Recliner",
         "price": "€15.50",
         "days": [
-          "Sat"
+          "Mon"
         ],
         "seenOn": [
           "luxx"
@@ -5117,7 +5915,17 @@
         "name": "LUXX Child/Student/OAP",
         "price": "€12.50",
         "days": [
-          "Sat"
+          "Mon"
+        ],
+        "seenOn": [
+          "luxx"
+        ]
+      },
+      {
+        "name": "3 Plus 2 For 1 LUXXRequires Voucher",
+        "price": "€18.00",
+        "days": [
+          "Mon"
         ],
         "seenOn": [
           "luxx"
@@ -5131,16 +5939,15 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ],
         "file": "data/products/t1mcb.jpg"
       },
@@ -5150,17 +5957,16 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ],
         "file": "data/products/t1scb.jpg"
       },
@@ -5170,7 +5976,7 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
         "days": [
-          "Sat"
+          "Mon"
         ],
         "seenOn": [
           "luxx"
@@ -5183,7 +5989,7 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
         "days": [
-          "Sat"
+          "Mon"
         ],
         "seenOn": [
           "luxx"
@@ -5197,13 +6003,13 @@
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -5218,13 +6024,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -5239,13 +6045,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -5260,13 +6066,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -5281,13 +6087,13 @@
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -5302,13 +6108,13 @@
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -5323,13 +6129,13 @@
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -5344,13 +6150,13 @@
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -5365,13 +6171,13 @@
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
         "days": [
-          "Sat",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
           "Thu",
-          "Fri"
+          "Fri",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening",
@@ -5382,18 +6188,18 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-10-31T20:33:57.051Z",
+    "checked": "2026-11-02T15:57:01.714Z",
     "sampledDays": [
-      "Sat",
-      "Sun",
       "Mon",
       "Tue",
       "Wed",
       "Thu",
-      "Fri"
+      "Fri",
+      "Sat",
+      "Sun"
     ]
   },
-  "checked": "2026-10-31T20:34:11.667Z",
+  "checked": "2026-11-02T15:57:16.485Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
