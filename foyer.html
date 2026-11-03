@@ -13,12 +13,12 @@
    Everything is sized from the screen, so it works on any TV, landscape or portrait. */
 :root{--ink:#fff;--muted:#b9c3e6;--gold:#ffd84a;--amber:#f39a2b;--red:#e2452e;--green:#46d17a;--blue:#1fa0de;--bg:#070a1c;--panel:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);
   --stripe:linear-gradient(90deg,#ffd84a,#f39a2b 55%,#e2452e);--lux:#ffc23d;
-  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--f-body:"Figtree",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,monospace;--strip:9vh}
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--f-body:"Figtree",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,monospace;--strip:9vh;--sx:3.5vw;--sy:3vh}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--f-body);overflow:hidden;cursor:none}
 body.pointer{cursor:default}
 #stage{position:fixed;inset:0}
-.layer{position:absolute;inset:0 0 var(--strip) 0;transition:opacity .9s ease}
+.layer{position:absolute;inset:0 0 calc(var(--strip) + var(--sy)) 0;transition:opacity .9s ease}
 body.nostrip .layer{bottom:0}
 .layer[hidden]{display:block!important;opacity:0;pointer-events:none}
 .layer.full{bottom:0}
@@ -147,7 +147,7 @@ body.lite #card .bgimg{filter:none;opacity:.22}
 #hours .hl span{background:var(--panel);border:1px solid var(--line);border-radius:1.2vh;padding:1.2vh 1.6vw;font:700 2.6vh var(--f-body)}#hours .hl b{font-family:var(--f-mono);color:var(--gold);margin-right:.8vw}
 
 /* ---------- live strip: logo · ticker · next show · clock ---------- */
-#strip{position:absolute;left:0;right:0;bottom:0;height:var(--strip);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:2.2vw;padding:0 2.4vw;background:#05071a;z-index:5}
+#strip{position:absolute;left:0;right:0;bottom:0;height:calc(var(--strip) + var(--sy));display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:2.2vw;padding:0 calc(2.4vw + var(--sx)) var(--sy);background:#05071a;z-index:5}
 #strip::before{content:"";position:absolute;left:0;right:0;top:0;height:.5vh;background:var(--stripe)}
 #strip img{height:5.6vh}
 .ticker{overflow:hidden;white-space:nowrap;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
@@ -156,7 +156,7 @@ body.lite #card .bgimg{filter:none;opacity:.22}
 .nextshow{font:600 2.1vh var(--f-body);color:var(--muted);text-align:right;line-height:1.2;max-width:46vh}.nextshow b{display:block;color:#fff;font:800 2.7vh var(--f-display);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* no clock on the foyer TVs (kept in the page for the timers, but never shown) */
 .clock{display:none!important}
-#prog{position:absolute;left:0;bottom:0;height:.45vh;background:rgba(255,255,255,.45);width:0}
+#prog{position:absolute;left:0;bottom:var(--sy);height:.45vh;background:rgba(255,255,255,.45);width:0}
 body.nostrip #strip{display:none}
 
 /* start screen */
@@ -232,11 +232,11 @@ async function loadStudio(){const mine=await sget("studio:"+SITE),L=(Array.isArr
   STUDIO=[...L,...SVLINKS.filter(x=>!urls.has(x.url))].filter(x=>!RED.test(x.title||""));ONLY=Q.get("only")==="1"&&(EXTRA.length+STUDIO.filter(x=>!x.film).length)>0}
 
 /* everything the hub can change, read from the address; read again when the hub changes the settings (see "live updates") */
-let CARDS=[],BOARDS=[],SYNC,MODE,IDS,OK,CARD,SOUND,TRAILERS,SOON,BOARD_EVERY,PROMOS,STRIP,SCREENS,ADVERTS,MSGS,MYTR,EXTRA,ONLY,SVLINKS,WEL,WF,PX,TX,TT,MU,MV,ORD,HIDE,SHUF;
+let EDGE=3.5,CARDS=[],BOARDS=[],SYNC,MODE,IDS,OK,CARD,SOUND,TRAILERS,SOON,BOARD_EVERY,PROMOS,STRIP,SCREENS,ADVERTS,MSGS,MYTR,EXTRA,ONLY,SVLINKS,WEL,WF,PX,TX,TT,MU,MV,ORD,HIDE,SHUF;
 function readSettings(){
   MODE=Q.get("mode")||"auto",IDS=(Q.get("ids")||"").split(",").filter(Boolean),OK=new Set((Q.get("ok")||"").split(",").filter(Boolean));
   CARD=Math.max(5,Math.min(30,+Q.get("card")||10)),SOUND=Q.get("sound")!=="0",TRAILERS=Q.get("trailers")!=="0",SOON=Q.get("soon")==="1";
-  BOARD_EVERY=Q.has("bd")?Math.max(0,+Q.get("bd")||0):3,PROMOS=Q.get("pr")!=="0",STRIP=Q.get("strip")!=="0",SCREENS=Q.get("scr")!=="0";
+  BOARD_EVERY=Q.has("bd")?Math.max(0,+Q.get("bd")||0):3,PROMOS=Q.get("pr")!=="0",STRIP=Q.get("strip")!=="0",EDGE=Q.has("safe")?Math.max(0,Math.min(10,+Q.get("safe")||0)):3.5,SCREENS=Q.get("scr")!=="0";
   ADVERTS=(()=>{try{const b=(Q.get("ad")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4)))))
   .filter(a=>Array.isArray(a)&&a[0]).map(a=>({src:String(a[0]),title:String(a[1]||""),from:a[2]||"",to:a[3]||"",secs:Math.max(5,Math.min(30,+a[4]||10)),often:+a[5]>1?2:1,adv:String(a[6]||"")}))}catch(e){return[]}})();
   MSGS=(Q.get("msg")||"").split("|").map(s=>s.trim()).filter(Boolean).slice(0,6);
@@ -256,7 +256,8 @@ function readSettings(){
   ORD=(Q.get("ord")||"").split(",").filter(Boolean),HIDE=new Set((Q.get("hide")||"").split(",").filter(Boolean)),SHUF=Q.get("shuf")==="1";
 }
 readSettings();
-if(!STRIP)document.body.classList.add("nostrip");if(LITE)document.body.classList.add("lite");
+function setEdge(){const r=document.documentElement.style;r.setProperty("--sx",EDGE+"vw");r.setProperty("--sy",(EDGE*.85).toFixed(2)+"vh")}   /* inset from the edges, for TVs that cut off the edge of the picture */
+setEdge();if(!STRIP)document.body.classList.add("nostrip");if(LITE)document.body.classList.add("lite");
 let since=0,lastIdent=-1,idAssets=null,idRaf=0;
 /* in step mode every TV must make the same "random" choices, so they come from the date instead of Math.random */
 let seedRnd=null;
@@ -534,17 +535,17 @@ async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout
   yz.classList.add("zoom");clearTimeout(zoomT);
   show("yt-wrap");progress(0.01);
   let started=false,over=false;const cur=$("#ytcurtain");cur.classList.remove("off");
-  let lastFix=0,lastT=-1,stuckSince=0;
+  let lastFix=0,lastT=-1,stuckSince=0,liftAt=null,liftT=0;
   /* nothing showing: YouTube reported an error, or the picture hasn't moved for 6 seconds */
   const blank=why=>{if(over)return;markBad(f,why);ytFailed();over=true;done();try{player.pauseVideo()}catch(e){}if(SYNC&&syncOn){syncFill()}else{cur.classList.remove("off");setTimeout(next,300)}};
-  const watch=setInterval(()=>{try{const d=player.getDuration(),t=player.getCurrentTime();
+  const watch=setInterval(()=>{try{const d=player.getDuration(),t=player.getCurrentTime();if(liftAt!=null&&t>=liftAt){liftAt=null;clearTimeout(liftT);cur.classList.add("off")}
     if(started&&!over){if(Math.abs(t-lastT)<.05){if(!stuckSince)stuckSince=Date.now();else if(Date.now()-stuckSince>6000)return blank("stuck: the picture stopped")}else stuckSince=0;lastT=t}
     /* in step: if buffering left this TV behind (or ahead) of the clock by over a second, catch up */
     if(SYNC&&syncOn&&started&&stepWall){const exp=(Date.now()-stepWall)/1000;if(Math.abs(t-exp)>1.2&&exp<d-3&&Date.now()-lastFix>5000){lastFix=Date.now();zoom(4000);player.seekTo(exp,true)}}if(started&&d>5){if(t>=d-1.2)finish();if(d-t<20&&d-t>18.5)preloadNext();$("#tqr").style.opacity=q&&t>d-25?1:0;lastStep=Date.now()}}catch(e){}},250);
   const finish=()=>{if(over)return;over=true;cur.classList.remove("off");done();try{player.pauseVideo()}catch(e){}$("#tqr").style.opacity=0;
     if(SYNC&&syncOn&&slotLeft()>4000){setTimeout(()=>{if(playingKey&&!$("#yt-wrap").hidden)syncFill()},600);return}setTimeout(next,500)};
   const guard=setTimeout(()=>{if(!started)blank("didn't start")},10000),cap=setTimeout(finish,5*60e3);
-  const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch);clearTimeout(zoomT);player._done=null};
+  const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch);clearTimeout(zoomT);clearTimeout(liftT);liftAt=null;player._done=null};
   if(player&&player._preId===id&&player.seekTo){
     /* this trailer was already loaded (silently, paused) while the card or priceboard before it was on: just play it */
     player._preId=null;preHits++;try{player.seekTo(at>.3?at:0,true);if(muted)player.mute();else player.unMute();player.playVideo()}catch(e){}}
@@ -556,7 +557,10 @@ async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout
   else if(player&&player.loadVideoById){player._preId=null;ytShow(player);player.loadVideoById({videoId:id,startSeconds:at>2?at:0});if(muted)player.mute();else player.unMute()}
   else player=ytMake(ytSlot(),id,{autoplay:1,start:at>2?Math.floor(at):0,mute:muted?1:0},e=>{if(muted)e.target.mute();e.target.playVideo()});
   player._curId=id;
-  player._h=st=>{if(over)return;if(st===1){if(!started){started=true;ytFails=0;captionsFor(f);zoom(4800);setTimeout(()=>{if(!over)cur.classList.add("off")},1000)}else{zoom(3500);setTimeout(()=>{if(!over)cur.classList.add("off")},700)}}
+  /* the black curtain stays up until the video has really played a second and a half: YouTube's big pause/play symbol
+     (shown as playback starts or resumes) has gone by then. A fallback lifts it after 6 s whatever happens. */
+  const lift=extra=>{let t0=0;try{t0=player.getCurrentTime()||0}catch(e){}liftAt=t0+extra;clearTimeout(liftT);liftT=setTimeout(()=>{if(!over){cur.classList.add("off");liftAt=null}},6000)};
+  player._h=st=>{if(over)return;if(st===1){if(!started){started=true;ytFails=0;captionsFor(f);zoom(4800);lift(1.5)}else{zoom(3500);lift(1.2)}}
     else if(st===2){cur.classList.remove("off");try{player.playVideo()}catch(e){}}else if(st===0)finish()};
   player._x=()=>blank("YouTube won't play it here (removed, private or not allowed outside YouTube)");player._done=done}
 /* a studio trailer file (saved on this PC) or download link, played in the same frame as YouTube trailers */
@@ -675,7 +679,7 @@ async function applyPending(){
   if(pendingQ==null)return false;const q=pendingQ;pendingQ=null;const nq=new URLSearchParams(q);
   if((nq.get("c")||"enniskillen")!==SITE||(nq.get("luxx")==="1")!==LOUNGE){try{sessionStorage.setItem("imc-foyer-auto","1")}catch(e){}location.replace("foyer.html?"+q);return true}
   Q=nq;readSettings();try{history.replaceState(null,"","foyer.html?"+q)}catch(e){}if(!SOUND)muted=true;
-  document.body.classList.toggle("nostrip",!STRIP);gap=newGap();tickKey="";renderTicker();
+  document.body.classList.toggle("nostrip",!STRIP);setEdge();gap=newGap();tickKey="";renderTicker();
   if(music){if(MU==="off")music.off();else{music.setMood(MU);music.setVolume(MV)}}else if(MU!=="off"&&!muted&&window.IMCMusic){music=IMCMusic.create(MU,MV);music.start()}
   await loadStudio();queue=buildQueue();steps=buildSteps();si=0;return false}
 async function versionCheck(){try{const t=await(await fetch("foyer.html?v="+Date.now(),{cache:"no-store"})).text();let h=0;for(let i=0;i<t.length;i++)h=(h*31+t.charCodeAt(i))|0;if(pageSig==null)pageSig=h;else if(h!==pageSig)pendingReload=true}catch(e){}}
