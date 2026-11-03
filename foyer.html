@@ -545,12 +545,15 @@ async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout
     if(SYNC&&syncOn&&slotLeft()>4000){setTimeout(()=>{if(playingKey&&!$("#yt-wrap").hidden)syncFill()},600);return}setTimeout(next,500)};
   const guard=setTimeout(()=>{if(!started)blank("didn't start")},10000),cap=setTimeout(finish,5*60e3);
   const done=()=>{clearTimeout(guard);clearTimeout(cap);clearInterval(watch);clearTimeout(zoomT);player._done=null};
-  if(preP&&preP._preId===id&&preP._ready&&preP.seekTo){
+  if(player&&player._preId===id&&player.seekTo){
+    /* this trailer was already loaded (silently, paused) while the card or priceboard before it was on: just play it */
+    player._preId=null;preHits++;try{player.seekTo(at>.3?at:0,true);if(muted)player.mute();else player.unMute();player.playVideo()}catch(e){}}
+  else if(preP&&preP._preId===id&&preP._ready&&preP.seekTo){
     /* the next trailer was loaded in the background while the card was on: swap it in, so it starts at once */
     const old=player;player=preP;preP=old;player._preId=null;player._pre=null;preHits++;
     try{old&&old.pauseVideo&&old.pauseVideo()}catch(e){}ytShow(player);
     try{player.seekTo(at>.3?at:0,true);if(muted)player.mute();else player.unMute();player.playVideo()}catch(e){}}
-  else if(player&&player.loadVideoById){ytShow(player);player.loadVideoById({videoId:id,startSeconds:at>2?at:0});if(muted)player.mute();else player.unMute()}
+  else if(player&&player.loadVideoById){player._preId=null;ytShow(player);player.loadVideoById({videoId:id,startSeconds:at>2?at:0});if(muted)player.mute();else player.unMute()}
   else player=ytMake(ytSlot(),id,{autoplay:1,start:at>2?Math.floor(at):0,mute:muted?1:0},e=>{if(muted)e.target.mute();e.target.playVideo()});
   player._curId=id;
   player._h=st=>{if(over)return;if(st===1){if(!started){started=true;ytFails=0;captionsFor(f);zoom(4800);setTimeout(()=>{if(!over)cur.classList.add("off")},1000)}else{zoom(3500);setTimeout(()=>{if(!over)cur.classList.add("off")},700)}}
@@ -596,7 +599,14 @@ function ytShow(p){for(const q of[player,preP])try{const f=q&&q.getIframe&&q.get
 function nextYT(){let L=[];if(SYNC&&syncOn&&plan&&plan.steps.length){const i=playingKey?+playingKey.split(":").pop():-1;for(let j=1;j<=plan.steps.length;j++)L.push(plan.steps[(i+j)%plan.steps.length])}
   else L=steps.slice(si).concat(steps.slice(0,si));
   for(const x of L)if(x.k==="trailer"){return x.f&&!x.f.studio&&x.f.trailer?x.f:null}return null}
-function preloadNext(){if(!PRELOAD||netDown())return;if(!window.YT||!YT.Player){loadYT().then(ok=>{if(ok&&window.YT&&YT.Player)preloadNext()});return}const f=nextYT();if(!f)return;const id=ytId(f.trailer);if(!id||player&&player._curId===id&&!$("#yt-wrap").hidden)return;
+/* one player only: while a card, priceboard or slide is on, the (hidden) YouTube player loads the next trailer silently
+   and pauses it after a few seconds, so it's ready. No second player, so no extra work for the PC. pre=0 turns it off. */
+const PRELOAD1=Q.get("pre")!=="0"&&Q.get("list")!=="1";
+function preloadSame(){if(!PRELOAD1||netDown()||!player||!player.loadVideoById||!$("#yt-wrap").hidden)return;const f=nextYT();if(!f)return;const id=ytId(f.trailer);
+  if(!id||player._preId===id||player._curId===id&&player._preId)return;
+  try{const p=player;p._preId=id;p._x=()=>{p._preId=null};p._h=st=>{if(st===1&&p._preId===id){setTimeout(()=>{if(p._preId===id&&$("#yt-wrap").hidden)try{p.pauseVideo()}catch(e){}},3000)}};
+    p.mute();p.loadVideoById({videoId:id});p._curId=id}catch(e){player._preId=null}}
+function preloadNext(){if(!PRELOAD)return preloadSame();if(netDown())return;if(!window.YT||!YT.Player){loadYT().then(ok=>{if(ok&&window.YT&&YT.Player)preloadNext()});return}const f=nextYT();if(!f)return;const id=ytId(f.trailer);if(!id||player&&player._curId===id&&!$("#yt-wrap").hidden)return;
   if(preP&&preP._preId===id)return;
   const arm=p=>{p._preId=id;p._preOk=false;p._pre=st=>{if(st===1&&!p._preOk){setTimeout(()=>{if(p!==player){try{p.pauseVideo()}catch(e){}p._preOk=true}},2500)}}};
   try{if(preP&&preP.loadVideoById){arm(preP);preP.mute();preP.loadVideoById({videoId:id});ytShow(player)}
@@ -657,7 +667,7 @@ function infoBox(){let el=$("#infobox");if(el){el.remove();return}el=document.cr
   const rows=[["Player version",BUILT],["Cinema",(D&&D.cinema)||SITE],["Clock",clockAt?`shared clock (this PC's clock is ${Math.abs(clockOff/1000).toFixed(1)} s ${clockOff>0?"slow":"fast"})`:"this PC's own (shared clock not reached yet)"],
     ["Settings from the manager's PC",remote?"yes, saved "+f(remote.at):lastRemote&&lastRemote.ok===false?"none found yet":"not checked yet"],["Last checked for settings",lastRemote?f(lastRemote.at):"not yet"],
     ["Settings in use",remote&&new URLSearchParams(remote.q).toString()===Q.toString()?"the manager's (up to date)":pendingQ?"new settings waiting: they start at the next screen":"this PC's own"],
-    ["Next trailer loaded early",PRELOAD?(preP&&preP._preOk?"yes, ready":preP&&preP._preId?"loading":"waiting")+` (${preHits} started instantly)`:"off on this PC"],
+    ["Next trailer loaded early",PRELOAD1?(player&&player._preId?"yes, ready to play":"waiting for the next card or priceboard")+` (${preHits} started instantly)`:"off on this PC"],
     ["All TVs in step",SYNC?(syncOn?"on":"on (starts after Start)"):"off"],...(SYNC&&plan?[["Running order code",plan.code+" (the same on every TV means they have the same running order)"],["Clock vs website",(clockOff>=0?"+":"")+(clockOff/1000).toFixed(1)+" s (corrected for)"]]:[]),["Internet",offline||navigator.onLine===false?"down: showing saved listings":"ok"],["Listings updated",D&&D.updated?f(D.updated):"unknown"],["Sound",muted?"off (click once to turn on)":"on"],["Trailers that showed nothing today",badList().map(x=>x.title+" ("+x.why+")").join("; ")||"none"]];
   el.innerHTML="<b>Foyer player information</b><table>"+rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(String(r[1]))}</td></tr>`).join("")+"</table><small>Press I again to close. Press F5 to reload if something looks out of date.</small>";document.body.appendChild(el)}
 async function applyPending(){
