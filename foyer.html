@@ -577,13 +577,18 @@ async function playStudio(f,at=0){const v=$("#svid"),x=f.studio;let src=x.url||"
 /* subtitles: none for English trailers; English subtitles for trailers that look like another language (Polish, Indian, anime…) */
 const FOREIGN=/[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]|[\u0900-\u0DFF\u3040-\u30ff\u4e00-\u9fff\uac00-\ud7af]|\b(polish|hindi|tamil|telugu|malayalam|kannada|punjabi|bengali|urdu|japanese|korean|mandarin|cantonese|french|spanish|italian|german|irish language|as gaeilge|subtitled|subs|english subtitles)\b|\bpl\b|\(pl\)/i;
 function captionsFor(f){try{const t=(T[f.trailer]||{}).title||"",foreign=FOREIGN.test((f.title||"")+" "+t)||/[^\x00-\x7F]/.test(cleanTitle(f.title||"").replace(/[’‘“”–—é]/g,""));
-  if(foreign){player.loadModule&&player.loadModule("captions");player.setOption&&player.setOption("captions","track",{languageCode:"en"})}else{player.unloadModule&&player.unloadModule("captions");player.unloadModule&&player.unloadModule("cc")}}catch(e){}}
+  const p=player;
+  if(foreign){p.loadModule&&p.loadModule("captions");p.setOption&&p.setOption("captions","track",{languageCode:"en"})}
+  else{/* English: captions off. YouTube can switch them on a moment after the start (or remember them from a subtitled
+          trailer before), so they're switched off again a few times in the first seconds */
+    const off=()=>{if(p!==player)return;try{p.setOption&&p.setOption("captions","track",{});p.unloadModule&&p.unloadModule("captions");p.unloadModule&&p.unloadModule("cc")}catch(e){}};
+    off();for(const ms of[700,1800,4000,8000])setTimeout(off,ms)}}catch(e){}}
 /* ---------- the next YouTube trailer, loaded early ----------
    While a showtimes card, slide or the board is on, a second (hidden, silent) player starts the next YouTube trailer and
    pauses it after a moment, so YouTube has a head start. When the trailer comes on, that player is swapped in: no wait,
    less buffering. Two players are used in turn. Off on very slow PCs (lite) and with pre=0 in the address. */
 let preP=null,preHits=0;const PRELOAD=Q.get("pre")==="1";   /* off: the foyer PCs can't run two YouTube players at once (it made playback much worse). pre=1 turns it back on for a fast PC. */
-const YTVARS={controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,fs:0,cc_load_policy:0,origin:location.origin};
+const YTVARS={controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,fs:0,cc_load_policy:0,cc_lang_pref:"en",hl:"en",origin:location.origin};
 function ytMake(el,id,vars,ready){const p=new YT.Player(el,{host:"https://www.youtube-nocookie.com",videoId:id,playerVars:{...YTVARS,...vars},
   events:{onReady:e=>{p._ready=true;if(ready)ready(e)},onStateChange:e=>{if(p===player){const h=p._h;if(h)h(e.data)}else if(p._pre)p._pre(e.data)},onError:()=>{if(p===player){const x=p._x;if(x)x()}else{p._preId=null;p._preOk=false}}}});return p}
 const ytSlot=()=>["ytA","ytB"].find(i=>{const e=document.getElementById(i);return e&&e.tagName==="DIV"});
