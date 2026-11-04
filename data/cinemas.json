@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-03T22:22:42.887Z",
-  "blocked": true,
+  "updated": "2026-11-04T14:47:24.528Z",
+  "blocked": false,
   "cinemas": [
     {
       "id": "enniskillen",
@@ -9,8 +9,8 @@
       "file": "data/imc.json",
       "ok": true,
       "films": 16,
-      "updated": "2026-11-03T14:13:09.566Z",
-      "checked": "2026-11-03T22:19:05.616Z"
+      "updated": "2026-11-04T14:31:09.319Z",
+      "checked": "2026-11-04T14:31:48.490Z"
     },
     {
       "id": "ballymena",
@@ -18,9 +18,9 @@
       "slug": "ballymena",
       "file": "data/cinemas/ballymena.json",
       "ok": true,
-      "films": 15,
-      "updated": "2026-11-03T14:13:52.147Z",
-      "checked": "2026-11-03T14:14:33.897Z"
+      "films": 16,
+      "updated": "2026-11-04T14:31:49.718Z",
+      "checked": "2026-11-04T14:32:28.194Z"
     },
     {
       "id": "banbridge",
@@ -28,9 +28,9 @@
       "slug": "banbridge",
       "file": "data/cinemas/banbridge.json",
       "ok": true,
-      "films": 5,
-      "updated": "2026-11-03T14:14:34.397Z",
-      "checked": "2026-11-03T14:15:09.192Z"
+      "films": 10,
+      "updated": "2026-11-04T14:32:28.570Z",
+      "checked": "2026-11-04T14:33:05.331Z"
     },
     {
       "id": "newtownards",
@@ -38,9 +38,9 @@
       "slug": "newtownards",
       "file": "data/cinemas/newtownards.json",
       "ok": true,
-      "films": 11,
-      "updated": "2026-11-03T14:15:10.354Z",
-      "checked": "2026-11-03T14:15:45.815Z"
+      "films": 12,
+      "updated": "2026-11-04T14:33:05.716Z",
+      "checked": "2026-11-04T14:33:42.285Z"
     },
     {
       "id": "athlone",
@@ -49,8 +49,8 @@
       "file": "data/cinemas/athlone.json",
       "ok": true,
       "films": 14,
-      "updated": "2026-11-03T14:15:45.819Z",
-      "checked": "2026-11-03T14:16:27.281Z"
+      "updated": "2026-11-04T14:33:42.290Z",
+      "checked": "2026-11-04T14:34:20.987Z"
     },
     {
       "id": "ballina",
@@ -58,9 +58,9 @@
       "slug": "ballina",
       "file": "data/cinemas/ballina.json",
       "ok": true,
-      "films": 14,
-      "updated": "2026-11-03T14:16:27.285Z",
-      "checked": "2026-11-03T14:17:07.720Z"
+      "films": 13,
+      "updated": "2026-11-04T14:34:20.991Z",
+      "checked": "2026-11-04T14:34:59.824Z"
     },
     {
       "id": "ballincollig",
@@ -69,8 +69,8 @@
       "file": "data/cinemas/ballincollig.json",
       "ok": false,
       "films": 0,
-      "updated": "2026-11-03T14:17:07.723Z",
-      "checked": "2026-11-03T14:17:52.767Z"
+      "updated": "2026-11-04T14:34:59.827Z",
+      "checked": "2026-11-04T14:35:42.182Z"
     },
     {
       "id": "blackpool",
@@ -79,8 +79,8 @@
       "file": "data/cinemas/blackpool.json",
       "ok": false,
       "films": 0,
-      "updated": "2026-11-03T14:17:52.768Z",
-      "checked": "2026-11-03T14:18:38.103Z"
+      "updated": "2026-11-04T14:35:42.183Z",
+      "checked": "2026-11-04T14:36:25.394Z"
     },
     {
       "id": "carlow",
@@ -89,8 +89,8 @@
       "file": "data/cinemas/carlow.json",
       "ok": true,
       "films": 18,
-      "updated": "2026-11-03T14:18:38.106Z",
-      "checked": "2026-11-03T14:19:17.790Z"
+      "updated": "2026-11-04T14:36:25.401Z",
+      "checked": "2026-11-04T14:37:03.106Z"
     },
     {
       "id": "clonmel",
@@ -99,8 +99,8 @@
       "file": "data/cinemas/clonmel.json",
       "ok": true,
       "films": 10,
-      "updated": "2026-11-03T14:19:17.794Z",
-      "checked": "2026-11-03T14:27:51.088Z"
+      "updated": "2026-11-04T14:37:03.111Z",
+      "checked": "2026-11-04T14:37:41.416Z"
     },
     {
       "id": "dundalk",
@@ -108,9 +108,9 @@
       "slug": "dundalk",
       "file": "data/cinemas/dundalk.json",
       "ok": true,
-      "films": 14,
-      "updated": "2026-11-03T14:27:51.094Z",
-      "checked": "2026-11-03T14:28:31.938Z"
+      "films": 16,
+      "updated": "2026-11-04T14:37:41.422Z",
+      "checked": "2026-11-04T14:38:21.211Z"
     },
     {
       "id": "dunlaoghaire",
@@ -118,9 +118,9 @@
       "slug": "dun-laoghaire",
       "file": "data/cinemas/dunlaoghaire.json",
       "ok": true,
-      "films": 33,
-      "updated": "2026-11-03T14:28:31.943Z",
-      "checked": "2026-11-03T14:29:11.341Z"
+      "films": 34,
+      "updated": "2026-11-04T14:38:21.217Z",
+      "checked": "2026-11-04T14:39:00.769Z"
     },
     {
       "id": "galway",
@@ -129,8 +129,8 @@
       "file": "data/cinemas/galway.json",
       "ok": true,
       "films": 25,
-      "updated": "2026-11-03T14:29:11.346Z",
-      "checked": "2026-11-03T14:29:52.982Z"
+      "updated": "2026-11-04T14:39:00.775Z",
+      "checked": "2026-11-04T14:39:39.269Z"
     },
     {
       "id": "oranmore",
@@ -138,9 +138,9 @@
       "slug": "galway-oranmore",
       "file": "data/cinemas/oranmore.json",
       "ok": true,
-      "films": 15,
-      "updated": "2026-11-03T14:29:52.987Z",
-      "checked": "2026-11-03T14:30:33.743Z"
+      "films": 16,
+      "updated": "2026-11-04T14:39:39.275Z",
+      "checked": "2026-11-04T14:40:18.987Z"
     },
     {
       "id": "kilkenny",
@@ -148,9 +148,9 @@
       "slug": "kilkenny-barrack-street",
       "file": "data/cinemas/kilkenny.json",
       "ok": true,
-      "films": 22,
-      "updated": "2026-11-03T14:30:33.747Z",
-      "checked": "2026-11-03T14:31:14.485Z"
+      "films": 24,
+      "updated": "2026-11-04T14:40:18.993Z",
+      "checked": "2026-11-04T14:40:57.420Z"
     },
     {
       "id": "mullingar",
@@ -159,8 +159,8 @@
       "file": "data/cinemas/mullingar.json",
       "ok": true,
       "films": 14,
-      "updated": "2026-11-03T14:31:14.490Z",
-      "checked": "2026-11-03T14:31:55.649Z"
+      "updated": "2026-11-04T14:40:57.426Z",
+      "checked": "2026-11-04T14:41:35.438Z"
     },
     {
       "id": "santry",
@@ -169,8 +169,8 @@
       "file": "data/cinemas/santry.json",
       "ok": true,
       "films": 23,
-      "updated": "2026-11-03T14:31:55.654Z",
-      "checked": "2026-11-03T14:32:32.725Z"
+      "updated": "2026-11-04T14:41:35.443Z",
+      "checked": "2026-11-04T14:42:13.251Z"
     },
     {
       "id": "savoy",
@@ -179,8 +179,8 @@
       "file": "data/cinemas/savoy.json",
       "ok": true,
       "films": 19,
-      "updated": "2026-11-03T14:32:32.730Z",
-      "checked": "2026-11-03T14:33:11.275Z"
+      "updated": "2026-11-04T14:42:13.258Z",
+      "checked": "2026-11-04T14:42:51.304Z"
     },
     {
       "id": "thurles",
@@ -189,8 +189,8 @@
       "file": "data/cinemas/thurles.json",
       "ok": true,
       "films": 14,
-      "updated": "2026-11-03T14:33:12.096Z",
-      "checked": "2026-11-03T14:33:51.672Z"
+      "updated": "2026-11-04T14:42:51.898Z",
+      "checked": "2026-11-04T14:43:29.890Z"
     },
     {
       "id": "tullamore",
@@ -199,8 +199,8 @@
       "file": "data/cinemas/tullamore.json",
       "ok": true,
       "films": 14,
-      "updated": "2026-11-03T14:33:51.676Z",
-      "checked": "2026-11-03T14:34:30.353Z"
+      "updated": "2026-11-04T14:43:29.895Z",
+      "checked": "2026-11-04T14:44:07.579Z"
     }
   ]
 }
