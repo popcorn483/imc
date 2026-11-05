@@ -454,6 +454,7 @@ html.a-rm *{transition:none!important;animation:none!important}
       <div class="sec"><h3>Cinema Reels</h3><p class="note">Vertical 9:16 videos for Instagram &amp; Facebook Reels, TikTok and Stories. Point at one to preview it. Film names and dates fill in from imc.ie.</p><div class="tiles reels" id="reels"></div>
         <label class="check" style="margin-top:10px"><input type="checkbox" id="safeChk"> Show the area Reels buttons and captions cover (editor only)</label></div>
       <div class="sec"><h3>Animated presets</h3><p class="note">Effects, layout and timed animation in one click, at any size. Point at one to preview it.</p><div class="tiles" id="presets"></div></div>
+      <div class="sec"><h3>Facebook cover photos</h3><p class="note">The banner across the top of the IMC Facebook page (1640 × 624). The dashed box shows what phones keep.</p><div class="tiles" id="covers"></div></div>
       <div class="sec"><h3>Gift cards</h3><p class="note">A ready-made gift card post. Pick a theme; click the card afterwards to add an amount or switch theme.</p><div class="tiles" id="gifts"></div></div>
       <div class="sec"><h3>Seasons &amp; occasions</h3><p class="note">One click gives your design a seasonal background, colours and animation. Your photo and text stay.</p><div class="tiles" id="seasons"></div></div>
       <div class="sec"><h3>Starter layouts</h3><p class="note">Swaps the frame and badges. Your photo stays.</p><div class="tiles" id="layouts"></div></div>
@@ -970,6 +971,40 @@ function drawGiftCard(c,L){
     x.save();rr(-w/2,-h/2,w,h,24);x.clip();const sh=x.createLinearGradient(-w/2,-h/2,w*.25,h/2);sh.addColorStop(0,"rgba(255,255,255,0)");sh.addColorStop(.45,"rgba(255,255,255,0)");sh.addColorStop(.52,"rgba(255,255,255,.16)");sh.addColorStop(.6,"rgba(255,255,255,0)");x.fillStyle=sh;x.fillRect(-w/2,-h/2,w,h);x.restore();
     TICKET_CACHE[key]=cv}
   c.drawImage(TICKET_CACHE[key],-w/2-pad,-h/2-pad,w+pad*2,h+pad*2);return{w,h}}
+
+/* ---------- Facebook cover photos (1640 x 624: Facebook shows 820 x 312; phones crop the sides, so everything important
+   sits in the middle 68%) ---------- */
+const COVERS=[
+  {k:"now",n:"Now showing",d:"Today's films, posters across the middle"},
+  {k:"soon",n:"Coming soon",d:"The next big releases"},
+  {k:"brand",n:"Your cinema",d:"The cinema building with the IMC welcome"},
+  {k:"season",n:"This season",d:"Seasonal look with this week's films"},
+  {k:"gift",n:"Gift cards",d:"IMC's gift card, big and bold"},
+  {k:"luxx",n:"LUXX",d:"Recline in style"}];
+function coverFilms(kind){const seen=new Set(),out=[];const src=kind==="soon"?(IMC&&IMC.comingSoon)||[]:[...((IMC&&IMC.today)||[]),...((IMC&&IMC.comingSoon)||[])];
+  for(const f of src){const k=String(f.title||"").toLowerCase().replace(/\s+-\s+.*$|\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();if(!f.posterFile&&!f.poster||seen.has(k)||/^(sensory|autism|parent)/i.test(f.title))continue;seen.add(k);out.push(f)}return out.slice(0,5)}
+function coverPosters(films,x0,x1,y,s){const n=films.length;return films.map((f,i)=>({id:uid(),kind:"pphoto",src:f.posterFile||f.poster,label:f.title,card:true,ar:.675,x:n===1?(x0+x1)/2:x0+(x1-x0)*i/(n-1),y,s:s*(n>4?.82:n>3?.9:1),r:(i-(n-1)/2)*.035,o:1,anim:"pop",delay:.08+i*.07}))}
+function coverLayers(k){const SN=SITE_NAME||"IMC";
+  /* the cover is short (624 px), so words are set larger than on a square post */
+  const T=(text,o)=>mk("text","title",{text,size:fitSize(text,"display",o.max||170,44,o.w||900),x:o.x,y:o.y,align:o.align||"center",anim:"slide",delay:o.delay||0,...(o.font?{font:o.font}:{}),...(o.c1?{c1:o.c1}:{})});
+  const sub=(text,o)=>mk("text","sub",{text,size:fitSize(text,"body",o.size||50,34,o.w||700),x:o.x,y:o.y,align:o.align||"center",anim:"slide",delay:o.delay||.1,...(o.c1?{c1:o.c1}:{})});
+  const kick=(text,o)=>mk("text","small",{text,x:o.x,y:o.y,size:36,sp:8,anim:"slide"});
+  if(k==="now"||k==="soon"||k==="season"){const fl=coverFilms(k==="soon"?"soon":"now"),se=seasonNow()[0];
+    const head=k==="soon"?"COMING SOON":k==="season"&&se?se.title:"NOW SHOWING",kk=k==="season"&&se?se.badge.text:SN.toUpperCase();
+    return[kick(kk,{x:.31,y:.25}),T(head,{x:.31,y:.47,max:150,w:840}),sub(k==="soon"?"Be first to see them here":"Book at imc.ie",{x:.31,y:.68,size:46,w:900,delay:.15}),
+      ...coverPosters(fl,.54,.775,.5,1)]}
+  if(k==="brand")return[kick("WELCOME TO",{x:.5,y:.25}),T(SN.toUpperCase(),{x:.5,y:.47,max:200,w:1150}),sub("Films, popcorn and great nights out · Book at imc.ie",{x:.5,y:.7,size:50,w:1150,delay:.15})];
+  if(k==="gift")return[mk("product","giftcard",{theme:"imc",text:"",x:.34,y:.5,s:1.35,r:-.06,anim:"pop",delay:.05}),kick("IMC GIFT CARDS",{x:.64,y:.25}),T("GIVE THE BIG SCREEN",{x:.645,y:.47,max:140,w:840}),sub("At the kiosk and on imc.ie",{x:.645,y:.68,size:48,w:900,delay:.15})];
+  if(k==="luxx")return[mk("badge","luxx",{x:.33,y:.5,s:1.2,anim:"pop"}),T("RECLINE IN STYLE",{x:.655,y:.44,max:130,w:800,font:"serif"}),sub("Luxury recliners at "+SN,{x:.655,y:.64,size:44,w:900,delay:.15})];
+  return[]}
+async function applyCover(k){const c=COVERS.find(x=>x.k===k)||COVERS[0];S.fmt="cover";S.label="Facebook cover: "+c.n;showSafe=true;
+  const se=seasonNow()[0];S.motion={...S.motion,fx:{}};S.frame={...S.frame,style:"none",logo:true};
+  if(k==="brand"){const sp=sitePic();if(sp&&await loadUrlAsPhoto(sp)){S.bg="photo";S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:0,shade:55}}else S.bg="stage"}
+  else if(k==="season"&&se){S.bg=se.bg;S.frame={...S.frame,...se.frame,logo:true};S.motion={...S.motion,fx:{...se.fx}}}
+  else S.bg={now:"stage",soon:"midnight",gift:"festive",luxx:"gold"}[k]||"stage";
+  if(k==="gift"&&!/^(11|12)/.test(new Date().toISOString().slice(5,7)))S.bg="midnight";
+  S.layers=coverLayers(k);if(!S.layers.some(l=>l.kind==="pphoto")&&(k==="now"||k==="soon"||k==="season"))toast("No film posters found yet: try again once the listings have loaded");
+  selId=null;fit();clampPhoto();syncAll();commit();toast("Facebook cover ready. Keep words inside the dashed box: phones cut off the sides",true)}
 /* one-click gift card posts */
 const GIFT_POSTS=[
   {k:"general",n:"Gift card",bg:"midnight",frame:{style:"premiere",accent:"#ffc23d"},fx:{sparkle:true},badge:{style:"ribbon",text:"IMC GIFT CARDS",c1:"#ffc23d",c2:"#1a1440"},title:"GIVE THE BIG SCREEN",sub:"Gift cards at the kiosk and on imc.ie",amount:""},
@@ -1054,7 +1089,7 @@ const PRODUCTS={
     const cv=TICKET_CACHE[key];c.save();c.shadowColor="rgba(0,0,0,.45)";c.shadowBlur=28;c.shadowOffsetY=14;c.drawImage(cv,-w/2-pad,-h/2-pad,w+pad*2,h+pad*2);c.restore();
     return{w:stack?w+30:w,h:stack?h+36:h}}}
 };
-window.__imcTest={applyGift:k=>applyGift(k),drawProduct:(...a)=>drawProduct(...a),foodVis:(...a)=>foodVis(...a)};   /* testing only */
+window.__imcTest={applyCover:k=>applyCover(k),applyGift:k=>applyGift(k),drawProduct:(...a)=>drawProduct(...a),foodVis:(...a)=>foodVis(...a)};   /* testing only */
 const TICKET_CACHE={};try{document.fonts.ready.then(()=>{for(const k in TICKET_CACHE)delete TICKET_CACHE[k];typeof draw==="function"&&draw()})}catch(e){}   /* redraw tickets once the lettering font has loaded */
 function hexRgb(h){h=String(h||"#ffc23d").replace("#","");if(h.length===3)h=h.split("").map(x=>x+x).join("");const n=parseInt(h,16);return isNaN(n)?[255,194,61]:[n>>16&255,n>>8&255,n&255]}
 function drawProduct(c,L){if(L.key==="giftcard")return drawGiftCard(c,L);if(L.key!=="ticket"){const v=foodVisual(L.key);if(!v)return{w:1,h:1};return drawPPhoto(c,{...L,src:v.src,card:!!v.card})}const P=PRODUCTS.ticket;return P.draw(c,{...L,c1:L.c1||P.c1,c2:L.c2||P.c2})}
@@ -1448,6 +1483,9 @@ function drawOverlay(c,W,H,u){const k=kpx();c.save();
   if(showSafe&&S.fmt==="story"){const top=H*.13,bot=H*.22,rt=W*.13;c.fillStyle="rgba(255,79,216,.13)";c.fillRect(0,0,W,top);c.fillRect(0,H-bot,W,bot);c.fillRect(W-rt,top,rt,H-top-bot);
     c.strokeStyle="rgba(255,79,216,.75)";c.lineWidth=1.5*k;c.setLineDash([8*k,6*k]);c.strokeRect(0,top,W-rt,H-top-bot);c.setLineDash([]);c.fillStyle="rgba(255,255,255,.85)";c.font=`600 ${Math.max(11*k,22*u)}px ${FONTS.body}`;c.textAlign="center";
     c.fillText("Reels: app buttons cover this",W/2,top*.55);c.fillText("Reels: caption & buttons cover this",W/2,H-bot*.5);c.textAlign="left"}
+  if(showSafe&&S.fmt==="cover"){/* Facebook shows the whole cover on computers; phones crop about 16% off each side */
+    const sx=W*.16;c.fillStyle="rgba(255,79,216,.12)";c.fillRect(0,0,sx,H);c.fillRect(W-sx,0,sx,H);c.strokeStyle="rgba(255,79,216,.75)";c.lineWidth=1.5*k;c.setLineDash([8*k,6*k]);c.strokeRect(sx,0,W-2*sx,H);c.setLineDash([]);
+    c.fillStyle="rgba(255,255,255,.85)";c.font=`600 ${Math.max(10*k,18*u)}px ${FONTS.body}`;c.textAlign="center";c.save();for(const X of[sx/2,W-sx/2]){c.save();c.translate(X,H/2);c.rotate(-Math.PI/2);c.fillText("Phones cut this off",0,6*k);c.restore()}c.restore();c.textAlign="left"}
   if(drag&&drag.gx){c.strokeStyle="#ff4fd8";c.lineWidth=1.5*k;c.beginPath();c.moveTo(W/2,0);c.lineTo(W/2,H);c.stroke()}
   if(drag&&drag.gy){c.strokeStyle="#ff4fd8";c.lineWidth=1.5*k;c.beginPath();c.moveTo(0,H/2);c.lineTo(W,H/2);c.stroke()}
   const L=getSel();if(L&&!L.hidden){const C=corners(L,W,H,u,k);c.strokeStyle="#4da3ff";c.lineWidth=2*k;c.setLineDash([6*k,4*k]);c.beginPath();c.moveTo(C.tl.x,C.tl.y);c.lineTo(C.tr.x,C.tr.y);c.lineTo(C.br.x,C.br.y);c.lineTo(C.bl.x,C.bl.y);c.closePath();c.stroke();c.setLineDash([]);
@@ -1578,6 +1616,8 @@ function thumbsFor(t){if(t==="add")renderFlogo();if(!thumbDirty[t])return;thumbD
   const now=seasonNow().map(x=>x.k);
   $("#seasons").innerHTML=SEASONS.map(se=>`<button class="tile" data-season="${se.k}"><canvas width="320" height="320"></canvas><span>${esc(se.n)}${now.includes(se.k)?' <em class="anim">Now</em>':""}</span></button>`).join("");
   $$("#seasons .tile").forEach(t=>{const se=SEASONS.find(x=>x.k===t.dataset.season),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:se.bg,frame:{...S.frame,...se.frame},photo:S.photo,layers:seasonLayers(se,true),motion:{fx:se.fx}})});
+  $("#covers").innerHTML=COVERS.map(c=>`<button class="tile" data-cover="${c.k}"><canvas width="328" height="125"></canvas><span>${esc(c.n)}</span></button>`).join("");
+  $$("#covers .tile").forEach(t=>{const k=t.dataset.cover,c=t.querySelector("canvas"),se=seasonNow()[0];render(c.getContext("2d"),328,125,{noPhoto:true},{fmt:"cover",bg:k==="season"&&se?se.bg:{now:"stage",soon:"midnight",gift:"midnight",luxx:"gold",brand:"stage"}[k]||"stage",frame:{...S.frame,style:"none",logo:true},photo:S.photo,layers:coverLayers(k),motion:{fx:{}}})});
   $("#gifts").innerHTML=GIFT_POSTS.map(g=>`<button class="tile" data-gift="${g.k}"><canvas width="320" height="320"></canvas><span>${esc(g.n)}</span></button>`).join("");
   $$("#gifts .tile").forEach(t=>{const g=GIFT_POSTS.find(x=>x.k===t.dataset.gift),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:g.bg,frame:{...S.frame,...g.frame},photo:S.photo,layers:giftLayers(g),motion:{fx:g.fx}})});
   $("#presets").innerHTML=ANIM_PRESETS.map((p,i)=>p.hide?"":`<button class="tile" data-preset="${i}"><canvas width="320" height="320"></canvas><span>${esc(p.n)}</span></button>`).join("");
@@ -1837,6 +1877,7 @@ document.addEventListener("change",async e=>{const t=e.target;if(t.id==="lkFilm"
 document.addEventListener("input",e=>{const t=e.target,map={lkMain:"main",lkAcc:"acc",lkInk:"ink"};if(map[t.id]){S.look={...LOOKDEF,...(S.look||{}),pal:"custom",[map[t.id]]:t.value};restyle();commitSoon();$$("[data-lkpal]").forEach(x=>x.setAttribute("aria-pressed","false"))}});
 
 /* ---------- layouts ---------- */
+$("#covers").addEventListener("click",e=>{const t=e.target.closest("[data-cover]");if(t)applyCover(t.dataset.cover)});
 $("#gifts").addEventListener("click",e=>{const t=e.target.closest("[data-gift]");if(t)applyGift(t.dataset.gift)});
 $("#seasons").addEventListener("click",e=>{const t=e.target.closest("[data-season]");if(t)applySeason(t.dataset.season,false)});
 $("#presets").addEventListener("click",e=>{const t=e.target.closest("[data-preset]");if(t){stopTileAnim();applyPreset(ANIM_PRESETS[+t.dataset.preset],false)}});
@@ -2670,6 +2711,7 @@ function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-ha
   else if(h.kind==="luxx")applyLuxx(h);
   else if(h.kind==="luxxkit")applyLuxxKit(h);
   else if(h.kind==="kidsclub")applyKids(h);
+  else if(h.kind==="cover"){applyCover(h.key||"now");return true}
   else if(h.kind==="gift"){applyGift(h.key);const c=S.layers.find(l=>l.key==="giftcard");if(c&&h.amount){c.text=h.amount;draw()}}
   else if(h.kind==="season"){applySeason(h.key,true);if(h.title){const t=S.layers.find(l=>l.kind==="text");if(t)t.text=h.title}}
   else if(h.kind==="listing")applyListing(h);
