@@ -227,6 +227,40 @@ const LOUNGE=Q.get("luxx")==="1";
 /* studio trailers (WB360, Disney Box and so on): video files saved on this PC from the hub, plus download links sent in the address as sv=[film key, title, link] */
 let STUDIO=[];
 function sdb(){return new Promise((res,rej)=>{const r=indexedDB.open("imc-editor",1);r.onupgradeneeded=()=>r.result.createObjectStore("kv");r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+async function sput(k,v){try{const d=await sdb();return await new Promise((res,rej)=>{const t=d.transaction("kv","readwrite");t.objectStore("kv").put(v,k);t.oncomplete=()=>res(true);t.onerror=()=>rej(t.error)})}catch(e){return false}}
+async function sdel(k){try{const d=await sdb();return await new Promise(res=>{const t=d.transaction("kv","readwrite");t.objectStore("kv").delete(k);t.oncomplete=()=>res(true);t.onerror=()=>res(false)})}catch(e){return false}}
+/* ---------- trailer files from a shared Google Drive folder ----------
+   The manager drops trailer files (MP4 from WB360, Disney Box and so on) into one Google Drive folder shared as
+   "anyone with the link". Every foyer PC lists the folder (Drive API, with the key set in the hub), matches each file to
+   a film by its name (or as set in the hub), downloads the ones it needs one at a time into this PC's own storage, plays
+   them instead of the YouTube trailer, and deletes them once the film has left the listings. Until a file has finished
+   downloading, the YouTube trailer plays. The slot length comes from Drive (the same for every TV), so the TVs stay in step. */
+let DRIVE=[],driveAt=0,driveBusy=false,driveMsg="",driveHave={};
+try{DRIVE=JSON.parse(localStorage.getItem("imc-gd-list")||"[]");driveHave=JSON.parse(localStorage.getItem("imc-gd-have")||"{}")}catch(e){}
+const GD=()=>Q.get("gd")||"",GK=()=>Q.get("gk")||"";
+function gmap(){try{const b=(Q.get("gm")||"").replace(/-/g,"+").replace(/_/g,"/");return b?JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))):{}}catch(e){return{}}}
+const dnorm=t=>" "+String(t||"").toLowerCase().replace(/\.(mp4|mov|m4v|webm|mkv)$/,"").replace(/[._]/g," ").replace(/\(.*?\)|\[.*?\]/g," ").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").replace(/\s+/g," ").trim()+" ";
+async function driveList(){if(!GD()||!GK())return;
+  const q=encodeURIComponent(`'${GD()}' in parents and trashed=false`),u=`https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name,size,mimeType,modifiedTime,videoMediaMetadata(durationMillis))&pageSize=200&key=${encodeURIComponent(GK())}`;
+  try{const r=await fetch(u,{cache:"no-store"});if(!r.ok){driveMsg="Can't read the Google Drive folder (check it's shared and the key in the hub)";return}const j=await r.json();
+    DRIVE=(j.files||[]).filter(f=>/^video\//.test(f.mimeType||"")||/\.(mp4|m4v|mov|webm)$/i.test(f.name||"")).map(f=>({id:f.id,name:f.name,size:+f.size||0,dur:Math.round(+(f.videoMediaMetadata&&f.videoMediaMetadata.durationMillis)||0)/1000})).filter(f=>f.dur>5).sort((a,b)=>a.id.localeCompare(b.id));
+    driveAt=Date.now();try{localStorage.setItem("imc-gd-list",JSON.stringify(DRIVE))}catch(e){}}catch(e){driveMsg="No internet: using the trailer files already saved"}}
+/* which film each Drive file belongs to: the hub's choice, or the longest film title found in the file name */
+function driveAssign(list){const M=gmap(),out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
+  for(const d of DRIVE){if(M[d.id]==="-")continue;let f=M[d.id]&&list.find(x=>x.key===M[d.id]);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));f=hit&&hit.f}
+    if(f&&!out.has(f.key))out.set(f.key,d)}return out}
+async function driveSync(){if(driveBusy||!GD())return;driveBusy=true;
+  try{try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+    const A=driveAssign(films()),T=londonNow().date,need=new Map();
+    for(const f of films()){const d=A.get(f.key);if(d&&(upcoming(f).length||f.sources&&f.sources.has("soon")||(f.releaseDate||"")>=T))need.set(d.id,d)}
+    for(const id of Object.keys(driveHave))if(!need.has(id)){await sdel("gdfile:"+id);delete driveHave[id]}   /* no longer needed: deleted from this PC */
+    try{localStorage.setItem("imc-gd-have",JSON.stringify(driveHave))}catch(e){}
+    for(const d of need.values()){if(driveHave[d.id])continue;if(netDown())break;driveMsg="Downloading "+d.name+"…";
+      try{const r=await fetch(`https://www.googleapis.com/drive/v3/files/${d.id}?alt=media&key=${encodeURIComponent(GK())}`);if(!r.ok)throw 0;const b=await r.blob();
+        if(b.size<1e5)throw 0;if(await sput("gdfile:"+d.id,b)){driveHave[d.id]={name:d.name,size:b.size,at:Date.now()};try{localStorage.setItem("imc-gd-have",JSON.stringify(driveHave))}catch(e){}}}
+      catch(e){driveMsg="Couldn't download "+d.name+": will try again later";continue}
+      await new Promise(r=>setTimeout(r,4000))}
+    if(!/^Couldn't|^Can't/.test(driveMsg))driveMsg=""}finally{driveBusy=false}}
 async function sget(k){try{const d=await sdb();return await new Promise((res,rej)=>{const q=d.transaction("kv").objectStore("kv").get(k);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)})}catch(e){return null}}
 async function loadStudio(){const mine=await sget("studio:"+SITE),L=(Array.isArray(mine)?mine:[]).filter(x=>!x.until||x.until>=londonNow().date),urls=new Set(L.map(x=>x.url).filter(Boolean));
   STUDIO=[...L,...SVLINKS.filter(x=>!urls.has(x.url))].filter(x=>!RED.test(x.title||""));ONLY=Q.get("only")==="1"&&(EXTRA.length+STUDIO.filter(x=>!x.film).length)>0}
@@ -292,6 +326,7 @@ function films(){const m=new Map();
   const out=new Map();for(const f of m.values()){const k=f.slug||f.title.toLowerCase(),o=out.get(k);if(!o)out.set(k,{...f,key:k,luxxToo:!!f.luxx,luxxS:f.luxx?[...f.sessions]:[]});else{o.luxxToo=o.luxxToo||!!f.luxx;if(f.luxx)for(const s of f.sessions)if(!o.luxxS.some(x=>x.date===s.date&&x.time===s.time))o.luxxS.push(s);for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s);for(const key of["poster","posterFile","cert","certIcon","runtime","trailer"])o[key]=o[key]||f[key]}}
   for(const f of out.values())if(MYTR[f.key]){f.trailer="https://www.youtube.com/watch?v="+MYTR[f.key];f.mine=true}
   for(const f of out.values()){const st=STUDIO.find(x=>x.film===f.key);if(st){f.studio=st;f.trailer="studio:"+st.id}}
+  if(DRIVE.length&&GD()){const L=[...out.values()],A=driveAssign(L);for(const f of L){if(f.studio)continue;const d=A.get(f.key);if(d){f.ytTrailer=f.trailer;f.studio={id:"gd:"+d.id,drive:d.id,len:d.dur,title:f.title};f.trailer="studio:gd:"+d.id}}}
   return[...out.values()]}
 function safety(f){if(f.studio){const c=String(f.cert||"").toUpperCase(),sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco");return!c||c==="TBC"||f.extra||(SAFE[sys]||SAFE.bbfc).includes(c)?{ok:true}:{ok:false,why:"rated "+c}}
   const t=f.mine?{}:T[f.trailer]||{};const sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
@@ -464,7 +499,7 @@ async function syncClock(){let lo=-Infinity,hi=Infinity;
 const nowMs=()=>Date.now()+clockOff;
 function dayMs(){const t=nowMs(),p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date(t)))p[x.type]=x.value;return((+p.hour)*3600+(+p.minute)*60+(+p.second))*1000+t%1000}
 function halfHour(){const n=londonNow();return n.date+"T"+n.hm.slice(0,2)+(+n.hm.slice(3,5)>=30?"b":"a")}
-function planStamp(){return[halfHour(),Q.toString(),D&&(D.updated||D.generated||D.fetched||""),Object.keys(DUR).length,STUDIO.map(x=>x.id+":"+(x.len||0)).join(",")].join("|")}
+function planStamp(){return[halfHour(),Q.toString(),D&&(D.updated||D.generated||D.fetched||""),Object.keys(DUR).length,STUDIO.map(x=>x.id+":"+(x.len||0)).join(","),DRIVE.map(x=>x.id+":"+x.dur).join(",")].join("|")}
 function boardPlan(){const ds=dayState();if(!ds.rows.length)return null;const pages=Math.min(3,Math.ceil(ds.rows.length/9));return{pages,secs:pages>1?9:13}}
 function buildPlan(){const stamp=planStamp(),n=londonNow();PLAN_AT=nowMs()-dayMs()%1800000;
   try{seedRnd=seeded(n.date+"|"+Q.toString());since=0;gap=newGap();queue=buildQueue();var st=buildSteps(),bp=boardPlan()}finally{seedRnd=null;PLAN_AT=null}
@@ -565,7 +600,9 @@ async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout
   player._x=()=>blank("YouTube won't play it here (removed, private or not allowed outside YouTube)");player._done=done}
 /* a studio trailer file (saved on this PC) or download link, played in the same frame as YouTube trailers */
 async function playStudio(f,at=0){const v=$("#svid"),x=f.studio;let src=x.url||"",obj="";
-  if(!src){const b=await sget("studiofile:"+x.id);if(!b){timer=setTimeout(next,300);return}obj=src=URL.createObjectURL(b)}
+  if(x.drive){const b=await sget("gdfile:"+x.drive);if(!b){/* not downloaded yet on this PC: the YouTube trailer instead */
+      if(f.ytTrailer&&/youtu/.test(f.ytTrailer))return playTrailer({...f,trailer:f.ytTrailer,studio:null},at);if(!syncFill())timer=setTimeout(next,300);return}obj=src=URL.createObjectURL(b)}
+  else if(!src){const b=await sget("studiofile:"+x.id);if(!b){timer=setTimeout(next,300);return}obj=src=URL.createObjectURL(b)}
   try{if(player&&player.pauseVideo)player.pauseVideo()}catch(e){}
   const u=f.extra?[]:upcoming(f),nx=u[0],n=londonNow();
   $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:f.extra?"<small>COMING SOON</small>":"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
@@ -639,7 +676,7 @@ function tickStrip(){const n=londonNow();$("#clock").textContent=n.hm;if(!D)retu
   $("#nextshow").innerHTML=`${m<=5?"Next · starts soon":"Next"}${m>5&&m<=60?` · in ${m} min`:""}${SCREENS&&r.screen?" · Screen "+esc(r.screen):""}<b>${r.time} ${esc(r.title)}</b>`}
 
 /* ---------- loading, with a saved copy for when the internet drops ---------- */
-async function load(){await loadStudio();await loadDurations();savedCopy=false;let d=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json"),t=await getJson("data/trailers.json");
+async function load(){await loadStudio();await loadDurations();await driveList();if(Q.get("list")!=="1")setTimeout(driveSync,8000);savedCopy=false;let d=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json"),t=await getJson("data/trailers.json");
   if(d&&!savedCopy){try{localStorage.setItem(CK,JSON.stringify({d,t,at:Date.now()}))}catch(e){}offline=false}else if(d)offline=true
   else{try{const c=JSON.parse(localStorage.getItem(CK)||"null");if(c){d=c.d;t=c.t;offline=true}}catch(e){}}
   $("#offline").hidden=!offline;D=d;T=t||{};base=D?D._base:"";lastLoad=Date.now();
@@ -672,6 +709,7 @@ function infoBox(){let el=$("#infobox");if(el){el.remove();return}el=document.cr
     ["Settings from the manager's PC",remote?"yes, saved "+f(remote.at):lastRemote&&lastRemote.ok===false?"none found yet":"not checked yet"],["Last checked for settings",lastRemote?f(lastRemote.at):"not yet"],
     ["Settings in use",remote&&new URLSearchParams(remote.q).toString()===Q.toString()?"the manager's (up to date)":pendingQ?"new settings waiting: they start at the next screen":"this PC's own"],
     ["Next trailer loaded early",PRELOAD1?(player&&player._preId?"yes, ready to play":"waiting for the next card or priceboard")+` (${preHits} started instantly)`:"off on this PC"],
+    ...(GD()?[["Trailer files from Google Drive",(()=>{const n=Object.keys(driveHave).length,mb=Object.values(driveHave).reduce((a,x)=>a+(x.size||0),0)/1048576;return`${DRIVE.length} in the folder · ${n} saved on this PC (${mb<1024?Math.round(mb)+" MB":(mb/1024).toFixed(1)+" GB"})`+(driveMsg?" · "+driveMsg:"")+(driveAt?" · checked "+new Date(driveAt).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}):"")})()]]:[]),
     ["All TVs in step",SYNC?(syncOn?"on":"on (starts after Start)"):"off"],...(SYNC&&plan?[["Running order code",plan.code+" (the same on every TV means they have the same running order)"],["Clock vs website",(clockOff>=0?"+":"")+(clockOff/1000).toFixed(1)+" s (corrected for)"]]:[]),["Internet",offline||navigator.onLine===false?"down: showing saved listings":"ok"],["Listings updated",D&&D.updated?f(D.updated):"unknown"],["Sound",muted?"off (click once to turn on)":"on"],["Trailers that showed nothing today",badList().map(x=>x.title+" ("+x.why+")").join("; ")||"none"]];
   el.innerHTML="<b>Foyer player information</b><table>"+rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(String(r[1]))}</td></tr>`).join("")+"</table><small>Press I again to close. Press F5 to reload if something looks out of date.</small>";document.body.appendChild(el)}
 async function applyPending(){

@@ -115,6 +115,7 @@ html.a-rm{scroll-behavior:auto}
   <a href="#playlist">The playlist</a>
   <a href="#between">Between the trailers</a>
   <a href="#recommended">Recommended trailers</a>
+  <a href="#drive-trailers">Trailer files from Google Drive</a>
   <a href="#own-trailers">Your own and studio trailers</a>
   <a href="#welcome">Welcome videos</a>
   <a href="#tv-adverts">Foyer TV adverts</a>
@@ -549,6 +550,33 @@ html.a-rm{scroll-behavior:auto}
     <li><b>Rating:</b> shown on each card. If it's not known or is wrong, choose it in the <b>Rating</b> box. Trailers rated 15 or 18 can't be added.</li>
   </ol>
   <div class="tip"><b>US dates:</b> Disney, Paramount and Lionsgate cards come from American channels, so their dates say <b>US release</b>. Check the UK date and change it in <b>Your own trailers</b>.</div>
+</section>
+
+<section class="g" id="drive-trailers" data-s>
+  <h2>Trailer files from Google Drive (no buffering)</h2>
+  <p class="lead">Put the proper trailer files (MP4s from WB360, Disney Box and the other distributors) on the <b>manager's PC</b>. The foyer PCs fetch them by themselves, play them instead of the YouTube trailer, in full quality with no buffering (even if the internet drops), and delete them when the film has gone. Nobody needs to touch the foyer PCs.</p>
+  <h3>Set it up once (about 15 minutes)</h3>
+  <ol class="steps">
+    <li><b>Install Google Drive on the manager's PC.</b> Search for “Google Drive for desktop”, download it from Google, install it and sign in with the cinema's Google account. A <b>Google Drive</b> drive appears in File Explorer.</li>
+    <li><b>Make the trailers folder.</b> In File Explorer, open Google Drive → <b>My Drive</b>, right-click → New → Folder, and call it <b>IMC TRAILERS</b>. Anything you save or drag into it uploads to Google Drive automatically. (You can also upload files at drive.google.com.)</li>
+    <li><b>Share the folder by link.</b> Go to <b>drive.google.com</b>, right-click the IMC TRAILERS folder → <b>Share</b> → <b>Share</b>. Under “General access” choose <b>Anyone with the link</b> (Viewer). Click <span class="k">Copy link</span>, then <span class="k">Done</span>.</li>
+    <li><b>Get a Google API key</b> (this lets the foyer PCs read the folder):
+      <ol>
+        <li>Go to <b>console.cloud.google.com</b> and sign in with the same Google account. Agree to the terms if asked.</li>
+        <li>At the top, click the project picker → <span class="k">New project</span>, call it <b>IMC foyer</b>, click <span class="k">Create</span>, then make sure it's selected.</li>
+        <li>In the search box at the top type <b>Google Drive API</b>, open it and click <span class="k">Enable</span>.</li>
+        <li>Open the menu ☰ → <b>APIs &amp; Services</b> → <b>Credentials</b> → <span class="k">+ Create credentials</span> → <b>API key</b>. Copy the key (it starts with <b>AIza</b>).</li>
+        <li>Click <b>Edit API key</b>. Under <b>Application restrictions</b> choose <b>Websites</b> and add <b>https://popcorn483.github.io/*</b>. Under <b>API restrictions</b> choose <b>Restrict key</b> and tick <b>Google Drive API</b>. Click <span class="k">Save</span>. (This means the key only works for reading shared Drive files from the IMC app.) It's free: the foyer PCs use a tiny fraction of the free allowance.</li>
+      </ol></li>
+    <li><b>Put both into the hub.</b> On <a href="index.html#foyer">Foyer trailers</a>, under <b>Trailer files for the foyer TVs (Google Drive)</b>, paste the folder link and the key and click <span class="k">Save and check the folder</span>.</li>
+  </ol>
+  <h3>Every time you get a new trailer</h3>
+  <ol class="steps">
+    <li>Save the MP4 into the <b>IMC TRAILERS</b> folder on the manager's PC. Name it after the film, e.g. <b>Wicked For Good trailer.mp4</b>. Extra words like “trailer 2”, “final” or “UK HD” are fine.</li>
+    <li>Give Google a few minutes to upload and process it, then on Foyer trailers click <span class="k">Save and check the folder</span>. Each file shows the film it will play for and <b>✓ Will play</b>. If the match is wrong or missing, choose the right film from the list (or <b>Don't use this file</b>).</li>
+    <li>That's it. The foyer PCs check the folder every half hour, download what they need one file at a time, and use it from then on. Until a file has finished downloading on a TV, that TV plays the YouTube trailer. Press <span class="k">I</span> on a foyer TV to see how many files it has saved.</li>
+  </ol>
+  <div class="tip"><b>Tidying up:</b> files are deleted from the foyer PCs automatically when the film has left the listings. You can delete old files from the IMC TRAILERS folder whenever you like; the TVs remove them too. The old way (copying files to a TRAILERS folder on each foyer PC's desktop) isn't needed any more.</div>
 </section>
 
 <section class="g" id="own-trailers" data-s>

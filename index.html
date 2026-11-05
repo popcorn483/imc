@@ -368,6 +368,8 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .pbsound{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;margin:4px 0 10px}.pbsound .field{margin:0;flex:1;min-width:220px}.pbck{display:flex;gap:6px;align-items:center;font-weight:600;padding-bottom:10px}.pbsound .btn{margin-bottom:6px}
 .pbchips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
 @media (max-width:900px){.pbgrid{grid-template-columns:1fr}.pbside{position:static;order:-1}.pbrow2{grid-template-columns:1fr}}
+.gdrow{display:grid;grid-template-columns:1.4fr 1fr;gap:10px}.gdrow input{width:100%}@media (max-width:760px){.gdrow{grid-template-columns:1fr}}
+.gdt{width:100%;border-collapse:collapse;font-size:14px}.gdt td,.gdt th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}.gdt th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.gdt select{max-width:260px}.gdt .ok{color:#3dc88c;font-weight:700}.gdt .no{color:#ff8a6e;font-weight:700}
 .plbad{display:block;margin-top:3px;color:#b3261e;font-weight:600}
 .plrow.drag{opacity:.4}.plrow.over{box-shadow:inset 0 3px 0 var(--accent,#ffc23d)}.plk{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:999px;margin-right:6px;background:rgba(31,160,222,.18)}.plk.yt{background:rgba(255,194,61,.22)}.plk.st{background:rgba(70,180,90,.2)}
 @media (max-width:640px){.plrow{grid-template-columns:18px 56px minmax(0,1fr) auto}.plrow .n{display:none}.plrow img,.plrow .ph0{width:56px}}
@@ -805,6 +807,12 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         <form id="xadd" class="xadd"><textarea id="xlinks" rows="2" placeholder="Paste YouTube trailer links here" aria-label="YouTube trailer links"></textarea><button class="btn primary">Add trailers</button></form>
         <label class="field" style="max-width:360px;margin-top:10px"><span class="flabel">What plays on the TVs</span><select id="fwhat"><option value="both">Films from imc.ie, then my trailers</option><option value="mine">Only my trailers</option></select></label>
         <div id="xlist" class="xlist"></div></div>
+      <div class="panel" style="margin-top:16px" id="gdPanel"><div class="ph"><h2>Trailer files for the foyer TVs (Google Drive)</h2><span class="tip" id="gdcount" style="margin:0"></span></div>
+        <p class="tip" style="margin-top:0">Put the trailer files (MP4s from WB360, Disney Box and so on) into one Google Drive folder. Every foyer PC fetches the ones it needs by itself, plays them instead of the YouTube trailer (full quality, no buffering, works without internet), and deletes them when the film has gone. Name each file after its film (e.g. <b>Wicked For Good trailer.mp4</b>) and it's matched automatically. <a href="help.html#drive-trailers" target="imc-help">How to set it up</a></p>
+        <div class="gdrow"><label class="field"><span class="flabel">Google Drive folder link</span><input id="gdLink" type="url" placeholder="https://drive.google.com/drive/folders/…"></label>
+          <label class="field"><span class="flabel">Google API key <small>(set up once, see the help)</small></span><input id="gdKey" type="text" placeholder="AIza…" autocomplete="off" spellcheck="false"></label></div>
+        <div class="row-btns"><button class="btn primary" type="button" id="gdSave">Save and check the folder</button><button class="btn ghost" type="button" id="gdOff" hidden>Stop using Google Drive</button></div>
+        <div id="gdList" style="margin-top:10px"></div></div>
       <div class="panel" style="margin-top:16px" id="svPanel"><div class="ph"><h2>Studio trailers</h2><span class="tip" id="svcount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">Trailers from the studios' own sites, like WB360 or Disney Box. Download the trailer there (choose the <b>MP4 (H.264) HD</b> version), then add it to its film here. It plays on the foyer TVs instead of the YouTube trailer, and still plays if the internet drops.</p>
         <form id="svadd" class="svadd" onsubmit="return false">
@@ -1885,6 +1893,7 @@ function foyUrl(st,lounge){const u=new URL("foyer.html",location.href),P=u.searc
   {const keys=plItems(st,true).map(x=>x.key),ord=(st.order||[]).filter(k=>keys.includes(k)),hd=(st.hide||[]).filter(k=>keys.includes(k));if(ord.length)P.set("ord",ord.join(","));if(hd.length)P.set("hide",hd.join(","));if(st.shuf)P.set("shuf","1")}
   {const cds=(st.cards||[]).filter(c=>!c.to||c.to>=todayIso()).map(c=>[c.id,c.kick||"",c.title||"",(c.lines||[]).slice(0,5),c.img||"",c.secs||10,c.from||"",c.to||"",c.col||"navy"]);if(cds.length)P.set("cd",btoa(unescape(encodeURIComponent(JSON.stringify(cds)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
   {const pbs=(st.boards||[]).filter(b=>!b.to||b.to>=todayIso()).map(b=>[b.id,b.title||"",b.sub||"",b.col||"navy",b.secs||20,b.from||"",b.to||"",(b.sections||[]).map(x=>[x.name||"",(x.sizes||[]).filter(Boolean),(x.items||[]).filter(i=>i.n).map(i=>[i.n,i.note||"",(i.p||[]).map(v=>String(v||"").trim())])]),pbPics(b),b.snd||"",b.chime?1:0,b.isz||30,b.ipos||"r"]);if(pbs.length)P.set("pb",btoa(unescape(encodeURIComponent(JSON.stringify(pbs)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
+  if(st.gd&&st.gk){P.set("gd",st.gd);P.set("gk",st.gk);const m=st.gm||{};if(Object.keys(m).length)P.set("gm",btoa(unescape(encodeURIComponent(JSON.stringify(m)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
   if((st.px||[]).length)P.set("px",st.px.join(","));if((st.tx||[]).length)P.set("tx",st.tx.join(","));if(st.tt&&Object.keys(st.tt).length)P.set("tt",btoa(unescape(encodeURIComponent(JSON.stringify(st.tt)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));
   if(st.mu&&st.mu!=="cinema")P.set("mu",st.mu);if(st.mv!=null&&st.mv!==35)P.set("mv",st.mv);if((st.bd??3)!==3)P.set("bd",st.bd);if(st.pr===false)P.set("pr","0");if(st.strip===false)P.set("strip","0");if(st.safe!=null&&+st.safe!==3.5)P.set("safe",st.safe);if(st.scr===false)P.set("scr","0");const ms=String(st.msg||"").split("\n").map(x=>x.trim().replace(/\|/g,"/")).filter(Boolean).slice(0,6);if(ms.length)P.set("msg",ms.join("|"));const T0=todayIso(),al=(st.ads||[]).filter(a=>a.on!==false&&(!a.to||a.to>=T0)).map(a=>[a.src,a.title,a.from||"",a.to||"",a.secs||10,a.often||1,a.adv||""]);if(al.length)P.set("ad",btoa(unescape(encodeURIComponent(JSON.stringify(al)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
 /* ---------- playlist: what plays, in order (films, your trailers, studio trailers); order, hide and shuffle go to the foyer player ---------- */
@@ -2067,6 +2076,32 @@ $("#pbListen").onclick=()=>{const b=$("#pbListen");if(pbAud){pbAud.stop();pbAud=
 $("#pbDlg").addEventListener("click",e=>{if((e.target===$("#pbDlg")||e.target.id==="pbClose"||e.target.id==="pbSave")&&pbAud){pbAud.stop();pbAud=null;clearTimeout(pbAudT);$("#pbListen").textContent="▶ Listen"}},true);
 $("#pbCopy").onclick=()=>{const id=pbEdit;$("#pbDlg").hidden=true;pbOpen(id,true);toast("This is a copy: change it and click Save")};
 $("#pbDel").onclick=()=>{if(!confirm("Delete this priceboard?"))return;const st=foyState();st.boards=(st.boards||[]).filter(x=>x.id!==pbEdit);st.order=(st.order||[]).filter(k=>k!=="b:"+pbEdit);foySave(st);$("#pbDlg").hidden=true;renderFoyer();toast("Priceboard deleted")};
+/* ---------- trailer files from Google Drive: the hub lists the folder, shows the match for each file, and lets you change it ---------- */
+const gdId=v=>{const m=/folders\/([\w-]{10,})/.exec(v||"")||/[?&]id=([\w-]{10,})/.exec(v||"")||/^([\w-]{20,})$/.exec((v||"").trim());return m?m[1]:""};
+const gdNorm=t=>" "+String(t||"").toLowerCase().replace(/\.(mp4|mov|m4v|webm|mkv)$/,"").replace(/[._]/g," ").replace(/\(.*?\)|\[.*?\]/g," ").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").replace(/\s+/g," ").trim()+" ";
+function gdFilms(){const m=new Map(),T=todayIso();for(const f of[...(IMC&&IMC.today)||[],...(IMC&&IMC.comingSoon)||[],...((IMC&&IMC.days)||[]).flatMap(d=>d.films||[])]){if(!f||!f.title)continue;const k=f.slug||f.title.toLowerCase();if(!m.has(k))m.set(k,{key:k,title:f.title.replace(/\s+-\s+.*$/,"")})}return[...m.values()].sort((a,b)=>a.title.localeCompare(b.title))}
+function gdAuto(name,L){const n=gdNorm(name),hit=L.map(f=>({f,t:gdNorm(f.title).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length).find(x=>n.includes(" "+x.t+" "));return hit?hit.f:null}
+let gdFiles=null,gdErr="";
+async function gdLoad(){const st=foyState();if(!st.gd||!st.gk){gdFiles=null;return}
+  try{const q=encodeURIComponent(`'${st.gd}' in parents and trashed=false`);const r=await fetch(`https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name,size,mimeType,videoMediaMetadata(durationMillis))&pageSize=200&key=${encodeURIComponent(st.gk)}`);
+    const j=await r.json().catch(()=>({}));if(!r.ok){gdErr=(j.error&&j.error.message)||"Google Drive said no ("+r.status+")";gdFiles=[];return}gdErr="";gdFiles=(j.files||[]).filter(f=>/^video\//.test(f.mimeType||"")||/\.(mp4|m4v|mov|webm)$/i.test(f.name||""))}
+  catch(e){gdErr="Couldn't reach Google Drive";gdFiles=[]}}
+function gdRender(){const st=foyState(),el=$("#gdList");if(!el)return;$("#gdLink").value=st.gd?"https://drive.google.com/drive/folders/"+st.gd:"";$("#gdKey").value=st.gk||"";$("#gdOff").hidden=!st.gd;
+  if(!st.gd){el.innerHTML="";$("#gdcount").textContent="";return}
+  if(gdFiles===null){el.innerHTML='<p class="tip">Checking the folder…</p>';return}
+  if(gdErr){el.innerHTML=`<p class="tip" style="color:#ff8a6e">${esc(gdErr)}. Check the folder is shared as “Anyone with the link” and the key is right (see the help).</p>`;$("#gdcount").textContent="";return}
+  if(!gdFiles.length){el.innerHTML='<p class="tip">The folder is empty (or has no video files yet). Files can take a few minutes to appear after uploading.</p>';$("#gdcount").textContent="0 files";return}
+  const L=gdFilms(),M=st.gm||{};let used=0;
+  el.innerHTML=`<table class="gdt"><thead><tr><th>File</th><th>Plays as the trailer for</th><th></th></tr></thead><tbody>${gdFiles.map(f=>{const auto=gdAuto(f.name,L),cur=M[f.id]||"",film=cur==="-"?null:cur?L.find(x=>x.key===cur):auto,dur=+(f.videoMediaMetadata&&f.videoMediaMetadata.durationMillis)||0;if(film&&dur)used++;
+    return`<tr><td><b>${esc(f.name)}</b><br><small class="tip" style="margin:0">${f.size?Math.round(f.size/1048576)+" MB":""}${dur?" · "+Math.floor(dur/60000)+":"+String(Math.round(dur/1000)%60).padStart(2,"0"):" · Google is still processing this video"}</small></td>
+      <td><select data-gdmap="${esc(f.id)}"><option value="">${auto?"Automatic: "+esc(auto.title):"Automatic: no film matched"}</option>${L.map(x=>`<option value="${esc(x.key)}" ${cur===x.key?"selected":""}>${esc(x.title)}</option>`).join("")}<option value="-" ${cur==="-"?"selected":""}>Don't use this file</option></select></td>
+      <td>${film&&dur?'<span class="ok">✓ Will play</span>':!dur?'<span class="no">Wait</span>':'<span class="no">No film</span>'}</td></tr>`}).join("")}</tbody></table>
+    <p class="tip">Each foyer PC downloads the files it needs one at a time (they check every half hour) and deletes them when the film has gone. Until a file has downloaded on a TV, that TV plays the YouTube trailer. Press <b>I</b> on a foyer TV to see how many files it has saved.</p>`;
+  $("#gdcount").textContent=`${used} of ${gdFiles.length} file${gdFiles.length===1?"":"s"} in use`}
+$("#gdSave").onclick=async()=>{const id=gdId($("#gdLink").value),key=$("#gdKey").value.trim();if(!id){toast("Paste the Google Drive folder's link (from Share → Copy link)");$("#gdLink").focus();return}if(!/^AIza[\w-]{30,}$/.test(key)){toast("Paste the Google API key: it starts with AIza");$("#gdKey").focus();return}
+  const st=foyState();st.gd=id;st.gk=key;foySave(st);gdFiles=null;gdRender();await gdLoad();gdRender();renderFoyer();if(!gdErr)toast("Saved. The foyer TVs will start fetching the files within half an hour")};
+$("#gdOff").onclick=()=>{if(!confirm("Stop using the Google Drive folder? The foyer TVs go back to YouTube trailers and delete the saved files."))return;const st=foyState();delete st.gd;delete st.gk;foySave(st);gdFiles=null;gdRender();renderFoyer()};
+document.addEventListener("change",e=>{const t=e.target.closest&&e.target.closest("[data-gdmap]");if(!t)return;const st=foyState(),m={...(st.gm||{})};if(t.value)m[t.dataset.gdmap]=t.value;else delete m[t.dataset.gdmap];st.gm=m;foySave(st);gdRender();renderFoyer();toast("Saved")});
 function plSetOrder(keys){const st=foyState();st.order=keys;foySave(st);renderFoyer()}
 $("#plList").addEventListener("click",e=>{const mv=e.target.closest("[data-plmv]"),rm=e.target.closest("[data-plrm]");const st=foyState(),keys=plItems(st).map(x=>x.key);
   if(mv){const i=+mv.dataset.plmv,j=i+ +mv.dataset.d;if(j<0||j>=keys.length)return;[keys[i],keys[j]]=[keys[j],keys[i]];plSetOrder(keys);return}
@@ -2130,7 +2165,7 @@ $("#syncSave").onclick=async()=>{const k=$("#syncKey").value.trim();if(!/^(githu
   catch(e){toast("Couldn't reach GitHub. Check the internet and try again")}finally{b.disabled=false;b.textContent="Connect"}};
 $("#syncOff").onclick=()=>{if(!confirm("Disconnect? Changes made here will stop reaching foyer TVs on other computers."))return;try{localStorage.removeItem("imc-gh-key")}catch(e){}syncState={ok:null,msg:""};renderSync();toast("Disconnected. You can also delete the key on GitHub")};
 setInterval(foyLiveSave,20e3);setTimeout(foyLiveSave,4000);
-async function renderFoyer(){const el=$("#foyList");if(!el)return;$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
+async function renderFoyer(){const el=$("#foyList");if(!el)return;try{if(gdFiles===null&&foyState().gd){gdLoad().then(gdRender)}gdRender()}catch(e){}$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
   if(!IMC){el.innerHTML=noData();return}
   if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}STUD=await studGet();liveReady=true;
   const st=foyState(),fl=foyFilms(),chosen=new Set(foyChosen(st).map(f=>f.key));
