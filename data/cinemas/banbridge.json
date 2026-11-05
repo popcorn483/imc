@@ -2,7 +2,7 @@
   "id": "banbridge",
   "cinema": "IMC Banbridge",
   "source": "https://imc.ie/banbridge",
-  "updated": "2026-11-04T22:38:53.347Z",
+  "updated": "2026-11-05T14:40:53.213Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -19,17 +19,32 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-11-04",
+      "date": "2026-11-05",
       "times": [
+        "18:35",
         "20:55"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48585",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48587",
       "sessions": [
         {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "18:35",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48587",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
           "time": "20:55",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48585",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48588",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -44,15 +59,203 @@
       "posterFile": "data/posters/clayface.jpg",
       "certIcon": "data/ratings/bbfc-18.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "15",
+      "title": "Primetime",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+      "cert": "15",
+      "runtime": 109,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Lance Oppenheim",
+      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+      "date": "2026-11-05",
+      "times": [
+        "20:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48536",
+      "sessions": [
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48536",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "primetime",
+      "posterFile": "data/posters/primetime.jpg",
+      "certIcon": "data/ratings/bbfc-15.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "TBC",
+      "title": "Ramayana: Rise of a Legend",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
+      "cert": "TBC",
+      "runtime": 165,
+      "release": "November 5, 2026",
+      "releaseDate": "2026-11-05",
+      "director": "Nitesh Tiwari",
+      "synopsis": "In an age of gods and kings, the fate of worlds hangs in the balance. Rama, a prince bound by duty, sacrifice, and righteousness, must confront Ravana, an immortal ruler driven by pride and vengeance, powerful enough to shatter the cosmos.",
+      "trailer": null,
+      "date": "2026-11-05",
+      "times": [
+        "18:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48586",
+      "sessions": [
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "18:30",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48586",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ramayana-rise-of-a-legend",
+      "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg",
+      "certIcon": "data/ratings/bbfc-TBC.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "15",
+      "title": "Wicker",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+      "cert": "15",
+      "runtime": 100,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Alex Huston Fischer, Eleanor Wilson",
+      "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+      "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+      "date": "2026-11-05",
+      "times": [
+        "18:15",
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48591",
+      "sessions": [
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48591",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48592",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "wicker",
+      "posterFile": "data/posters/wicker.jpg",
+      "certIcon": "data/ratings/bbfc-15.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "15",
+      "title": "Wild Horse Nine",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+      "cert": "15",
+      "runtime": 117,
+      "release": "November 4, 2026",
+      "releaseDate": "2026-11-04",
+      "director": "Martin McDonagh",
+      "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
+      "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+      "date": "2026-11-05",
+      "times": [
+        "18:10",
+        "20:40"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48589",
+      "sessions": [
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48589",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "20:40",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48590",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "wild-horse-nine",
+      "posterFile": "data/posters/wild-horse-nine.jpg",
+      "certIcon": "data/ratings/bbfc-15.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
     }
   ],
   "days": [
-    {
-      "label": "Wed 04 Nov",
-      "url": "https://imc.ie/film-times/banbridge/04-11-2026#dateD",
-      "date": "2026-11-04",
-      "films": []
-    },
     {
       "label": "Thu 05 Nov",
       "url": "https://imc.ie/film-times/banbridge/05-11-2026#dateD",
@@ -1778,6 +1981,237 @@
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
+    },
+    {
+      "label": "Thu 12 Nov",
+      "url": "https://imc.ie/film-times/banbridge/12-11-2026#dateD",
+      "date": "2026-11-12",
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "18",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "18",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-12",
+          "times": [
+            "18:35",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48642",
+          "sessions": [
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48642",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48643",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/bbfc-18.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "TBC",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "TBC",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-12",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48641",
+          "sessions": [
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48641",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "15",
+          "runtime": 109,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-12",
+          "times": [
+            "18:10",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48644",
+          "sessions": [
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48644",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48645",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Wild Horse Nine",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+          "cert": "15",
+          "runtime": 117,
+          "release": "November 4, 2026",
+          "releaseDate": "2026-11-04",
+          "director": "Martin McDonagh",
+          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
+          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "date": "2026-11-12",
+          "times": [
+            "18:10",
+            "19:45",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48524",
+          "sessions": [
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48524",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48640",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48525",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wild-horse-nine",
+          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -2887,24 +3321,23 @@
     },
     {
       "certSystem": "bbfc",
-      "certFile": "TBC",
+      "certFile": "18",
       "title": "Primetime",
       "luxx": false,
       "sensory": false,
       "status": "Coming Soon",
       "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-      "cert": "TBC",
-      "runtime": 109,
+      "cert": "18",
+      "runtime": 100,
       "release": "October 30, 2026",
       "releaseDate": "2026-10-30",
-      "director": "Lance Oppenheim",
-      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "director": null,
+      "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
       "date": "2026-10-30",
       "times": [
         "14:15",
         "17:15",
-        "19:15",
         "20:15"
       ],
       "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48527",
@@ -2934,20 +3367,6 @@
           "tags": [
             "advance",
             "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48537",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
             "seating-standard"
           ]
         },
@@ -2986,20 +3405,6 @@
           "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48530",
           "luxx": false,
           "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48556",
-          "luxx": false,
-          "screen": "4",
           "threeD": false,
           "tags": [
             "advance",
@@ -3052,38 +3457,10 @@
         {
           "day": "Sun 1 November",
           "date": "2026-11-01",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48574",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
           "time": "20:15",
           "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48534",
           "luxx": false,
           "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48579",
-          "luxx": false,
-          "screen": "4",
           "threeD": false,
           "tags": [
             "advance",
@@ -3122,287 +3499,7 @@
       ],
       "slug": "primetime",
       "posterFile": "data/posters/primetime.jpg",
-      "certIcon": "data/ratings/bbfc-TBC.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "TBC",
-      "title": "Ramayana: Rise of a Legend",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
-      "cert": "TBC",
-      "runtime": 165,
-      "release": "November 5, 2026",
-      "releaseDate": "2026-11-05",
-      "director": "Nitesh Tiwari",
-      "synopsis": "In an age of gods and kings, the fate of worlds hangs in the balance. Rama, a prince bound by duty, sacrifice, and righteousness, must confront Ravana, an immortal ruler driven by pride and vengeance, powerful enough to shatter the cosmos.",
-      "trailer": null,
-      "date": "2026-11-05",
-      "times": [
-        "19:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48586",
-      "sessions": [
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48586",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "ramayana-rise-of-a-legend",
-      "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg",
-      "certIcon": "data/ratings/bbfc-TBC.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "TBC",
-      "title": "Wicker",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-      "cert": "TBC",
-      "runtime": 100,
-      "release": "October 30, 2026",
-      "releaseDate": "2026-10-30",
-      "director": "Alex Huston Fischer, Eleanor Wilson",
-      "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-      "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-10-30",
-      "times": [
-        "15:45",
-        "18:15",
-        "20:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48547",
-      "sessions": [
-        {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48547",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48538",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48548",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "13:20",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48549",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48550",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48551",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48552",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "13:20",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48575",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48576",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48577",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48578",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48580",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48581",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48591",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48592",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "wicker",
-      "posterFile": "data/posters/wicker.jpg",
-      "certIcon": "data/ratings/bbfc-TBC.svg",
+      "certIcon": "data/ratings/bbfc-18.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     },
     {
@@ -3415,74 +3512,18 @@
       "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
       "cert": "15A",
       "runtime": 117,
-      "release": "November 4, 2026",
-      "releaseDate": "2026-11-04",
+      "release": "November 6, 2026",
+      "releaseDate": "2026-11-06",
       "director": "Martin McDonagh",
       "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
       "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-04",
+      "date": "2026-11-06",
       "times": [
         "18:10",
-        "20:40"
+        "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48582",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48514",
       "sessions": [
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48582",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48583",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48589",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48590",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Fri 6 November",
           "date": "2026-11-06",
@@ -3783,7 +3824,241 @@
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     }
   ],
-  "kidsClub": [],
+  "kidsClub": [
+    {
+      "certSystem": "bbfc",
+      "certFile": "PG",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "PG",
+      "runtime": 77,
+      "release": "October 24, 2026",
+      "releaseDate": "2026-10-24",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+      "date": "2026-11-07",
+      "times": [
+        "12:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48612",
+      "sessions": [
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48612",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48629",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "PG",
+      "title": "Ghosts: The Possession Of Button House",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+      "cert": "PG",
+      "runtime": 100,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Simon Hynd",
+      "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+      "trailer": null,
+      "date": "2026-11-07",
+      "times": [
+        "12:10"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48615",
+      "sessions": [
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48615",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48624",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ghosts-the-possession-of-button-house",
+      "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "U",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "U",
+      "runtime": 94,
+      "release": "October 24, 2026",
+      "releaseDate": "2026-10-24",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-11-07",
+      "times": [
+        "12:10",
+        "14:15",
+        "16:25"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48605",
+      "sessions": [
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48605",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48606",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "16:25",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48607",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48631",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "14:10",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48632",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "16:25",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48633",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/bbfc-U.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    }
+  ],
   "luxx": [],
   "banners": [
     {
@@ -3821,8 +4096,7 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 1 films parsed",
-    "day-04-11-2026-dated: 0 films parsed",
+    "today: 5 films parsed",
     "day-05-11-2026-dated: 5 films parsed",
     "day-06-11-2026-dated: 4 films parsed",
     "day-07-11-2026-dated: 8 films parsed",
@@ -3830,10 +4104,11 @@
     "day-09-11-2026-dated: 0 films parsed",
     "day-10-11-2026-dated: 0 films parsed",
     "day-11-11-2026-dated: 4 films parsed",
-    "advance: 12 films parsed",
-    "kids: 0 films parsed",
+    "day-12-11-2026-dated: 4 films parsed",
+    "advance: 10 films parsed",
+    "kids: 3 films parsed",
     "luxx: 0 films parsed",
-    "booking pages read: 7 (Thu, Fri, Sat, Sun, Wed)",
+    "booking pages read: 8 (Thu, Fri, Sat, Sun, Wed)",
     "prices: 4 ticket types, 0 bundles, 8 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
@@ -4032,7 +4307,7 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-04T22:39:20.121Z",
+    "checked": "2026-11-05T14:41:21.106Z",
     "sampledDays": [
       "Thu",
       "Fri",
@@ -4041,7 +4316,7 @@
       "Wed"
     ]
   },
-  "checked": "2026-11-04T22:39:29.537Z",
+  "checked": "2026-11-05T14:41:32.479Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
