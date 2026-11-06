@@ -76,7 +76,7 @@ Step 2 "Sign in to Google Drive"
 function Find-Src {
   foreach ($d in (Get-PSDrive -PSProvider FileSystem -ErrorAction SilentlyContinue)) {
     foreach ($p in @("My Drive\IMC TRAILERS", "IMC TRAILERS")) { $x = Join-Path $d.Root $p; if ($x -ne $DEST -and (Test-Path -LiteralPath $x)) { return $x } }
-    $sd = Join-Path $d.Root "Shared drives"; if (Test-Path -LiteralPath $sd) { foreach ($s in @(Get-ChildItem -LiteralPath $sd -Directory -ErrorAction SilentlyContinue)) { $x = Join-Path $s.FullName "IMC TRAILERS"; if (Test-Path -LiteralPath $x) { return $x } } } }
+    foreach ($top in @("Shared drives", "Computers")) { $sd = Join-Path $d.Root $top; if (Test-Path -LiteralPath $sd) { foreach ($s in @(Get-ChildItem -LiteralPath $sd -Directory -ErrorAction SilentlyContinue)) { $x = Join-Path $s.FullName "IMC TRAILERS"; if (Test-Path -LiteralPath $x) { return $x } } } } }
   $x = Join-Path $env:USERPROFILE "My Drive\IMC TRAILERS"; if (Test-Path -LiteralPath $x) { return $x }
   return $null
 }
@@ -103,7 +103,7 @@ $DEST = "C:\IMC TRAILERS"; $LOG = "C:\ProgramData\IMC\sync.log"; $EXT = '\.(mp4|
 function Log($t) { try { Add-Content -LiteralPath $LOG -Value ((Get-Date -Format "yyyy-MM-dd HH:mm") + "  " + $t); $l = @(Get-Content -LiteralPath $LOG); if ($l.Count -gt 400) { $l | Select-Object -Last 300 | Set-Content -LiteralPath $LOG } } catch {} }
 function Run-Once {
   $src = $null
-  foreach ($d in (Get-PSDrive -PSProvider FileSystem -ErrorAction SilentlyContinue)) { foreach ($p in @("My Drive\IMC TRAILERS", "IMC TRAILERS")) { $x = Join-Path $d.Root $p; if ((-not $src) -and $x -ne $DEST -and (Test-Path -LiteralPath $x)) { $src = $x } }  $sd = Join-Path $d.Root "Shared drives"; if ((-not $src) -and (Test-Path -LiteralPath $sd)) { foreach ($s in @(Get-ChildItem -LiteralPath $sd -Directory -ErrorAction SilentlyContinue)) { $x = Join-Path $s.FullName "IMC TRAILERS"; if ((-not $src) -and (Test-Path -LiteralPath $x)) { $src = $x } } } }
+  foreach ($d in (Get-PSDrive -PSProvider FileSystem -ErrorAction SilentlyContinue)) { foreach ($p in @("My Drive\IMC TRAILERS", "IMC TRAILERS")) { $x = Join-Path $d.Root $p; if ((-not $src) -and $x -ne $DEST -and (Test-Path -LiteralPath $x)) { $src = $x } }  foreach ($top in @("Shared drives", "Computers")) { $sd = Join-Path $d.Root $top; if ((-not $src) -and (Test-Path -LiteralPath $sd)) { foreach ($s in @(Get-ChildItem -LiteralPath $sd -Directory -ErrorAction SilentlyContinue)) { $x = Join-Path $s.FullName "IMC TRAILERS"; if ((-not $src) -and (Test-Path -LiteralPath $x)) { $src = $x } } } } }
   if (-not $src) { $x = Join-Path $env:USERPROFILE "My Drive\IMC TRAILERS"; if (Test-Path -LiteralPath $x) { $src = $x } }
   if (-not $src) { Log "Google Drive isn't ready (not signed in, or still starting): nothing changed"; return }
   New-Item -ItemType Directory -Force -Path $DEST | Out-Null
