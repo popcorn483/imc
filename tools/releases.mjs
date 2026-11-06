@@ -61,14 +61,16 @@ const GMAP = [[/animat/i, "Animation"], [/famil|children/i, "Family"], [/comedy/
   [/horror|slasher|supernatural/i, "Horror"], [/thriller|suspense/i, "Thriller"], [/science fiction|sci-fi/i, "Sci-fi"], [/fantasy/i, "Fantasy"], [/romanc|romantic/i, "Romance"],
   [/crime|gangster|heist|detective/i, "Crime"], [/musical|music film|concert/i, "Music"], [/documentary/i, "Documentary"], [/war film/i, "War"], [/western/i, "Western"],
   [/biographical|biopic/i, "Biopic"], [/sports/i, "Sport"], [/drama/i, "Drama"]];
-const wd = async (q) => { const r = await fetch(WD + "?format=json&" + q, { headers: WUA }); if (!r.ok) throw new Error("wikidata " + r.status); return r.json() };
+const wd = async (q) => { const r = await fetch(WD + "?format=json&" + q, { headers: WUA, signal: AbortSignal.timeout(8000) }); if (!r.ok) throw new Error("wikidata " + r.status); return r.json() };
 const norm = (t) => String(t).toLowerCase().replace(/[’']/g, "").replace(/\(.*?\)/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 const DEBUG = [];
 async function addGenres(list) {
   let cache = {}; try { cache = JSON.parse(await fs.readFile("data/genres.json", "utf8")) } catch (e) {}
   const now = Date.now(), labels = {};
-  const todo = list.filter((x) => !x.event && !/anniversary|re-?issue|restoration|\(concert|\(theatre|nt live|live in /i.test(x.t) && (!cache[x.id] || (!cache[x.id].g.length && now - Date.parse(cache[x.id].at) > 7 * 864e5))).sort((a, b) => Math.abs(Date.parse(a.d) - now) - Math.abs(Date.parse(b.d) - now)).slice(0, 300);
+  const todo = list.filter((x) => !x.event && !/anniversary|re-?issue|restoration|\(concert|\(theatre|nt live|live in /i.test(x.t) && (!cache[x.id] || (!cache[x.id].g.length && now - Date.parse(cache[x.id].at) > 7 * 864e5))).sort((a, b) => Math.abs(Date.parse(a.d) - now) - Math.abs(Date.parse(b.d) - now)).slice(0, 80);
+  const stopAt = Date.now() + 6 * 60 * 1000;   // at most 6 minutes a day: the rest are looked up tomorrow
   for (const x of todo) {
+    if (Date.now() > stopAt) break;
     try {
       const name = x.t.replace(/\(.*?\)/g, "").replace(/^(disney|pixar|dreamworks)[’']s\s+/i, "").trim(), yr = +x.d.slice(0, 4);
       const s = await wd("action=wbsearchentities&language=en&type=item&limit=7&search=" + encodeURIComponent(name));
