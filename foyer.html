@@ -267,9 +267,9 @@ async function localScan(){const h=localTestDir||await sget("trailerdir");if(!h|
 /* the user's one click (needed for sound after a restart) also re-allows the folder if Chrome asks again */
 async function localAllow(){try{const h=await sget("trailerdir");if(h&&h.requestPermission&&(await h.queryPermission({mode:"read"}))!=="granted"){if((await h.requestPermission({mode:"read"}))==="granted"){await localScan();plan=null}}}catch(e){}}
 function localAssign(list){const M=Object.fromEntries(Object.entries(gmap()).filter(([k,v])=>!String(v).startsWith("new:"))),out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
-  for(const d of LOCAL){const m=M[d.id];if(m==="-")continue;let f=m&&list.find(x=>x.key===m);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));f=hit&&hit.f}if(f&&!out.has(f.key))out.set(f.key,d)}return out}   /* the hub's choice (gm, "lf:<file name>") or the film named in the file name */
+  for(const d of LOCAL){const m=M[d.id];if(m==="-")continue;let f=m&&list.find(x=>x.key===m);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "))||titled.find(x=>x.t.length>=6&&n.replace(/ /g,"").includes(x.t.replace(/ /g,"")));f=hit&&hit.f}if(f&&!out.has(f.key))out.set(f.key,d)}return out}   /* the hub's choice (gm, "lf:<file name>") or the film named in the file name */
 function driveAssign(list){const M=gmap(),out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
-  for(const d of DRIVE){if(M[d.id]==="-")continue;let f=M[d.id]&&list.find(x=>x.key===M[d.id]);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));f=hit&&hit.f}
+  for(const d of DRIVE){if(M[d.id]==="-")continue;let f=M[d.id]&&list.find(x=>x.key===M[d.id]);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "))||titled.find(x=>x.t.length>=6&&n.replace(/ /g,"").includes(x.t.replace(/ /g,"")));f=hit&&hit.f}
     if(f&&!out.has(f.key))out.set(f.key,d)}return out}
 async function driveSync(){if(driveBusy||!GD())return;driveBusy=true;
   try{try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
