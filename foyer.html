@@ -241,7 +241,7 @@ try{DRIVE=JSON.parse(localStorage.getItem("imc-gd-list")||"[]");driveHave=JSON.p
 const GD=()=>Q.get("gd")||"",GK=()=>Q.get("gk")||"",GSA=()=>window.IMCDrive&&IMCDrive.saved();   /* an API key (gk, published) or the robot account key kept on this PC only (set up once on the TV app) */
 function gmap(){try{const b=(Q.get("gm")||"").replace(/-/g,"+").replace(/_/g,"/");return b?JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))):{}}catch(e){return{}}}
 const dnorm=t=>" "+String(t||"").toLowerCase().replace(/\.(mp4|mov|m4v|webm|mkv)$/,"").replace(/[._]/g," ").replace(/\(.*?\)|\[.*?\]/g," ").replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").replace(/\s+/g," ").trim()+" ";
-async function driveList(){if(!GD())return;if(!GK()&&!GSA()){driveMsg="This PC hasn't had the trailer key file added yet (TV app set-up, once)";return}
+async function driveList(){if(!GD())return;if(!GK()&&!GSA())return;
   const q=encodeURIComponent(`'${GD()}' in parents and trashed=false`),u=`https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name,size,mimeType,modifiedTime,videoMediaMetadata(durationMillis))&pageSize=200&key=${encodeURIComponent(GK())}`;
   try{let j;if(!GK()){try{j={files:await IMCDrive.list(GSA(),GD(),nowMs())}}catch(e){driveMsg="Can't read the Google Drive folder: "+e.message;return}}
     else{const r=await fetch(u,{cache:"no-store"});if(!r.ok){driveMsg="Can't read the Google Drive folder (check it's shared and the key in the hub)";return}j=await r.json()}

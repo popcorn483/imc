@@ -804,7 +804,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         <p class="tip" style="margin-top:0">Save the trailer files (MP4s from WB360, Disney Box and so on) into the <b>IMC TRAILERS</b> folder in Google Drive on this PC, named after the film (e.g. <b>Wicked For Good trailer.mp4</b>). Google Drive copies them to the foyer PCs, and the TVs play them instead of the YouTube trailer. <a href="help.html#drive-trailers" target="imc-help">How to set it up</a></p>
         <div class="row-btns"><button class="btn primary" type="button" id="lfPick">📁 Choose the IMC TRAILERS folder on this PC</button><button class="btn" type="button" id="lfRefresh" hidden>↻ Check again</button><span class="tip" id="lfInfo" style="margin:0;align-self:center"></span></div>
         <div id="lfList" style="margin-top:10px"></div>
-        <details class="gdother" style="margin-top:14px"><summary class="tip" style="cursor:pointer;margin:0">Other way: foyer PCs without Google Drive (folder link and key file)</summary>
+        <details class="gdother" style="margin-top:14px" hidden><summary class="tip" style="cursor:pointer;margin:0">Other way: foyer PCs without Google Drive (folder link and key file)</summary>
         <div class="gdrow"><label class="field"><span class="flabel">Google Drive folder link</span><input id="gdLink" type="url" placeholder="https://drive.google.com/drive/folders/…"></label>
           <div class="field"><span class="flabel">Trailer key file <small>(Google robot account, see the help)</small></span>
             <label class="btn" style="cursor:pointer;display:inline-block">📄 Choose the key file (.json)<input id="gdSaFile" type="file" accept=".json,application/json" hidden></label>
@@ -2210,7 +2210,9 @@ $("#syncSave").onclick=async()=>{const k=$("#syncKey").value.trim();if(!/^(githu
   catch(e){toast("Couldn't reach GitHub. Check the internet and try again")}finally{b.disabled=false;b.textContent="Connect"}};
 $("#syncOff").onclick=()=>{if(!confirm("Disconnect? Changes made here will stop reaching foyer TVs on other computers."))return;try{localStorage.removeItem("imc-gh-key")}catch(e){}syncState={ok:null,msg:""};renderSync();toast("Disconnected. You can also delete the key on GitHub")};
 setInterval(foyLiveSave,20e3);setTimeout(foyLiveSave,4000);
-async function renderFoyer(){const el=$("#foyList");if(!el)return;try{ftab();if(LF===null&&!renderFoyer._lf){renderFoyer._lf=1;lfScan()}else lfRender()}catch(e){}try{if(gdFiles===null&&foyState().gd){gdLoad().then(gdRender)}gdRender()}catch(e){}$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
+async function renderFoyer(){const el=$("#foyList");if(!el)return;
+  /* the trailers folder needs no link or key: clear any left from trying the old Drive-link way, so nothing asks for a key */
+  try{const st=foyState();if(st.gd||st.gk||st.gsa){delete st.gd;delete st.gk;delete st.gsa;foySave(st)}}catch(e){}try{ftab();if(LF===null&&!renderFoyer._lf){renderFoyer._lf=1;lfScan()}else lfRender()}catch(e){}try{if(gdFiles===null&&foyState().gd){gdLoad().then(gdRender)}gdRender()}catch(e){}$$(".safecerts").forEach(e=>e.textContent=S().ni?"U, PG or 12A":"G, PG or 12A");
   if(!IMC){el.innerHTML=noData();return}
   if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}STUD=await studGet();liveReady=true;
   const st=foyState(),fl=foyFilms(),chosen=new Set(foyChosen(st).map(f=>f.key));
