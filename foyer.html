@@ -266,8 +266,8 @@ async function localScan(){const h=localTestDir||await sget("trailerdir");if(!h|
   try{await walk(h,0);out.sort((a,b)=>a.name.localeCompare(b.name));LOCAL=out;localFiles=map;localMsg=""}catch(e){localMsg="Couldn't read the trailers folder: "+(e.message||e)}}
 /* the user's one click (needed for sound after a restart) also re-allows the folder if Chrome asks again */
 async function localAllow(){try{const h=await sget("trailerdir");if(h&&h.requestPermission&&(await h.queryPermission({mode:"read"}))!=="granted"){if((await h.requestPermission({mode:"read"}))==="granted"){await localScan();plan=null}}}catch(e){}}
-function localAssign(list){const out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
-  for(const d of LOCAL){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));if(hit&&!out.has(hit.f.key))out.set(hit.f.key,d)}return out}
+function localAssign(list){const M=gmap(),out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
+  for(const d of LOCAL){const m=M[d.id];if(m==="-")continue;let f=m&&list.find(x=>x.key===m);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));f=hit&&hit.f}if(f&&!out.has(f.key))out.set(f.key,d)}return out}   /* the hub's choice (gm, "lf:<file name>") or the film named in the file name */
 function driveAssign(list){const M=gmap(),out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
   for(const d of DRIVE){if(M[d.id]==="-")continue;let f=M[d.id]&&list.find(x=>x.key===M[d.id]);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));f=hit&&hit.f}
     if(f&&!out.has(f.key))out.set(f.key,d)}return out}
