@@ -236,8 +236,9 @@ body.lite #grain,body.trl #grain,body.trl #stage::after{display:none}
 #promo .pin{z-index:1}
 /* product pictures and posters float gently */
 #promo .prodwrap img{animation:float 6s 1s ease-in-out infinite alternate}
-#promo .posters div:nth-child(odd){animation:rise .9s cubic-bezier(.2,.8,.2,1) both,float 7s 1s ease-in-out infinite alternate}
-#promo .posters div:nth-child(even){animation:rise .9s .12s cubic-bezier(.2,.8,.2,1) both,float 8s 1.2s ease-in-out infinite alternate-reverse}
+/* poster rows: all the posters gently grow and shrink together */
+#promo .posters div,#promo .posters div:nth-child(n){animation:rise .9s cubic-bezier(.2,.8,.2,1) both,breathe 5s 1s ease-in-out infinite}
+@keyframes breathe{0%,100%{scale:1}50%{scale:1.04}}
 @keyframes float{from{translate:0 0}to{translate:0 -1.4vh}}
 /* price badges: gold edge and a slow glowing ring */
 #promo .price{box-shadow:0 2vh 6vh rgba(0,0,0,.45),0 0 0 .8vh rgba(255,255,255,.12),inset 0 0 0 .5vh rgba(255,255,255,.25)}
