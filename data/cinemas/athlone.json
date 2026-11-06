@@ -2,7 +2,7 @@
   "id": "athlone",
   "cinema": "IMC Athlone",
   "source": "https://imc.ie/athlone",
-  "updated": "2026-11-06T14:18:38.391Z",
+  "updated": "2026-11-06T22:09:52.698Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -375,256 +375,6 @@
       "films": [
         {
           "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
-          "cert": "16",
-          "runtime": 100,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": null,
-          "date": "2026-11-06",
-          "times": [
-            "18:00",
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99642",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99642",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99643",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-11-06",
-          "times": [
-            "17:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99647",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "17:15",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99647",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Godzilla Minus Zero",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
-          "cert": "15A",
-          "runtime": 135,
-          "release": "November 6, 2026",
-          "releaseDate": "2026-11-06",
-          "director": "Takashi Yamazaki",
-          "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
-          "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
-          "date": "2026-11-06",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99764",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99764",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "godzilla-minus-zero",
-          "posterFile": "data/posters/godzilla-minus-zero.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Primetime",
-          "luxx": true,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
-          "cert": "16",
-          "runtime": 104,
-          "release": "November 6, 2026",
-          "releaseDate": "2026-11-06",
-          "director": "Lance Oppenheim",
-          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
-          "date": "2026-11-06",
-          "times": [
-            "18:15",
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99641",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99641",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99640",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "primetime",
-          "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wicker",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Alex Huston Fischer, Eleanor Wilson",
-          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-          "date": "2026-11-06",
-          "times": [
-            "18:10",
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99644",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99644",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99649",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wicker",
-          "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
           "certFile": "15A",
           "title": "Wild Horse Nine",
           "luxx": false,
@@ -640,25 +390,10 @@
           "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
           "date": "2026-11-06",
           "times": [
-            "18:10",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99464",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99465",
           "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99464",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
@@ -677,62 +412,6 @@
           "slug": "wild-horse-nine",
           "posterFile": "data/posters/wild-horse-nine.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-11-06",
-          "times": [
-            "17:10",
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99645",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "17:10",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99645",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99646",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -973,7 +652,7 @@
           "title": "Godzilla Minus Zero",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
           "cert": "15A",
           "runtime": 135,
@@ -997,7 +676,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1014,7 +693,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -1040,7 +719,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1054,7 +733,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1068,7 +747,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1170,7 +849,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -1196,7 +875,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1210,7 +889,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1224,7 +903,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1627,7 +1306,7 @@
           "title": "Godzilla Minus Zero",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
           "cert": "15A",
           "runtime": 135,
@@ -1652,7 +1331,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1666,7 +1345,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1683,7 +1362,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -1709,7 +1388,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1723,7 +1402,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1737,7 +1416,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1839,7 +1518,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -1865,7 +1544,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1879,7 +1558,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1893,7 +1572,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2183,7 +1862,7 @@
           "title": "Godzilla Minus Zero",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
           "cert": "15A",
           "runtime": 135,
@@ -2207,7 +1886,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2224,7 +1903,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -2249,7 +1928,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2263,7 +1942,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2280,7 +1959,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -2305,7 +1984,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2319,7 +1998,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2552,7 +2231,7 @@
           "title": "Godzilla Minus Zero",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
           "cert": "15A",
           "runtime": 135,
@@ -2576,7 +2255,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2593,7 +2272,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -2618,7 +2297,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2632,7 +2311,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2649,7 +2328,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -2674,7 +2353,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2688,7 +2367,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2717,7 +2396,7 @@
           "date": "2026-11-10",
           "times": [
             "18:10",
-            "20:45"
+            "20:35"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99492",
           "sessions": [
@@ -2738,7 +2417,7 @@
             {
               "day": "Tue 10 November",
               "date": "2026-11-10",
-              "time": "20:45",
+              "time": "20:35",
               "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99493",
               "luxx": false,
               "screen": "3",
@@ -2992,7 +2671,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -3017,7 +2696,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3031,7 +2710,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3048,7 +2727,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -3073,7 +2752,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3087,7 +2766,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3448,7 +3127,7 @@
           "title": "Primetime",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
           "cert": "16",
           "runtime": 104,
@@ -3474,7 +3153,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-lux"
               ]
@@ -3488,7 +3167,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3502,7 +3181,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3619,7 +3298,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -3645,7 +3324,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "seating-standard"
               ]
@@ -3659,7 +3338,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3673,7 +3352,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -6926,9 +6605,10 @@
     }
   ],
   "log": [
+    "athlone: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 7 films parsed",
-    "day-06-11-2026-dated: 7 films parsed",
+    "today: 0 films parsed",
+    "day-06-11-2026-dated: 1 films parsed",
     "day-07-11-2026-dated: 12 films parsed",
     "day-08-11-2026-dated: 12 films parsed",
     "day-09-11-2026-dated: 7 films parsed",
@@ -6939,108 +6619,36 @@
     "advance: 11 films parsed",
     "kids: 3 films parsed",
     "luxx: 5 films parsed",
-    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
-    "prices: 17 ticket types, 4 bundles, 9 products",
+    "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
+    "prices: 17 ticket types, 2 bundles, 9 products",
+    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
       {
-        "name": "Adult Matinee",
-        "price": "€10.50",
+        "name": "Adult Peak",
+        "price": "€12.50",
         "days": [
-          "Fri",
-          "Mon",
-          "Tue",
-          "Wed"
+          "Sat",
+          "Sun",
+          "Fri"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
         "name": "Teen",
         "price": "€10.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Child Matinee",
-        "price": "€9.50",
-        "days": [
-          "Fri",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening"
-        ]
-      },
-      {
-        "name": "Student",
-        "price": "€10.50",
-        "days": [
-          "Fri",
-          "Sat",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Family",
-        "price": "€36.50",
-        "days": [
-          "Fri",
-          "Sat",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "OAP",
-        "price": "€10.50",
-        "days": [
-          "Fri",
-          "Sat",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Adult Peak",
-        "price": "€12.50",
-        "days": [
-          "Sat",
-          "Sun"
+          "Wed",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7052,11 +6660,84 @@
         "price": "€10.50",
         "days": [
           "Sat",
-          "Sun"
+          "Sun",
+          "Fri"
         ],
         "seenOn": [
           "evening",
           "matinee"
+        ]
+      },
+      {
+        "name": "Student",
+        "price": "€10.50",
+        "days": [
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Fri"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
+      },
+      {
+        "name": "Family",
+        "price": "€36.50",
+        "days": [
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Fri"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
+      },
+      {
+        "name": "OAP",
+        "price": "€10.50",
+        "days": [
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Fri"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
+      },
+      {
+        "name": "Adult Matinee",
+        "price": "€10.50",
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Child Matinee",
+        "price": "€9.50",
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed"
+        ],
+        "seenOn": [
+          "evening"
         ]
       },
       {
@@ -7133,20 +6814,20 @@
         ]
       },
       {
-        "name": "LUXX Recliner",
-        "price": "€15.50",
+        "name": "Adult",
+        "price": "€5.00",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
         ]
       },
       {
-        "name": "LUXX Child/Student/OAP",
-        "price": "€12.50",
+        "name": "Child",
+        "price": "€5.00",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7160,12 +6841,12 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7179,45 +6860,19 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
           "matinee"
         ],
         "file": "data/products/t1scb.jpg"
-      },
-      {
-        "name": "Medium Combo LUXX",
-        "price": "€22.00",
-        "details": "1 Adult Ticket + a Medium Combo",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
-        "days": [
-          "Fri"
-        ],
-        "seenOn": [
-          "luxx"
-        ],
-        "file": "data/products/t1mcbluxx.jpg"
-      },
-      {
-        "name": "Share Combo LUXX",
-        "price": "€37.00",
-        "details": "2 Adult Tickets + a Share Combo",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
-        "days": [
-          "Fri"
-        ],
-        "seenOn": [
-          "luxx"
-        ],
-        "file": "data/products/t1scbluxx.jpg"
       }
     ],
     "products": [
@@ -7226,13 +6881,13 @@
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7247,13 +6902,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7268,13 +6923,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7289,13 +6944,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7310,13 +6965,13 @@
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7331,13 +6986,13 @@
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7352,13 +7007,13 @@
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7373,13 +7028,13 @@
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7394,13 +7049,13 @@
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7411,18 +7066,18 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-06T14:19:05.451Z",
+    "checked": "2026-11-06T22:10:17.576Z",
     "sampledDays": [
-      "Fri",
       "Sat",
       "Sun",
       "Mon",
       "Tue",
       "Wed",
-      "Thu"
+      "Thu",
+      "Fri"
     ]
   },
-  "checked": "2026-11-06T14:19:19.283Z",
+  "checked": "2026-11-06T22:10:31.038Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

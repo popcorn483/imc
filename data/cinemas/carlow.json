@@ -2,7 +2,7 @@
   "id": "carlow",
   "cinema": "IMC Carlow",
   "source": "https://imc.ie/carlow",
-  "updated": "2026-11-06T14:21:32.409Z",
+  "updated": "2026-11-06T22:12:40.712Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -590,40 +590,10 @@
           "trailer": null,
           "date": "2026-11-06",
           "times": [
-            "15:45",
-            "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137390",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137392",
           "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137390",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137391",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
@@ -647,52 +617,10 @@
         {
           "certSystem": "ifco",
           "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-11-06",
-          "times": [
-            "15:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137387",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "15:20",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137387",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
           "title": "George Michael: The Faith Tour",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
           "cert": "PG",
           "runtime": 114,
@@ -703,25 +631,10 @@
           "trailer": null,
           "date": "2026-11-06",
           "times": [
-            "17:30",
             "20:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137398",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137399",
           "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "17:30",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137398",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
@@ -731,7 +644,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -740,103 +653,6 @@
           "slug": "george-michael-the-faith-tour",
           "posterFile": "data/posters/george-michael-the-faith-tour.jpg",
           "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Godzilla Minus Zero",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
-          "cert": "15A",
-          "runtime": 135,
-          "release": "November 5, 2026",
-          "releaseDate": "2026-11-05",
-          "director": "Takashi Yamazaki",
-          "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
-          "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
-          "date": "2026-11-06",
-          "times": [
-            "17:00",
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137133",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "17:00",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137133",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137397",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "godzilla-minus-zero",
-          "posterFile": "data/posters/godzilla-minus-zero.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Onwards and Sideways",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
-          "cert": "12A",
-          "runtime": 115,
-          "release": "November 6, 2026",
-          "releaseDate": "2026-11-06",
-          "director": "John Madden",
-          "synopsis": "Tony Evans is deputy head of a primary school. Emma Kent is a musician and composer, and single mother of two daughters. Neither knows the other. until a startling encounter changes the course of their lives. On the same morning, these two are simultaneously confronted with a diagnosis of ParkinsonÂ’s Disease. This film is the story of Tony and Emma - a friendship which unfolds unexpectedly. A story of humour and emotion, of challenge and bravado, of music and dance - transcending the assumptions of a little understood condition, and triumphing over the odds to find joy, release and love.",
-          "trailer": "https://www.youtube.com/watch?v=MR5Nkdndv18",
-          "date": "2026-11-06",
-          "times": [
-            "17:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137396",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "17:00",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137396",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "onwards-and-sideways",
-          "posterFile": "data/posters/onwards-and-sideways.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -856,40 +672,10 @@
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-06",
           "times": [
-            "15:30",
-            "18:00",
             "20:30"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137382",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137389",
           "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "15:30",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137382",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137388",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
@@ -912,94 +698,11 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Ramayana: Rise of a Legend (Hindi)",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116602.jpg",
-          "cert": "12A",
-          "runtime": 195,
-          "release": "November 5, 2026",
-          "releaseDate": "2026-11-05",
-          "director": "Nitesh Tiwari",
-          "synopsis": "In an age of gods and kings, the fate of worlds hangs in the balance. Rama, a prince bound by duty, sacrifice, and righteousness, must confront Ravana, an immortal ruler driven by pride and vengeance, powerful enough to shatter the cosmos.",
-          "trailer": null,
-          "date": "2026-11-06",
-          "times": [
-            "19:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137128",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "19:30",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137128",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ramayana-rise-of-a-legend-hindi",
-          "posterFile": "data/posters/ramayana-rise-of-a-legend-hindi.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Shaun the Sheep: The Beast of Mossy Bottom",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
-          "cert": "G",
-          "runtime": 81,
-          "release": "September 12, 2026",
-          "releaseDate": "2026-09-12",
-          "director": "Steve Cox, Matthew Walker",
-          "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
-          "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
-          "date": "2026-11-06",
-          "times": [
-            "15:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137386",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "15:20",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137386",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
-          "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
           "certFile": "15A",
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -1010,50 +713,20 @@
           "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
           "date": "2026-11-06",
           "times": [
-            "15:30",
-            "17:55",
-            "20:20"
+            "20:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137393",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137395",
           "sessions": [
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
-              "time": "15:30",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137393",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "17:55",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137394",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "20:20",
+              "time": "20:15",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137395",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1081,40 +754,10 @@
           "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
           "date": "2026-11-06",
           "times": [
-            "15:30",
-            "18:10",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137130",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137131",
           "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "15:30",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137130",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137129",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
@@ -1304,7 +947,7 @@
           "title": "George Michael: The Faith Tour",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
           "cert": "PG",
           "runtime": 114,
@@ -1330,7 +973,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -1344,7 +987,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -1358,7 +1001,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1398,7 +1041,7 @@
               "time": "14:15",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137405",
               "luxx": false,
-              "screen": "6",
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "new",
@@ -1410,9 +1053,9 @@
               "day": "Sat 7 November",
               "date": "2026-11-07",
               "time": "17:00",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137422",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137579",
               "luxx": false,
-              "screen": "6",
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "new",
@@ -1426,7 +1069,7 @@
               "time": "20:00",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137141",
               "luxx": false,
-              "screen": "6",
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "new",
@@ -1482,14 +1125,13 @@
               "day": "Sat 7 November",
               "date": "2026-11-07",
               "time": "14:15",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137419",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137578",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "released",
                 "matinee",
-                "kidsclub",
                 "seating-standard"
               ]
             },
@@ -1499,7 +1141,7 @@
               "time": "16:20",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137420",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "released",
@@ -1520,7 +1162,7 @@
           "title": "Onwards and Sideways",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
           "cert": "12A",
           "runtime": 115,
@@ -1544,7 +1186,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -1804,7 +1446,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -1815,7 +1457,7 @@
           "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
           "date": "2026-11-07",
           "times": [
-            "18:25",
+            "18:20",
             "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137416",
@@ -1823,13 +1465,13 @@
             {
               "day": "Sat 7 November",
               "date": "2026-11-07",
-              "time": "18:25",
+              "time": "18:20",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137416",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1840,10 +1482,10 @@
               "time": "20:45",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137417",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2109,7 +1751,7 @@
           "title": "George Michael: The Faith Tour",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
           "cert": "PG",
           "runtime": 114,
@@ -2135,7 +1777,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -2149,7 +1791,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -2163,7 +1805,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2325,7 +1967,7 @@
           "title": "Onwards and Sideways",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
           "cert": "12A",
           "runtime": 115,
@@ -2349,7 +1991,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -2609,7 +2251,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -2634,7 +2276,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2648,7 +2290,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2926,7 +2568,7 @@
           "title": "Onwards and Sideways",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
           "cert": "12A",
           "runtime": 115,
@@ -2951,7 +2593,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -2965,7 +2607,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3150,7 +2792,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -3176,7 +2818,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "seating-standard"
               ]
@@ -3190,7 +2832,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "seating-standard"
               ]
@@ -3204,7 +2846,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3467,7 +3109,7 @@
           "title": "Onwards and Sideways",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
           "cert": "12A",
           "runtime": 115,
@@ -3492,7 +3134,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -3506,7 +3148,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3691,7 +3333,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15A",
           "runtime": 100,
@@ -3717,7 +3359,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "seating-standard"
               ]
@@ -3731,7 +3373,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "seating-standard"
               ]
@@ -3745,7 +3387,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -4094,7 +3736,7 @@
           "title": "Onwards and Sideways",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
           "cert": "12A",
           "runtime": 115,
@@ -4118,7 +3760,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -4694,7 +4336,7 @@
           "title": "Onwards and Sideways",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
           "cert": "12A",
           "runtime": 115,
@@ -4719,7 +4361,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -4733,7 +4375,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -8528,9 +8170,10 @@
     }
   ],
   "log": [
+    "carlow: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 10 films parsed",
-    "day-06-11-2026-dated: 10 films parsed",
+    "today: 0 films parsed",
+    "day-06-11-2026-dated: 5 films parsed",
     "day-07-11-2026-dated: 13 films parsed",
     "day-08-11-2026-dated: 13 films parsed",
     "day-09-11-2026-dated: 9 films parsed",
@@ -8541,20 +8184,19 @@
     "advance: 12 films parsed",
     "kids: 1 films parsed",
     "luxx: 0 films parsed",
-    "booking pages read: 9 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
+    "booking pages read: 9 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 16 ticket types, 2 bundles, 12 products",
+    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
       {
-        "name": "Adult Matinee",
-        "price": "€10.50",
+        "name": "Adult Peak",
+        "price": "€12.50",
         "days": [
-          "Fri",
-          "Mon",
-          "Tue",
-          "Wed"
+          "Sun",
+          "Sat"
         ],
         "seenOn": [
           "evening",
@@ -8565,12 +8207,12 @@
         "name": "Teen",
         "price": "€10.50",
         "days": [
-          "Fri",
-          "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Fri",
+          "Sat"
         ],
         "seenOn": [
           "evening",
@@ -8578,28 +8220,27 @@
         ]
       },
       {
-        "name": "Child Matinee",
-        "price": "€9.50",
+        "name": "Child Peak",
+        "price": "€10.50",
         "days": [
-          "Fri",
-          "Mon",
-          "Tue",
-          "Wed"
+          "Sun",
+          "Sat"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
         "name": "Student",
         "price": "€10.50",
         "days": [
-          "Fri",
-          "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Fri",
+          "Sat"
         ],
         "seenOn": [
           "evening",
@@ -8610,27 +8251,11 @@
         "name": "Family",
         "price": "€36.50",
         "days": [
-          "Fri",
-          "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening"
-        ]
-      },
-      {
-        "name": "OAP",
-        "price": "€10.50",
-        "days": [
-          "Fri",
-          "Sat",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
+          "Wed",
+          "Sat"
         ],
         "seenOn": [
           "evening",
@@ -8638,22 +8263,41 @@
         ]
       },
       {
-        "name": "Adult Peak",
-        "price": "€12.50",
+        "name": "OAP",
+        "price": "€10.50",
         "days": [
-          "Sat",
-          "Sun"
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Fri",
+          "Sat"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
+      },
+      {
+        "name": "Adult Matinee",
+        "price": "€10.50",
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Fri"
         ],
         "seenOn": [
           "evening"
         ]
       },
       {
-        "name": "Child Peak",
-        "price": "€10.50",
+        "name": "Child Matinee",
+        "price": "€9.50",
         "days": [
-          "Sat",
-          "Sun"
+          "Mon",
+          "Tue",
+          "Wed"
         ],
         "seenOn": [
           "evening"
@@ -8709,14 +8353,14 @@
           "Fri"
         ],
         "seenOn": [
-          "matinee"
+          "evening"
         ]
       },
       {
         "name": "Kids Club",
         "price": "€5.00",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "kids"
@@ -8726,7 +8370,7 @@
         "name": "Kids Club Adult",
         "price": "€5.00",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "kids"
@@ -8736,7 +8380,7 @@
         "name": "Kids Club Meal Deal",
         "price": "€9.50",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "kids"
@@ -8750,12 +8394,12 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8769,13 +8413,13 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8790,13 +8434,13 @@
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8810,13 +8454,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8830,13 +8474,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8850,13 +8494,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8870,13 +8514,13 @@
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8890,13 +8534,13 @@
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8910,13 +8554,13 @@
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8930,13 +8574,13 @@
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8950,13 +8594,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SOFTSERVE1.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8970,13 +8614,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SOFTSERVE2.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -8990,13 +8634,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SOFTSERVE3.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -9010,13 +8654,13 @@
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -9026,18 +8670,18 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-06T14:21:58.756Z",
+    "checked": "2026-11-06T22:13:06.832Z",
     "sampledDays": [
-      "Fri",
       "Sat",
       "Sun",
       "Mon",
       "Tue",
       "Wed",
-      "Thu"
+      "Thu",
+      "Fri"
     ]
   },
-  "checked": "2026-11-06T14:22:11.670Z",
+  "checked": "2026-11-06T22:13:19.423Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

@@ -2,7 +2,7 @@
   "id": "enniskillen",
   "cinema": "IMC Enniskillen",
   "source": "https://imc.ie/enniskillen",
-  "updated": "2026-11-06T14:16:00.409Z",
+  "updated": "2026-11-06T22:07:21.963Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -390,7 +390,7 @@
           "title": "Clayface",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
           "cert": "18",
           "runtime": 100,
@@ -401,25 +401,10 @@
           "trailer": null,
           "date": "2026-11-06",
           "times": [
-            "18:15",
             "20:40"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121254",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121253",
           "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121254",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
@@ -429,7 +414,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -443,51 +428,10 @@
         {
           "certSystem": "bbfc",
           "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-11-06",
-          "times": [
-            "18:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121243",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121243",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "PG",
           "title": "George Michael: The Faith Tour",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
           "cert": "PG",
           "runtime": 114,
@@ -511,7 +455,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -569,7 +513,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "15",
           "runtime": 109,
@@ -580,25 +524,10 @@
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-06",
           "times": [
-            "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121241",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121240",
           "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121241",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
@@ -608,7 +537,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -617,47 +546,6 @@
           "slug": "primetime",
           "posterFile": "data/posters/primetime.jpg",
           "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "TBC",
-          "title": "Ramayana: Rise of a Legend",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
-          "cert": "TBC",
-          "runtime": 165,
-          "release": "November 5, 2026",
-          "releaseDate": "2026-11-05",
-          "director": "Nitesh Tiwari",
-          "synopsis": "In an age of gods and kings, the fate of worlds hangs in the balance. Rama, a prince bound by duty, sacrifice, and righteousness, must confront Ravana, an immortal ruler driven by pride and vengeance, powerful enough to shatter the cosmos.",
-          "trailer": null,
-          "date": "2026-11-06",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120816",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120816",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ramayana-rise-of-a-legend",
-          "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -677,25 +565,10 @@
           "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
           "date": "2026-11-06",
           "times": [
-            "18:00",
             "20:30"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120851",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120850",
           "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120851",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
@@ -714,47 +587,6 @@
           "slug": "wild-horse-nine",
           "posterFile": "data/posters/wild-horse-nine.jpg",
           "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-11-06",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121259",
-          "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121259",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -812,7 +644,7 @@
           "title": "Clayface",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
           "cert": "18",
           "runtime": 100,
@@ -837,7 +669,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -851,7 +683,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -939,7 +771,7 @@
           "title": "George Michael: The Faith Tour",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
           "cert": "PG",
           "runtime": 114,
@@ -964,7 +796,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -978,7 +810,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1122,7 +954,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "15",
           "runtime": 109,
@@ -1149,7 +981,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -1163,7 +995,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -1177,7 +1009,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -1191,7 +1023,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -1349,7 +1181,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15",
           "runtime": 100,
@@ -1374,7 +1206,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1388,7 +1220,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1566,7 +1398,7 @@
           "title": "Clayface",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
           "cert": "18",
           "runtime": 100,
@@ -1591,7 +1423,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1605,7 +1437,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1693,7 +1525,7 @@
           "title": "George Michael: The Faith Tour",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
           "cert": "PG",
           "runtime": 114,
@@ -1718,7 +1550,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1732,7 +1564,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1876,7 +1708,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "15",
           "runtime": 109,
@@ -1903,7 +1735,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -1917,7 +1749,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -1931,7 +1763,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -1945,7 +1777,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -2103,7 +1935,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15",
           "runtime": 100,
@@ -2128,7 +1960,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2142,7 +1974,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2278,7 +2110,7 @@
           "title": "Clayface",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
           "cert": "18",
           "runtime": 100,
@@ -2303,7 +2135,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2317,7 +2149,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2375,7 +2207,7 @@
           "title": "George Michael: The Faith Tour",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
           "cert": "PG",
           "runtime": 114,
@@ -2399,7 +2231,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2457,7 +2289,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "15",
           "runtime": 109,
@@ -2482,7 +2314,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -2496,7 +2328,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -2513,7 +2345,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15",
           "runtime": 100,
@@ -2538,7 +2370,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2552,7 +2384,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2673,7 +2505,7 @@
           "title": "Clayface",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
           "cert": "18",
           "runtime": 100,
@@ -2698,7 +2530,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2712,7 +2544,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2770,7 +2602,7 @@
           "title": "George Michael: The Faith Tour",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
           "cert": "PG",
           "runtime": 114,
@@ -2794,7 +2626,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2852,7 +2684,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "15",
           "runtime": 109,
@@ -2877,7 +2709,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -2891,7 +2723,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -2908,7 +2740,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15",
           "runtime": 100,
@@ -2933,7 +2765,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2947,7 +2779,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3068,7 +2900,7 @@
           "title": "Clayface",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
           "cert": "18",
           "runtime": 100,
@@ -3093,7 +2925,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3107,7 +2939,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3221,7 +3053,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "15",
           "runtime": 109,
@@ -3246,7 +3078,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -3260,7 +3092,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -3277,7 +3109,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15",
           "runtime": 100,
@@ -3302,7 +3134,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3316,7 +3148,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3396,7 +3228,7 @@
           "title": "Clayface",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
           "cert": "18",
           "runtime": 100,
@@ -3421,7 +3253,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3435,7 +3267,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3549,7 +3381,7 @@
           "title": "Primetime",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
           "cert": "15",
           "runtime": 109,
@@ -3574,7 +3406,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -3588,7 +3420,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-lux"
               ]
@@ -3605,7 +3437,7 @@
           "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15",
           "runtime": 100,
@@ -3630,7 +3462,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3644,7 +3476,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -7244,9 +7076,10 @@
     }
   ],
   "log": [
+    "enniskillen: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 8 films parsed",
-    "day-06-11-2026-dated: 8 films parsed",
+    "today: 0 films parsed",
+    "day-06-11-2026-dated: 5 films parsed",
     "day-07-11-2026-dated: 13 films parsed",
     "day-08-11-2026-dated: 13 films parsed",
     "day-09-11-2026-dated: 8 films parsed",
@@ -7257,8 +7090,9 @@
     "advance: 15 films parsed",
     "kids: 3 films parsed",
     "luxx: 4 films parsed",
-    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
+    "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 12 ticket types, 4 bundles, 8 products",
+    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -7267,13 +7101,13 @@
         "name": "Adult",
         "price": "£9.00",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7284,13 +7118,13 @@
         "name": "Teen",
         "price": "£7.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7301,7 +7135,6 @@
         "name": "Child",
         "price": "£7.00",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7316,13 +7149,13 @@
         "name": "Student",
         "price": "£7.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7333,7 +7166,6 @@
         "name": "Family",
         "price": "£26.00",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7348,13 +7180,13 @@
         "name": "Senior",
         "price": "£7.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7405,7 +7237,7 @@
         "name": "LUXX Recliner",
         "price": "£13.00",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7415,7 +7247,7 @@
         "name": "LUXX Child/Student/OAP",
         "price": "£9.50",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7429,12 +7261,12 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7448,13 +7280,13 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7468,7 +7300,7 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7481,7 +7313,7 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7495,13 +7327,13 @@
         "price": "£0.80",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7516,13 +7348,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7537,13 +7369,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7558,13 +7390,13 @@
         "price": "£3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7579,13 +7411,13 @@
         "price": "£8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7600,13 +7432,13 @@
         "price": "£9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7621,13 +7453,13 @@
         "price": "£5.50",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7642,13 +7474,13 @@
         "price": "£13.50",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7659,18 +7491,18 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-06T14:16:26.850Z",
+    "checked": "2026-11-06T22:07:46.854Z",
     "sampledDays": [
-      "Fri",
       "Sat",
       "Sun",
       "Mon",
       "Tue",
       "Wed",
-      "Thu"
+      "Thu",
+      "Fri"
     ]
   },
-  "checked": "2026-11-06T14:16:41.268Z",
+  "checked": "2026-11-06T22:08:01.257Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
