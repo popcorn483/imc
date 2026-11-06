@@ -555,20 +555,22 @@ html.a-rm{scroll-behavior:auto}
 <section class="g" id="drive-trailers" data-s>
   <h2>Trailer files from Google Drive (no buffering)</h2>
   <p class="lead">Put the proper trailer files (MP4s from WB360, Disney Box and the other distributors) on the <b>manager's PC</b>. The foyer PCs fetch them by themselves, play them instead of the YouTube trailer, in full quality with no buffering (even if the internet drops), and delete them when the film has gone. Nobody needs to touch the foyer PCs.</p>
-  <h3>Set it up once (about 15 minutes)</h3>
+  <h3>Set it up once (about 20 minutes, plus one visit to each foyer PC)</h3>
   <ol class="steps">
     <li><b>Install Google Drive on the manager's PC.</b> Search for “Google Drive for desktop”, download it from Google, install it and sign in with the cinema's Google account. A <b>Google Drive</b> drive appears in File Explorer.</li>
     <li><b>Make the trailers folder.</b> In File Explorer, open Google Drive → <b>My Drive</b>, right-click → New → Folder, and call it <b>IMC TRAILERS</b>. Anything you save or drag into it uploads to Google Drive automatically. (You can also upload files at drive.google.com.)</li>
-    <li><b>Share the folder by link.</b> Go to <b>drive.google.com</b>, right-click the IMC TRAILERS folder → <b>Share</b> → <b>Share</b>. Under “General access” choose <b>Anyone with the link</b> (Viewer). Click <span class="k">Copy link</span>, then <span class="k">Done</span>.</li>
-    <li><b>Get a Google API key</b> (this lets the foyer PCs read the folder):
+    <li><b>Copy the folder's link.</b> Go to <b>drive.google.com</b>, open the IMC TRAILERS folder and copy the address from the address bar (you'll paste it into the hub).</li>
+    <li><b>Make the trailer key file</b> (a Google “robot account” that can only read the folders you share with it):
       <ol>
-        <li>Go to <b>console.cloud.google.com</b> and sign in with the same Google account. Agree to the terms if asked.</li>
-        <li>At the top, click the project picker → <span class="k">New project</span>, call it <b>IMC foyer</b>, click <span class="k">Create</span>, then make sure it's selected.</li>
+        <li>Go to <b>console.cloud.google.com</b> and sign in with the cinema's Google account. Agree to the terms if asked.</li>
+        <li>At the top, click the project picker → <span class="k">New project</span>, call it <b>IMC foyer</b>, click <span class="k">Create</span>, and make sure it's selected.</li>
         <li>In the search box at the top type <b>Google Drive API</b>, open it and click <span class="k">Enable</span>.</li>
-        <li>Open the menu ☰ → <b>APIs &amp; Services</b> → <b>Credentials</b> → <span class="k">+ Create credentials</span> → <b>API key</b>. <b>Leave “Authenticate API calls through a service account” unticked</b> (ticked, it makes an “AQ.” key, which Google Drive refuses with “API keys are not supported by this API”). Copy the key: it must start with <b>AIza</b>. Don't make the key in AI Studio: that only makes AQ. keys.</li>
-        <li>Click <b>Edit API key</b>. Under <b>Application restrictions</b> choose <b>Websites</b> and add <b>https://popcorn483.github.io/*</b>. Under <b>API restrictions</b> choose <b>Restrict key</b> and tick <b>Google Drive API</b>. Click <span class="k">Save</span>. (This means the key only works for reading shared Drive files from the IMC app.) It's free: the foyer PCs use a tiny fraction of the free allowance.</li>
+        <li>Open the menu ☰ → <b>IAM &amp; Admin</b> → <b>Service accounts</b> → <span class="k">+ Create service account</span>. Name it <b>imc-foyer</b>, click <span class="k">Create and continue</span>, skip the role, then <span class="k">Done</span>.</li>
+        <li>Click the new account → the <b>Keys</b> tab → <span class="k">Add key</span> → <b>Create new key</b> → <b>JSON</b> → <span class="k">Create</span>. A <b>.json</b> file downloads: that's the trailer key file. Keep it safe (don't email it or post it anywhere); put a copy on a USB stick for the foyer PCs.</li>
       </ol></li>
-    <li><b>Put both into the hub.</b> On <a href="index.html#foyer">Foyer trailers</a>, under <b>Trailer files for the foyer TVs (Google Drive)</b>, paste the folder link and the key and click <span class="k">Save and check the folder</span>.</li>
+    <li><b>Share the folder with the robot.</b> In the hub (next step) the robot's email appears with a <span class="k">Copy email</span> button. At drive.google.com, right-click IMC TRAILERS → <b>Share</b>, paste that email, choose <b>Viewer</b>, untick “Notify people”, and click <span class="k">Share</span>. (The folder does <b>not</b> need to be shared by link.)</li>
+    <li><b>Put them into the hub (manager's PC).</b> On <a href="index.html#foyer">Foyer trailers</a>, under <b>Trailer files for the foyer TVs (Google Drive)</b>, paste the folder link, click <span class="k">Choose the key file</span> and pick the .json file, then click <span class="k">Save and check the folder</span>. The key stays on this PC only.</li>
+    <li><b>Once on each foyer PC</b> (the only visit needed): plug in the USB stick, open the IMC Foyer TV app's set-up screen (the TV app address with <b>?setup</b> on the end, e.g. <b>popcorn483.github.io/imc/tv.html?setup</b>), click <span class="k">Add the trailer key file</span>, pick the .json file, then <span class="k">Start this TV</span>. Take the USB stick away. From then on that PC fetches the trailers by itself.</li>
   </ol>
   <h3>Every time you get a new trailer</h3>
   <ol class="steps">

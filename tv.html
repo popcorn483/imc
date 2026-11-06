@@ -47,6 +47,9 @@ details{margin-top:18px}summary{cursor:pointer;color:#fff;font-weight:600}
       <button type="button" data-kind="foyer" aria-pressed="true"><b>Foyer TV</b><span>Trailers, times, deals</span></button>
       <button type="button" data-kind="luxx" aria-pressed="false"><b>LUXX lounge</b><span>LUXX showings and offers</span></button>
     </div>
+    <label>Trailer files (Google Drive) <span class="small">(optional, once per PC)</span></label>
+    <div class="gsa"><span id="gsaInfo" class="small"></span><label class="inst" style="display:inline-block;margin:6px 0 0">📄 Add the trailer key file<input id="gsaFile" type="file" accept=".json,application/json" hidden></label> <button class="inst" id="gsaForget" type="button" hidden>Remove</button></div>
+    <p class="small" style="margin-top:4px">The same .json key file as on the manager's PC (bring it on a USB stick). It's kept only on this PC, so this TV can fetch the trailer files from Google Drive by itself.</p>
     <button class="go" id="go" type="button">▶ Start this TV</button>
     <button class="inst" id="install" type="button" hidden>⬇ Install as an app on this PC</button>
     <details>
@@ -62,6 +65,7 @@ details{margin-top:18px}summary{cursor:pointer;color:#fff;font-weight:600}
   </div>
 </div>
 <iframe id="tv" title="IMC foyer TV player" allow="autoplay; fullscreen; screen-wake-lock" hidden></iframe>
+<script src="gauth.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s),KEY="imc-tv";
@@ -86,6 +90,11 @@ async function setup(){const sel=$("#site");let list=[["enniskillen","IMC Ennisk
   $("#go").onclick=()=>{cfg={site:sel.value,kind};try{localStorage.setItem(KEY,JSON.stringify(cfg))}catch(e){}
     if(want.has("setup"))history.replaceState(null,"","tv.html");
     document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen().catch(()=>{});play()}}
+/* the trailer key file: kept on this PC only */
+function gsaShow(){const sa=window.IMCDrive&&IMCDrive.saved();$("#gsaInfo").textContent=sa?"✓ Added: "+sa.client_email:"Not added on this PC.";$("#gsaForget").hidden=!sa}
+if(window.IMCDrive){gsaShow();
+  $("#gsaFile").onchange=async e=>{const f=e.target.files&&e.target.files[0];if(!f)return;try{IMCDrive.save(await f.text());gsaShow()}catch(x){alert("That isn't the trailer key file. It's a .json file from Google Cloud.")}e.target.value=""};
+  $("#gsaForget").onclick=()=>{if(confirm("Remove the trailer key file from this PC?")){IMCDrive.forget();gsaShow()}}}
 /* "Install as an app" when the browser offers it */
 let installEv=null;addEventListener("beforeinstallprompt",e=>{e.preventDefault();installEv=e;$("#install").hidden=false});
 $("#install").onclick=async()=>{if(!installEv)return;installEv.prompt();await installEv.userChoice.catch(()=>{});installEv=null;$("#install").hidden=true};
