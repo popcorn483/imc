@@ -19,7 +19,7 @@ export function parse(html) {
     const e = $(el);
     if (e.hasClass("release-date-row")) { day = iso(e.text().trim()); return }
     if (!e.hasClass("film-summary-row") || !day) return;
-    const t = e.find(".film-title").first().text().replace(/\s+/g, " ").trim(); if (!t) return;
+    const t = e.find(".film-title").first().text().replace(/\s+/g, " ").trim().replace(/^(.*), (The|A)$/i, "$2 $1"); if (!t) return;   // "Hunger Games: ..., The" → "The Hunger Games: ..."
     const certImg = e.find(".title img").attr("alt") || "", cert = (/bbfc_([a-z0-9]+)/i.exec(certImg) || [])[1] || "";
     const dImg = e.find(".distributor img").attr("alt"), dist = (dImg ? dImg.replace(/\s*Logo$/i, "") : e.find(".distributor").text()).replace(/\s+/g, " ").trim();
     let yt = ""; e.find(".title-links a").each((_, a) => { if (/trailer/i.test($(a).text()) && !yt) yt = ytId($(a).attr("href")) });

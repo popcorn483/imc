@@ -371,6 +371,37 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .gdrow{display:grid;grid-template-columns:1.4fr 1fr;gap:10px}.gdrow input{width:100%}@media (max-width:760px){.gdrow{grid-template-columns:1fr}}
 .gdt{width:100%;border-collapse:collapse;font-size:14px}.gdt td,.gdt th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}.gdt th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.gdt select{max-width:260px}.gdt .ok{color:#3dc88c;font-weight:700}.gdt .no{color:#ff8a6e;font-weight:700}
 
+
+/* ---- Trailers board ---- */
+.trold{display:none!important}
+.trhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}.trhead h2{margin:0;font-size:22px}.trsrc{font-size:12.5px;color:var(--muted);margin-top:3px}
+.trfolder{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13.5px}.trfolder .ok{color:#1f9d55;font-weight:700}
+.trflow{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--muted);margin:12px 0 4px;padding:9px 12px;border-radius:10px;background:rgba(127,127,127,.08)}
+.trc{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap;line-height:1.5}
+.trc.yt{background:rgba(226,69,46,.12);color:#c2321d}.trc.file{background:rgba(31,157,85,.14);color:#167a41}.trc.none{background:rgba(127,127,127,.14);color:var(--muted)}
+.trc.on{background:#1f9d55;color:#fff}.trc.off{background:rgba(127,127,127,.14);color:var(--muted)}.trc.warn{background:rgba(243,154,43,.18);color:#a85f00}.trc.no{background:rgba(226,69,46,.12);color:#b42b16}
+.tralert{display:flex;flex-direction:column;gap:8px;padding:12px 14px;border-radius:12px;margin:12px 0 0;font-size:14px}
+.tralert.warn{background:rgba(243,154,43,.12);border:1px solid rgba(243,154,43,.55)}.tralert.info{background:rgba(31,157,85,.08);border:1px solid rgba(31,157,85,.4)}
+.tralert .h{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.tralert .h b{font-size:15px}
+.trfile{display:grid;grid-template-columns:minmax(0,1fr) minmax(200px,320px);gap:8px;align-items:center;padding:6px 0;border-top:1px dashed rgba(127,127,127,.3)}.trfile code{font-size:12.5px;word-break:break-all}
+.trbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 6px}.trbar input[type=search]{flex:1 1 160px;max-width:240px;padding:7px 10px}
+.trchips{display:flex;gap:6px;flex-wrap:wrap}.trchips button{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line)}.trchips button[aria-pressed=true]{background:var(--ink,#11152e);color:var(--panel,#fff);border-color:transparent}.trchips button span{opacity:.6;margin-left:4px}
+.trsec{font:800 12px/1 var(--f-display,inherit);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 6px;display:flex;gap:8px;align-items:center}.trsec::after{content:"";flex:1;height:1px;background:var(--line)}
+.trrow{display:grid;grid-template-columns:52px 40px minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:8px 6px;border-radius:10px;cursor:pointer}
+.trrow:hover{background:rgba(127,127,127,.08)}.trrow+.trrow{border-top:1px solid rgba(127,127,127,.15)}
+.trdate{text-align:center;line-height:1.05}.trdate b{display:block;font-size:19px}.trdate small{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.trrow img,.trrow .trp0{width:40px;height:58px;border-radius:5px;object-fit:cover;background:rgba(127,127,127,.18)}
+.trrow .t b{font-size:15px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.trrow .t .m{font-size:12.5px;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trrow .src{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;max-width:260px}
+.trrow .tv{display:flex;align-items:center;gap:8px}
+.trsw{position:relative;width:42px;height:24px;flex:none}.trsw input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;z-index:1}.trsw span{position:absolute;inset:0;border-radius:999px;background:rgba(127,127,127,.35);transition:.15s}.trsw span::after{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.15s;box-shadow:0 1px 3px rgba(0,0,0,.3)}.trsw input:checked+span{background:#1f9d55}.trsw input:checked+span::after{transform:translateX(18px)}.trsw input:disabled+span{opacity:.35}.trsw input:focus-visible+span{outline:2px solid var(--blue,#1fa0de);outline-offset:2px}
+.trempty{padding:18px;text-align:center;color:var(--muted);font-size:14px}
+.trmore{margin-top:16px}.trmore>summary{cursor:pointer;font-weight:700;font-size:14px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--panel)}
+.trdlg{width:min(560px,100%);max-height:90vh;overflow:auto}.trdlg-h{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.trdlg-h h2{margin:0;font-size:21px}
+.trsect{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}.trsect h3{margin:0 0 8px;font-size:14px;display:flex;gap:8px;align-items:center}
+.trsect .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.trsect input[type=url]{flex:1 1 220px}.trsect select{width:100%}
+.trthumb{display:flex;gap:10px;align-items:center;margin-bottom:8px}.trthumb img{width:128px;border-radius:8px}
+@media (max-width:700px){.trrow .t b,.trrow .t .m{white-space:normal}.trrow{grid-template-columns:44px minmax(0,1fr) auto}.trrow img,.trrow .trp0{display:none}.trrow .src{grid-column:2/4;justify-content:flex-start;max-width:none;order:5}.trfile{grid-template-columns:1fr}}
 /* ---- Foyer trailers: Playlist tab, tidy ---- */
 .pltop{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:14px 18px}
 .pltop-status{display:flex;align-items:center;gap:12px;min-width:0;flex:1 1 420px}.pltop-status .tip,.plhead .tip{margin:2px 0 0;font-size:13px;border:0;padding:0;max-width:72ch}.pltop-acts{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
@@ -837,7 +868,15 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         <div class="row-btns" style="margin-top:12px"><a class="btn" id="flounge" target="imc-lounge" style="text-decoration:none;order:2">LUXX lounge player ↗</a><a class="btn primary" id="fopen" target="imc-foyer" style="text-decoration:none">Open foyer player ↗</a><button class="btn" id="fcopy">Copy TV link</button><button class="btn" id="fzip">Download pack (.zip)</button><button class="btn" id="fcsv">Download trailer list (.csv)</button></div>
         <div id="fprog" class="tip" hidden></div>
       </div>
-      <div class="panel" style="margin-top:16px" id="gdPanel" data-fp="trail"><div class="ph"><h2>📁 Trailer files (IMC TRAILERS folder)</h2><span class="tip" id="gdcount" style="margin:0"></span></div>
+      <div class="panel trboard" id="trBoard" data-fp="trail">
+        <div class="trhead"><div><h2>Trailers</h2><div class="trsrc" id="trSrc"></div></div>
+          <div class="trfolder" id="trFolder"></div></div>
+        <div class="trflow" aria-label="Where trailers come from"><span><b class="trc yt">▶ YouTube</b> streamed from the internet</span><span><b class="trc file">📁 File</b> from the IMC TRAILERS folder in Google Drive: smoothest, plays even if the internet drops</span><span>A film with a file plays the file.</span></div>
+        <div id="trAlerts"></div>
+        <div class="trbar"><div class="trchips" id="trChips" role="group" aria-label="Show"></div><input type="search" id="trFind" placeholder="Find a film" aria-label="Find a film"><label class="plswitch"><input type="checkbox" id="trAll"><span>Show all films</span></label></div>
+        <div id="trList"></div>
+      </div>
+      <div class="panel trold" style="margin-top:16px" id="gdPanel" data-fp="trail"><div class="ph"><h2>📁 Trailer files (IMC TRAILERS folder)</h2><span class="tip" id="gdcount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">Save the trailer files (MP4s from WB360, Disney Box and so on) into the <b>IMC TRAILERS</b> folder in Google Drive on this PC, named after the film (e.g. <b>Wicked For Good trailer.mp4</b>). Google Drive copies them to the foyer PCs, and the TVs play them instead of the YouTube trailer. <a href="help.html#drive-trailers" target="imc-help">How to set it up</a></p>
         <div class="row-btns"><button class="btn primary" type="button" id="lfPick">📁 Choose the IMC TRAILERS folder on this PC</button><button class="btn" type="button" id="lfRefresh" hidden>↻ Check again</button><span class="tip" id="lfInfo" style="margin:0;align-self:center"></span></div>
         <div id="lfList" style="margin-top:10px"></div>
@@ -849,17 +888,18 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
             <details style="margin-top:6px"><summary class="tip" style="margin:0;cursor:pointer">Have an API key starting AIza instead?</summary><input id="gdKey" type="text" placeholder="AIza…" autocomplete="off" spellcheck="false" style="margin-top:6px"></details></div></div>
         <div class="row-btns"><button class="btn primary" type="button" id="gdSave">Save and check the folder</button><button class="btn ghost" type="button" id="gdOff" hidden>Stop using Google Drive</button></div>
         <div id="gdList" style="margin-top:10px"></div></details></div>
-      <div class="panel" style="margin-top:16px" data-fp="trail"><div class="ph"><h2>Films</h2><span class="tip" id="fcount" style="margin:0"></span></div><div id="foyList"></div></div>
-      <div class="panel" style="margin-top:16px" id="recPanel" data-fp="trail"><div class="ph"><h2>Recommended: new trailers</h2><span class="tip" id="reccount" style="margin:0"></span></div>
+      <div class="panel trold" style="margin-top:16px" data-fp="trail"><div class="ph"><h2>Films</h2><span class="tip" id="fcount" style="margin:0"></span></div><div id="foyList"></div></div>
+      <details class="trmore" data-fp="trail"><summary>More: other YouTube trailers and the distributors' newest trailers</summary>
+      <div class="panel" style="margin-top:12px" id="recPanel"><div class="ph"><h2>Recommended: new trailers</h2><span class="tip" id="reccount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">The newest public trailers from the film distributors' official UK YouTube channels, checked three times a day. Red-band trailers are left out. Add one and it plays in the loop with its release date until the film opens. Watch it once first to be sure it's right for the foyer.</p>
         <div class="recbar"><div class="recchips" id="recdist" role="group" aria-label="Distributor"></div><label class="check"><input type="checkbox" id="recimc"> Only films on imc.ie</label><label class="check"><input type="checkbox" id="recnew"> Hide ones I've added</label></div>
         <div class="recgrid" id="recgrid"></div><div id="recmore" style="margin-top:10px"></div></div>
-      <div class="panel" style="margin-top:16px" data-fp="trail"><div class="ph"><h2>Your own YouTube trailers</h2><span class="tip" id="xcount" style="margin:0"></span></div>
+      <div class="panel" style="margin-top:16px"><div class="ph"><h2>Your own YouTube trailers</h2><span class="tip" id="xcount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">Add any YouTube trailers you want in the loop, for example coming attractions or films not on imc.ie yet. Paste one link, or several at once (one per line). They play in this order, without a showtimes card.</p>
         <form id="xadd" class="xadd"><textarea id="xlinks" rows="2" placeholder="Paste YouTube trailer links here" aria-label="YouTube trailer links"></textarea><button class="btn primary">Add trailers</button></form>
         <label class="field" style="max-width:360px;margin-top:10px"><span class="flabel">What plays on the TVs</span><select id="fwhat"><option value="both">Films from imc.ie, then my trailers</option><option value="mine">Only my trailers</option></select></label>
         <div id="xlist" class="xlist"></div></div>
-      <div class="panel" style="margin-top:16px" id="svPanel" data-fp="trail"><div class="ph"><h2>Studio trailers</h2><span class="tip" id="svcount" style="margin:0"></span></div>
+      <div class="panel" style="margin-top:16px" id="svPanel"><div class="ph"><h2>Studio trailers</h2><span class="tip" id="svcount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">Trailers from the studios' own sites, like WB360 or Disney Box. Download the trailer there (choose the <b>MP4 (H.264) HD</b> version), then add it to its film here. It plays on the foyer TVs instead of the YouTube trailer, and still plays if the internet drops.</p>
         <form id="svadd" class="svadd" onsubmit="return false">
           <label class="field"><span class="flabel">Film</span><select id="svfilm"></select></label>
@@ -870,7 +910,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         <div id="svstat" class="tip" hidden></div>
         <div id="svlist" class="xlist"></div>
         <div class="svremind" role="note"><b>📁 Reminder:</b> trailer files must be stored on the <b>foyer PC</b> (with several foyer TVs in step, add the same file on <b>each</b> foyer PC), in the <b>TRAILERS</b> folder on its desktop, and added here <b>from the foyer PC</b> (open this hub on that PC). A file added on any other computer only plays on that computer, not on the foyer TVs.</div>
-        <p class="tip" style="margin-bottom:0">Download links work on every foyer PC. Films rated 15 or 18 still stay off the foyer TVs.</p></div>
+        <p class="tip" style="margin-bottom:0">Download links work on every foyer PC. Films rated 15 or 18 still stay off the foyer TVs.</p></div></details>
       <div class="panel" style="margin-top:16px" data-fp="sites"><div class="ph"><h2>Trailer and poster sites</h2></div>
         <p class="tip" style="margin-top:0">Quick links to the sites you get trailers and posters from. <b>Passwords aren't kept here:</b> when you sign in, let your browser save the password (Chrome and Edge offer to) and it's filled in for you next time. Downloaded posters and artwork go in the photo editor under <b>Photo › Your media</b>, ready for any design.</p>
         <div id="srclist" class="srclist"></div>
@@ -1140,6 +1180,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
     <div class="row-btns" style="margin-top:14px"><button class="btn primary" type="button" id="pbSave">Save priceboard</button><button class="btn" type="button" id="pbCopy" hidden>Make a copy</button><button class="btn ghost danger" type="button" id="pbDel" hidden>Delete priceboard</button></div>
   </div>
 </div>
+<div class="modal" id="trDlg" hidden role="dialog" aria-modal="true" aria-labelledby="trDlgT"><div class="panel trdlg"><div class="trdlg-h"><div><h2 id="trDlgT"></h2><div class="tip" id="trDlgM" style="margin:2px 0 0;border:0;padding:0"></div></div><button class="btn small ghost" type="button" id="trDlgX" aria-label="Close">✕</button></div><div id="trDlgB"></div></div></div>
 <div class="modal" id="nfDlg" hidden>
   <div class="panel" role="dialog" aria-modal="true" aria-labelledby="nfDlgT" style="width:min(520px,100%)">
     <div class="ph"><h2 id="nfDlgT">New film</h2><button class="btn small ghost" id="nfClose">Close</button></div>
@@ -1934,7 +1975,7 @@ function foySave(st){try{localStorage.setItem(fsk(),JSON.stringify(st))}catch(e)
 function foyFilms(){if(!IMC)return[];const m=new Map(),T=todayIso(),n=cinemaNow();
   for(const f of allFilms()){const k=f.slug||f.title.toLowerCase(),o=m.get(k);if(!o)m.set(k,{...f,key:k,luxxToo:!!f.luxx,sessions:[...f.sessions]});else{o.luxxToo=o.luxxToo||!!f.luxx;for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s);for(const key of["trailer","cert","certSystem","posterFile","runtime"])o[key]=o[key]||f[key]}}
   const L=foyState().links||{};
-  return[...m.values()].map(f=>{const up=f.sessions.filter(s=>notStarted(s.date,s.time)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));const my=L[f.key];const sv=STUD.find(x=>x.film===f.key&&!svOld(x));return{...f,next:up[0]||null,...(my?{imcTrailer:f.trailer,trailer:"https://www.youtube.com/watch?v="+my.id,mine:my}:{}),...(sv?{studio:sv,trailer:"studio:"+sv.id}:{})}})
+  return[...m.values()].map(f=>{const up=f.sessions.filter(s=>notStarted(s.date,s.time)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));const my=L[f.key]||(!f.trailer?autoLink(f):null);const sv=STUD.find(x=>x.film===f.key&&!svOld(x));return{...f,next:up[0]||null,...(my?{imcTrailer:f.trailer,trailer:"https://www.youtube.com/watch?v="+my.id,mine:my}:{}),...(sv?{studio:sv,trailer:"studio:"+sv.id}:{})}})
     .sort((a,b)=>(a.next?a.next.date+a.next.time:"9"+(a.releaseDate||"")).localeCompare(b.next?b.next.date+b.next.time:"9"+(b.releaseDate||"")))}
 function foySafety(f,st){if(f.studio){const sys=f.certSystem||(S().ni?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();return!c||c==="TBC"||(FSAFE[sys]||FSAFE.bbfc).includes(c)?{ok:true,cls:"ok",label:"Studio trailer"+(c&&c!=="TBC"?" ("+c+")":"")}:{ok:false,cls:"no",label:"Rated "+c+": studio trailer not played"}}
   const t=f.mine?{title:f.mine.title||""}:(TRAIL||{})[f.trailer]||{},sys=f.certSystem||(S().ni?"bbfc":"ifco"),c=String(f.cert||"").toUpperCase();
@@ -1946,23 +1987,23 @@ function foySafety(f,st){if(f.studio){const sys=f.certSystem||(S().ni?"bbfc":"if
 function foyChosen(st){const in7=addDays(todayIso(),7),hid=new Set(st.hide||[]);return foyFilms().filter(f=>{if(hid.has(f.key))return false;const sf=foySafety(f,st);if(!sf.ok)return false;
   if(st.mode==="pick")return st.pick.includes(f.key);return(f.next&&f.next.date<=in7)||(st.soon&&!f.next&&f.sources&&f.sources.has("soon"))}).filter((f,i,a)=>a.findIndex(x=>x.trailer===f.trailer)===i)}
 function foyUrl(st,lounge){const u=new URL("foyer.html",location.href),P=u.searchParams;if(lounge)P.set("luxx","1");P.set("c",site);P.set("mode",st.mode);if(st.mode==="pick")P.set("ids",foyChosen(st).map(f=>f.key).join(","));
-  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.sync===false)P.set("sync","0");if(st.soon)P.set("soon","1");const ln=Object.entries(st.links||{}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=(st.extra||[]);if(xs.length)P.set("x",xs.filter(x=>!x.releaseDate||x.releaseDate>=todayIso()).map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)+(x.releaseDate||x.video?"~"+(x.releaseDate||""):"")+(x.video?"~v":"")).join("|"));const svl=STUD.filter(x=>x.url&&!svOld(x)).map(x=>[x.film,x.title||"",x.url]);if(svl.length)P.set("sv",btoa(unescape(encodeURIComponent(JSON.stringify(svl)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));if(st.what==="mine"&&(xs.length||STUD.some(x=>!x.film)))P.set("only","1");
+  if(st.ok.length)P.set("ok",st.ok.join(","));P.set("card",st.card);if(!st.trail)P.set("trailers","0");if(!st.sound)P.set("sound","0");if(st.sync===false)P.set("sync","0");if(st.soon)P.set("soon","1");const ln=Object.entries({...Object.fromEntries(foyFilms().filter(f=>f.mine&&f.mine.auto).map(f=>[f.key,f.mine])),...(st.links||{})}).map(([k,v])=>k+"~"+v.id);if(ln.length)P.set("tl",ln.join("|"));const xs=[...(st.extra||[]),...relX(st).filter(r=>!(st.extra||[]).some(x=>x.id===r.id))];if(xs.length)P.set("x",xs.filter(x=>!x.releaseDate||x.releaseDate>=todayIso()).map(x=>x.id+"~"+String(x.title||"").replace(/[|~]/g," ").slice(0,70)+(x.releaseDate||x.video?"~"+(x.releaseDate||""):"")+(x.video?"~v":"")).join("|"));const svl=STUD.filter(x=>x.url&&!svOld(x)).map(x=>[x.film,x.title||"",x.url]);if(svl.length)P.set("sv",btoa(unescape(encodeURIComponent(JSON.stringify(svl)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));if(st.what==="mine"&&(xs.length||STUD.some(x=>!x.film)))P.set("only","1");
   {const keys=plItems(st,true).map(x=>x.key),ord=(st.order||[]).filter(k=>keys.includes(k)),hd=(st.hide||[]).filter(k=>keys.includes(k));if(ord.length)P.set("ord",ord.join(","));if(hd.length)P.set("hide",hd.join(","));if(st.shuf)P.set("shuf","1")}
   {const cds=(st.cards||[]).filter(c=>!c.to||c.to>=todayIso()).map(c=>[c.id,c.kick||"",c.title||"",(c.lines||[]).slice(0,5),c.img||"",c.secs||10,c.from||"",c.to||"",c.col||"navy"]);if(cds.length)P.set("cd",btoa(unescape(encodeURIComponent(JSON.stringify(cds)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
   {const pbs=(st.boards||[]).filter(b=>!b.to||b.to>=todayIso()).map(b=>[b.id,b.title||"",b.sub||"",b.col||"navy",b.secs||20,b.from||"",b.to||"",(b.sections||[]).map(x=>[x.name||"",(x.sizes||[]).filter(Boolean),(x.items||[]).filter(i=>i.n).map(i=>[i.n,i.note||"",(i.p||[]).map(v=>String(v||"").trim())])]),pbPics(b),b.snd||"",b.chime?1:0,b.isz||30,b.ipos||"r"]);if(pbs.length)P.set("pb",btoa(unescape(encodeURIComponent(JSON.stringify(pbs)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
-  {const m=st.gm||{};if(Object.keys(m).length)P.set("gm",btoa(unescape(encodeURIComponent(JSON.stringify(m)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
+  {const m={...Object.fromEntries(Object.entries(st.gm||{}).filter(([k,v])=>!String(v).startsWith("rel:"))),...effGm(st)};if(Object.keys(m).length)P.set("gm",btoa(unescape(encodeURIComponent(JSON.stringify(m)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
   if(st.gd&&(st.gk||st.gsa)){P.set("gd",st.gd);if(st.gk)P.set("gk",st.gk);const m={};if(Object.keys(m).length)P.set("gm",btoa(unescape(encodeURIComponent(JSON.stringify(m)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""))}
   if((st.px||[]).length)P.set("px",st.px.join(","));if((st.tx||[]).length)P.set("tx",st.tx.join(","));if(st.tt&&Object.keys(st.tt).length)P.set("tt",btoa(unescape(encodeURIComponent(JSON.stringify(st.tt)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));
   if(st.mu&&st.mu!=="cinema")P.set("mu",st.mu);if(st.mv!=null&&st.mv!==35)P.set("mv",st.mv);if((st.bd??3)!==3)P.set("bd",st.bd);if(st.pr===false)P.set("pr","0");if(st.strip===false)P.set("strip","0");if(st.safe!=null&&+st.safe!==3.5)P.set("safe",st.safe);if(st.scr===false)P.set("scr","0");const ms=String(st.msg||"").split("\n").map(x=>x.trim().replace(/\|/g,"/")).filter(Boolean).slice(0,6);if(ms.length)P.set("msg",ms.join("|"));const T0=todayIso(),al=(st.ads||[]).filter(a=>a.on!==false&&(!a.to||a.to>=T0)).map(a=>[a.src,a.title,a.from||"",a.to||"",a.secs||10,a.often||1,a.adv||""]);if(al.length)P.set("ad",btoa(unescape(encodeURIComponent(JSON.stringify(al)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));const wl=wGet().filter(w=>w.on!==false&&(!lounge||w.brand==="luxx"));if(wl.length&&st.wfreq!=="0"){P.set("w",WI.encode(wl));P.set("wf",st.wfreq||"r")}return u.href}
 /* ---------- playlist: what plays, in order (films, your trailers, studio trailers); order, hide and shuffle go to the foyer player ---------- */
 function plItems(st,withHidden){const out=[],today=todayIso(),hid=new Set(st.hide||[]),mine=st.what==="mine"&&((st.extra||[]).length||STUD.some(x=>!x.film));
   if(!mine)for(const f of foyChosen({...st,hide:withHidden?[]:st.hide})){const nx=f.next;out.push({key:f.key,yt:f.studio?null:ytIdOf(f.trailer),title:f.title,kind:f.studio?"studio":"film",img:asset(f.posterFile)||f.poster||"",sub:(f.cert?f.cert+" · ":"")+(nx?(nx.date===today?"Today ":fmtShort(nx.date)+" ")+nx.time:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"")+(f.studio?" · studio trailer":"")})}
-  for(const x of st.extra||[])if(!x.releaseDate||x.releaseDate>=today)out.push({key:"x:"+x.id,yt:x.id,title:x.title||(x.video?"YouTube video":"YouTube trailer"),kind:x.video?"vid":"yt",img:`https://i.ytimg.com/vi/${x.id}/mqdefault.jpg`,sub:(x.by?x.by+" · ":"")+(x.releaseDate&&!x.video?"In cinemas "+fmtShort(x.releaseDate):x.video?"Your video":"Your trailer")});
+  for(const x of[...(st.extra||[]),...relX(st).filter(r=>!(st.extra||[]).some(y=>y.id===r.id))])if(!x.releaseDate||x.releaseDate>=today)out.push({key:"x:"+x.id,yt:x.id,title:x.title||(x.video?"YouTube video":"YouTube trailer"),kind:x.video?"vid":"yt",img:`https://i.ytimg.com/vi/${x.id}/mqdefault.jpg`,sub:(x.by?x.by+" · ":"")+(x.releaseDate&&!x.video?"In cinemas "+fmtShort(x.releaseDate):x.video?"Your video":"Your trailer")});
   for(const b of st.boards||[])if((!b.from||b.from<=today)&&(!b.to||b.to>=today)||b.from>today){const n=(b.sections||[]).reduce((a,x)=>a+(x.items||[]).filter(i=>i.n).length,0);out.push({key:"b:"+b.id,board:b,title:b.title||"Priceboard",kind:"price",img:"",sub:`${n} item${n===1?"":"s"} · ${b.secs||20} seconds`+(b.from>today?" · starts "+fmtShort(b.from):"")+(b.to?" · until "+fmtShort(b.to):"")})}
   for(const c of st.cards||[])if((!c.from||c.from<=today)&&(!c.to||c.to>=today)||c.from>today)out.push({key:"c:"+c.id,card:c,title:c.title||c.kick||"Your card",kind:"card",img:c.img?(/^https?:/.test(c.img)?c.img:asset(c.img)):"",sub:`${c.secs||10} seconds`+(c.from>today?" · starts "+fmtShort(c.from):"")+(c.to?" · until "+fmtShort(c.to):"")});
   for(const x of STUD)if(!x.film&&!svOld(x))out.push({key:"s:"+x.id,title:x.title||"Studio trailer",kind:"studio",img:"",sub:"Studio trailer"+(x.url?" (link)":" (file on this PC)")});
   const LFF=LF?LF.files:(st.lfNames||[]).map(name=>({name}));   /* the folder, or the names remembered from last time */
-  for(const f of LFF){const v=(st.gm||{})["lf:"+f.name]||"";if(!v.startsWith("new:"))continue;const[t,d]=v.slice(4).split("|");if(d&&d<today)continue;out.push({key:"n:"+f.name,title:t,kind:"lf",img:"",sub:(d?"In cinemas "+fmtShort(d)+" · ":"New film · ")+"Trailer file: "+f.name})}
+  const EG=effGm(st);for(const f of LFF){const v=EG["lf:"+f.name]||"";if(!v.startsWith("new:"))continue;const[t,d]=v.slice(4).split("|");if(d&&d<today)continue;out.push({key:"n:"+f.name,title:t,kind:"lf",img:"",sub:(d?"In cinemas "+fmtShort(d)+" · ":"New film · ")+"Trailer file: "+f.name})}
   for(const f of LFF){const film=lfMatch(f.name);if(!film)continue;const o=out.find(x=>x.key===film.key&&(x.kind==="film"||x.kind==="studio"));if(o){o.kind="lf";o.sub=(o.sub?o.sub+" · ":"")+"Trailer file: "+f.name}}
   const ord=st.order||[],ix=k=>{const i=ord.indexOf(k);return i<0?1e6:i};
   const L=out.map((x,i)=>({...x,i})).sort((a,b)=>ix(a.key)-ix(b.key)||a.i-b.i);return withHidden?L:L.filter(x=>!hid.has(x.key))}
@@ -2178,7 +2219,7 @@ let nfFor=null;
 function nfOpen(id){nfFor=id;$("#nfFile").textContent=id.replace(/^lf:/,"");const cur=(foyState().gm||{})[id]||"";const[t,d]=cur.startsWith("new:")?cur.slice(4).split("|"):[id.replace(/^lf:/,"").replace(/\.(mp4|m4v|mov|webm)$/i,"").replace(/[._]/g," ").replace(/\b(official|final|uk|hd|trailer|teaser|tsr|tlr|\d{3,4}p)\b/gi,"").replace(/\s+-\s*$|\s{2,}/g," ").trim(),""];$("#nfTitle").value=(t&&t===t.toUpperCase()?t.toLowerCase().replace(/(^|\s)([a-z])/g,(m,a,b)=>a+b.toUpperCase()):t)||"";$("#nfDate").value=d||"";$("#nfDlg").hidden=false;$("#nfTitle").focus();$("#nfTitle").select()}
 $("#nfClose").onclick=()=>{$("#nfDlg").hidden=true;lfRender()};
 $("#nfSave").onclick=()=>{const t=$("#nfTitle").value.trim().replace(/\|/g," "),d=$("#nfDate").value;if(!t){toast("Type the film's name");$("#nfTitle").focus();return}
-  const st=foyState(),m={...(st.gm||{})};m[nfFor]="new:"+t+(d?"|"+d:"");st.gm=m;foySave(st);$("#nfDlg").hidden=true;lfRender();renderFoyer();ftab("play");toast(t+" added to the Playlist");
+  const st=foyState(),m={...(st.gm||{})};m[nfFor]="new:"+t+(d?"|"+d:"");st.gm=m;foySave(st);$("#nfDlg").hidden=true;lfRender();renderFoyer();toast(t+" added: its trailer plays on the foyer TVs"+(d?" until it opens":""));
   setTimeout(()=>{const r=[...$$("#plList li")].find(li=>li.textContent.includes(t));if(r){r.scrollIntoView({block:"center",behavior:"smooth"});r.classList.add("plflash")}},400)};
 document.addEventListener("change",e=>{const t=e.target.closest&&e.target.closest("[data-gdmap]");if(!t)return;if(t.value==="__new"){nfOpen(t.dataset.gdmap);return}const st=foyState(),m={...(st.gm||{})};if(t.value)m[t.dataset.gdmap]=t.value;else delete m[t.dataset.gdmap];st.gm=m;foySave(st);gdRender();lfRender();renderFoyer();toast("Saved")});
 /* ---------- Foyer trailers page: four tabs ---------- */
@@ -2193,11 +2234,11 @@ let LF=null,lfErr="";
 let lfTestDir=null;window.__lfTest=d=>{lfTestDir=d;return lfScan()};   /* testing only */
 async function lfScan(ask){const h=lfTestDir||await lfkv("trailerdir").catch(()=>null);if(!h){LF=null;lfRender();return}
   try{let p=await h.queryPermission({mode:"read"});if(p!=="granted"&&ask)p=await h.requestPermission({mode:"read"});if(p!=="granted"){LF=null;lfErr="ask";lfRender();return}
-    const out=[];async function walk(d,depth){for await(const e of d.values()){if(e.kind==="directory"){if(depth<1)await walk(e,depth+1);continue}if(/\.(mp4|m4v|mov|webm)$/i.test(e.name)){let size=0;try{size=(await e.getFile()).size}catch(x){}out.push({id:"lf:"+e.name,name:e.name,size})}}}
-    await walk(h,0);out.sort((a,b)=>a.name.localeCompare(b.name));LF={name:h.name,files:out};lfErr="";
-    try{const st=foyState(),names=out.map(f=>f.name);if(JSON.stringify(st.lfNames||[])!==JSON.stringify(names)){st.lfNames=names;foySave(st)}}catch(e){}}catch(e){LF=null;lfErr=e.message||String(e)}lfRender();try{renderPlaylist()}catch(e){}}
+    const out=[];async function walk(d,depth){for await(const e of d.values()){if(e.kind==="directory"){if(depth<1)await walk(e,depth+1);continue}if(/\.(mp4|m4v|mov|webm)$/i.test(e.name)){let size=0;try{size=(await e.getFile()).size}catch(x){}out.push({id:"lf:"+e.name,name:e.name,size,parent:d})}}}
+    await walk(h,0);out.sort((a,b)=>a.name.localeCompare(b.name));LF={name:h.name,files:out,dir:h};lfErr="";
+    try{const st=foyState(),names=out.map(f=>f.name);if(JSON.stringify(st.lfNames||[])!==JSON.stringify(names)){st.lfNames=names;foySave(st)}}catch(e){}}catch(e){LF=null;lfErr=e.message||String(e)}lfRender();try{renderPlaylist()}catch(e){}try{trRender();if(LF)trHousekeep().then(()=>{try{renderFoyer()}catch(e){}})}catch(e){}}
 const nfLabel=v=>{const[t,d]=String(v).slice(4).split("|");return t+(d?" · opens "+fmtShort(d):"")};
-function lfMatch(name){const st=foyState(),M=st.gm||{},L=gdFilms(),cur=M["lf:"+name];if(cur==="-"||String(cur||"").startsWith("new:"))return null;return cur?L.find(x=>x.key===cur)||null:gdAuto(name,L)}
+function lfMatch(name){const r=lfResolve(name);return r&&r.imc||null}
 function lfRender(){const el=$("#lfList");if(!el)return;$("#lfRefresh").hidden=!LF;$("#lfPick").textContent=LF?"📁 Choose a different folder":"📁 Choose the IMC TRAILERS folder on this PC";
   if(!window.showDirectoryPicker){$("#lfInfo").textContent="Open the hub in Google Chrome or Microsoft Edge to use the trailers folder.";el.innerHTML="";return}
   if(!LF){$("#lfInfo").textContent=lfErr==="ask"?"":lfErr;el.innerHTML=lfErr==="ask"?'<p class="tip">Click <b>↻ Check again</b> (or Choose) to let the hub look in the folder again.</p>':'<p class="tip">Not chosen yet. Click the button and pick <b>Google Drive → My Drive → IMC TRAILERS</b>.</p>';$("#lfRefresh").hidden=lfErr!=="ask";$("#gdcount").textContent="";return}
@@ -2209,7 +2250,7 @@ function lfRender(){const el=$("#lfList");if(!el)return;$("#lfRefresh").hidden=!
       <td>${film||cur.startsWith("new:")?'<span class="ok">✓ Will play</span>':'<span class="no">No film</span>'}</td></tr>`}).join("")}</tbody></table>
     <p class="tip">The foyer PCs look in their copy of the folder every half hour. A file plays once Google Drive has copied it onto that PC. Films with a file show <b>📁 Trailer file</b> in the Playlist.</p>`;
   $("#gdcount").textContent=`${n} of ${LF.files.length} file${LF.files.length===1?"":"s"} matched`}
-$("#lfPick").onclick=async()=>{if(!window.showDirectoryPicker)return;try{const h=await showDirectoryPicker({id:"imc-trailers",mode:"read"});await lfkv("trailerdir",h);await lfScan(true);toast("Folder chosen")}catch(e){if(e&&e.name!=="AbortError")toast("Couldn't use that folder")}};
+$("#lfPick").onclick=async()=>{if(!window.showDirectoryPicker)return;try{const h=await showDirectoryPicker({id:"imc-trailers",mode:"readwrite"});await lfkv("trailerdir",h);await lfScan(true);toast("Folder chosen")}catch(e){if(e&&e.name!=="AbortError")toast("Couldn't use that folder")}};
 $("#lfRefresh").onclick=()=>lfScan(true);
 function plSetOrder(keys){const st=foyState();st.order=keys;foySave(st);renderFoyer()}
 $("#plList").addEventListener("click",e=>{const mv=e.target.closest("[data-plmv]"),rm=e.target.closest("[data-plrm]");const st=foyState(),keys=plItems(st).map(x=>x.key);
@@ -2281,7 +2322,7 @@ async function renderFoyer(){const el=$("#foyList");if(!el)return;
   if(!TRAIL){TRAIL=(await getJson("data/trailers.json"))||{};}STUD=await studGet();liveReady=true;
   const st=foyState(),fl=foyFilms(),chosen=new Set(foyChosen(st).map(f=>f.key));
   $$("input[name=fmode]").forEach(r=>r.checked=r.value===st.mode);$("#fsafe").value=String(st.safe??3.5);$("#fsoon").checked=st.soon;$("#ftrail").checked=st.trail;$("#fsound").checked=st.sound;$("#fsync").checked=st.sync!==false;$("#fcard").value=String(st.card);$("#fbd").value=String(st.bd??3);$("#fpr").checked=st.pr!==false;$("#fstrip").checked=st.strip!==false;$("#fscr").checked=st.scr!==false;if(document.activeElement!==$("#fmsg"))$("#fmsg").value=st.msg||"";
-  wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=st.what==="mine"&&(st.extra||[]).length?"Not playing: only your trailers are on":`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;foyLiveSave();renderSync();$("#fwhat").value=st.what||"both";$("#fmu").value=st.mu||"cinema";$("#fmv").value=String(st.mv??35);renderExtra(st);renderStudio();renderRec(st);renderPlaylist(st);
+  wFreqSync();$("#fopen").href=foyUrl(st);$("#fcount").textContent=st.what==="mine"&&(st.extra||[]).length?"Not playing: only your trailers are on":`${chosen.size} film${chosen.size===1?"":"s"} in the pack`;foyLiveSave();renderSync();$("#fwhat").value=st.what||"both";$("#fmu").value=st.mu||"cinema";$("#fmv").value=String(st.mv??35);renderExtra(st);renderStudio();renderRec(st);renderPlaylist(st);try{trRender()}catch(e){console.error(e)}
   const row=f=>{const sf=foySafety(f,st),t=(TRAIL||{})[f.trailer]||{},nx=f.next?`${f.next.date===todayIso()?"Today":fmtShort(f.next.date)} ${f.next.time}`:f.releaseDate?"Opens "+fmtShort(f.releaseDate):"No upcoming times";
     return`<div class="frow"><input type="checkbox" aria-label="Include ${esc(f.title)}" data-fpick="${esc(f.key)}" ${chosen.has(f.key)?"checked":""} ${sf.ok&&st.mode==="pick"?"":"disabled"}>
       <img class="p" src="${esc(asset(f.posterFile)||f.poster||"")}" alt="" loading="lazy">
@@ -2376,6 +2417,149 @@ function recRateChange(e){const t=e.target.closest("[data-recrate]");if(!t)retur
   toast(t.value?`Rating set to ${t.value}`+(pulled?": taken off the foyer TVs":""):"Rating back to automatic")}
 $("#recgrid").addEventListener("change",recRateChange);$("#recDlgInfo").addEventListener("change",recRateChange);
 $("#recimc").addEventListener("change",()=>renderRec(foyState()));$("#recnew").addEventListener("change",()=>renderRec(foyState()));
+/* ---------- Trailers board: the UK release calendar, imc.ie, YouTube and the IMC TRAILERS folder in one list ---------- */
+let REL=null,trView="all",trFindQ="";
+const relNorm=t=>" "+String(t||"").toLowerCase().replace(/[’‘]/g,"'").replace(/^(.*), (the|a)$/,"$2 $1").replace(/\s+-(\s+.*)?$/,"").replace(/^(disney|pixar|dreamworks|dr\.? seuss|illumination|marvel studios|tim burton)'s?\s+/,"").replace(/\b(sensory|autism friendly|parent and baby)\b/g," ").replace(/&/g," and ").replace(/\(.*?\)|\[.*?\]/g," ").replace(/[^a-z0-9]+/g," ").replace(/^ ?the /," ").replace(/\s+/g," ").trim()+" ";
+const REL_MAJOR=/warner|disney|universal|sony|paramount|lionsgate|studiocanal|entertainment film|altitude|path[eé]|searchlight|vertigo|amazon mgm|apple original|elevation|black bear|signature|icon film/i;
+const relSafe=c=>!c||(FSAFE.bbfc).includes(String(c).toUpperCase());
+async function relLoad(){if(!REL)REL=(await getJson("data/releases.json"))||{items:[]};if(!REC)REC=(await getJson("data/recommended.json"))||{items:[]};return REL}
+function relFind(title){const n=relNorm(title);if(n.trim().length<2)return null;const T=todayIso();return((REL&&REL.items)||[]).filter(r=>relNorm(r.t)===n).sort((a,b)=>Math.abs(Date.parse(a.d)-Date.parse(T))-Math.abs(Date.parse(b.d)-Date.parse(T)))[0]||null}
+function recYt(title){const n=relNorm(title);const L=((REC&&REC.items)||[]).filter(x=>relNorm(x.film||"")===n&&!FRED.test(x.title||"")).sort((a,b)=>String(b.published||"").localeCompare(String(a.published||"")));return L[0]?{id:L[0].id,title:L[0].title}:null}
+const relById=id=>((REL&&REL.items)||[]).find(r=>r.id===id)||null;
+/* which film a file in the folder is the trailer for: your choice first, then the name (films on imc.ie first, then the release calendar) */
+function trImc(){const m=new Map();for(const f of foyFilms()){const t=f.title.replace(/\s+-(\s+.*)?$/,"").trim();if(!m.has(f.key))m.set(f.key,{key:f.key,title:t})}return[...m.values()].sort((a,b)=>a.title.localeCompare(b.title))}
+function lfResolve(name){const st=foyState(),cur=(st.gm||{})["lf:"+name]||"",imc=trImc();
+  if(cur==="-")return{off:true};
+  if(cur.startsWith("new:")){const[t,d]=cur.slice(4).split("|"),f=gdAuto(t,imc);return f?{key:f.key,imc:f,set:true}:{key:"n:"+name,custom:{t,d:d||""},set:true}}
+  if(cur.startsWith("rel:")){const r=relById(cur.slice(4));if(r){const f=imc.find(x=>relNorm(x.title)===relNorm(r.t));return f?{key:f.key,imc:f,set:true}:{key:"r:"+r.id,rel:r,set:true}}}
+  if(cur){const f=imc.find(x=>x.key===cur);if(f)return{key:f.key,imc:f,set:true}}
+  const f=gdAuto(name,imc);if(f)return{key:f.key,imc:f};
+  const T=todayIso(),from=addDays(T,-120),R=((REL&&REL.items)||[]).filter(r=>r.d>=from&&!r.event);
+  const n=gdNorm(name),c=n.replace(/ /g,""),hit=R.map(r=>({r,t:gdNorm(r.t.replace(/\(.*?\)/g,"")).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length).find(x=>n.includes(" "+x.t+" ")||(x.t.length>=6&&c.includes(x.t.replace(/ /g,""))));
+  const asImc=r=>{const f=imc.find(x=>relNorm(x.title)===relNorm(r.t));return f?{key:f.key,imc:f}:{key:"r:"+r.id,rel:r}};
+  if(hit)return asImc(hit.r);
+  const fw=new Set(n.trim().split(" ")),SW=/^(the|a|an|of|and|in|on|at|to|for|part)$/,h1=imc.map(f=>({f,w:gdNorm(f.title).trim().split(" ").filter(w=>w&&!SW.test(w))})).filter(x=>x.w.length>=2&&x.w.every(w=>fw.has(w))).sort((a,b)=>b.w.length-a.w.length)[0];
+  if(h1)return{key:h1.f.key,imc:h1.f};
+  const h2=R.map(r=>({r,w:gdNorm(r.t.replace(/\(.*?\)/g,"")).trim().split(" ").filter(w=>w&&!SW.test(w))})).filter(x=>x.w.length>=2&&x.w.every(w=>fw.has(w))).sort((a,b)=>b.w.length-a.w.length)[0];
+  return h2?asImc(h2.r):null}
+const lfList=()=>LF?LF.files:(foyState().lfNames||[]).map(name=>({name,id:"lf:"+name}));
+/* the gm map the foyer TVs get: every file → an imc.ie film key, "new:Title|date" for a release that isn't on imc.ie, or "-" */
+function effGm(st){const out={},T=todayIso(),R=st.rel||{};let cand=null;for(const f of lfList()){const r=lfResolve(f.name);if(!r){const v=(st.gm||{})["lf:"+f.name];if(v&&!String(v).startsWith("rel:"))out["lf:"+f.name]=v;continue}
+    if(r.off){out["lf:"+f.name]="-";continue}
+    let t,d;if(r.imc){cand=cand||new Set(foyChosen({...st,hide:[]}).map(x=>x.key));if(cand.has(r.imc.key)){out["lf:"+f.name]=r.imc.key;continue}   /* a coming-soon film on imc.ie: its file plays as "in cinemas <date>" */
+      const ff=foyFilms().find(x=>x.key===r.imc.key)||{},sf=ff.title?foySafety(ff,st):{ok:true};if(!sf.ok&&!sf.review&&!/no trailer|no longer/i.test(sf.label)){out["lf:"+f.name]="-";continue}   /* rated too high: the file stays off */
+      t=r.imc.title;d=ff.releaseDate||((relFind(t)||{}).d)||"";if(d&&d<T&&ff.next)d=""}   /* showing now but no YouTube trailer: the file plays on its own */else{if(r.rel&&!relSafe(r.rel.cert)){out["lf:"+f.name]="-";continue}t=r.rel?r.rel.t:r.custom.t;d=r.rel?r.rel.d:r.custom.d}
+    const k=r.key,on=!R[k]||R[k].on!==false;if(on&&(!d||d>=T))out["lf:"+f.name]="new:"+t.replace(/\|/g," ")+(d?"|"+d:"");else out["lf:"+f.name]="-"}return out}
+/* YouTube trailers switched on for releases that aren't on imc.ie (and have no file): they play as "your trailers" until the film opens */
+function relX(st){const out=[],T=todayIso(),R=st.rel||{},withFile=new Set(lfList().map(f=>lfResolve(f.name)).filter(r=>r&&!r.off).map(r=>r.key));
+  for(const[k,v]of Object.entries(R)){if(!v||!v.on||withFile.has(k))continue;let t,d,by="",yt=v.yt;
+    if(k.startsWith("r:")){const r=relById(k.slice(2));if(!r)continue;t=r.t;d=r.d;by=r.dist;yt=yt||r.yt||(recYt(r.t)||{}).id}else{const f=foyFilms().find(x=>x.key===k);if(!f)continue;t=f.title;d=f.releaseDate||((relFind(f.title)||{}).d)||"";yt=yt||ytIdOf(f.trailer)}
+    if(yt&&(!d||d>=T))out.push({id:yt,title:t,by,...(d?{releaseDate:d}:{}),rel:k})}return out}
+/* a trailer for an imc.ie film with none: the release calendar's, or the newest from the distributor's channel */
+function autoLink(f){const r=relFind(f.title),id=(r&&r.yt)||(recYt(f.title)||{}).id;return id?{id,title:"",auto:true}:null}
+function trRows(st){const T=todayIso(),fl=foyFilms(),cand=new Set(foyChosen({...st,hide:[]}).map(f=>f.key)),hid=new Set(st.hide||[]),R=st.rel||{},rows=[],used=new Set(),files={};
+  for(const f of lfList()){const r=lfResolve(f.name);if(r&&!r.off)(files[r.key]=files[r.key]||[]).push(f.name)}
+  const seen=new Set();
+  const in7=addDays(T,7);
+  for(const f of fl){const base=f.title.replace(/\s+-(\s+.*)?$/,"").replace(/^(sensory|autism friendly|parent (and|&) baby)\s+/i,"").trim(),nk=relNorm(base);const rel=relFind(base);if(rel)used.add(rel.id);
+    if(seen.has(nk)&&!files[f.key])continue;seen.add(nk);   /* one row per film (not "- Fancy Dress", "Sensory ..." too) */
+    const sf=foySafety(f,st),d=f.releaseDate||(rel&&rel.d)||"",isCand=cand.has(f.key),yt=ytIdOf(f.trailer),fl0=files[f.key]||[];
+    if(!f.next&&d&&d<T&&!fl0.length)continue;
+    const unsafe=!sf.ok&&!sf.review&&!/no trailer|no longer/i.test(sf.label),can=!unsafe,on=isCand?!hid.has(f.key):fl0.length?!(R[f.key]&&R[f.key].on===false):!!(R[f.key]&&R[f.key].on);
+    rows.push({k:f.key,kind:"imc",t:base,d,cert:f.cert||"",dist:rel?rel.dist:"",poster:asset(f.posterFile)||f.poster||"",showing:!!(f.next&&f.next.date<=in7),next:f.next,sf,cand:isCand,on:on&&can,can,yt,ytAuto:!!(f.mine&&f.mine.auto),files:fl0,f,minor:unsafe})}
+  for(const r of(REL&&REL.items)||[]){if(used.has(r.id)||r.d<addDays(T,-3)||r.d>addDays(T,150))continue;const k="r:"+r.id,fl0=files[k]||[],v=R[k]||{};
+    const yt=v.yt||r.yt||(recYt(r.t)||{}).id||"",safe=relSafe(r.cert),on=fl0.length?v.on!==false:!!v.on;
+    const big=REL_MAJOR.test(r.dist)||/100\+|300\+/.test(r.loc||""),side=r.event||/anniversary|re-?issue|restoration|re-?release|\(concert|\(theatre|live in /i.test(r.t);
+    rows.push({k,kind:"rel",rel:r,t:r.t,d:r.d,cert:r.cert,dist:r.dist,poster:r.poster||"",showing:false,on:on&&safe,can:safe,yt,files:fl0,minor:!safe||!fl0.length&&!on&&(side||!big)})}
+  for(const f of lfList()){const r=lfResolve(f.name);if(!r||!r.custom)continue;const k=r.key,v=R[k]||{};if(r.custom.d&&r.custom.d<addDays(T,-3))continue;
+    rows.push({k,kind:"custom",t:r.custom.t,d:r.custom.d,cert:"",dist:"Your release",poster:"",showing:false,on:v.on!==false,can:true,yt:v.yt||"",files:[f.name]})}
+  return rows}
+function trState(x){if(!x.can)return{c:"no",l:x.sf?x.sf.label.replace(/: may contain.*$/,": not for the foyer"):"Rated "+x.cert+": not for the foyer"};
+  if(!x.yt&&!x.files.length)return{c:"warn",l:"Needs a trailer"};
+  if(!x.on&&trUnrated(x))return{c:"warn",l:"Not rated yet: watch first"};
+  return x.on?{c:"on",l:"On the TVs"}:{c:"off",l:"Off"}}
+/* files that are finished with (film opened over 3 days ago and isn't on imc.ie, or was matched before and has gone) and files no one has matched */
+function trSort(st){const T=todayIso(),seen=st.tfSeen||{},old=[],lost=[];
+  const fresh=IMC&&IMC.updated&&Date.now()-Date.parse(IMC.updated)<2*864e5&&trImc().length>=4&&REL&&(REL.items||[]).length>20;
+  for(const f of lfList()){const r=lfResolve(f.name);
+    if(r&&!r.off){const d=r.rel?r.rel.d:r.custom?r.custom.d:"";if(!r.imc&&d&&d<addDays(T,-3))old.push({f,why:(r.rel?r.rel.t:r.custom.t)+" opened "+fmtShort(d)+" and isn't on imc.ie"});continue}
+    if(r&&r.off)continue;if(seen[f.name])old.push({f,why:seen[f.name]+" has finished at IMC"});else lost.push(f)}
+  return{old:fresh?old:[],lost}}
+function trRemember(st){const s={...(st.tfSeen||{})};let ch=false;for(const f of lfList()){const r=lfResolve(f.name);if(r&&!r.off){const t=r.imc?r.imc.title:r.rel?r.rel.t:r.custom.t;if(s[f.name]!==t){s[f.name]=t;ch=true}}}
+  const names=new Set(lfList().map(f=>f.name));for(const n of Object.keys(s))if(!names.has(n)){delete s[n];ch=true}if(ch){st.tfSeen=s;foySave(st)}}
+async function trDelete(list,ask){if(!LF||!LF.dir||!list.length)return 0;const h=LF.dir;let p=await h.queryPermission({mode:"readwrite"});if(p!=="granted"&&ask)p=await h.requestPermission({mode:"readwrite"});if(p!=="granted")return-1;
+  const st=foyState(),log=[...(st.tfLog||[])];let n=0;for(const{f,why}of list){try{await(f.parent||h).removeEntry(f.name);n++;log.unshift({n:f.name,why,at:todayIso()});const m={...(st.gm||{})};delete m["lf:"+f.name];st.gm=m}catch(e){}}
+  st.tfLog=log.slice(0,12);foySave(st);return n}
+let trBusy=false;
+async function trHousekeep(){if(trBusy||!LF)return;trBusy=true;try{await relLoad();const st=foyState();const{old}=trSort(st);trRemember(st);
+    if(old.length){const n=await trDelete(old,false);if(n>0){toast(`Deleted ${n} finished trailer file${n===1?"":"s"} from Google Drive`);await lfScan();return}}
+    const R={...(st.rel||{})},T=todayIso();let ch=false;for(const k of Object.keys(R))if(k.startsWith("r:")){const r=relById(k.slice(2));if(!r||r.d<addDays(T,-14)){delete R[k];ch=true}}if(ch){st.rel=R;foySave(st)}}finally{trBusy=false}}
+function trRender(){const box=$("#trList");if(!box||view!=="foyer")return;if(!REL||!REC){relLoad().then(trRender);box.innerHTML='<p class="trempty">Loading the release calendar…</p>';return}
+  const st=foyState(),T=todayIso(),rows=trRows(st),{old,lost}=trSort(st);
+  $("#trSrc").innerHTML=`UK release dates: <a href="https://filmdistributorsassociation.com/release-schedule/past-present-and-future-releases/" target="imc-web">Film Distributors' Association</a>${REL.updated?" · checked "+esc(recAgo(REL.updated)):""} · showtimes: imc.ie`;
+  const fd=$("#trFolder");if(!window.showDirectoryPicker)fd.innerHTML='<span class="tip" style="margin:0;border:0;padding:0">Open the hub in Chrome or Edge to use the trailers folder</span>';
+  else fd.innerHTML=LF?`<span class="ok">📁 ${esc(LF.name)}</span><span>${LF.files.length} file${LF.files.length===1?"":"s"}</span><button class="btn small" type="button" data-trscan>↻ Check</button>`:`<button class="btn small primary" type="button" data-trpick>📁 Connect the IMC TRAILERS folder</button>${lfErr==="ask"?'<button class="btn small" type="button" data-trscan>↻ Allow again</button>':""}`;
+  /* alerts: files without a film, finished files to delete, and what was deleted */
+  const imc=trImc().filter((x,i,a)=>a.findIndex(y=>relNorm(y.title)===relNorm(x.title))===i),soon=((REL&&REL.items)||[]).filter(r=>r.d>=addDays(T,-7)&&r.d<=addDays(T,200)&&!r.event);
+  const opts=`<option value="">Choose the film…</option><optgroup label="Showing at IMC">${imc.map(x=>`<option value="${esc(x.key)}">${esc(x.title)}</option>`).join("")}</optgroup><optgroup label="UK releases">${soon.map(r=>`<option value="rel:${esc(r.id)}">${esc(r.t)} · ${esc(fmtShort(r.d))}</option>`).join("")}</optgroup><option value="__new">➕ Create a custom release…</option><option value="-">Don't use this file</option>`;
+  let A="";
+  if(lost.length)A+=`<div class="tralert warn" role="alert"><div class="h"><b>⚠ ${lost.length} trailer file${lost.length===1?"":"s"} in the folder ${lost.length===1?"doesn't":"don't"} match a film</b><span class="tip" style="margin:0;border:0;padding:0">Pick its film, or create a custom release</span></div>${lost.map(f=>`<div class="trfile"><code>${esc(f.name)}</code><select data-gdmap="lf:${esc(f.name)}" aria-label="Film for ${esc(f.name)}">${opts}</select></div>`).join("")}</div>`;
+  if(old.length)A+=`<div class="tralert warn"><div class="h"><b>🗑 ${old.length} finished trailer${old.length===1?"":"s"} to delete from Google Drive</b><button class="btn small primary" type="button" data-trdel>Delete ${old.length===1?"it":"them"}</button></div><div class="tip" style="margin:0;border:0;padding:0">${old.map(o=>`${esc(o.f.name)}: ${esc(o.why)}`).join("<br>")}<br>Chrome asks once to let the hub change the folder; then this happens by itself.</div></div>`;
+  const log=(st.tfLog||[]).filter(x=>x.at>=addDays(T,-7));if(log.length&&!st.tfLogHide)A+=`<div class="tralert info"><div class="h"><b>🗑 Deleted this week (finished films)</b><button class="btn small ghost" type="button" data-trlogx>Hide</button></div><div class="tip" style="margin:0;border:0;padding:0">${log.map(x=>`${esc(x.n)}: ${esc(x.why)} (${esc(fmtShort(x.at))})`).join("<br>")}<br>Deleted files stay in Google Drive's Bin for 30 days if you need one back.</div></div>`;
+  $("#trAlerts").innerHTML=A;
+  /* filters */
+  const showAll=$("#trAll").checked,base=rows.filter(x=>showAll||!x.minor),q=relNorm(trFindQ).trim();
+  const C={all:base.length,on:base.filter(x=>x.on).length,now:base.filter(x=>x.showing).length,soon:base.filter(x=>!x.showing).length,need:base.filter(x=>x.can&&!x.yt&&!x.files.length).length};
+  $("#trChips").innerHTML=[["all","All"],["on","On the TVs"],["now","Showing at IMC"],["soon","Coming soon"],["need","Needs a trailer"]].map(([k,l])=>`<button type="button" data-trview="${k}" aria-pressed="${trView===k}">${l}<span>${C[k]}</span></button>`).join("");
+  let L=base.filter(x=>trView==="all"||(trView==="on"&&x.on)||(trView==="now"&&x.showing)||(trView==="soon"&&!x.showing)||(trView==="need"&&x.can&&!x.yt&&!x.files.length));
+  if(q)L=L.filter(x=>relNorm(x.t).includes(q));
+  const now=L.filter(x=>x.showing).sort((a,b)=>(a.next.date+a.next.time).localeCompare(b.next.date+b.next.time)),later=L.filter(x=>!x.showing).sort((a,b)=>(a.d||(a.next&&a.next.date)||"9").localeCompare(b.d||(b.next&&b.next.date)||"9")||a.t.localeCompare(b.t));
+  const day=d=>{if(!d)return'<div class="trdate"><small>Date</small><b>?</b></div>';const x=new Date(d+"T12:00");return`<div class="trdate"><small>${x.toLocaleDateString("en-GB",{month:"short"})}</small><b>${x.getDate()}</b><small>${x.toLocaleDateString("en-GB",{weekday:"short"})}</small></div>`};
+  const row=x=>{const s=trState(x),when=x.next?"Next show "+(x.next.date===T?"today ":fmtShort(x.next.date)+" ")+x.next.time:x.d?(x.d<=T?"Opened ":"In cinemas ")+fmtShort(x.d):"No date";
+    const src=(x.files.length?`<span class="trc file" title="${esc(x.files.join(", "))}">📁 File</span>`:"")+(x.yt?`<span class="trc yt">▶ YouTube</span>`:"")+"";
+    return`<div class="trrow" data-trrow="${esc(x.k)}" tabindex="0" role="button" aria-label="${esc(x.t)}: trailer details">${day(x.d&&x.d>T||!x.next?x.d:x.d||x.next.date)}${x.poster?`<img src="${esc(x.poster)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'trp0'}))">`:'<div class="trp0"></div>'}
+      <div class="t"><b>${esc(x.t)}</b><div class="m">${esc([x.cert,x.dist,when].filter(Boolean).join(" · "))}</div></div>
+      <div class="src">${src}</div><div class="tv"><span class="trc ${s.c}">${esc(s.l)}</span><label class="trsw" title="On the foyer TVs"><input type="checkbox" data-tron="${esc(x.k)}" ${x.on?"checked":""} ${x.can&&(x.yt||x.files.length)?"":"disabled"} aria-label="${esc(x.t)} on the foyer TVs"><span></span></label></div></div>`};
+  box.innerHTML=(now.length?`<div class="trsec">Showing at IMC now</div>${now.map(row).join("")}`:"")+(later.length?`<div class="trsec">Coming soon and new UK releases</div>${later.map(row).join("")}`:"")+(!now.length&&!later.length?'<p class="trempty">Nothing here. Try “All”, or tick “Show all films”.</p>':"")+(!showAll&&rows.some(x=>x.minor)?`<p class="plhint">Hidden: ${rows.filter(x=>x.minor).length} films rated too high for the foyer, smaller releases, events and re-releases. Tick <b>Show all films</b> to see them.</p>`:"")}
+const trUnrated=x=>x.kind==="imc"?!!(x.sf&&x.sf.review):x.kind==="rel"&&!x.cert&&!(foyState().ok||[]).includes(x.k);
+function trToggle(k,on){const st=foyState(),x=trRows(st).find(r=>r.k===k);if(!x)return;
+  if(on&&trUnrated(x)){if(!confirm(x.t+" isn't rated yet.\n\nHave you watched the trailer, and is it fine for the foyer?")){renderFoyer();return}st.ok=[...new Set([...(st.ok||[]),k])];if(x.kind==="imc"){foySave(st);const y=trRows(st).find(r=>r.k===k);if(y&&y.cand){st.hide=(st.hide||[]).filter(h=>h!==k);foySave(st);renderFoyer();toast(x.t+": on the foyer TVs");return}}}
+  if(x.kind==="imc"&&x.cand){if(st.mode==="pick"){st.pick=on?[...new Set([...st.pick,k])]:st.pick.filter(y=>y!==k)}st.hide=on?(st.hide||[]).filter(y=>y!==k):[...new Set([...(st.hide||[]),k])]}
+  else{const R={...(st.rel||{})};R[k]={...(R[k]||{}),on};st.rel=R}
+  foySave(st);renderFoyer();toast(on?x.t+": on the foyer TVs":x.t+": off the foyer TVs")}
+function trOpen(k){const st=foyState(),x=trRows(st).find(r=>r.k===k);if(!x)return;const s=trState(x);trDlgK=k;
+  $("#trDlgT").textContent=x.t;$("#trDlgM").textContent=[x.cert||"Not rated yet",x.dist,x.showing?"Showing at IMC":x.d?"In cinemas "+fmtShort(x.d):""].filter(Boolean).join(" · ");
+  const files=lfList(),mine=new Set(x.files);
+  $("#trDlgB").innerHTML=`<div class="trsect" style="border:0;padding-top:0;margin-top:10px"><div class="row"><span class="trc ${s.c}">${esc(s.l)}</span><label class="plswitch"><input type="checkbox" data-tron="${esc(k)}" ${x.on?"checked":""} ${x.can&&(x.yt||x.files.length)?"":"disabled"}><span>Play on the foyer TVs</span></label></div>
+      ${x.sf&&x.sf.review?`<label class="check" style="margin-top:8px"><input type="checkbox" data-fok="${esc(k)}"> I've watched the trailer; it's fine for the foyer</label>`:""}</div>
+    <div class="trsect"><h3><span class="trc file">📁 File</span> Trailer file in Google Drive</h3>${LF||files.length?`<select data-trfile="${esc(k)}" aria-label="Trailer file"><option value="">None</option>${files.map(f=>{const r=lfResolve(f.name),other=r&&!r.off&&r.key!==k?" (now: "+(r.imc?r.imc.title:r.rel?r.rel.t:r.custom.t)+")":"";return`<option value="${esc(f.name)}" ${mine.has(f.name)?"selected":""}>${esc(f.name)}${esc(other)}</option>`}).join("")}</select><p class="tip" style="border:0;padding:0;margin:6px 0 0">When a film has a file, the TVs play the file instead of YouTube.</p>`:`<p class="tip" style="border:0;padding:0;margin:0">Connect the IMC TRAILERS folder (top of the list) to use trailer files.</p>`}</div>
+    <div class="trsect"><h3><span class="trc yt">▶ YouTube</span> YouTube trailer</h3>${x.yt?`<div class="trthumb"><img src="https://i.ytimg.com/vi/${esc(x.yt)}/mqdefault.jpg" alt=""><div><a class="btn small" href="https://www.youtube.com/watch?v=${esc(x.yt)}" target="imc-web">▶ Watch ↗</a>${x.ytAuto?'<div class="tip" style="border:0;padding:0;margin:6px 0 0">Found automatically (imc.ie has none)</div>':""}</div></div>`:'<p class="tip" style="border:0;padding:0;margin:0 0 8px">No YouTube trailer found yet.</p>'}
+      <form class="row" data-tryt="${esc(k)}"><input type="url" placeholder="Paste a different YouTube link" aria-label="YouTube link" required><button class="btn small primary">Use</button><a class="btn small ghost" href="https://www.youtube.com/results?search_query=${encodeURIComponent(x.t+" official trailer UK")}" target="imc-web">Find on YouTube ↗</a></form>
+      ${(x.kind==="imc"&&st.links&&st.links[k])||(x.kind!=="imc"&&st.rel&&st.rel[k]&&st.rel[k].yt)?`<button class="btn small ghost" type="button" data-trytreset="${esc(k)}" style="margin-top:8px">Use the original trailer again</button>`:""}</div>`;
+  $("#trDlg").hidden=false;$("#trDlgX").focus()}
+let trDlgK=null;const trClose=()=>{$("#trDlg").hidden=true;trDlgK=null};
+$("#trDlgX").onclick=trClose;$("#trDlg").addEventListener("click",e=>{if(e.target===$("#trDlg"))trClose()});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#trDlg").hidden)trClose()});
+document.addEventListener("click",async e=>{const t=e.target;if(!t.closest)return;
+  if(t.closest("[data-trpick]")){$("#lfPick").click();return}if(t.closest("[data-trscan]")){lfScan(true);return}
+  const v=t.closest("[data-trview]");if(v){trView=v.dataset.trview;trRender();return}
+  if(t.closest("[data-trlogx]")){const st=foyState();st.tfLogHide=true;foySave(st);trRender();return}
+  if(t.closest("[data-trdel]")){const{old}=trSort(foyState()),n=await trDelete(old,true);if(n<0)toast("Chrome didn't allow it: click Delete again and choose Allow");else{toast(`Deleted ${n} file${n===1?"":"s"}`);const st=foyState();delete st.tfLogHide;foySave(st);await lfScan()}return}
+  const rs=t.closest("[data-trytreset]");if(rs){const st=foyState(),k=rs.dataset.trytreset;if(st.links&&st.links[k]){const L={...st.links};delete L[k];st.links=L}if(st.rel&&st.rel[k]){const R={...st.rel};R[k]={...R[k]};delete R[k].yt;st.rel=R}foySave(st);renderFoyer();trOpen(k);toast("Back to the original trailer");return}
+  const r=t.closest("[data-trrow]");if(r&&!t.closest(".trsw")){trOpen(r.dataset.trrow)}});
+document.addEventListener("keydown",e=>{const r=e.target.closest&&e.target.closest("[data-trrow]");if(r&&(e.key==="Enter"||e.key===" ")&&e.target===r){e.preventDefault();trOpen(r.dataset.trrow)}});
+document.addEventListener("change",e=>{const t=e.target;if(!t.closest)return;
+  if(t.dataset.tron){trToggle(t.dataset.tron,t.checked);if(trDlgK)trOpen(trDlgK);return}
+  if(t.id==="trAll"){trRender();return}
+  if(t.dataset.trfile!==undefined&&t.matches("[data-trfile]")){const k=t.dataset.trfile,st=foyState(),m={...(st.gm||{})},x=trRows(st).find(r=>r.k===k);if(!x)return;
+    for(const n of x.files)m["lf:"+n]="-";   /* the old file isn't this film's any more */
+    if(t.value){m["lf:"+t.value]=x.kind==="imc"?k:x.kind==="rel"?"rel:"+x.rel.id:(st.gm||{})["lf:"+x.files[0]]||"new:"+x.t+(x.d?"|"+x.d:"")}
+    st.gm=m;foySave(st);renderFoyer();trOpen(k);toast(t.value?"Trailer file set":"File taken off")}});
+document.addEventListener("submit",async e=>{const f=e.target.closest&&e.target.closest("[data-tryt]");if(!f)return;e.preventDefault();const k=f.dataset.tryt,id=ytIdOf(f.querySelector("input").value);if(!id){toast("That isn't a YouTube link");return}
+  const info=await ytInfo(id);if(info.bad){toast("That video can't be played outside YouTube");return}if(FRED.test(info.title||"")){toast("That looks like a red-band trailer: not for the foyer");return}
+  const st=foyState(),x=trRows(st).find(r=>r.k===k);if(!x)return;if(x.kind==="imc")st.links={...(st.links||{}),[k]:{id,title:info.title||""}};else{const R={...(st.rel||{})};R[k]={...(R[k]||{}),yt:id};st.rel=R}
+  foySave(st);renderFoyer();trOpen(k);toast("YouTube trailer set")});
+$("#trFind").addEventListener("input",e=>{trFindQ=e.target.value;trRender()});
+
 /* your own trailers: any YouTube trailers, played in your order after the films (or on their own) */
 const XMAX=40;
 function renderExtra(st){const xs=st.extra||[],el=$("#xlist");$("#xcount").textContent=xs.length?`${xs.length} trailer${xs.length===1?"":"s"}`:"";
