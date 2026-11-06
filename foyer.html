@@ -266,7 +266,7 @@ async function localScan(){const h=localTestDir||await sget("trailerdir");if(!h|
   try{await walk(h,0);out.sort((a,b)=>a.name.localeCompare(b.name));LOCAL=out;localFiles=map;localMsg=""}catch(e){localMsg="Couldn't read the trailers folder: "+(e.message||e)}}
 /* the user's one click (needed for sound after a restart) also re-allows the folder if Chrome asks again */
 async function localAllow(){try{const h=await sget("trailerdir");if(h&&h.requestPermission&&(await h.queryPermission({mode:"read"}))!=="granted"){if((await h.requestPermission({mode:"read"}))==="granted"){await localScan();plan=null}}}catch(e){}}
-function localAssign(list){const M=gmap(),out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
+function localAssign(list){const M=Object.fromEntries(Object.entries(gmap()).filter(([k,v])=>!String(v).startsWith("new:"))),out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
   for(const d of LOCAL){const m=M[d.id];if(m==="-")continue;let f=m&&list.find(x=>x.key===m);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));f=hit&&hit.f}if(f&&!out.has(f.key))out.set(f.key,d)}return out}   /* the hub's choice (gm, "lf:<file name>") or the film named in the file name */
 function driveAssign(list){const M=gmap(),out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
   for(const d of DRIVE){if(M[d.id]==="-")continue;let f=M[d.id]&&list.find(x=>x.key===M[d.id]);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));f=hit&&hit.f}
@@ -379,6 +379,9 @@ function queueList(){const all=LOUNGE?films().filter(f=>f.luxxToo&&f.luxxS.lengt
   list.sort((a,b)=>{const ua=upcoming(a)[0],ub=upcoming(b)[0];return(ua?ua.date+ua.time:"9"+(a.releaseDate||"")).localeCompare(ub?ub.date+ub.time:"9"+(b.releaseDate||""))});
   if(ONLY)list=[];if(!TRAILERS)return list;
   const seen=new Set(list.map(f=>ytId(f.trailer)));for(const x of EXTRA)if(!seen.has(x.id)&&!(x.rel&&x.rel<londonNow().date)){seen.add(x.id);list.push({key:"x:"+x.id,title:x.title||(x.video?"Video":"Coming soon"),trailer:"https://www.youtube.com/watch?v="+x.id,extra:true,rel:x.rel,video:x.video,sessions:[]})}
+  /* trailer files the manager set as a new film (not on imc.ie yet): "new:<title>|<opening date>" */
+  {const M=gmap(),T=londonNow().date;for(const d of LOCAL){const m=M[d.id];if(!m||m.slice(0,4)!=="new:")continue;const[title,rel]=m.slice(4).split("|");if(rel&&rel<T)continue;
+    list.push({key:"n:"+d.id.slice(3),title:title||"Coming soon",trailer:"studio:"+d.id,studio:{id:d.id,local:d.id,len:d.dur,title},extra:true,rel:rel||"",sessions:[]})}}
   for(const x of STUDIO)if(!x.film&&!seen.has("s"+x.id)){seen.add("s"+x.id);list.push({key:"s:"+x.id,title:x.title||"Coming soon",trailer:"studio:"+x.id,studio:x,extra:true,sessions:[]})}
   return list}
 
@@ -631,7 +634,7 @@ async function playStudio(f,at=0){const v=$("#svid"),x=f.studio;let src=x.url||"
   else if(!src){const b=await sget("studiofile:"+x.id);if(!b){timer=setTimeout(next,300);return}obj=src=URL.createObjectURL(b)}
   try{if(player&&player.pauseVideo)player.pauseVideo()}catch(e){}
   const u=f.extra?[]:upcoming(f),nx=u[0],n=londonNow();
-  $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:f.extra?"<small>COMING SOON</small>":"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
+  $("#tlabel").innerHTML=esc(cleanTitle(f.title))+(nx?`<small>${nx.date===n.date?"TODAY":shortDay(nx.date).toUpperCase()} ${u.filter(s=>s.date===nx.date).slice(0,4).map(s=>s.time).join(" · ")}</small>`:f.rel?`<small>IN CINEMAS ${shortDay(f.rel).toUpperCase()}</small>`:f.extra?"<small>COMING SOON</small>":"");$("#tlabel").style.opacity=1;setTimeout(()=>$("#tlabel").style.opacity=0,6000);
   const q=nx&&nx.book?qrSvg(nx.book):"";$("#tqr").innerHTML=q?q+`<span>Scan to book<b>${nx.time}</b></span>`:"";$("#tqr").style.opacity=0;
   $("#yt").style.visibility="hidden";v.hidden=false;show("yt-wrap");progress(0.01);
   const cur=$("#ytcurtain");cur.classList.remove("off");let over=false;

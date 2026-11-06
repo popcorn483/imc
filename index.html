@@ -1103,6 +1103,16 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
     <div class="row-btns" style="margin-top:14px"><button class="btn primary" type="button" id="pbSave">Save priceboard</button><button class="btn" type="button" id="pbCopy" hidden>Make a copy</button><button class="btn ghost danger" type="button" id="pbDel" hidden>Delete priceboard</button></div>
   </div>
 </div>
+<div class="modal" id="nfDlg" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="nfDlgT" style="width:min(520px,100%)">
+    <div class="ph"><h2 id="nfDlgT">New film</h2><button class="btn small ghost" id="nfClose">Close</button></div>
+    <p class="tip" style="margin-top:0">For a film that isn't on imc.ie yet. The trailer plays on the foyer TVs with “In cinemas” and the date, until the film opens (then imc.ie takes over).</p>
+    <p class="tip">File: <b id="nfFile"></b></p>
+    <label class="field"><span class="flabel">Film name</span><input id="nfTitle" maxlength="60" placeholder="e.g. Avatar: Fire and Ash"></label>
+    <label class="field"><span class="flabel">Opens on <small>(optional)</small></span><input id="nfDate" type="date"></label>
+    <div class="row-btns" style="margin-top:12px"><button class="btn primary" type="button" id="nfSave">Save</button></div>
+  </div>
+</div>
 <div class="modal" id="vidDlg" hidden>
   <div class="panel" role="dialog" aria-modal="true" aria-labelledby="vidDlgT" style="width:min(560px,100%)">
     <div class="ph"><h2 id="vidDlgT">Add a YouTube video</h2><button class="btn small ghost" id="vidClose">Close</button></div>
@@ -1914,6 +1924,7 @@ function plItems(st,withHidden){const out=[],today=todayIso(),hid=new Set(st.hid
   for(const b of st.boards||[])if((!b.from||b.from<=today)&&(!b.to||b.to>=today)||b.from>today){const n=(b.sections||[]).reduce((a,x)=>a+(x.items||[]).filter(i=>i.n).length,0);out.push({key:"b:"+b.id,board:b,title:b.title||"Priceboard",kind:"price",img:"",sub:`${n} item${n===1?"":"s"} · ${b.secs||20} seconds`+(b.from>today?" · starts "+fmtShort(b.from):"")+(b.to?" · until "+fmtShort(b.to):"")})}
   for(const c of st.cards||[])if((!c.from||c.from<=today)&&(!c.to||c.to>=today)||c.from>today)out.push({key:"c:"+c.id,card:c,title:c.title||c.kick||"Your card",kind:"card",img:c.img?(/^https?:/.test(c.img)?c.img:asset(c.img)):"",sub:`${c.secs||10} seconds`+(c.from>today?" · starts "+fmtShort(c.from):"")+(c.to?" · until "+fmtShort(c.to):"")});
   for(const x of STUD)if(!x.film&&!svOld(x))out.push({key:"s:"+x.id,title:x.title||"Studio trailer",kind:"studio",img:"",sub:"Studio trailer"+(x.url?" (link)":" (file on this PC)")});
+  if(LF&&LF.files.length)for(const f of LF.files){const v=(st.gm||{})["lf:"+f.name]||"";if(!v.startsWith("new:"))continue;const[t,d]=v.slice(4).split("|");if(d&&d<today)continue;out.push({key:"n:"+f.name,title:t,kind:"lf",img:"",sub:(d?"In cinemas "+fmtShort(d)+" · ":"New film · ")+"Trailer file: "+f.name})}
   if(LF&&LF.files.length)for(const f of LF.files){const film=lfMatch(f.name);if(!film)continue;const o=out.find(x=>x.key===film.key&&(x.kind==="film"||x.kind==="studio"));if(o){o.kind="lf";o.sub=(o.sub?o.sub+" · ":"")+"Trailer file: "+f.name}}
   const ord=st.order||[],ix=k=>{const i=ord.indexOf(k);return i<0?1e6:i};
   const L=out.map((x,i)=>({...x,i})).sort((a,b)=>ix(a.key)-ix(b.key)||a.i-b.i);return withHidden?L:L.filter(x=>!hid.has(x.key))}
@@ -2119,7 +2130,12 @@ $("#gdSave").onclick=async()=>{const id=gdId($("#gdLink").value),key=$("#gdKey")
   if(!key){if(!IMCDrive.saved()){toast("Choose the trailer key file first");return}const st=foyState();st.gd=id;st.gsa=true;delete st.gk;foySave(st);gdFiles=null;gdRender();await gdLoad();gdRender();renderFoyer();if(!gdErr)toast("Saved. Foyer PCs with the key file added will start fetching within half an hour");return}if(/^AQ\./.test(key)){toast("That's an AQ. key, which Google Drive doesn't accept. Make a standard key (it starts with AIza): see How to set it up");$("#gdKey").focus();return}if(!/^AIza[\w-]{30,}$/.test(key)){toast("Paste the Google API key: it starts with AIza");$("#gdKey").focus();return}
   const st=foyState();st.gd=id;st.gk=key;delete st.gsa;foySave(st);gdFiles=null;gdRender();await gdLoad();gdRender();renderFoyer();if(!gdErr)toast("Saved. The foyer TVs will start fetching the files within half an hour")};
 $("#gdOff").onclick=()=>{if(!confirm("Stop using the Google Drive folder? The foyer TVs go back to YouTube trailers and delete the saved files."))return;const st=foyState();delete st.gd;delete st.gk;delete st.gsa;foySave(st);gdFiles=null;gdRender();renderFoyer()};
-document.addEventListener("change",e=>{const t=e.target.closest&&e.target.closest("[data-gdmap]");if(!t)return;const st=foyState(),m={...(st.gm||{})};if(t.value)m[t.dataset.gdmap]=t.value;else delete m[t.dataset.gdmap];st.gm=m;foySave(st);gdRender();lfRender();renderFoyer();toast("Saved")});
+let nfFor=null;
+function nfOpen(id){nfFor=id;$("#nfFile").textContent=id.replace(/^lf:/,"");const cur=(foyState().gm||{})[id]||"";const[t,d]=cur.startsWith("new:")?cur.slice(4).split("|"):[id.replace(/^lf:/,"").replace(/\.(mp4|m4v|mov|webm)$/i,"").replace(/[._]/g," ").replace(/\b(official|final|uk|hd|trailer|teaser|tsr|tlr|\d{3,4}p)\b/gi,"").replace(/\s+-\s*$|\s{2,}/g," ").trim(),""];$("#nfTitle").value=(t&&t===t.toUpperCase()?t.toLowerCase().replace(/(^|\s)([a-z])/g,(m,a,b)=>a+b.toUpperCase()):t)||"";$("#nfDate").value=d||"";$("#nfDlg").hidden=false;$("#nfTitle").focus();$("#nfTitle").select()}
+$("#nfClose").onclick=()=>{$("#nfDlg").hidden=true;lfRender()};
+$("#nfSave").onclick=()=>{const t=$("#nfTitle").value.trim().replace(/\|/g," "),d=$("#nfDate").value;if(!t){toast("Type the film's name");$("#nfTitle").focus();return}
+  const st=foyState(),m={...(st.gm||{})};m[nfFor]="new:"+t+(d?"|"+d:"");st.gm=m;foySave(st);$("#nfDlg").hidden=true;lfRender();renderFoyer();toast(t+" added: it's in the Playlist")};
+document.addEventListener("change",e=>{const t=e.target.closest&&e.target.closest("[data-gdmap]");if(!t)return;if(t.value==="__new"){nfOpen(t.dataset.gdmap);return}const st=foyState(),m={...(st.gm||{})};if(t.value)m[t.dataset.gdmap]=t.value;else delete m[t.dataset.gdmap];st.gm=m;foySave(st);gdRender();lfRender();renderFoyer();toast("Saved")});
 /* ---------- Foyer trailers page: four tabs ---------- */
 function ftab(t){try{t=t||localStorage.getItem("imc-foyer-tab")||"play"}catch(e){t=t||"play"}if(!["play","trail","set","sites"].includes(t))t="play";try{localStorage.setItem("imc-foyer-tab",t)}catch(e){}
   $$("#v-foyer [data-fp]").forEach(e=>e.hidden=e.dataset.fp!==t);$$("#v-foyer [data-ftab]").forEach(b=>b.setAttribute("aria-selected",b.dataset.ftab===t))}
@@ -2133,16 +2149,17 @@ async function lfScan(ask){const h=lfTestDir||await lfkv("trailerdir").catch(()=
   try{let p=await h.queryPermission({mode:"read"});if(p!=="granted"&&ask)p=await h.requestPermission({mode:"read"});if(p!=="granted"){LF=null;lfErr="ask";lfRender();return}
     const out=[];async function walk(d,depth){for await(const e of d.values()){if(e.kind==="directory"){if(depth<1)await walk(e,depth+1);continue}if(/\.(mp4|m4v|mov|webm)$/i.test(e.name)){let size=0;try{size=(await e.getFile()).size}catch(x){}out.push({id:"lf:"+e.name,name:e.name,size})}}}
     await walk(h,0);out.sort((a,b)=>a.name.localeCompare(b.name));LF={name:h.name,files:out};lfErr=""}catch(e){LF=null;lfErr=e.message||String(e)}lfRender();try{renderPlaylist()}catch(e){}}
-function lfMatch(name){const st=foyState(),M=st.gm||{},L=gdFilms(),cur=M["lf:"+name];if(cur==="-")return null;return cur?L.find(x=>x.key===cur)||null:gdAuto(name,L)}
+const nfLabel=v=>{const[t,d]=String(v).slice(4).split("|");return t+(d?" · opens "+fmtShort(d):"")};
+function lfMatch(name){const st=foyState(),M=st.gm||{},L=gdFilms(),cur=M["lf:"+name];if(cur==="-"||String(cur||"").startsWith("new:"))return null;return cur?L.find(x=>x.key===cur)||null:gdAuto(name,L)}
 function lfRender(){const el=$("#lfList");if(!el)return;$("#lfRefresh").hidden=!LF;$("#lfPick").textContent=LF?"📁 Choose a different folder":"📁 Choose the IMC TRAILERS folder on this PC";
   if(!window.showDirectoryPicker){$("#lfInfo").textContent="Open the hub in Google Chrome or Microsoft Edge to use the trailers folder.";el.innerHTML="";return}
   if(!LF){$("#lfInfo").textContent=lfErr==="ask"?"":lfErr;el.innerHTML=lfErr==="ask"?'<p class="tip">Click <b>↻ Check again</b> (or Choose) to let the hub look in the folder again.</p>':'<p class="tip">Not chosen yet. Click the button and pick <b>Google Drive → My Drive → IMC TRAILERS</b>.</p>';$("#lfRefresh").hidden=lfErr!=="ask";$("#gdcount").textContent="";return}
   $("#lfInfo").textContent="Folder: "+LF.name;const st=foyState(),M=st.gm||{},L=gdFilms();let n=0;
   if(!LF.files.length){el.innerHTML='<p class="tip">No video files in the folder yet.</p>';$("#gdcount").textContent="0 files";return}
-  el.innerHTML=`<table class="gdt"><thead><tr><th>Trailer file</th><th>Plays as the trailer for</th><th></th></tr></thead><tbody>${LF.files.map(f=>{const auto=gdAuto(f.name,L),cur=M[f.id]||"",film=lfMatch(f.name);if(film)n++;
+  el.innerHTML=`<table class="gdt"><thead><tr><th>Trailer file</th><th>Plays as the trailer for</th><th></th></tr></thead><tbody>${LF.files.map(f=>{const auto=gdAuto(f.name,L),cur=M[f.id]||"",film=lfMatch(f.name);if(film||cur.startsWith("new:"))n++;
     return`<tr><td><b>${esc(f.name)}</b><br><small class="tip" style="margin:0">${f.size?Math.round(f.size/1048576)+" MB":""}</small></td>
-      <td><select data-gdmap="${esc(f.id)}"><option value="">${auto?"Automatic: "+esc(auto.title):"Automatic: no film matched"}</option>${L.map(x=>`<option value="${esc(x.key)}" ${cur===x.key?"selected":""}>${esc(x.title)}</option>`).join("")}<option value="-" ${cur==="-"?"selected":""}>Don't use this file</option></select></td>
-      <td>${film?'<span class="ok">✓ Will play</span>':'<span class="no">No film</span>'}</td></tr>`}).join("")}</tbody></table>
+      <td><select data-gdmap="${esc(f.id)}"><option value="">${auto?"Automatic: "+esc(auto.title):"Automatic: no film matched"}</option>${cur.startsWith("new:")?`<option value="${esc(cur)}" selected>New film: ${esc(nfLabel(cur))}</option>`:""}<option value="__new">➕ New film (not on imc.ie yet)…</option>${L.map(x=>`<option value="${esc(x.key)}" ${cur===x.key?"selected":""}>${esc(x.title)}</option>`).join("")}<option value="-" ${cur==="-"?"selected":""}>Don't use this file</option></select></td>
+      <td>${film||cur.startsWith("new:")?'<span class="ok">✓ Will play</span>':'<span class="no">No film</span>'}</td></tr>`}).join("")}</tbody></table>
     <p class="tip">The foyer PCs look in their copy of the folder every half hour. A file plays once Google Drive has copied it onto that PC. Films with a file show <b>📁 Trailer file</b> in the Playlist.</p>`;
   $("#gdcount").textContent=`${n} of ${LF.files.length} file${LF.files.length===1?"":"s"} matched`}
 $("#lfPick").onclick=async()=>{if(!window.showDirectoryPicker)return;try{const h=await showDirectoryPicker({id:"imc-trailers",mode:"read"});await lfkv("trailerdir",h);await lfScan(true);toast("Folder chosen")}catch(e){if(e&&e.name!=="AbortError")toast("Couldn't use that folder")}};
