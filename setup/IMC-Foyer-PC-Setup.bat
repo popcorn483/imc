@@ -75,7 +75,8 @@ Say "Google Drive for desktop is installed and starts with Windows." Green
 Step 2 "Sign in to Google Drive"
 function Find-Src {
   foreach ($d in (Get-PSDrive -PSProvider FileSystem -ErrorAction SilentlyContinue)) {
-    foreach ($p in @("My Drive\IMC TRAILERS", "IMC TRAILERS")) { $x = Join-Path $d.Root $p; if ($x -ne $DEST -and (Test-Path -LiteralPath $x)) { return $x } } }
+    foreach ($p in @("My Drive\IMC TRAILERS", "IMC TRAILERS")) { $x = Join-Path $d.Root $p; if ($x -ne $DEST -and (Test-Path -LiteralPath $x)) { return $x } }
+    $sd = Join-Path $d.Root "Shared drives"; if (Test-Path -LiteralPath $sd) { foreach ($s in @(Get-ChildItem -LiteralPath $sd -Directory -ErrorAction SilentlyContinue)) { $x = Join-Path $s.FullName "IMC TRAILERS"; if (Test-Path -LiteralPath $x) { return $x } } } }
   $x = Join-Path $env:USERPROFILE "My Drive\IMC TRAILERS"; if (Test-Path -LiteralPath $x) { return $x }
   return $null
 }
@@ -89,7 +90,7 @@ else {
   $t0 = Get-Date
   while (-not $src -and ((Get-Date) - $t0).TotalMinutes -lt 15) { Start-Sleep -Seconds 5; $src = Find-Src; Write-Host "." -NoNewline }
   Write-Host ""
-  if (-not $src) { Say "The IMC TRAILERS folder didn't appear. Check you signed in with the cinema's account, and that its My Drive has a folder called IMC TRAILERS. Then run this setup again." Red; exit }
+  if (-not $src) { Say "The IMC TRAILERS folder didn't appear. If it was shared with this account by someone else, open drive.google.com, right-click it under 'Shared with me' > Organise > Add shortcut > My Drive, then run this setup again." Yellow; Say "Otherwise: Check you signed in with the cinema's account, and that its My Drive has a folder called IMC TRAILERS. Then run this setup again." Red; exit }
   Say "Found $src" Green
 }
 
@@ -102,7 +103,7 @@ $DEST = "C:\IMC TRAILERS"; $LOG = "C:\ProgramData\IMC\sync.log"; $EXT = '\.(mp4|
 function Log($t) { try { Add-Content -LiteralPath $LOG -Value ((Get-Date -Format "yyyy-MM-dd HH:mm") + "  " + $t); $l = @(Get-Content -LiteralPath $LOG); if ($l.Count -gt 400) { $l | Select-Object -Last 300 | Set-Content -LiteralPath $LOG } } catch {} }
 function Run-Once {
   $src = $null
-  foreach ($d in (Get-PSDrive -PSProvider FileSystem -ErrorAction SilentlyContinue)) { foreach ($p in @("My Drive\IMC TRAILERS", "IMC TRAILERS")) { $x = Join-Path $d.Root $p; if ((-not $src) -and $x -ne $DEST -and (Test-Path -LiteralPath $x)) { $src = $x } } }
+  foreach ($d in (Get-PSDrive -PSProvider FileSystem -ErrorAction SilentlyContinue)) { foreach ($p in @("My Drive\IMC TRAILERS", "IMC TRAILERS")) { $x = Join-Path $d.Root $p; if ((-not $src) -and $x -ne $DEST -and (Test-Path -LiteralPath $x)) { $src = $x } }  $sd = Join-Path $d.Root "Shared drives"; if ((-not $src) -and (Test-Path -LiteralPath $sd)) { foreach ($s in @(Get-ChildItem -LiteralPath $sd -Directory -ErrorAction SilentlyContinue)) { $x = Join-Path $s.FullName "IMC TRAILERS"; if ((-not $src) -and (Test-Path -LiteralPath $x)) { $src = $x } } } }
   if (-not $src) { $x = Join-Path $env:USERPROFILE "My Drive\IMC TRAILERS"; if (Test-Path -LiteralPath $x) { $src = $x } }
   if (-not $src) { Log "Google Drive isn't ready (not signed in, or still starting): nothing changed"; return }
   New-Item -ItemType Directory -Force -Path $DEST | Out-Null
