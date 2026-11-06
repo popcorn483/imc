@@ -372,6 +372,18 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .gdt{width:100%;border-collapse:collapse;font-size:14px}.gdt td,.gdt th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}.gdt th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.gdt select{max-width:260px}.gdt .ok{color:#3dc88c;font-weight:700}.gdt .no{color:#ff8a6e;font-weight:700}
 
 
+
+/* ---- Foyer settings ---- */
+.setwrap{display:grid;gap:14px}
+.setcard{padding:6px 20px 8px}.setcard h2{font-size:17px;margin:12px 0 4px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.setrow{display:flex;align-items:center;justify-content:space-between;gap:10px 24px;padding:12px 0;border-top:1px solid var(--line);flex-wrap:wrap}.setcard h2+.setrow{border-top:0}
+.setl{flex:1 1 280px;min-width:0}.setl>b{display:block;font-size:14.5px}.setl small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+.setc{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;justify-content:flex-end}.setc select{min-width:190px}.setc input[type=range]{width:200px}
+.setradio{flex-direction:column;align-items:flex-start;gap:6px}.setradio label{display:flex;gap:8px;align-items:center;font-size:14px;cursor:pointer}
+.setcol{flex-direction:column;align-items:stretch}.setcol textarea{width:100%;box-sizing:border-box}
+.setmore{border-top:1px solid var(--line);padding:10px 0}.setmore>summary{cursor:pointer;font-weight:600;font-size:13.5px;color:var(--muted)}.setmore[open]>summary{margin-bottom:10px}
+.setfoot{border:1px solid var(--line);border-radius:12px;padding:12px 16px;background:var(--panel)}
+@media (max-width:640px){.setc{justify-content:flex-start;flex-wrap:wrap}.setc select{min-width:0;width:100%}}
 /* ---- Trailers board ---- */
 .trold{display:none!important}
 .trhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}.trhead h2{margin:0;font-size:22px}.trsrc{font-size:12.5px;color:var(--muted);margin-top:3px}
@@ -818,7 +830,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
       <div class="head">
         <div><h1>Foyer trailers</h1><p>Trailer packs for the foyer TVs. Only films rated <span class="safecerts">U, PG or 12A</span> go in by default, and trailers marked red band, uncensored or explicit are always left out. Films without a certificate yet stay out until you've watched the trailer and ticked it.</p></div>
       </div>
-      <div class="ftabs" role="tablist" aria-label="Foyer trailers sections"><button type="button" role="tab" data-ftab="play">▶ Playlist</button><button type="button" role="tab" data-ftab="trail">🎬 Trailers</button><button type="button" role="tab" data-ftab="set">⚙ Settings</button><button type="button" role="tab" data-ftab="sites">🔗 Sites</button></div>
+      <div class="ftabs" role="tablist" aria-label="Foyer trailers sections"><button type="button" role="tab" data-ftab="play">▶ Playlist</button><button type="button" role="tab" data-ftab="trail">🎬 Trailers</button><button type="button" role="tab" data-ftab="set">⚙ Settings</button></div>
       <div class="panel pltop" data-fp="play">
         <div class="pltop-status" id="syncPanel"><span class="syncdot" id="syncDot" aria-hidden="true"></span><div style="min-width:0"><b id="syncT">Foyer TVs</b><div class="tip" id="syncS">Checking…</div></div></div>
         <div class="pltop-acts"><button class="btn primary" type="button" id="plResync" title="Every foyer TV reloads and restarts together, in step">⟳ Sync all TVs now</button><button class="btn small" type="button" id="syncConnect">Connect</button><button class="btn small ghost" type="button" id="syncOff" hidden>Disconnect</button></div>
@@ -840,35 +852,37 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         <div class="lfbar" id="lfBar" hidden></div>
         <div class="plnowbar" id="plNow" hidden></div>
         <ol class="pllist" id="plList"></ol><p class="plhint">Drag <b>⠿</b> to move · <b>✕</b> takes it out · films from imc.ie get their showtimes card first</p><div id="plOut"></div></div>
-      <div class="panel tvapp" data-fp="set"><div class="syncrow"><span style="font-size:28px" aria-hidden="true">📺</span><div style="min-width:0;flex:1 1 260px"><b>Setting up a foyer PC</b><div class="tip" style="margin:2px 0 0">On each foyer PC, open the <b>IMC Foyer TV</b> app: it plays what's set here, in step with the other TVs, and starts by itself. Address: <code id="tvAddr">tv.html</code></div></div><div class="row-btns" style="margin:0"><a class="btn small primary" href="tv.html" target="imc-tv" style="text-decoration:none">Open the TV app ↗</a><button class="btn small" type="button" id="tvCopy">Copy address</button></div></div></div>
-      <div class="panel" id="btwPanel" style="margin-top:16px" data-fp="set"><div class="ph"><h2>Between the trailers</h2><span class="tip" id="btwcount" style="margin:0"></span></div>
-        <p class="tip" style="margin-top:0">Choose which slides play between trailers, and what scrolls along the strip at the bottom of the screen. Adverts are set up on the Adverts page; your own messages are in the box under “Screens between trailers” below.</p>
-        <div class="btwgrid"><div><h3 class="btwh">Slides</h3><div id="btwSlides"><p class="tip">Loading…</p></div></div><div><h3 class="btwh">Bottom strip</h3><div id="btwTick"><p class="tip">Loading…</p></div></div></div></div>
-      <div class="panel foyopts" style="margin-top:16px" data-fp="set">
-        <div class="foygrid">
-          <fieldset><legend>Which films</legend>
-            <label class="check"><input type="radio" name="fmode" value="auto" checked> Every foyer-safe film showing in the next 7 days <small>(updates itself daily)</small></label>
-            <label class="check"><input type="radio" name="fmode" value="pick"> Only the films I tick below</label>
-            <label class="check"><input type="checkbox" id="fsoon"> Include coming-soon films</label></fieldset>
-          <fieldset><legend>Player</legend>
-            <label class="check"><input type="checkbox" id="ftrail" checked> Play each film's trailer after its showtimes card</label>
-            <label class="check"><input type="checkbox" id="fsound" checked> Sound on (click Start once on the TV)</label>
-            <label class="check"><input type="checkbox" id="fsync" checked> Keep all foyer TVs in step <small>(every TV shows the same trailer, card or slide at the same moment)</small></label>
-            <div class="musicrow"><label class="field" style="max-width:240px;margin:0"><span class="flabel">Music under the cards and slides</span><select id="fmu"><option value="cinema">Cinematic (calm)</option><option value="chill">Chilled</option><option value="bright">Upbeat</option><option value="off">No music</option></select></label>
-              <label class="field" style="max-width:200px;margin:0"><span class="flabel">Music volume</span><input type="range" id="fmv" min="5" max="100" step="5" value="35" aria-label="Music volume"></label><button class="btn small" type="button" id="fmuPlay">▶ Listen</button></div>
-            <p class="tip" style="margin:4px 0 0">The music is made by the player itself (it isn't anyone's recording). It fades out when a trailer starts and back in for the showtimes cards, board and slides.</p>
-            <label class="field" style="max-width:220px"><span class="flabel">Showtimes card length</span><select id="fcard"><option value="8">8 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option></select></label>
-            <label class="field" style="max-width:300px"><span class="flabel">Welcome videos between trailers</span><select class="wfreq"></select></label><button class="btn small" data-go="welcome" style="align-self:flex-start">Make welcome videos →</button></fieldset>
-          <fieldset><legend>Screens between trailers</legend>
-            <label class="field" style="max-width:300px"><span class="flabel">"Now showing" board with screen numbers</span><select id="fbd"><option value="0">Off</option><option value="2">After every 2 films</option><option value="3">After every 3 films</option><option value="5">After every 5 films</option></select></label>
-            <label class="check"><input type="checkbox" id="fpr"> Deals and offers slides <small>(Wednesday Meal Deal, Kids Club, LUXX, scan to book, coming soon)</small></label>
-            <label class="check"><input type="checkbox" id="fstrip"> Info strip along the bottom <small>(next show and scrolling news)</small></label>
-            <label class="field" style="max-width:340px"><span class="flabel">Edge margin <small>(if the TV cuts off the edges of the picture)</small></span><select id="fsafe"><option value="0">None</option><option value="2">Small</option><option value="3.5">Medium (most TVs)</option><option value="5">Large</option><option value="7">Extra large</option></select></label>
-            <label class="check"><input type="checkbox" id="fscr"> Show screen numbers</label>
-            <label class="field"><span class="flabel">Your own messages <small>(one per line; they scroll along the strip and get their own slide)</small></span><textarea id="fmsg" rows="3" placeholder="e.g. Halloween fancy dress: come dressed up on Saturday!"></textarea></label></fieldset>
-        </div>
-        <div class="row-btns" style="margin-top:12px"><a class="btn" id="flounge" target="imc-lounge" style="text-decoration:none;order:2">LUXX lounge player ↗</a><a class="btn primary" id="fopen" target="imc-foyer" style="text-decoration:none">Open foyer player ↗</a><button class="btn" id="fcopy">Copy TV link</button><button class="btn" id="fzip">Download pack (.zip)</button><button class="btn" id="fcsv">Download trailer list (.csv)</button></div>
-        <div id="fprog" class="tip" hidden></div>
+      <div class="setwrap" data-fp="set">
+      <section class="panel setcard"><h2>📺 Foyer TVs</h2>
+        <div class="setrow"><div class="setl"><b>Set up a foyer PC</b><small>On each foyer PC open the <b>IMC Foyer TV</b> app. It plays what's set here, in step with the other TVs, and starts by itself. Address: <code id="tvAddr">tv.html</code></small></div><div class="setc"><a class="btn small primary" href="tv.html" target="imc-tv" style="text-decoration:none">Open the TV app ↗</a><button class="btn small" type="button" id="tvCopy">Copy address</button></div></div>
+        <div class="setrow"><div class="setl"><b>Watch the player here</b><small>See exactly what the foyer TVs are showing.</small></div><div class="setc"><a class="btn small" id="fopen" target="imc-foyer" style="text-decoration:none">Foyer player ↗</a><a class="btn small" id="flounge" target="imc-lounge" style="text-decoration:none">LUXX lounge ↗</a><button class="btn small ghost" type="button" id="fcopy">Copy TV link</button></div></div>
+        <div class="setrow"><div class="setl"><b>Keep all foyer TVs in step</b><small>Every TV shows the same trailer, card or slide at the same moment.</small></div><div class="setc"><label class="trsw"><input type="checkbox" id="fsync" checked><span></span></label></div></div>
+        <div class="setrow"><div class="setl"><b>Edge margin</b><small>Use it if a TV cuts off the edges of the picture.</small></div><div class="setc"><select id="fsafe"><option value="0">None</option><option value="2">Small</option><option value="3.5">Medium (most TVs)</option><option value="5">Large</option><option value="7">Extra large</option></select></div></div>
+      </section>
+      <section class="panel setcard"><h2>🎬 What plays</h2>
+        <div class="setrow"><div class="setl"><b>Films from imc.ie</b><small>Rated U, PG or 12A only. Turn single films on or off in the Trailers tab.</small></div><div class="setc setradio"><label><input type="radio" name="fmode" value="auto" checked> Every film showing in the next 7 days</label><label><input type="radio" name="fmode" value="pick"> Only the films I switch on</label></div></div>
+        <div class="setrow"><div class="setl"><b>Include coming-soon films</b><small>Films on imc.ie that haven't started yet.</small></div><div class="setc"><label class="trsw"><input type="checkbox" id="fsoon"><span></span></label></div></div>
+        <div class="setrow"><div class="setl"><b>Trailer after each showtimes card</b><small>Off: just the showtimes cards.</small></div><div class="setc"><label class="trsw"><input type="checkbox" id="ftrail" checked><span></span></label></div></div>
+        <div class="setrow"><div class="setl"><b>Showtimes card length</b></div><div class="setc"><select id="fcard"><option value="8">8 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option></select></div></div>
+        <div class="setrow"><div class="setl"><b>Welcome videos</b><small>Your own short videos between trailers.</small></div><div class="setc"><select class="wfreq" aria-label="Welcome videos"></select><button class="btn small ghost" type="button" data-go="welcome">Make one →</button></div></div>
+      </section>
+      <section class="panel setcard"><h2>🔊 Sound and music</h2>
+        <div class="setrow"><div class="setl"><b>Sound on</b><small>Click Start once on each TV to allow sound.</small></div><div class="setc"><label class="trsw"><input type="checkbox" id="fsound" checked><span></span></label></div></div>
+        <div class="setrow"><div class="setl"><b>Music under the cards and slides</b><small>Made by the player itself. It fades out when a trailer starts.</small></div><div class="setc"><select id="fmu" aria-label="Music"><option value="cinema">Cinematic (calm)</option><option value="chill">Chilled</option><option value="bright">Upbeat</option><option value="off">No music</option></select><button class="btn small ghost" type="button" id="fmuPlay">▶ Listen</button></div></div>
+        <div class="setrow"><div class="setl"><b>Music volume</b></div><div class="setc"><input type="range" id="fmv" min="5" max="100" step="5" value="35" aria-label="Music volume"></div></div>
+      </section>
+      <section class="panel setcard" id="btwPanel"><h2>🪧 Between the trailers <span class="tip" id="btwcount" style="margin:0;border:0;padding:0;font-size:13px;font-weight:500"></span></h2>
+        <div class="setrow"><div class="setl"><b>"Now showing" board</b><small>Every film today with its times and screens.</small></div><div class="setc"><select id="fbd"><option value="0">Off</option><option value="2">After every 2 films</option><option value="3">After every 3 films</option><option value="5">After every 5 films</option></select></div></div>
+        <div class="setrow"><div class="setl"><b>Show screen numbers</b><small>On the board and the showtimes cards.</small></div><div class="setc"><label class="trsw"><input type="checkbox" id="fscr"><span></span></label></div></div>
+        <div class="setrow"><div class="setl"><b>Deals and offers slides</b><small>Wednesday Meal Deal, Kids Club, LUXX, scan to book, coming soon.</small></div><div class="setc"><label class="trsw"><input type="checkbox" id="fpr"><span></span></label></div></div>
+        <details class="setmore"><summary>Choose the slides one by one</summary><div id="btwSlides"><p class="tip">Loading…</p></div></details>
+      </section>
+      <section class="panel setcard"><h2>📰 Strip along the bottom</h2>
+        <div class="setrow"><div class="setl"><b>Info strip</b><small>The next show and scrolling news along the bottom of the screen.</small></div><div class="setc"><label class="trsw"><input type="checkbox" id="fstrip"><span></span></label></div></div>
+        <details class="setmore"><summary>Choose what scrolls</summary><div id="btwTick"><p class="tip">Loading…</p></div></details>
+        <div class="setrow setcol"><div class="setl"><b>Your own messages</b><small>One per line. They scroll along the strip and get their own slide.</small></div><textarea id="fmsg" rows="3" placeholder="e.g. Halloween fancy dress: come dressed up on Saturday!"></textarea></div>
+      </section>
+      <details class="setmore setfoot"><summary>For a TV that plays from a USB stick</summary><p class="tip" style="border:0;padding:0">A pack with a 16:9 showtimes video card and a still for each film, a playlist and the trailer list.</p><div class="setc" style="justify-content:flex-start"><button class="btn small" type="button" id="fzip">Download pack (.zip)</button><button class="btn small" type="button" id="fcsv">Download trailer list (.csv)</button></div><div id="fprog" class="tip" hidden></div></details>
       </div>
       <div class="panel trboard" id="trBoard" data-fp="trail">
         <div class="trhead"><div><h2>Trailers</h2><div class="trsrc" id="trSrc"></div></div>
@@ -913,11 +927,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         <div id="svlist" class="xlist"></div>
         <div class="svremind" role="note"><b>📁 Reminder:</b> trailer files must be stored on the <b>foyer PC</b> (with several foyer TVs in step, add the same file on <b>each</b> foyer PC), in the <b>TRAILERS</b> folder on its desktop, and added here <b>from the foyer PC</b> (open this hub on that PC). A file added on any other computer only plays on that computer, not on the foyer TVs.</div>
         <p class="tip" style="margin-bottom:0">Download links work on every foyer PC. Films rated 15 or 18 still stay off the foyer TVs.</p></div></details>
-      <div class="panel" style="margin-top:16px" data-fp="sites"><div class="ph"><h2>Trailer and poster sites</h2></div>
-        <p class="tip" style="margin-top:0">Quick links to the sites you get trailers and posters from. <b>Passwords aren't kept here:</b> when you sign in, let your browser save the password (Chrome and Edge offer to) and it's filled in for you next time. Downloaded posters and artwork go in the photo editor under <b>Photo › Your media</b>, ready for any design.</p>
-        <div id="srclist" class="srclist"></div>
-        <form id="srcadd" class="xadd"><input id="srcname" placeholder="Name, e.g. Disney Box" maxlength="40" aria-label="Site name"><input id="srcurl" type="url" placeholder="Web address (https://…)" aria-label="Web address" required><button class="btn">Add site</button></form></div>
-      <p class="tip" data-fp="sites">The pack has a 16:9 showtimes video card and a still for each film, a playlist for TVs that play from a USB stick, and the trailer list. The trailers themselves play through the foyer player from imc.ie's official YouTube links; YouTube doesn't allow them to be downloaded, so for offline trailer files use the ones distributors supply. The safety check works from certificates and trailer titles; nothing listens to the audio, so watch any trailer you're unsure of.</p>
+
     </section>
 
     <!-- LUXX -->
@@ -2226,7 +2236,7 @@ $("#nfSave").onclick=()=>{const t=$("#nfTitle").value.trim().replace(/\|/g," "),
 document.addEventListener("change",e=>{const t=e.target.closest&&e.target.closest("[data-gdmap]");if(!t)return;if(t.value==="__new"){nfOpen(t.dataset.gdmap);return}const st=foyState(),m={...(st.gm||{})};if(t.value)m[t.dataset.gdmap]=t.value;else delete m[t.dataset.gdmap];st.gm=m;foySave(st);gdRender();lfRender();renderFoyer();toast("Saved")});
 /* ---------- Foyer trailers page: four tabs ---------- */
 document.addEventListener("click",e=>{const pm=e.target.closest(".plmenu-pop button");if(pm){const d=pm.closest("details");if(d)d.open=false}if(!e.target.closest(".plmenu"))$$(".plmenu[open]").forEach(d=>d.open=false)});
-function ftab(t){try{t=t||localStorage.getItem("imc-foyer-tab")||"play"}catch(e){t=t||"play"}if(!["play","trail","set","sites"].includes(t))t="play";try{localStorage.setItem("imc-foyer-tab",t)}catch(e){}
+function ftab(t){try{t=t||localStorage.getItem("imc-foyer-tab")||"play"}catch(e){t=t||"play"}if(!["play","trail","set"].includes(t))t="play";try{localStorage.setItem("imc-foyer-tab",t)}catch(e){}
   $$("#v-foyer [data-fp]").forEach(e=>e.hidden=e.dataset.fp!==t);$$("#v-foyer [data-ftab]").forEach(b=>b.setAttribute("aria-selected",b.dataset.ftab===t))}
 document.addEventListener("click",e=>{const b=e.target.closest("#v-foyer [data-ftab]");if(b){ftab(b.dataset.ftab);if(b.dataset.ftab==="trail")lfScan()}});
 /* ---------- the IMC TRAILERS folder on this PC (Google Drive for desktop keeps it in sync with the foyer PCs) ---------- */
@@ -2352,9 +2362,9 @@ $("#svlist").addEventListener("click",async e=>{const d=e.target.closest("[data-
   if(p){const box=$("#svp-"+CSS.escape(p.dataset.svplay));if(!box)return;if(!box.hidden){const v=box.querySelector("video");if(v){v.pause();if(v.dataset.obj)URL.revokeObjectURL(v.src)}box.innerHTML="";box.hidden=true;p.textContent="Preview";return}
     const x=STUD.find(y=>y.id===p.dataset.svplay);let src=x&&x.url,obj=false;if(x&&!src){const b=await edbGet("studiofile:"+x.id);if(!b){toast("The video file is missing on this computer. Remove it and add it again.");return}src=URL.createObjectURL(b);obj=true}
     box.innerHTML=`<video controls autoplay src="${esc(src)}" ${obj?'data-obj="1"':""}></video>`;box.hidden=false;p.textContent="Close"}});
-$("#srcadd").addEventListener("submit",e=>{e.preventDefault();let u=$("#srcurl").value.trim();try{const x=new URL(u);if(!/^https?:$/.test(x.protocol))throw 0;u=x.href}catch(err){toast("Type the full web address, starting https://");return}
+$("#srcadd")&&$("#srcadd").addEventListener("submit",e=>{e.preventDefault();let u=$("#srcurl").value.trim();try{const x=new URL(u);if(!/^https?:$/.test(x.protocol))throw 0;u=x.href}catch(err){toast("Type the full web address, starting https://");return}
   const a=srcGet();a.push({n:$("#srcname").value.trim()||new URL(u).hostname,u});try{localStorage.setItem("imc-sources",JSON.stringify(a))}catch(err){}$("#srcname").value="";$("#srcurl").value="";renderSources();toast("Site added")});
-$("#srclist").addEventListener("click",e=>{const b=e.target.closest("[data-srcdel]");if(!b)return;const a=srcGet();a.splice(+b.dataset.srcdel,1);try{localStorage.setItem("imc-sources",JSON.stringify(a))}catch(err){}renderSources()});
+$("#srclist")&&$("#srclist").addEventListener("click",e=>{const b=e.target.closest("[data-srcdel]");if(!b)return;const a=srcGet();a.splice(+b.dataset.srcdel,1);try{localStorage.setItem("imc-sources",JSON.stringify(a))}catch(err){}renderSources()});
 /* ---------- recommended: newest public trailers from distributors (data/recommended.json, from the importer) ---------- */
 let REC=null,recDist="all",recShow=12,recIgnShow=false;
 const recNorm=t=>String(t||"").toLowerCase().replace(/&/g,"and").replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").replace(/^the /,"").trim();
