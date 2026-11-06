@@ -104,7 +104,6 @@ async function addGenres(list) {
     if (g.length) x.g = g;
   }
   await fs.writeFile("data/genres.json", JSON.stringify(cache));
-  await fs.mkdir("data/raw", { recursive: true }); await fs.writeFile("data/raw/genre-debug.txt", DEBUG.join("\n"));
   console.log("genres:", todo.length, "looked up,", list.filter((x) => x.g).length, "of", list.length, "have one");
 }
 if (import.meta.url === `file://${process.argv[1]}`) main();
