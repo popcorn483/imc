@@ -63,10 +63,11 @@ const GMAP = [[/animat/i, "Animation"], [/famil|children/i, "Family"], [/comedy/
   [/biographical|biopic/i, "Biopic"], [/sports/i, "Sport"], [/drama/i, "Drama"]];
 const wd = async (q) => { const r = await fetch(WD + "?format=json&" + q, { headers: WUA }); if (!r.ok) throw new Error("wikidata " + r.status); return r.json() };
 const norm = (t) => String(t).toLowerCase().replace(/[’']/g, "").replace(/\(.*?\)/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+const DEBUG = [];
 async function addGenres(list) {
   let cache = {}; try { cache = JSON.parse(await fs.readFile("data/genres.json", "utf8")) } catch (e) {}
   const now = Date.now(), labels = {};
-  const todo = list.filter((x) => !x.event && !/anniversary|re-?issue|restoration|\(concert|\(theatre|nt live|live in /i.test(x.t) && (!cache[x.id] || (!cache[x.id].g.length && now - Date.parse(cache[x.id].at) > 7 * 864e5))).slice(0, 120);
+  const todo = list.filter((x) => !x.event && !/anniversary|re-?issue|restoration|\(concert|\(theatre|nt live|live in /i.test(x.t) && (!cache[x.id] || (!cache[x.id].g.length && now - Date.parse(cache[x.id].at) > 7 * 864e5))).sort((a, b) => Math.abs(Date.parse(a.d) - now) - Math.abs(Date.parse(b.d) - now)).slice(0, 300);
   for (const x of todo) {
     try {
       const name = x.t.replace(/\(.*?\)/g, "").replace(/^(disney|pixar|dreamworks)[’']s\s+/i, "").trim(), yr = +x.d.slice(0, 4);
@@ -90,7 +91,8 @@ async function addGenres(list) {
         }
       }
       cache[x.id] = { g, at: new Date().toISOString() };
-    } catch (e) { console.log("genre lookup failed for", x.t, e.message) }
+      if (DEBUG.length < 40) DEBUG.push(`${x.t} | search: ${ids.join(",")} | genres: ${g.join(",")}`);
+    } catch (e) { console.log("genre lookup failed for", x.t, e.message); if (DEBUG.length < 40) DEBUG.push(`${x.t} | ERROR ${e.message}`) }
     await new Promise((r) => setTimeout(r, 250));
   }
   for (const x of list) {
@@ -100,6 +102,7 @@ async function addGenres(list) {
     if (g.length) x.g = g;
   }
   await fs.writeFile("data/genres.json", JSON.stringify(cache));
+  await fs.mkdir("data/raw", { recursive: true }); await fs.writeFile("data/raw/genre-debug.txt", DEBUG.join("\n"));
   console.log("genres:", todo.length, "looked up,", list.filter((x) => x.g).length, "of", list.length, "have one");
 }
 if (import.meta.url === `file://${process.argv[1]}`) main();
