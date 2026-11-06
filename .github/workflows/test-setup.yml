@@ -52,6 +52,10 @@ jobs:
             Register-ScheduledTask -TaskName "IMC trailers sync" -Action $a -Trigger @($e, $l) -Principal $w -Settings $o -Force | Out-Null
             $out += "Scheduled task: OK"
           } catch { $out += "Scheduled task: FAILED " + $_.Exception.Message }
+          # the batch-file start-up: does cmd hand over to PowerShell?
+          $boot = ($raw -split "#>")[0] + "#>`r`nWrite-Host ('BOOT OK mode=' + $env:IMC_MODE)`r`n"
+          [IO.File]::WriteAllText("$env:TEMP\boot.bat", $boot)
+          $out += "Batch start-up: " + ((& cmd.exe /c "`"$env:TEMP\boot.bat`" elevated" 2>&1) -join " | ")
           $out | Set-Content setup\test-result.txt
           $out
       - name: Save the result
