@@ -385,6 +385,9 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .setfoot{border:1px solid var(--line);border-radius:12px;padding:12px 16px;background:var(--panel)}
 @media (max-width:640px){.setc{justify-content:flex-start;flex-wrap:wrap}.setc select{min-width:0;width:100%}}
 /* ---- Trailers board ---- */
+.trpick{cursor:pointer;border:1px solid transparent;font:inherit;font-size:11.5px;font-weight:700;opacity:.55}.trpick.sel{opacity:1;border-color:currentColor}.trpick:hover{opacity:1}
+.trcands{display:grid;gap:6px}.trcand{display:grid;grid-template-columns:auto 72px minmax(0,1fr);gap:10px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:10px;cursor:pointer}.trcand.sel{border-color:#1f9d55;background:rgba(31,157,85,.07)}
+.trcand img{width:72px;border-radius:5px}.trcand .trc{justify-self:center}.trcand .tx b{display:block;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.trcand .tx small{font-size:12px;color:var(--muted)}
 .trold{display:none!important}
 .trhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}.trhead h2{margin:0;font-size:22px}.trsrc{font-size:12.5px;color:var(--muted);margin-top:3px}
 .trfolder{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13.5px}.trfolder .ok{color:#1f9d55;font-weight:700}
@@ -396,7 +399,7 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 .tralert.warn{background:rgba(243,154,43,.12);border:1px solid rgba(243,154,43,.55)}.tralert.info{background:rgba(31,157,85,.08);border:1px solid rgba(31,157,85,.4)}
 .tralert .h{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.tralert .h b{font-size:15px}
 .trfile{display:grid;grid-template-columns:minmax(0,1fr) minmax(200px,320px);gap:8px;align-items:center;padding:6px 0;border-top:1px dashed rgba(127,127,127,.3)}.trfile code{font-size:12.5px;word-break:break-all}
-.trbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 6px}.trbar input[type=search]{flex:1 1 160px;max-width:240px;padding:7px 10px}
+.trbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 6px}.trbar input[type=search]{flex:1 1 160px;max-width:220px;padding:7px 10px}.trbar select{padding:7px 8px;max-width:190px}
 .trchips{display:flex;gap:6px;flex-wrap:wrap}.trchips button{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line)}.trchips button[aria-pressed=true]{background:var(--ink,#11152e);color:var(--panel,#fff);border-color:transparent}.trchips button span{opacity:.6;margin-left:4px}
 .trsec{font:800 12px/1 var(--f-display,inherit);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 6px;display:flex;gap:8px;align-items:center}.trsec::after{content:"";flex:1;height:1px;background:var(--line)}
 .trrow{display:grid;grid-template-columns:52px 40px minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:8px 6px;border-radius:10px;cursor:pointer}
@@ -889,7 +892,7 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
           <div class="trfolder" id="trFolder"></div></div>
         <div class="trflow" aria-label="Where trailers come from"><span><b class="trc yt">▶ YouTube</b> streamed from the internet</span><span><b class="trc file">📁 File</b> from the IMC TRAILERS folder in Google Drive: smoothest, plays even if the internet drops</span><span>A film with a file plays the file.</span></div>
         <div id="trAlerts"></div>
-        <div class="trbar"><div class="trchips" id="trChips" role="group" aria-label="Show"></div><input type="search" id="trFind" placeholder="Find a film" aria-label="Find a film"><label class="plswitch"><input type="checkbox" id="trAll"><span>Show all films</span></label></div>
+        <div class="trbar"><div class="trchips" id="trChips" role="group" aria-label="Show"></div><input type="search" id="trFind" placeholder="Find a film" aria-label="Find a film"><select id="trDist" aria-label="Distributor"><option value="">All distributors</option></select><select id="trGenre" aria-label="Genre"><option value="">All genres</option></select><label class="plswitch"><input type="checkbox" id="trYt"><span>Has a YouTube trailer</span></label><label class="plswitch"><input type="checkbox" id="trAll"><span>Show all films</span></label></div>
         <div id="trList"></div>
       </div>
       <div class="panel trold" style="margin-top:16px" id="gdPanel" data-fp="trail"><div class="ph"><h2>📁 Trailer files (IMC TRAILERS folder)</h2><span class="tip" id="gdcount" style="margin:0"></span></div>
@@ -2458,14 +2461,15 @@ const lfList=()=>LF?LF.files:(foyState().lfNames||[]).map(name=>({name,id:"lf:"+
 /* the gm map the foyer TVs get: every file → an imc.ie film key, "new:Title|date" for a release that isn't on imc.ie, or "-" */
 function effGm(st){const out={},T=todayIso(),R=st.rel||{};let cand=null;for(const f of lfList()){const r=lfResolve(f.name);if(!r){const v=(st.gm||{})["lf:"+f.name];if(v&&!String(v).startsWith("rel:"))out["lf:"+f.name]=v;continue}
     if(r.off){out["lf:"+f.name]="-";continue}
+    {const ch=(st.src||{})[r.key];if(ch&&(ch.t==="yt"||(ch.t==="file"&&ch.f!==f.name&&lfList().some(g=>g.name===ch.f)))){out["lf:"+f.name]="-";continue}}   /* you chose another trailer for this film */
     let t,d;if(r.imc){cand=cand||new Set(foyChosen({...st,hide:[]}).map(x=>x.key));if(cand.has(r.imc.key)){out["lf:"+f.name]=r.imc.key;continue}   /* a coming-soon film on imc.ie: its file plays as "in cinemas <date>" */
       const ff=foyFilms().find(x=>x.key===r.imc.key)||{},sf=ff.title?foySafety(ff,st):{ok:true};if(!sf.ok&&!sf.review&&!/no trailer|no longer/i.test(sf.label)){out["lf:"+f.name]="-";continue}   /* rated too high: the file stays off */
       t=r.imc.title;d=ff.releaseDate||((relFind(t)||{}).d)||"";if(d&&d<T&&ff.next)d=""}   /* showing now but no YouTube trailer: the file plays on its own */else{if(r.rel&&!relSafe(r.rel.cert)){out["lf:"+f.name]="-";continue}t=r.rel?r.rel.t:r.custom.t;d=r.rel?r.rel.d:r.custom.d}
     const k=r.key,on=!R[k]||R[k].on!==false;if(on&&(!d||d>=T))out["lf:"+f.name]="new:"+t.replace(/\|/g," ")+(d?"|"+d:"");else out["lf:"+f.name]="-"}return out}
 /* YouTube trailers switched on for releases that aren't on imc.ie (and have no file): they play as "your trailers" until the film opens */
-function relX(st){const out=[],T=todayIso(),R=st.rel||{},withFile=new Set(lfList().map(f=>lfResolve(f.name)).filter(r=>r&&!r.off).map(r=>r.key));
+function relX(st){const out=[],T=todayIso(),R=st.rel||{},withFile=new Set(lfList().map(f=>lfResolve(f.name)).filter(r=>r&&!r.off&&!((st.src||{})[r.key]&&st.src[r.key].t==="yt")).map(r=>r.key));
   for(const[k,v]of Object.entries(R)){if(!v||!v.on||withFile.has(k))continue;let t,d,by="",yt=v.yt;
-    if(k.startsWith("r:")){const r=relById(k.slice(2));if(!r)continue;t=r.t;d=r.d;by=r.dist;yt=yt||r.yt||(recYt(r.t)||{}).id}else{const f=foyFilms().find(x=>x.key===k);if(!f)continue;t=f.title;d=f.releaseDate||((relFind(f.title)||{}).d)||"";yt=yt||ytIdOf(f.trailer)}
+    if(k.startsWith("r:")){const r=relById(k.slice(2));if(!r)continue;t=r.t;d=r.d;by=r.dist;yt=yt||r.yt||(recYt(r.t)||{}).id}else{const f=foyFilms().find(x=>x.key===k);if(!f)continue;t=f.title.replace(/\s+-(\s+.*)?$/,"").trim();d=f.releaseDate||((relFind(f.title)||{}).d)||"";yt=yt||ytIdOf(f.trailer)}
     if(yt&&(!d||d>=T))out.push({id:yt,title:t,by,...(d?{releaseDate:d}:{}),rel:k})}return out}
 /* a trailer for an imc.ie film with none: the release calendar's, or the newest from the distributor's channel */
 function autoLink(f){const r=relFind(f.title),id=(r&&r.yt)||(recYt(f.title)||{}).id;return id?{id,title:"",auto:true}:null}
@@ -2478,14 +2482,29 @@ function trRows(st){const T=todayIso(),fl=foyFilms(),cand=new Set(foyChosen({...
     const sf=foySafety(f,st),d=f.releaseDate||(rel&&rel.d)||"",isCand=cand.has(f.key),yt=ytIdOf(f.trailer),fl0=files[f.key]||[];
     if(!f.next&&d&&d<T&&!fl0.length)continue;
     const unsafe=!sf.ok&&!sf.review&&!/no trailer|no longer/i.test(sf.label),can=!unsafe,on=isCand?!hid.has(f.key):fl0.length?!(R[f.key]&&R[f.key].on===false):!!(R[f.key]&&R[f.key].on);
-    rows.push({k:f.key,kind:"imc",t:base,d,cert:f.cert||"",dist:rel?rel.dist:"",poster:asset(f.posterFile)||f.poster||"",showing:!!(f.next&&f.next.date<=in7),next:f.next,sf,cand:isCand,on:on&&can,can,yt,ytAuto:!!(f.mine&&f.mine.auto),files:fl0,f,minor:unsafe})}
+    rows.push({k:f.key,kind:"imc",t:base,d,g:(rel&&rel.g)||[],cert:f.cert||"",dist:rel?rel.dist:"",poster:asset(f.posterFile)||f.poster||"",showing:!!(f.next&&f.next.date<=in7),next:f.next,sf,cand:isCand,on:on&&can,can,yt,ytAuto:!!(f.mine&&f.mine.auto),files:fl0,f,minor:unsafe})}
   for(const r of(REL&&REL.items)||[]){if(used.has(r.id)||r.d<addDays(T,-3)||r.d>addDays(T,150))continue;const k="r:"+r.id,fl0=files[k]||[],v=R[k]||{};
     const yt=v.yt||r.yt||(recYt(r.t)||{}).id||"",safe=relSafe(r.cert),on=fl0.length?v.on!==false:!!v.on;
     const big=REL_MAJOR.test(r.dist)||/100\+|300\+/.test(r.loc||""),side=r.event||/anniversary|re-?issue|restoration|re-?release|\(concert|\(theatre|live in /i.test(r.t);
-    rows.push({k,kind:"rel",rel:r,t:r.t,d:r.d,cert:r.cert,dist:r.dist,poster:r.poster||"",showing:false,on:on&&safe,can:safe,yt,files:fl0,minor:!safe||!fl0.length&&!on&&(side||!big)})}
+    rows.push({k,kind:"rel",rel:r,t:r.t,d:r.d,g:r.g||[],cert:r.cert,dist:r.dist,poster:r.poster||"",showing:false,on:on&&safe,can:safe,yt,files:fl0,minor:!safe||!fl0.length&&!on&&(side||!big)})}
   for(const f of lfList()){const r=lfResolve(f.name);if(!r||!r.custom)continue;const k=r.key,v=R[k]||{};if(r.custom.d&&r.custom.d<addDays(T,-3))continue;
     rows.push({k,kind:"custom",t:r.custom.t,d:r.custom.d,cert:"",dist:"Your release",poster:"",showing:false,on:v.on!==false,can:true,yt:v.yt||"",files:[f.name]})}
   return rows}
+/* every trailer we know for a film: its files, imc.ie's, the release schedule's, the distributor's channel, and yours */
+function trCands(x){const st=foyState(),out=[],seen=new Set(),add=(id,from,title)=>{if(!id||seen.has(id))return;seen.add(id);out.push({t:"yt",id,from,title:title||((TRAIL||{})["https://www.youtube.com/watch?v="+id]||{}).title||""})};
+  for(const f of x.files)out.push({t:"file",f,from:"File in Google Drive",title:f});
+  if(x.kind==="imc"){const f=x.f;add(ytIdOf(f.imcTrailer||(f.mine?"":f.trailer)),"imc.ie");const my=(st.links||{})[x.k];if(my)add(my.id,"Your link",my.title)}else{const v=(st.rel||{})[x.k]||{};if(v.yt)add(v.yt,"Your link")}
+  const r=x.rel||relFind(x.t);if(r&&r.yt)add(r.yt,"UK release schedule");
+  const n=relNorm(x.t);for(const y of((REC&&REC.items)||[]).filter(y=>relNorm(y.film||"")===n&&!FRED.test(y.title||"")).sort((a,b)=>String(b.published||"").localeCompare(String(a.published||""))).slice(0,5))add(y.id,y.dist||"Distributor's channel",y.title);
+  if(x.yt)add(x.yt,"Found automatically");
+  return out}
+function trPlaying(x){const ch=(foyState().src||{})[x.k];if(ch&&ch.t==="file"&&x.files.includes(ch.f))return ch;if(ch&&ch.t==="yt"&&x.yt)return{t:"yt",id:x.yt};if(x.files.length)return{t:"file",f:x.files[0]};return x.yt?{t:"yt",id:x.yt}:null}
+function trPick(k,c){const st=foyState(),x=trRows(st).find(r=>r.k===k);if(!x)return;const S={...(st.src||{})};
+  if(c.t==="file")S[k]={t:"file",f:c.f};else{S[k]={t:"yt",id:c.id};
+    if(x.kind==="imc"){const orig=ytIdOf(x.f.imcTrailer||(x.f.mine&&!x.f.mine.auto?"":x.f.trailer)),L={...(st.links||{})};if(orig&&orig===c.id)delete L[k];else L[k]={id:c.id,title:c.title||""};st.links=L}
+    else{const R={...(st.rel||{})};R[k]={...(R[k]||{}),yt:c.id};st.rel=R}
+    if(x.on&&!(x.kind==="imc"&&x.cand)){const R={...(st.rel||{})};R[k]={...(R[k]||{}),on:true};st.rel=R}}   /* it was on because of its file: keep it on with YouTube */
+  st.src=S;foySave(st);renderFoyer();if(trDlgK===k)trOpen(k);toast(c.t==="file"?"The file plays on the TVs":"The YouTube trailer plays on the TVs")}
 function trState(x){if(!x.can)return{c:"no",l:x.sf?x.sf.label.replace(/: may contain.*$/,": not for the foyer"):"Rated "+x.cert+": not for the foyer"};
   if(!x.yt&&!x.files.length)return{c:"warn",l:"Needs a trailer"};
   if(!x.on&&trUnrated(x))return{c:"warn",l:"Not rated yet: watch first"};
@@ -2526,12 +2545,17 @@ function trRender(){const box=$("#trList");if(!box||view!=="foyer")return;if(!RE
   if(trView==="hid"){C.all=rows.filter(x=>!hid.has(x.k)&&(showAll||!x.minor)).length}
   let L=base.filter(x=>trView==="all"||trView==="hid"||(trView==="on"&&x.on)||(trView==="now"&&x.showing)||(trView==="soon"&&!x.showing)||(trView==="need"&&x.can&&!x.yt&&!x.files.length));
   if(q)L=L.filter(x=>relNorm(x.t).includes(q));
+  {const sel=(id,vals,all)=>{const e=$(id),cur=e.value;e.innerHTML=`<option value="">${all}</option>`+vals.map(v=>`<option ${v===cur?"selected":""}>${esc(v)}</option>`).join("");if(cur&&!vals.includes(cur))e.value=""};
+    sel("#trDist",[...new Set(base.map(x=>x.dist).filter(d=>d&&d!=="Your release"))].sort((a,b)=>a.localeCompare(b)),"All distributors");
+    sel("#trGenre",[...new Set(base.flatMap(x=>x.g||[]))].sort(),"All genres")}
+  const fD=$("#trDist").value,fG=$("#trGenre").value;if(fD)L=L.filter(x=>x.dist===fD);if(fG)L=L.filter(x=>(x.g||[]).includes(fG));if($("#trYt").checked)L=L.filter(x=>x.yt);
   const now=L.filter(x=>x.showing).sort((a,b)=>(a.next.date+a.next.time).localeCompare(b.next.date+b.next.time)),later=L.filter(x=>!x.showing).sort((a,b)=>(a.d||(a.next&&a.next.date)||"9").localeCompare(b.d||(b.next&&b.next.date)||"9")||a.t.localeCompare(b.t));
   const day=d=>{if(!d)return'<div class="trdate"><small>Date</small><b>?</b></div>';const x=new Date(d+"T12:00");return`<div class="trdate"><small>${x.toLocaleDateString("en-GB",{month:"short"})}</small><b>${x.getDate()}</b><small>${x.toLocaleDateString("en-GB",{weekday:"short"})}</small></div>`};
   const row=x=>{const s=trState(x),when=x.next?"Next show "+(x.next.date===T?"today ":fmtShort(x.next.date)+" ")+x.next.time:x.d?(x.d<=T?"Opened ":"In cinemas ")+fmtShort(x.d):"No date";
-    const src=(x.files.length?`<span class="trc file" title="${esc(x.files.join(", "))}">📁 File</span>`:"")+(x.yt?`<span class="trc yt">▶ YouTube</span>`:"")+"";
+    const pl=trPlaying(x),both=x.files.length&&x.yt,chip=(t,lbl,title)=>{const on=pl&&pl.t===t;return both?`<button type="button" class="trc ${t==="file"?"file":"yt"} trpick${on?" sel":""}" data-trsrc="${esc(x.k)}" data-t="${t}" title="${on?"Plays on the TVs":"Click to play this one instead"}" aria-pressed="${on}">${on?"✓ ":""}${lbl}</button>`:`<span class="trc ${t==="file"?"file":"yt"}" title="${esc(title||"")}">${lbl}</span>`};
+    const src=(x.files.length?chip("file","📁 File",x.files.join(", ")):"")+(x.yt?chip("yt","▶ YouTube"):"");
     return`<div class="trrow" data-trrow="${esc(x.k)}" tabindex="0" role="button" aria-label="${esc(x.t)}: trailer details">${day(x.d&&x.d>T||!x.next?x.d:x.d||x.next.date)}${x.poster?`<img src="${esc(x.poster)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'trp0'}))">`:'<div class="trp0"></div>'}
-      <div class="t"><b>${esc(x.t)}</b><div class="m">${esc([x.cert,x.dist,when].filter(Boolean).join(" · "))}</div></div>
+      <div class="t"><b>${esc(x.t)}</b><div class="m">${esc([x.cert,x.dist,(x.g||[]).slice(0,2).join(", "),when].filter(Boolean).join(" · "))}</div></div>
       <div class="src">${src}${s.c==="on"||s.c==="off"?"":`<span class="trc ${s.c}">${esc(s.l)}</span>`}</div>
       <label class="trtv${x.on?" is-on":""}${x.can&&(x.yt||x.files.length)?"":" is-dis"}" title="Play this trailer on the foyer TVs"><span class="trsw"><input type="checkbox" data-tron="${esc(x.k)}" ${x.on?"checked":""} ${x.can&&(x.yt||x.files.length)?"":"disabled"} aria-label="Play ${esc(x.t)} on the foyer TVs"><span></span></span><span class="l">${x.on?"Playing on foyer TVs":"Not on foyer TVs"}</span></label>
       <button class="btn small ghost trhide" type="button" data-trhide="${esc(x.k)}" title="${hid.has(x.k)?"Show it in the list again":"Hide it from this list (it stays on or off the TVs as it is)"}">${hid.has(x.k)?"Unhide":"Hide"}</button></div>`};
@@ -2547,6 +2571,7 @@ function trOpen(k){const st=foyState(),x=trRows(st).find(r=>r.k===k);if(!x)retur
   const files=lfList(),mine=new Set(x.files);
   $("#trDlgB").innerHTML=`<div class="trsect" style="border:0;padding-top:0;margin-top:10px"><div class="row"><span class="trc ${s.c}">${esc(s.l)}</span><label class="plswitch"><input type="checkbox" data-tron="${esc(k)}" ${x.on?"checked":""} ${x.can&&(x.yt||x.files.length)?"":"disabled"}><span>${x.on?"Playing on foyer TVs":"Not on foyer TVs"}</span></label><button class="btn small ghost" type="button" data-trhide="${esc(k)}">${(st.trHide||[]).includes(k)?"Unhide in the list":"Hide from the list"}</button></div>
       ${x.sf&&x.sf.review?`<label class="check" style="margin-top:8px"><input type="checkbox" data-fok="${esc(k)}"> I've watched the trailer; it's fine for the foyer</label>`:""}</div>
+    ${(()=>{const C=trCands(x),pl=trPlaying(x);if(C.length<2)return"";return`<div class="trsect"><h3>Which trailer plays on the TVs</h3><div class="trcands">${C.map((c,i)=>{const on=pl&&c.t===pl.t&&(c.t==="file"?c.f===pl.f:c.id===pl.id);return`<label class="trcand${on?" sel":""}"><input type="radio" name="trcand" data-trcand="${i}" ${on?"checked":""}>${c.t==="file"?'<span class="trc file">📁 File</span>':`<img src="https://i.ytimg.com/vi/${esc(c.id)}/default.jpg" alt="" loading="lazy">`}<span class="tx"><b>${esc(c.title||(c.t==="yt"?"YouTube trailer":c.f))}</b><small>${esc(c.from)}${c.t==="yt"?` · <a href="https://www.youtube.com/watch?v=${esc(c.id)}" target="imc-web">watch ↗</a>`:""}</small></span></label>`}).join("")}</div></div>`})()}
     <div class="trsect"><h3><span class="trc file">📁 File</span> Trailer file in Google Drive</h3>${LF||files.length?`<select data-trfile="${esc(k)}" aria-label="Trailer file"><option value="">None</option>${files.map(f=>{const r=lfResolve(f.name),other=r&&!r.off&&r.key!==k?" (now: "+(r.imc?r.imc.title:r.rel?r.rel.t:r.custom.t)+")":"";return`<option value="${esc(f.name)}" ${mine.has(f.name)?"selected":""}>${esc(f.name)}${esc(other)}</option>`}).join("")}</select><p class="tip" style="border:0;padding:0;margin:6px 0 0">When a film has a file, the TVs play the file instead of YouTube.</p>`:`<p class="tip" style="border:0;padding:0;margin:0">Connect the IMC TRAILERS folder (top of the list) to use trailer files.</p>`}</div>
     <div class="trsect"><h3><span class="trc yt">▶ YouTube</span> YouTube trailer</h3>${x.yt?`<div class="trthumb"><img src="https://i.ytimg.com/vi/${esc(x.yt)}/mqdefault.jpg" alt=""><div><a class="btn small" href="https://www.youtube.com/watch?v=${esc(x.yt)}" target="imc-web">▶ Watch ↗</a>${x.ytAuto?'<div class="tip" style="border:0;padding:0;margin:6px 0 0">Found automatically (imc.ie has none)</div>':""}</div></div>`:'<p class="tip" style="border:0;padding:0;margin:0 0 8px">No YouTube trailer found yet.</p>'}
       <form class="row" data-tryt="${esc(k)}"><input type="url" placeholder="Paste a different YouTube link" aria-label="YouTube link" required><button class="btn small primary">Use</button><a class="btn small ghost" href="https://www.youtube.com/results?search_query=${encodeURIComponent(x.t+" official trailer UK")}" target="imc-web">Find on YouTube ↗</a></form>
@@ -2557,15 +2582,17 @@ $("#trDlgX").onclick=trClose;$("#trDlg").addEventListener("click",e=>{if(e.targe
 document.addEventListener("click",async e=>{const t=e.target;if(!t.closest)return;
   if(t.closest("[data-trpick]")){$("#lfPick").click();return}if(t.closest("[data-trscan]")){lfScan(true);return}
   const v=t.closest("[data-trview]");if(v){trView=v.dataset.trview;trRender();return}
+  const ps=t.closest("[data-trsrc]");if(ps){const k=ps.dataset.trsrc,x=trRows(foyState()).find(r=>r.k===k);if(x)trPick(k,ps.dataset.t==="file"?{t:"file",f:x.files[0]}:{t:"yt",id:x.yt});return}
   const hb=t.closest("[data-trhide]");if(hb){const st=foyState(),k=hb.dataset.trhide,H=new Set(st.trHide||[]),was=H.has(k);was?H.delete(k):H.add(k);st.trHide=[...H];foySave(st);if(!H.size&&trView==="hid")trView="all";trRender();if(trDlgK)trClose();toast(was?"Back in the list":"Hidden from the list: find it under “Hidden”");return}
   if(t.closest("[data-trlogx]")){const st=foyState();st.tfLogHide=true;foySave(st);trRender();return}
   if(t.closest("[data-trdel]")){const{old}=trSort(foyState()),n=await trDelete(old,true);if(n<0)toast("Chrome didn't allow it: click Delete again and choose Allow");else{toast(`Deleted ${n} file${n===1?"":"s"}`);const st=foyState();delete st.tfLogHide;foySave(st);await lfScan()}return}
   const rs=t.closest("[data-trytreset]");if(rs){const st=foyState(),k=rs.dataset.trytreset;if(st.links&&st.links[k]){const L={...st.links};delete L[k];st.links=L}if(st.rel&&st.rel[k]){const R={...st.rel};R[k]={...R[k]};delete R[k].yt;st.rel=R}foySave(st);renderFoyer();trOpen(k);toast("Back to the original trailer");return}
-  const r=t.closest("[data-trrow]");if(r&&!t.closest(".trtv,.trhide,.trsw")){trOpen(r.dataset.trrow)}});
+  const r=t.closest("[data-trrow]");if(r&&!t.closest(".trtv,.trhide,.trsw,.trpick")){trOpen(r.dataset.trrow)}});
 document.addEventListener("keydown",e=>{const r=e.target.closest&&e.target.closest("[data-trrow]");if(r&&(e.key==="Enter"||e.key===" ")&&e.target===r){e.preventDefault();trOpen(r.dataset.trrow)}});
 document.addEventListener("change",e=>{const t=e.target;if(!t.closest)return;
   if(t.dataset.tron){trToggle(t.dataset.tron,t.checked);if(trDlgK)trOpen(trDlgK);return}
-  if(t.id==="trAll"){trRender();return}
+  if(t.dataset.trcand!==undefined&&trDlgK){const x=trRows(foyState()).find(r=>r.k===trDlgK);if(x){const c=trCands(x)[+t.dataset.trcand];if(c)trPick(trDlgK,c)}return}
+  if(t.id==="trAll"||t.id==="trDist"||t.id==="trGenre"||t.id==="trYt"){trRender();return}
   if(t.dataset.trfile!==undefined&&t.matches("[data-trfile]")){const k=t.dataset.trfile,st=foyState(),m={...(st.gm||{})},x=trRows(st).find(r=>r.k===k);if(!x)return;
     for(const n of x.files)m["lf:"+n]="-";   /* the old file isn't this film's any more */
     if(t.value){m["lf:"+t.value]=x.kind==="imc"?k:x.kind==="rel"?"rel:"+x.rel.id:(st.gm||{})["lf:"+x.files[0]]||"new:"+x.t+(x.d?"|"+x.d:"")}

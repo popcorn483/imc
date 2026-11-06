@@ -48,8 +48,58 @@ async function main() {
     await new Promise((res) => setTimeout(res, 1500));
   }
   if (ok < 3 || items.length < 20) { console.log("Too little came back; keeping the last calendar"); return }
+  const seen0 = new Set(), list0 = items.filter((x) => !seen0.has(x.id + x.d) && seen0.add(x.id + x.d));
+  await addGenres(list0);
   const seen = new Set(), list = items.filter((x) => !seen.has(x.id + x.d) && seen.add(x.id + x.d)).sort((a, b) => a.d.localeCompare(b.d) || a.t.localeCompare(b.t));
   await fs.writeFile("data/releases.json", JSON.stringify({ updated: new Date().toISOString(), source: "Film Distributors' Association UK release schedule", items: list }));
   console.log("wrote", list.length, "releases");
+}
+/* genres from Wikidata (free, no key): the film whose English name matches and whose release year is close.
+   Kept in data/genres.json so each film is looked up once (films with none found are tried again after a week). */
+const WD = "https://www.wikidata.org/w/api.php", WUA = { "User-Agent": "IMC-Enniskillen-foyer/1.0 (https://github.com/popcorn483/imc)" };
+const GMAP = [[/animat/i, "Animation"], [/famil|children/i, "Family"], [/comedy/i, "Comedy"], [/action|superhero|martial/i, "Action"], [/adventure/i, "Adventure"],
+  [/horror|slasher|supernatural/i, "Horror"], [/thriller|suspense/i, "Thriller"], [/science fiction|sci-fi/i, "Sci-fi"], [/fantasy/i, "Fantasy"], [/romanc|romantic/i, "Romance"],
+  [/crime|gangster|heist|detective/i, "Crime"], [/musical|music film|concert/i, "Music"], [/documentary/i, "Documentary"], [/war film/i, "War"], [/western/i, "Western"],
+  [/biographical|biopic/i, "Biopic"], [/sports/i, "Sport"], [/drama/i, "Drama"]];
+const wd = async (q) => { const r = await fetch(WD + "?format=json&" + q, { headers: WUA }); if (!r.ok) throw new Error("wikidata " + r.status); return r.json() };
+const norm = (t) => String(t).toLowerCase().replace(/[’']/g, "").replace(/\(.*?\)/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+async function addGenres(list) {
+  let cache = {}; try { cache = JSON.parse(await fs.readFile("data/genres.json", "utf8")) } catch (e) {}
+  const now = Date.now(), labels = {};
+  const todo = list.filter((x) => !x.event && !/anniversary|re-?issue|restoration|\(concert|\(theatre|nt live|live in /i.test(x.t) && (!cache[x.id] || (!cache[x.id].g.length && now - Date.parse(cache[x.id].at) > 7 * 864e5))).slice(0, 120);
+  for (const x of todo) {
+    try {
+      const name = x.t.replace(/\(.*?\)/g, "").replace(/^(disney|pixar|dreamworks)[’']s\s+/i, "").trim(), yr = +x.d.slice(0, 4);
+      const s = await wd("action=wbsearchentities&language=en&type=item&limit=7&search=" + encodeURIComponent(name));
+      const ids = (s.search || []).map((h) => h.id); let g = [];
+      if (ids.length) {
+        const e = await wd("action=wbgetentities&props=claims|labels&languages=en&ids=" + ids.join("|"));
+        const pick = ids.map((id) => e.entities[id]).find((en) => { if (!en || !en.claims) return false;
+          const isFilm = (en.claims.P31 || []).some((c) => ["Q11424", "Q202866", "Q24862", "Q506240", "Q229390", "Q93204"].includes(c.mainsnak?.datavalue?.value?.id));
+          const yrs = (en.claims.P577 || []).map((c) => +String(c.mainsnak?.datavalue?.value?.time || "").slice(1, 5)).filter(Boolean);
+          const lab = norm(en.labels?.en?.value || "");
+          return isFilm && (lab === norm(name) || lab.startsWith(norm(name))) && (!yrs.length || yrs.some((y) => Math.abs(y - yr) <= 1)) });
+        if (pick) {
+          const gq = (pick.claims.P136 || []).map((c) => c.mainsnak?.datavalue?.value?.id).filter(Boolean);
+          const need = gq.filter((q) => !labels[q]);
+          if (need.length) { const ge = await wd("action=wbgetentities&props=labels&languages=en&ids=" + need.slice(0, 50).join("|")); for (const q of need) labels[q] = ge.entities?.[q]?.labels?.en?.value || "" }
+          const L = gq.map((q) => labels[q]).join(" | ");
+          g = GMAP.filter(([re]) => re.test(L)).map(([, n]) => n);
+          if (g.includes("Animation") && !g.includes("Family")) g.push("Family");
+          g = [...new Set(g)].slice(0, 4);
+        }
+      }
+      cache[x.id] = { g, at: new Date().toISOString() };
+    } catch (e) { console.log("genre lookup failed for", x.t, e.message) }
+    await new Promise((r) => setTimeout(r, 250));
+  }
+  for (const x of list) {
+    let g = (cache[x.id] && cache[x.id].g) || [];
+    if (x.event) g = [/concert|live in|music/i.test(x.t) ? "Concert" : "Event"];
+    else if (/anniversary|re-?issue|restoration/i.test(x.t)) g = ["Re-release", ...g];
+    if (g.length) x.g = g;
+  }
+  await fs.writeFile("data/genres.json", JSON.stringify(cache));
+  console.log("genres:", todo.length, "looked up,", list.filter((x) => x.g).length, "of", list.length, "have one");
 }
 if (import.meta.url === `file://${process.argv[1]}`) main();
