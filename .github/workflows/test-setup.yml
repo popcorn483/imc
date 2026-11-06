@@ -1,0 +1,64 @@
+name: Check the foyer PC setup script
+
+on:
+  push:
+    paths: [setup/IMC-Foyer-PC-Setup.bat, .github/workflows/test-setup.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse and test
+        shell: powershell
+        run: |
+          $out = @()
+          $raw = [IO.File]::ReadAllText("setup\IMC-Foyer-PC-Setup.bat")
+          $errs = $null; [void][System.Management.Automation.Language.Parser]::ParseInput($raw, [ref]$null, [ref]$errs)
+          $out += "Main script parse errors: $($errs.Count)"; $errs | ForEach-Object { $out += "  " + $_.Message + " @ line " + $_.Extent.StartLineNumber }
+          $m = [regex]::Match($raw, "\`$sync = @'\r?\n(.*?)\r?\n'@", "Singleline"); $sync = $m.Groups[1].Value
+          $errs2 = $null; [void][System.Management.Automation.Language.Parser]::ParseInput($sync, [ref]$null, [ref]$errs2)
+          $out += "Sync script parse errors: $($errs2.Count)"; $errs2 | ForEach-Object { $out += "  " + $_.Message }
+          # run the sync against a pretend Drive folder
+          New-Item -ItemType Directory -Force "C:\ProgramData\IMC", "D:\My Drive\IMC TRAILERS" | Out-Null
+          Set-Content "C:\ProgramData\IMC\sync-trailers.ps1" $sync -Encoding UTF8
+          [IO.File]::WriteAllBytes("D:\My Drive\IMC TRAILERS\Hexed_TLR.mp4", (New-Object byte[] 1048576))
+          [IO.File]::WriteAllBytes("D:\My Drive\IMC TRAILERS\Klara_TLR.mp4", (New-Object byte[] 2048))
+          Set-Content "D:\My Drive\IMC TRAILERS\notes.txt" "x"
+          & powershell -NoProfile -ExecutionPolicy Bypass -File C:\ProgramData\IMC\sync-trailers.ps1
+          $out += "After first run: " + ((Get-ChildItem "C:\IMC TRAILERS" | ForEach-Object Name) -join ", ")
+          Remove-Item "D:\My Drive\IMC TRAILERS\Klara_TLR.mp4"
+          & powershell -NoProfile -ExecutionPolicy Bypass -File C:\ProgramData\IMC\sync-trailers.ps1
+          $out += "After delete: " + ((Get-ChildItem "C:\IMC TRAILERS" | ForEach-Object Name) -join ", ")
+          Get-ChildItem "D:\My Drive\IMC TRAILERS" -File | Remove-Item
+          & powershell -NoProfile -ExecutionPolicy Bypass -File C:\ProgramData\IMC\sync-trailers.ps1
+          $out += "Drive empty, first check: " + ((Get-ChildItem "C:\IMC TRAILERS" | ForEach-Object Name) -join ", ")
+          & powershell -NoProfile -ExecutionPolicy Bypass -File C:\ProgramData\IMC\sync-trailers.ps1
+          $out += "Drive empty, second check: " + ((Get-ChildItem "C:\IMC TRAILERS" | ForEach-Object Name) -join ", ")
+          $out += "Log:"; $out += (Get-Content C:\ProgramData\IMC\sync.log)
+          # the scheduled task part, as this user
+          try {
+            $me = [Security.Principal.WindowsIdentity]::GetCurrent().Name
+            $a = New-ScheduledTaskAction -Execute "wscript.exe" -Argument "`"C:\ProgramData\IMC\sync-hidden.vbs`""
+            $e = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(2) -RepetitionInterval (New-TimeSpan -Minutes 10) -RepetitionDuration (New-TimeSpan -Days 3650)
+            $l = New-ScheduledTaskTrigger -AtLogOn -User $me
+            $w = New-ScheduledTaskPrincipal -UserId $me -LogonType Interactive -RunLevel Limited
+            $o = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -MultipleInstances IgnoreNew -ExecutionTimeLimit (New-TimeSpan -Hours 2)
+            Register-ScheduledTask -TaskName "IMC trailers sync" -Action $a -Trigger @($e, $l) -Principal $w -Settings $o -Force | Out-Null
+            $out += "Scheduled task: OK"
+          } catch { $out += "Scheduled task: FAILED " + $_.Exception.Message }
+          $out | Set-Content setup\test-result.txt
+          $out
+      - name: Save the result
+        shell: bash
+        run: |
+          git config user.name "imc-importer"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add setup/test-result.txt
+          git commit -m "Setup script check result" || exit 0
+          git pull --rebase -X theirs && git push
