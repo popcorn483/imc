@@ -557,7 +557,18 @@ html.a-rm{scroll-behavior:auto}
   <p class="lead">Google Drive keeps an <b>IMC TRAILERS</b> folder copied onto every foyer PC by itself. You add trailer files on the manager's PC; a few minutes later they're on the foyer PCs, and the TVs play them from there instead of YouTube: full quality, no buffering, even with no internet.</p>
   <h3>Once on the manager's PC</h3>
   <ol class="steps"><li>Install <b>Google Drive for desktop</b> and sign in with the cinema's Google account. In File Explorer open Google Drive → <b>My Drive</b> and make a folder called <b>IMC TRAILERS</b>.</li></ol>
-  <h3>Once on each foyer PC</h3>
+  <h3>Once on each foyer PC: the one-file setup (easiest)</h3>
+  <p><a class="open" href="setup/IMC-Foyer-PC-Setup.bat" download>⬇ Download the IMC Foyer PC setup</a></p>
+  <ol class="steps">
+    <li>On the foyer PC, download the file above (or copy it over on a USB stick) and <b>double-click</b> it. If Windows says “Windows protected your PC”, click <b>More info</b> → <b>Run anyway</b>. When it asks “Do you want to allow this app to make changes?”, click <b>Yes</b>.</li>
+    <li>It installs <b>Google Drive for desktop</b> (if it isn't there already) and sets it to start with Windows.</li>
+    <li>A Google window opens: <b>sign in with the cinema's Google account</b> (the one with the IMC TRAILERS folder). This is the only thing you type; the setup never sees the password.</li>
+    <li>It makes <b>C:\IMC TRAILERS</b>, a real copy of the Drive folder on this PC, and keeps it up to date every 10 minutes by itself: new trailers are copied in, deleted ones are taken out. (No “Mirror” setting needed.)</li>
+    <li>It asks whether the TV should <b>start by itself, full screen, with sound</b> (no click needed) when the PC switches on. Say <b>Y</b>.</li>
+    <li>Last, the TV app opens: click <span class="k">📁 Choose the trailers folder</span>, pick <b>This PC → C: → IMC TRAILERS</b>, choose <b>Allow on every visit</b>, then <span class="k">Start this TV</span>.</li>
+  </ol>
+  <div class="tip">Check it's working: the file <b>C:\ProgramData\IMC\sync.log</b> lists every trailer copied or removed. Running the setup again is safe: it just checks everything.</div>
+  <h3>Or by hand</h3>
   <ol class="steps">
     <li>Install <b>Google Drive for desktop</b> and sign in with the <b>same</b> Google account.</li>
     <li>Make sure the trailers are really on the PC: click the Drive icon by the clock → ⚙ <b>Settings</b> → <b>Preferences</b> → under Google Drive choose <b>Mirror files</b>. (Or keep “Stream files” and right-click the IMC TRAILERS folder → <b>Offline access</b> → <b>Available offline</b>.)</li>
