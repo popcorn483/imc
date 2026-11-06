@@ -265,6 +265,7 @@ body.easy #saveBtn,body.easy #fmtBtn,body.easy #storyBtn,body.easy #tlToggle,bod
 .ezstep{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid var(--line)}
 .ezn{width:30px;height:30px;border-radius:50%;background:var(--stripe);color:var(--gold-ink);display:grid;place-items:center;font-weight:900;font-size:15px}
 .ezstep h4{margin:3px 0 4px;font-size:16px}.ezstep h4 span{font-weight:500;color:var(--muted);font-size:13px}.ezstep p{margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.45}
+#covers .covgrp{grid-column:1/-1;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:8px 0 -2px}#covers .covtile{grid-column:span 2}
 .ezorder{display:flex;flex-direction:column;gap:4px}.ezo{display:grid;grid-template-columns:minmax(0,1fr) 34px 34px;gap:4px;align-items:center;padding:4px 4px 4px 10px;border:1px solid var(--line,#333);border-radius:9px;font-size:14px;cursor:pointer}.ezo.sel{border-color:var(--sel);background:rgba(77,163,255,.06)}.ezo span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ezo button{all:unset;cursor:pointer;height:30px;display:grid;place-items:center;border-radius:7px;background:rgba(127,127,127,.15);font-size:12px}.ezo button:disabled{opacity:.3;cursor:default}
 .ezf{display:flex;flex-direction:column;gap:5px;margin-bottom:10px;padding:8px;border-radius:10px;border:1px solid transparent}.ezf.sel{border-color:var(--sel);background:rgba(77,163,255,.06)}
 .ezf label{font-size:12px;font-weight:700;color:var(--muted)}.ezf input,.ezf textarea{font-size:15px;padding:9px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line);width:100%;box-sizing:border-box}.ezf .ezsub{font-size:13px}.ezf small{color:var(--muted);font-size:12px}
@@ -974,36 +975,69 @@ function drawGiftCard(c,L){
 
 /* ---------- Facebook cover photos (1640 x 624: Facebook shows 820 x 312; phones crop the sides, so everything important
    sits in the middle 68%) ---------- */
+const SEASON_K=k=>SEASONS.find(x=>x.k===k)||{};
+const coverTitle=t=>String(t||"").replace(/\s+-\s+.*$/,"").replace(/\(.*?\)|\[.*?\]/g,"").replace(/\s+/g," ").trim();
+/* each design: group g, background bg (or "site" for the cinema photo), frame, effects fx, and its layers */
 const COVERS=[
-  {k:"now",n:"Now showing",d:"Today's films, posters across the middle"},
-  {k:"soon",n:"Coming soon",d:"The next big releases"},
-  {k:"brand",n:"Your cinema",d:"The cinema building with the IMC welcome"},
-  {k:"season",n:"This season",d:"Seasonal look with this week's films"},
-  {k:"gift",n:"Gift cards",d:"IMC's gift card, big and bold"},
-  {k:"luxx",n:"LUXX",d:"Recline in style"}];
-function coverFilms(kind){const seen=new Set(),out=[];const src=kind==="soon"?(IMC&&IMC.comingSoon)||[]:[...((IMC&&IMC.today)||[]),...((IMC&&IMC.comingSoon)||[])];
-  for(const f of src){const k=String(f.title||"").toLowerCase().replace(/\s+-\s+.*$|\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();if(!f.posterFile&&!f.poster||seen.has(k)||/^(sensory|autism|parent)/i.test(f.title))continue;seen.add(k);out.push(f)}return out.slice(0,5)}
-function coverPosters(films,x0,x1,y,s){const n=films.length;return films.map((f,i)=>({id:uid(),kind:"pphoto",src:f.posterFile||f.poster,label:f.title,card:true,ar:.675,x:n===1?(x0+x1)/2:x0+(x1-x0)*i/(n-1),y,s:s*(n>4?.82:n>3?.9:1),r:(i-(n-1)/2)*.035,o:1,anim:"pop",delay:.08+i*.07}))}
-function coverLayers(k){const SN=SITE_NAME||"IMC";
-  /* the cover is short (624 px), so words are set larger than on a square post */
-  const T=(text,o)=>mk("text","title",{text,size:fitSize(text,"display",o.max||170,44,o.w||900),x:o.x,y:o.y,align:o.align||"center",anim:"slide",delay:o.delay||0,...(o.font?{font:o.font}:{}),...(o.c1?{c1:o.c1}:{})});
-  const sub=(text,o)=>mk("text","sub",{text,size:fitSize(text,"body",o.size||50,34,o.w||700),x:o.x,y:o.y,align:o.align||"center",anim:"slide",delay:o.delay||.1,...(o.c1?{c1:o.c1}:{})});
-  const kick=(text,o)=>mk("text","small",{text,x:o.x,y:o.y,size:36,sp:8,anim:"slide"});
-  if(k==="now"||k==="soon"||k==="season"){const fl=coverFilms(k==="soon"?"soon":"now"),se=seasonNow()[0];
-    const head=k==="soon"?"COMING SOON":k==="season"&&se?se.title:"NOW SHOWING",kk=k==="season"&&se?se.badge.text:SN.toUpperCase();
-    return[kick(kk,{x:.31,y:.25}),T(head,{x:.31,y:.47,max:150,w:840}),sub(k==="soon"?"Be first to see them here":"Book at imc.ie",{x:.31,y:.68,size:46,w:900,delay:.15}),
-      ...coverPosters(fl,.54,.775,.5,1)]}
-  if(k==="brand")return[kick("WELCOME TO",{x:.5,y:.25}),T(SN.toUpperCase(),{x:.5,y:.47,max:200,w:1150}),sub("Films, popcorn and great nights out · Book at imc.ie",{x:.5,y:.7,size:50,w:1150,delay:.15})];
-  if(k==="gift")return[mk("product","giftcard",{theme:"imc",text:"",x:.34,y:.5,s:1.35,r:-.06,anim:"pop",delay:.05}),kick("IMC GIFT CARDS",{x:.64,y:.25}),T("GIVE THE BIG SCREEN",{x:.645,y:.47,max:140,w:840}),sub("At the kiosk and on imc.ie",{x:.645,y:.68,size:48,w:900,delay:.15})];
-  if(k==="luxx")return[mk("badge","luxx",{x:.33,y:.5,s:1.2,anim:"pop"}),T("RECLINE IN STYLE",{x:.655,y:.44,max:130,w:800,font:"serif"}),sub("Luxury recliners at "+SN,{x:.655,y:.64,size:44,w:900,delay:.15})];
-  return[]}
+  {k:"now",g:"Now showing",n:"Posters on the right",bg:"stage"},
+  {k:"nowleft",g:"Now showing",n:"Posters on the left",bg:"midnight",frame:{style:"premiere",accent:"#ffc23d"},fx:{sparkle:true}},
+  {k:"nowrow",g:"Now showing",n:"Poster row",bg:"midnight",frame:{style:"filmstrip",accent:"#ffd84a"}},
+  {k:"feature",g:"Now showing",n:"Featured film",bg:"stage",fx:{spotlights:true}},
+  {k:"marquee",g:"Now showing",n:"Marquee lights",bg:"midnight",frame:{style:"marquee",accent:"#3a2560"},fx:{chase:true}},
+  {k:"book",g:"Now showing",n:"Book online",bg:"sunset",fx:{lightleak:true}},
+  {k:"soon",g:"Coming soon",n:"Coming soon",bg:"midnight"},
+  {k:"soonfeature",g:"Coming soon",n:"Big release",bg:"gold",frame:{style:"premiere",accent:"#ffc23d"},fx:{spotlights:true,sparkle:true}},
+  {k:"season",g:"Seasons",n:"This season",season:true},
+  {k:"christmas",g:"Seasons",n:"Christmas",se:"christmas"},
+  {k:"halloween",g:"Seasons",n:"Halloween",se:"halloween"},
+  {k:"newyear",g:"Seasons",n:"New Year",se:"newyear"},
+  {k:"summer",g:"Seasons",n:"Summer holidays",se:"summer"},
+  {k:"kids",g:"Families",n:"Kids Club",bg:"sky",fx:{confetti:true}},
+  {k:"family",g:"Families",n:"Family days out",bg:"pastel",fx:{balloons:true}},
+  {k:"meal",g:"Food & deals",n:"Wednesday Meal Deal",bg:"stage",frame:{style:"brandbar",accent:"#ffc23d"},fx:{sparkle:true}},
+  {k:"food",g:"Food & deals",n:"Popcorn & treats",bg:"sunset",fx:{popcornrain:true}},
+  {k:"gift",g:"Food & deals",n:"Gift cards",bg:"midnight",fx:{sparkle:true}},
+  {k:"brand",g:"Your cinema",n:"Cinema photo",bg:"site"},
+  {k:"brandstrip",g:"Your cinema",n:"Film strip",bg:"midnight",frame:{style:"filmstrip",accent:"#ffd84a"},fx:{reels:true}},
+  {k:"luxx",g:"Your cinema",n:"LUXX",bg:"gold"}];
+function coverFilms(kind,n=5){const seen=new Set(),out=[];const src=kind==="soon"?(IMC&&IMC.comingSoon)||[]:kind==="kids"?(IMC&&IMC.kidsClub)||[]:[...((IMC&&IMC.today)||[]),...((IMC&&IMC.comingSoon)||[])];
+  for(const f of src){const k=String(f.title||"").toLowerCase().replace(/\s+-\s+.*$|\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();if(!f.posterFile&&!f.poster||seen.has(k)||/^(sensory|autism|parent)/i.test(f.title))continue;seen.add(k);out.push(f)}return out.slice(0,n)}
+function coverPosters(films,x0,x1,y,s,tilt=.035){const n=films.length;return films.map((f,i)=>({id:uid(),kind:"pphoto",src:f.posterFile||f.poster,label:f.title,card:true,ar:.675,x:n===1?(x0+x1)/2:x0+(x1-x0)*i/(n-1),y,s:s*(n>5?.74:n>4?.82:n>3?.9:1),r:(i-(n-1)/2)*tilt,o:1,anim:"pop",delay:.08+i*.07}))}
+function coverLayers(k){const SN=SITE_NAME||"IMC",c=COVERS.find(x=>x.k===k)||COVERS[0];
+  /* the cover is short (624 px), so words are set larger than on a square post; everything stays in the middle 68% */
+  const T=(text,o)=>mk("text","title",{text,size:fitSize(text,o.font||"display",o.max||150,44,o.w||840),x:o.x,y:o.y,align:"center",anim:"slide",delay:o.delay||0,...(o.font?{font:o.font}:{}),...(o.c1?{c1:o.c1}:{})});
+  const sub=(text,o)=>mk("text","sub",{text,size:fitSize(text,"body",o.size||46,34,o.w||900),x:o.x,y:o.y,align:"center",anim:"slide",delay:o.delay||.15,...(o.c1?{c1:o.c1}:{})});
+  const kick=(text,o)=>mk("text","small",{text,x:o.x,y:o.y,size:36,sp:8,anim:"slide",...(o.c1?{c1:o.c1}:{})});
+  const left=(kk,head,line,o={})=>[kick(kk,{x:.31,y:.25,...o}),T(head,{x:.31,y:.47,...o}),sub(line,{x:.31,y:.68,...o})];
+  const right=(kk,head,line,o={})=>[kick(kk,{x:.645,y:.25,...o}),T(head,{x:.645,y:.47,...o}),sub(line,{x:.645,y:.68,...o})];
+  const centre=(kk,head,line,o={})=>[kick(kk,{x:.5,y:o.ky||.24,...o}),T(head,{x:.5,y:o.ty||.46,max:o.max||180,w:o.w||1150,...o}),sub(line,{x:.5,y:o.sy||.69,w:1150,...o})];
+  const se=c.season?seasonNow()[0]:c.se?SEASON_K(c.se):null,now=coverFilms("now"),soon=coverFilms("soon");
+  switch(k){
+    case "now":return[...left(SN.toUpperCase(),"NOW SHOWING","Book at imc.ie"),...coverPosters(now,.54,.775,.5,1)];
+    case "nowleft":return[...coverPosters(now,.215,.41,.5,.92),...right(SN.toUpperCase(),"NOW SHOWING","Book your seats at imc.ie",{w:700,x:.66})];
+    case "nowrow":return[kick("NOW SHOWING AT "+SN.toUpperCase(),{x:.5,y:.13}),...coverPosters(coverFilms("now",7),.215,.785,.53,1.05,.0)];
+    case "feature":{const f=now[0];return f?[...coverPosters([f],.3,.3,.5,1.45,0).map(l=>({...l,r:-.04})),kick("NOW SHOWING",{x:.62,y:.25}),T(coverTitle(f.title).toUpperCase(),{x:.62,y:.47,max:150,w:840}),sub("Book at imc.ie",{x:.62,y:.68}),mk("badge","book",{x:.62,y:.86,s:.62,anim:"pulse",delay:.4})]:centre(SN.toUpperCase(),"NOW SHOWING","Book at imc.ie")}
+    case "marquee":return[...centre("TONIGHT AT THE IMC","",""),...coverPosters(now,.3,.7,.5,.95)].filter(l=>l.kind!=="text"||l.text);
+    case "book":return[...left("SKIP THE QUEUE","BOOK ONLINE","imc.ie · pick your seats"),mk("badge","book",{x:.31,y:.86,s:.62,anim:"pulse",delay:.4}),...coverPosters(now.slice(0,4),.55,.77,.5,.95)];
+    case "soon":return[...left(SN.toUpperCase(),"COMING SOON","Be first to see them here"),...coverPosters(soon,.54,.775,.5,1)];
+    case "soonfeature":{const f=soon[0];if(!f)return centre("COMING SOON","THE BIG ONES","Coming soon to "+SN);const d=f.releaseDate?new Date(f.releaseDate+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"long"}).toUpperCase():"SOON";
+      return[...coverPosters([f],.3,.3,.5,1.45,0).map(l=>({...l,r:.04})),kick("COMING TO "+SN.toUpperCase(),{x:.63,y:.25}),T(coverTitle(f.title).toUpperCase(),{x:.63,y:.47,max:150,w:840}),mk("badge","date",{text:d,sub:"IN CINEMAS",x:.63,y:.71,s:.62,anim:"pop",delay:.3})]}
+    case "season":case "christmas":case "halloween":case "newyear":case "summer":{const t=se&&se.title||"AT THE MOVIES",kk=se&&se.badge?se.badge.text:SN.toUpperCase(),ink=se&&se.ink;return[...left(kk,t,"Book at imc.ie",ink?{c1:ink}:{}),...coverPosters(now,.54,.775,.5,1)]}
+    case "kids":{const kf=coverFilms("kids");return[mk("badge","kids",{x:.3,y:.36,s:.95,anim:"pop"}),sub("Family films every weekend",{x:.3,y:.64,size:44,w:760}),mk("text","small",{text:"BOOK AT IMC.IE",x:.3,y:.79,size:30,sp:8,anim:"slide",delay:.25}),...coverPosters(kf.length?kf:now,.55,.77,.5,1)]}
+    case "family":return[...left("SORTED FOR THE WEEKEND","FAMILY DAYS OUT","Films for all ages at "+SN,{c1:"#2a1a6e"}),...coverPosters(coverFilms("kids").concat(now).slice(0,4),.55,.77,.5,1)];
+    case "meal":{const wp=(()=>{try{const P=IMC&&IMC.prices&&!Array.isArray(IMC.prices)?IMC.prices:{};const t=(P.tickets||[]).find(x=>/wednesday/i.test(x.name)&&/meal/i.test(x.name)&&!/luxx/i.test(x.name));return t&&t.price}catch(e){return""}})();
+      return[{id:uid(),kind:"pphoto",src:"data/products/cut/bundle1.png",label:"Ticket and combo",card:false,x:.33,y:.52,s:.95,r:0,o:1,anim:"pop",delay:.05},kick("EVERY WEDNESDAY",{x:.645,y:.22}),T("MEAL DEAL",{x:.645,y:.43,max:160,w:840}),sub("Ticket, medium popcorn & medium drink",{x:.645,y:.62,size:40,w:820}),...(wp?[mk("badge","ticket",{text:wp,sub:"ALL FOR",x:.645,y:.84,s:.62,anim:"slam",delay:.35})]:[])]}
+    case "food":return[{id:uid(),kind:"pphoto",src:"data/products/cut/scon.png",label:"Share combo",card:false,x:.33,y:.52,s:1,r:0,o:1,anim:"pop",delay:.05},...right("AT THE KIOSK","POPCORN & TREATS","Grab your snacks before the film")];
+    case "gift":return[mk("product","giftcard",{theme:"imc",text:"",x:.34,y:.5,s:1.35,r:-.06,anim:"pop",delay:.05}),...right("IMC GIFT CARDS","GIVE THE BIG SCREEN","At the kiosk and on imc.ie")];
+    case "brand":return centre("WELCOME TO",SN.toUpperCase(),"Films, popcorn and great nights out · Book at imc.ie",{max:200});
+    case "brandstrip":return centre("YOUR LOCAL CINEMA",SN.toUpperCase(),"The latest films, every day · imc.ie",{max:190});
+    case "luxx":return[mk("badge","luxx",{x:.33,y:.5,s:1.2,anim:"pop"}),kick("ONLY AT "+SN.toUpperCase(),{x:.655,y:.25}),T("RECLINE IN STYLE",{x:.655,y:.46,max:130,w:800,font:"serif"}),sub("Luxury recliner seats",{x:.655,y:.66,size:44,w:760})];
+  }return[]}
+function coverBg(c){const se=c.season?seasonNow()[0]:c.se?SEASON_K(c.se):null;return se&&se.bg?{bg:se.bg,frame:{...se.frame},fx:{...se.fx}}:{bg:c.bg==="site"?"stage":c.bg||"stage",frame:c.frame||{style:"none"},fx:c.fx||{}}}
 async function applyCover(k){const c=COVERS.find(x=>x.k===k)||COVERS[0];S.fmt="cover";S.label="Facebook cover: "+c.n;showSafe=true;
-  const se=seasonNow()[0];S.motion={...S.motion,fx:{}};S.frame={...S.frame,style:"none",logo:true};
-  if(k==="brand"){const sp=sitePic();if(sp&&await loadUrlAsPhoto(sp)){S.bg="photo";S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:0,shade:55}}else S.bg="stage"}
-  else if(k==="season"&&se){S.bg=se.bg;S.frame={...S.frame,...se.frame,logo:true};S.motion={...S.motion,fx:{...se.fx}}}
-  else S.bg={now:"stage",soon:"midnight",gift:"festive",luxx:"gold"}[k]||"stage";
-  if(k==="gift"&&!/^(11|12)/.test(new Date().toISOString().slice(5,7)))S.bg="midnight";
-  S.layers=coverLayers(k);if(!S.layers.some(l=>l.kind==="pphoto")&&(k==="now"||k==="soon"||k==="season"))toast("No film posters found yet: try again once the listings have loaded");
+  const b=coverBg(c);S.bg=b.bg;S.frame={...S.frame,style:"none",...b.frame,logo:true};S.motion={...S.motion,fx:{...b.fx}};
+  if(c.bg==="site"){const sp=sitePic();if(sp&&await loadUrlAsPhoto(sp)){S.bg="photo";S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:0,shade:55}}}
+  S.layers=coverLayers(k);if(c.g!=="Your cinema"&&!/meal|food|gift|luxx/.test(k)&&!S.layers.some(l=>l.kind==="pphoto"))toast("No film posters found yet: try again once the listings have loaded");
   selId=null;fit();clampPhoto();syncAll();commit();toast("Facebook cover ready. Keep words inside the dashed box: phones cut off the sides",true)}
 /* one-click gift card posts */
 const GIFT_POSTS=[
@@ -1616,8 +1650,8 @@ function thumbsFor(t){if(t==="add")renderFlogo();if(!thumbDirty[t])return;thumbD
   const now=seasonNow().map(x=>x.k);
   $("#seasons").innerHTML=SEASONS.map(se=>`<button class="tile" data-season="${se.k}"><canvas width="320" height="320"></canvas><span>${esc(se.n)}${now.includes(se.k)?' <em class="anim">Now</em>':""}</span></button>`).join("");
   $$("#seasons .tile").forEach(t=>{const se=SEASONS.find(x=>x.k===t.dataset.season),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:se.bg,frame:{...S.frame,...se.frame},photo:S.photo,layers:seasonLayers(se,true),motion:{fx:se.fx}})});
-  $("#covers").innerHTML=COVERS.map(c=>`<button class="tile" data-cover="${c.k}"><canvas width="328" height="125"></canvas><span>${esc(c.n)}</span></button>`).join("");
-  $$("#covers .tile").forEach(t=>{const k=t.dataset.cover,c=t.querySelector("canvas"),se=seasonNow()[0];render(c.getContext("2d"),328,125,{noPhoto:true},{fmt:"cover",bg:k==="season"&&se?se.bg:{now:"stage",soon:"midnight",gift:"midnight",luxx:"gold",brand:"stage"}[k]||"stage",frame:{...S.frame,style:"none",logo:true},photo:S.photo,layers:coverLayers(k),motion:{fx:{}}})});
+  $("#covers").innerHTML=[...new Set(COVERS.map(c=>c.g))].map(g=>`<div class="covgrp">${esc(g)}</div>`+COVERS.filter(c=>c.g===g).map(c=>`<button class="tile covtile" data-cover="${c.k}"><canvas width="328" height="125"></canvas><span>${esc(c.n)}</span></button>`).join("")).join("");
+  $$("#covers .tile").forEach(t=>{const c=COVERS.find(x=>x.k===t.dataset.cover),b=coverBg(c),cv=t.querySelector("canvas");render(cv.getContext("2d"),328,125,{noPhoto:true},{fmt:"cover",bg:b.bg,frame:{...S.frame,style:"none",...b.frame,logo:true},photo:S.photo,layers:coverLayers(c.k),motion:{fx:{}}})});
   $("#gifts").innerHTML=GIFT_POSTS.map(g=>`<button class="tile" data-gift="${g.k}"><canvas width="320" height="320"></canvas><span>${esc(g.n)}</span></button>`).join("");
   $$("#gifts .tile").forEach(t=>{const g=GIFT_POSTS.find(x=>x.k===t.dataset.gift),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:g.bg,frame:{...S.frame,...g.frame},photo:S.photo,layers:giftLayers(g),motion:{fx:g.fx}})});
   $("#presets").innerHTML=ANIM_PRESETS.map((p,i)=>p.hide?"":`<button class="tile" data-preset="${i}"><canvas width="320" height="320"></canvas><span>${esc(p.n)}</span></button>`).join("");
