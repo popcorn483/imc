@@ -1,0 +1,28 @@
+Main script parse errors: 0
+Sync script parse errors: 0
+After first run: Hexed_TLR.mp4, Klara_TLR.mp4
+After delete: Hexed_TLR.mp4
+Drive empty, first check: Hexed_TLR.mp4
+Drive empty, second check: 
+Log:
+2026-11-06 21:23  Copied Hexed_TLR.mp4 (1 MB)
+2026-11-06 21:23  Copied Klara_TLR.mp4 (0 MB)
+2026-11-06 21:23  Removed Klara_TLR.mp4 (deleted from Google Drive)
+2026-11-06 21:23  The Drive folder looks empty: checking again next time before removing anything
+2026-11-06 21:23  Removed Hexed_TLR.mp4 (deleted from Google Drive)
+Scheduled task: OK
+Batch start-up: cmd.exe : iex : At line:10 char:30
+At D:\a\_temp\0360112c-6f97-4044-aaa6-78608b855820.ps1:40 char:49
++ ... inue"; $r = cmd.exe /c "`"$env:TEMP\boot.bat`" elevated" 2>&1 | Out-S ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (iex : At line:10 char:30:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
++ Write-Host ('BOOT OK mode=' + )
++                              ~
+You must provide a value expression following the '+' operator.
+At line:1 char:1
++ iex ([IO.File]::ReadAllText($env:IMC_BAT))
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Expression], ParseException
+    + FullyQualifiedErrorId : ExpectedValueExpression,Microsoft.PowerShell.Commands.InvokeExpressionCommand
