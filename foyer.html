@@ -214,11 +214,11 @@ body.lite #grain,body.trl #grain,body.trl #stage::after{display:none}
 /* gold words in headings */
 .bhead h2 em,#hours h2 em{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
 /* light sweeping across posters, the QR panel, product pictures and price badges */
-#card .poster,#promo .posters div,#promo .prodwrap,#promo .price,.qrbox{overflow:hidden}
-#card .poster::after,#promo .posters div::after,.qrbox::after,#promo .price::after{content:"";position:absolute;inset:-20%;pointer-events:none;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.28) 48%,rgba(255,255,255,.06) 54%,transparent 60%);transform:translateX(-120%);animation:sweep 7s 1.2s ease-in-out infinite}
+#card .poster,#promo .prodwrap,#promo .price,.qrbox{overflow:hidden}
+#card .poster::after,.qrbox::after,#promo .price::after{content:"";position:absolute;inset:-20%;pointer-events:none;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.28) 48%,rgba(255,255,255,.06) 54%,transparent 60%);transform:translateX(-120%);animation:sweep 7s 1.2s ease-in-out infinite}
 .qrbox{position:relative}
 @keyframes sweep{0%{transform:translateX(-120%)}22%,100%{transform:translateX(120%)}}
-#promo .posters div{overflow:visible}#promo .posters div::after{inset:0;border-radius:1vh}
+
 #card .poster{box-shadow:0 3vh 8vh rgba(0,0,0,.65),0 0 0 1px rgba(232,196,106,.25)}
 /* showtimes pop in one after another; the next one glows */
 #card.in .times span{animation:chip .55s cubic-bezier(.2,1.3,.4,1) both}
