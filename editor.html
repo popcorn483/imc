@@ -1543,11 +1543,16 @@ new ResizeObserver(fit).observe($("#wrap"));
 
 /* ---------- history + persistence ---------- */
 const clean=st=>JSON.stringify(st,(k,v)=>k.startsWith("_")?undefined:v);
-function commit(){const j=clean(S);if(hist[hi]===j)return;hist=hist.slice(0,hi+1);hist.push(j);if(hist.length>80)hist.shift();hi=hist.length-1;updUndo();save();syncMotion();ensureLoop()}
+/* the size chosen on the home page (or with the size buttons) is kept: a template made for another size asks first */
+let FMT_LOCK=null;
+function sizeGuard(){if(!FMT_LOCK||S.fmt===FMT_LOCK||!FORMATS[FMT_LOCK]||!FORMATS[S.fmt]||hi<0)return true;const now=FORMATS[S.fmt].n,keep=FORMATS[FMT_LOCK].n;
+  if(confirm(`That template is made for ${now}.\n\nOK: change your design to ${now}.\nCancel: keep your ${keep} and go back.`)){FMT_LOCK=S.fmt;return true}
+  restore(hist[hi]);fit();toast("Kept your "+keep);return false}
+function commit(){if(!sizeGuard())return;const j=clean(S);if(hist[hi]===j)return;hist=hist.slice(0,hi+1);hist.push(j);if(hist.length>80)hist.shift();hi=hist.length-1;updUndo();save();syncMotion();ensureLoop()}
 let commitT=0;function commitSoon(){checkSoon();clearTimeout(commitT);commitT=setTimeout(commit,350)}
 function restore(j){S=JSON.parse(j);if(!S.layers.find(l=>l.id===selId))selId=null;syncAll();if(EASY)renderEasy()}
-function undo(){if(hi>0){hi--;restore(hist[hi]);updUndo();save()}}
-function redo(){if(hi<hist.length-1){hi++;restore(hist[hi]);updUndo();save()}}
+function undo(){if(hi>0){hi--;restore(hist[hi]);if(FMT_LOCK)FMT_LOCK=S.fmt;updUndo();save()}}
+function redo(){if(hi<hist.length-1){hi++;restore(hist[hi]);if(FMT_LOCK)FMT_LOCK=S.fmt;updUndo();save()}}
 function updUndo(){$("#undo").disabled=hi<=0;$("#redo").disabled=hi>=hist.length-1;const u=$("#ezUndo"),r=$("#ezRedo");if(u)u.disabled=hi<=0;if(r)r.disabled=hi>=hist.length-1}
 let saveT=0;function save(){clearTimeout(saveT);saveT=setTimeout(()=>{try{localStorage.setItem("imc-editor-state",clean(S))}catch(e){}},300)}
 function idb(){return new Promise((res,rej)=>{const r=indexedDB.open("imc-editor",1);r.onupgradeneeded=()=>r.result.createObjectStore("kv");r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
@@ -1591,7 +1596,7 @@ function syncLogo(){const box=$("#logoBox");box.innerHTML="";if(logoImg){const i
 /* ---------- formats + tabs ---------- */
 const FMT_HINT={square:"Facebook & Instagram post",portrait:"Instagram feed, tallest",story:"Stories, Reels, TikTok",wide:"Foyer TVs, YouTube",event:"Facebook event cover",cover:"Facebook page cover",a4:"Posters to print",a4l:"Landscape print"};
 $("#fmts").innerHTML=Object.entries(FORMATS).map(([k,f])=>`<button role="menuitemradio" data-fmt="${k}">${f.n}<small>${FMT_HINT[k]||""} · ${f.w} × ${f.h}</small></button>`).join("");
-$("#fmts").addEventListener("click",e=>{const b=e.target.closest("[data-fmt]");if(!b)return;S.fmt=b.dataset.fmt;syncFmt();if(S.look&&S.look.id&&S.layers.some(l=>l.role))relayoutLook();clampPhoto();fit();commit()});
+$("#fmts").addEventListener("click",e=>{const b=e.target.closest("[data-fmt]");if(!b)return;S.fmt=b.dataset.fmt;FMT_LOCK=S.fmt;syncFmt();if(S.look&&S.look.id&&S.layers.some(l=>l.role))relayoutLook();clampPhoto();fit();commit()});
 function syncFmt(){$$("#fmts button").forEach(b=>{b.setAttribute("aria-pressed",b.dataset.fmt===S.fmt);b.setAttribute("aria-checked",b.dataset.fmt===S.fmt)});const n=$("#fmtName");if(n)n.textContent=FORMATS[S.fmt].n}
 /* drop-down menus in the top bar (size, more ways to save): close on choice, Esc or a click elsewhere */
 function ddClose(except){$$(".ddmenu").forEach(m=>{if(m!==except&&!m.hidden){m.hidden=true;const b=document.querySelector(`[aria-controls="${m.id}"]`);b&&b.setAttribute("aria-expanded","false")}})}
@@ -2747,7 +2752,7 @@ function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-ha
   else if(h.kind==="luxx")applyLuxx(h);
   else if(h.kind==="luxxkit")applyLuxxKit(h);
   else if(h.kind==="kidsclub")applyKids(h);
-  else if(h.kind==="cover"){applyCover(h.key||"now");return true}
+  else if(h.kind==="cover"){FMT_LOCK=null;applyCover(h.key||"now").then(()=>{FMT_LOCK="cover"});return true}
   else if(h.kind==="gift"){applyGift(h.key);const c=S.layers.find(l=>l.key==="giftcard");if(c&&h.amount){c.text=h.amount;draw()}}
   else if(h.kind==="season"){applySeason(h.key,true);if(h.title){const t=S.layers.find(l=>l.kind==="text");if(t)t.text=h.title}}
   else if(h.kind==="listing")applyListing(h);
@@ -2757,6 +2762,7 @@ function applyHandoff(){let h=null;try{h=JSON.parse(localStorage.getItem("imc-ha
   else if(h.kind==="countdown")applyCountdown(h);
   else if(h.kind==="poll")applyPoll(h);
   else if(h.kind==="image"&&h.url)loadUrlAsPhoto(h.url);
+  FMT_LOCK=h.kind==="cover"?"cover":S.fmt;   /* the size picked on the home page stays */
   return true}
 
 /* ---------- video export ---------- */
