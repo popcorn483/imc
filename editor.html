@@ -1037,7 +1037,9 @@ function coverBg(c){const se=c.season?seasonNow()[0]:c.se?SEASON_K(c.se):null;re
 async function applyCover(k){const c=COVERS.find(x=>x.k===k)||COVERS[0];S.fmt="cover";S.label="Facebook cover: "+c.n;showSafe=true;
   const b=coverBg(c);S.bg=b.bg;S.frame={...S.frame,style:"none",...b.frame,logo:true};S.motion={...S.motion,fx:{...b.fx}};
   if(c.bg==="site"){const sp=sitePic();if(sp&&await loadUrlAsPhoto(sp)){S.bg="photo";S.photo={...S.photo,fit:"cover",zoom:1,ox:0,oy:0,shade:55}}}
-  S.layers=coverLayers(k);if(c.g!=="Your cinema"&&!/meal|food|gift|luxx/.test(k)&&!S.layers.some(l=>l.kind==="pphoto"))toast("No film posters found yet: try again once the listings have loaded");
+  /* a Facebook cover is a still picture: no moving effects and no entry animations */
+  S.motion={...S.motion,fx:{}};S.frame={...S.frame,anim:false};
+  S.layers=coverLayers(k).map(l=>({...l,anim:"none",delay:0}));if(c.g!=="Your cinema"&&!/meal|food|gift|luxx/.test(k)&&!S.layers.some(l=>l.kind==="pphoto"))toast("No film posters found yet: try again once the listings have loaded");
   selId=null;fit();clampPhoto();syncAll();commit();toast("Facebook cover ready. Keep words inside the dashed box: phones cut off the sides",true)}
 /* one-click gift card posts */
 const GIFT_POSTS=[
@@ -1651,7 +1653,7 @@ function thumbsFor(t){if(t==="add")renderFlogo();if(!thumbDirty[t])return;thumbD
   $("#seasons").innerHTML=SEASONS.map(se=>`<button class="tile" data-season="${se.k}"><canvas width="320" height="320"></canvas><span>${esc(se.n)}${now.includes(se.k)?' <em class="anim">Now</em>':""}</span></button>`).join("");
   $$("#seasons .tile").forEach(t=>{const se=SEASONS.find(x=>x.k===t.dataset.season),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:se.bg,frame:{...S.frame,...se.frame},photo:S.photo,layers:seasonLayers(se,true),motion:{fx:se.fx}})});
   $("#covers").innerHTML=[...new Set(COVERS.map(c=>c.g))].map(g=>`<div class="covgrp">${esc(g)}</div>`+COVERS.filter(c=>c.g===g).map(c=>`<button class="tile covtile" data-cover="${c.k}"><canvas width="328" height="125"></canvas><span>${esc(c.n)}</span></button>`).join("")).join("");
-  $$("#covers .tile").forEach(t=>{const c=COVERS.find(x=>x.k===t.dataset.cover),b=coverBg(c),cv=t.querySelector("canvas");render(cv.getContext("2d"),328,125,{noPhoto:true},{fmt:"cover",bg:b.bg,frame:{...S.frame,style:"none",...b.frame,logo:true},photo:S.photo,layers:coverLayers(c.k),motion:{fx:{}}})});
+  $$("#covers .tile").forEach(t=>{const c=COVERS.find(x=>x.k===t.dataset.cover),b=coverBg(c),cv=t.querySelector("canvas");render(cv.getContext("2d"),328,125,{noPhoto:true},{fmt:"cover",bg:b.bg,frame:{...S.frame,style:"none",...b.frame,logo:true},photo:S.photo,layers:coverLayers(c.k).map(l=>({...l,anim:"none",delay:0})),motion:{fx:{}}})});
   $("#gifts").innerHTML=GIFT_POSTS.map(g=>`<button class="tile" data-gift="${g.k}"><canvas width="320" height="320"></canvas><span>${esc(g.n)}</span></button>`).join("");
   $$("#gifts .tile").forEach(t=>{const g=GIFT_POSTS.find(x=>x.k===t.dataset.gift),c=t.querySelector("canvas");render(c.getContext("2d"),320,320,{noPhoto:true},{fmt:"square",bg:g.bg,frame:{...S.frame,...g.frame},photo:S.photo,layers:giftLayers(g),motion:{fx:g.fx}})});
   $("#presets").innerHTML=ANIM_PRESETS.map((p,i)=>p.hide?"":`<button class="tile" data-preset="${i}"><canvas width="320" height="320"></canvas><span>${esc(p.n)}</span></button>`).join("");
