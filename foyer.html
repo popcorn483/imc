@@ -248,6 +248,26 @@ async function driveList(){if(!GD())return;if(!GK()&&!GSA()){driveMsg="This PC h
     DRIVE=(j.files||[]).filter(f=>/^video\//.test(f.mimeType||"")||/\.(mp4|m4v|mov|webm)$/i.test(f.name||"")).map(f=>({id:f.id,name:f.name,size:+f.size||0,dur:Math.round(+(f.videoMediaMetadata&&f.videoMediaMetadata.durationMillis)||0)/1000})).filter(f=>f.dur>5).sort((a,b)=>a.id.localeCompare(b.id));
     driveAt=Date.now();try{localStorage.setItem("imc-gd-list",JSON.stringify(DRIVE))}catch(e){}}catch(e){driveMsg="No internet: using the trailer files already saved"}}
 /* which film each Drive file belongs to: the hub's choice, or the longest film title found in the file name */
+/* ---------- trailer files from a folder on this PC (e.g. IMC TRAILERS kept in sync by Google Drive for desktop) ----------
+   Chosen once on the TV app's set-up screen; Chrome keeps permission to read it ("Allow on every visit").
+   Files are matched to films by name and played from the PC's disk. The folder is read again every half hour. */
+let LOCAL=[],localFiles=new Map(),localMsg="",localPerm="";
+async function localDur(file){const k="imc-lfdur:"+file.name+"|"+file.size+"|"+file.lastModified;try{const c=localStorage.getItem(k);if(c)return+c}catch(e){}
+  const v=document.createElement("video"),u=URL.createObjectURL(file);v.preload="metadata";v.muted=true;
+  const d=await new Promise(res=>{const t=setTimeout(()=>res(0),15000);v.onloadedmetadata=()=>{clearTimeout(t);res(isFinite(v.duration)?v.duration:0)};v.onerror=()=>{clearTimeout(t);res(0)};v.src=u});
+  URL.revokeObjectURL(u);v.removeAttribute("src");if(d>5)try{localStorage.setItem(k,String(Math.round(d*10)/10))}catch(e){}return d}
+let localTestDir=null;
+async function localScan(){const h=localTestDir||await sget("trailerdir");if(!h||!h.values){LOCAL=[];return}
+  try{localPerm=await h.queryPermission({mode:"read"})}catch(e){localPerm="denied"}
+  if(localPerm!=="granted"){localMsg="Click the screen once to let this TV read the trailers folder";return}
+  const out=[],map=new Map();
+  async function walk(dir,depth){for await(const e of dir.values()){if(e.kind==="directory"){if(depth<1)await walk(e,depth+1);continue}
+    if(!/\.(mp4|m4v|mov|webm)$/i.test(e.name))continue;try{const f=await e.getFile();if(f.size<1e5)continue;const dur=await localDur(f);if(dur>5){out.push({id:"lf:"+e.name,name:e.name,dur:Math.round(dur*10)/10});map.set("lf:"+e.name,e)}}catch(x){}}}
+  try{await walk(h,0);out.sort((a,b)=>a.name.localeCompare(b.name));LOCAL=out;localFiles=map;localMsg=""}catch(e){localMsg="Couldn't read the trailers folder: "+(e.message||e)}}
+/* the user's one click (needed for sound after a restart) also re-allows the folder if Chrome asks again */
+async function localAllow(){try{const h=await sget("trailerdir");if(h&&h.requestPermission&&(await h.queryPermission({mode:"read"}))!=="granted"){if((await h.requestPermission({mode:"read"}))==="granted"){await localScan();plan=null}}}catch(e){}}
+function localAssign(list){const out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
+  for(const d of LOCAL){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));if(hit&&!out.has(hit.f.key))out.set(hit.f.key,d)}return out}
 function driveAssign(list){const M=gmap(),out=new Map(),titled=list.map(f=>({f,t:dnorm(cleanTitle(f.title)).trim()})).filter(x=>x.t.length>=3).sort((a,b)=>b.t.length-a.t.length);
   for(const d of DRIVE){if(M[d.id]==="-")continue;let f=M[d.id]&&list.find(x=>x.key===M[d.id]);if(!f){const n=dnorm(d.name),hit=titled.find(x=>n.includes(" "+x.t+" "));f=hit&&hit.f}
     if(f&&!out.has(f.key))out.set(f.key,d)}return out}
@@ -328,6 +348,7 @@ function films(){const m=new Map();
   const out=new Map();for(const f of m.values()){const k=f.slug||f.title.toLowerCase(),o=out.get(k);if(!o)out.set(k,{...f,key:k,luxxToo:!!f.luxx,luxxS:f.luxx?[...f.sessions]:[]});else{o.luxxToo=o.luxxToo||!!f.luxx;if(f.luxx)for(const s of f.sessions)if(!o.luxxS.some(x=>x.date===s.date&&x.time===s.time))o.luxxS.push(s);for(const s of f.sessions)if(!o.sessions.some(x=>x.date===s.date&&x.time===s.time))o.sessions.push(s);for(const key of["poster","posterFile","cert","certIcon","runtime","trailer"])o[key]=o[key]||f[key]}}
   for(const f of out.values())if(MYTR[f.key]){f.trailer="https://www.youtube.com/watch?v="+MYTR[f.key];f.mine=true}
   for(const f of out.values()){const st=STUDIO.find(x=>x.film===f.key);if(st){f.studio=st;f.trailer="studio:"+st.id}}
+  if(LOCAL.length){const L=[...out.values()],A=localAssign(L);for(const f of L){if(f.studio)continue;const d=A.get(f.key);if(d){f.ytTrailer=f.trailer;f.studio={id:d.id,local:d.id,len:d.dur,title:f.title};f.trailer="studio:"+d.id}}}
   if(DRIVE.length&&GD()){const L=[...out.values()],A=driveAssign(L);for(const f of L){if(f.studio)continue;const d=A.get(f.key);if(d){f.ytTrailer=f.trailer;f.studio={id:"gd:"+d.id,drive:d.id,len:d.dur,title:f.title};f.trailer="studio:gd:"+d.id}}}
   return[...out.values()]}
 function safety(f){if(f.studio){const c=String(f.cert||"").toUpperCase(),sys=f.certSystem||(NI.includes(SITE)?"bbfc":"ifco");return!c||c==="TBC"||f.extra||(SAFE[sys]||SAFE.bbfc).includes(c)?{ok:true}:{ok:false,why:"rated "+c}}
@@ -501,7 +522,7 @@ async function syncClock(){let lo=-Infinity,hi=Infinity;
 const nowMs=()=>Date.now()+clockOff;
 function dayMs(){const t=nowMs(),p={};for(const x of new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date(t)))p[x.type]=x.value;return((+p.hour)*3600+(+p.minute)*60+(+p.second))*1000+t%1000}
 function halfHour(){const n=londonNow();return n.date+"T"+n.hm.slice(0,2)+(+n.hm.slice(3,5)>=30?"b":"a")}
-function planStamp(){return[halfHour(),Q.toString(),D&&(D.updated||D.generated||D.fetched||""),Object.keys(DUR).length,STUDIO.map(x=>x.id+":"+(x.len||0)).join(","),DRIVE.map(x=>x.id+":"+x.dur).join(",")].join("|")}
+function planStamp(){return[halfHour(),Q.toString(),D&&(D.updated||D.generated||D.fetched||""),Object.keys(DUR).length,STUDIO.map(x=>x.id+":"+(x.len||0)).join(","),DRIVE.map(x=>x.id+":"+x.dur).join(","),LOCAL.map(x=>x.id+":"+x.dur).join(",")].join("|")}
 function boardPlan(){const ds=dayState();if(!ds.rows.length)return null;const pages=Math.min(3,Math.ceil(ds.rows.length/9));return{pages,secs:pages>1?9:13}}
 function buildPlan(){const stamp=planStamp(),n=londonNow();PLAN_AT=nowMs()-dayMs()%1800000;
   try{seedRnd=seeded(n.date+"|"+Q.toString());since=0;gap=newGap();queue=buildQueue();var st=buildSteps(),bp=boardPlan()}finally{seedRnd=null;PLAN_AT=null}
@@ -543,6 +564,7 @@ function syncStart(x,loop,off,left){lastStep=Date.now();
   if(x.k==="trailer"){const local=x.f.studio&&!x.f.studio.url;if(netDown()&&!local){syncBoard=boardPlan();return playBoard()}
     return x.f.studio?playStudio(x.f,off):playTrailer(x.f,off)}}
 window.__foyerPlanAt=shift=>{const o=clockOff;clockOff=o+shift;buildPlan();const r={hm:londonNow().hm,code:plan.code,n:plan.steps.length,L:plan.L};clockOff=o;plan=null;playingKey=null;return r};   /* testing only: the running order as if it were built "shift" ms later */
+window.__foyerLocal=async d=>{if(d)localTestDir=d;await localScan();queue=buildQueue();steps=buildSteps();si=0;return LOCAL.map(x=>x.name+" "+x.dur+"s")};   /* testing only */
 window.__foyerQ=()=>steps.filter(x=>x.k==="trailer").map(x=>[cleanTitle(x.f.title),x.f.studio?(x.f.studio.drive?"drive":"studio"):"yt"]);   /* for checking */
 window.__foyerNow=()=>({key:playingKey&&playingKey.split("#")[1],step:plan&&playingKey?plan.steps[+playingKey.split(":").pop()].k:null,L:plan&&plan.L});   /* for checking TVs are in step */
 async function loadDurations(){const j=await getJson("data/durations.json");if(j){delete j._base;DUR=j}}
@@ -603,7 +625,8 @@ async function playTrailer(f,at=0){if(netDown()){if(!syncFill())timer=setTimeout
   player._x=()=>blank("YouTube won't play it here (removed, private or not allowed outside YouTube)");player._done=done}
 /* a studio trailer file (saved on this PC) or download link, played in the same frame as YouTube trailers */
 async function playStudio(f,at=0){const v=$("#svid"),x=f.studio;let src=x.url||"",obj="";
-  if(x.drive){const b=await sget("gdfile:"+x.drive);if(!b){/* not downloaded yet on this PC: the YouTube trailer instead */
+  if(x.local){const e=localFiles.get(x.local);let b=null;try{b=e&&await e.getFile()}catch(err){}if(!b){if(f.ytTrailer&&/youtu/.test(f.ytTrailer))return playTrailer({...f,trailer:f.ytTrailer,studio:null},at);if(!syncFill())timer=setTimeout(next,300);return}obj=src=URL.createObjectURL(b)}
+  else if(x.drive){const b=await sget("gdfile:"+x.drive);if(!b){/* not downloaded yet on this PC: the YouTube trailer instead */
       if(f.ytTrailer&&/youtu/.test(f.ytTrailer))return playTrailer({...f,trailer:f.ytTrailer,studio:null},at);if(!syncFill())timer=setTimeout(next,300);return}obj=src=URL.createObjectURL(b)}
   else if(!src){const b=await sget("studiofile:"+x.id);if(!b){timer=setTimeout(next,300);return}obj=src=URL.createObjectURL(b)}
   try{if(player&&player.pauseVideo)player.pauseVideo()}catch(e){}
@@ -679,7 +702,7 @@ function tickStrip(){const n=londonNow();$("#clock").textContent=n.hm;if(!D)retu
   $("#nextshow").innerHTML=`${m<=5?"Next · starts soon":"Next"}${m>5&&m<=60?` · in ${m} min`:""}${SCREENS&&r.screen?" · Screen "+esc(r.screen):""}<b>${r.time} ${esc(r.title)}</b>`}
 
 /* ---------- loading, with a saved copy for when the internet drops ---------- */
-async function load(){await loadStudio();await loadDurations();await driveList();if(Q.get("list")!=="1")setTimeout(driveSync,8000);savedCopy=false;let d=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json"),t=await getJson("data/trailers.json");
+async function load(){await loadStudio();await loadDurations();await driveList();await localScan();if(Q.get("list")!=="1")setTimeout(driveSync,8000);savedCopy=false;let d=await getJson(SITE==="enniskillen"?"data/imc.json":"data/cinemas/"+SITE+".json"),t=await getJson("data/trailers.json");
   if(d&&!savedCopy){try{localStorage.setItem(CK,JSON.stringify({d,t,at:Date.now()}))}catch(e){}offline=false}else if(d)offline=true
   else{try{const c=JSON.parse(localStorage.getItem(CK)||"null");if(c){d=c.d;t=c.t;offline=true}}catch(e){}}
   $("#offline").hidden=!offline;D=d;T=t||{};base=D?D._base:"";lastLoad=Date.now();
@@ -712,6 +735,7 @@ function infoBox(){let el=$("#infobox");if(el){el.remove();return}el=document.cr
     ["Settings from the manager's PC",remote?"yes, saved "+f(remote.at):lastRemote&&lastRemote.ok===false?"none found yet":"not checked yet"],["Last checked for settings",lastRemote?f(lastRemote.at):"not yet"],
     ["Settings in use",remote&&new URLSearchParams(remote.q).toString()===Q.toString()?"the manager's (up to date)":pendingQ?"new settings waiting: they start at the next screen":"this PC's own"],
     ["Next trailer loaded early",PRELOAD1?(player&&player._preId?"yes, ready to play":"waiting for the next card or priceboard")+` (${preHits} started instantly)`:"off on this PC"],
+    ...(localPerm||LOCAL.length?[["Trailers folder on this PC",`${LOCAL.length} trailer file${LOCAL.length===1?"":"s"} found`+(localMsg?" · "+localMsg:"")]]:[]),
     ...(GD()?[["Trailer files from Google Drive",(()=>{const n=Object.keys(driveHave).length,mb=Object.values(driveHave).reduce((a,x)=>a+(x.size||0),0)/1048576;return`${DRIVE.length} in the folder · ${n} saved on this PC (${mb<1024?Math.round(mb)+" MB":(mb/1024).toFixed(1)+" GB"})`+(driveMsg?" · "+driveMsg:"")+(driveAt?" · checked "+new Date(driveAt).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}):"")})()]]:[]),
     ["All TVs in step",SYNC?(syncOn?"on":"on (starts after Start)"):"off"],...(SYNC&&plan?[["Running order code",plan.code+" (the same on every TV means they have the same running order)"],["Clock vs website",(clockOff>=0?"+":"")+(clockOff/1000).toFixed(1)+" s (corrected for)"]]:[]),["Internet",offline||navigator.onLine===false?"down: showing saved listings":"ok"],["Listings updated",D&&D.updated?f(D.updated):"unknown"],["Sound",muted?"off (click once to turn on)":"on"],["Trailers that showed nothing today",badList().map(x=>x.title+" ("+x.why+")").join("; ")||"none"]];
   el.innerHTML="<b>Foyer player information</b><table>"+rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(String(r[1]))}</td></tr>`).join("")+"</table><small>Press I again to close. Press F5 to reload if something looks out of date.</small>";document.body.appendChild(el)}
@@ -731,6 +755,7 @@ setInterval(()=>{$("#offline").hidden=!(offline||navigator.onLine===false);},10e
 if(Q.get("list")!=="1"){setInterval(liveCheck,15e3);setTimeout(remoteCheck,5000);setTimeout(()=>{remoteCheck();setInterval(remoteCheck,60e3)},(65-new Date().getSeconds())%60*1000+2000);window.addEventListener("storage",e=>{if(e.key===LIVE_KEY)liveCheck()});versionCheck();setInterval(versionCheck,15*60e3)}
 /* sound needs one click after the PC restarts (a browser rule); until then trailers play silently and this note shows */
 function soundHint(on){let el=$("#soundhint");if(!el){el=document.createElement("div");el.id="soundhint";el.textContent="🔇 Sound is off: click anywhere on this screen to turn it on";document.body.appendChild(el)}el.hidden=!on}
+document.addEventListener("click",()=>{localAllow()});
 document.addEventListener("click",()=>{if(SOUND&&muted&&$("#start").hidden){muted=false;soundHint(false);try{player&&player.unMute&&player.unMute()}catch(e){}$("#svid").muted=false;if(!music&&MU!=="off"&&window.IMCMusic){music=IMCMusic.create(MU,MV);music.start()}musicFor($("#yt-wrap").hidden?"x":"yt-wrap")}});
 setInterval(()=>{if($("#start").hidden&&Date.now()-lastStep>7*60e3)location.reload()},60e3);
 setInterval(()=>{tickStrip();if(londonNow().s<15)renderTicker()},15e3);setInterval(()=>{$("#clock").textContent=londonNow().hm},5e3);

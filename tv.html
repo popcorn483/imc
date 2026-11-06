@@ -47,9 +47,13 @@ details{margin-top:18px}summary{cursor:pointer;color:#fff;font-weight:600}
       <button type="button" data-kind="foyer" aria-pressed="true"><b>Foyer TV</b><span>Trailers, times, deals</span></button>
       <button type="button" data-kind="luxx" aria-pressed="false"><b>LUXX lounge</b><span>LUXX showings and offers</span></button>
     </div>
+    <label>Trailers folder on this PC <span class="small">(recommended)</span></label>
+    <div><span id="dirInfo" class="small"></span><br><button class="inst" id="dirPick" type="button" style="margin-top:6px">📁 Choose the trailers folder</button> <button class="inst" id="dirForget" type="button" hidden>Remove</button></div>
+    <p class="small" style="margin-top:4px">Pick the <b>IMC TRAILERS</b> folder that Google Drive keeps on this PC (in File Explorer: Google Drive → My Drive → IMC TRAILERS). When Chrome asks, choose <b>Allow on every visit</b>. Trailer files in it play instead of the YouTube trailers, straight from this PC.</p>
+    <details><summary>Other option: the trailer key file</summary>
     <label>Trailer files (Google Drive) <span class="small">(optional, once per PC)</span></label>
     <div class="gsa"><span id="gsaInfo" class="small"></span><label class="inst" style="display:inline-block;margin:6px 0 0">📄 Add the trailer key file<input id="gsaFile" type="file" accept=".json,application/json" hidden></label> <button class="inst" id="gsaForget" type="button" hidden>Remove</button></div>
-    <p class="small" style="margin-top:4px">The same .json key file as on the manager's PC (bring it on a USB stick). It's kept only on this PC, so this TV can fetch the trailer files from Google Drive by itself.</p>
+    <p class="small" style="margin-top:4px">The same .json key file as on the manager's PC (bring it on a USB stick). It's kept only on this PC, so this TV can fetch the trailer files from Google Drive by itself.</p></details>
     <button class="go" id="go" type="button">▶ Start this TV</button>
     <button class="inst" id="install" type="button" hidden>⬇ Install as an app on this PC</button>
     <details>
@@ -90,6 +94,15 @@ async function setup(){const sel=$("#site");let list=[["enniskillen","IMC Ennisk
   $("#go").onclick=()=>{cfg={site:sel.value,kind};try{localStorage.setItem(KEY,JSON.stringify(cfg))}catch(e){}
     if(want.has("setup"))history.replaceState(null,"","tv.html");
     document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen().catch(()=>{});play()}}
+/* the trailers folder on this PC: its handle is kept in this PC's browser storage (same place the player looks) */
+function kvdb(){return new Promise((res,rej)=>{const r=indexedDB.open("imc-editor",1);r.onupgradeneeded=()=>r.result.createObjectStore("kv");r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+async function kv(k,v,del){const d=await kvdb();return new Promise(res=>{const t=d.transaction("kv",v===undefined&&!del?"readonly":"readwrite"),st=t.objectStore("kv");const q=del?st.delete(k):v===undefined?st.get(k):st.put(v,k);q.onsuccess=()=>res(q.result);q.onerror=()=>res(null)})}
+async function dirShow(){const h=await kv("trailerdir");let p="";try{p=h&&await h.queryPermission({mode:"read"})}catch(e){}
+  $("#dirInfo").textContent=h?`✓ ${h.name}`+(p==="granted"?"":" (click Choose again to allow it)"):"Not chosen on this PC.";$("#dirForget").hidden=!h}
+if(window.showDirectoryPicker){dirShow();
+  $("#dirPick").onclick=async()=>{try{const h=await showDirectoryPicker({id:"imc-trailers",mode:"read"});if(h.requestPermission)await h.requestPermission({mode:"read"});await kv("trailerdir",h);dirShow()}catch(e){if(e&&e.name!=="AbortError")alert("Couldn't use that folder: "+(e.message||e))}};
+  $("#dirForget").onclick=async()=>{if(confirm("Stop using the trailers folder on this PC?")){await kv("trailerdir",null,true);dirShow()}}}
+else{$("#dirPick").hidden=true;$("#dirInfo").textContent="This browser can't open folders: use Google Chrome or Microsoft Edge."}
 /* the trailer key file: kept on this PC only */
 function gsaShow(){const sa=window.IMCDrive&&IMCDrive.saved();$("#gsaInfo").textContent=sa?"✓ Added: "+sa.client_email:"Not added on this PC.";$("#gsaForget").hidden=!sa}
 if(window.IMCDrive){gsaShow();
