@@ -651,7 +651,7 @@ Every post starts with **IMC's real gift card** (`data/products/giftcard-imc.png
 
 **Ready-made → Facebook cover photos** (also the **Facebook cover photo** tile under *What do you want to make?* on the hub's home page, and **Make an ad step by step → Facebook cover photo**) makes the banner for the top of the IMC Facebook page at 1640 × 624 (Facebook shows 820 × 312; double size keeps it sharp). Six designs: **Now showing** (today's film posters), **Coming soon** (the next releases), **This season** (the current seasonal look, effects and this week's films), **Your cinema** (the cinema building photo with "Welcome to IMC …"), **Gift cards** (IMC's gift card) and **LUXX**. Posters come from imc.ie, up to five, fanned across the middle.
 
-Phones crop about 16% off each side of a cover, so every design keeps its words and posters in the middle, and the editor shows the cropped strips with a dashed line and "Phones cut this off" (turn guides off before saving if you like; they never appear in the saved picture). Everything can be edited like any other design.
+Phones crop about 16% off each side of a cover, so every design keeps its words and posters in the middle, and the editor shows the cropped strips with a dashed line and "Phones cut this off" (turn guides off before saving if you like; they never appear in the saved picture). Everything can be edited like any other design. **Save video** on a cover offers 20, 30 or 60 seconds (Facebook cover videos must be 20 to 90 seconds; the animation repeats to fill the time, and the video comes out a fraction over so it's never under 20), at 1640 × 624 MP4.
 
 
 ## Trailer files from Google Drive (foyer TVs)

@@ -2730,7 +2730,7 @@ async function recordVideo(opt,prog,cancelled){
   const c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
   const types=["video/mp4;codecs=avc1.42E01E","video/mp4;codecs=avc1.4D401F","video/mp4;codecs=avc1","video/webm;codecs=vp9","video/webm;codecs=vp8","video/webm"],mime=types.find(t=>MediaRecorder.isTypeSupported(t));if(!mime)throw new Error("unsupported");
   const stream=c.captureStream(30),rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:opt.long>900?9e6:6e6}),chunks=[];rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
-  const dur=(S.motion.dur||3)*1000,total=dur*opt.loops;
+  const dur=(S.motion.dur||3)*1000,total=opt.secs?opt.secs*1000+800:dur*opt.loops;   /* secs: an exact length, the animation keeps looping (Facebook cover videos must be 20 to 90 seconds) */
   if(photoIsVideo){photoImg.currentTime=0;await photoImg.play().catch(()=>{})}
   render(x,W,H,{t:0});rec.start(250);const t0=performance.now();
   await new Promise(res=>{const step=()=>{const el=performance.now()-t0;if(el>=total||cancelled())return res();render(x,W,H,{t:fr(el/dur)});prog(el/total,`Recording… ${Math.ceil((total-el)/1000)}s left`);requestAnimationFrame(step)};requestAnimationFrame(step)});
@@ -2739,15 +2739,17 @@ async function recordVideo(opt,prog,cancelled){
 let vOpt={size:"m",loops:"2"},vBusy=false,vCancel=false;
 const VSIZES=[["m",1080,"1080p"],["s",720,"720p"]],VLOOPS=[["1",1],["2",2],["3",3]];
 function vSeg(){$("#vidSize").innerHTML=VSIZES.map(([k,,n])=>`<button data-k="${k}" aria-pressed="${vOpt.size===k}">${n}</button>`).join("");
-  $("#vidLoops").innerHTML=VLOOPS.map(([k,n])=>`<button data-k="${k}" aria-pressed="${vOpt.loops===k}">${n*(S.motion.dur||3)} sec</button>`).join("")}
+  /* Facebook cover videos must be 20 to 90 seconds long, so covers get 20, 30 or 60 seconds (the animation repeats) */
+  const L=S.fmt==="cover"?[["s20","20 sec"],["s30","30 sec"],["s60","60 sec"]]:VLOOPS.map(([k,n])=>[k,n*(S.motion.dur||3)+" sec"]);if(!L.some(x=>x[0]===vOpt.loops))vOpt.loops=L[0][0];
+  $("#vidLoops").innerHTML=L.map(([k,n])=>`<button data-k="${k}" aria-pressed="${vOpt.loops===k}">${n}</button>`).join("")}
 $("#vidSize").onclick=e=>{const b=e.target.closest("[data-k]");if(b&&!vBusy){vOpt.size=b.dataset.k;vSeg()}};
 $("#vidLoops").onclick=e=>{const b=e.target.closest("[data-k]");if(b&&!vBusy){vOpt.loops=b.dataset.k;vSeg()}};
 $("#vid").onclick=()=>{select(null);vSeg();$("#vidBarWrap").hidden=true;$("#vidStatus").textContent="";$("#vidGo").disabled=false;$("#vidCancel").textContent="Close";
-  $("#vidHint").textContent=(hasMotion()?"Records the animation as a video for Instagram Reels, Stories, TikTok and Facebook.":"Nothing is animated yet. Switch on an effect in the Motion tab or animate a badge first.")+" Keep this tab open while it records.";$("#vidModal").hidden=false;$("#vidGo").focus()};
+  $("#vidHint").textContent=(hasMotion()?S.fmt==="cover"?"Records a Facebook cover video. Facebook needs cover videos to be 20 to 90 seconds long, so the animation repeats to fill the length you choose.":"Records the animation as a video for Instagram Reels, Stories, TikTok and Facebook.":"Nothing is animated yet. Switch on an effect in the Motion tab or animate a badge first.")+" Keep this tab open while it records.";$("#vidModal").hidden=false;$("#vidGo").focus()};
 $("#vidCancel").onclick=()=>{if(vBusy){vCancel=true;return}$("#vidModal").hidden=true};
 $("#vidModal").addEventListener("keydown",e=>{if(e.key==="Escape")$("#vidCancel").click()});
 $("#vidGo").onclick=async()=>{if(vBusy)return;vBusy=true;vCancel=false;$("#vidGo").disabled=true;$("#vidCancel").textContent="Cancel";$("#vidBarWrap").hidden=false;let res=null;
-  try{res=await recordVideo({long:VSIZES.find(s=>s[0]===vOpt.size)[1],loops:+vOpt.loops},(p,m)=>{$("#vidBar").style.width=Math.round(p*100)+"%";$("#vidStatus").textContent=m},()=>vCancel)}
+  try{const sec=/^s\d+$/.test(vOpt.loops)?+vOpt.loops.slice(1):0;res=await recordVideo({long:S.fmt==="cover"?Math.max(1640,VSIZES.find(s=>s[0]===vOpt.size)[1]):VSIZES.find(s=>s[0]===vOpt.size)[1],loops:sec?1:+vOpt.loops,secs:sec},(p,m)=>{$("#vidBar").style.width=Math.round(p*100)+"%";$("#vidStatus").textContent=m},()=>vCancel)}
   catch(e){$("#vidStatus").textContent="This browser can't record video. Try Chrome, Edge or Safari, or use the GIF export."}
   vBusy=false;$("#vidGo").disabled=false;$("#vidCancel").textContent="Close";if(!res){if(vCancel)$("#vidStatus").textContent="Cancelled.";return}
   $("#vidStatus").textContent=`Done: ${res.W}×${res.H}, ${res.secs} seconds, ${(res.blob.size/1048576).toFixed(1)} MB (${res.ext.toUpperCase()}).`+(res.ext==="webm"?" This browser saved WebM. Facebook accepts it; for Instagram, record in Safari or a recent Chrome to get MP4.":"");
