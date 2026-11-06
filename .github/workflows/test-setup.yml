@@ -11,7 +11,7 @@ permissions:
 jobs:
   check:
     runs-on: windows-latest
-    timeout-minutes: 10
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
       - name: Parse and test
@@ -55,7 +55,7 @@ jobs:
           # the batch-file start-up: does cmd hand over to PowerShell?
           $boot = ($raw -split "#>")[0] + "#>`r`nWrite-Host ('BOOT OK mode=' + $env:IMC_MODE)`r`n"
           [IO.File]::WriteAllText("$env:TEMP\boot.bat", $boot)
-          $out += "Batch start-up: " + ((& cmd.exe /c "`"$env:TEMP\boot.bat`" elevated" 2>&1) -join " | ")
+          try { $ErrorActionPreference = "Continue"; $r = cmd.exe /c "`"$env:TEMP\boot.bat`" elevated" 2>&1 | Out-String; $out += "Batch start-up: " + $r.Trim() } catch { $out += "Batch start-up failed: " + $_.Exception.Message }
           $out | Set-Content setup\test-result.txt
           $out
       - name: Save the result
