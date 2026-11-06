@@ -53,7 +53,7 @@ jobs:
             $out += "Scheduled task: OK"
           } catch { $out += "Scheduled task: FAILED " + $_.Exception.Message }
           # the batch-file start-up: does cmd hand over to PowerShell?
-          $boot = ($raw -split "#>")[0] + "#>`r`nWrite-Host ('BOOT OK mode=' + $env:IMC_MODE)`r`n"
+          $boot = ($raw -split "#>")[0] + "#>`r`n" + 'Write-Host ("BOOT OK mode=" + $env:IMC_MODE)' + "`r`n"
           [IO.File]::WriteAllText("$env:TEMP\boot.bat", $boot)
           try { $ErrorActionPreference = "Continue"; $r = cmd.exe /c "`"$env:TEMP\boot.bat`" elevated" 2>&1 | Out-String; $out += "Batch start-up: " + $r.Trim() } catch { $out += "Batch start-up failed: " + $_.Exception.Message }
           $out | Set-Content setup\test-result.txt
