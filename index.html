@@ -2733,13 +2733,18 @@ function wLuxxDefaults(){const nm=S().name.toUpperCase(),lx={...WI.DEFAULT,brand
   {...lx,id:newId(),name:"Welcome to LUXX",style:"luxxlines",kicker:"WELCOME TO",title:"LUXX AT "+nm,msg:"Sit back, recline and enjoy the show"},
   {...lx,id:newId(),name:"Upgrade to LUXX",style:"luxxfoil",kicker:"UPGRADE YOUR NIGHT",title:"TRY LUXX",msg:"Luxury recliner seating · book at imc.ie",extra:"sparkle"},
   {...lx,id:newId(),name:"LUXX phones off",style:"luxxglow",theme:"leather",kicker:"THANK YOU FOR CHOOSING LUXX",title:"ENJOY THE FILM",msg:"Please switch off your phone and relax"}]}
-function wDefaults(){const nm=S().name.toUpperCase();return[...wLuxxDefaults(),
+/* the two high-end reveals: the IMC premiere (light beams, lens flare) and the LUXX grand reveal (gold slit, foil shine) */
+function wPremium(){const nm=S().name.toUpperCase();return[{...WI.DEFAULT,id:newId(),name:"IMC premiere reveal",style:"premiere",theme:"midnight",kicker:"WELCOME TO",title:nm,msg:"Sit back, relax and enjoy the show",dur:9},
+  {...WI.DEFAULT,id:newId(),name:"LUXX grand reveal",brand:"luxx",style:"luxxreveal",theme:"luxx",accent:"#e8c46a",font:"serif",kicker:"WELCOME TO",title:"THE LUXX LOUNGE",msg:"Luxury recliner seating, made for the movies",dur:10}]}
+function wDefaults(){const nm=S().name.toUpperCase();return[...wPremium(),...wLuxxDefaults(),
   {...WI.DEFAULT,id:newId(),name:"Welcome",style:"spotlight",kicker:"WELCOME TO",title:nm,msg:"Sit back, relax and enjoy the show"},
   {...WI.DEFAULT,id:newId(),name:"Phones off",style:"curtain",theme:"velvet",kicker:"THANKS FOR CHOOSING",title:nm,msg:"Please switch off your phone and enjoy the film"},
   {...WI.DEFAULT,id:newId(),name:"Snacks",style:"popcorn",theme:"imc",kicker:"DON'T FORGET",title:"SNACKS AT THE KIOSK",msg:"Popcorn, drinks and Candy King pick 'n' mix"}]}
 function wGet(){try{const a=JSON.parse(localStorage.getItem(wsk())||"null");if(Array.isArray(a)){
   /* lists saved before LUXX videos existed get the LUXX starters once */
-  if(!a.some(w=>w.brand==="luxx")&&!localStorage.getItem(wsk()+"-luxx")){a.push(...wLuxxDefaults());localStorage.setItem(wsk()+"-luxx","1");wPut(a)}return a}}catch(e){}return wDefaults()}
+  if(!a.some(w=>w.brand==="luxx")&&!localStorage.getItem(wsk()+"-luxx")){a.push(...wLuxxDefaults());localStorage.setItem(wsk()+"-luxx","1");wPut(a)}
+  /* ...and the premium reveals once, at the top of the list */
+  if(!localStorage.getItem(wsk()+"-premium")){if(!a.some(w=>w.style==="premiere"||w.style==="luxxreveal"))a.unshift(...wPremium());localStorage.setItem(wsk()+"-premium","1");wPut(a)}return a}}catch(e){}return wDefaults()}
 function wPut(a){try{localStorage.setItem(wsk(),JSON.stringify(a))}catch(e){toast("Couldn't save. Browser storage is blocked.")}}
 let wBrand=(()=>{try{return localStorage.getItem("imc-wbrand")||"imc"}catch(e){return"imc"}})(),wSel=-1,wT0=performance.now(),wRaf=0,wAssets=null,wHover=null;
 const wFonts=()=>document.fonts?Promise.all(["900 60px 'Big Shoulders Display'","600 30px Figtree","500 30px 'IBM Plex Mono'"].map(x=>document.fonts.load(x).catch(()=>{}))):Promise.resolve();
