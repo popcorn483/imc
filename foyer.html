@@ -258,13 +258,13 @@ body.lite #grain,body.trl #grain,body.trl #stage::after{display:none}
 .nextshow b{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
 body.lite #card::after,body.lite #board::after,body.lite #promo::after,body.lite #hours::after,body.lite .pbg::before,body.lite .pbg::after,body.lite #board::before,body.lite #hours::before{display:none}
 @font-face{font-family:"Lemon Milk";src:url("fonts/LEMONMILK-Medium.woff") format("woff");font-display:swap}
-#credit{position:absolute;right:1.6vw;bottom:calc(var(--strip) + var(--sy) + 1.2vh);z-index:6;font:500 .95vh "Lemon Milk",var(--f-body);letter-spacing:.2em;color:rgba(232,220,190,.16);pointer-events:none;transition:opacity .8s}
-body.nostrip #credit{bottom:1.2vh}body.ytl #credit{opacity:0}
+#credit{position:absolute;left:calc(2.4vw + var(--sx));bottom:calc(var(--sy) + .45vh);z-index:6;white-space:nowrap;font:500 .95vh "Lemon Milk",var(--f-body);letter-spacing:.2em;color:rgba(232,220,190,.22);pointer-events:none;transition:opacity .8s}
+body.ytl #credit{opacity:0}
 body.lite #card[hidden],body.lite #board[hidden],body.lite #promo[hidden],body.lite #hours[hidden]{transform:none}
 </style>
 </head>
 <body>
-<div id="stage"><div id="grain" aria-hidden="true"></div><div id="credit" aria-hidden="true">JB Design</div>
+<div id="stage"><div id="grain" aria-hidden="true"></div>
   <div id="yt-wrap" class="layer" hidden><div id="yt"><div id="ytA"></div><div id="ytB"></div></div><video id="svid" playsinline preload="auto" hidden></video><div id="ytshield"></div><div id="ytcurtain"></div><div id="tlabel"></div><div id="tqr" style="opacity:0"></div></div>
   <div id="ident" class="layer" hidden><canvas id="icv" width="1920" height="1080" aria-label="Welcome to IMC"></canvas></div>
   <div id="card" class="layer" hidden><div class="bgimg"></div><div class="shade"></div><div class="poster" role="img"></div>
@@ -273,7 +273,7 @@ body.lite #card[hidden],body.lite #board[hidden],body.lite #promo[hidden],body.l
   <div id="promo" class="layer" hidden></div>
   <div id="hours" class="layer" hidden></div>
   <div id="start" class="layer"><div><h1>Foyer screen</h1><p id="sinfo">Loading the latest listings…</p><button id="go" hidden>Start</button><p style="font-size:2vh">Tip: press F for full screen, → to skip, B for the board. Leave this tab open; it updates itself.</p></div></div>
-  <div id="strip"><img src="imc-logo.png" alt="IMC Cinemas"><div class="ticker" aria-hidden="true"><div id="tick"></div></div><div class="nextshow" id="nextshow"></div><div class="clock" id="clock"></div><div id="prog"></div></div>
+  <div id="strip"><img src="imc-logo.png" alt="IMC Cinemas"><div id="credit" aria-hidden="true">Developed by JB</div><div class="ticker" aria-hidden="true"><div id="tick"></div></div><div class="nextshow" id="nextshow"></div><div class="clock" id="clock"></div><div id="prog"></div></div>
 </div>
 <div id="offline" hidden>No internet: showing saved listings</div>
 <script>try{if(!window.name)window.name=new URLSearchParams(location.search).get("luxx")==="1"?"imc-lounge":"imc-foyer"}catch(e){}</script>
