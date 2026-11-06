@@ -370,6 +370,27 @@ table.sizes{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
 @media (max-width:900px){.pbgrid{grid-template-columns:1fr}.pbside{position:static;order:-1}.pbrow2{grid-template-columns:1fr}}
 .gdrow{display:grid;grid-template-columns:1.4fr 1fr;gap:10px}.gdrow input{width:100%}@media (max-width:760px){.gdrow{grid-template-columns:1fr}}
 .gdt{width:100%;border-collapse:collapse;font-size:14px}.gdt td,.gdt th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}.gdt th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.gdt select{max-width:260px}.gdt .ok{color:#3dc88c;font-weight:700}.gdt .no{color:#ff8a6e;font-weight:700}
+
+/* ---- Foyer trailers: Playlist tab, tidy ---- */
+.pltop{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:14px 18px}
+.pltop-status{display:flex;align-items:center;gap:12px;min-width:0;flex:1 1 420px}.pltop-status .tip,.plhead .tip{margin:2px 0 0;font-size:13px;border:0;padding:0;max-width:72ch}.pltop-acts{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#plPanel{margin-top:14px}
+.plhead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.plhead h2{margin:0;font-size:22px}.plhead .tip{margin:2px 0 0;font-size:13px;display:block}
+.pltools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.plmenu{position:relative}.plmenu summary{list-style:none;cursor:pointer}.plmenu summary::-webkit-details-marker{display:none}
+.plmenu-pop{position:absolute;right:0;top:calc(100% + 6px);z-index:20;min-width:270px;padding:6px;border-radius:12px;border:1px solid var(--line);background:var(--panel,#fff);box-shadow:0 14px 40px rgba(0,0,0,.25);display:grid;gap:2px}
+.plmenu-pop button,.plmenu-check{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:28px 1fr;column-gap:8px;align-items:center;padding:9px 10px;border-radius:9px}
+.plmenu-pop button:hover,.plmenu-check:hover{background:rgba(127,127,127,.12)}.plmenu-pop button span{font-size:18px;grid-row:span 2;text-align:center}.plmenu-pop b{font-size:14px}.plmenu-pop small{color:var(--muted);font-size:12px}
+.plmenu-check input{grid-row:span 2;justify-self:center;width:18px;height:18px}.plmenu-check span{display:grid}
+.plswitch{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;cursor:pointer;padding:6px 4px}.plswitch input{width:18px;height:18px}
+.lfbar{padding:8px 12px;font-size:13px}.lfbar .btn{margin-left:auto}
+.plrow{grid-template-columns:20px 22px 96px minmax(0,1fr) auto;gap:12px;padding:9px 8px;border-radius:10px}
+.plrow img,.plrow .ph0{width:96px;border-radius:8px}
+.plrow b{font-size:15px}.plrow .m{font-size:12.5px;margin-top:2px}
+.plrow .acts{opacity:.55;transition:opacity .15s}.plrow:hover .acts,.plrow:focus-within .acts{opacity:1}
+.plk{font-size:10px;padding:2px 7px}
+.plhint{font-size:12.5px;color:var(--muted);margin:10px 0 0;text-align:center}
+@media (max-width:640px){.plrow{grid-template-columns:18px 64px minmax(0,1fr) auto}.plrow img,.plrow .ph0{width:64px}.plrow .acts{opacity:1}.plmenu-pop{left:0;right:auto}}
 .ftabs{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 14px;position:sticky;top:0;z-index:4;background:var(--bg);padding:8px 0}.ftabs button{font:inherit;font-weight:700;font-size:15px;padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:inherit;cursor:pointer}.ftabs button[aria-selected="true"]{background:#ffc23d;color:#1a1030;border-color:#ffc23d}
 #v-foyer [data-fp][hidden]{display:none!important}.lfbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:10px 12px;margin:0 0 10px;border-radius:10px;border:1px solid rgba(61,200,140,.45);background:rgba(61,200,140,.08);font-size:14px}.lfbar b{font-weight:700}.plflash{animation:plflash 2.4s ease}@keyframes plflash{0%,40%{background:rgba(255,194,61,.35)}100%{background:transparent}}
 .plk.lf{background:rgba(61,200,140,.22)}
@@ -765,14 +786,28 @@ html.a-rm *{animation:none!important;transition:none!important;scroll-behavior:a
         <div><h1>Foyer trailers</h1><p>Trailer packs for the foyer TVs. Only films rated <span class="safecerts">U, PG or 12A</span> go in by default, and trailers marked red band, uncensored or explicit are always left out. Films without a certificate yet stay out until you've watched the trailer and ticked it.</p></div>
       </div>
       <div class="ftabs" role="tablist" aria-label="Foyer trailers sections"><button type="button" role="tab" data-ftab="play">▶ Playlist</button><button type="button" role="tab" data-ftab="trail">🎬 Trailers</button><button type="button" role="tab" data-ftab="set">⚙ Settings</button><button type="button" role="tab" data-ftab="sites">🔗 Sites</button></div>
-      <div class="panel syncbar" id="syncPanel" data-fp="play"><div class="syncrow"><span class="syncdot" id="syncDot" aria-hidden="true"></span><div style="min-width:0"><b id="syncT">Foyer TVs on other computers</b><div class="tip" id="syncS" style="margin:2px 0 0">Checking…</div></div><div class="row-btns" style="margin:0"><button class="btn small primary" type="button" id="syncConnect">Connect</button><button class="btn small ghost" type="button" id="syncOff" hidden>Disconnect</button></div></div></div>
-      <div class="panel tvapp" data-fp="play"><div class="syncrow"><span style="font-size:28px" aria-hidden="true">📺</span><div style="min-width:0;flex:1 1 260px"><b>Setting up a foyer PC?</b><div class="tip" style="margin:2px 0 0">On each foyer PC, open the <b>IMC Foyer TV</b> app: it always plays what's set here, in step with the other TVs, and starts by itself. Address: <code id="tvAddr">tv.html</code></div></div><div class="row-btns" style="margin:0"><a class="btn small primary" href="tv.html" target="imc-tv" style="text-decoration:none">Open the TV app ↗</a><button class="btn small" type="button" id="tvCopy">Copy address</button></div></div></div>
-      <div class="panel" id="plPanel" style="margin-top:16px" data-fp="play"><div class="ph"><h2>Playlist</h2><span class="tip" id="plcount" style="margin:0"></span></div>
-        <p class="tip" style="margin-top:0">Everything playing on the foyer TVs, in order. Drag a trailer (or use the arrows) to move it, ✕ to take it out. Films from imc.ie also get their showtimes card before the trailer.</p>
-        <div class="plbar"><button class="btn small" type="button" id="plAddCard">＋ Add a card</button><button class="btn small" type="button" id="plAddPb">＋ Add a priceboard</button><button class="btn small" type="button" id="plAddVid">＋ Add a YouTube video</button><button class="btn small primary" type="button" id="plResync" title="Every foyer TV reloads and restarts together, in step">⟳ Sync all TVs now</button><button class="btn small" type="button" id="plShuffle">⤮ Shuffle now</button><button class="btn small ghost" type="button" id="plReset">Reset order</button><label class="check"><input type="checkbox" id="plShuf"> Shuffle on the TVs every time round</label><label class="check"><input type="checkbox" id="plAll" checked> Show what plays in between (deals, adverts, board…)</label></div>
+      <div class="panel pltop" data-fp="play">
+        <div class="pltop-status" id="syncPanel"><span class="syncdot" id="syncDot" aria-hidden="true"></span><div style="min-width:0"><b id="syncT">Foyer TVs</b><div class="tip" id="syncS">Checking…</div></div></div>
+        <div class="pltop-acts"><button class="btn primary" type="button" id="plResync" title="Every foyer TV reloads and restarts together, in step">⟳ Sync all TVs now</button><button class="btn small" type="button" id="syncConnect">Connect</button><button class="btn small ghost" type="button" id="syncOff" hidden>Disconnect</button></div>
+      </div>
+      <div class="panel" id="plPanel" data-fp="play">
+        <div class="plhead"><div><h2>Playlist</h2><span class="tip" id="plcount"></span></div>
+          <div class="pltools">
+            <details class="plmenu"><summary class="btn primary">＋ Add</summary><div class="plmenu-pop">
+              <button type="button" id="plAddCard"><span>🪧</span><b>Card</b><small>Your own message or event</small></button>
+              <button type="button" id="plAddPb"><span>🏷️</span><b>Priceboard</b><small>Shop items and prices</small></button>
+              <button type="button" id="plAddVid"><span>▶️</span><b>YouTube video</b><small>Any video for the foyer</small></button>
+              <button type="button" data-ftab-go="trail"><span>📁</span><b>Trailer file</b><small>From the IMC TRAILERS folder</small></button></div></details>
+            <details class="plmenu"><summary class="btn">⤮ Order</summary><div class="plmenu-pop">
+              <button type="button" id="plShuffle"><span>⤮</span><b>Shuffle now</b><small>Mix the order once</small></button>
+              <button type="button" id="plReset"><span>↺</span><b>Reset order</b><small>Films by next showing</small></button>
+              <label class="plmenu-check"><input type="checkbox" id="plShuf"><span><b>Shuffle every time round</b><small>A new order on each loop</small></span></label></div></details>
+            <label class="plswitch"><input type="checkbox" id="plAll" checked><span>Show slides in between</span></label>
+          </div></div>
         <div class="lfbar" id="lfBar" hidden></div>
         <div class="plnowbar" id="plNow" hidden></div>
-        <ol class="pllist" id="plList"></ol><div id="plOut"></div></div>
+        <ol class="pllist" id="plList"></ol><p class="plhint">Drag <b>⠿</b> to move · <b>✕</b> takes it out · films from imc.ie get their showtimes card first</p><div id="plOut"></div></div>
+      <div class="panel tvapp" data-fp="set"><div class="syncrow"><span style="font-size:28px" aria-hidden="true">📺</span><div style="min-width:0;flex:1 1 260px"><b>Setting up a foyer PC</b><div class="tip" style="margin:2px 0 0">On each foyer PC, open the <b>IMC Foyer TV</b> app: it plays what's set here, in step with the other TVs, and starts by itself. Address: <code id="tvAddr">tv.html</code></div></div><div class="row-btns" style="margin:0"><a class="btn small primary" href="tv.html" target="imc-tv" style="text-decoration:none">Open the TV app ↗</a><button class="btn small" type="button" id="tvCopy">Copy address</button></div></div></div>
       <div class="panel" id="btwPanel" style="margin-top:16px" data-fp="set"><div class="ph"><h2>Between the trailers</h2><span class="tip" id="btwcount" style="margin:0"></span></div>
         <p class="tip" style="margin-top:0">Choose which slides play between trailers, and what scrolls along the strip at the bottom of the screen. Adverts are set up on the Adverts page; your own messages are in the box under “Screens between trailers” below.</p>
         <div class="btwgrid"><div><h3 class="btwh">Slides</h3><div id="btwSlides"><p class="tip">Loading…</p></div></div><div><h3 class="btwh">Bottom strip</h3><div id="btwTick"><p class="tip">Loading…</p></div></div></div></div>
@@ -2147,6 +2182,7 @@ $("#nfSave").onclick=()=>{const t=$("#nfTitle").value.trim().replace(/\|/g," "),
   setTimeout(()=>{const r=[...$$("#plList li")].find(li=>li.textContent.includes(t));if(r){r.scrollIntoView({block:"center",behavior:"smooth"});r.classList.add("plflash")}},400)};
 document.addEventListener("change",e=>{const t=e.target.closest&&e.target.closest("[data-gdmap]");if(!t)return;if(t.value==="__new"){nfOpen(t.dataset.gdmap);return}const st=foyState(),m={...(st.gm||{})};if(t.value)m[t.dataset.gdmap]=t.value;else delete m[t.dataset.gdmap];st.gm=m;foySave(st);gdRender();lfRender();renderFoyer();toast("Saved")});
 /* ---------- Foyer trailers page: four tabs ---------- */
+document.addEventListener("click",e=>{const pm=e.target.closest(".plmenu-pop button");if(pm){const d=pm.closest("details");if(d)d.open=false}if(!e.target.closest(".plmenu"))$$(".plmenu[open]").forEach(d=>d.open=false)});
 function ftab(t){try{t=t||localStorage.getItem("imc-foyer-tab")||"play"}catch(e){t=t||"play"}if(!["play","trail","set","sites"].includes(t))t="play";try{localStorage.setItem("imc-foyer-tab",t)}catch(e){}
   $$("#v-foyer [data-fp]").forEach(e=>e.hidden=e.dataset.fp!==t);$$("#v-foyer [data-ftab]").forEach(b=>b.setAttribute("aria-selected",b.dataset.ftab===t))}
 document.addEventListener("click",e=>{const b=e.target.closest("#v-foyer [data-ftab]");if(b){ftab(b.dataset.ftab);if(b.dataset.ftab==="trail")lfScan()}});
