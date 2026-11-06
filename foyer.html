@@ -288,7 +288,7 @@ async function loadStudio(){const mine=await sget("studio:"+SITE),L=(Array.isArr
   STUDIO=[...L,...SVLINKS.filter(x=>!urls.has(x.url))].filter(x=>!RED.test(x.title||""));ONLY=Q.get("only")==="1"&&(EXTRA.length+STUDIO.filter(x=>!x.film).length)>0}
 
 /* everything the hub can change, read from the address; read again when the hub changes the settings (see "live updates") */
-let EDGE=3.5,CARDS=[],BOARDS=[],SYNC,MODE,IDS,OK,CARD,SOUND,TRAILERS,SOON,BOARD_EVERY,PROMOS,STRIP,SCREENS,ADVERTS,MSGS,MYTR,EXTRA,ONLY,SVLINKS,WEL,WF,PX,TX,TT,MU,MV,ORD,HIDE,SHUF;
+let EDGE=3.5,CARDS=[],BOARDS=[],SYNC,MODE,IDS,OK,CARD,SOUND,TRAILERS,SOON,BOARD_EVERY,PROMOS,STRIP,SCREENS,ADVERTS,MSGS,MYTR,EXTRA,ONLY,SVLINKS,WEL,WF,PX,TX,TT,TI={},MU,MV,ORD,HIDE,SHUF;
 function readSettings(){
   MODE=Q.get("mode")||"auto",IDS=(Q.get("ids")||"").split(",").filter(Boolean),OK=new Set((Q.get("ok")||"").split(",").filter(Boolean));
   CARD=Math.max(5,Math.min(30,+Q.get("card")||10)),SOUND=Q.get("sound")!=="0",TRAILERS=Q.get("trailers")!=="0",SOON=Q.get("soon")==="1";
@@ -301,6 +301,7 @@ function readSettings(){
   SVLINKS=(()=>{try{const b=(Q.get("sv")||"").replace(/-/g,"+").replace(/_/g,"/");if(!b)return[];return JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))).filter(a=>Array.isArray(a)&&/^https:\/\//.test(a[2]||"")).map((a,i)=>({id:"l"+i,film:String(a[0]||""),title:String(a[1]||""),url:a[2]}))}catch(e){return[]}})();
   WEL=(window.IMCIdent?IMCIdent.decode(Q.get("w")||""):[]).filter(w=>!LOUNGE||w.brand==="luxx"),WF=Q.get("wf")||(WEL.length?"r":"0");
   PX=new Set((Q.get("px")||"").split(",").filter(Boolean)),TX=new Set((Q.get("tx")||"").split(",").filter(Boolean));
+  TI=(()=>{try{const b=(Q.get("ti")||"").replace(/-/g,"+").replace(/_/g,"/");return b?JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))):{}}catch(e){return{}}})();   /* your pictures for the strip: {item: picture, or "-" for none} */
   TT=(()=>{try{const b=(Q.get("tt")||"").replace(/-/g,"+").replace(/_/g,"/");return b?JSON.parse(decodeURIComponent(escape(atob(b+"===".slice((b.length+3)%4))))):{}}catch(e){return{}}})();
   MU=Q.get("mu")||"cinema",MV=Q.has("mv")?+Q.get("mv"):35;
   SYNC=Q.get("sync")!=="0"&&Q.get("list")!=="1";
@@ -692,10 +693,10 @@ async function playIdent(){try{if(player&&player.stopVideo)player.stopVideo()}ca
 function tickerAll(){const tk=prices(),n=londonNow(),dow=new Date(n.date+"T12:00").getDay(),out=MSGS.map((m,i)=>({k:"m"+i,t:m,mine:true}));
   const wed=tk.find(t=>/wednesday/i.test(t.name)&&/meal/i.test(t.name)&&!/luxx/i.test(t.name));if(wed&&!LOUNGE)out.push({k:"wed",img:asset("data/products/cut/bundle1.png"),t:`${dow===3?"TODAY: ":""}Wednesday Meal Deal: ticket, medium popcorn and medium drink for ${wed.price}`});
   const kc=tk.find(t=>/^kids club$/i.test(t.name));if(kc&&!LOUNGE)out.push({k:"kids",img:asset("data/products/cut/onkt.png"),t:`Kids Club: family films for ${kc.price} a ticket`});
-  const lx=tk.filter(t=>/luxx/i.test(t.name)&&!/meal|voucher|combo/i.test(t.name)).map(t=>t.price).sort((a,b)=>parseFloat(a.slice(1))-parseFloat(b.slice(1)))[0];if(lx)out.push({k:"luxx",img:asset("data/products/cut/t1scbluxx.png"),t:`Upgrade to LUXX recliners from ${lx}`});
+  const lx=tk.filter(t=>/luxx/i.test(t.name)&&!/meal|voucher|combo/i.test(t.name)).map(t=>t.price).sort((a,b)=>parseFloat(a.slice(1))-parseFloat(b.slice(1)))[0];if(lx)out.push({k:"luxx",img:asset("data/brand/luxx-logo.png"),t:`Upgrade to LUXX recliners from ${lx}`});
   out.push({k:"book",t:"Book online at imc.ie and skip the queue"});if(D){const ds=dayState();if(ds.phase==="open"&&ds.last)out.push({k:"last",img:ds.last.poster,poster:true,t:`Last film tonight: ${ds.last.title} at ${ds.last.time}`})}
   return out}
-function tickerItems(){return tickerAll().filter(x=>!TX.has(x.k)).map(x=>({t:x.mine?x.t:(TT[x.k]||x.t),img:x.img||"",poster:!!x.poster}))}   /* a picture for the deals (the Meal Deal bundle, Kids Club tray, LUXX) and the last film's poster */
+function tickerItems(){return tickerAll().filter(x=>!TX.has(x.k)).map(x=>{const own=TI[x.k];return{t:x.mine?x.t:(TT[x.k]||x.t),img:own==="-"?"":own?(/^https?:/.test(own)?own:asset(own)):x.img||"",poster:!own&&!!x.poster}})}   /* a picture for the deals (the Meal Deal bundle, Kids Club tray, LUXX) and the last film's poster */
 let tickKey="";
 function renderTicker(){const items=tickerItems(),k=items.map(x=>x.t+x.img).join("|");if(k===tickKey)return;tickKey=k;const el=$("#tick");el.innerHTML=items.map(x=>(x.img?`<img class="${x.poster?"tp":""}" src="${esc(x.img)}" alt="" onerror="this.remove()">`:"")+esc(x.t)).join("<i>●</i>");
   requestAnimationFrame(()=>{const secs=Math.max(20,el.scrollWidth/90);el.style.animationDuration=secs+"s";el.style.setProperty("--td",secs+"s")})}

@@ -149,5 +149,5 @@ function loadAssets(base){return new Promise(r=>{const im=new Image();im.onload=
 const KEYS=["style","kicker","title","msg","theme","accent","extra","dur","brand","logoScale","logoY","textScale","textY","font","titleCol","msgCol","textAt","bgA","bgB"];
 function encode(list){const a=list.map(x=>{const v=KEYS.map(k=>x[k]??DEFAULT[k]);for(let i=v.length-1;i>=8&&v[i]===DEFAULT[KEYS[i]];i--)v.pop();return v});const s=JSON.stringify(a);return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
 function decode(s){try{s=s.replace(/-/g,"+").replace(/_/g,"/");const a=JSON.parse(decodeURIComponent(escape(atob(s))));return a.map(v=>{const o={...DEFAULT};KEYS.forEach((k,i)=>{if(v[i]!=null)o[k]=v[i]});o.dur=Math.max(4,Math.min(20,+o.dur||8));if(!STYLES[o.style])o.style="spotlight";return o})}catch(e){return[]}}
-window.IMCIdent={STYLES,THEMES,EXTRAS,DEFAULT,draw,loadAssets,encode,decode};
+window.IMCIdent={STYLES,THEMES,EXTRAS,DEFAULT,draw,loadAssets,encode,decode,luxxMark};
 })();
