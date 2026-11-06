@@ -2,7 +2,7 @@
   "id": "carlow",
   "cinema": "IMC Carlow",
   "source": "https://imc.ie/carlow",
-  "updated": "2026-11-05T22:46:31.111Z",
+  "updated": "2026-11-06T14:21:32.409Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -19,21 +19,21 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-11-05",
+      "date": "2026-11-06",
       "times": [
-        "15:05",
+        "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137117",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137390",
       "sessions": [
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "15:05",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137117",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137390",
           "luxx": false,
-          "screen": "8",
+          "screen": "2",
           "threeD": false,
           "tags": [
             "released",
@@ -42,10 +42,10 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137118",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137391",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -56,10 +56,10 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137122",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137392",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -77,74 +77,75 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "12A",
-      "title": "Ghosts: The Possession Of Button House",
+      "certFile": "PG",
+      "title": "Forgotten Island",
       "luxx": false,
       "sensory": false,
       "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
-      "cert": "12A",
-      "runtime": 100,
-      "release": "October 23, 2026",
-      "releaseDate": "2026-10-23",
-      "director": "Simon Hynd",
-      "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
-      "trailer": null,
-      "date": "2026-11-05",
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-06",
       "times": [
-        "16:25"
+        "15:20"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137297",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137387",
       "sessions": [
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "16:25",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137297",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "15:20",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137387",
           "luxx": false,
-          "screen": "5",
+          "screen": "7",
           "threeD": false,
           "tags": [
             "released",
             "matinee",
+            "kidsclub",
             "seating-standard"
           ]
         }
       ],
-      "slug": "ghosts-the-possession-of-button-house",
-      "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
       "certSystem": "ifco",
-      "certFile": "TBC",
-      "title": "Godzilla Minus Zero",
+      "certFile": "PG",
+      "title": "George Michael: The Faith Tour",
       "luxx": false,
       "sensory": false,
       "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
-      "cert": "TBC",
-      "runtime": 135,
-      "release": "November 5, 2026",
-      "releaseDate": "2026-11-05",
-      "director": "Takashi Yamazaki",
-      "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
-      "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
-      "date": "2026-11-05",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
+      "cert": "PG",
+      "runtime": 114,
+      "release": "November 6, 2026",
+      "releaseDate": "2026-11-06",
+      "director": "David Austin, Andrew Morahan",
+      "synopsis": "Restored concert film featuring George Michael's 1988 Faith Tour performances at Palais Omnisports de Paris-Bercy, captured on 35mm over two nights during the European leg of the tour.",
+      "trailer": null,
+      "date": "2026-11-06",
       "times": [
-        "16:00",
-        "19:45"
+        "17:30",
+        "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137294",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137398",
       "sessions": [
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "16:00",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137294",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137398",
           "luxx": false,
-          "screen": "3",
+          "screen": "7",
           "threeD": false,
           "tags": [
             "advance",
@@ -153,15 +154,71 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137295",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137399",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "george-michael-the-faith-tour",
+      "posterFile": "data/posters/george-michael-the-faith-tour.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Godzilla Minus Zero",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
+      "cert": "15A",
+      "runtime": 135,
+      "release": "November 5, 2026",
+      "releaseDate": "2026-11-05",
+      "director": "Takashi Yamazaki",
+      "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
+      "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
+      "date": "2026-11-06",
+      "times": [
+        "17:00",
+        "20:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137133",
+      "sessions": [
+        {
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "17:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137133",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137397",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -169,63 +226,48 @@
       ],
       "slug": "godzilla-minus-zero",
       "posterFile": "data/posters/godzilla-minus-zero.jpg",
-      "certIcon": "data/ratings/ifco-TBC.svg",
+      "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
       "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "Other Mommy",
+      "certFile": "12A",
+      "title": "Onwards and Sideways",
       "luxx": false,
       "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
-      "cert": "15A",
-      "runtime": 100,
-      "release": "October 9, 2026",
-      "releaseDate": "2026-10-09",
-      "director": "Rob Savage",
-      "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
-      "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-      "date": "2026-11-05",
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
+      "cert": "12A",
+      "runtime": 115,
+      "release": "November 6, 2026",
+      "releaseDate": "2026-11-06",
+      "director": "John Madden",
+      "synopsis": "Tony Evans is deputy head of a primary school. Emma Kent is a musician and composer, and single mother of two daughters. Neither knows the other. until a startling encounter changes the course of their lives. On the same morning, these two are simultaneously confronted with a diagnosis of ParkinsonÂ’s Disease. This film is the story of Tony and Emma - a friendship which unfolds unexpectedly. A story of humour and emotion, of challenge and bravado, of music and dance - transcending the assumptions of a little understood condition, and triumphing over the odds to find joy, release and love.",
+      "trailer": "https://www.youtube.com/watch?v=MR5Nkdndv18",
+      "date": "2026-11-06",
       "times": [
-        "18:35",
-        "20:45"
+        "17:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137298",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137396",
       "sessions": [
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "18:35",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137298",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "17:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137396",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137299",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
+            "advance",
+            "matinee",
             "seating-standard"
           ]
         }
       ],
-      "slug": "other-mommy",
-      "posterFile": "data/posters/other-mommy.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
+      "slug": "onwards-and-sideways",
+      "posterFile": "data/posters/onwards-and-sideways.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -243,19 +285,19 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-11-05",
+      "date": "2026-11-06",
       "times": [
         "15:30",
         "18:00",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137120",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137382",
       "sessions": [
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
           "time": "15:30",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137120",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137382",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -266,10 +308,10 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
           "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137119",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137388",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -280,10 +322,10 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137121",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137389",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -301,35 +343,35 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "TBC",
+      "certFile": "12A",
       "title": "Ramayana: Rise of a Legend (Hindi)",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116602.jpg",
-      "cert": "TBC",
+      "cert": "12A",
       "runtime": 195,
       "release": "November 5, 2026",
       "releaseDate": "2026-11-05",
       "director": "Nitesh Tiwari",
       "synopsis": "In an age of gods and kings, the fate of worlds hangs in the balance. Rama, a prince bound by duty, sacrifice, and righteousness, must confront Ravana, an immortal ruler driven by pride and vengeance, powerful enough to shatter the cosmos.",
       "trailer": null,
-      "date": "2026-11-05",
+      "date": "2026-11-06",
       "times": [
         "19:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137127",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137128",
       "sessions": [
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
           "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137127",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137128",
           "luxx": false,
-          "screen": "3",
+          "screen": "5",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -337,7 +379,49 @@
       ],
       "slug": "ramayana-rise-of-a-legend-hindi",
       "posterFile": "data/posters/ramayana-rise-of-a-legend-hindi.jpg",
-      "certIcon": "data/ratings/ifco-TBC.svg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+      "cert": "G",
+      "runtime": 81,
+      "release": "September 12, 2026",
+      "releaseDate": "2026-09-12",
+      "director": "Steve Cox, Matthew Walker",
+      "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+      "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+      "date": "2026-11-06",
+      "times": [
+        "15:20"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137386",
+      "sessions": [
+        {
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "15:20",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137386",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+      "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -355,21 +439,21 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-05",
+      "date": "2026-11-06",
       "times": [
         "15:30",
-        "15:30",
-        "17:45"
+        "17:55",
+        "20:20"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137300",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137393",
       "sessions": [
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
           "time": "15:30",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137300",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137393",
           "luxx": false,
-          "screen": "6",
+          "screen": "3",
           "threeD": false,
           "tags": [
             "new",
@@ -378,12 +462,12 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "15:30",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137354",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "17:55",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137394",
           "luxx": false,
-          "screen": "2",
+          "screen": "3",
           "threeD": false,
           "tags": [
             "new",
@@ -392,16 +476,16 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "17:45",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137296",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "20:20",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137395",
           "luxx": false,
-          "screen": "6",
+          "screen": "3",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         }
@@ -426,21 +510,21 @@
       "director": "Martin McDonagh",
       "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
       "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-05",
+      "date": "2026-11-06",
       "times": [
-        "15:10",
-        "17:50",
-        "20:30"
+        "15:30",
+        "18:10",
+        "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137123",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137130",
       "sessions": [
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "15:10",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137123",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137130",
           "luxx": false,
-          "screen": "7",
+          "screen": "8",
           "threeD": false,
           "tags": [
             "new",
@@ -449,26 +533,26 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "17:50",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137124",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137129",
           "luxx": false,
-          "screen": "7",
+          "screen": "8",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137125",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137131",
           "luxx": false,
-          "screen": "7",
+          "screen": "8",
           "threeD": false,
           "tags": [
             "new",
@@ -481,71 +565,9 @@
       "posterFile": "data/posters/wild-horse-nine.jpg",
       "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "12A",
-      "title": "Wildwood",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-      "cert": "12A",
-      "runtime": 131,
-      "release": "October 23, 2026",
-      "releaseDate": "2026-10-23",
-      "director": null,
-      "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect WildwoodÂ’s fragile future",
-      "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-11-05",
-      "times": [
-        "17:20",
-        "20:30"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137301",
-      "sessions": [
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "17:20",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137301",
-          "luxx": false,
-          "screen": "8",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137573",
-          "luxx": false,
-          "screen": "8",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "wildwood",
-      "posterFile": "data/posters/wildwood.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "days": [
-    {
-      "label": "Thu 05 Nov",
-      "url": "https://imc.ie/film-times/carlow/05-11-2026#dateD",
-      "date": "2026-11-05",
-      "films": []
-    },
     {
       "label": "Fri 06 Nov",
       "url": "https://imc.ie/film-times/carlow/06-11-2026#dateD",
@@ -988,42 +1010,12 @@
           "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
           "date": "2026-11-06",
           "times": [
-            "10:45",
-            "10:50",
             "15:30",
             "17:55",
             "20:20"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137384",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137393",
           "sessions": [
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "10:45",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137384",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 6 November",
-              "date": "2026-11-06",
-              "time": "10:50",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137385",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Fri 6 November",
               "date": "2026-11-06",
@@ -1652,11 +1644,11 @@
         {
           "certSystem": "ifco",
           "certFile": "12A",
-          "title": "Ramayana: Rise of a Legend",
+          "title": "Ramayana: Rise of a Legend (Tamil)",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116688.jpg",
           "cert": "12A",
           "runtime": 165,
           "release": "November 7, 2026",
@@ -1685,8 +1677,8 @@
               ]
             }
           ],
-          "slug": "ramayana-rise-of-a-legend",
-          "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg",
+          "slug": "ramayana-rise-of-a-legend-tamil",
+          "posterFile": "data/posters/ramayana-rise-of-a-legend-tamil.jpg",
           "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
@@ -2457,11 +2449,11 @@
         {
           "certSystem": "ifco",
           "certFile": "12A",
-          "title": "Ramayana: Rise of a Legend",
+          "title": "Ramayana: Rise of a Legend (Tamil)",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116688.jpg",
           "cert": "12A",
           "runtime": 165,
           "release": "November 7, 2026",
@@ -2490,8 +2482,8 @@
               ]
             }
           ],
-          "slug": "ramayana-rise-of-a-legend",
-          "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg",
+          "slug": "ramayana-rise-of-a-legend-tamil",
+          "posterFile": "data/posters/ramayana-rise-of-a-legend-tamil.jpg",
           "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
@@ -3114,15 +3106,15 @@
         {
           "certSystem": "ifco",
           "certFile": "12A",
-          "title": "Ramayana: Rise of a Legend",
+          "title": "Ramayana: Rise of a Legend (Telugu)",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
+          "poster": "https://imc.ie/wp-content/uploads/posters/117027.jpg",
           "cert": "12A",
           "runtime": 165,
-          "release": "November 7, 2026",
-          "releaseDate": "2026-11-07",
+          "release": "November 9, 2026",
+          "releaseDate": "2026-11-09",
           "director": "Nitesh Tiwari",
           "synopsis": "In an age of gods and kings, the fate of worlds hangs in the balance. Rama, a prince bound by duty, sacrifice, and righteousness, must confront Ravana, an immortal ruler driven by pride and vengeance, powerful enough to shatter the cosmos.",
           "trailer": null,
@@ -3147,8 +3139,8 @@
               ]
             }
           ],
-          "slug": "ramayana-rise-of-a-legend",
-          "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg",
+          "slug": "ramayana-rise-of-a-legend-telugu",
+          "posterFile": "data/posters/ramayana-rise-of-a-legend-telugu.jpg",
           "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
@@ -3655,15 +3647,15 @@
         {
           "certSystem": "ifco",
           "certFile": "12A",
-          "title": "Ramayana: Rise of a Legend",
+          "title": "Ramayana: Rise of a Legend (Telugu)",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
+          "poster": "https://imc.ie/wp-content/uploads/posters/117027.jpg",
           "cert": "12A",
           "runtime": 165,
-          "release": "November 7, 2026",
-          "releaseDate": "2026-11-07",
+          "release": "November 9, 2026",
+          "releaseDate": "2026-11-09",
           "director": "Nitesh Tiwari",
           "synopsis": "In an age of gods and kings, the fate of worlds hangs in the balance. Rama, a prince bound by duty, sacrifice, and righteousness, must confront Ravana, an immortal ruler driven by pride and vengeance, powerful enough to shatter the cosmos.",
           "trailer": null,
@@ -3688,8 +3680,8 @@
               ]
             }
           ],
-          "slug": "ramayana-rise-of-a-legend",
-          "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg",
+          "slug": "ramayana-rise-of-a-legend-telugu",
+          "posterFile": "data/posters/ramayana-rise-of-a-legend-telugu.jpg",
           "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
@@ -4344,6 +4336,91 @@
       "films": [
         {
           "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Arnie and Barney",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+          "cert": "G",
+          "runtime": 77,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+          "date": "2026-11-12",
+          "times": [
+            "13:50"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137577",
+          "sessions": [
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "13:50",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137577",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney",
+          "posterFile": "data/posters/arnie-and-barney.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Arnie and Barney - Sensory",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/116306.jpg",
+          "cert": "G",
+          "runtime": 77,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+          "date": "2026-11-12",
+          "times": [
+            "13:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137576",
+          "sessions": [
+            {
+              "day": "Thu 12 November",
+              "date": "2026-11-12",
+              "time": "13:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137576",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard",
+                "sensory"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney-sensory",
+          "posterFile": "data/posters/arnie-and-barney-sensory.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "16",
           "title": "Clayface",
           "luxx": false,
@@ -4359,7 +4436,7 @@
           "trailer": null,
           "date": "2026-11-12",
           "times": [
-            "15:30",
+            "15:00",
             "18:15",
             "20:45"
           ],
@@ -4368,7 +4445,7 @@
             {
               "day": "Thu 12 November",
               "date": "2026-11-12",
-              "time": "15:30",
+              "time": "15:00",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137534",
               "luxx": false,
               "screen": "1",
@@ -4905,6 +4982,140 @@
           "slug": "wild-horse-nine",
           "posterFile": "data/posters/wild-horse-nine.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Fri 13 Nov",
+      "url": "https://imc.ie/film-times/carlow/13-11-2026#dateD",
+      "date": "2026-11-13",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-13",
+          "times": [
+            "15:30",
+            "18:05",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137171",
+          "sessions": [
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137171",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "18:05",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137173",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137172",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "TBC",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-13",
+          "times": [
+            "17:25",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137539",
+          "sessions": [
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137539",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137540",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -8317,23 +8528,21 @@
     }
   ],
   "log": [
-    "carlow: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-05-11-2026-dated: 0 films parsed",
+    "today: 10 films parsed",
     "day-06-11-2026-dated: 10 films parsed",
     "day-07-11-2026-dated: 13 films parsed",
     "day-08-11-2026-dated: 13 films parsed",
     "day-09-11-2026-dated: 9 films parsed",
     "day-10-11-2026-dated: 9 films parsed",
     "day-11-11-2026-dated: 8 films parsed",
-    "day-12-11-2026-dated: 9 films parsed",
+    "day-12-11-2026-dated: 11 films parsed",
+    "day-13-11-2026-dated: 2 films parsed",
     "advance: 12 films parsed",
     "kids: 1 films parsed",
     "luxx: 0 films parsed",
     "booking pages read: 9 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
-    "prices: 15 ticket types, 2 bundles, 12 products",
-    "kept previous today",
+    "prices: 16 ticket types, 2 bundles, 12 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -8348,7 +8557,8 @@
           "Wed"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -8363,7 +8573,8 @@
           "Wed"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -8391,7 +8602,8 @@
           "Wed"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -8421,7 +8633,8 @@
           "Wed"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -8490,6 +8703,16 @@
         ]
       },
       {
+        "name": "LUXX Recliner",
+        "price": "€15.00",
+        "days": [
+          "Fri"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
         "name": "Kids Club",
         "price": "€5.00",
         "days": [
@@ -8535,7 +8758,8 @@
           "Thu"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ],
         "file": "data/products/t1mcb.jpg"
       },
@@ -8554,7 +8778,8 @@
           "Thu"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ],
         "file": "data/products/t1scb.jpg"
       }
@@ -8801,7 +9026,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-05T22:46:56.955Z",
+    "checked": "2026-11-06T14:21:58.756Z",
     "sampledDays": [
       "Fri",
       "Sat",
@@ -8812,7 +9037,7 @@
       "Thu"
     ]
   },
-  "checked": "2026-11-05T22:47:10.201Z",
+  "checked": "2026-11-06T14:22:11.670Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
