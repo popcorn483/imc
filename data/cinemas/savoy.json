@@ -2,7 +2,7 @@
   "id": "savoy",
   "cinema": "Savoy Cinema",
   "source": "https://imc.ie/savoy",
-  "updated": "2026-11-06T22:18:35.871Z",
+  "updated": "2026-11-07T13:10:53.950Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -19,65 +19,65 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
         "13:40",
         "15:00",
         "17:40",
         "20:10"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167318",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167476",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167318",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167476",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "15:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167296",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167299",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "17:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167298",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167300",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "20:10",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167297",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167301",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -97,10 +97,68 @@
     {
       "certSystem": "ifco",
       "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-07",
+      "times": [
+        "13:40",
+        "15:50"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167363",
+      "sessions": [
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "13:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167363",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "15:50",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167364",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
       "title": "George Michael: The Faith Tour",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/114430.jpg",
       "cert": "PG",
       "runtime": 114,
@@ -109,54 +167,38 @@
       "director": "David Austin, Andrew Morahan",
       "synopsis": "Restored concert film featuring George Michael's 1988 Faith Tour performances at Palais Omnisports de Paris-Bercy, captured on 35mm over two nights during the European leg of the tour.",
       "trailer": null,
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
-        "14:40",
-        "17:30",
-        "20:00"
+        "14:10",
+        "20:10"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167465",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167468",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "14:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167465",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "14:10",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167468",
           "luxx": false,
           "screen": "9",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167466",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "20:10",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167470",
           "luxx": false,
           "screen": "9",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167467",
-          "luxx": false,
-          "screen": "9",
-          "threeD": false,
-          "tags": [
-            "advance",
+            "new",
             "evening",
             "unallocated",
             "seating-standard"
@@ -166,6 +208,77 @@
       "slug": "george-michael-the-faith-tour",
       "posterFile": "data/posters/george-michael-the-faith-tour.jpg",
       "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Ghosts: The Possession Of Button House",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+      "cert": "12A",
+      "runtime": 100,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Simon Hynd",
+      "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+      "trailer": null,
+      "date": "2026-11-07",
+      "times": [
+        "13:40",
+        "15:45",
+        "17:50"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167407",
+      "sessions": [
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "13:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167407",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167408",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "17:50",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167409",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ghosts-the-possession-of-button-house",
+      "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -183,52 +296,52 @@
       "director": "Takashi Yamazaki",
       "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
       "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
         "13:50",
         "16:50",
         "19:00",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166891",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166952",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "13:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166891",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166952",
           "luxx": false,
           "screen": "1",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard",
             "screen-galactic"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "16:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166892",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166953",
           "luxx": false,
           "screen": "1",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard",
             "screen-galactic"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "19:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167517",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167521",
           "luxx": true,
           "screen": "8",
           "threeD": false,
@@ -239,10 +352,10 @@
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166893",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166954",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -275,47 +388,47 @@
       "director": "David Ayer",
       "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
       "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
-        "15:00",
+        "15:20",
         "17:30",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167444",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167446",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "15:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167444",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "15:20",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167446",
           "luxx": false,
           "screen": "13",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167443",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167447",
           "luxx": false,
           "screen": "13",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167445",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167448",
           "luxx": false,
           "screen": "13",
           "threeD": false,
@@ -346,33 +459,33 @@
       "director": "Javier Ambrossi, Javier Calvo",
       "synopsis": "The story of three men whose lives are intimately connected through desire, pain and inheritance, across three different eras ? 1932, 1937 and 2017.",
       "trailer": "https://www.youtube.com/watch?v=IRHtqjHYPew",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
         "16:15",
         "19:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167317",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167475",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "16:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167317",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167475",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "19:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167319",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167474",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -395,7 +508,7 @@
       "title": "Onwards and Sideways",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
       "cert": "12A",
       "runtime": 115,
@@ -404,52 +517,52 @@
       "director": "John Madden",
       "synopsis": "Tony Evans is deputy head of a primary school. Emma Kent is a musician and composer, and single mother of two daughters. Neither knows the other. until a startling encounter changes the course of their lives. On the same morning, these two are simultaneously confronted with a diagnosis of Parkinson?s Disease. This film is the story of Tony and Emma - a friendship which unfolds unexpectedly. A story of humour and emotion, of challenge and bravado, of music and dance - transcending the assumptions of a little understood condition, and triumphing over the odds to find joy, release and love.",
       "trailer": "https://www.youtube.com/watch?v=MR5Nkdndv18",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
         "14:30",
         "17:15",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167320",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167323",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "14:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167320",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167323",
           "luxx": true,
           "screen": "7",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "17:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167321",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167324",
           "luxx": true,
           "screen": "7",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167322",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167325",
           "luxx": true,
           "screen": "7",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-lux"
           ]
@@ -475,49 +588,49 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
         "14:45",
         "17:30",
-        "20:00"
+        "20:05"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167542",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167492",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167542",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167492",
           "luxx": false,
           "screen": "2",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167543",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167493",
           "luxx": false,
           "screen": "2",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167544",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167494",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -549,62 +662,62 @@
       "director": "Zach Cregger",
       "synopsis": "From the mind of visionary filmmaker Zach Cregger comes a thrilling - and terrifying - reinvention of the Resident Evil franchise. In an all-new story, Resident Evil follows Bryan, a medical courier who unwittingly finds himself in an action-packed, non-stop race for survival as one fateful, horrifying night collapses around him in chaos.",
       "trailer": "https://www.youtube.com/watch?v=9Aiv1cqmH4w",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
         "13:40",
-        "15:45",
-        "17:50",
-        "20:00"
+        "15:40",
+        "17:40",
+        "19:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167418",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167419",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167418",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167419",
           "luxx": false,
           "screen": "12",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167415",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "15:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167420",
           "luxx": false,
           "screen": "12",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "17:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167416",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "17:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167421",
           "luxx": false,
           "screen": "12",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167417",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "19:40",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167422",
           "luxx": false,
           "screen": "12",
           "threeD": false,
@@ -622,62 +735,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "PG",
-      "title": "Sense And Sensibility",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/112473.jpg",
-      "cert": "PG",
-      "runtime": 131,
-      "release": "September 25, 2026",
-      "releaseDate": "2026-09-25",
-      "director": "Georgia Oakley",
-      "synopsis": "An irresistible new take on Jane Austen?s iconic Sense and Sensibility: a charming, witty, and deeply relatable story of love and sisterhood starring Daisy Edgar-Jones and Esmé Creed-Miles. Sisters Elinor and Marianne Dashwood must leave their Sussex estate following the sudden loss of their wealthy father and are forced to move in with a distant relative. The two sisters attempt to find security and happiness whilst navigating their vastly different approaches to love.",
-      "trailer": null,
-      "date": "2026-11-06",
-      "times": [
-        "14:20",
-        "17:10"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167392",
-      "sessions": [
-        {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "14:20",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167392",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167393",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "sense-and-sensibility",
-      "posterFile": "data/posters/sense-and-sensibility.jpg",
-      "certIcon": "data/ratings/ifco-PG.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "15A",
       "title": "The Social Reckoning",
       "luxx": false,
@@ -691,32 +748,32 @@
       "director": "Aaron Sorkin",
       "synopsis": "Inspired by true events and the whistleblower who started the social media reckoning we?re seeing play out today, this Aaron Sorkin original screenplay is a companion piece to the hit film The Social Network and a true David and Goliath story. Frances Haugen (Madison), a young Facebook engineer, enlists the help of Jeff Horwitz (White), a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network?s most guarded secrets.",
       "trailer": "https://www.youtube.com/watch?v=MfHEZw7Xw_c",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
         "13:40",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167516",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167520",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167516",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167520",
           "luxx": true,
           "screen": "8",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167394",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167410",
           "luxx": false,
           "screen": "11",
           "threeD": false,
@@ -738,7 +795,7 @@
       "title": "Wicker",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
       "cert": "15A",
       "runtime": 100,
@@ -747,70 +804,38 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
-        "13:40",
-        "15:50",
-        "18:00",
-        "20:10"
+        "18:05",
+        "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167341",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167365",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167341",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "18:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167365",
           "luxx": false,
           "screen": "3",
           "threeD": false,
           "tags": [
-            "new",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "15:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167342",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167343",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "20:10",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167344",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167366",
           "luxx": false,
           "screen": "3",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "seating-standard"
@@ -837,64 +862,64 @@
       "director": "Martin McDonagh",
       "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
       "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
         "14:15",
         "16:15",
         "17:15",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166894",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166897",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "14:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166894",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166897",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "16:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167518",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167522",
           "luxx": true,
           "screen": "8",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "17:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166895",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166898",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166896",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166899",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -926,49 +951,49 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "times": [
         "14:10",
         "17:00",
-        "19:45"
+        "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167371",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167374",
       "sessions": [
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "14:10",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167371",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167374",
           "luxx": false,
           "screen": "10",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "17:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167372",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167375",
           "luxx": false,
           "screen": "10",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 6 November",
-          "date": "2026-11-06",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167373",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167376",
           "luxx": false,
           "screen": "10",
           "threeD": false,
@@ -987,12 +1012,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Fri 06 Nov",
-      "url": "https://imc.ie/film-times/savoy/06-11-2026#dateD",
-      "date": "2026-11-06",
-      "films": []
-    },
     {
       "label": "Sat 07 Nov",
       "url": "https://imc.ie/film-times/savoy/07-11-2026#dateD",
@@ -6774,6 +6793,90 @@
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
+    },
+    {
+      "label": "Sat 14 Nov",
+      "url": "https://imc.ie/film-times/savoy/14-11-2026#dateD",
+      "date": "2026-11-14",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-14",
+          "times": [
+            "14:00",
+            "17:00",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166873",
+          "sessions": [
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "14:00",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166873",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "17:00",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166874",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166875",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -6787,8 +6890,8 @@
       "poster": "https://imc.ie/wp-content/uploads/posters/112259.jpg",
       "cert": "PG",
       "runtime": 165,
-      "release": "December 12, 2026",
-      "releaseDate": "2026-12-12",
+      "release": "December 5, 2026",
+      "releaseDate": "2026-12-05",
       "director": null,
       "synopsis": "André Rieu and his Johann Strauss Orchestra return with a brand-new Christmas concert, bringing a premium festive event to cinemas. Featuring the extraordinary voice of Emma Kok, renowned tenors and special guests, this production is designed to delight audiences and drive seasonal attendance.",
       "trailer": null,
@@ -8178,600 +8281,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "12A",
-      "title": "Focker-In-Law",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
-      "cert": "12A",
-      "runtime": 106,
-      "release": "November 27, 2026",
-      "releaseDate": "2026-11-27",
-      "director": "John Hamburg",
-      "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
-      "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-      "date": "2026-11-25",
-      "times": [
-        "13:40",
-        "15:55",
-        "18:05",
-        "20:15"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166937",
-      "sessions": [
-        {
-          "day": "Wed 25 November",
-          "date": "2026-11-25",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166937",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 25 November",
-          "date": "2026-11-25",
-          "time": "15:55",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166938",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 25 November",
-          "date": "2026-11-25",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166939",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 25 November",
-          "date": "2026-11-25",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166940",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166941",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "15:55",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166942",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166943",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166944",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166772",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "15:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166796",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166797",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166803",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166804",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "15:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166805",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166806",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166807",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166808",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "15:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166809",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166810",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166811",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166812",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "15:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166813",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166814",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166815",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166816",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "15:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166817",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166818",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166819",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166820",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "15:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166821",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166822",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166823",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard",
-            "screen-galactic"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166824",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "15:50",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166825",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166826",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166827",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "focker-in-law",
-      "posterFile": "data/posters/focker-in-law.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "TBC",
       "title": "Godzilla Minus Zero",
       "luxx": false,
@@ -9907,153 +9416,32 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "18",
-      "title": "Primetime",
+      "certFile": "TBC",
+      "title": "I Play Rocky",
       "luxx": false,
       "sensory": false,
       "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-      "cert": "18",
-      "runtime": 100,
-      "release": "October 28, 2026",
-      "releaseDate": "2026-10-28",
-      "director": null,
-      "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
-      "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-10-28",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+      "cert": "TBC",
+      "runtime": 128,
+      "release": "November 6, 2026",
+      "releaseDate": "2026-11-06",
+      "director": "Peter Farrelly",
+      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+      "date": "2026-11-06",
       "times": [
-        "13:40",
-        "15:55",
-        "19:30",
-        "20:10"
+        "14:15",
+        "17:15",
+        "20:05"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166799",
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167234",
       "sessions": [
         {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166799",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
-          "time": "15:55",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166800",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166950",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 28 October",
-          "date": "2026-10-28",
-          "time": "20:10",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166781",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 29 October",
-          "date": "2026-10-29",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166801",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 29 October",
-          "date": "2026-10-29",
-          "time": "16:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166802",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 29 October",
-          "date": "2026-10-29",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166915",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 29 October",
-          "date": "2026-10-29",
-          "time": "20:20",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166951",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166916",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167234",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10065,10 +9453,10 @@
           ]
         },
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166917",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167235",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10080,10 +9468,10 @@
           ]
         },
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166918",
+          "day": "Fri 6 November",
+          "date": "2026-11-06",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167236",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10095,10 +9483,10 @@
           ]
         },
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166919",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167237",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10110,10 +9498,10 @@
           ]
         },
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166920",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167238",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10125,10 +9513,10 @@
           ]
         },
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166921",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167239",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10140,10 +9528,10 @@
           ]
         },
         {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166922",
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167240",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10155,10 +9543,10 @@
           ]
         },
         {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166923",
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167241",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10170,10 +9558,10 @@
           ]
         },
         {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166924",
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167242",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10185,10 +9573,10 @@
           ]
         },
         {
-          "day": "Mon 2 November",
-          "date": "2026-11-02",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166925",
+          "day": "Mon 9 November",
+          "date": "2026-11-09",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167243",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10200,10 +9588,10 @@
           ]
         },
         {
-          "day": "Mon 2 November",
-          "date": "2026-11-02",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166926",
+          "day": "Mon 9 November",
+          "date": "2026-11-09",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167244",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10215,10 +9603,10 @@
           ]
         },
         {
-          "day": "Mon 2 November",
-          "date": "2026-11-02",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166927",
+          "day": "Mon 9 November",
+          "date": "2026-11-09",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167245",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10230,10 +9618,10 @@
           ]
         },
         {
-          "day": "Tue 3 November",
-          "date": "2026-11-03",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166928",
+          "day": "Tue 10 November",
+          "date": "2026-11-10",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167246",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10245,10 +9633,10 @@
           ]
         },
         {
-          "day": "Tue 3 November",
-          "date": "2026-11-03",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166929",
+          "day": "Tue 10 November",
+          "date": "2026-11-10",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167247",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10260,10 +9648,10 @@
           ]
         },
         {
-          "day": "Tue 3 November",
-          "date": "2026-11-03",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166930",
+          "day": "Tue 10 November",
+          "date": "2026-11-10",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167248",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10275,10 +9663,10 @@
           ]
         },
         {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166931",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167249",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10290,10 +9678,10 @@
           ]
         },
         {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166932",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167250",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10305,10 +9693,10 @@
           ]
         },
         {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166933",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167251",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10320,10 +9708,10 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166934",
+          "day": "Thu 12 November",
+          "date": "2026-11-12",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167252",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10335,10 +9723,10 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166935",
+          "day": "Thu 12 November",
+          "date": "2026-11-12",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167253",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10350,10 +9738,10 @@
           ]
         },
         {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166936",
+          "day": "Thu 12 November",
+          "date": "2026-11-12",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167254",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -10365,9 +9753,207 @@
           ]
         }
       ],
-      "slug": "primetime",
-      "posterFile": "data/posters/primetime.jpg",
-      "certIcon": "data/ratings/ifco-18.svg",
+      "slug": "i-play-rocky",
+      "posterFile": "data/posters/i-play-rocky.jpg",
+      "certIcon": "data/ratings/ifco-TBC.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "JAK ZYC ZEBY NIE ZWARIOWAC",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116685.jpg",
+      "cert": "15A",
+      "runtime": 102,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Tomasz Konecki, Iwona Ogonowska-Konecka",
+      "synopsis": "Anka seems to have it all: a husband, children, a career and a comfortable home. Then infidelity, job loss and financial trouble turn her life upside down. Faced with family tensions, an overprotective mother and unexpected new connections, she sets out to rebuild her life on her own terms. A comedy about imperfect people, complicated relationships and new beginnings.",
+      "trailer": "https://www.youtube.com/watch?v=NRIMQxXcY-4",
+      "date": "2026-10-30",
+      "times": [
+        "20:05"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167255",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167255",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167256",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167257",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "jak-zyc-zeby-nie-zwariowac",
+      "posterFile": "data/posters/jak-zyc-zeby-nie-zwariowac.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "La bola negra",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116606.jpg",
+      "cert": "15A",
+      "runtime": 159,
+      "release": "November 4, 2026",
+      "releaseDate": "2026-11-04",
+      "director": "Javier Ambrossi, Javier Calvo",
+      "synopsis": "The story of three men whose lives are intimately connected through desire, pain and inheritance, across three different eras ? 1932, 1937 and 2017.",
+      "trailer": "https://www.youtube.com/watch?v=IRHtqjHYPew",
+      "date": "2026-11-04",
+      "times": [
+        "19:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167259",
+      "sessions": [
+        {
+          "day": "Wed 4 November",
+          "date": "2026-11-04",
+          "time": "19:30",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167259",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 5 November",
+          "date": "2026-11-05",
+          "time": "19:30",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167260",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "la-bola-negra",
+      "posterFile": "data/posters/la-bola-negra.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Pan's Labyrinth (20th Anniversary)",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114493.jpg",
+      "cert": "16",
+      "runtime": 118,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Guillermo del Toro",
+      "synopsis": "Celebrate the 20th Anniversary of Guillermo del Toro?s Academy Award?winning masterpiece with a return to the big screen. Set against the backdrop of post?Civil War Spain, Pan?s Labyrinth follows young Ofelia as she escapes into a haunting fantasy realm, where a mysterious faun sets her on a dangerous quest. A visually stunning and emotionally powerful film, this re-release offers audiences a rare opportunity to experience a modern classic in theaters?perfect for prestige programming, genre fans, and awards-season retrospectives.",
+      "trailer": null,
+      "date": "2026-10-30",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167085",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167085",
+          "luxx": true,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167086",
+          "luxx": true,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=167087",
+          "luxx": true,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "pan-s-labyrinth-20th-anniversary",
+      "posterFile": "data/posters/pan-s-labyrinth-20th-anniversary.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -10441,37 +10027,7 @@
         {
           "day": "Thu 5 November",
           "date": "2026-11-05",
-          "time": "14:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166775",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "17:15",
-          "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166776",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "20:00",
+          "time": "20:15",
           "book": "https://booking.imc.ie/booking/?cinema=savoy&stage=tickets&perf=166777",
           "luxx": false,
           "screen": "10",
@@ -11637,12 +11193,8 @@
     }
   ],
   "log": [
-    "savoy: no films on the film-times page",
-    "savoy-cinema: no films on the film-times page",
-    "dublin-savoy: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-06-11-2026-dated: 0 films parsed",
+    "today: 14 films parsed",
     "day-07-11-2026-dated: 14 films parsed",
     "day-08-11-2026-dated: 14 films parsed",
     "day-09-11-2026-dated: 12 films parsed",
@@ -11650,12 +11202,12 @@
     "day-11-11-2026-dated: 13 films parsed",
     "day-12-11-2026-dated: 13 films parsed",
     "day-13-11-2026-dated: 1 films parsed",
-    "advance: 12 films parsed",
+    "day-14-11-2026-dated: 1 films parsed",
+    "advance: 14 films parsed",
     "kids: 0 films parsed",
     "luxx: 4 films parsed",
     "booking pages read: 9 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 20 ticket types, 6 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -12159,7 +11711,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-06T22:19:04.636Z",
+    "checked": "2026-11-07T13:11:20.398Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -12170,7 +11722,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-11-06T22:19:16.923Z",
+  "checked": "2026-11-07T13:11:33.027Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
