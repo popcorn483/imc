@@ -1,0 +1,47 @@
+name: Cut out product photos
+
+# IMC's product photos have a white background. This cuts new ones out cleanly (background and shadow removed,
+# white parts of the product kept) with tools/cutout.py. No AI upscaling: the writing on the products stays as IMC's photo has it.
+on:
+  schedule:
+    - cron: "41 7 * * *"   # once a day, after the morning import
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-imc
+  cancel-in-progress: false
+
+jobs:
+  cutout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Anything to do?
+        id: check
+        run: |
+          pip install --quiet pillow numpy
+          echo "todo=$(python tools/cutout.py --check)" >> "$GITHUB_OUTPUT"
+      - name: Cut out
+        if: steps.check.outputs.todo != '0'
+        run: |
+          pip install --quiet onnxruntime numpy pillow scipy
+          python tools/cutout.py
+      - name: Commit
+        if: steps.check.outputs.todo != '0'
+        run: |
+          git config user.name "imc-importer"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/products/cut
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Cut out new product photos"
+          git pull --rebase -X theirs
+          git push

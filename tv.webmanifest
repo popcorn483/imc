@@ -1,0 +1,16 @@
+{
+  "name": "IMC Foyer TV",
+  "short_name": "IMC TV",
+  "description": "Plays trailers, showtimes, deals and adverts on the foyer TVs, following the manager's settings.",
+  "start_url": "tv.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "landscape",
+  "background_color": "#05071a",
+  "theme_color": "#05071a",
+  "icons": [
+    { "src": "tv-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "tv-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

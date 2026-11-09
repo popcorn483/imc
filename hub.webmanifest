@@ -1,0 +1,23 @@
+{
+  "id": "imc-marketing-hub",
+  "name": "IMC Marketing Hub",
+  "short_name": "IMC Hub",
+  "description": "Posts, adverts, logos and the foyer TVs for IMC Enniskillen.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "background_color": "#0b0d28",
+  "theme_color": "#0b0d28",
+  "icons": [
+    { "src": "hub-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "hub-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "hub-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Today", "url": "index.html#today", "icons": [{ "src": "hub-192.png", "sizes": "192x192" }] },
+    { "name": "Photo & video editor", "url": "editor.html", "icons": [{ "src": "hub-192.png", "sizes": "192x192" }] },
+    { "name": "Logo design", "url": "logo.html", "icons": [{ "src": "hub-192.png", "sizes": "192x192" }] },
+    { "name": "Foyer TVs", "url": "index.html#foyer", "icons": [{ "src": "hub-192.png", "sizes": "192x192" }] }
+  ]
+}

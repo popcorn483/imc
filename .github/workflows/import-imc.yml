@@ -1,0 +1,44 @@
+name: Import imc.ie listings
+
+on:
+  schedule:
+    - cron: "17 6,12,17 * * *"   # three times a day (UTC); gentle on imc.ie
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Cinemas to refresh, comma-separated (e.g. galway,santry). Leave empty for all."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-imc
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main   # the latest code, even when this run was queued behind another
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-save --no-package-lock cheerio@1.0.0
+      - run: node tools/import-imc.mjs
+        env:
+          ONLY: ${{ github.event.inputs.only }}
+      - name: Commit updated listings
+        run: |
+          git config user.name "imc-importer"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Update IMC listings from imc.ie"
+          # a run that waited in the queue may overlap with the last one: its newer data wins
+          git pull --rebase -X theirs
+          git push
