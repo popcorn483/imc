@@ -2,7 +2,7 @@
   "id": "banbridge",
   "cinema": "IMC Banbridge",
   "source": "https://imc.ie/banbridge",
-  "updated": "2026-11-10T14:53:43.061Z",
+  "updated": "2026-11-10T22:23:55.809Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -906,6 +906,7 @@
           "date": "2026-11-13",
           "times": [
             "18:10",
+            "19:30",
             "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48501",
@@ -917,6 +918,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48501",
               "luxx": false,
               "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "19:30",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48650",
+              "luxx": false,
+              "screen": "5",
               "threeD": false,
               "tags": [
                 "advance",
@@ -942,6 +957,144 @@
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
           "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "How to Rob a Bank",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
+          "cert": "15",
+          "runtime": 121,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
+          "trailer": null,
+          "date": "2026-11-13",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48647",
+          "sessions": [
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48647",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "how-to-rob-a-bank",
+          "posterFile": "data/posters/how-to-rob-a-bank.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-13",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48646",
+          "sessions": [
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48646",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Prima Facie",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
+          "cert": "15",
+          "runtime": 109,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
+          "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
+          "date": "2026-11-13",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48648",
+          "sessions": [
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48648",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48649",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "prima-facie",
+          "posterFile": "data/posters/prima-facie.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -969,8 +1122,11 @@
           "date": "2026-11-14",
           "times": [
             "13:00",
+            "13:45",
             "15:35",
+            "16:20",
             "18:10",
+            "19:30",
             "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48505",
@@ -982,6 +1138,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48505",
               "luxx": false,
               "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "13:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48658",
+              "luxx": false,
+              "screen": "4",
               "threeD": false,
               "tags": [
                 "advance",
@@ -1006,10 +1176,38 @@
             {
               "day": "Sat 14 November",
               "date": "2026-11-14",
+              "time": "16:20",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48659",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
               "time": "18:10",
               "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48502",
               "luxx": false,
               "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "19:30",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48664",
+              "luxx": false,
+              "screen": "5",
               "threeD": false,
               "tags": [
                 "advance",
@@ -1035,6 +1233,322 @@
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
           "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa Cinema Experience",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+          "date": "2026-11-14",
+          "times": [
+            "12:10",
+            "13:00",
+            "13:55",
+            "15:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48654",
+          "sessions": [
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "12:10",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48654",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48651",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "13:55",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48655",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "15:40",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48656",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-cinema-experience",
+          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+          "certIcon": "data/ratings/bbfc-G.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-11-14",
+          "times": [
+            "13:15",
+            "15:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48662",
+          "sessions": [
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48662",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48663",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "How to Rob a Bank",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
+          "cert": "15",
+          "runtime": 121,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
+          "trailer": null,
+          "date": "2026-11-14",
+          "times": [
+            "17:30",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48666",
+          "sessions": [
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "17:30",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48666",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48657",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "how-to-rob-a-bank",
+          "posterFile": "data/posters/how-to-rob-a-bank.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-14",
+          "times": [
+            "14:35",
+            "17:20",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48665",
+          "sessions": [
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "14:35",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48665",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "17:20",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48652",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48653",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Prima Facie",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
+          "cert": "15",
+          "runtime": 109,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
+          "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
+          "date": "2026-11-14",
+          "times": [
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48661",
+          "sessions": [
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48661",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "prima-facie",
+          "posterFile": "data/posters/prima-facie.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -1062,8 +1576,11 @@
           "date": "2026-11-15",
           "times": [
             "13:00",
+            "13:45",
             "15:35",
+            "16:20",
             "18:10",
+            "19:30",
             "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48506",
@@ -1075,6 +1592,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48506",
               "luxx": false,
               "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "13:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48675",
+              "luxx": false,
+              "screen": "4",
               "threeD": false,
               "tags": [
                 "advance",
@@ -1099,10 +1630,38 @@
             {
               "day": "Sun 15 November",
               "date": "2026-11-15",
+              "time": "16:20",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48676",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
               "time": "18:10",
               "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48508",
               "luxx": false,
               "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "19:30",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48680",
+              "luxx": false,
+              "screen": "5",
               "threeD": false,
               "tags": [
                 "advance",
@@ -1128,6 +1687,322 @@
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
           "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa Cinema Experience",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+          "date": "2026-11-15",
+          "times": [
+            "12:10",
+            "13:00",
+            "13:55",
+            "15:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48673",
+          "sessions": [
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "12:10",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48673",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48667",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "13:55",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48674",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "15:40",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48681",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-cinema-experience",
+          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+          "certIcon": "data/ratings/bbfc-G.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/112475.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": "Simon Hynd",
+          "synopsis": "The beloved and award-winning BBC comedy Ghosts arrives on the big screen this Halloween. Ghosts stars, writers, and creators Mathew Baynton, Simon Farnaby, Martha Howe-Douglas, Jim Howick, Laurence Rickard and Ben Willbond are back, along with Lolly Adefope, Charlotte Ritchie and Kiell Smith-Bynoe, in a feature length family adventure.",
+          "trailer": null,
+          "date": "2026-11-15",
+          "times": [
+            "13:15",
+            "15:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48678",
+          "sessions": [
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48678",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "15:40",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48679",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "How to Rob a Bank",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
+          "cert": "15",
+          "runtime": 121,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
+          "trailer": null,
+          "date": "2026-11-15",
+          "times": [
+            "17:30",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48671",
+          "sessions": [
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "17:30",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48671",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48672",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "how-to-rob-a-bank",
+          "posterFile": "data/posters/how-to-rob-a-bank.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-15",
+          "times": [
+            "14:35",
+            "17:25",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48668",
+          "sessions": [
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "14:35",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48668",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48669",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48670",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Prima Facie",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
+          "cert": "15",
+          "runtime": 109,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
+          "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
+          "date": "2026-11-15",
+          "times": [
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48677",
+          "sessions": [
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48677",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "prima-facie",
+          "posterFile": "data/posters/prima-facie.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -3032,18 +3907,19 @@
     "day-10-11-2026-dated: 0 films parsed",
     "day-11-11-2026-dated: 4 films parsed",
     "day-12-11-2026-dated: 4 films parsed",
-    "day-13-11-2026-dated: 1 films parsed",
-    "day-14-11-2026-dated: 1 films parsed",
-    "day-15-11-2026-dated: 1 films parsed",
+    "day-13-11-2026-dated: 4 films parsed",
+    "day-14-11-2026-dated: 6 films parsed",
+    "day-15-11-2026-dated: 6 films parsed",
     "day-16-11-2026-dated: 0 films parsed",
     "day-17-11-2026-dated: 0 films parsed",
     "advance: 10 films parsed",
-    "kids: 3 films parsed",
+    "kids: 0 films parsed",
     "luxx: 0 films parsed",
-    "booking pages read: 6 (Wed, Thu, Fri, Sat, Sun)",
-    "prices: 1 ticket types, 0 bundles, 8 products",
+    "booking pages read: 7 (Wed, Thu, Fri, Sat, Sun)",
+    "prices: 4 ticket types, 0 bundles, 8 products",
     "kept previous today",
-    "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
+    "kept previous kidsClub",
+    "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
@@ -3060,6 +3936,36 @@
         "seenOn": [
           "evening",
           "matinee"
+        ]
+      },
+      {
+        "name": "Kids Club",
+        "price": "£3.40",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Adult",
+        "price": "£3.40",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Meal Deal",
+        "price": "£7.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
         ]
       }
     ],
@@ -3078,7 +3984,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/flexi.jpg"
       },
@@ -3095,7 +4002,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/maltesers.jpg"
       },
@@ -3112,7 +4020,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/minstrels.jpg"
       },
@@ -3129,7 +4038,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/ttc.jpg"
       },
@@ -3146,7 +4056,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/combotest.jpg"
       },
@@ -3163,7 +4074,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/lccc.jpg"
       },
@@ -3180,7 +4092,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/onkt.jpg"
       },
@@ -3197,12 +4110,13 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-10T14:54:09.340Z",
+    "checked": "2026-11-10T22:24:21.400Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -3211,7 +4125,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-10T14:54:17.505Z",
+  "checked": "2026-11-10T22:24:32.115Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
@@ -3223,7 +4137,8 @@
       "12A": "data/ratings/bbfc-12A.svg",
       "R18": "data/ratings/bbfc-R18.svg",
       "TBC": "data/ratings/bbfc-TBC.svg",
-      "BBFC": "data/ratings/bbfc-BBFC.svg"
+      "BBFC": "data/ratings/bbfc-BBFC.svg",
+      "G": "data/ratings/bbfc-G.svg"
     },
     "ifco": {
       "16": "data/ratings/ifco-16.svg",
