@@ -2,7 +2,7 @@
   "id": "newtownards",
   "cinema": "IMC Newtownards",
   "source": "https://imc.ie/newtownards",
-  "updated": "2026-11-09T16:19:30.425Z",
+  "updated": "2026-11-10T00:43:49.753Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -617,12 +617,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Mon 09 Nov",
-      "url": "https://imc.ie/film-times/newtownards/09-11-2026#dateD",
-      "date": "2026-11-09",
-      "films": []
-    },
     {
       "label": "Tue 10 Nov",
       "url": "https://imc.ie/film-times/newtownards/10-11-2026#dateD",
@@ -2248,7 +2242,7 @@
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
-          "runtime": 100,
+          "runtime": 121,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
           "director": null,
@@ -2511,6 +2505,12 @@
       "label": "Mon 16 Nov",
       "url": "https://imc.ie/film-times/newtownards/16-11-2026#dateD",
       "date": "2026-11-16",
+      "films": []
+    },
+    {
+      "label": "Tue 17 Nov",
+      "url": "https://imc.ie/film-times/newtownards/17-11-2026#dateD",
+      "date": "2026-11-17",
       "films": []
     }
   ],
@@ -4880,7 +4880,6 @@
     "newtownards: no films on the film-times page",
     "home: 1 films parsed",
     "today: 0 films parsed",
-    "day-09-11-2026-dated: 0 films parsed",
     "day-10-11-2026-dated: 0 films parsed",
     "day-11-11-2026-dated: 5 films parsed",
     "day-12-11-2026-dated: 5 films parsed",
@@ -4888,6 +4887,7 @@
     "day-14-11-2026-dated: 8 films parsed",
     "day-15-11-2026-dated: 8 films parsed",
     "day-16-11-2026-dated: 0 films parsed",
+    "day-17-11-2026-dated: 0 films parsed",
     "advance: 8 films parsed",
     "kids: 5 films parsed",
     "luxx: 0 films parsed",
@@ -5182,7 +5182,7 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-09T16:19:55.562Z",
+    "checked": "2026-11-10T00:44:18.251Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -5191,7 +5191,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-09T16:20:05.545Z",
+  "checked": "2026-11-10T00:44:28.221Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

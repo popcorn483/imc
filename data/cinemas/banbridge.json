@@ -2,7 +2,7 @@
   "id": "banbridge",
   "cinema": "IMC Banbridge",
   "source": "https://imc.ie/banbridge",
-  "updated": "2026-11-09T16:18:56.152Z",
+  "updated": "2026-11-10T00:43:14.466Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -430,12 +430,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Mon 09 Nov",
-      "url": "https://imc.ie/film-times/banbridge/09-11-2026#dateD",
-      "date": "2026-11-09",
-      "films": []
-    },
     {
       "label": "Tue 10 Nov",
       "url": "https://imc.ie/film-times/banbridge/10-11-2026#dateD",
@@ -1142,6 +1136,12 @@
       "label": "Mon 16 Nov",
       "url": "https://imc.ie/film-times/banbridge/16-11-2026#dateD",
       "date": "2026-11-16",
+      "films": []
+    },
+    {
+      "label": "Tue 17 Nov",
+      "url": "https://imc.ie/film-times/banbridge/17-11-2026#dateD",
+      "date": "2026-11-17",
       "films": []
     }
   ],
@@ -3422,7 +3422,6 @@
     "banbridge: no films on the film-times page",
     "home: 1 films parsed",
     "today: 0 films parsed",
-    "day-09-11-2026-dated: 0 films parsed",
     "day-10-11-2026-dated: 0 films parsed",
     "day-11-11-2026-dated: 4 films parsed",
     "day-12-11-2026-dated: 4 films parsed",
@@ -3430,6 +3429,7 @@
     "day-14-11-2026-dated: 1 films parsed",
     "day-15-11-2026-dated: 1 films parsed",
     "day-16-11-2026-dated: 0 films parsed",
+    "day-17-11-2026-dated: 0 films parsed",
     "advance: 12 films parsed",
     "kids: 3 films parsed",
     "luxx: 0 films parsed",
@@ -3595,7 +3595,7 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-09T16:19:21.282Z",
+    "checked": "2026-11-10T00:43:40.227Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -3604,7 +3604,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-09T16:19:29.745Z",
+  "checked": "2026-11-10T00:43:49.070Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
