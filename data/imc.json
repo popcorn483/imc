@@ -2,7 +2,7 @@
   "id": "enniskillen",
   "cinema": "IMC Enniskillen",
   "source": "https://imc.ie/enniskillen",
-  "updated": "2026-11-10T00:41:52.261Z",
+  "updated": "2026-11-10T14:52:21.180Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -893,13 +893,13 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -929,7 +929,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -1247,13 +1247,13 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -1283,7 +1283,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -1530,13 +1530,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 120,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -1581,7 +1581,7 @@
           ],
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -1724,13 +1724,13 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
-          "cert": "TBC",
+          "cert": "15",
           "runtime": 109,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -1775,7 +1775,7 @@
           ],
           "slug": "prima-facie",
           "posterFile": "data/posters/prima-facie.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -1836,83 +1836,57 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "18",
-          "title": "The Man Who Fell to Earth",
+          "certFile": "15",
+          "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
-          "cert": "18",
-          "runtime": 139,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Nicolas Roeg",
-          "synopsis": "THE MAN WHO FELL TO EARTH is a sci-fi drama, from 1976, about an alien who arrives on Earth and starts a lucrative technology company with a plan to return home.",
-          "trailer": null,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
           "date": "2026-11-13",
           "times": [
-            "20:00"
+            "18:05",
+            "20:40"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121222",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121555",
           "sessions": [
             {
               "day": "Fri 13 November",
               "date": "2026-11-13",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121222",
+              "time": "18:05",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121555",
               "luxx": false,
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121556",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
                 "evening",
                 "seating-standard"
               ]
             }
           ],
-          "slug": "the-man-who-fell-to-earth",
-          "posterFile": "data/posters/the-man-who-fell-to-earth.jpg",
-          "certIcon": "data/ratings/bbfc-18.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-13",
-          "times": [
-            "17:25"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121455",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "17:25",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121455",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
@@ -1925,13 +1899,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 120,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -2051,7 +2025,7 @@
           ],
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -2073,7 +2047,8 @@
           "times": [
             "12:00",
             "13:45",
-            "15:30"
+            "15:30",
+            "17:10"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121472",
           "sessions": [
@@ -2112,6 +2087,21 @@
               "date": "2026-11-14",
               "time": "15:30",
               "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121474",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "17:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121553",
               "luxx": false,
               "screen": "6",
               "threeD": false,
@@ -2226,47 +2216,6 @@
           "slug": "ghosts-the-possession-of-button-house",
           "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
           "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Godzilla Minus Zero",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
-          "cert": "15",
-          "runtime": 135,
-          "release": "November 5, 2026",
-          "releaseDate": "2026-11-05",
-          "director": "Takashi Yamazaki",
-          "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
-          "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
-          "date": "2026-11-14",
-          "times": [
-            "17:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121470",
-          "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "17:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121470",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "godzilla-minus-zero",
-          "posterFile": "data/posters/godzilla-minus-zero.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -2413,13 +2362,13 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
-          "cert": "TBC",
+          "cert": "15",
           "runtime": 109,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -2464,7 +2413,7 @@
           ],
           "slug": "prima-facie",
           "posterFile": "data/posters/prima-facie.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -2582,83 +2531,42 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "18",
-          "title": "The Man Who Fell to Earth",
+          "certFile": "15",
+          "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
-          "cert": "18",
-          "runtime": 139,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Nicolas Roeg",
-          "synopsis": "THE MAN WHO FELL TO EARTH is a sci-fi drama, from 1976, about an alien who arrives on Earth and starts a lucrative technology company with a plan to return home.",
-          "trailer": null,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
           "date": "2026-11-14",
           "times": [
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121223",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121554",
           "sessions": [
             {
               "day": "Sat 14 November",
               "date": "2026-11-14",
               "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121223",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121554",
               "luxx": false,
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "released",
                 "evening",
                 "seating-standard"
               ]
             }
           ],
-          "slug": "the-man-who-fell-to-earth",
-          "posterFile": "data/posters/the-man-who-fell-to-earth.jpg",
-          "certIcon": "data/ratings/bbfc-18.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-14",
-          "times": [
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121471",
-          "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121471",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
@@ -2671,13 +2579,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 120,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -2797,7 +2705,7 @@
           ],
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -2819,7 +2727,8 @@
           "times": [
             "12:00",
             "13:45",
-            "15:30"
+            "15:30",
+            "17:10"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121492",
           "sessions": [
@@ -2858,6 +2767,21 @@
               "date": "2026-11-15",
               "time": "15:30",
               "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121494",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "17:10",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121552",
               "luxx": false,
               "screen": "6",
               "threeD": false,
@@ -2990,14 +2914,14 @@
           "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
           "date": "2026-11-15",
           "times": [
-            "17:15"
+            "19:30"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121490",
           "sessions": [
             {
               "day": "Sun 15 November",
               "date": "2026-11-15",
-              "time": "17:15",
+              "time": "19:30",
               "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121490",
               "luxx": false,
               "screen": "6",
@@ -3158,13 +3082,13 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
-          "cert": "TBC",
+          "cert": "15",
           "runtime": 109,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -3209,7 +3133,7 @@
           ],
           "slug": "prima-facie",
           "posterFile": "data/posters/prima-facie.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -3327,83 +3251,42 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "18",
-          "title": "The Man Who Fell to Earth",
+          "certFile": "15",
+          "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
-          "cert": "18",
-          "runtime": 139,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Nicolas Roeg",
-          "synopsis": "THE MAN WHO FELL TO EARTH is a sci-fi drama, from 1976, about an alien who arrives on Earth and starts a lucrative technology company with a plan to return home.",
-          "trailer": null,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
           "date": "2026-11-15",
           "times": [
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121224",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121551",
           "sessions": [
             {
               "day": "Sun 15 November",
               "date": "2026-11-15",
               "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121224",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121551",
               "luxx": false,
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "released",
                 "evening",
                 "seating-standard"
               ]
             }
           ],
-          "slug": "the-man-who-fell-to-earth",
-          "posterFile": "data/posters/the-man-who-fell-to-earth.jpg",
-          "certIcon": "data/ratings/bbfc-18.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-15",
-          "times": [
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121491",
-          "sessions": [
-            {
-              "day": "Sun 15 November",
-              "date": "2026-11-15",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121491",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
@@ -3416,13 +3299,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 120,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -3467,7 +3350,7 @@
           ],
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -3610,13 +3493,13 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
-          "cert": "TBC",
+          "cert": "15",
           "runtime": 109,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -3661,7 +3544,7 @@
           ],
           "slug": "prima-facie",
           "posterFile": "data/posters/prima-facie.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -3723,36 +3606,36 @@
         {
           "certSystem": "bbfc",
           "certFile": "15",
-          "title": "Wild Horse Nine",
+          "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
           "date": "2026-11-16",
           "times": [
-            "17:50",
+            "18:05",
             "20:40"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121519",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121557",
           "sessions": [
             {
               "day": "Mon 16 November",
               "date": "2026-11-16",
-              "time": "17:50",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121519",
+              "time": "18:05",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121557",
               "luxx": false,
               "screen": "7",
               "threeD": false,
               "tags": [
-                "new",
-                "matinee",
+                "released",
+                "evening",
                 "seating-standard"
               ]
             },
@@ -3760,19 +3643,19 @@
               "day": "Mon 16 November",
               "date": "2026-11-16",
               "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121512",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121558",
               "luxx": false,
               "screen": "7",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
             }
           ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
@@ -3785,13 +3668,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 120,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -3836,7 +3719,7 @@
           ],
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -3979,13 +3862,13 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
-          "cert": "TBC",
+          "cert": "15",
           "runtime": 109,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -4030,7 +3913,7 @@
           ],
           "slug": "prima-facie",
           "posterFile": "data/posters/prima-facie.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -4092,36 +3975,36 @@
         {
           "certSystem": "bbfc",
           "certFile": "15",
-          "title": "Wild Horse Nine",
+          "title": "Wicker",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
           "cert": "15",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
           "date": "2026-11-17",
           "times": [
-            "17:50",
+            "18:05",
             "20:40"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121538",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121559",
           "sessions": [
             {
               "day": "Tue 17 November",
               "date": "2026-11-17",
-              "time": "17:50",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121538",
+              "time": "18:05",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121559",
               "luxx": false,
               "screen": "7",
               "threeD": false,
               "tags": [
-                "new",
-                "matinee",
+                "released",
+                "evening",
                 "seating-standard"
               ]
             },
@@ -4129,19 +4012,19 @@
               "day": "Tue 17 November",
               "date": "2026-11-17",
               "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121544",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121560",
               "luxx": false,
               "screen": "7",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
             }
           ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
@@ -6386,31 +6269,31 @@
     {
       "certSystem": "bbfc",
       "certFile": "PG",
-      "title": "Arnie and Barney",
+      "title": "Coyote vs Acme",
       "luxx": false,
       "sensory": false,
       "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "poster": "https://imc.ie/wp-content/uploads/posters/110457.jpg",
       "cert": "PG",
-      "runtime": 77,
-      "release": "October 24, 2026",
-      "releaseDate": "2026-10-24",
-      "director": "Sean Heuston",
-      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-      "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
-      "date": "2026-11-07",
+      "runtime": 103,
+      "release": "August 21, 2026",
+      "releaseDate": "2026-08-21",
+      "director": "Dave Green",
+      "synopsis": "After decades of being blown to bits by bombs, demolished by dynamite, mangled by magnets, battered by boulders, trampled by trains, tricked by tunnels, sprung by springs, steamrolled by steamrollers, maligned by misfires, bedeviled by bungees, rattled by rockets, backstabbed by bat suits, rocked by rocket skates, upended by unicycles, quaked by quake pills, rubberized by rogue bands, and hurled headlong off every cliff in the Southwest, Wile E. Coyote (Genius) finally fights back. Teaming up with billboard accident lawyer Kevin Avery (Will Forte), he takes on slick corporate counsel Buddy Cra",
+      "trailer": "https://www.youtube.com/watch?v=H-43VeYGiPM",
+      "date": "2026-10-25",
       "times": [
-        "13:10"
+        "12:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121271",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120658",
       "sessions": [
         {
-          "day": "Sat 7 November",
-          "date": "2026-11-07",
-          "time": "13:10",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121271",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120658",
           "luxx": false,
-          "screen": "3",
+          "screen": "2",
           "threeD": false,
           "tags": [
             "released",
@@ -6420,23 +6303,137 @@
           ]
         },
         {
-          "day": "Sun 8 November",
-          "date": "2026-11-08",
-          "time": "13:10",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121292",
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120682",
           "luxx": false,
-          "screen": "3",
+          "screen": "2",
           "threeD": false,
           "tags": [
             "released",
-            "evening",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Tue 27 October",
+          "date": "2026-10-27",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120706",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120730",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
             "kidsclub",
             "seating-standard"
           ]
         }
       ],
-      "slug": "arnie-and-barney",
-      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "slug": "coyote-vs-acme",
+      "posterFile": "data/posters/coyote-vs-acme.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "PG",
+      "title": "Sensory Coyote vs Acme",
+      "luxx": false,
+      "sensory": true,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114034.jpg",
+      "cert": "PG",
+      "runtime": 103,
+      "release": "October 29, 2026",
+      "releaseDate": "2026-10-29",
+      "director": "Dave Green",
+      "synopsis": "After decades of being blown to bits by bombs, demolished by dynamite, mangled by magnets, battered by boulders, trampled by trains, tricked by tunnels, sprung by springs, steamrolled by steamrollers, maligned by misfires, bedeviled by bungees, rattled by rockets, backstabbed by bat suits, rocked by rocket skates, upended by unicycles, quaked by quake pills, rubberized by rogue bands.",
+      "trailer": "https://www.youtube.com/watch?v=H-43VeYGiPM",
+      "date": "2026-10-29",
+      "times": [
+        "12:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120792",
+      "sessions": [
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120792",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "sensory-coyote-vs-acme",
+      "posterFile": "data/posters/sensory-coyote-vs-acme.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "PG",
+      "title": "Sensory Shaun The Sheep: The Beast of Mossy Bottom",
+      "luxx": false,
+      "sensory": true,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/114446.jpg",
+      "cert": "PG",
+      "runtime": 81,
+      "release": "September 20, 2026",
+      "releaseDate": "2026-09-20",
+      "director": "Steve Cox, Matthew Walker",
+      "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+      "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+      "date": "2026-10-26",
+      "times": [
+        "12:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120775",
+      "sessions": [
+        {
+          "day": "Mon 26 October",
+          "date": "2026-10-26",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120775",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "sensory-shaun-the-sheep-the-beast-of-mossy-bottom",
+      "posterFile": "data/posters/sensory-shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
       "certIcon": "data/ratings/bbfc-PG.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     },
@@ -6455,19 +6452,19 @@
       "director": "Steve Cox, Matthew Walker",
       "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
       "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
-      "date": "2026-11-07",
+      "date": "2026-10-25",
       "times": [
-        "13:30"
+        "12:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121284",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120674",
       "sessions": [
         {
-          "day": "Sat 7 November",
-          "date": "2026-11-07",
-          "time": "13:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121284",
+          "day": "Sun 25 October",
+          "date": "2026-10-25",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120674",
           "luxx": false,
-          "screen": "4",
+          "screen": "7",
           "threeD": false,
           "tags": [
             "released",
@@ -6477,16 +6474,46 @@
           ]
         },
         {
-          "day": "Sun 8 November",
-          "date": "2026-11-08",
-          "time": "13:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121305",
+          "day": "Tue 27 October",
+          "date": "2026-10-27",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120722",
           "luxx": false,
-          "screen": "4",
+          "screen": "7",
           "threeD": false,
           "tags": [
             "released",
-            "evening",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 28 October",
+          "date": "2026-10-28",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120746",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 29 October",
+          "date": "2026-10-29",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120770",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
             "kidsclub",
             "seating-standard"
           ]
@@ -6494,94 +6521,6 @@
       ],
       "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
       "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
-      "certIcon": "data/ratings/bbfc-U.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "U",
-      "title": "Tad and the Magic Lamp",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-      "cert": "U",
-      "runtime": 94,
-      "release": "October 17, 2026",
-      "releaseDate": "2026-10-17",
-      "director": "Enrique Gato",
-      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-      "trailer": null,
-      "date": "2026-11-07",
-      "times": [
-        "13:00",
-        "15:15"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121278",
-      "sessions": [
-        {
-          "day": "Sat 7 November",
-          "date": "2026-11-07",
-          "time": "13:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121278",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 7 November",
-          "date": "2026-11-07",
-          "time": "15:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121277",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 8 November",
-          "date": "2026-11-08",
-          "time": "13:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121299",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 8 November",
-          "date": "2026-11-08",
-          "time": "15:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121298",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "tad-and-the-magic-lamp",
-      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
       "certIcon": "data/ratings/bbfc-U.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     }
@@ -7579,13 +7518,13 @@
     "day-10-11-2026-dated: 8 films parsed",
     "day-11-11-2026-dated: 7 films parsed",
     "day-12-11-2026-dated: 8 films parsed",
-    "day-13-11-2026-dated: 8 films parsed",
-    "day-14-11-2026-dated: 12 films parsed",
-    "day-15-11-2026-dated: 12 films parsed",
+    "day-13-11-2026-dated: 7 films parsed",
+    "day-14-11-2026-dated: 10 films parsed",
+    "day-15-11-2026-dated: 11 films parsed",
     "day-16-11-2026-dated: 7 films parsed",
     "day-17-11-2026-dated: 7 films parsed",
     "advance: 15 films parsed",
-    "kids: 3 films parsed",
+    "kids: 4 films parsed",
     "luxx: 4 films parsed",
     "booking pages read: 10 (Tue, Wed, Thu, Fri, Sat, Sun, Mon)",
     "prices: 12 ticket types, 4 bundles, 8 products",
@@ -7631,10 +7570,13 @@
         "name": "Child",
         "price": "£7.00",
         "days": [
-          "Tue"
+          "Tue",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -7658,10 +7600,13 @@
         "name": "Family",
         "price": "£26.00",
         "days": [
-          "Tue"
+          "Tue",
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -7979,7 +7924,7 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-10T00:42:18.611Z",
+    "checked": "2026-11-10T14:52:48.747Z",
     "sampledDays": [
       "Tue",
       "Wed",
@@ -7990,7 +7935,7 @@
       "Mon"
     ]
   },
-  "checked": "2026-11-10T00:42:32.984Z",
+  "checked": "2026-11-10T14:53:02.979Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

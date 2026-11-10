@@ -2,7 +2,7 @@
   "id": "carlow",
   "cinema": "IMC Carlow",
   "source": "https://imc.ie/carlow",
-  "updated": "2026-11-10T00:47:16.794Z",
+  "updated": "2026-11-10T14:57:42.276Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -1308,13 +1308,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -1389,7 +1389,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -1923,13 +1923,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -1989,7 +1989,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -2395,7 +2395,8 @@
           "trailer": null,
           "date": "2026-11-13",
           "times": [
-            "18:00"
+            "18:00",
+            "20:30"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137600",
           "sessions": [
@@ -2404,6 +2405,20 @@
               "date": "2026-11-13",
               "time": "18:00",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137600",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 13 November",
+              "date": "2026-11-13",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137741",
               "luxx": false,
               "screen": "4",
               "threeD": false,
@@ -2661,13 +2676,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -2757,7 +2772,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -2770,8 +2785,8 @@
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
-          "release": "November 14, 2026",
-          "releaseDate": "2026-11-14",
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
           "director": null,
           "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
           "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
@@ -2972,47 +2987,6 @@
           "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-13",
-          "times": [
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137601",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137601",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
     },
@@ -3038,7 +3012,8 @@
           "trailer": null,
           "date": "2026-11-14",
           "times": [
-            "18:00"
+            "18:00",
+            "20:30"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137609",
           "sessions": [
@@ -3047,6 +3022,20 @@
               "date": "2026-11-14",
               "time": "18:00",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137609",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 14 November",
+              "date": "2026-11-14",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137742",
               "luxx": false,
               "screen": "4",
               "threeD": false,
@@ -3440,13 +3429,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -3506,7 +3495,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -3561,8 +3550,8 @@
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
-          "release": "November 14, 2026",
-          "releaseDate": "2026-11-14",
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
           "director": null,
           "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
           "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
@@ -3832,47 +3821,6 @@
           "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-14",
-          "times": [
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137608",
-          "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137608",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
     },
@@ -3898,7 +3846,8 @@
           "trailer": null,
           "date": "2026-11-15",
           "times": [
-            "18:00"
+            "18:00",
+            "20:30"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137629",
           "sessions": [
@@ -3907,6 +3856,20 @@
               "date": "2026-11-15",
               "time": "18:00",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137629",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137743",
               "luxx": false,
               "screen": "4",
               "threeD": false,
@@ -4300,13 +4263,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -4366,7 +4329,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -4421,8 +4384,8 @@
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
-          "release": "November 14, 2026",
-          "releaseDate": "2026-11-14",
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
           "director": null,
           "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
           "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
@@ -4692,47 +4655,6 @@
           "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-15",
-          "times": [
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137628",
-          "sessions": [
-            {
-              "day": "Sun 15 November",
-              "date": "2026-11-15",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137628",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
     },
@@ -4758,7 +4680,8 @@
           "trailer": null,
           "date": "2026-11-16",
           "times": [
-            "18:00"
+            "18:00",
+            "20:30"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137653",
           "sessions": [
@@ -4767,6 +4690,20 @@
               "date": "2026-11-16",
               "time": "18:00",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137653",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 16 November",
+              "date": "2026-11-16",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137744",
               "luxx": false,
               "screen": "4",
               "threeD": false,
@@ -5024,13 +4961,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -5090,7 +5027,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -5103,8 +5040,8 @@
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
-          "release": "November 14, 2026",
-          "releaseDate": "2026-11-14",
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
           "director": null,
           "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
           "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
@@ -5305,47 +5242,6 @@
           "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-16",
-          "times": [
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137652",
-          "sessions": [
-            {
-              "day": "Mon 16 November",
-              "date": "2026-11-16",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137652",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
     },
@@ -5371,7 +5267,8 @@
           "trailer": null,
           "date": "2026-11-17",
           "times": [
-            "18:00"
+            "18:00",
+            "20:30"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137670",
           "sessions": [
@@ -5380,6 +5277,20 @@
               "date": "2026-11-17",
               "time": "18:00",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137670",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Tue 17 November",
+              "date": "2026-11-17",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137745",
               "luxx": false,
               "screen": "4",
               "threeD": false,
@@ -5637,13 +5548,13 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -5703,7 +5614,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -5716,8 +5627,8 @@
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
-          "release": "November 14, 2026",
-          "releaseDate": "2026-11-14",
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
           "director": null,
           "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
           "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
@@ -5916,47 +5827,6 @@
           ],
           "slug": "wicker",
           "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-17",
-          "times": [
-            "20:20"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137669",
-          "sessions": [
-            {
-              "day": "Tue 17 November",
-              "date": "2026-11-17",
-              "time": "20:20",
-              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137669",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
@@ -9234,6 +9104,239 @@
     {
       "certSystem": "ifco",
       "certFile": "G",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "G",
+      "runtime": 77,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": null,
+      "date": "2026-10-30",
+      "times": [
+        "14:10"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137248",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "14:10",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137248",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137306",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137344",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Monster Mia",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
+      "cert": "G",
+      "runtime": 81,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+      "trailer": null,
+      "date": "2026-10-30",
+      "times": [
+        "14:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137259",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137259",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137303",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137307",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "12:10",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137334",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137345",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "monster-mia",
+      "posterFile": "data/posters/monster-mia.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Monster Mia - Sensory",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116309.jpg",
+      "cert": "G",
+      "runtime": 81,
+      "release": "October 31, 2026",
+      "releaseDate": "2026-10-31",
+      "director": null,
+      "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+      "trailer": null,
+      "date": "2026-10-31",
+      "times": [
+        "12:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137324",
+      "sessions": [
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "12:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137324",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "kidsclub",
+            "seating-standard",
+            "sensory"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "12:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137337",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "kidsclub",
+            "seating-standard",
+            "sensory"
+          ]
+        }
+      ],
+      "slug": "monster-mia-sensory",
+      "posterFile": "data/posters/monster-mia-sensory.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
       "title": "Shaun the Sheep: The Beast of Mossy Bottom",
       "luxx": false,
       "sensory": false,
@@ -9246,57 +9349,12 @@
       "director": "Steve Cox, Matthew Walker",
       "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
       "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
-      "date": "2026-10-25",
+      "date": "2026-10-28",
       "times": [
-        "12:15"
+        "13:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=136815",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137067",
       "sessions": [
-        {
-          "day": "Sun 25 October",
-          "date": "2026-10-25",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=136815",
-          "luxx": false,
-          "screen": "8",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 26 October",
-          "date": "2026-10-26",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137000",
-          "luxx": false,
-          "screen": "8",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 27 October",
-          "date": "2026-10-27",
-          "time": "13:45",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137039",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Wed 28 October",
           "date": "2026-10-28",
@@ -9326,10 +9384,127 @@
             "kidsclub",
             "seating-standard"
           ]
+        },
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "13:30",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137329",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137323",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137350",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
         }
       ],
       "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
       "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "G",
+      "runtime": 94,
+      "release": "October 17, 2026",
+      "releaseDate": "2026-10-17",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-10-30",
+      "times": [
+        "14:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137244",
+      "sessions": [
+        {
+          "day": "Fri 30 October",
+          "date": "2026-10-30",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137244",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 31 October",
+          "date": "2026-10-31",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137312",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 1 November",
+          "date": "2026-11-01",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137339",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
       "certIcon": "data/ratings/ifco-G.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     }
@@ -9375,13 +9550,13 @@
     "day-10-11-2026-dated: 10 films parsed",
     "day-11-11-2026-dated: 8 films parsed",
     "day-12-11-2026-dated: 13 films parsed",
-    "day-13-11-2026-dated: 10 films parsed",
-    "day-14-11-2026-dated: 14 films parsed",
-    "day-15-11-2026-dated: 14 films parsed",
-    "day-16-11-2026-dated: 10 films parsed",
-    "day-17-11-2026-dated: 10 films parsed",
+    "day-13-11-2026-dated: 9 films parsed",
+    "day-14-11-2026-dated: 13 films parsed",
+    "day-15-11-2026-dated: 13 films parsed",
+    "day-16-11-2026-dated: 9 films parsed",
+    "day-17-11-2026-dated: 9 films parsed",
     "advance: 12 films parsed",
-    "kids: 1 films parsed",
+    "kids: 5 films parsed",
     "luxx: 0 films parsed",
     "booking pages read: 9 (Tue, Wed, Thu, Fri, Sat, Sun, Mon)",
     "prices: 18 ticket types, 2 bundles, 12 products",
@@ -9435,6 +9610,7 @@
         "price": "€9.50",
         "days": [
           "Tue",
+          "Wed",
           "Fri",
           "Mon"
         ],
@@ -9464,6 +9640,7 @@
         "price": "€36.50",
         "days": [
           "Tue",
+          "Wed",
           "Fri",
           "Sat",
           "Sun",
@@ -9890,7 +10067,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-10T00:47:42.676Z",
+    "checked": "2026-11-10T14:58:07.640Z",
     "sampledDays": [
       "Tue",
       "Wed",
@@ -9901,7 +10078,7 @@
       "Mon"
     ]
   },
-  "checked": "2026-11-10T00:47:55.605Z",
+  "checked": "2026-11-10T14:58:20.935Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

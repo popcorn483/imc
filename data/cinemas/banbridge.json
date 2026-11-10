@@ -2,7 +2,7 @@
   "id": "banbridge",
   "cinema": "IMC Banbridge",
   "source": "https://imc.ie/banbridge",
-  "updated": "2026-11-10T00:43:14.466Z",
+  "updated": "2026-11-10T14:53:43.061Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -499,13 +499,13 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -535,7 +535,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -715,13 +715,13 @@
         },
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "I Play Rocky",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 128,
           "release": "November 11, 2026",
           "releaseDate": "2026-11-11",
@@ -751,7 +751,7 @@
           ],
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -890,13 +890,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 120,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -941,7 +941,7 @@
           ],
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -953,13 +953,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 120,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -1034,7 +1034,7 @@
           ],
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -1046,13 +1046,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "TBC",
+          "cert": "12A",
           "runtime": 120,
           "release": "November 13, 2026",
           "releaseDate": "2026-11-13",
@@ -1127,7 +1127,7 @@
           ],
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -2252,24 +2252,23 @@
     },
     {
       "certSystem": "bbfc",
-      "certFile": "TBC",
+      "certFile": "18",
       "title": "Primetime",
       "luxx": false,
       "sensory": false,
       "status": "Coming Soon",
       "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-      "cert": "TBC",
-      "runtime": 109,
+      "cert": "18",
+      "runtime": 100,
       "release": "October 30, 2026",
       "releaseDate": "2026-10-30",
-      "director": "Lance Oppenheim",
-      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "director": null,
+      "synopsis": "Primetime (2026) on IMDb is a satirical psychological thriller directed by Lance Oppenheim and starring Robert Pattinson.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
       "date": "2026-10-30",
       "times": [
         "14:15",
         "17:15",
-        "19:15",
         "20:15"
       ],
       "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48527",
@@ -2299,20 +2298,6 @@
           "tags": [
             "advance",
             "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48537",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
             "seating-standard"
           ]
         },
@@ -2351,20 +2336,6 @@
           "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48530",
           "luxx": false,
           "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48556",
-          "luxx": false,
-          "screen": "4",
           "threeD": false,
           "tags": [
             "advance",
@@ -2417,38 +2388,10 @@
         {
           "day": "Sun 1 November",
           "date": "2026-11-01",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48574",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
           "time": "20:15",
           "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48534",
           "luxx": false,
           "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48579",
-          "luxx": false,
-          "screen": "4",
           "threeD": false,
           "tags": [
             "advance",
@@ -2487,287 +2430,7 @@
       ],
       "slug": "primetime",
       "posterFile": "data/posters/primetime.jpg",
-      "certIcon": "data/ratings/bbfc-TBC.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "TBC",
-      "title": "Ramayana: Rise of a Legend",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116063.jpg",
-      "cert": "TBC",
-      "runtime": 165,
-      "release": "November 5, 2026",
-      "releaseDate": "2026-11-05",
-      "director": "Nitesh Tiwari",
-      "synopsis": "In an age of gods and kings, the fate of worlds hangs in the balance. Rama, a prince bound by duty, sacrifice, and righteousness, must confront Ravana, an immortal ruler driven by pride and vengeance, powerful enough to shatter the cosmos.",
-      "trailer": null,
-      "date": "2026-11-05",
-      "times": [
-        "19:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48586",
-      "sessions": [
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48586",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "ramayana-rise-of-a-legend",
-      "posterFile": "data/posters/ramayana-rise-of-a-legend.jpg",
-      "certIcon": "data/ratings/bbfc-TBC.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "TBC",
-      "title": "Wicker",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-      "cert": "TBC",
-      "runtime": 100,
-      "release": "October 30, 2026",
-      "releaseDate": "2026-10-30",
-      "director": "Alex Huston Fischer, Eleanor Wilson",
-      "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-      "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-10-30",
-      "times": [
-        "15:45",
-        "18:15",
-        "20:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48547",
-      "sessions": [
-        {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48547",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48538",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48548",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "13:20",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48549",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48550",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48551",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48552",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "13:20",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48575",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48576",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48577",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48578",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48580",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48581",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48591",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48592",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "wicker",
-      "posterFile": "data/posters/wicker.jpg",
-      "certIcon": "data/ratings/bbfc-TBC.svg",
+      "certIcon": "data/ratings/bbfc-18.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     },
     {
@@ -2780,74 +2443,18 @@
       "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
       "cert": "15A",
       "runtime": 117,
-      "release": "November 4, 2026",
-      "releaseDate": "2026-11-04",
+      "release": "November 6, 2026",
+      "releaseDate": "2026-11-06",
       "director": "Martin McDonagh",
       "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
       "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-04",
+      "date": "2026-11-06",
       "times": [
         "18:10",
-        "20:40"
+        "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48582",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48514",
       "sessions": [
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48582",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 4 November",
-          "date": "2026-11-04",
-          "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48583",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48589",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 5 November",
-          "date": "2026-11-05",
-          "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48590",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Fri 6 November",
           "date": "2026-11-06",
@@ -3430,7 +3037,7 @@
     "day-15-11-2026-dated: 1 films parsed",
     "day-16-11-2026-dated: 0 films parsed",
     "day-17-11-2026-dated: 0 films parsed",
-    "advance: 12 films parsed",
+    "advance: 10 films parsed",
     "kids: 3 films parsed",
     "luxx: 0 films parsed",
     "booking pages read: 6 (Wed, Thu, Fri, Sat, Sun)",
@@ -3595,7 +3202,7 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-10T00:43:40.227Z",
+    "checked": "2026-11-10T14:54:09.340Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -3604,7 +3211,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-10T00:43:49.070Z",
+  "checked": "2026-11-10T14:54:17.505Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
