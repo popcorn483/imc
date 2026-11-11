@@ -201,7 +201,8 @@ if (-not $AUTO) {
   Say ""
   if (Task-On) {
     $was = $(if (Test-Path -LiteralPath $CFG) { (Get-Content -LiteralPath $CFG -Raw).Trim() } else { "" })
-    if ($was -ne $dir) { Install-Auto $dir; Say "Automatic converting now watches this folder." Green }
+    Install-Auto $dir   # (also puts this newer copy in place for the background runs)
+    if ($was -ne $dir) { Say "Automatic converting now watches this folder." Green }
     else { Say "Automatic converting is on: new trailers in this folder are converted by themselves every 10 minutes." Green }
   } elseif ($env:IMC_NOASK) { } elseif (Ask "Convert new trailers in this folder by themselves from now on (every 10 minutes, in the background)?") {
     try { Install-Auto $dir; Say "Done. New trailers in this folder will be converted by themselves while this PC is on." Green }
