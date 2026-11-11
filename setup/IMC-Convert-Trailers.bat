@@ -134,7 +134,7 @@ foreach ($f in (All-Files)) {
 function Done-Mp4($f) {   # an MP4 of this trailer made already?
   $base = [IO.Path]::GetFileNameWithoutExtension($f.Name)
   foreach ($n in @(($base + ".mp4"), ($base + " (foyer).mp4"))) { $p = Join-Path $f.DirectoryName $n
-    if ($p -ne $f.FullName -and (Test-Path -LiteralPath $p)) { $g = Get-Item -LiteralPath $p; if ($g.Length -gt 1000000 -and ((Get-Date) - $g.LastWriteTime).TotalMinutes -gt 2 -and (Video-Codec $p) -eq "h264") { return $true } } }
+    if ($p -ne $f.FullName -and (Test-Path -LiteralPath $p)) { $g = Get-Item -LiteralPath $p; if ($g.Length -gt 200000 -and ((Get-Date) - $g.LastWriteTime).TotalMinutes -gt 2 -and (Video-Codec $p) -eq "h264") { return $true } } }
   return $false
 }
 $todo = @()

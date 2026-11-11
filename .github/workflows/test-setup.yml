@@ -92,7 +92,7 @@ jobs:
           $o += "convert.log:"; $o += (Get-Content "C:\ProgramData\IMC\convert.log")
           $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" /off" 2>&1 | Out-String; $o += "Off: " + $r.Trim() + " task now " + $(if (Get-ScheduledTask -TaskName "IMC convert trailers" -ErrorAction SilentlyContinue) { "STILL THERE" } else { "gone" })
           # already converted once (on Google Drive the old file couldn't be removed) + repeated copies from the old version
-          Copy-Item "$d\Coco.mp4" "$d\Hexed.mp4"; (Get-Item "$d\Hexed.mp4").LastWriteTime = (Get-Date).AddMinutes(-10)
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=1280x720:rate=24 -f lavfi -i sine -t 4 -c:v libx264 -b:v 3M -c:a aac "$d\Hexed.mp4"; (Get-Item "$d\Hexed.mp4").LastWriteTime = (Get-Date).AddMinutes(-10)
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -t 3 -c:v mpeg2video -b:v 4M "$d\Hexed.mpg"
           Copy-Item "$d\Coco.mp4" "$d\Coco (foyer) (foyer).mp4"
           $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 | Out-String
