@@ -73,10 +73,10 @@ jobs:
           $ff = (Get-ChildItem C:\ProgramData\IMC\ffmpeg -Recurse -Filter ffmpeg.exe | Select-Object -First 1).FullName
           $fp = Join-Path (Split-Path $ff) "ffprobe.exe"
           $o += "FFmpeg: " + $(if ($ff) { "found" } else { "MISSING" })
-          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -f lavfi -i sine=frequency=440 -t 4 -c:v mpeg2video -flags +ilme+ildct -c:a mp2 "$d\Coco.mpg"
-          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=1280x720:rate=24 -f lavfi -i sine -t 3 -c:v mjpeg -c:a pcm_s16le "$d\November\Dune 3.mov"
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -f lavfi -i sine=frequency=440 -t 6 -c:v mpeg2video -b:v 4M -flags +ilme+ildct -c:a mp2 "$d\Coco.mpg"
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=1280x720:rate=24 -f lavfi -i sine -t 4 -c:v mjpeg -c:a pcm_s16le "$d\November\Dune 3.mov"
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=1280x720:rate=24 -f lavfi -i sine -t 3 -c:v libx264 -c:a aac "$d\Already fine.mp4"
-          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=640x360:rate=25 -t 3 -c:v wmv2 "$d\Shrek 5.wmv"
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=640x360:rate=25 -t 4 -c:v wmv2 -b:v 2M "$d\Shrek 5.wmv"
           $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`"" 2>&1 | Out-String
           $o += "Second run:"; $o += ($r -split "`n" | Where-Object { $_.Trim() -and $_ -notmatch "^frame=" } | ForEach-Object { $_.TrimEnd() })
           $o += "Files now:"

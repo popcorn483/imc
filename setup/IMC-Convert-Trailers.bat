@@ -83,7 +83,7 @@ function Video-Codec($path) {
 }
 $todo = @()
 foreach ($f in @(Get-ChildItem -LiteralPath $dir -File -Recurse -Depth 3 -ErrorAction SilentlyContinue)) {
-  if ($f.Name -match '\.part\.mp4$' -or $f.Length -lt 100000) { continue }
+  if ($f.Name -match '\.part\.mp4$' -or $f.Length -lt 20000) { continue }
   if ($f.Name -match $CONVERT) { $todo += $f; continue }
   if ($f.Name -match $CHECK) { $c = Video-Codec $f.FullName; if ($c -and $c -ne "h264") { $todo += $f } }
 }
@@ -115,7 +115,7 @@ foreach ($f in $todo) {
   & $ffmpeg @ffa
   $code = $LASTEXITCODE
   $ErrorActionPreference = "Stop"
-  if ($code -eq 0 -and (Test-Path -LiteralPath $part) -and (Get-Item -LiteralPath $part).Length -gt 100000) {
+  if ($code -eq 0 -and (Test-Path -LiteralPath $part) -and (Get-Item -LiteralPath $part).Length -gt 20000) {
     Move-Item -LiteralPath $part -Destination $out -Force
     try { [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile($f.FullName, "OnlyErrorDialogs", "SendToRecycleBin"); Say "   Done. The old file is in the Recycle Bin." Green }
     catch { Say "   Done (couldn't move the old file to the Recycle Bin: delete it yourself)." Green }
