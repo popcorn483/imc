@@ -18,12 +18,12 @@ Folder: D:\conv\IMC TRAILERS
    Dune 3.mov
 Each one takes about a minute (longer on an old PC).
 [1 of 3]  Coco.mpg  ->  Coco.mp4
-cmd.exe : frame=  150 fps=0.0 q=-1.0 Lsize=     220KiB time=00:00:06.00 bitrate= 300.3kbits/s speed=14.5x
-elapsed=0:00:00.41
-At D:\a\_temp\29d2fdd2-62a2-4115-abb1-b1776efa5859.ps1:18 char:6
+cmd.exe : frame=  150 fps=0.0 q=-1.0 Lsize=     220KiB time=00:00:06.00 bitrate= 299.7kbits/s speed=16.5x
+elapsed=0:00:00.36
+At D:\a\_temp\4ba8461b-7649-42ab-93f1-a5a06a0c4efd.ps1:18 char:6
 + $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 ...
 +      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (frame=  150 fps...=0:00:00.41    :String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (frame=  150 fps...=0:00:00.36    :String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
    Done. The old file is in the Recycle Bin.
 [2 of 3]  Shrek 5.wmv  ->  Shrek 5.mp4
@@ -34,8 +34,23 @@ At D:\a\_temp\29d2fdd2-62a2-4115-abb1-b1776efa5859.ps1:18 char:6
   Finished: 3 converted
   =====================================================
   In the hub, click Check on the Trailers page to see them.
+Install: =====================================================
+        IMC  -  CONVERT TRAILERS FOR THE FOYER TVs
+  =====================================================
+  Makes an MP4 of any trailer the TVs can't play.
+  Keep this window open until it says Finished.
+
+Automatic converting is on for D:\conv\IMC TRAILERS
+Scheduled task: registered, runs wscript.exe "C:\ProgramData\IMC\convert-hidden.vbs"
+Background script: Set s = CreateObject("WScript.Shell") / s.Environment("PROCESS")("IMC_NOPAUSE") = "1" / s.Run "cmd.exe /c ""C:\ProgramData\IMC\IMC-Convert-Trailers.bat"" /auto", 0, True
+convert.log:
+2026-11-11 18:23  Automatic converting switched on for D:\conv\IMC TRAILERS
+Off: Automatic converting is off. task now gone
 Files now:
   Already fine.mp4  video=h264 audio=aac
   Coco.mp4  video=h264 audio=aac
+  George Michael.mp4.part.mp4  video= audio=
+  George Michael.mpg  video=mpeg2video audio=mp2
+  Just arrived.mpg  video=mpeg2video audio=
   Shrek 5.mp4  video=h264 audio=
   November\Dune 3.mp4  video=h264 audio=aac
