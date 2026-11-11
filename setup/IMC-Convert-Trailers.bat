@@ -122,7 +122,7 @@ $OLD = Join-Path $dir "_old trailers (converted)"
 function Put-Away($f, $why) {
   try { [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile($f.FullName, "OnlyErrorDialogs", "SendToRecycleBin"); return "the old file is in the Recycle Bin" } catch {}
   try { New-Item -ItemType Directory -Force -Path $OLD | Out-Null; $t = Join-Path $OLD $f.Name; if (Test-Path -LiteralPath $t) { $t = Join-Path $OLD ([IO.Path]::GetFileNameWithoutExtension($f.Name) + " " + (Get-Date -Format "yyyyMMdd-HHmmss") + $f.Extension) }
-        Move-Item -LiteralPath $f.FullName -Destination $t -Force; return "the old file is in the ""_old trailers (converted)"" folder" } catch { return "" }
+        Move-Item -LiteralPath $f.FullName -Destination $t -Force; try { (Get-Item -LiteralPath $t).LastWriteTime = Get-Date } catch {}; return "the old file is in the ""_old trailers (converted)"" folder" } catch { return "" }
 }
 Add-Type -AssemblyName Microsoft.VisualBasic
 function All-Files { @(Get-ChildItem -LiteralPath $dir -File -Recurse -Depth 3 -ErrorAction SilentlyContinue | Where-Object { $_.FullName.Substring($dir.Length) -notmatch '\\_' }) }
@@ -131,6 +131,9 @@ foreach ($f in (All-Files)) {
   if ($f.Name -match '\.part\.mp4$' -and ((Get-Date) - $f.LastWriteTime).TotalMinutes -gt 60) { Remove-Item -LiteralPath $f.FullName -Force -ErrorAction SilentlyContinue; Say ("Removed a half-made file: " + $f.Name) Cyan; continue }
   if ($f.Name -match '( \(foyer\)){2,}') { $r = Put-Away $f "repeat"; Say ("Put away a repeated copy: " + $f.Name) Cyan }
 }
+# old files that were put away more than 14 days ago are deleted for good
+if (Test-Path -LiteralPath $OLD) { foreach ($f in @(Get-ChildItem -LiteralPath $OLD -File -ErrorAction SilentlyContinue)) { if (((Get-Date) - $f.LastWriteTime).TotalDays -gt 14) { Remove-Item -LiteralPath $f.FullName -Force -ErrorAction SilentlyContinue; Say ("Deleted an old file (put away over 2 weeks ago): " + $f.Name) Cyan } }
+  if (-not (Get-ChildItem -LiteralPath $OLD -Force -ErrorAction SilentlyContinue)) { Remove-Item -LiteralPath $OLD -Force -ErrorAction SilentlyContinue } }
 function Done-Mp4($f) {   # an MP4 of this trailer made already?
   $base = [IO.Path]::GetFileNameWithoutExtension($f.Name)
   foreach ($n in @(($base + ".mp4"), ($base + " (foyer).mp4"))) { $p = Join-Path $f.DirectoryName $n
