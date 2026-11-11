@@ -2,7 +2,7 @@ name: Check the foyer PC setup script
 
 on:
   push:
-    paths: [setup/IMC-Foyer-PC-Setup.bat, .github/workflows/test-setup.yml]
+    paths: [setup/IMC-Foyer-PC-Setup.bat, setup/IMC-Convert-Trailers.bat, .github/workflows/test-setup.yml]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
 jobs:
   check:
     runs-on: windows-latest
-    timeout-minutes: 6
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - name: Parse and test
@@ -58,11 +58,36 @@ jobs:
           try { $ErrorActionPreference = "Continue"; $r = cmd.exe /c "`"$env:TEMP\boot.bat`" elevated" 2>&1 | Out-String; $out += "Batch start-up: " + $r.Trim() } catch { $out += "Batch start-up failed: " + $_.Exception.Message }
           $out | Set-Content setup\test-result.txt
           $out
+      - name: Test the trailer converter
+        shell: powershell
+        run: |
+          $o = @()
+          $raw = [IO.File]::ReadAllText("setup\IMC-Convert-Trailers.bat")
+          $errs = $null; [void][System.Management.Automation.Language.Parser]::ParseInput($raw, [ref]$null, [ref]$errs)
+          $o += "Converter parse errors: $($errs.Count)"; $errs | ForEach-Object { $o += "  " + $_.Message + " @ line " + $_.Extent.StartLineNumber }
+          $d = "D:\conv\IMC TRAILERS"; New-Item -ItemType Directory -Force $d, "$d\November" | Out-Null
+          $env:IMC_NOPAUSE = "1"; $env:IMC_ARG = $d
+          $ErrorActionPreference = "Continue"
+          $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`"" 2>&1 | Out-String
+          $o += "First run (empty folder, downloads FFmpeg):"; $o += ($r -split "`n" | Where-Object { $_.Trim() } | Select-Object -Last 4)
+          $ff = (Get-ChildItem C:\ProgramData\IMC\ffmpeg -Recurse -Filter ffmpeg.exe | Select-Object -First 1).FullName
+          $fp = Join-Path (Split-Path $ff) "ffprobe.exe"
+          $o += "FFmpeg: " + $(if ($ff) { "found" } else { "MISSING" })
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -f lavfi -i sine=frequency=440 -t 4 -c:v mpeg2video -flags +ilme+ildct -c:a mp2 "$d\Coco.mpg"
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=1280x720:rate=24 -f lavfi -i sine -t 3 -c:v mjpeg -c:a pcm_s16le "$d\November\Dune 3.mov"
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=1280x720:rate=24 -f lavfi -i sine -t 3 -c:v libx264 -c:a aac "$d\Already fine.mp4"
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=640x360:rate=25 -t 3 -c:v wmv2 "$d\Shrek 5.wmv"
+          $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`"" 2>&1 | Out-String
+          $o += "Second run:"; $o += ($r -split "`n" | Where-Object { $_.Trim() -and $_ -notmatch "^frame=" } | ForEach-Object { $_.TrimEnd() })
+          $o += "Files now:"
+          foreach ($f in Get-ChildItem $d -File -Recurse) { $c = & $fp -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $a = & $fp -v error -select_streams a:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $o += "  " + $f.FullName.Substring($d.Length + 1) + "  video=" + $c + " audio=" + $a }
+          $o | Set-Content setup\convert-test.txt
+          $o
       - name: Save the result
         shell: bash
         run: |
           git config user.name "imc-importer"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add setup/test-result.txt
+          git add setup/test-result.txt setup/convert-test.txt
           git commit -m "Setup script check result" || exit 0
           git pull --rebase -X theirs && git push

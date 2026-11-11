@@ -107,7 +107,7 @@ function Run-Once {
   if (-not $src) { $x = Join-Path $env:USERPROFILE "My Drive\IMC TRAILERS"; if (Test-Path -LiteralPath $x) { $src = $x } }
   if (-not $src) { Log "Google Drive isn't ready (not signed in, or still starting): nothing changed"; return }
   New-Item -ItemType Directory -Force -Path $DEST | Out-Null
-  $files = @(Get-ChildItem -LiteralPath $src -File -Recurse -Depth 1 -ErrorAction Stop | Where-Object { $_.Name -match $EXT })
+  $files = @(Get-ChildItem -LiteralPath $src -File -Recurse -Depth 3 -ErrorAction Stop | Where-Object { $_.Name -match $EXT })
   $flag = "C:\ProgramData\IMC\empty.flag"
   if ($files.Count -eq 0) { if (-not (Test-Path $flag)) { New-Item $flag -ItemType File -Force | Out-Null; Log "The Drive folder looks empty: checking again next time before removing anything"; return } } else { Remove-Item $flag -ErrorAction SilentlyContinue }
   $names = @{}
