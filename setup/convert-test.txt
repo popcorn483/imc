@@ -1,6 +1,6 @@
 Converter parse errors: 0
 First run (empty folder, downloads FFmpeg):
-Folder: D:\My Drive\IMC TRAILERS
+Folder: D:\conv\IMC TRAILERS
 Downloading the free FFmpeg converter (about 100 MB, one time only)...
 Converter ready.
 Nothing to convert: every trailer in this folder already plays on the foyer TVs.
@@ -11,10 +11,31 @@ Second run:
   =====================================================
   Makes an MP4 of any trailer the TVs can't play.
   Keep this window open until it says Finished.
-Folder: D:\My Drive\IMC TRAILERS
-Nothing to convert: every trailer in this folder already plays on the foyer TVs.
+Folder: D:\conv\IMC TRAILERS
+3 trailers to convert:
+   Coco.mpg
+   Shrek 5.wmv
+   Dune 3.mov
+Each one takes about a minute (longer on an old PC).
+[1 of 3]  Coco.mpg  ->  Coco.mp4
+cmd.exe : frame=  150 fps=0.0 q=-1.0 Lsize=     220KiB time=00:00:06.00 bitrate= 300.3kbits/s speed=14.5x
+elapsed=0:00:00.41
+At D:\a\_temp\29d2fdd2-62a2-4115-abb1-b1776efa5859.ps1:18 char:6
++ $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 ...
++      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (frame=  150 fps...=0:00:00.41    :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+   Done. The old file is in the Recycle Bin.
+[2 of 3]  Shrek 5.wmv  ->  Shrek 5.mp4
+   Done. The old file is in the Recycle Bin.
+[3 of 3]  Dune 3.mov  ->  Dune 3.mp4
+   Done. The old file is in the Recycle Bin.
+  =====================================================
+  Finished: 3 converted
+  =====================================================
+  In the hub, click Check on the Trailers page to see them.
 Files now:
   Already fine.mp4  video=h264 audio=aac
-  Coco.mpg  video=mpeg2video audio=mp2
-  Shrek 5.wmv  video=wmv2 audio=
-  November\Dune 3.mov  video=mjpeg audio=pcm_s16le
+  Coco.mp4  video=h264 audio=aac
+  Shrek 5.mp4  video=h264 audio=
+  November\Dune 3.mp4  video=h264 audio=aac
