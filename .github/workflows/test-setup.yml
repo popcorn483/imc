@@ -88,7 +88,7 @@ jobs:
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -f lavfi -i sine -t 5 -c:v mpeg2video -b:v 4M -c:a mp2 "$d\George Michael.mpg"
           (Get-Item "$d\George Michael.mpg").LastWriteTime = (Get-Date).AddMinutes(-10)
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -t 5 -c:v mpeg2video -b:v 4M "$d\Just arrived.mpg"
-          & wscript.exe "C:\ProgramData\IMC\convert-hidden.vbs"
+          Start-Process wscript.exe -ArgumentList "`"C:\ProgramData\IMC\convert-hidden.vbs`"" -Wait
           $o += "convert.log:"; $o += (Get-Content "C:\ProgramData\IMC\convert.log")
           $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" /off" 2>&1 | Out-String; $o += "Off: " + $r.Trim() + " task now " + $(if (Get-ScheduledTask -TaskName "IMC convert trailers" -ErrorAction SilentlyContinue) { "STILL THERE" } else { "gone" })
           $o += "Files now:"
