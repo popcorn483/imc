@@ -68,7 +68,7 @@ jobs:
           $d = "D:\conv\IMC TRAILERS"; New-Item -ItemType Directory -Force $d, "$d\November" | Out-Null
           $env:IMC_NOPAUSE = "1"; $env:IMC_ARG = $d
           $ErrorActionPreference = "Continue"
-          $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`"" 2>&1 | Out-String
+          $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 | Out-String
           $o += "First run (empty folder, downloads FFmpeg):"; $o += ($r -split "`n" | Where-Object { $_.Trim() } | Select-Object -Last 4)
           $ff = (Get-ChildItem C:\ProgramData\IMC\ffmpeg -Recurse -Filter ffmpeg.exe | Select-Object -First 1).FullName
           $fp = Join-Path (Split-Path $ff) "ffprobe.exe"
@@ -77,7 +77,7 @@ jobs:
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=1280x720:rate=24 -f lavfi -i sine -t 4 -c:v mjpeg -c:a pcm_s16le "$d\November\Dune 3.mov"
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=1280x720:rate=24 -f lavfi -i sine -t 3 -c:v libx264 -c:a aac "$d\Already fine.mp4"
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=640x360:rate=25 -t 4 -c:v wmv2 -b:v 2M "$d\Shrek 5.wmv"
-          $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`"" 2>&1 | Out-String
+          $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 | Out-String
           $o += "Second run:"; $o += ($r -split "`n" | Where-Object { $_.Trim() -and $_ -notmatch "^frame=" } | ForEach-Object { $_.TrimEnd() })
           $o += "Files now:"
           foreach ($f in Get-ChildItem $d -File -Recurse) { $c = & $fp -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $a = & $fp -v error -select_streams a:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $o += "  " + $f.FullName.Substring($d.Length + 1) + "  video=" + $c + " audio=" + $a }
