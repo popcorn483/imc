@@ -51,6 +51,7 @@ function Install-Auto($folder) {
 }
 function Remove-Auto { Unregister-ScheduledTask -TaskName $TASK -Confirm:$false -ErrorAction SilentlyContinue; Log "Automatic converting switched off" }
 
+if ($AUTO) { try { [Diagnostics.Process]::GetCurrentProcess().PriorityClass = "BelowNormal" } catch {} }
 if ($env:IMC_ARG -eq "/off") { Remove-Auto; Write-Host "Automatic converting is off." -ForegroundColor Green; exit }
 if (-not $AUTO) {
 Clear-Host
@@ -149,11 +150,9 @@ foreach ($f in $todo) {
             "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
             "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-movflags", "+faststart", "-f", "mp4", $part)
   $ErrorActionPreference = "Continue"
-  if ($AUTO) {   # in the background: quietly, and at low priority so the PC stays quick
-    $q = ($ffa | ForEach-Object { if ($_ -match '[\s"]') { '"' + ($_ -replace '"', '\"') + '"' } else { $_ } }) -join " "
-    $pr = Start-Process -FilePath $ffmpeg -ArgumentList $q -NoNewWindow -PassThru -RedirectStandardError (Join-Path $env:TEMP "imc-ffmpeg.txt")
-    try { $pr.PriorityClass = "BelowNormal" } catch {}
-    $pr.WaitForExit(); $code = $pr.ExitCode
+  if ($AUTO) {   # in the background: quietly (this whole run is at low priority, so the PC stays quick)
+    $msg = & $ffmpeg ($ffa | Where-Object { $_ -ne "-stats" }) 2>&1 | Select-Object -Last 3; $code = $LASTEXITCODE
+    if ($code -ne 0) { Log ("   FFmpeg said: " + (($msg | ForEach-Object { "$_" }) -join " / ")) }
   } else { & $ffmpeg @ffa; $code = $LASTEXITCODE }
   $ErrorActionPreference = "Stop"
   if ($code -eq 0 -and (Test-Path -LiteralPath $part) -and (Get-Item -LiteralPath $part).Length -gt 20000) {
