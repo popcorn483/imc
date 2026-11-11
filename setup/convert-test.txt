@@ -18,9 +18,9 @@ Folder: D:\conv\IMC TRAILERS
    Dune 3.mov
 Each one takes about a minute (longer on an old PC).
 [1 of 3]  Coco.mpg  ->  Coco.mp4
-cmd.exe : frame=  150 fps=0.0 q=-1.0 Lsize=     220KiB time=00:00:06.00 bitrate= 299.7kbits/s speed=15.9x
+cmd.exe : frame=  150 fps=0.0 q=-1.0 Lsize=     220KiB time=00:00:06.00 bitrate= 299.7kbits/s speed=  16x
 elapsed=0:00:00.37
-At D:\a\_temp\b337d16e-748b-4e9c-a209-c0a764aab1e6.ps1:18 char:6
+At D:\a\_temp\391bed24-28ae-4aab-bf5b-cc6620057387.ps1:18 char:6
 + $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 ...
 +      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (frame=  150 fps...=0:00:00.37    :String) [], RemoteException
@@ -44,20 +44,20 @@ Automatic converting is on for D:\conv\IMC TRAILERS
 Scheduled task: registered, runs wscript.exe "C:\ProgramData\IMC\convert-hidden.vbs"
 Background script: Set s = CreateObject("WScript.Shell") / s.Environment("PROCESS")("IMC_NOPAUSE") = "1" / s.Run "cmd.exe /c ""C:\ProgramData\IMC\IMC-Convert-Trailers.bat"" /auto", 0, True
 convert.log:
-2026-11-11 20:58  Automatic converting switched on for D:\conv\IMC TRAILERS
-2026-11-11 20:58  1 trailer to convert:
-2026-11-11 20:58  [1 of 1]  George Michael.mpg  ->  George Michael.mp4
-2026-11-11 20:58  Done. the old file is in the Recycle Bin.
-2026-11-11 20:58  Finished: 1 converted
+2026-11-11 21:04  Automatic converting switched on for D:\conv\IMC TRAILERS
+2026-11-11 21:04  1 trailer to convert:
+2026-11-11 21:04  [1 of 1]  George Michael.mpg  ->  George Michael.mp4
+2026-11-11 21:04  Done. the old file is in the Recycle Bin.
+2026-11-11 21:04  Finished: 1 converted
 Off: Automatic converting is off. task now gone
 Tidy run:
 Put away a repeated copy: Coco (foyer) (foyer).mp4
-2 trailers to convert:
+Already converted, so put the old one away: Hexed.mpg
+1 trailer to convert:
 Files now:
   Already fine.mp4  video=h264 audio=aac
   Coco.mp4  video=h264 audio=aac
   George Michael.mp4  video=h264 audio=aac
-  Hexed (foyer).mp4  video=h264 audio=
   Hexed.mp4  video=h264 audio=aac
   Just arrived.mp4  video=h264 audio=
   Shrek 5.mp4  video=h264 audio=
