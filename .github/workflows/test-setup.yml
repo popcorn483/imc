@@ -66,7 +66,7 @@ jobs:
           $errs = $null; [void][System.Management.Automation.Language.Parser]::ParseInput($raw, [ref]$null, [ref]$errs)
           $o += "Converter parse errors: $($errs.Count)"; $errs | ForEach-Object { $o += "  " + $_.Message + " @ line " + $_.Extent.StartLineNumber }
           $d = "D:\conv\IMC TRAILERS"; New-Item -ItemType Directory -Force $d, "$d\November" | Out-Null
-          $env:IMC_NOPAUSE = "1"; $env:IMC_ARG = $d
+          $env:IMC_NOPAUSE = "1"; $env:IMC_NOASK = "1"
           $ErrorActionPreference = "Continue"
           $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 | Out-String
           $o += "First run (empty folder, downloads FFmpeg):"; $o += ($r -split "`n" | Where-Object { $_.Trim() } | Select-Object -Last 4)
@@ -79,6 +79,18 @@ jobs:
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=640x360:rate=25 -t 4 -c:v wmv2 -b:v 2M "$d\Shrek 5.wmv"
           $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 | Out-String
           $o += "Second run:"; $o += ($r -split "`n" | Where-Object { $_.Trim() -and $_ -notmatch "^frame=" } | ForEach-Object { $_.TrimEnd() })
+          # automatic mode: switch on, then a new trailer arrives and the background run converts it
+          $env:IMC_DIR = $d
+          $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" /install" 2>&1 | Out-String; $o += "Install: " + $r.Trim()
+          $t = Get-ScheduledTask -TaskName "IMC convert trailers" -ErrorAction SilentlyContinue
+          $o += "Scheduled task: " + $(if ($t) { "registered, runs " + $t.Actions[0].Execute + " " + $t.Actions[0].Arguments } else { "MISSING" })
+          $o += "Background script: " + ((Get-Content "C:\ProgramData\IMC\convert-hidden.vbs") -join " / ")
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -f lavfi -i sine -t 5 -c:v mpeg2video -b:v 4M -c:a mp2 "$d\George Michael.mpg"
+          (Get-Item "$d\George Michael.mpg").LastWriteTime = (Get-Date).AddMinutes(-10)
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -t 5 -c:v mpeg2video -b:v 4M "$d\Just arrived.mpg"
+          & wscript.exe "C:\ProgramData\IMC\convert-hidden.vbs"
+          $o += "convert.log:"; $o += (Get-Content "C:\ProgramData\IMC\convert.log")
+          $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" /off" 2>&1 | Out-String; $o += "Off: " + $r.Trim() + " task now " + $(if (Get-ScheduledTask -TaskName "IMC convert trailers" -ErrorAction SilentlyContinue) { "STILL THERE" } else { "gone" })
           $o += "Files now:"
           foreach ($f in Get-ChildItem $d -File -Recurse) { $c = & $fp -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $a = & $fp -v error -select_streams a:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $o += "  " + $f.FullName.Substring($d.Length + 1) + "  video=" + $c + " audio=" + $a }
           $o | Set-Content setup\convert-test.txt
