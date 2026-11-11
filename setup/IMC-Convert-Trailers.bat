@@ -88,7 +88,7 @@ if (-not $dir) {
     $dir = $fb.SelectedPath
   }
 }
-Say "Folder: $dir" Green
+Say "Folder: $dir" $(if ($AUTO) { "Gray" } else { "Green" })
 
 # ----- 2. the converter (FFmpeg), downloaded once -----
 function Find-FF { Get-ChildItem -LiteralPath $TOOLS -Recurse -Filter ffmpeg.exe -ErrorAction SilentlyContinue | Select-Object -First 1 }
