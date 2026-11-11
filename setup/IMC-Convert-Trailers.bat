@@ -117,12 +117,36 @@ function Video-Codec($path) {
   if (-not (Test-Path -LiteralPath $ffprobe)) { return "h264" }
   try { $c = & $ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 "$path" 2>$null; return ("" + $c).Trim().ToLower() } catch { return "" }
 }
+# old files go here when the Recycle Bin can't take them (Google Drive folders); folders starting with _ are never looked in
+$OLD = Join-Path $dir "_old trailers (converted)"
+function Put-Away($f, $why) {
+  try { [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile($f.FullName, "OnlyErrorDialogs", "SendToRecycleBin"); return "the old file is in the Recycle Bin" } catch {}
+  try { New-Item -ItemType Directory -Force -Path $OLD | Out-Null; $t = Join-Path $OLD $f.Name; if (Test-Path -LiteralPath $t) { $t = Join-Path $OLD ([IO.Path]::GetFileNameWithoutExtension($f.Name) + " " + (Get-Date -Format "yyyyMMdd-HHmmss") + $f.Extension) }
+        Move-Item -LiteralPath $f.FullName -Destination $t -Force; return "the old file is in the ""_old trailers (converted)"" folder" } catch { return "" }
+}
+Add-Type -AssemblyName Microsoft.VisualBasic
+function All-Files { @(Get-ChildItem -LiteralPath $dir -File -Recurse -Depth 3 -ErrorAction SilentlyContinue | Where-Object { $_.FullName.Substring($dir.Length) -notmatch '\\_' }) }
+# tidy up: half-made files left behind, and repeated copies from an older version of this tool ("X (foyer) (foyer).mp4")
+foreach ($f in (All-Files)) {
+  if ($f.Name -match '\.part\.mp4$' -and ((Get-Date) - $f.LastWriteTime).TotalMinutes -gt 60) { Remove-Item -LiteralPath $f.FullName -Force -ErrorAction SilentlyContinue; Say ("Removed a half-made file: " + $f.Name) Cyan; continue }
+  if ($f.Name -match '( \(foyer\)){2,}') { $r = Put-Away $f "repeat"; Say ("Put away a repeated copy: " + $f.Name) Cyan }
+}
+function Done-Mp4($f) {   # an MP4 of this trailer made already?
+  $base = [IO.Path]::GetFileNameWithoutExtension($f.Name)
+  foreach ($n in @(($base + ".mp4"), ($base + " (foyer).mp4"))) { $p = Join-Path $f.DirectoryName $n
+    if ($p -ne $f.FullName -and (Test-Path -LiteralPath $p)) { $g = Get-Item -LiteralPath $p; if ($g.Length -gt 1000000 -and ((Get-Date) - $g.LastWriteTime).TotalMinutes -gt 2 -and (Video-Codec $p) -eq "h264") { return $true } } }
+  return $false
+}
 $todo = @()
-foreach ($f in @(Get-ChildItem -LiteralPath $dir -File -Recurse -Depth 3 -ErrorAction SilentlyContinue)) {
+foreach ($f in (All-Files)) {
   if ($f.Name -match '\.part\.mp4$' -or $f.Length -lt 20000) { continue }
+  if ($f.Name -match '\(foyer\)\.mp4$') { continue }
   if ($AUTO -and ((Get-Date) - $f.LastWriteTime).TotalMinutes -lt 3) { continue }   # still being copied in: next time
-  if ($f.Name -match $CONVERT) { $todo += $f; continue }
-  if ($f.Name -match $CHECK) { $c = Video-Codec $f.FullName; if ($c -and $c -ne "h264") { $todo += $f } }
+  $need = ($f.Name -match $CONVERT)
+  if (-not $need -and $f.Name -match $CHECK) { $c = Video-Codec $f.FullName; $need = ($c -and $c -ne "h264") }
+  if (-not $need) { continue }
+  if (Done-Mp4 $f) { $r = Put-Away $f "done"; Say ("Already converted, so put the old one away: " + $f.Name) Cyan; continue }
+  $todo += $f
 }
 Say ""
 if ($todo.Count -eq 0) { Say "Nothing to convert: every trailer in this folder already plays on the foyer TVs." $(if ($AUTO) { "Gray" } else { "Green" }) }
@@ -133,7 +157,6 @@ Say ""
 Say "Each one takes about a minute (longer on an old PC)." Gray
 
 # ----- 4. convert -----
-Add-Type -AssemblyName Microsoft.VisualBasic
 $ok = 0; $bad = 0; $n = 0
 foreach ($f in $todo) {
   $n++
@@ -157,8 +180,8 @@ foreach ($f in $todo) {
   $ErrorActionPreference = "Stop"
   if ($code -eq 0 -and (Test-Path -LiteralPath $part) -and (Get-Item -LiteralPath $part).Length -gt 20000) {
     Move-Item -LiteralPath $part -Destination $out -Force
-    try { [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile($f.FullName, "OnlyErrorDialogs", "SendToRecycleBin"); Say "   Done. The old file is in the Recycle Bin." Green }
-    catch { Say "   Done (couldn't move the old file to the Recycle Bin: delete it yourself)." Green }
+    $r = Put-Away $f "converted"
+    if ($r) { Say "   Done. $r." Green } else { Say "   Done (couldn't move the old file: delete it yourself)." Green }
     $ok++
   } else {
     Remove-Item -LiteralPath $part -ErrorAction SilentlyContinue

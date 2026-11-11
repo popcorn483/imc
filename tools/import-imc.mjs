@@ -610,8 +610,13 @@ try {
   for (const u of Object.keys(tr)) { const i = yid(u); if (i) ids.add(i); }
   const rec = await fs.readFile(path.join(OUT, "recommended.json"), "utf8").then(JSON.parse).catch(() => ({}));
   for (const x of rec.items || []) ids.add(x.id);
-  for (const f of await fs.readdir(path.join(OUT, "foyer")).catch(() => [])) {
-    const j = await fs.readFile(path.join(OUT, "foyer", f), "utf8").then(JSON.parse).catch(() => null);
+  // the hub saves foyer settings on the foyer-settings branch (so they don't rebuild the website); older copies may be in data/foyer
+  const foyerSettings = [];
+  try { const h = { accept: "application/vnd.github+json", ...(process.env.GITHUB_TOKEN ? { authorization: "Bearer " + process.env.GITHUB_TOKEN } : {}) };
+    const l = await fetch("https://api.github.com/repos/popcorn483/imc/contents/data/foyer?ref=foyer-settings", { headers: h }).then(r => r.ok ? r.json() : []);
+    for (const x of Array.isArray(l) ? l : []) if (/\.json$/.test(x.name)) foyerSettings.push(await fetch(x.download_url).then(r => r.json()).catch(() => null)); } catch {}
+  for (const f of await fs.readdir(path.join(OUT, "foyer")).catch(() => [])) foyerSettings.push(await fs.readFile(path.join(OUT, "foyer", f), "utf8").then(JSON.parse).catch(() => null));
+  for (const j of foyerSettings) {
     for (const q of [j && j.q, j && j.lq]) { if (!q) continue; const P = new URLSearchParams(q);
       for (const x of (P.get("x") || "").split("|")) { const i = x.split("~")[0]; if (/^[\w-]{11}$/.test(i)) ids.add(i); }
       for (const x of (P.get("tl") || "").split("|")) { const i = x.split("~")[1]; if (/^[\w-]{11}$/.test(i)) ids.add(i); } }

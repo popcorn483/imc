@@ -91,6 +91,12 @@ jobs:
           Start-Process wscript.exe -ArgumentList "`"C:\ProgramData\IMC\convert-hidden.vbs`"" -Wait
           $o += "convert.log:"; $o += (Get-Content "C:\ProgramData\IMC\convert.log")
           $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" /off" 2>&1 | Out-String; $o += "Off: " + $r.Trim() + " task now " + $(if (Get-ScheduledTask -TaskName "IMC convert trailers" -ErrorAction SilentlyContinue) { "STILL THERE" } else { "gone" })
+          # already converted once (on Google Drive the old file couldn't be removed) + repeated copies from the old version
+          Copy-Item "$d\Coco.mp4" "$d\Hexed.mp4"; (Get-Item "$d\Hexed.mp4").LastWriteTime = (Get-Date).AddMinutes(-10)
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -t 3 -c:v mpeg2video -b:v 4M "$d\Hexed.mpg"
+          Copy-Item "$d\Coco.mp4" "$d\Coco (foyer) (foyer).mp4"
+          $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 | Out-String
+          $o += "Tidy run:"; $o += ($r -split "`n" | Where-Object { $_ -match "Already|repeated|half-made|Nothing|to convert" } | ForEach-Object { $_.TrimEnd() })
           $o += "Files now:"
           foreach ($f in Get-ChildItem $d -File -Recurse) { $c = & $fp -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $a = & $fp -v error -select_streams a:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $o += "  " + $f.FullName.Substring($d.Length + 1) + "  video=" + $c + " audio=" + $a }
           $o | Set-Content setup\convert-test.txt
