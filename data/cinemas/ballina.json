@@ -2,7 +2,7 @@
   "id": "ballina",
   "cinema": "IMC Ballina",
   "source": "https://imc.ie/ballina",
-  "updated": "2026-11-10T22:25:47.521Z",
+  "updated": "2026-11-11T14:24:56.618Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -19,17 +19,32 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "times": [
+        "18:10",
         "20:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79871",
+      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79879",
       "sessions": [
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79879",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79871",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79880",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -47,6 +62,88 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "I Play Rocky",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+      "cert": "12A",
+      "runtime": 128,
+      "release": "November 11, 2026",
+      "releaseDate": "2026-11-11",
+      "director": "Peter Farrelly",
+      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+      "date": "2026-11-11",
+      "times": [
+        "20:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79945",
+      "sessions": [
+        {
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79945",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "i-play-rocky",
+      "posterFile": "data/posters/i-play-rocky.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Other Mommy",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
+      "cert": "15A",
+      "runtime": 100,
+      "release": "October 9, 2026",
+      "releaseDate": "2026-10-09",
+      "director": "Rob Savage",
+      "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
+      "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
+      "date": "2026-11-11",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79883",
+      "sessions": [
+        {
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79883",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "other-mommy",
+      "posterFile": "data/posters/other-mommy.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "16",
       "title": "Primetime",
       "luxx": false,
@@ -60,19 +157,34 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "times": [
+        "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79869",
+      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79943",
       "sessions": [
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79869",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79943",
           "luxx": false,
-          "screen": "1",
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79944",
+          "luxx": false,
+          "screen": "4",
           "threeD": false,
           "tags": [
             "released",
@@ -101,17 +213,32 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "times": [
+        "18:15",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79876",
+      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79884",
       "sessions": [
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79884",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79876",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79885",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -142,17 +269,32 @@
       "director": "Martin McDonagh",
       "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
       "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "times": [
+        "18:10",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79873",
+      "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79881",
       "sessions": [
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79881",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79873",
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79882",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -170,12 +312,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Tue 10 Nov",
-      "url": "https://imc.ie/film-times/ballina/10-11-2026#dateD",
-      "date": "2026-11-10",
-      "films": []
-    },
     {
       "label": "Wed 11 Nov",
       "url": "https://imc.ie/film-times/ballina/11-11-2026#dateD",
@@ -3215,6 +3351,319 @@
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
+    },
+    {
+      "label": "Wed 18 Nov",
+      "url": "https://imc.ie/film-times/ballina/18-11-2026#dateD",
+      "date": "2026-11-18",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-18",
+          "times": [
+            "18:10",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79824",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79824",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79825",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15",
+          "title": "How to Rob a Bank",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
+          "cert": "15",
+          "runtime": 121,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
+          "trailer": null,
+          "date": "2026-11-18",
+          "times": [
+            "18:05",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80010",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "18:05",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80010",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80015",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "how-to-rob-a-bank",
+          "posterFile": "data/posters/how-to-rob-a-bank.jpg",
+          "certIcon": null,
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-18",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79841",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=79841",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Prima Facie",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
+          "cert": "15A",
+          "runtime": 109,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
+          "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
+          "date": "2026-11-18",
+          "times": [
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80014",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80014",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80017",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "prima-facie",
+          "posterFile": "data/posters/prima-facie.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Primetime",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+          "cert": "16",
+          "runtime": 109,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Lance Oppenheim",
+          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+          "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+          "date": "2026-11-18",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80013",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80013",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80016",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "primetime",
+          "posterFile": "data/posters/primetime.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-18",
+          "times": [
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80025",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=ballina&stage=tickets&perf=80025",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -5071,8 +5520,7 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 4 films parsed",
-    "day-10-11-2026-dated: 0 films parsed",
+    "today: 6 films parsed",
     "day-11-11-2026-dated: 6 films parsed",
     "day-12-11-2026-dated: 6 films parsed",
     "day-13-11-2026-dated: 7 films parsed",
@@ -5080,6 +5528,7 @@
     "day-15-11-2026-dated: 11 films parsed",
     "day-16-11-2026-dated: 7 films parsed",
     "day-17-11-2026-dated: 7 films parsed",
+    "day-18-11-2026-dated: 6 films parsed",
     "advance: 11 films parsed",
     "kids: 2 films parsed",
     "luxx: 0 films parsed",
@@ -5474,7 +5923,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-10T22:26:13.477Z",
+    "checked": "2026-11-11T14:25:24.038Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -5485,7 +5934,7 @@
       "Tue"
     ]
   },
-  "checked": "2026-11-10T22:26:26.017Z",
+  "checked": "2026-11-11T14:25:37.045Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

@@ -2,7 +2,7 @@
   "id": "thurles",
   "cinema": "IMC Thurles",
   "source": "https://imc.ie/thurles",
-  "updated": "2026-11-10T22:36:23.465Z",
+  "updated": "2026-11-11T14:33:46.574Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -19,18 +19,18 @@
       "director": "James Watkins",
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": "https://www.youtube.com/watch?v=OGO4Mqvo3jI",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "times": [
         "18:25",
         "20:55"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79815",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79822",
       "sessions": [
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "18:25",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79815",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79822",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -38,14 +38,15 @@
             "released",
             "evening",
             "unallocated",
-            "seating-standard"
+            "seating-standard",
+            "screen-galactic"
           ]
         },
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "20:55",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79814",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79823",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -53,7 +54,8 @@
             "released",
             "evening",
             "unallocated",
-            "seating-standard"
+            "seating-standard",
+            "screen-galactic"
           ]
         }
       ],
@@ -64,44 +66,60 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "Other Mommy",
+      "certFile": "12A",
+      "title": "I Play Rocky",
       "luxx": false,
       "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/108835.jpg",
-      "cert": "15A",
-      "runtime": 100,
-      "release": "October 9, 2026",
-      "releaseDate": "2026-10-09",
-      "director": "Rob Savage",
-      "synopsis": "Bela, an 8-year-old girl living in a home with marital problems, confronts a sinister entity that comes out of her closet. The presence, whom she calls \"Other Mommy,\" becomes increasingly threatening to her and her family.",
-      "trailer": "https://www.youtube.com/watch?v=-2-eZPGMugw",
-      "date": "2026-11-10",
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+      "cert": "12A",
+      "runtime": 128,
+      "release": "November 11, 2026",
+      "releaseDate": "2026-11-11",
+      "director": "Peter Farrelly",
+      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+      "date": "2026-11-11",
       "times": [
+        "19:30",
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79818",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79827",
       "sessions": [
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
+          "time": "19:30",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79827",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79818",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79825",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
-            "released",
+            "advance",
             "evening",
             "unallocated",
             "seating-standard"
           ]
         }
       ],
-      "slug": "other-mommy",
-      "posterFile": "data/posters/other-mommy.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
+      "slug": "i-play-rocky",
+      "posterFile": "data/posters/i-play-rocky.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -119,18 +137,18 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "times": [
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79812",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79820",
       "sessions": [
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79812",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79820",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -142,10 +160,10 @@
           ]
         },
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79813",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79821",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -177,18 +195,18 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "times": [
         "18:10",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79816",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79824",
       "sessions": [
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79816",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79824",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -200,10 +218,10 @@
           ]
         },
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79817",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79826",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -235,18 +253,18 @@
       "director": "Martin McDonagh",
       "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
       "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "times": [
         "18:10",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79606",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79608",
       "sessions": [
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79606",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79608",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -258,10 +276,10 @@
           ]
         },
         {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
+          "day": "Wed 11 November",
+          "date": "2026-11-11",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79607",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79609",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -277,57 +295,9 @@
       "posterFile": "data/posters/wild-horse-nine.jpg",
       "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "12A",
-      "title": "Wildwood",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-      "cert": "12A",
-      "runtime": 131,
-      "release": "October 23, 2026",
-      "releaseDate": "2026-10-23",
-      "director": null,
-      "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-      "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-11-10",
-      "times": [
-        "20:00"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79819",
-      "sessions": [
-        {
-          "day": "Tue 10 November",
-          "date": "2026-11-10",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79819",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "wildwood",
-      "posterFile": "data/posters/wildwood.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "days": [
-    {
-      "label": "Tue 10 Nov",
-      "url": "https://imc.ie/film-times/thurles/10-11-2026#dateD",
-      "date": "2026-11-10",
-      "films": []
-    },
     {
       "label": "Wed 11 Nov",
       "url": "https://imc.ie/film-times/thurles/11-11-2026#dateD",
@@ -3327,6 +3297,329 @@
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
+    },
+    {
+      "label": "Wed 18 Nov",
+      "url": "https://imc.ie/film-times/thurles/18-11-2026#dateD",
+      "date": "2026-11-18",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-18",
+          "times": [
+            "18:10",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79618",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79618",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79619",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15",
+          "title": "How to Rob a Bank",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
+          "cert": "15",
+          "runtime": 121,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
+          "trailer": null,
+          "date": "2026-11-18",
+          "times": [
+            "18:05",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79915",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "18:05",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79915",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79916",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "how-to-rob-a-bank",
+          "posterFile": "data/posters/how-to-rob-a-bank.jpg",
+          "certIcon": null,
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-18",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79911",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79911",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Prima Facie",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
+          "cert": "15A",
+          "runtime": 109,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": null,
+          "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
+          "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
+          "date": "2026-11-18",
+          "times": [
+            "18:10",
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79967",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79967",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79968",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "prima-facie",
+          "posterFile": "data/posters/prima-facie.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-18",
+          "times": [
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79914",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79914",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wild Horse Nine",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
+          "cert": "15A",
+          "runtime": 117,
+          "release": "November 4, 2026",
+          "releaseDate": "2026-11-04",
+          "director": "Martin McDonagh",
+          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
+          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
+          "date": "2026-11-18",
+          "times": [
+            "18:10",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79971",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79971",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79972",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wild-horse-nine",
+          "posterFile": "data/posters/wild-horse-nine.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -4849,7 +5142,7 @@
       "title": "Arnie and Barney",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
       "cert": "G",
       "runtime": 77,
@@ -4857,39 +5150,25 @@
       "releaseDate": "2026-10-24",
       "director": "Sean Heuston",
       "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-      "trailer": null,
-      "date": "2026-10-30",
+      "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+      "date": "2026-11-07",
       "times": [
-        "14:00"
+        "12:15",
+        "14:15",
+        "16:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79640",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79757",
       "sessions": [
         {
-          "day": "Fri 30 October",
-          "date": "2026-10-30",
-          "time": "14:00",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79640",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79757",
           "luxx": false,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "new",
-            "matinee",
-            "unallocated",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "12:05",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79672",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "kidsclub",
@@ -4897,15 +5176,15 @@
           ]
         },
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "14:00",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79659",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79766",
           "luxx": false,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "kidsclub",
@@ -4913,15 +5192,15 @@
           ]
         },
         {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "12:05",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79693",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "16:15",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79767",
           "luxx": false,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "kidsclub",
@@ -4929,15 +5208,47 @@
           ]
         },
         {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "14:00",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79680",
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79786",
           "luxx": false,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
+            "evening",
+            "unallocated",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79780",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "16:15",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79781",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
             "evening",
             "unallocated",
             "kidsclub",
@@ -4952,32 +5263,33 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "G",
-      "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+      "certFile": "PG",
+      "title": "Forgotten Island",
       "luxx": false,
       "sensory": false,
       "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
-      "cert": "G",
-      "runtime": 81,
-      "release": "September 11, 2026",
-      "releaseDate": "2026-09-11",
-      "director": "Steve Cox, Matthew Walker",
-      "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
-      "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
-      "date": "2026-10-31",
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-07",
       "times": [
-        "12:20"
+        "12:20",
+        "14:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79675",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79762",
       "sessions": [
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
           "time": "12:20",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79675",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79762",
           "luxx": false,
-          "screen": "6",
+          "screen": "5",
           "threeD": false,
           "tags": [
             "released",
@@ -4988,12 +5300,44 @@
           ]
         },
         {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "12:20",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79696",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79772",
           "luxx": false,
-          "screen": "6",
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "12:20",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79790",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79793",
+          "luxx": false,
+          "screen": "5",
           "threeD": false,
           "tags": [
             "released",
@@ -5004,9 +5348,9 @@
           ]
         }
       ],
-      "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
-      "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
-      "certIcon": "data/ratings/ifco-G.svg",
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -5024,20 +5368,19 @@
       "director": "Enrique Gato",
       "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
       "trailer": null,
-      "date": "2026-10-31",
+      "date": "2026-11-07",
       "times": [
-        "12:20",
-        "13:20"
+        "12:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79670",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79771",
       "sessions": [
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "12:20",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79670",
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "12:30",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79771",
           "luxx": false,
-          "screen": "2",
+          "screen": "4",
           "threeD": false,
           "tags": [
             "released",
@@ -5048,44 +5391,12 @@
           ]
         },
         {
-          "day": "Sat 31 October",
-          "date": "2026-10-31",
-          "time": "13:20",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79671",
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "12:30",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79785",
           "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "12:20",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79691",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 1 November",
-          "date": "2026-11-01",
-          "time": "13:20",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79692",
-          "luxx": false,
-          "screen": "3",
+          "screen": "4",
           "threeD": false,
           "tags": [
             "released",
@@ -5098,6 +5409,65 @@
       ],
       "slug": "tad-and-the-magic-lamp",
       "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Tad and the Magic Lamp - Galactic",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116349.jpg",
+      "cert": "G",
+      "runtime": 94,
+      "release": "November 7, 2026",
+      "releaseDate": "2026-11-07",
+      "director": "Enrique Gato",
+      "synopsis": "Oli, Tads intrepid two-year-old daughter, has turned him into an overprotective father and Mummy feels sidelined by the attention she gets. When they find the magic lamp in Buckingham Palace, Mummy asks it to travel back in time to Paititi, Peru, in 1502. Tad, Sara and the whole team will have to follow Mummy into the past, before he changes history? Their journey will take them across the Atlantic Ocean from Peru to Greece, and from there deep into the Middle East, all the way to the cave of Ali Baba and the Forty Thieves.",
+      "trailer": null,
+      "date": "2026-11-07",
+      "times": [
+        "13:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79758",
+      "sessions": [
+        {
+          "day": "Sat 7 November",
+          "date": "2026-11-07",
+          "time": "13:30",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79758",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 8 November",
+          "date": "2026-11-08",
+          "time": "13:30",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79787",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp-galactic",
+      "posterFile": "data/posters/tad-and-the-magic-lamp-galactic.jpg",
       "certIcon": "data/ratings/ifco-G.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     }
@@ -5138,10 +5508,8 @@
     }
   ],
   "log": [
-    "thurles: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-10-11-2026-dated: 0 films parsed",
+    "today: 5 films parsed",
     "day-11-11-2026-dated: 5 films parsed",
     "day-12-11-2026-dated: 5 films parsed",
     "day-13-11-2026-dated: 6 films parsed",
@@ -5149,12 +5517,12 @@
     "day-15-11-2026-dated: 11 films parsed",
     "day-16-11-2026-dated: 6 films parsed",
     "day-17-11-2026-dated: 5 films parsed",
+    "day-18-11-2026-dated: 6 films parsed",
     "advance: 9 films parsed",
-    "kids: 3 films parsed",
+    "kids: 4 films parsed",
     "luxx: 0 films parsed",
     "booking pages read: 9 (Wed, Thu, Fri, Sat, Sun, Mon, Tue)",
     "prices: 13 ticket types, 2 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -5546,7 +5914,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-10T22:36:49.201Z",
+    "checked": "2026-11-11T14:34:13.929Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -5557,7 +5925,7 @@
       "Tue"
     ]
   },
-  "checked": "2026-11-10T22:37:02.106Z",
+  "checked": "2026-11-11T14:34:26.402Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
