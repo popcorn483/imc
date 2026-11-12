@@ -2,7 +2,7 @@
   "id": "dundalk",
   "cinema": "IMC Dundalk",
   "source": "https://imc.ie/dundalk",
-  "updated": "2026-11-12T15:21:10.850Z",
+  "updated": "2026-11-12T22:50:14.467Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -275,273 +275,7 @@
       "label": "Thu 12 Nov",
       "url": "https://imc.ie/film-times/dundalk/12-11-2026#dateD",
       "date": "2026-11-12",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "I Play Rocky",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "12A",
-          "runtime": 128,
-          "release": "November 11, 2026",
-          "releaseDate": "2026-11-11",
-          "director": "Peter Farrelly",
-          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
-          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-          "date": "2026-11-12",
-          "times": [
-            "18:45",
-            "19:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118151",
-          "sessions": [
-            {
-              "day": "Thu 12 November",
-              "date": "2026-11-12",
-              "time": "18:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118151",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Thu 12 November",
-              "date": "2026-11-12",
-              "time": "19:30",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118150",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "i-play-rocky",
-          "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "I Play Rocky -",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116667.jpg",
-          "cert": "12A",
-          "runtime": 127,
-          "release": "November 11, 2026",
-          "releaseDate": "2026-11-11",
-          "director": "Peter Farrelly",
-          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
-          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-          "date": "2026-11-12",
-          "times": [
-            "20:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117951",
-          "sessions": [
-            {
-              "day": "Thu 12 November",
-              "date": "2026-11-12",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117951",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "i-play-rocky",
-          "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Primetime",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
-          "cert": "16",
-          "runtime": 104,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Lance Oppenheim",
-          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
-          "date": "2026-11-12",
-          "times": [
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118148",
-          "sessions": [
-            {
-              "day": "Thu 12 November",
-              "date": "2026-11-12",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118148",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Thu 12 November",
-              "date": "2026-11-12",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118156",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "primetime",
-          "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wicker",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Alex Huston Fischer, Eleanor Wilson",
-          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-          "date": "2026-11-12",
-          "times": [
-            "18:15",
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118152",
-          "sessions": [
-            {
-              "day": "Thu 12 November",
-              "date": "2026-11-12",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118152",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Thu 12 November",
-              "date": "2026-11-12",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118153",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wicker",
-          "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "November 5, 2026",
-          "releaseDate": "2026-11-05",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-12",
-          "times": [
-            "18:10",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117868",
-          "sessions": [
-            {
-              "day": "Thu 12 November",
-              "date": "2026-11-12",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117868",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Thu 12 November",
-              "date": "2026-11-12",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117867",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
+      "films": []
     },
     {
       "label": "Fri 13 Nov",
@@ -1564,7 +1298,7 @@
           "date": "2026-11-15",
           "times": [
             "12:10",
-            "13:05",
+            "13:00",
             "14:45",
             "15:35",
             "17:15",
@@ -1590,7 +1324,7 @@
             {
               "day": "Sun 15 November",
               "date": "2026-11-15",
-              "time": "13:05",
+              "time": "13:00",
               "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117875",
               "luxx": false,
               "screen": "6",
@@ -9178,9 +8912,10 @@
     }
   ],
   "log": [
+    "dundalk: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 5 films parsed",
-    "day-12-11-2026-dated: 5 films parsed",
+    "today: 0 films parsed",
+    "day-12-11-2026-dated: 0 films parsed",
     "day-13-11-2026-dated: 6 films parsed",
     "day-14-11-2026-dated: 9 films parsed",
     "day-15-11-2026-dated: 9 films parsed",
@@ -9191,35 +8926,13 @@
     "advance: 16 films parsed",
     "kids: 3 films parsed",
     "luxx: 7 films parsed",
-    "booking pages read: 10 (Thu, Fri, Sat, Sun, Mon, Tue, Wed)",
+    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
     "prices: 15 ticket types, 4 bundles, 9 products",
+    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
-      {
-        "name": "Crazy Thursday",
-        "price": "€7.50",
-        "days": [
-          "Thu"
-        ],
-        "seenOn": [
-          "evening"
-        ]
-      },
-      {
-        "name": "3 Plus 2 For 1Requires Voucher",
-        "price": "€10.00",
-        "days": [
-          "Thu",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening"
-        ]
-      },
       {
         "name": "Adult Peak",
         "price": "€12.00",
@@ -9309,6 +9022,19 @@
         ]
       },
       {
+        "name": "3 Plus 2 For 1Requires Voucher",
+        "price": "€10.00",
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
         "name": "Student Meal Deal",
         "price": "€12.50",
         "days": [
@@ -9323,6 +9049,16 @@
         "price": "€12.50",
         "days": [
           "Wed"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Crazy Thursday",
+        "price": "€7.50",
+        "days": [
+          "Thu"
         ],
         "seenOn": [
           "evening"
@@ -9359,20 +9095,20 @@
         ]
       },
       {
-        "name": "Crazy Thursday LUXX",
-        "price": "€9.00",
+        "name": "LUXX Recliner",
+        "price": "€15.50",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
         ]
       },
       {
-        "name": "3 Plus 2 For 1 LUXXRequires Voucher",
-        "price": "€18.00",
+        "name": "LUXX Child/Student/OAP",
+        "price": "€12.50",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
@@ -9386,12 +9122,12 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
-          "Tue"
+          "Tue",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9405,13 +9141,13 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9425,7 +9161,7 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
@@ -9438,7 +9174,7 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
@@ -9452,13 +9188,13 @@
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9473,13 +9209,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9494,13 +9230,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9515,13 +9251,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9536,13 +9272,13 @@
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9557,13 +9293,13 @@
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9578,13 +9314,13 @@
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9599,13 +9335,13 @@
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9620,13 +9356,13 @@
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -9637,18 +9373,18 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-12T15:21:36.183Z",
+    "checked": "2026-11-12T22:50:38.610Z",
     "sampledDays": [
-      "Thu",
       "Fri",
       "Sat",
       "Sun",
       "Mon",
       "Tue",
-      "Wed"
+      "Wed",
+      "Thu"
     ]
   },
-  "checked": "2026-11-12T15:21:49.659Z",
+  "checked": "2026-11-12T22:50:52.210Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
