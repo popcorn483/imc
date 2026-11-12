@@ -173,7 +173,7 @@ foreach ($f in $todo) {
   # H.264 + AAC MP4 that every browser plays; interlaced TV-style files are smoothed; fast start for quick playback
   $ffa = @("-hide_banner", "-loglevel", "error", "-stats", "-y", "-i", $f.FullName,
             "-map", "0:v:0", "-map", "0:a:0?", "-vf", "yadif=deint=interlaced,scale=trunc(iw/2)*2:trunc(ih/2)*2",
-            "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
+            "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-maxrate", "12M", "-bufsize", "24M", "-g", "50", "-pix_fmt", "yuv420p",
             "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-movflags", "+faststart", "-f", "mp4", $part)
   $ErrorActionPreference = "Continue"
   if ($AUTO) {   # in the background: quietly (this whole run is at low priority, so the PC stays quick)
