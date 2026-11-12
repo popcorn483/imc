@@ -18,12 +18,12 @@ Folder: D:\conv\IMC TRAILERS
    Dune 3.mov
 Each one takes about a minute (longer on an old PC).
 [1 of 3]  Coco.mpg  ->  Coco.mp4
-cmd.exe : frame=  150 fps=0.0 q=-1.0 Lsize=     220KiB time=00:00:06.00 bitrate= 299.7kbits/s speed=16.1x
-elapsed=0:00:00.37
-At D:\a\_temp\1f6dc761-e019-4e4f-a79d-7559d3637e92.ps1:18 char:6
+cmd.exe : frame=  150 fps=0.0 q=-1.0 Lsize=     235KiB time=00:00:06.00 bitrate= 320.3kbits/s speed=26.9x
+elapsed=0:00:00.22
+At D:\a\_temp\525b5bb9-e72c-4c62-bc76-01afa1412a98.ps1:18 char:6
 + $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 ...
 +      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (frame=  150 fps...=0:00:00.37    :String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (frame=  150 fps...=0:00:00.22    :String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
    Done. the old file is in the Recycle Bin.
 [2 of 3]  Shrek 5.wmv  ->  Shrek 5.mp4
@@ -44,11 +44,11 @@ Automatic converting is on for D:\conv\IMC TRAILERS
 Scheduled task: registered, runs wscript.exe "C:\ProgramData\IMC\convert-hidden.vbs"
 Background script: Set s = CreateObject("WScript.Shell") / s.Environment("PROCESS")("IMC_NOPAUSE") = "1" / s.Run "cmd.exe /c ""C:\ProgramData\IMC\IMC-Convert-Trailers.bat"" /auto", 0, True
 convert.log:
-2026-11-11 21:20  Automatic converting switched on for D:\conv\IMC TRAILERS
-2026-11-11 21:21  1 trailer to convert:
-2026-11-11 21:21  [1 of 1]  George Michael.mpg  ->  George Michael.mp4
-2026-11-11 21:21  Done. the old file is in the Recycle Bin.
-2026-11-11 21:21  Finished: 1 converted
+2026-11-12 16:47  Automatic converting switched on for D:\conv\IMC TRAILERS
+2026-11-12 16:47  1 trailer to convert:
+2026-11-12 16:47  [1 of 1]  George Michael.mpg  ->  George Michael.mp4
+2026-11-12 16:47  Done. the old file is in the Recycle Bin.
+2026-11-12 16:47  Finished: 1 converted
 Off: Automatic converting is off. task now gone
 Tidy run:
 Put away a repeated copy: Coco (foyer) (foyer).mp4
