@@ -2,132 +2,80 @@
   "id": "ballymena",
   "cinema": "IMC Ballymena",
   "source": "https://imc.ie/ballymena",
-  "updated": "2026-11-12T22:44:23.515Z",
+  "updated": "2026-11-14T13:31:06.371Z",
   "today": [
     {
       "certSystem": "bbfc",
-      "certFile": "18",
-      "title": "Clayface",
+      "certFile": "12A",
+      "title": "EBENEZER",
       "luxx": false,
       "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
-      "cert": "18",
-      "runtime": 100,
-      "release": "October 30, 2026",
-      "releaseDate": "2026-10-30",
-      "director": null,
-      "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-      "trailer": null,
-      "date": "2026-11-12",
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+      "cert": "12A",
+      "runtime": 120,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": "Ti West",
+      "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+      "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+      "date": "2026-11-14",
       "times": [
-        "18:10",
-        "20:40"
+        "13:15",
+        "15:45",
+        "18:15",
+        "19:45",
+        "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106404",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106162",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106404",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "13:15",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106162",
           "luxx": false,
-          "screen": "4",
+          "screen": "3",
           "threeD": false,
           "tags": [
-            "released",
+            "new",
             "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106405",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106161",
           "luxx": false,
-          "screen": "4",
+          "screen": "3",
           "threeD": false,
           "tags": [
-            "released",
+            "new",
             "evening",
             "seating-standard"
           ]
-        }
-      ],
-      "slug": "clayface",
-      "posterFile": "data/posters/clayface.jpg",
-      "certIcon": "data/ratings/bbfc-18.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "12A",
-      "title": "Heart Of The Beast",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/112148.jpg",
-      "cert": "12A",
-      "runtime": 102,
-      "release": "September 23, 2026",
-      "releaseDate": "2026-09-23",
-      "director": "David Ayer",
-      "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements. From acclaimed filmmaker David Ayer, Heart Of The Beast is an intense adventure thriller that explores the unbreakable bond between a man and his best friend as they face their greatest battle yet.",
-      "trailer": "https://www.youtube.com/watch?v=JFQcDFhNh4o",
-      "date": "2026-11-12",
-      "times": [
-        "18:05"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106409",
-      "sessions": [
+        },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106409",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106164",
           "luxx": false,
-          "screen": "7",
+          "screen": "3",
           "threeD": false,
           "tags": [
-            "released",
+            "new",
             "evening",
             "seating-standard"
           ]
-        }
-      ],
-      "slug": "heart-of-the-beast",
-      "posterFile": "data/posters/heart-of-the-beast.jpg",
-      "certIcon": "data/ratings/bbfc-12A.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "12A",
-      "title": "I Play Rocky",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-      "cert": "12A",
-      "runtime": 128,
-      "release": "November 11, 2026",
-      "releaseDate": "2026-11-11",
-      "director": "Peter Farrelly",
-      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
-      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-12",
-      "times": [
-        "19:30",
-        "20:30"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106407",
-      "sessions": [
+        },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106407",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106438",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -138,10 +86,423 @@
           ]
         },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106408",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106163",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ebenezer",
+      "posterFile": "data/posters/ebenezer.jpg",
+      "certIcon": "data/ratings/bbfc-12A.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-14",
+      "times": [
+        "13:45",
+        "14:45",
+        "15:30",
+        "16:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106449",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106449",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106447",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106450",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "16:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106448",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/bbfc-G.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-14",
+      "times": [
+        "15:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106445",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106445",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "PG",
+      "title": "Ghosts: The Possession Of Button House",
+      "luxx": true,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/117214.jpg",
+      "cert": "PG",
+      "runtime": 100,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": "Simon Hynd",
+      "synopsis": "Feature film based on the smash hit BBC sitcom Ghosts.",
+      "trailer": null,
+      "date": "2026-11-14",
+      "times": [
+        "13:25"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106514",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "13:25",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106514",
+          "luxx": true,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ghosts-the-possession-of-button-house",
+      "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+      "certIcon": "data/ratings/bbfc-PG.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "15",
+      "title": "How to Rob a Bank",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
+      "cert": "15",
+      "runtime": 121,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": null,
+      "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
+      "trailer": null,
+      "date": "2026-11-14",
+      "times": [
+        "15:20",
+        "18:05",
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106443",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:20",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106443",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "18:05",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106433",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106435",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "how-to-rob-a-bank",
+      "posterFile": "data/posters/how-to-rob-a-bank.jpg",
+      "certIcon": "data/ratings/bbfc-15.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "12A",
+      "title": "I Play Rocky - Galactic",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116939.jpg",
+      "cert": "12A",
+      "runtime": 127,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": "Peter Farrelly",
+      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+      "date": "2026-11-14",
+      "times": [
+        "14:35",
+        "17:25",
+        "20:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106513",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "14:35",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106513",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "17:25",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106510",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106511",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "i-play-rocky-galactic",
+      "posterFile": "data/posters/i-play-rocky-galactic.jpg",
+      "certIcon": "data/ratings/bbfc-12A.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "15",
+      "title": "Prima Facie",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
+      "cert": "15",
+      "runtime": 109,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": null,
+      "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
+      "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
+      "date": "2026-11-14",
+      "times": [
+        "18:15",
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106436",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106436",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106437",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "prima-facie",
+      "posterFile": "data/posters/prima-facie.jpg",
+      "certIcon": "data/ratings/bbfc-15.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "18",
+      "title": "The Man Who Fell to Earth",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
+      "cert": "18",
+      "runtime": 139,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": "Nicolas Roeg",
+      "synopsis": "THE MAN WHO FELL TO EARTH is a sci-fi drama, from 1976, about an alien who arrives on Earth and starts a lucrative technology company with a plan to return home.",
+      "trailer": null,
+      "date": "2026-11-14",
+      "times": [
+        "20:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106439",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106439",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -152,65 +513,9 @@
           ]
         }
       ],
-      "slug": "i-play-rocky",
-      "posterFile": "data/posters/i-play-rocky.jpg",
-      "certIcon": "data/ratings/bbfc-12A.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "15",
-      "title": "Primetime Galactic",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/116686.jpg",
-      "cert": "15",
-      "runtime": 109,
-      "release": "October 30, 2026",
-      "releaseDate": "2026-10-30",
-      "director": "Lance Oppenheim",
-      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-      "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
-      "date": "2026-11-12",
-      "times": [
-        "18:10",
-        "20:40"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106403",
-      "sessions": [
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106403",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106402",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "primetime-galactic",
-      "posterFile": "data/posters/primetime-galactic.jpg",
-      "certIcon": "data/ratings/bbfc-15.svg",
+      "slug": "the-man-who-fell-to-earth",
+      "posterFile": "data/posters/the-man-who-fell-to-earth.jpg",
+      "certIcon": "data/ratings/bbfc-18.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     },
     {
@@ -228,18 +533,19 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "An ostracised fisherwoman commissions a local basketmaker to weave her a husband from wicker. When her extraordinary new companion comes to life, their unconventional relationship provokes jealousy and upheaval throughout their conservative seaside village.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
+        "15:50",
         "18:15",
         "20:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106411",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106442",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106411",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:50",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106442",
           "luxx": true,
           "screen": "2",
           "threeD": false,
@@ -250,10 +556,24 @@
           ]
         },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106440",
+          "luxx": true,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
           "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106410",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106441",
           "luxx": true,
           "screen": "2",
           "threeD": false,
@@ -268,373 +588,9 @@
       "posterFile": "data/posters/wicker.jpg",
       "certIcon": "data/ratings/bbfc-15.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "15",
-      "title": "Wild Horse Nine",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-      "cert": "15",
-      "runtime": 117,
-      "release": "November 4, 2026",
-      "releaseDate": "2026-11-04",
-      "director": "Martin McDonagh",
-      "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-      "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-12",
-      "times": [
-        "18:10",
-        "19:45",
-        "20:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106157",
-      "sessions": [
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106157",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106406",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106158",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "wild-horse-nine",
-      "posterFile": "data/posters/wild-horse-nine.jpg",
-      "certIcon": "data/ratings/bbfc-15.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
     }
   ],
   "days": [
-    {
-      "label": "Thu 12 Nov",
-      "url": "https://imc.ie/film-times/ballymena/12-11-2026#dateD",
-      "date": "2026-11-12",
-      "films": []
-    },
-    {
-      "label": "Fri 13 Nov",
-      "url": "https://imc.ie/film-times/ballymena/13-11-2026#dateD",
-      "date": "2026-11-13",
-      "films": [
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "EBENEZER",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "12A",
-          "runtime": 120,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Ti West",
-          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
-          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-          "date": "2026-11-13",
-          "times": [
-            "18:15",
-            "19:45",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106160",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106160",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106429",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106159",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ebenezer",
-          "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "How to Rob a Bank",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
-          "cert": "15",
-          "runtime": 121,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": null,
-          "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
-          "trailer": null,
-          "date": "2026-11-13",
-          "times": [
-            "18:10",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106425",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106425",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106426",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "how-to-rob-a-bank",
-          "posterFile": "data/posters/how-to-rob-a-bank.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Prima Facie",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
-          "cert": "15",
-          "runtime": 109,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": null,
-          "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
-          "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
-          "date": "2026-11-13",
-          "times": [
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106427",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106427",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106428",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "prima-facie",
-          "posterFile": "data/posters/prima-facie.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "18",
-          "title": "The Man Who Fell to Earth",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
-          "cert": "18",
-          "runtime": 139,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Nicolas Roeg",
-          "synopsis": "THE MAN WHO FELL TO EARTH is a sci-fi drama, from 1976, about an alien who arrives on Earth and starts a lucrative technology company with a plan to return home.",
-          "trailer": null,
-          "date": "2026-11-13",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106430",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106430",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-man-who-fell-to-earth",
-          "posterFile": "data/posters/the-man-who-fell-to-earth.jpg",
-          "certIcon": "data/ratings/bbfc-18.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Wicker",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/116687.jpg",
-          "cert": "15",
-          "runtime": 105,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Alex Huston Fischer, Eleanor Wilson",
-          "synopsis": "An ostracised fisherwoman commissions a local basketmaker to weave her a husband from wicker. When her extraordinary new companion comes to life, their unconventional relationship provokes jealousy and upheaval throughout their conservative seaside village.",
-          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-          "date": "2026-11-13",
-          "times": [
-            "18:15",
-            "20:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106431",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106431",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106432",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "wicker",
-          "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        }
-      ]
-    },
     {
       "label": "Sat 14 Nov",
       "url": "https://imc.ie/film-times/ballymena/14-11-2026#dateD",
@@ -642,53 +598,11 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Arnie & Barney Galactic",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/117217.jpg",
-          "cert": "PG",
-          "runtime": 77,
-          "release": "November 14, 2026",
-          "releaseDate": "2026-11-14",
-          "director": "Sean Heuston",
-          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
-          "trailer": null,
-          "date": "2026-11-14",
-          "times": [
-            "12:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106512",
-          "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "12:35",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106512",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "arnie-and-barney-galactic",
-          "posterFile": "data/posters/arnie-and-barney-galactic.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
           "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -716,7 +630,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -730,7 +644,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -744,7 +658,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -758,7 +672,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -772,7 +686,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -789,7 +703,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -800,29 +714,13 @@
           "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
           "date": "2026-11-14",
           "times": [
-            "12:45",
             "13:45",
             "14:45",
             "15:30",
             "16:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106446",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106449",
           "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "12:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106446",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 14 November",
               "date": "2026-11-14",
@@ -832,7 +730,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -847,7 +745,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -862,7 +760,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -877,7 +775,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -906,26 +804,10 @@
           "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
           "date": "2026-11-14",
           "times": [
-            "12:30",
             "15:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106434",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106445",
           "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "12:30",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106434",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 14 November",
               "date": "2026-11-14",
@@ -995,7 +877,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -1021,7 +903,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1035,7 +917,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1049,7 +931,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1066,7 +948,7 @@
           "title": "I Play Rocky - Galactic",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116939.jpg",
           "cert": "12A",
           "runtime": 127,
@@ -1092,7 +974,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1106,7 +988,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1120,7 +1002,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1137,7 +1019,7 @@
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15",
           "runtime": 109,
@@ -1162,7 +1044,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1176,7 +1058,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1235,7 +1117,7 @@
           "title": "The Man Who Fell to Earth",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
           "cert": "18",
           "runtime": 139,
@@ -1259,7 +1141,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1350,11 +1232,53 @@
       "films": [
         {
           "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Arnie & Barney Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/117217.jpg",
+          "cert": "PG",
+          "runtime": 77,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": "Sean Heuston",
+          "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+          "trailer": null,
+          "date": "2026-11-15",
+          "times": [
+            "12:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106516",
+          "sessions": [
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "12:35",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106516",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "arnie-and-barney-galactic",
+          "posterFile": "data/posters/arnie-and-barney-galactic.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
           "certFile": "12A",
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -1382,7 +1306,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1396,7 +1320,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1410,7 +1334,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1424,7 +1348,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1438,7 +1362,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1615,11 +1539,53 @@
         },
         {
           "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Ghosts: The Possession Of Button House",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/117214.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": "Simon Hynd",
+          "synopsis": "Feature film based on the smash hit BBC sitcom Ghosts.",
+          "trailer": null,
+          "date": "2026-11-15",
+          "times": [
+            "13:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106515",
+          "sessions": [
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "13:25",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106515",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ghosts-the-possession-of-button-house",
+          "posterFile": "data/posters/ghosts-the-possession-of-button-house.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
           "certFile": "15",
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -1645,7 +1611,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1659,7 +1625,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1673,7 +1639,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1686,11 +1652,82 @@
         },
         {
           "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky - Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116939.jpg",
+          "cert": "12A",
+          "runtime": 127,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-15",
+          "times": [
+            "14:35",
+            "17:25",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106519",
+          "sessions": [
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "14:35",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106519",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106517",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 15 November",
+              "date": "2026-11-15",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106518",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky-galactic",
+          "posterFile": "data/posters/i-play-rocky-galactic.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
           "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15",
           "runtime": 109,
@@ -1715,7 +1752,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1729,7 +1766,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1788,7 +1825,7 @@
           "title": "The Man Who Fell to Earth",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
           "cert": "18",
           "runtime": 139,
@@ -1812,7 +1849,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1907,7 +1944,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -1933,7 +1970,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1947,7 +1984,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1961,7 +1998,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2034,7 +2071,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -2059,7 +2096,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2073,7 +2110,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2086,11 +2123,52 @@
         },
         {
           "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky - Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116939.jpg",
+          "cert": "12A",
+          "runtime": 127,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-16",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106520",
+          "sessions": [
+            {
+              "day": "Mon 16 November",
+              "date": "2026-11-16",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106520",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky-galactic",
+          "posterFile": "data/posters/i-play-rocky-galactic.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
           "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15",
           "runtime": 109,
@@ -2115,7 +2193,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2129,7 +2207,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2209,7 +2287,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -2235,7 +2313,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2249,7 +2327,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2263,7 +2341,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2336,7 +2414,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -2361,7 +2439,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2375,7 +2453,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2388,11 +2466,52 @@
         },
         {
           "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky - Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116939.jpg",
+          "cert": "12A",
+          "runtime": 127,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-17",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106521",
+          "sessions": [
+            {
+              "day": "Tue 17 November",
+              "date": "2026-11-17",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106521",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky-galactic",
+          "posterFile": "data/posters/i-play-rocky-galactic.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
           "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15",
           "runtime": 109,
@@ -2417,7 +2536,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2431,7 +2550,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2511,7 +2630,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -2536,7 +2655,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2550,7 +2669,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2567,7 +2686,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -2592,7 +2711,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2606,7 +2725,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2619,11 +2738,52 @@
         },
         {
           "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky - Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116939.jpg",
+          "cert": "12A",
+          "runtime": 127,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-18",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106522",
+          "sessions": [
+            {
+              "day": "Wed 18 November",
+              "date": "2026-11-18",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106522",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky-galactic",
+          "posterFile": "data/posters/i-play-rocky-galactic.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
           "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15",
           "runtime": 109,
@@ -2648,7 +2808,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2662,7 +2822,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2798,7 +2958,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -2823,7 +2983,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2837,7 +2997,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2854,7 +3014,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -2879,7 +3039,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2893,7 +3053,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2906,11 +3066,52 @@
         },
         {
           "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky - Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116939.jpg",
+          "cert": "12A",
+          "runtime": 127,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-19",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106523",
+          "sessions": [
+            {
+              "day": "Thu 19 November",
+              "date": "2026-11-19",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106523",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky-galactic",
+          "posterFile": "data/posters/i-play-rocky-galactic.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
           "certFile": "15",
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15",
           "runtime": 109,
@@ -2935,7 +3136,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2949,7 +3150,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3070,6 +3271,229 @@
           "slug": "wicker",
           "posterFile": "data/posters/wicker.jpg",
           "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
+    },
+    {
+      "label": "Fri 20 Nov",
+      "url": "https://imc.ie/film-times/ballymena/20-11-2026#dateD",
+      "date": "2026-11-20",
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping - Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116796.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Francis Lawrence",
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-20",
+          "times": [
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106311",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106311",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping-galactic",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping-galactic.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "TBC",
+          "title": "You Can See Everything",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
+          "cert": "TBC",
+          "runtime": 174,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-20",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106258",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106258",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sat 21 Nov",
+      "url": "https://imc.ie/film-times/ballymena/21-11-2026#dateD",
+      "date": "2026-11-21",
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping - Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116796.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Francis Lawrence",
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-21",
+          "times": [
+            "13:20",
+            "16:40",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106312",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "13:20",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106312",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "16:40",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106313",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106314",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping-galactic",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping-galactic.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "TBC",
+          "title": "You Can See Everything",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
+          "cert": "TBC",
+          "runtime": 174,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-21",
+          "times": [
+            "16:10",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106260",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106260",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106259",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/bbfc-TBC.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -6806,120 +7230,97 @@
     }
   ],
   "log": [
-    "ballymena: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-12-11-2026-dated: 0 films parsed",
-    "day-13-11-2026-dated: 5 films parsed",
-    "day-14-11-2026-dated: 11 films parsed",
-    "day-15-11-2026-dated: 8 films parsed",
-    "day-16-11-2026-dated: 5 films parsed",
-    "day-17-11-2026-dated: 5 films parsed",
-    "day-18-11-2026-dated: 5 films parsed",
-    "day-19-11-2026-dated: 5 films parsed",
+    "today: 9 films parsed",
+    "day-14-11-2026-dated: 10 films parsed",
+    "day-15-11-2026-dated: 11 films parsed",
+    "day-16-11-2026-dated: 6 films parsed",
+    "day-17-11-2026-dated: 6 films parsed",
+    "day-18-11-2026-dated: 6 films parsed",
+    "day-19-11-2026-dated: 6 films parsed",
+    "day-20-11-2026-dated: 2 films parsed",
+    "day-21-11-2026-dated: 2 films parsed",
     "advance: 15 films parsed",
     "kids: 3 films parsed",
     "luxx: 3 films parsed",
-    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
+    "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 17 ticket types, 6 bundles, 8 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
       {
-        "name": "Adult",
-        "price": "£9.00",
-        "days": [
-          "Fri",
-          "Sun",
-          "Mon",
-          "Wed",
-          "Thu",
-          "Sat"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Student",
-        "price": "£8.00",
-        "days": [
-          "Fri",
-          "Sun",
-          "Mon",
-          "Wed",
-          "Thu",
-          "Sat"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Senior",
-        "price": "£8.00",
-        "days": [
-          "Fri",
-          "Sun",
-          "Mon",
-          "Wed",
-          "Thu",
-          "Sat"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
         "name": "Child Galactic",
         "price": "£8.00",
         "days": [
-          "Sat"
+          "Sat",
+          "Sun",
+          "Fri"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
         "name": "Adult Galactic",
         "price": "£10.00",
         "days": [
-          "Sat"
+          "Sat",
+          "Sun",
+          "Fri"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
         "name": "Student Galactic",
         "price": "£9.00",
         "days": [
-          "Sat"
+          "Sat",
+          "Sun",
+          "Fri"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
         "name": "Family GALACTIC",
         "price": "£34.00",
         "days": [
-          "Sat"
+          "Sat",
+          "Sun",
+          "Fri"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
         "name": "Senior Galactic",
         "price": "£9.00",
         "days": [
-          "Sat"
+          "Sat",
+          "Sun",
+          "Fri"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
+      },
+      {
+        "name": "Adult",
+        "price": "£9.00",
+        "days": [
+          "Mon",
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening"
@@ -6929,24 +7330,44 @@
         "name": "Child",
         "price": "£7.00",
         "days": [
-          "Mon",
-          "Sat"
+          "Mon"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
+        ]
+      },
+      {
+        "name": "Student",
+        "price": "£8.00",
+        "days": [
+          "Mon",
+          "Wed",
+          "Thu"
+        ],
+        "seenOn": [
+          "evening"
         ]
       },
       {
         "name": "Family",
         "price": "£28.00",
         "days": [
-          "Mon",
-          "Sat"
+          "Mon"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
+        ]
+      },
+      {
+        "name": "Senior",
+        "price": "£8.00",
+        "days": [
+          "Mon",
+          "Wed",
+          "Thu"
+        ],
+        "seenOn": [
+          "evening"
         ]
       },
       {
@@ -7003,7 +7424,7 @@
         "name": "LUXX Recliner",
         "price": "£12.00",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7013,7 +7434,7 @@
         "name": "LUXX Student/OAP",
         "price": "£11.00",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7022,21 +7443,47 @@
     ],
     "bundles": [
       {
+        "name": "Medium Combo Bundle GalacticDetails1 Adult Ticket + a Medium Combo",
+        "price": "£16.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCBG.jpg",
+        "days": [
+          "Sat",
+          "Sun",
+          "Fri"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ],
+        "file": "data/products/t2mcbg.jpg"
+      },
+      {
+        "name": "Share Combo Bundle GalacticDetails2 Adult Tickets + a Share Combo",
+        "price": "£27.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCBG.jpg",
+        "days": [
+          "Sat",
+          "Sun",
+          "Fri"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ],
+        "file": "data/products/t2scbg.jpg"
+      },
+      {
         "name": "Medium Combo",
         "price": "£14.00",
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCB.jpg",
         "days": [
-          "Fri",
-          "Sun",
           "Mon",
           "Tue",
-          "Thu",
-          "Sat"
+          "Thu"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ],
         "file": "data/products/t2mcb.jpg"
       },
@@ -7046,43 +7493,15 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCB.jpg",
         "days": [
-          "Fri",
-          "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu",
-          "Sat"
+          "Thu"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ],
         "file": "data/products/t2scb.jpg"
-      },
-      {
-        "name": "Medium Combo Bundle GalacticDetails1 Adult Ticket + a Medium Combo",
-        "price": "£16.00",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCBG.jpg",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "evening"
-        ],
-        "file": "data/products/t2mcbg.jpg"
-      },
-      {
-        "name": "Share Combo Bundle GalacticDetails2 Adult Tickets + a Share Combo",
-        "price": "£27.00",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCBG.jpg",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "evening"
-        ],
-        "file": "data/products/t2scbg.jpg"
       },
       {
         "name": "Medium Combo LUXX",
@@ -7090,7 +7509,7 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7103,7 +7522,7 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7117,13 +7536,13 @@
         "price": "£0.80",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7138,13 +7557,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7159,13 +7578,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7180,13 +7599,13 @@
         "price": "£3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7201,13 +7620,13 @@
         "price": "£8.00",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7222,13 +7641,13 @@
         "price": "£8.00",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7243,13 +7662,13 @@
         "price": "£5.50",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7264,13 +7683,13 @@
         "price": "£11.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7281,18 +7700,18 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-12T22:44:49.661Z",
+    "checked": "2026-11-14T13:31:31.614Z",
     "sampledDays": [
-      "Fri",
       "Sat",
       "Sun",
       "Mon",
       "Tue",
       "Wed",
-      "Thu"
+      "Thu",
+      "Fri"
     ]
   },
-  "checked": "2026-11-12T22:45:03.548Z",
+  "checked": "2026-11-14T13:31:45.432Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

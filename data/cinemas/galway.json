@@ -2,8 +2,66 @@
   "id": "galway",
   "cinema": "IMC Galway",
   "source": "https://imc.ie/galway-headford-road",
-  "updated": "2026-11-12T22:51:33.136Z",
+  "updated": "2026-11-14T13:38:17.960Z",
   "today": [
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Arnie and Barney",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/116305.jpg",
+      "cert": "G",
+      "runtime": 77,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Sean Heuston",
+      "synopsis": "When a severe drought threatens their home, two imaginative ants join forces with a superhero mosquito to retrieve their meadow's stolen water in this fantasy adventure animation.",
+      "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
+      "date": "2026-11-14",
+      "times": [
+        "12:40",
+        "14:40"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178581",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "12:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178581",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "14:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178582",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "arnie-and-barney",
+      "posterFile": "data/posters/arnie-and-barney.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
     {
       "certSystem": "ifco",
       "certFile": "16",
@@ -19,35 +77,20 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
-        "15:35",
-        "18:05",
-        "20:35"
+        "18:15",
+        "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178251",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178569",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "15:35",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178251",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178569",
           "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178252",
-          "luxx": false,
-          "screen": "2",
+          "screen": "4",
           "threeD": false,
           "tags": [
             "released",
@@ -56,12 +99,12 @@
           ]
         },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178250",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178570",
           "luxx": false,
-          "screen": "2",
+          "screen": "4",
           "threeD": false,
           "tags": [
             "released",
@@ -73,6 +116,196 @@
       "slug": "clayface",
       "posterFile": "data/posters/clayface.jpg",
       "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "EBENEZER",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+      "cert": "12A",
+      "runtime": 120,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": "Ti West",
+      "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+      "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+      "date": "2026-11-14",
+      "times": [
+        "13:00",
+        "14:45",
+        "15:35",
+        "17:20",
+        "18:10",
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178583",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "13:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178583",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178657",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177858",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "17:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178659",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177859",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177860",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ebenezer",
+      "posterFile": "data/posters/ebenezer.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-14",
+      "times": [
+        "12:45",
+        "14:35",
+        "16:25"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178643",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "12:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178643",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "14:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178645",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "16:25",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178644",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -90,53 +323,53 @@
       "director": "Joel Crawford",
       "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
-        "14:05",
-        "15:10",
-        "15:40"
+        "12:45",
+        "15:15",
+        "17:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178428",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178580",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "14:05",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178428",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "15:10",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178296",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "12:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178580",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "15:40",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178687",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178574",
           "luxx": false,
-          "screen": "5",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178575",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
             "seating-standard"
           ]
         }
@@ -152,7 +385,7 @@
       "title": "Godzilla Minus Zero",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
       "cert": "15A",
       "runtime": 135,
@@ -161,37 +394,22 @@
       "director": "Takashi Yamazaki",
       "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
       "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
-        "16:55",
-        "20:00"
+        "20:05"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178348",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178552",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "16:55",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178348",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178552",
           "luxx": false,
-          "screen": "4",
+          "screen": "10",
           "threeD": false,
           "tags": [
-            "new",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178347",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "new",
+            "released",
             "evening",
             "seating-standard"
           ]
@@ -200,6 +418,77 @@
       "slug": "godzilla-minus-zero",
       "posterFile": "data/posters/godzilla-minus-zero.jpg",
       "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15",
+      "title": "How to Rob a Bank",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
+      "cert": "15",
+      "runtime": 121,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": null,
+      "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
+      "trailer": null,
+      "date": "2026-11-14",
+      "times": [
+        "15:00",
+        "17:45",
+        "20:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178533",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178533",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178534",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178535",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "how-to-rob-a-bank",
+      "posterFile": "data/posters/how-to-rob-a-bank.jpg",
+      "certIcon": null,
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -217,50 +506,21 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
-        "16:40",
-        "17:40",
-        "19:30",
-        "20:30"
+        "14:35",
+        "17:25",
+        "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178408",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178503",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178408",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "14:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178503",
           "luxx": false,
-          "screen": "8",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "17:40",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178295",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178407",
-          "luxx": false,
-          "screen": "8",
+          "screen": "2",
           "threeD": false,
           "tags": [
             "new",
@@ -269,12 +529,26 @@
           ]
         },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178294",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "17:25",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178504",
           "luxx": false,
-          "screen": "6",
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178505",
+          "luxx": false,
+          "screen": "2",
           "threeD": false,
           "tags": [
             "new",
@@ -303,32 +577,17 @@
       "director": "Javier Ambrossi, Javier Calvo",
       "synopsis": "The story of three men whose lives are intimately connected through desire, pain and inheritance, across three different eras ? 1932, 1937 and 2017.",
       "trailer": "https://www.youtube.com/watch?v=IRHtqjHYPew",
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
-        "16:35",
-        "20:00"
+        "16:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178365",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178551",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "16:35",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178365",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178366",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178551",
           "luxx": false,
           "screen": "10",
           "threeD": false,
@@ -346,43 +605,43 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "12A",
-      "title": "Onwards and Sideways",
+      "certFile": "15A",
+      "title": "Prima Facie",
       "luxx": false,
       "sensory": false,
       "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116498.jpg",
-      "cert": "12A",
-      "runtime": 115,
-      "release": "November 6, 2026",
-      "releaseDate": "2026-11-06",
-      "director": "John Madden",
-      "synopsis": "Tony Evans is deputy head of a primary school. Emma Kent is a musician and composer, and single mother of two daughters. Neither knows the other. until a startling encounter changes the course of their lives. On the same morning, these two are simultaneously confronted with a diagnosis of Parkinson?s Disease. This film is the story of Tony and Emma - a friendship which unfolds unexpectedly. A story of humour and emotion, of challenge and bravado, of music and dance - transcending the assumptions of a little understood condition, and triumphing over the odds to find joy, release and love.",
-      "trailer": "https://www.youtube.com/watch?v=MR5Nkdndv18",
-      "date": "2026-11-12",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
+      "cert": "15A",
+      "runtime": 109,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": null,
+      "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
+      "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
+      "date": "2026-11-14",
       "times": [
-        "20:25"
+        "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178375",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178660",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:25",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178375",
-          "luxx": false,
-          "screen": "9",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178660",
+          "luxx": true,
+          "screen": "5",
           "threeD": false,
           "tags": [
             "new",
             "evening",
-            "seating-standard"
+            "seating-lux"
           ]
         }
       ],
-      "slug": "onwards-and-sideways",
-      "posterFile": "data/posters/onwards-and-sideways.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
+      "slug": "prima-facie",
+      "posterFile": "data/posters/prima-facie.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -400,33 +659,20 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
+        "13:10",
         "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178213",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178584",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178213",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178215",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "13:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178584",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -437,10 +683,38 @@
           ]
         },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178485",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178486",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178214",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178487",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -458,47 +732,116 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "16",
-      "title": "The Restoration at Grayson Manor",
+      "certFile": "G",
+      "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/112568.jpg",
+      "cert": "G",
+      "runtime": 81,
+      "release": "September 12, 2026",
+      "releaseDate": "2026-09-12",
+      "director": "Steve Cox, Matthew Walker",
+      "synopsis": "Shaun The Sheep: The Beast Of Mossy Bottom sees the residents of Mossy Bottom Farm looking forward to Halloween - until the clumsy Farmer trashes the Flock's beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control... With The Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+      "trailer": "https://www.youtube.com/watch?v=UZ46Smi6mOw",
+      "date": "2026-11-14",
+      "times": [
+        "13:05"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178579",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "13:05",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178579",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "shaun-the-sheep-the-beast-of-mossy-bottom",
+      "posterFile": "data/posters/shaun-the-sheep-the-beast-of-mossy-bottom.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Tad and the Magic Lamp",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+      "cert": "G",
+      "runtime": 94,
+      "release": "October 17, 2026",
+      "releaseDate": "2026-10-17",
+      "director": "Enrique Gato",
+      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+      "trailer": null,
+      "date": "2026-11-14",
+      "times": [
+        "12:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178578",
+      "sessions": [
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "12:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178578",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "tad-and-the-magic-lamp",
+      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "18",
+      "title": "The Man Who Fell to Earth",
       "luxx": false,
       "sensory": false,
       "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/115583.jpg",
-      "cert": "16",
-      "runtime": 96,
-      "release": "November 6, 2026",
-      "releaseDate": "2026-11-06",
-      "director": "Glenn McQuaid",
-      "synopsis": "The foundations of Grayson Manor are shaken when an accident leaves Boyd Grayson handless and his mother invests in radical new technology to help him.",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
+      "cert": "18",
+      "runtime": 139,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": "Nicolas Roeg",
+      "synopsis": "THE MAN WHO FELL TO EARTH is a sci-fi drama, from 1976, about an alien who arrives on Earth and starts a lucrative technology company with a plan to return home.",
       "trailer": null,
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
-        "18:05",
-        "20:25"
+        "20:05"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178272",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178563",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178272",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:05",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178563",
           "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:25",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178456",
-          "luxx": false,
-          "screen": "7",
+          "screen": "9",
           "threeD": false,
           "tags": [
             "new",
@@ -507,9 +850,9 @@
           ]
         }
       ],
-      "slug": "the-restoration-at-grayson-manor",
-      "posterFile": "data/posters/the-restoration-at-grayson-manor.jpg",
-      "certIcon": "data/ratings/ifco-16.svg",
+      "slug": "the-man-who-fell-to-earth",
+      "posterFile": "data/posters/the-man-who-fell-to-earth.jpg",
+      "certIcon": "data/ratings/ifco-18.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -527,80 +870,39 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
-        "15:40"
+        "15:15",
+        "17:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178291",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178564",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "15:40",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178291",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178564",
           "luxx": false,
-          "screen": "7",
+          "screen": "9",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "wicker",
-      "posterFile": "data/posters/wicker.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "Wicker",
-      "luxx": true,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116687.jpg",
-      "cert": "15A",
-      "runtime": 105,
-      "release": "November 7, 2026",
-      "releaseDate": "2026-11-07",
-      "director": "Alex Huston Fischer, Eleanor Wilson",
-      "synopsis": "An ostracised fisherwoman commissions a local basketmaker to weave her a husband from wicker. When her extraordinary new companion comes to life, their unconventional relationship provokes jealousy and upheaval throughout their conservative seaside village.",
-      "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-12",
-      "times": [
-        "18:05",
-        "20:30"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178455",
-      "sessions": [
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178455",
-          "luxx": true,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "new",
             "evening",
-            "seating-lux"
+            "seating-standard"
           ]
         },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178454",
-          "luxx": true,
-          "screen": "5",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "17:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178565",
+          "luxx": false,
+          "screen": "9",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
-            "seating-lux"
+            "seating-standard"
           ]
         }
       ],
@@ -624,35 +926,21 @@
       "director": "Martin McDonagh",
       "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
       "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
-        "15:10",
-        "18:00",
-        "20:40"
+        "15:00",
+        "17:45",
+        "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177838",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178577",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "15:10",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177838",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178577",
           "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177839",
-          "luxx": false,
-          "screen": "3",
+          "screen": "7",
           "threeD": false,
           "tags": [
             "released",
@@ -661,12 +949,26 @@
           ]
         },
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177840",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178521",
           "luxx": false,
-          "screen": "3",
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178522",
+          "luxx": false,
+          "screen": "7",
           "threeD": false,
           "tags": [
             "released",
@@ -695,38 +997,23 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-11-12",
+      "date": "2026-11-14",
       "times": [
-        "14:45",
-        "17:35"
+        "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178421",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178576",
       "sessions": [
         {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178421",
+          "day": "Sat 14 November",
+          "date": "2026-11-14",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178576",
           "luxx": false,
-          "screen": "9",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 12 November",
-          "date": "2026-11-12",
-          "time": "17:35",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178420",
-          "luxx": false,
-          "screen": "9",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         }
@@ -738,736 +1025,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Thu 12 Nov",
-      "url": "https://imc.ie/film-times/galway-headford-road/12-11-2026#dateD",
-      "date": "2026-11-12",
-      "films": []
-    },
-    {
-      "label": "Fri 13 Nov",
-      "url": "https://imc.ie/film-times/galway-headford-road/13-11-2026#dateD",
-      "date": "2026-11-13",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Clayface",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
-          "cert": "16",
-          "runtime": 100,
-          "release": "October 25, 2026",
-          "releaseDate": "2026-10-25",
-          "director": null,
-          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-          "trailer": null,
-          "date": "2026-11-13",
-          "times": [
-            "15:45",
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178469",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178469",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178470",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178471",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "clayface",
-          "posterFile": "data/posters/clayface.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "EBENEZER",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "12A",
-          "runtime": 120,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Ti West",
-          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
-          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-          "date": "2026-11-13",
-          "times": [
-            "15:35",
-            "18:10",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177855",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "15:35",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177855",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177856",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177857",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ebenezer",
-          "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Godzilla Minus Zero",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
-          "cert": "15A",
-          "runtime": 135,
-          "release": "November 5, 2026",
-          "releaseDate": "2026-11-05",
-          "director": "Takashi Yamazaki",
-          "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
-          "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
-          "date": "2026-11-13",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178484",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178484",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "godzilla-minus-zero",
-          "posterFile": "data/posters/godzilla-minus-zero.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15",
-          "title": "How to Rob a Bank",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
-          "cert": "15",
-          "runtime": 121,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": null,
-          "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
-          "trailer": null,
-          "date": "2026-11-13",
-          "times": [
-            "15:00",
-            "17:45",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178477",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "15:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178477",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "17:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178478",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178479",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "how-to-rob-a-bank",
-          "posterFile": "data/posters/how-to-rob-a-bank.jpg",
-          "certIcon": null,
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "I Play Rocky",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "12A",
-          "runtime": 128,
-          "release": "November 11, 2026",
-          "releaseDate": "2026-11-11",
-          "director": "Peter Farrelly",
-          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
-          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-          "date": "2026-11-13",
-          "times": [
-            "15:00",
-            "17:50",
-            "20:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178466",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "15:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178466",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "17:50",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178467",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178468",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "i-play-rocky",
-          "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "La bola negra",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/116606.jpg",
-          "cert": "15A",
-          "runtime": 159,
-          "release": "November 2, 2026",
-          "releaseDate": "2026-11-02",
-          "director": "Javier Ambrossi, Javier Calvo",
-          "synopsis": "The story of three men whose lives are intimately connected through desire, pain and inheritance, across three different eras ? 1932, 1937 and 2017.",
-          "trailer": "https://www.youtube.com/watch?v=IRHtqjHYPew",
-          "date": "2026-11-13",
-          "times": [
-            "16:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178483",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "16:35",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178483",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "la-bola-negra",
-          "posterFile": "data/posters/la-bola-negra.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Prima Facie",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
-          "cert": "15A",
-          "runtime": 109,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": null,
-          "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
-          "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
-          "date": "2026-11-13",
-          "times": [
-            "15:20",
-            "18:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178626",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "15:20",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178626",
-              "luxx": true,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "matinee",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178689",
-              "luxx": true,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "prima-facie",
-          "posterFile": "data/posters/prima-facie.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "16",
-          "title": "Primetime",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/116591.jpg",
-          "cert": "16",
-          "runtime": 104,
-          "release": "October 31, 2026",
-          "releaseDate": "2026-10-31",
-          "director": "Lance Oppenheim",
-          "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-          "trailer": "https://www.youtube.com/watch?v=7-3tmdfYnKM",
-          "date": "2026-11-13",
-          "times": [
-            "15:45",
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178463",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178463",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178464",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178465",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "primetime",
-          "posterFile": "data/posters/primetime.jpg",
-          "certIcon": "data/ratings/ifco-16.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "18",
-          "title": "The Man Who Fell to Earth",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
-          "cert": "18",
-          "runtime": 139,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Nicolas Roeg",
-          "synopsis": "THE MAN WHO FELL TO EARTH is a sci-fi drama, from 1976, about an alien who arrives on Earth and starts a lucrative technology company with a plan to return home.",
-          "trailer": null,
-          "date": "2026-11-13",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178480",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178480",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-man-who-fell-to-earth",
-          "posterFile": "data/posters/the-man-who-fell-to-earth.jpg",
-          "certIcon": "data/ratings/ifco-18.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wicker",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "15A",
-          "runtime": 100,
-          "release": "October 30, 2026",
-          "releaseDate": "2026-10-30",
-          "director": "Alex Huston Fischer, Eleanor Wilson",
-          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-          "date": "2026-11-13",
-          "times": [
-            "15:10",
-            "17:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178481",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "15:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178481",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "17:35",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178482",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wicker",
-          "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Wild Horse Nine",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-          "cert": "15A",
-          "runtime": 117,
-          "release": "November 4, 2026",
-          "releaseDate": "2026-11-04",
-          "director": "Martin McDonagh",
-          "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-          "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-          "date": "2026-11-13",
-          "times": [
-            "15:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178661",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "15:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178661",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178476",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wild-horse-nine",
-          "posterFile": "data/posters/wild-horse-nine.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Wildwood",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
-          "cert": "12A",
-          "runtime": 131,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": null,
-          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
-          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-          "date": "2026-11-13",
-          "times": [
-            "15:00",
-            "17:50",
-            "20:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178472",
-          "sessions": [
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "15:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178472",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "17:50",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178473",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 13 November",
-              "date": "2026-11-13",
-              "time": "20:40",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178474",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wildwood",
-          "posterFile": "data/posters/wildwood.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
     {
       "label": "Sat 14 Nov",
       "url": "https://imc.ie/film-times/galway-headford-road/14-11-2026#dateD",
@@ -1490,26 +1047,10 @@
           "trailer": "https://www.youtube.com/watch?v=eh8NVGxEfuA",
           "date": "2026-11-14",
           "times": [
-            "12:40",
             "14:40"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178581",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178582",
           "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "12:40",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178581",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 14 November",
               "date": "2026-11-14",
@@ -1593,7 +1134,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -1604,7 +1145,6 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-14",
           "times": [
-            "12:10",
             "13:00",
             "14:45",
             "15:35",
@@ -1612,22 +1152,8 @@
             "18:10",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178658",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178583",
           "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "12:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178658",
-              "luxx": true,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Sat 14 November",
               "date": "2026-11-14",
@@ -1637,7 +1163,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1651,7 +1177,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1665,7 +1191,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1679,7 +1205,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1693,7 +1219,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1707,7 +1233,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1724,7 +1250,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -1735,43 +1261,11 @@
           "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
           "date": "2026-11-14",
           "times": [
-            "12:10",
-            "12:45",
             "14:35",
             "16:25"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178646",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178645",
           "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "12:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178646",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "12:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178643",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 14 November",
               "date": "2026-11-14",
@@ -1781,7 +1275,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1796,7 +1290,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1825,26 +1319,11 @@
           "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
           "date": "2026-11-14",
           "times": [
-            "12:45",
             "15:15",
             "17:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178580",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178574",
           "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "12:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178580",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 14 November",
               "date": "2026-11-14",
@@ -1926,7 +1405,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -1952,7 +1431,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1966,7 +1445,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1980,7 +1459,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2109,7 +1588,7 @@
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
@@ -2133,7 +1612,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2274,53 +1753,11 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Tad and the Magic Lamp",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-          "cert": "G",
-          "runtime": 94,
-          "release": "October 17, 2026",
-          "releaseDate": "2026-10-17",
-          "director": "Enrique Gato",
-          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-          "trailer": null,
-          "date": "2026-11-14",
-          "times": [
-            "12:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178578",
-          "sessions": [
-            {
-              "day": "Sat 14 November",
-              "date": "2026-11-14",
-              "time": "12:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178578",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "tad-and-the-magic-lamp",
-          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
           "certFile": "18",
           "title": "The Man Who Fell to Earth",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
           "cert": "18",
           "runtime": 139,
@@ -2344,7 +1781,7 @@
               "screen": "9",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2650,7 +2087,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -2680,7 +2117,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2694,7 +2131,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2708,7 +2145,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2722,7 +2159,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2736,7 +2173,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2750,7 +2187,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2764,7 +2201,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2781,7 +2218,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -2808,7 +2245,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -2823,7 +2260,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -2838,7 +2275,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -2853,7 +2290,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -2983,7 +2420,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -3009,7 +2446,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3023,7 +2460,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3037,7 +2474,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3166,7 +2603,7 @@
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
@@ -3190,7 +2627,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3377,7 +2814,7 @@
           "title": "The Man Who Fell to Earth",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
           "cert": "18",
           "runtime": 139,
@@ -3401,7 +2838,7 @@
               "screen": "9",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3664,7 +3101,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -3690,7 +3127,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -3704,7 +3141,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3718,7 +3155,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3776,7 +3213,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -3802,7 +3239,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -3816,7 +3253,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -3830,7 +3267,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3959,7 +3396,7 @@
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
@@ -3985,7 +3422,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-lux"
               ]
@@ -3999,7 +3436,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-lux"
               ]
@@ -4013,7 +3450,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -4392,7 +3829,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -4418,7 +3855,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -4432,7 +3869,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -4446,7 +3883,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -4504,7 +3941,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -4530,7 +3967,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -4544,7 +3981,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -4558,7 +3995,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -4687,7 +4124,7 @@
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
@@ -4713,7 +4150,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-lux"
               ]
@@ -4727,7 +4164,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-lux"
               ]
@@ -4741,7 +4178,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -5049,7 +4486,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -5075,7 +4512,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -5089,7 +4526,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -5103,7 +4540,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -5161,7 +4598,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -5187,7 +4624,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -5201,7 +4638,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -5215,7 +4652,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -5344,7 +4781,7 @@
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
@@ -5370,7 +4807,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-lux"
               ]
@@ -5384,7 +4821,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-lux"
               ]
@@ -5398,7 +4835,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -5721,7 +5158,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -5747,7 +5184,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -5761,7 +5198,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -5775,7 +5212,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -5833,7 +5270,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -5859,7 +5296,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -5873,7 +5310,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -5887,7 +5324,7 @@
               "screen": "8",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -6016,7 +5453,7 @@
           "title": "Prima Facie",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
           "cert": "15A",
           "runtime": 109,
@@ -6042,7 +5479,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-lux"
               ]
@@ -6056,7 +5493,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-lux"
               ]
@@ -6070,7 +5507,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -6378,6 +5815,259 @@
           "slug": "wild-horse-nine",
           "posterFile": "data/posters/wild-horse-nine.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Fri 20 Nov",
+      "url": "https://imc.ie/film-times/galway-headford-road/20-11-2026#dateD",
+      "date": "2026-11-20",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-20",
+          "times": [
+            "16:35",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178165",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "16:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178165",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178166",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "TBC",
+          "runtime": 176,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-20",
+          "times": [
+            "16:10",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177881",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177881",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177882",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sat 21 Nov",
+      "url": "https://imc.ie/film-times/galway-headford-road/21-11-2026#dateD",
+      "date": "2026-11-21",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-21",
+          "times": [
+            "13:10",
+            "16:35",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178177",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "13:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178177",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "16:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178167",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178168",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "TBC",
+          "runtime": 176,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-21",
+          "times": [
+            "16:10",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177883",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177883",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177884",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -10682,36 +10372,32 @@
     }
   ],
   "log": [
-    "galway-headford-road: no films on the film-times page",
-    "galway: no films on the film-times page",
     "home: 0 films parsed",
-    "today: 0 films parsed",
-    "day-12-11-2026-dated: 0 films parsed",
-    "day-13-11-2026-dated: 12 films parsed",
-    "day-14-11-2026-dated: 17 films parsed",
+    "today: 17 films parsed",
+    "day-14-11-2026-dated: 16 films parsed",
     "day-15-11-2026-dated: 17 films parsed",
     "day-16-11-2026-dated: 11 films parsed",
     "day-17-11-2026-dated: 11 films parsed",
     "day-18-11-2026-dated: 10 films parsed",
     "day-19-11-2026-dated: 10 films parsed",
+    "day-20-11-2026-dated: 2 films parsed",
+    "day-21-11-2026-dated: 2 films parsed",
     "advance: 11 films parsed",
     "kids: 4 films parsed",
     "luxx: 7 films parsed",
-    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
+    "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 17 ticket types, 4 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
       {
-        "name": "Adult Matinee",
-        "price": "€11.50",
+        "name": "Adult Evening",
+        "price": "€13.00",
         "days": [
-          "Fri",
-          "Mon",
-          "Tue",
-          "Wed"
+          "Sat",
+          "Sun",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -10722,12 +10408,12 @@
         "name": "Teen",
         "price": "€10.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -10735,28 +10421,28 @@
         ]
       },
       {
-        "name": "Child Matinee",
-        "price": "€9.50",
+        "name": "Child Evening",
+        "price": "€10.50",
         "days": [
-          "Fri",
-          "Mon",
-          "Tue",
-          "Wed"
+          "Sat",
+          "Sun",
+          "Fri"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
         "name": "Student",
         "price": "€7.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -10767,12 +10453,12 @@
         "name": "Family",
         "price": "€35.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -10783,12 +10469,12 @@
         "name": "OAP",
         "price": "€10.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -10796,22 +10482,24 @@
         ]
       },
       {
-        "name": "Adult Evening",
-        "price": "€13.00",
+        "name": "Adult Matinee",
+        "price": "€11.50",
         "days": [
-          "Sat",
-          "Sun"
+          "Mon",
+          "Tue",
+          "Wed"
         ],
         "seenOn": [
           "evening"
         ]
       },
       {
-        "name": "Child Evening",
-        "price": "€10.50",
+        "name": "Child Matinee",
+        "price": "€9.50",
         "days": [
-          "Sat",
-          "Sun"
+          "Mon",
+          "Tue",
+          "Wed"
         ],
         "seenOn": [
           "evening"
@@ -10894,7 +10582,7 @@
         "name": "LUXX Recliner",
         "price": "€15.50",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -10904,7 +10592,7 @@
         "name": "LUXX Child/Student/OAP",
         "price": "€12.50",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -10918,12 +10606,12 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -10937,13 +10625,13 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -10957,7 +10645,7 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -10970,7 +10658,7 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -10984,13 +10672,13 @@
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -11005,13 +10693,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -11026,13 +10714,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -11047,13 +10735,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -11068,13 +10756,13 @@
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -11089,13 +10777,13 @@
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -11110,13 +10798,13 @@
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -11131,13 +10819,13 @@
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -11152,13 +10840,13 @@
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -11169,18 +10857,18 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-12T22:51:59.919Z",
+    "checked": "2026-11-14T13:38:42.575Z",
     "sampledDays": [
-      "Fri",
       "Sat",
       "Sun",
       "Mon",
       "Tue",
       "Wed",
-      "Thu"
+      "Thu",
+      "Fri"
     ]
   },
-  "checked": "2026-11-12T22:52:13.898Z",
+  "checked": "2026-11-14T13:38:56.069Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
