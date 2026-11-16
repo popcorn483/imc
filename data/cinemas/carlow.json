@@ -2,8 +2,64 @@
   "id": "carlow",
   "cinema": "IMC Carlow",
   "source": "https://imc.ie/carlow",
-  "updated": "2026-11-15T21:54:24.878Z",
+  "updated": "2026-11-16T15:50:22.007Z",
   "today": [
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Clayface",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+      "cert": "16",
+      "runtime": 100,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+      "trailer": null,
+      "date": "2026-11-16",
+      "times": [
+        "18:00",
+        "20:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137653",
+      "sessions": [
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137653",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137744",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "clayface",
+      "posterFile": "data/posters/clayface.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
     {
       "certSystem": "ifco",
       "certFile": "12A",
@@ -19,17 +75,62 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-15",
+      "date": "2026-11-16",
       "times": [
+        "15:30",
+        "17:05",
+        "18:05",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137191",
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137646",
       "sessions": [
         {
-          "day": "Sun 15 November",
-          "date": "2026-11-15",
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137646",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "17:05",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137659",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "18:05",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137647",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
           "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137191",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137645",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -44,15 +145,447 @@
       "posterFile": "data/posters/ebenezer.jpg",
       "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-16",
+      "times": [
+        "15:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137651",
+      "sessions": [
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137651",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Godzilla Minus Zero",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
+      "cert": "15A",
+      "runtime": 135,
+      "release": "November 5, 2026",
+      "releaseDate": "2026-11-05",
+      "director": "Takashi Yamazaki",
+      "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
+      "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
+      "date": "2026-11-16",
+      "times": [
+        "20:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137660",
+      "sessions": [
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137660",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "godzilla-minus-zero",
+      "posterFile": "data/posters/godzilla-minus-zero.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15",
+      "title": "How to Rob a Bank",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
+      "cert": "15",
+      "runtime": 121,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": null,
+      "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
+      "trailer": null,
+      "date": "2026-11-16",
+      "times": [
+        "15:35",
+        "18:05",
+        "20:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137655",
+      "sessions": [
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137655",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "18:05",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137656",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137654",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "how-to-rob-a-bank",
+      "posterFile": "data/posters/how-to-rob-a-bank.jpg",
+      "certIcon": null,
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "I Play Rocky",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+      "cert": "12A",
+      "runtime": 128,
+      "release": "November 11, 2026",
+      "releaseDate": "2026-11-11",
+      "director": "Peter Farrelly",
+      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+      "date": "2026-11-16",
+      "times": [
+        "15:15",
+        "17:25",
+        "20:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137644",
+      "sessions": [
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "15:15",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137644",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "17:25",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137547",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137548",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "i-play-rocky",
+      "posterFile": "data/posters/i-play-rocky.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Prima Facie",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
+      "cert": "15A",
+      "runtime": 109,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": null,
+      "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
+      "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
+      "date": "2026-11-16",
+      "times": [
+        "15:15",
+        "17:45",
+        "20:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137713",
+      "sessions": [
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "15:15",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137713",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137715",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137714",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "prima-facie",
+      "posterFile": "data/posters/prima-facie.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Primetime",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+      "cert": "16",
+      "runtime": 109,
+      "release": "October 28, 2026",
+      "releaseDate": "2026-10-28",
+      "director": "Lance Oppenheim",
+      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+      "date": "2026-11-16",
+      "times": [
+        "15:30",
+        "18:00",
+        "20:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137650",
+      "sessions": [
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137650",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137648",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137649",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "primetime",
+      "posterFile": "data/posters/primetime.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Wicker",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+      "cert": "15A",
+      "runtime": 100,
+      "release": "October 30, 2026",
+      "releaseDate": "2026-10-30",
+      "director": "Alex Huston Fischer, Eleanor Wilson",
+      "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+      "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+      "date": "2026-11-16",
+      "times": [
+        "15:20",
+        "18:00",
+        "20:20"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137643",
+      "sessions": [
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "15:20",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137643",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137658",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 16 November",
+          "date": "2026-11-16",
+          "time": "20:20",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137657",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "wicker",
+      "posterFile": "data/posters/wicker.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "days": [
-    {
-      "label": "Sun 15 Nov",
-      "url": "https://imc.ie/film-times/carlow/15-11-2026#dateD",
-      "date": "2026-11-15",
-      "films": []
-    },
     {
       "label": "Mon 16 Nov",
       "url": "https://imc.ie/film-times/carlow/16-11-2026#dateD",
@@ -2415,6 +2948,231 @@
       "films": [
         {
           "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-20",
+          "times": [
+            "17:45",
+            "20:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137769",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137769",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:25",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137777",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-20",
+          "times": [
+            "15:30",
+            "17:20",
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137774",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137774",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "17:20",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137767",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137775",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137776",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-20",
+          "times": [
+            "15:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137779",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137779",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-20",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137771",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137771",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "12A",
           "title": "The Hunger Games: Sunrise On The Reaping",
           "luxx": false,
@@ -2501,6 +3259,62 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-20",
+          "times": [
+            "15:30",
+            "18:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137772",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137772",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137778",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "TBC",
           "title": "You can see everything",
           "luxx": false,
@@ -2516,11 +3330,56 @@
           "trailer": null,
           "date": "2026-11-20",
           "times": [
+            "10:45",
+            "10:50",
+            "15:00",
             "16:00",
             "19:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137194",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137766",
           "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "10:45",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137766",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "10:50",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137773",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "15:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137770",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Fri 20 November",
               "date": "2026-11-20",
@@ -2562,6 +3421,451 @@
       "url": "https://imc.ie/film-times/carlow/21-11-2026#dateD",
       "date": "2026-11-21",
       "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-21",
+          "times": [
+            "17:45",
+            "20:55"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137791",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137791",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:55",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137780",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-21",
+          "times": [
+            "12:15",
+            "13:00",
+            "14:50",
+            "15:30",
+            "17:20",
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137782",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137782",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137797",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "14:50",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137783",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137790",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "17:20",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137789",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137796",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137781",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa - Sensory Screening",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families.",
+          "trailer": null,
+          "date": "2026-11-21",
+          "times": [
+            "11:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137799",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "11:45",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137799",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard",
+                "sensory"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-sensory-screening",
+          "posterFile": "data/posters/festive-fun-with-peppa-sensory-screening.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa Cinema Experience",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+          "date": "2026-11-21",
+          "times": [
+            "12:45",
+            "14:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137785",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:45",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137785",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "14:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137798",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-cinema-experience",
+          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-21",
+          "times": [
+            "12:15",
+            "14:30",
+            "15:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137787",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137787",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "14:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137788",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137792",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-21",
+          "times": [
+            "20:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137784",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:25",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137784",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "G",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-11-21",
+          "times": [
+            "12:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137786",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:35",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137786",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
         {
           "certSystem": "ifco",
           "certFile": "12A",
@@ -2680,6 +3984,47 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-21",
+          "times": [
+            "18:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137794",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137794",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "TBC",
           "title": "You can see everything",
           "luxx": false,
@@ -2695,11 +4040,41 @@
           "trailer": null,
           "date": "2026-11-21",
           "times": [
+            "12:35",
+            "15:00",
             "16:00",
             "19:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137196",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137795",
           "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:35",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137795",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "15:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137793",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -2741,6 +4116,451 @@
       "url": "https://imc.ie/film-times/carlow/22-11-2026#dateD",
       "date": "2026-11-22",
       "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-22",
+          "times": [
+            "17:45",
+            "20:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137812",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137812",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "20:25",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137802",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-22",
+          "times": [
+            "12:15",
+            "13:00",
+            "14:50",
+            "15:30",
+            "17:20",
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137805",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137805",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137809",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "14:50",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137806",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137808",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "17:20",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137807",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137800",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137801",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa - Sensory Screening",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families.",
+          "trailer": null,
+          "date": "2026-11-22",
+          "times": [
+            "11:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137810",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "11:45",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137810",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard",
+                "sensory"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-sensory-screening",
+          "posterFile": "data/posters/festive-fun-with-peppa-sensory-screening.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa Cinema Experience",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+          "date": "2026-11-22",
+          "times": [
+            "12:45",
+            "14:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137811",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "12:45",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137811",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "14:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137814",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-cinema-experience",
+          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-22",
+          "times": [
+            "12:15",
+            "14:30",
+            "15:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137817",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137817",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "14:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137818",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137813",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-22",
+          "times": [
+            "20:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137816",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "20:25",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137816",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "Monster Mia",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/114059.jpg",
+          "cert": "G",
+          "runtime": 81,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "Expelled student Mia and her pet rat Quentin arrive at Rotwood Academy, where she's the only human among monster classmates. With Principal Van Vlad's hatred of humans, she must team up with monsters to thwart his schemes.",
+          "trailer": null,
+          "date": "2026-11-22",
+          "times": [
+            "13:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137803",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137803",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "monster-mia",
+          "posterFile": "data/posters/monster-mia.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
         {
           "certSystem": "ifco",
           "certFile": "12A",
@@ -2859,6 +4679,47 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-22",
+          "times": [
+            "18:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137819",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137819",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "TBC",
           "title": "You can see everything",
           "luxx": false,
@@ -2874,11 +4735,41 @@
           "trailer": null,
           "date": "2026-11-22",
           "times": [
+            "12:35",
+            "15:00",
             "16:00",
             "19:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137205",
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137804",
           "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "12:35",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137804",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "15:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137815",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sun 22 November",
               "date": "2026-11-22",
@@ -2898,6 +4789,466 @@
               "date": "2026-11-22",
               "time": "19:35",
               "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137204",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Mon 23 Nov",
+      "url": "https://imc.ie/film-times/carlow/23-11-2026#dateD",
+      "date": "2026-11-23",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "16",
+          "title": "Clayface",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
+          "cert": "16",
+          "runtime": 100,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
+          "trailer": null,
+          "date": "2026-11-23",
+          "times": [
+            "17:45",
+            "20:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137825",
+          "sessions": [
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137825",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "20:25",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137829",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "clayface",
+          "posterFile": "data/posters/clayface.jpg",
+          "certIcon": "data/ratings/ifco-16.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-23",
+          "times": [
+            "15:30",
+            "17:20",
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137822",
+          "sessions": [
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137822",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "17:20",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137821",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137823",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137824",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-23",
+          "times": [
+            "15:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137826",
+          "sessions": [
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137826",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-23",
+          "times": [
+            "17:30",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137820",
+          "sessions": [
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "17:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137820",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137827",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-23",
+          "times": [
+            "16:00",
+            "16:40",
+            "19:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137563",
+          "sessions": [
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "16:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137563",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "16:40",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137367",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137564",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137368",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Wicker",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
+          "cert": "15A",
+          "runtime": 100,
+          "release": "October 30, 2026",
+          "releaseDate": "2026-10-30",
+          "director": "Alex Huston Fischer, Eleanor Wilson",
+          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
+          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
+          "date": "2026-11-23",
+          "times": [
+            "15:30",
+            "18:00",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137828",
+          "sessions": [
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137828",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137830",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137831",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wicker",
+          "posterFile": "data/posters/wicker.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "TBC",
+          "runtime": 176,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before sheÂ’s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-23",
+          "times": [
+            "16:00",
+            "19:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137198",
+          "sessions": [
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "16:00",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137198",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "19:35",
+              "book": "https://booking.imc.ie/booking/?cinema=carlow&stage=tickets&perf=137199",
               "luxx": false,
               "screen": "2",
               "threeD": false,
@@ -7055,15 +9406,15 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 1 films parsed",
-    "day-15-11-2026-dated: 0 films parsed",
+    "today: 9 films parsed",
     "day-16-11-2026-dated: 9 films parsed",
     "day-17-11-2026-dated: 9 films parsed",
     "day-18-11-2026-dated: 10 films parsed",
     "day-19-11-2026-dated: 10 films parsed",
-    "day-20-11-2026-dated: 2 films parsed",
-    "day-21-11-2026-dated: 2 films parsed",
-    "day-22-11-2026-dated: 2 films parsed",
+    "day-20-11-2026-dated: 7 films parsed",
+    "day-21-11-2026-dated: 10 films parsed",
+    "day-22-11-2026-dated: 10 films parsed",
+    "day-23-11-2026-dated: 7 films parsed",
     "advance: 12 films parsed",
     "kids: 5 films parsed",
     "luxx: 0 films parsed",
@@ -7079,7 +9430,8 @@
         "days": [
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7108,7 +9460,8 @@
         "days": [
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7170,8 +9523,7 @@
           "Mon",
           "Tue",
           "Wed",
-          "Thu",
-          "Sun"
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -7185,7 +9537,8 @@
           "Tue"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -7212,7 +9565,6 @@
         "name": "Adult Peak",
         "price": "€12.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun"
         ],
@@ -7224,7 +9576,6 @@
         "name": "Child Peak",
         "price": "€10.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun"
         ],
@@ -7236,7 +9587,7 @@
         "name": "Kids Club",
         "price": "€5.00",
         "days": [
-          "Mon"
+          "Tue"
         ],
         "seenOn": [
           "kids"
@@ -7246,7 +9597,7 @@
         "name": "Kids Club Adult",
         "price": "€5.00",
         "days": [
-          "Mon"
+          "Tue"
         ],
         "seenOn": [
           "kids"
@@ -7256,7 +9607,7 @@
         "name": "Kids Club Meal Deal",
         "price": "€9.50",
         "days": [
-          "Mon"
+          "Tue"
         ],
         "seenOn": [
           "kids"
@@ -7546,7 +9897,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-15T21:54:50.961Z",
+    "checked": "2026-11-16T15:50:48.040Z",
     "sampledDays": [
       "Mon",
       "Tue",
@@ -7557,7 +9908,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-15T21:55:04.169Z",
+  "checked": "2026-11-16T15:51:00.923Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

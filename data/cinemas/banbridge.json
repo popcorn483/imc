@@ -2,7 +2,7 @@
   "id": "banbridge",
   "cinema": "IMC Banbridge",
   "source": "https://imc.ie/banbridge",
-  "updated": "2026-11-15T21:50:21.371Z",
+  "updated": "2026-11-16T15:46:20.484Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -170,12 +170,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Sun 15 Nov",
-      "url": "https://imc.ie/film-times/banbridge/15-11-2026#dateD",
-      "date": "2026-11-15",
-      "films": []
-    },
     {
       "label": "Mon 16 Nov",
       "url": "https://imc.ie/film-times/banbridge/16-11-2026#dateD",
@@ -815,6 +809,12 @@
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
+    },
+    {
+      "label": "Mon 23 Nov",
+      "url": "https://imc.ie/film-times/banbridge/23-11-2026#dateD",
+      "date": "2026-11-23",
+      "films": []
     }
   ],
   "comingSoon": [
@@ -2865,9 +2865,9 @@
     }
   ],
   "log": [
+    "banbridge: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 4 films parsed",
-    "day-15-11-2026-dated: 0 films parsed",
+    "today: 0 films parsed",
     "day-16-11-2026-dated: 0 films parsed",
     "day-17-11-2026-dated: 0 films parsed",
     "day-18-11-2026-dated: 5 films parsed",
@@ -2875,11 +2875,13 @@
     "day-20-11-2026-dated: 1 films parsed",
     "day-21-11-2026-dated: 1 films parsed",
     "day-22-11-2026-dated: 1 films parsed",
+    "day-23-11-2026-dated: 0 films parsed",
     "advance: 12 films parsed",
     "kids: 2 films parsed",
     "luxx: 0 films parsed",
     "booking pages read: 6 (Wed, Thu, Fri, Sat, Sun)",
     "prices: 1 ticket types, 0 bundles, 8 products",
+    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -3039,7 +3041,7 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-15T21:50:49.531Z",
+    "checked": "2026-11-16T15:46:47.036Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -3048,7 +3050,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-15T21:50:58.568Z",
+  "checked": "2026-11-16T15:46:55.468Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

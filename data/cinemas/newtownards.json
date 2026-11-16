@@ -2,7 +2,7 @@
   "id": "newtownards",
   "cinema": "IMC Newtownards",
   "source": "https://imc.ie/newtownards",
-  "updated": "2026-11-15T21:50:58.571Z",
+  "updated": "2026-11-16T15:46:55.471Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -252,12 +252,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Sun 15 Nov",
-      "url": "https://imc.ie/film-times/newtownards/15-11-2026#dateD",
-      "date": "2026-11-15",
-      "films": []
-    },
     {
       "label": "Mon 16 Nov",
       "url": "https://imc.ie/film-times/newtownards/16-11-2026#dateD",
@@ -822,6 +816,118 @@
         {
           "certSystem": "bbfc",
           "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-20",
+          "times": [
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54286",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54286",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54287",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-20",
+          "times": [
+            "18:00",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54288",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54288",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54283",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
           "title": "The Hunger Games: Sunrise On The Reaping",
           "luxx": false,
           "sensory": false,
@@ -836,10 +942,40 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-20",
           "times": [
+            "18:30",
+            "19:15",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54104",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54289",
           "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "18:30",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54289",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54285",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Fri 20 November",
               "date": "2026-11-20",
@@ -911,6 +1047,295 @@
         {
           "certSystem": "bbfc",
           "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-21",
+          "times": [
+            "13:00",
+            "15:35",
+            "18:10",
+            "20:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54298",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54298",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54299",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54300",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:40",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54305",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa Cinema Experience",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+          "date": "2026-11-21",
+          "times": [
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:20"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54306",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54306",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:30",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54304",
+              "luxx": false,
+              "screen": "02",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "13:30",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54301",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54290",
+              "luxx": false,
+              "screen": "02",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-cinema-experience",
+          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+          "certIcon": "data/ratings/bbfc-G.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-21",
+          "times": [
+            "14:35",
+            "17:25",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54293",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "14:35",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54293",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54292",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54291",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "U",
+          "title": "Tad and the Magic Lamp",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
+          "cert": "U",
+          "runtime": 94,
+          "release": "October 17, 2026",
+          "releaseDate": "2026-10-17",
+          "director": "Enrique Gato",
+          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
+          "trailer": null,
+          "date": "2026-11-21",
+          "times": [
+            "12:20"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54294",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:20",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54294",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "tad-and-the-magic-lamp",
+          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
+          "certIcon": "data/ratings/bbfc-U.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
           "title": "The Hunger Games: Sunrise On The Reaping",
           "luxx": false,
           "sensory": false,
@@ -925,12 +1350,31 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
+            "12:35",
             "13:20",
+            "15:10",
+            "16:00",
             "16:40",
+            "18:30",
+            "19:15",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54106",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54295",
           "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:35",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54295",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -938,6 +1382,34 @@
               "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54106",
               "luxx": false,
               "screen": "01",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "15:10",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54302",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "16:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54296",
+              "luxx": false,
+              "screen": "04",
               "threeD": false,
               "tags": [
                 "advance",
@@ -956,6 +1428,34 @@
               "tags": [
                 "advance",
                 "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "18:30",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54303",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54297",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
                 "seating-standard"
               ]
             },
@@ -1170,6 +1670,12 @@
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
+    },
+    {
+      "label": "Mon 23 Nov",
+      "url": "https://imc.ie/film-times/newtownards/23-11-2026#dateD",
+      "date": "2026-11-23",
+      "films": []
     }
   ],
   "comingSoon": [
@@ -3562,21 +4068,23 @@
     }
   ],
   "log": [
+    "newtownards: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 6 films parsed",
-    "day-15-11-2026-dated: 0 films parsed",
+    "today: 0 films parsed",
     "day-16-11-2026-dated: 0 films parsed",
     "day-17-11-2026-dated: 0 films parsed",
     "day-18-11-2026-dated: 5 films parsed",
     "day-19-11-2026-dated: 5 films parsed",
-    "day-20-11-2026-dated: 2 films parsed",
-    "day-21-11-2026-dated: 2 films parsed",
+    "day-20-11-2026-dated: 4 films parsed",
+    "day-21-11-2026-dated: 6 films parsed",
     "day-22-11-2026-dated: 2 films parsed",
+    "day-23-11-2026-dated: 0 films parsed",
     "advance: 8 films parsed",
     "kids: 3 films parsed",
     "luxx: 0 films parsed",
-    "booking pages read: 6 (Wed, Thu, Fri, Sat, Sun)",
-    "prices: 7 ticket types, 2 bundles, 8 products",
+    "booking pages read: 7 (Wed, Thu, Fri, Sat, Sun)",
+    "prices: 10 ticket types, 2 bundles, 8 products",
+    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -3598,8 +4106,7 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
@@ -3613,8 +4120,7 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
@@ -3627,6 +4133,7 @@
         "days": [
           "Wed",
           "Thu",
+          "Fri",
           "Sat"
         ],
         "seenOn": [
@@ -3641,8 +4148,7 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
@@ -3655,6 +4161,7 @@
         "days": [
           "Wed",
           "Thu",
+          "Fri",
           "Sat"
         ],
         "seenOn": [
@@ -3669,12 +4176,41 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
           "matinee"
+        ]
+      },
+      {
+        "name": "Kids Club",
+        "price": "£3.40",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Adult",
+        "price": "£3.40",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Meal Deal",
+        "price": "£7.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
         ]
       }
     ],
@@ -3688,8 +4224,7 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
@@ -3705,8 +4240,7 @@
         "days": [
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
@@ -3724,12 +4258,12 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/flexi.jpg"
       },
@@ -3741,12 +4275,12 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/maltesers.jpg"
       },
@@ -3758,12 +4292,12 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/minstrels.jpg"
       },
@@ -3775,12 +4309,12 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/ttc.jpg"
       },
@@ -3792,12 +4326,12 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/combotest.jpg"
       },
@@ -3809,12 +4343,12 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/lccc.jpg"
       },
@@ -3826,12 +4360,12 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/onkt.jpg"
       },
@@ -3843,17 +4377,17 @@
           "Wed",
           "Thu",
           "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-15T21:51:24.992Z",
+    "checked": "2026-11-16T15:47:22.021Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -3862,7 +4396,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-15T21:51:34.351Z",
+  "checked": "2026-11-16T15:47:32.641Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
