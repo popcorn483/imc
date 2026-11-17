@@ -2,7 +2,7 @@
   "id": "banbridge",
   "cinema": "IMC Banbridge",
   "source": "https://imc.ie/banbridge",
-  "updated": "2026-11-17T00:49:33.749Z",
+  "updated": "2026-11-17T16:00:27.183Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -637,13 +637,166 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-20",
+          "times": [
+            "18:10",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48693",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48693",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48694",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-20",
+          "times": [
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48692",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48692",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-20",
+          "times": [
+            "19:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48691",
+          "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48691",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48690",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
-          "cert": "TBC",
+          "cert": "15",
           "runtime": 176,
           "release": "November 20, 2026",
           "releaseDate": "2026-11-20",
@@ -673,7 +826,7 @@
           ],
           "slug": "you-can-see-everything",
           "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -685,13 +838,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "15",
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
-          "cert": "TBC",
+          "cert": "15",
           "runtime": 176,
           "release": "November 20, 2026",
           "releaseDate": "2026-11-20",
@@ -736,7 +889,7 @@
           ],
           "slug": "you-can-see-everything",
           "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -748,13 +901,13 @@
       "films": [
         {
           "certSystem": "bbfc",
-          "certFile": "TBC",
+          "certFile": "15",
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
           "status": "Coming Soon",
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
-          "cert": "TBC",
+          "cert": "15",
           "runtime": 176,
           "release": "November 20, 2026",
           "releaseDate": "2026-11-20",
@@ -799,7 +952,7 @@
           ],
           "slug": "you-can-see-everything",
           "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certIcon": "data/ratings/bbfc-15.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -2871,7 +3024,7 @@
     "day-17-11-2026-dated: 0 films parsed",
     "day-18-11-2026-dated: 5 films parsed",
     "day-19-11-2026-dated: 5 films parsed",
-    "day-20-11-2026-dated: 1 films parsed",
+    "day-20-11-2026-dated: 4 films parsed",
     "day-21-11-2026-dated: 1 films parsed",
     "day-22-11-2026-dated: 1 films parsed",
     "day-23-11-2026-dated: 0 films parsed",
@@ -3041,7 +3194,7 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-17T00:50:01.046Z",
+    "checked": "2026-11-17T16:00:53.536Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -3050,7 +3203,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-17T00:50:10.181Z",
+  "checked": "2026-11-17T16:01:01.838Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
