@@ -2,7 +2,7 @@
   "id": "banbridge",
   "cinema": "IMC Banbridge",
   "source": "https://imc.ie/banbridge",
-  "updated": "2026-11-17T16:00:27.183Z",
+  "updated": "2026-11-18T15:40:56.997Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -19,17 +19,32 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-15",
+      "date": "2026-11-18",
       "times": [
+        "18:10",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48507",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48510",
       "sessions": [
         {
-          "day": "Sun 15 November",
-          "date": "2026-11-15",
+          "day": "Wed 18 November",
+          "date": "2026-11-18",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48510",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 18 November",
+          "date": "2026-11-18",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48507",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48511",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -60,17 +75,17 @@
       "director": null,
       "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
       "trailer": null,
-      "date": "2026-11-15",
+      "date": "2026-11-18",
       "times": [
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48672",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48683",
       "sessions": [
         {
-          "day": "Sun 15 November",
-          "date": "2026-11-15",
+          "day": "Wed 18 November",
+          "date": "2026-11-18",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48672",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48683",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -101,17 +116,17 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-15",
+      "date": "2026-11-18",
       "times": [
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48670",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48682",
       "sessions": [
         {
-          "day": "Sun 15 November",
-          "date": "2026-11-15",
+          "day": "Wed 18 November",
+          "date": "2026-11-18",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48670",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48682",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -142,17 +157,17 @@
       "director": null,
       "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
       "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
-      "date": "2026-11-15",
+      "date": "2026-11-18",
       "times": [
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48677",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48684",
       "sessions": [
         {
-          "day": "Sun 15 November",
-          "date": "2026-11-15",
+          "day": "Wed 18 November",
+          "date": "2026-11-18",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48677",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48684",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -170,12 +185,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Tue 17 Nov",
-      "url": "https://imc.ie/film-times/banbridge/17-11-2026#dateD",
-      "date": "2026-11-17",
-      "films": []
-    },
     {
       "label": "Wed 18 Nov",
       "url": "https://imc.ie/film-times/banbridge/18-11-2026#dateD",
@@ -358,47 +367,6 @@
           "slug": "prima-facie",
           "posterFile": "data/posters/prima-facie.jpg",
           "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 18, 2026",
-          "releaseDate": "2026-11-18",
-          "director": null,
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-18",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48685",
-          "sessions": [
-            {
-              "day": "Wed 18 November",
-              "date": "2026-11-18",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48685",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -838,6 +806,353 @@
       "films": [
         {
           "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-21",
+          "times": [
+            "13:00",
+            "15:35",
+            "18:10",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48707",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48707",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48708",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48709",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48710",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa Cinema Experience",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+          "date": "2026-11-21",
+          "times": [
+            "12:40",
+            "13:00",
+            "14:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48695",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:40",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48695",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48749",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "14:25",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48696",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-cinema-experience",
+          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+          "certIcon": "data/ratings/bbfc-G.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-21",
+          "times": [
+            "14:35",
+            "17:25",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48704",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "14:35",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48704",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48705",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48706",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-21",
+          "times": [
+            "12:15",
+            "13:20",
+            "15:55",
+            "16:40",
+            "19:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48700",
+          "sessions": [
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48700",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "13:20",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48697",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "15:55",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48701",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "16:40",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48698",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48702",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 21 November",
+              "date": "2026-11-21",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48699",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
           "certFile": "15",
           "title": "You can see everything",
           "luxx": false,
@@ -899,6 +1214,353 @@
       "url": "https://imc.ie/film-times/banbridge/22-11-2026#dateD",
       "date": "2026-11-22",
       "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-22",
+          "times": [
+            "13:00",
+            "15:35",
+            "18:10",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48711",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48711",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48712",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48713",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48714",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa Cinema Experience",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+          "date": "2026-11-22",
+          "times": [
+            "12:40",
+            "13:00",
+            "14:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48716",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "12:40",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48716",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48715",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "14:25",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48717",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-cinema-experience",
+          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+          "certIcon": "data/ratings/bbfc-G.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "I Play Rocky",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+          "cert": "12A",
+          "runtime": 128,
+          "release": "November 11, 2026",
+          "releaseDate": "2026-11-11",
+          "director": "Peter Farrelly",
+          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+          "date": "2026-11-22",
+          "times": [
+            "14:35",
+            "17:25",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48724",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "14:35",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48724",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48725",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48726",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "i-play-rocky",
+          "posterFile": "data/posters/i-play-rocky.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-22",
+          "times": [
+            "12:15",
+            "13:20",
+            "15:55",
+            "16:40",
+            "19:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48721",
+          "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48721",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "13:20",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48718",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "15:55",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48722",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "16:40",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48719",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48723",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48720",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
         {
           "certSystem": "bbfc",
           "certFile": "15",
@@ -968,6 +1630,222 @@
       "url": "https://imc.ie/film-times/banbridge/24-11-2026#dateD",
       "date": "2026-11-24",
       "films": []
+    },
+    {
+      "label": "Wed 25 Nov",
+      "url": "https://imc.ie/film-times/banbridge/25-11-2026#dateD",
+      "date": "2026-11-25",
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-25",
+          "times": [
+            "18:10",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48731",
+          "sessions": [
+            {
+              "day": "Wed 25 November",
+              "date": "2026-11-25",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48731",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 25 November",
+              "date": "2026-11-25",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48732",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 25, 2026",
+          "releaseDate": "2026-11-25",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-25",
+          "times": [
+            "18:15",
+            "19:45",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48727",
+          "sessions": [
+            {
+              "day": "Wed 25 November",
+              "date": "2026-11-25",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48727",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 25 November",
+              "date": "2026-11-25",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48729",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 25 November",
+              "date": "2026-11-25",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48728",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-25",
+          "times": [
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48730",
+          "sessions": [
+            {
+              "day": "Wed 25 November",
+              "date": "2026-11-25",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48730",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "15",
+          "runtime": 176,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-25",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48484",
+          "sessions": [
+            {
+              "day": "Wed 25 November",
+              "date": "2026-11-25",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48484",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -3018,23 +3896,21 @@
     }
   ],
   "log": [
-    "banbridge: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-17-11-2026-dated: 0 films parsed",
-    "day-18-11-2026-dated: 5 films parsed",
+    "today: 4 films parsed",
+    "day-18-11-2026-dated: 4 films parsed",
     "day-19-11-2026-dated: 5 films parsed",
     "day-20-11-2026-dated: 4 films parsed",
-    "day-21-11-2026-dated: 1 films parsed",
-    "day-22-11-2026-dated: 1 films parsed",
+    "day-21-11-2026-dated: 5 films parsed",
+    "day-22-11-2026-dated: 5 films parsed",
     "day-23-11-2026-dated: 0 films parsed",
     "day-24-11-2026-dated: 0 films parsed",
+    "day-25-11-2026-dated: 4 films parsed",
     "advance: 12 films parsed",
     "kids: 2 films parsed",
     "luxx: 0 films parsed",
-    "booking pages read: 6 (Wed, Thu, Fri, Sat, Sun)",
-    "prices: 1 ticket types, 0 bundles, 8 products",
-    "kept previous today",
+    "booking pages read: 8 (Wed, Thu, Fri, Sat, Sun)",
+    "prices: 4 ticket types, 0 bundles, 8 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -3053,6 +3929,36 @@
           "evening",
           "matinee"
         ]
+      },
+      {
+        "name": "Kids Club",
+        "price": "£3.40",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Adult",
+        "price": "£3.40",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Meal Deal",
+        "price": "£7.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
       }
     ],
     "bundles": [],
@@ -3070,7 +3976,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/flexi.jpg"
       },
@@ -3087,7 +3994,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/maltesers.jpg"
       },
@@ -3104,7 +4012,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/minstrels.jpg"
       },
@@ -3121,7 +4030,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/ttc.jpg"
       },
@@ -3138,7 +4048,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/combotest.jpg"
       },
@@ -3155,7 +4066,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/lccc.jpg"
       },
@@ -3172,7 +4084,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/onkt.jpg"
       },
@@ -3189,12 +4102,13 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-17T16:00:53.536Z",
+    "checked": "2026-11-18T15:41:22.451Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -3203,7 +4117,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-17T16:01:01.838Z",
+  "checked": "2026-11-18T15:41:33.480Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
