@@ -2,64 +2,80 @@
   "id": "santry",
   "cinema": "IMC Santry",
   "source": "https://imc.ie/santry",
-  "updated": "2026-11-19T23:46:47.089Z",
+  "updated": "2026-11-20T15:37:44.613Z",
   "today": [
     {
       "certSystem": "ifco",
-      "certFile": "16",
-      "title": "Clayface",
+      "certFile": "15A",
+      "title": "A TALENT FOR MURDER",
       "luxx": false,
       "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/110406.jpg",
-      "cert": "16",
-      "runtime": 100,
-      "release": "October 23, 2026",
-      "releaseDate": "2026-10-23",
-      "director": null,
-      "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
-      "trailer": null,
-      "date": "2026-11-19",
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116791.jpg",
+      "cert": "15A",
+      "runtime": 106,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": "Anton Corbijn",
+      "synopsis": "A mysterious young man from a New York publisher is sent to Switzerland to persuade the renowned writer Patricia Highsmith to write one final instalment of the Ripley anthology.",
+      "trailer": "https://www.youtube.com/watch?v=IzFgGhFrx0o",
+      "date": "2026-11-20",
       "times": [
         "14:50",
-        "17:20"
+        "17:10",
+        "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209904",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210149",
       "sessions": [
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
           "time": "14:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209904",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210149",
           "luxx": false,
-          "screen": "2",
+          "screen": "10",
           "threeD": false,
           "tags": [
-            "released",
+            "new",
             "matinee",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "17:20",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209905",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "17:10",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210150",
           "luxx": false,
-          "screen": "2",
+          "screen": "10",
           "threeD": false,
           "tags": [
-            "released",
+            "new",
             "matinee",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210151",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         }
       ],
-      "slug": "clayface",
-      "posterFile": "data/posters/clayface.jpg",
-      "certIcon": "data/ratings/ifco-16.svg",
+      "slug": "a-talent-for-murder",
+      "posterFile": "data/posters/a-talent-for-murder.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -68,7 +84,7 @@
       "title": "EBENEZER",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
       "cert": "12A",
       "runtime": 120,
@@ -77,70 +93,54 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "times": [
         "15:30",
-        "17:00",
         "18:00",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209056",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210029",
       "sessions": [
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
           "time": "15:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209056",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "17:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209910",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210029",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "matinee",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
           "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209054",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210030",
           "luxx": false,
-          "screen": "3",
+          "screen": "5",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209055",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210031",
           "luxx": false,
-          "screen": "3",
+          "screen": "5",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "seating-standard"
@@ -150,106 +150,6 @@
       "slug": "ebenezer",
       "posterFile": "data/posters/ebenezer.jpg",
       "certIcon": "data/ratings/ifco-12A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "Godzilla Minus Zero",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/114956.jpg",
-      "cert": "15A",
-      "runtime": 135,
-      "release": "November 5, 2026",
-      "releaseDate": "2026-11-05",
-      "director": "Takashi Yamazaki",
-      "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant. There is no third time. Everything ends here.",
-      "trailer": "https://www.youtube.com/watch?v=kw0YhiqOPFg",
-      "date": "2026-11-19",
-      "times": [
-        "19:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209911",
-      "sessions": [
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209911",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "godzilla-minus-zero",
-      "posterFile": "data/posters/godzilla-minus-zero.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "15",
-      "title": "How to Rob a Bank",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
-      "cert": "15",
-      "runtime": 121,
-      "release": "November 13, 2026",
-      "releaseDate": "2026-11-13",
-      "director": null,
-      "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
-      "trailer": null,
-      "date": "2026-11-19",
-      "times": [
-        "17:20",
-        "20:00"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209917",
-      "sessions": [
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "17:20",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209917",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209916",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "how-to-rob-a-bank",
-      "posterFile": "data/posters/how-to-rob-a-bank.jpg",
-      "certIcon": null,
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -267,53 +167,40 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "times": [
-        "14:45",
-        "17:30",
+        "17:20",
         "20:10"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209539",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210033",
       "sessions": [
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209539",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "17:20",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210033",
           "luxx": false,
-          "screen": "1",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "released",
             "matinee",
+            "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209540",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
           "time": "20:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209541",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210035",
           "luxx": false,
-          "screen": "1",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "released",
             "evening",
+            "unallocated",
             "seating-standard"
           ]
         }
@@ -326,116 +213,42 @@
     {
       "certSystem": "ifco",
       "certFile": "15A",
-      "title": "La bola negra",
+      "title": "NASZA REWOLUCJA",
       "luxx": false,
       "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/116606.jpg",
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/117319.jpg",
       "cert": "15A",
-      "runtime": 159,
-      "release": "November 6, 2026",
-      "releaseDate": "2026-11-06",
-      "director": "Javier Ambrossi, Javier Calvo",
-      "synopsis": "The story of three men whose lives are intimately connected through desire, pain and inheritance, across three different eras ? 1932, 1937 and 2017.",
-      "trailer": "https://www.youtube.com/watch?v=IRHtqjHYPew",
-      "date": "2026-11-19",
+      "runtime": 125,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": "Piotr Domalewski",
+      "synopsis": "Jacek and Grayna Kuro believe that together they can change their country. As their home becomes a meeting place for Poland?s opposition, the fight for freedom puts their family and their love under growing pressure. Imprisonment keeps them apart, and martial law brings painful choices. Against a backdrop of political repression, they struggle to protect the bond that gives their commitment its meaning.",
+      "trailer": "https://www.youtube.com/watch?v=XBcpjKavW7Q",
+      "date": "2026-11-20",
       "times": [
-        "16:15"
+        "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209980",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210049",
       "sessions": [
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "16:15",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209980",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210049",
           "luxx": false,
           "screen": "11",
           "threeD": false,
           "tags": [
-            "released",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "la-bola-negra",
-      "posterFile": "data/posters/la-bola-negra.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "Prima Facie",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
-      "cert": "15A",
-      "runtime": 109,
-      "release": "November 13, 2026",
-      "releaseDate": "2026-11-13",
-      "director": null,
-      "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
-      "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
-      "date": "2026-11-19",
-      "times": [
-        "15:10",
-        "17:30",
-        "19:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209908",
-      "sessions": [
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "15:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209908",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209906",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209907",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "new",
+            "advance",
             "evening",
             "unallocated",
             "seating-standard"
           ]
         }
       ],
-      "slug": "prima-facie",
-      "posterFile": "data/posters/prima-facie.jpg",
+      "slug": "nasza-rewolucja",
+      "posterFile": "data/posters/nasza-rewolucja.jpg",
       "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
@@ -454,51 +267,19 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "times": [
-        "15:25",
-        "17:50",
         "20:20"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209924",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210039",
       "sessions": [
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "15:25",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209924",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "17:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209925",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
           "time": "20:20",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209926",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210039",
           "luxx": false,
-          "screen": "10",
+          "screen": "7",
           "threeD": false,
           "tags": [
             "released",
@@ -528,17 +309,97 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "times": [
-        "19:50"
+        "14:45",
+        "16:00",
+        "16:40",
+        "18:15",
+        "19:15",
+        "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209903",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210028",
       "sessions": [
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "19:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209903",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210028",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "16:00",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209574",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209575",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210027",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "19:15",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209573",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209572",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -557,48 +418,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "18",
-      "title": "The Man Who Fell to Earth",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/115979.jpg",
-      "cert": "18",
-      "runtime": 139,
-      "release": "November 13, 2026",
-      "releaseDate": "2026-11-13",
-      "director": "Nicolas Roeg",
-      "synopsis": "THE MAN WHO FELL TO EARTH is a sci-fi drama, from 1976, about an alien who arrives on Earth and starts a lucrative technology company with a plan to return home.",
-      "trailer": null,
-      "date": "2026-11-19",
-      "times": [
-        "19:30"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209981",
-      "sessions": [
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209981",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "the-man-who-fell-to-earth",
-      "posterFile": "data/posters/the-man-who-fell-to-earth.jpg",
-      "certIcon": "data/ratings/ifco-18.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "15A",
       "title": "Wicker",
       "luxx": false,
@@ -612,19 +431,19 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "times": [
-        "15:30",
-        "17:45",
-        "20:00"
+        "15:40",
+        "18:00",
+        "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209919",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210051",
       "sessions": [
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "15:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209919",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "15:40",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210051",
           "luxx": false,
           "screen": "8",
           "threeD": false,
@@ -635,24 +454,24 @@
           ]
         },
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "17:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209918",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210041",
           "luxx": false,
           "screen": "8",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209920",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210044",
           "luxx": false,
           "screen": "8",
           "threeD": false,
@@ -670,86 +489,106 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "Wild Horse Nine",
+      "certFile": "12A",
+      "title": "Wildwood",
       "luxx": false,
       "sensory": false,
       "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/115977.jpg",
-      "cert": "15A",
-      "runtime": 117,
-      "release": "November 4, 2026",
-      "releaseDate": "2026-11-04",
-      "director": "Martin McDonagh",
-      "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
-      "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-19",
+      "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+      "cert": "12A",
+      "runtime": 131,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+      "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+      "date": "2026-11-20",
       "times": [
-        "15:00",
-        "17:30",
-        "20:00"
+        "16:50"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209913",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210046",
       "sessions": [
         {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "15:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209913",
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "16:50",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210046",
           "luxx": false,
-          "screen": "6",
+          "screen": "11",
           "threeD": false,
           "tags": [
             "released",
             "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209912",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 19 November",
-          "date": "2026-11-19",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209914",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
             "unallocated",
             "seating-standard"
           ]
         }
       ],
-      "slug": "wild-horse-nine",
-      "posterFile": "data/posters/wild-horse-nine.jpg",
+      "slug": "wildwood",
+      "posterFile": "data/posters/wildwood.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "You can see everything",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+      "cert": "15A",
+      "runtime": 176,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": "Nathan Fielder",
+      "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+      "trailer": null,
+      "date": "2026-11-20",
+      "times": [
+        "16:00",
+        "19:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208981",
+      "sessions": [
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "16:00",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208981",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Fri 20 November",
+          "date": "2026-11-20",
+          "time": "19:30",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208982",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        }
+      ],
+      "slug": "you-can-see-everything",
+      "posterFile": "data/posters/you-can-see-everything.jpg",
       "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "days": [
-    {
-      "label": "Thu 19 Nov",
-      "url": "https://imc.ie/film-times/santry/19-11-2026#dateD",
-      "date": "2026-11-19",
-      "films": []
-    },
     {
       "label": "Fri 20 Nov",
       "url": "https://imc.ie/film-times/santry/20-11-2026#dateD",
@@ -1078,10 +917,26 @@
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-20",
           "times": [
+            "14:20",
             "20:20"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210039",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210052",
           "sessions": [
+            {
+              "day": "Fri 20 November",
+              "date": "2026-11-20",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210052",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Fri 20 November",
               "date": "2026-11-20",
@@ -1409,7 +1264,7 @@
           "title": "A TALENT FOR MURDER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116791.jpg",
           "cert": "15A",
           "runtime": 106,
@@ -1435,7 +1290,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1450,7 +1305,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1465,7 +1320,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1483,7 +1338,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -1510,7 +1365,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1525,7 +1380,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1540,7 +1395,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1555,7 +1410,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1707,7 +1562,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -1731,7 +1586,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2256,7 +2111,7 @@
           "title": "A TALENT FOR MURDER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116791.jpg",
           "cert": "15A",
           "runtime": 106,
@@ -2282,7 +2137,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2297,7 +2152,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2312,7 +2167,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2330,7 +2185,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -2357,7 +2212,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2372,7 +2227,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2387,7 +2242,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2402,7 +2257,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3061,7 +2916,7 @@
           "title": "A TALENT FOR MURDER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116791.jpg",
           "cert": "15A",
           "runtime": 106,
@@ -3087,7 +2942,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -3102,7 +2957,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -3117,7 +2972,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3177,7 +3032,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -3203,7 +3058,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -3218,7 +3073,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3233,7 +3088,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3251,7 +3106,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -3275,7 +3130,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -5101,7 +4956,7 @@
           "title": "A TALENT FOR MURDER",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116791.jpg",
           "cert": "15A",
           "runtime": 106,
@@ -5127,7 +4982,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -5142,7 +4997,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -5157,7 +5012,7 @@
               "screen": "10",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -5217,7 +5072,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -5243,7 +5098,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -5258,7 +5113,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -5273,7 +5128,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -5365,7 +5220,7 @@
           "title": "How to Rob a Bank",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
           "cert": "15",
           "runtime": 121,
@@ -5389,7 +5244,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -5767,353 +5622,90 @@
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
+    },
+    {
+      "label": "Fri 27 Nov",
+      "url": "https://imc.ie/film-times/santry/27-11-2026#dateD",
+      "date": "2026-11-27",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 25, 2026",
+          "releaseDate": "2026-11-25",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-27",
+          "times": [
+            "15:45",
+            "18:10",
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209550",
+          "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209550",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209552",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209551",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
-    {
-      "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "A TALENT FOR MURDER",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116791.jpg",
-      "cert": "15A",
-      "runtime": 106,
-      "release": "November 20, 2026",
-      "releaseDate": "2026-11-20",
-      "director": "Anton Corbijn",
-      "synopsis": "A mysterious young man from a New York publisher is sent to Switzerland to persuade the renowned writer Patricia Highsmith to write one final instalment of the Ripley anthology.",
-      "trailer": "https://www.youtube.com/watch?v=IzFgGhFrx0o",
-      "date": "2026-11-20",
-      "times": [
-        "14:50",
-        "17:10",
-        "19:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210149",
-      "sessions": [
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "14:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210149",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210150",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210151",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "14:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210146",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210147",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210148",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 22 November",
-          "date": "2026-11-22",
-          "time": "14:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210152",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 22 November",
-          "date": "2026-11-22",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210153",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 22 November",
-          "date": "2026-11-22",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210154",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
-          "time": "14:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210155",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210156",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210157",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
-          "time": "14:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210158",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210159",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210160",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 25 November",
-          "date": "2026-11-25",
-          "time": "14:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210161",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 25 November",
-          "date": "2026-11-25",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210162",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 25 November",
-          "date": "2026-11-25",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210163",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "14:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210164",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210165",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210166",
-          "luxx": false,
-          "screen": "10",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "a-talent-for-murder",
-      "posterFile": "data/posters/a-talent-for-murder.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
     {
       "certSystem": "ifco",
       "certFile": "PG",
@@ -8345,10 +7937,8 @@
     }
   ],
   "log": [
-    "santry: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-19-11-2026-dated: 0 films parsed",
+    "today: 9 films parsed",
     "day-20-11-2026-dated: 10 films parsed",
     "day-21-11-2026-dated: 12 films parsed",
     "day-22-11-2026-dated: 11 films parsed",
@@ -8356,12 +7946,12 @@
     "day-24-11-2026-dated: 10 films parsed",
     "day-25-11-2026-dated: 10 films parsed",
     "day-26-11-2026-dated: 10 films parsed",
-    "advance: 9 films parsed",
+    "day-27-11-2026-dated: 1 films parsed",
+    "advance: 8 films parsed",
     "kids: 2 films parsed",
     "luxx: 0 films parsed",
     "booking pages read: 9 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
     "prices: 15 ticket types, 2 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -8406,7 +7996,8 @@
           "Wed"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -8776,7 +8367,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-19T23:47:12.940Z",
+    "checked": "2026-11-20T15:38:09.214Z",
     "sampledDays": [
       "Fri",
       "Sat",
@@ -8787,7 +8378,7 @@
       "Thu"
     ]
   },
-  "checked": "2026-11-19T23:47:26.085Z",
+  "checked": "2026-11-20T15:38:21.331Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
