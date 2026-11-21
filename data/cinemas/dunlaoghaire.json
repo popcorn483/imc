@@ -2,7 +2,7 @@
   "id": "dunlaoghaire",
   "cinema": "IMC Dún Laoghaire",
   "source": "https://imc.ie/dun-laoghaire",
-  "updated": "2026-11-20T23:13:09.492Z",
+  "updated": "2026-11-21T14:46:49.389Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -10,7 +10,7 @@
       "title": "A TALENT FOR MURDER",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116791.jpg",
       "cert": "15A",
       "runtime": 106,
@@ -19,37 +19,22 @@
       "director": "Anton Corbijn",
       "synopsis": "A mysterious young man from a New York publisher is sent to Switzerland to persuade the renowned writer Patricia Highsmith to write one final instalment of the Ripley anthology.",
       "trailer": "https://www.youtube.com/watch?v=IzFgGhFrx0o",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "15:45",
-        "20:45"
+        "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239681",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239684",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239681",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239684",
           "luxx": false,
           "screen": "13",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239682",
-          "luxx": false,
-          "screen": "13",
-          "threeD": false,
-          "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -62,11 +47,181 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "EBENEZER",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+      "cert": "12A",
+      "runtime": 120,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": "Ti West",
+      "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+      "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+      "date": "2026-11-21",
+      "times": [
+        "13:00",
+        "15:35",
+        "18:10",
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239649",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239649",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239525",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239526",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239527",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ebenezer",
+      "posterFile": "data/posters/ebenezer.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-21",
+      "times": [
+        "13:35"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239651",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:35",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239651",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-21",
+      "times": [
+        "14:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239711",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239711",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "15A",
       "title": "Heysel 85",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/117298.jpg",
       "cert": "15A",
       "runtime": 91,
@@ -75,54 +230,70 @@
       "director": "Teodora Mihai",
       "synopsis": null,
       "trailer": "https://www.youtube.com/watch?v=YqZOBFfsk0g",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "13:30",
         "15:45",
         "18:00",
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239724",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239736",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239724",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:30",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239736",
           "luxx": false,
           "screen": "14",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239725",
-          "luxx": false,
-          "screen": "14",
-          "threeD": false,
-          "tags": [
-            "advance",
+            "new",
             "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239726",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239737",
           "luxx": false,
           "screen": "14",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239738",
+          "luxx": false,
+          "screen": "14",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239739",
+          "luxx": false,
+          "screen": "14",
+          "threeD": false,
+          "tags": [
+            "new",
             "evening",
             "unallocated",
             "seating-standard"
@@ -140,7 +311,7 @@
       "title": "How to Rob a Bank",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
       "cert": "15",
       "runtime": 121,
@@ -149,23 +320,23 @@
       "director": null,
       "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "17:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239628",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239630",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "17:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239628",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239630",
           "luxx": false,
-          "screen": "11",
+          "screen": "8",
           "threeD": false,
           "tags": [
-            "new",
-            "matinee",
+            "released",
+            "evening",
             "seating-standard"
           ]
         }
@@ -190,47 +361,32 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "14:35",
-        "17:25",
-        "20:20"
+        "13:30",
+        "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239495",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239498",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "14:35",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239495",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:30",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239498",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:25",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239496",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:20",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239497",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239751",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -261,32 +417,32 @@
       "director": "Beth de Araújo",
       "synopsis": "After eight-year-old Josephine witnesses a violent assault in San Francisco?s Golden Gate Park, the trauma begins to reshape her world, and her fear and confusion slowly unravel the household around her. Channing Tatum and Gemma Chan star as her parents in Beth de Araújo?s acclaimed drama, winner of both the Grand Jury Prize and the Audience Award at the 2026 Sundance Film Festival.",
       "trailer": "https://www.youtube.com/watch?v=d7NLG3IfowQ",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "14:40",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239663",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239665",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "14:40",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239663",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239665",
           "luxx": false,
           "screen": "9",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239664",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239666",
           "luxx": false,
           "screen": "9",
           "threeD": false,
@@ -317,23 +473,23 @@
       "director": "Javier Ambrossi, Javier Calvo",
       "synopsis": "The story of three men whose lives are intimately connected through desire, pain and inheritance, across three different eras ? 1932, 1937 and 2017.",
       "trailer": "https://www.youtube.com/watch?v=IRHtqjHYPew",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "17:20"
+        "17:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239599",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239600",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:20",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239599",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239600",
           "luxx": false,
           "screen": "9",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         }
@@ -349,7 +505,7 @@
       "title": "NASZA REWOLUCJA",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/117319.jpg",
       "cert": "15A",
       "runtime": 125,
@@ -358,22 +514,22 @@
       "director": "Piotr Domalewski",
       "synopsis": "Jacek and Grayna Kuro believe that together they can change their country. As their home becomes a meeting place for Poland?s opposition, the fight for freedom puts their family and their love under growing pressure. Imprisonment keeps them apart, and martial law brings painful choices. Against a backdrop of political repression, they struggle to protect the bond that gives their commitment its meaning.",
       "trailer": "https://www.youtube.com/watch?v=XBcpjKavW7Q",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239658",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239659",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239658",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239659",
           "luxx": false,
           "screen": "12",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -399,38 +555,38 @@
       "director": "Yuval Abraham, Rachel Szor",
       "synopsis": "Shot at night on the rooftops of Tel Aviv, the film reveals in detail the systems behind Israel?s calculated mass killing of Palestinian civilians in Gaza.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "15:15",
+        "14:10",
         "16:10"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239566",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239587",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "15:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239566",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "16:10",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239586",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:10",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239587",
           "luxx": false,
           "screen": "8",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239588",
+          "luxx": false,
+          "screen": "13",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
             "seating-standard"
           ]
         }
@@ -446,7 +602,7 @@
       "title": "Om Chapter 1: Udhiram The Blood Wood (Tamil)",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/117297.jpg",
       "cert": "TBC",
       "runtime": 176,
@@ -455,22 +611,22 @@
       "director": "Rajkumar Periasamy",
       "synopsis": "An emotional drama set in a gritty world where criminals and law enforcement operate side by side, and greed, power and poverty fuel violence and bloodshed.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239677",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239678",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239677",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239678",
           "luxx": false,
           "screen": "11",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -496,33 +652,19 @@
       "director": "Lance Oppenheim",
       "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
       "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239543",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239545",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239543",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239563",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239545",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -533,10 +675,24 @@
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239546",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239544",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239547",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -567,23 +723,23 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "17:10"
+        "17:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239719",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239712",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:10",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239719",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239712",
           "luxx": false,
           "screen": "12",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         }
@@ -599,7 +755,7 @@
       "title": "The Hunger Games: Sunrise On The Reaping - Galactic",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116796.jpg",
       "cert": "12A",
       "runtime": 158,
@@ -608,38 +764,54 @@
       "director": "Francis Lawrence",
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "12:40",
         "16:00",
         "19:25"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239017",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239032",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "16:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239017",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "12:40",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239032",
           "luxx": false,
           "screen": "3",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-standard",
             "screen-galactic"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "19:25",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239018",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239019",
           "luxx": false,
           "screen": "3",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
+            "evening",
+            "seating-standard",
+            "screen-galactic"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "19:25",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239020",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
             "evening",
             "seating-standard",
             "screen-galactic"
@@ -657,7 +829,7 @@
       "title": "The Hunger Games: Sunrise On The Reaping -",
       "luxx": true,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
       "cert": "12A",
       "runtime": 158,
@@ -666,37 +838,52 @@
       "director": "Francis Lawrence",
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "13:20",
         "16:40",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239001",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239031",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239001",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:20",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239031",
           "luxx": true,
           "screen": "2",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239002",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239005",
           "luxx": true,
           "screen": "2",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239006",
+          "luxx": true,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
             "evening",
             "seating-lux"
           ]
@@ -722,47 +909,47 @@
       "director": "Martin McDonagh",
       "synopsis": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students threatens to send everyone's trip to this remote paradise sideways.",
       "trailer": "https://www.youtube.com/watch?v=Haw_sznA5aQ",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "15:10",
+        "14:15",
         "17:50",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239606",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239609",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "15:10",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239606",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239609",
           "luxx": false,
-          "screen": "10",
+          "screen": "12",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "17:50",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239607",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239610",
           "luxx": false,
           "screen": "10",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239608",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239611",
           "luxx": false,
           "screen": "10",
           "threeD": false,
@@ -793,32 +980,17 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "17:15",
-        "20:00"
+        "17:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239564",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239567",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "17:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239564",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239565",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239567",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -840,7 +1012,7 @@
       "title": "You can see everything",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
       "cert": "15A",
       "runtime": 176,
@@ -849,37 +1021,52 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "18:00",
+        "14:00",
+        "16:30",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239723",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239753",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239723",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239753",
           "luxx": false,
-          "screen": "5",
+          "screen": "11",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:30",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239759",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239749",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239750",
           "luxx": false,
           "screen": "8",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -896,7 +1083,7 @@
       "title": "You Can See Everything",
       "luxx": true,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
       "cert": "15A",
       "runtime": 174,
@@ -905,37 +1092,37 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "16:10",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239074",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239076",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "16:10",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239074",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239076",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239075",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239077",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-lux"
           ]
@@ -945,15 +1132,50 @@
       "posterFile": "data/posters/you-can-see-everything.jpg",
       "certIcon": "data/ratings/ifco-15A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Your Mother Your Mother Your Mother",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116897.jpg",
+      "cert": "15A",
+      "runtime": 111,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": "Bassam Tariq",
+      "synopsis": "From writer-director Bassam Tariq, Your Mother, Your Mother, Your Mother stars Mahershala Ali as Latif, a devoutly religious hitman who struggles to balance work, faith, and fatherhood. When his wife dies, he embarks on a desperate journey across Houston to protect his children, confronting the forces closing in around him - and the beliefs threatening to unravel within.",
+      "trailer": "https://www.youtube.com/watch?v=uEcoV-ngH38",
+      "date": "2026-11-21",
+      "times": [
+        "18:05"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239479",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:05",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239479",
+          "luxx": false,
+          "screen": "13",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "your-mother-your-mother-your-mother",
+      "posterFile": "data/posters/your-mother-your-mother-your-mother.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "days": [
-    {
-      "label": "Fri 20 Nov",
-      "url": "https://imc.ie/film-times/dun-laoghaire/20-11-2026#dateD",
-      "date": "2026-11-20",
-      "films": []
-    },
     {
       "label": "Sat 21 Nov",
       "url": "https://imc.ie/film-times/dun-laoghaire/21-11-2026#dateD",
@@ -1006,7 +1228,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -1033,7 +1255,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1047,7 +1269,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1061,7 +1283,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1075,7 +1297,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1092,7 +1314,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -1103,26 +1325,10 @@
           "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
           "date": "2026-11-21",
           "times": [
-            "12:05",
             "13:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239650",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239651",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:05",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239650",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -1132,7 +1338,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1161,26 +1367,10 @@
           "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
           "date": "2026-11-21",
           "times": [
-            "12:15",
             "14:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239708",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239711",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239708",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -1309,32 +1499,17 @@
           "trailer": null,
           "date": "2026-11-21",
           "times": [
-            "14:15",
             "17:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239629",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239630",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "14:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239629",
-              "luxx": false,
-              "screen": "11",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
               "time": "17:00",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239630",
               "luxx": false,
-              "screen": "11",
+              "screen": "8",
               "threeD": false,
               "tags": [
                 "released",
@@ -1584,7 +1759,7 @@
               "time": "16:10",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239588",
               "luxx": false,
-              "screen": "8",
+              "screen": "13",
               "threeD": false,
               "tags": [
                 "released",
@@ -1768,27 +1943,11 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "12:40",
             "16:00",
             "19:25"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239032",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239019",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:40",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239032",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -2037,7 +2196,7 @@
               "time": "14:00",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239753",
               "luxx": false,
-              "screen": "10",
+              "screen": "11",
               "threeD": false,
               "tags": [
                 "new",
@@ -2152,25 +2311,10 @@
           "trailer": "https://www.youtube.com/watch?v=uEcoV-ngH38",
           "date": "2026-11-21",
           "times": [
-            "15:25",
             "18:05"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239763",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239479",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "15:25",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239763",
-              "luxx": false,
-              "screen": "13",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -2245,7 +2389,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -2272,7 +2416,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2286,7 +2430,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2300,7 +2444,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2314,7 +2458,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2331,7 +2475,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -2356,7 +2500,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -2371,7 +2515,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -2783,32 +2927,17 @@
           "trailer": null,
           "date": "2026-11-22",
           "times": [
-            "14:10",
             "16:10"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239589",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239590",
           "sessions": [
-            {
-              "day": "Sun 22 November",
-              "date": "2026-11-22",
-              "time": "14:10",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239589",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sun 22 November",
               "date": "2026-11-22",
               "time": "16:10",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239590",
               "luxx": false,
-              "screen": "8",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "released",
@@ -2880,26 +3009,11 @@
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-22",
           "times": [
-            "15:45",
             "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239548",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239549",
           "sessions": [
-            {
-              "day": "Sun 22 November",
-              "date": "2026-11-22",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239548",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sun 22 November",
               "date": "2026-11-22",
@@ -2951,10 +3065,25 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-22",
           "times": [
+            "13:50",
             "17:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239713",
+          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239766",
           "sessions": [
+            {
+              "day": "Sun 22 November",
+              "date": "2026-11-22",
+              "time": "13:50",
+              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239766",
+              "luxx": false,
+              "screen": "12",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sun 22 November",
               "date": "2026-11-22",
@@ -3261,7 +3390,7 @@
               "time": "13:25",
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239755",
               "luxx": false,
-              "screen": "12",
+              "screen": "8",
               "threeD": false,
               "tags": [
                 "new",
@@ -3391,8 +3520,7 @@
           "trailer": "https://www.youtube.com/watch?v=uEcoV-ngH38",
           "date": "2026-11-22",
           "times": [
-            "18:05",
-            "20:15"
+            "18:05"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239481",
           "sessions": [
@@ -3403,20 +3531,6 @@
               "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239481",
               "luxx": false,
               "screen": "13",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 22 November",
-              "date": "2026-11-22",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239482",
-              "luxx": false,
-              "screen": "7",
               "threeD": false,
               "tags": [
                 "new",
@@ -3514,7 +3628,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -3540,7 +3654,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "seating-standard"
               ]
@@ -3554,7 +3668,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3568,7 +3682,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -4527,7 +4641,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -4553,7 +4667,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "seating-standard"
               ]
@@ -4567,7 +4681,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -4581,7 +4695,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -5536,7 +5650,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -5562,7 +5676,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "seating-standard"
               ]
@@ -5576,7 +5690,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -5590,7 +5704,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -6549,7 +6663,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -6575,7 +6689,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "seating-standard"
               ]
@@ -6589,7 +6703,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -6603,7 +6717,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -7423,6 +7537,12 @@
       "label": "Fri 27 Nov",
       "url": "https://imc.ie/film-times/dun-laoghaire/27-11-2026#dateD",
       "date": "2026-11-27",
+      "films": []
+    },
+    {
+      "label": "Sat 28 Nov",
+      "url": "https://imc.ie/film-times/dun-laoghaire/28-11-2026#dateD",
+      "date": "2026-11-28",
       "films": []
     }
   ],
@@ -9052,7 +9172,7 @@
       "title": "Festive Fun with Peppa Cinema Experience",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
       "cert": "G",
       "runtime": 60,
@@ -9061,43 +9181,13 @@
       "director": null,
       "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "times": [
         "12:05",
-        "13:35"
+        "13:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239650",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239703",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:05",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239650",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "13:35",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239651",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sun 22 November",
           "date": "2026-11-22",
@@ -9107,7 +9197,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -9122,7 +9212,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -9151,26 +9241,10 @@
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
       "date": "2026-11-21",
       "times": [
-        "12:15",
         "14:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239708",
+      "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239711",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dunlaoghaire&stage=tickets&perf=239708",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -10227,11 +10301,8 @@
     }
   ],
   "log": [
-    "dun-laoghaire: no films on the film-times page",
-    "dunlaoghaire: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-20-11-2026-dated: 0 films parsed",
+    "today: 21 films parsed",
     "day-21-11-2026-dated: 21 films parsed",
     "day-22-11-2026-dated: 21 films parsed",
     "day-23-11-2026-dated: 16 films parsed",
@@ -10239,12 +10310,12 @@
     "day-25-11-2026-dated: 15 films parsed",
     "day-26-11-2026-dated: 16 films parsed",
     "day-27-11-2026-dated: 0 films parsed",
+    "day-28-11-2026-dated: 0 films parsed",
     "advance: 12 films parsed",
     "kids: 2 films parsed",
     "luxx: 5 films parsed",
     "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu)",
-    "prices: 25 ticket types, 6 bundles, 12 products",
-    "kept previous today",
+    "prices: 19 ticket types, 4 bundles, 12 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -10257,7 +10328,8 @@
           "Sun"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -10271,7 +10343,8 @@
           "Wed"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -10282,7 +10355,8 @@
           "Sun"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -10296,7 +10370,8 @@
           "Wed"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -10310,7 +10385,8 @@
           "Wed"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -10324,7 +10400,8 @@
           "Wed"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -10436,70 +10513,10 @@
         ]
       },
       {
-        "name": "Galactic Adult",
-        "price": "€14.00",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "matinee"
-        ]
-      },
-      {
-        "name": "Galactic Teen",
-        "price": "€11.50",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "matinee"
-        ]
-      },
-      {
-        "name": "Galactic Child",
-        "price": "€11.00",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "matinee"
-        ]
-      },
-      {
-        "name": "Galactic Student",
-        "price": "€11.50",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "matinee"
-        ]
-      },
-      {
-        "name": "Galactic Family",
-        "price": "€42.50",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "matinee"
-        ]
-      },
-      {
-        "name": "Galactic OAP",
-        "price": "€11.50",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "matinee"
-        ]
-      },
-      {
         "name": "Kids Club",
         "price": "€5.00",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -10509,7 +10526,7 @@
         "name": "Kids Club Adult",
         "price": "€5.00",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -10519,7 +10536,7 @@
         "name": "Kids Club Meal Deal",
         "price": "€9.50",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -10540,7 +10557,8 @@
           "Thu"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ],
         "file": "data/products/t1mcb.jpg"
       },
@@ -10558,7 +10576,8 @@
           "Thu"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
         ],
         "file": "data/products/t1scb.jpg"
       },
@@ -10575,30 +10594,6 @@
           "luxx"
         ],
         "file": "data/products/t1scbluxx.jpg"
-      },
-      {
-        "name": "Medium Combo Bundle GalacticDetails1 Adult Ticket + a Medium Combo",
-        "price": "€20.00",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBG.jpg",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "matinee"
-        ],
-        "file": "data/products/t1mcbg.jpg"
-      },
-      {
-        "name": "Share Combo Bundle GalacticDetails2 Adult Tickets + a Share Combo",
-        "price": "€33.00",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBG.jpg",
-        "days": [
-          "Sat"
-        ],
-        "seenOn": [
-          "matinee"
-        ],
-        "file": "data/products/t1scbg.jpg"
       },
       {
         "name": "Medium Combo LUXX",
@@ -10856,7 +10851,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-20T23:13:38.608Z",
+    "checked": "2026-11-21T14:47:15.277Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -10866,7 +10861,7 @@
       "Thu"
     ]
   },
-  "checked": "2026-11-20T23:13:53.221Z",
+  "checked": "2026-11-21T14:47:30.250Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

@@ -2,7 +2,7 @@
   "id": "thurles",
   "cinema": "IMC Thurles",
   "source": "https://imc.ie/thurles",
-  "updated": "2026-11-20T23:18:14.929Z",
+  "updated": "2026-11-21T14:51:36.923Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -19,17 +19,17 @@
       "director": null,
       "synopsis": "DC Studios' first-ever foray into the genre, Clayface is a horror thriller from director James Watkins, starring Tom Rhys Harries in the title role of the Gotham City villain. Clayface unravels one man's horrifying descent from rising Hollywood star to revenge-filled monster in a story that explores the loss of one's identity and humanity, corrosive love, and the dark underbelly of scientific ambition.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "18:05"
+        "18:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80112",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80082",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80112",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80082",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -52,7 +52,7 @@
       "title": "EBENEZER",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
       "cert": "12A",
       "runtime": 120,
@@ -61,38 +61,54 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "15:35",
         "18:10",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80111",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80085",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80111",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80085",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80074",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80086",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80087",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
             "evening",
             "unallocated",
             "seating-standard"
@@ -106,11 +122,114 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-21",
+      "times": [
+        "14:30",
+        "16:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80092",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:30",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80092",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:15",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80093",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-21",
+      "times": [
+        "15:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80079",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80079",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "15",
       "title": "How to Rob a Bank",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
       "cert": "15",
       "runtime": 121,
@@ -119,22 +238,22 @@
       "director": null,
       "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80075",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80083",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80075",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80083",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "seating-standard"
@@ -161,17 +280,33 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "17:25",
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80073",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80080",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:25",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80080",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80073",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80081",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -203,18 +338,20 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "15:55",
+        "16:40",
         "19:15",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80076",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80089",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80076",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:55",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80089",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -226,10 +363,40 @@
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79982",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "19:15",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80090",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79979",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79981",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -252,7 +419,7 @@
       "title": "You can see everything",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
       "cert": "15A",
       "runtime": 176,
@@ -261,22 +428,38 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "19:40"
+        "16:10",
+        "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79630",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79635",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "19:40",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79630",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79635",
           "luxx": false,
           "screen": "2",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79636",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
             "evening",
             "unallocated",
             "seating-standard"
@@ -290,12 +473,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Fri 20 Nov",
-      "url": "https://imc.ie/film-times/thurles/20-11-2026#dateD",
-      "date": "2026-11-20",
-      "films": []
-    },
     {
       "label": "Sat 21 Nov",
       "url": "https://imc.ie/film-times/thurles/21-11-2026#dateD",
@@ -349,7 +526,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -360,28 +537,12 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-21",
           "times": [
-            "13:00",
             "15:35",
             "18:10",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80084",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80085",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80084",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -391,7 +552,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -406,7 +567,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -421,7 +582,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -436,54 +597,10 @@
         {
           "certSystem": "ifco",
           "certFile": "G",
-          "title": "Festive Fun with Peppa - Sensory Screening",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
-          "cert": "G",
-          "runtime": 60,
-          "release": "November 21, 2026",
-          "releaseDate": "2026-11-21",
-          "director": null,
-          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families.",
-          "trailer": null,
-          "date": "2026-11-21",
-          "times": [
-            "12:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80136",
-          "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:00",
-              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80136",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "unallocated",
-                "kidsclub",
-                "seating-standard",
-                "sensory"
-              ]
-            }
-          ],
-          "slug": "festive-fun-with-peppa-sensory-screening",
-          "posterFile": "data/posters/festive-fun-with-peppa-sensory-screening.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -494,28 +611,11 @@
           "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
           "date": "2026-11-21",
           "times": [
-            "12:45",
             "14:30",
             "16:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80091",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80092",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:45",
-              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80091",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -525,7 +625,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "kidsclub",
@@ -541,7 +641,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "kidsclub",
@@ -571,44 +671,10 @@
           "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
           "date": "2026-11-21",
           "times": [
-            "12:30",
-            "13:30",
             "15:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80078",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80079",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:30",
-              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80078",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:30",
-              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80077",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -748,45 +814,13 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "12:40",
-            "13:20",
             "15:55",
             "16:40",
             "19:15",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80088",
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80089",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:40",
-              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80088",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:20",
-              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79980",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -966,7 +1000,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -993,7 +1027,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1008,7 +1042,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1023,7 +1057,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1038,7 +1072,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1056,7 +1090,7 @@
           "title": "Festive Fun with Peppa - Sensory Screening",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
           "cert": "G",
           "runtime": 60,
@@ -1080,7 +1114,7 @@
               "screen": "2",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "kidsclub",
@@ -1100,7 +1134,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -1126,7 +1160,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "kidsclub",
@@ -1142,7 +1176,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "kidsclub",
@@ -1158,7 +1192,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "kidsclub",
@@ -1583,7 +1617,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -1608,7 +1642,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1623,7 +1657,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1874,7 +1908,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -1899,7 +1933,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1914,7 +1948,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2123,7 +2157,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -2148,7 +2182,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2163,7 +2197,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2388,7 +2422,7 @@
           "title": "EBENEZER",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
           "cert": "12A",
           "runtime": 120,
@@ -2413,7 +2447,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2428,7 +2462,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2747,6 +2781,193 @@
               "date": "2026-11-27",
               "time": "20:35",
               "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79733",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "hexed",
+          "posterFile": "data/posters/hexed.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sat 28 Nov",
+      "url": "https://imc.ie/film-times/thurles/28-11-2026#dateD",
+      "date": "2026-11-28",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 25, 2026",
+          "releaseDate": "2026-11-25",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-28",
+          "times": [
+            "13:15",
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79998",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79998",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79999",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80000",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80001",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Hexed",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
+          "cert": "PG",
+          "runtime": 109,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Jason Hand, Fawn Veerasunthorn",
+          "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+          "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
+          "date": "2026-11-28",
+          "times": [
+            "13:05",
+            "15:35",
+            "18:05",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79736",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:05",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79736",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79737",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:05",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79734",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=79735",
               "luxx": false,
               "screen": "2",
               "threeD": false,
@@ -3722,67 +3943,6 @@
       "slug": "elf",
       "posterFile": "data/posters/elf.jpg",
       "certIcon": "data/ratings/ifco-PG.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "G",
-      "title": "Festive Fun with Peppa - Sensory Screening",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
-      "cert": "G",
-      "runtime": 60,
-      "release": "November 21, 2026",
-      "releaseDate": "2026-11-21",
-      "director": null,
-      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families.",
-      "trailer": null,
-      "date": "2026-11-21",
-      "times": [
-        "12:00"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80136",
-      "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:00",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80136",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard",
-            "sensory"
-          ]
-        },
-        {
-          "day": "Sun 22 November",
-          "date": "2026-11-22",
-          "time": "12:00",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80138",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard",
-            "sensory"
-          ]
-        }
-      ],
-      "slug": "festive-fun-with-peppa-sensory-screening",
-      "posterFile": "data/posters/festive-fun-with-peppa-sensory-screening.jpg",
-      "certIcon": "data/ratings/ifco-G.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -4827,7 +4987,7 @@
       "title": "Festive Fun with Peppa - Sensory Screening",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
       "cert": "G",
       "runtime": 60,
@@ -4836,29 +4996,12 @@
       "director": null,
       "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families.",
       "trailer": null,
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "times": [
         "12:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80136",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80138",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:00",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80136",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard",
-            "sensory"
-          ]
-        },
         {
           "day": "Sun 22 November",
           "date": "2026-11-22",
@@ -4868,7 +5011,7 @@
           "screen": "2",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "unallocated",
             "kidsclub",
@@ -4888,7 +5031,7 @@
       "title": "Festive Fun with Peppa Cinema Experience",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
       "cert": "G",
       "runtime": 60,
@@ -4899,44 +5042,10 @@
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
       "date": "2026-11-21",
       "times": [
-        "12:45",
-        "14:30",
         "16:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80091",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80093",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:45",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80091",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "14:30",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80092",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -4946,7 +5055,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "kidsclub",
@@ -4962,7 +5071,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "kidsclub",
@@ -4978,7 +5087,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "kidsclub",
@@ -4994,7 +5103,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "unallocated",
             "kidsclub",
@@ -5024,44 +5133,10 @@
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
       "date": "2026-11-21",
       "times": [
-        "12:30",
-        "13:30",
         "15:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80078",
+      "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80079",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:30",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80078",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "13:30",
-          "book": "https://booking.imc.ie/booking/?cinema=thurles&stage=tickets&perf=80077",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -5169,23 +5244,21 @@
     }
   ],
   "log": [
-    "thurles: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-20-11-2026-dated: 0 films parsed",
-    "day-21-11-2026-dated: 9 films parsed",
+    "today: 8 films parsed",
+    "day-21-11-2026-dated: 8 films parsed",
     "day-22-11-2026-dated: 9 films parsed",
     "day-23-11-2026-dated: 6 films parsed",
     "day-24-11-2026-dated: 6 films parsed",
     "day-25-11-2026-dated: 5 films parsed",
     "day-26-11-2026-dated: 5 films parsed",
     "day-27-11-2026-dated: 2 films parsed",
-    "advance: 9 films parsed",
+    "day-28-11-2026-dated: 2 films parsed",
+    "advance: 8 films parsed",
     "kids: 3 films parsed",
     "luxx: 0 films parsed",
     "booking pages read: 9 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 13 ticket types, 2 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -5579,7 +5652,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-20T23:18:41.959Z",
+    "checked": "2026-11-21T14:52:02.713Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -5590,7 +5663,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-11-20T23:18:57.060Z",
+  "checked": "2026-11-21T14:52:16.925Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

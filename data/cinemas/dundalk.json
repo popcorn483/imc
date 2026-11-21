@@ -2,7 +2,7 @@
   "id": "dundalk",
   "cinema": "IMC Dundalk",
   "source": "https://imc.ie/dundalk",
-  "updated": "2026-11-20T23:12:27.860Z",
+  "updated": "2026-11-21T14:46:08.310Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -10,7 +10,7 @@
       "title": "EBENEZER",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
       "cert": "12A",
       "runtime": 120,
@@ -19,22 +19,52 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "13:00",
+        "15:35",
         "18:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118304",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118309",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118304",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118309",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118308",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118307",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
             "evening",
             "seating-standard"
           ]
@@ -43,6 +73,164 @@
       "slug": "ebenezer",
       "posterFile": "data/posters/ebenezer.jpg",
       "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-21",
+      "times": [
+        "13:45",
+        "15:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118318",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118318",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118310",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-21",
+      "times": [
+        "14:45",
+        "17:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118305",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118305",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118306",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island -",
+      "luxx": true,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/116313.jpg",
+      "cert": "PG",
+      "runtime": 109,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-21",
+      "times": [
+        "13:40"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118314",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:40",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118314",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -60,17 +248,32 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "17:15",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118301",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118319",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118319",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118301",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118313",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -92,7 +295,7 @@
       "title": "NASZA REWOLUCJA",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/117319.jpg",
       "cert": "15A",
       "runtime": 125,
@@ -101,22 +304,22 @@
       "director": "Piotr Domalewski",
       "synopsis": "Jacek and Grayna Kuro believe that together they can change their country. As their home becomes a meeting place for Poland?s opposition, the fight for freedom puts their family and their love under growing pressure. Imprisonment keeps them apart, and martial law brings painful choices. Against a backdrop of political repression, they struggle to protect the bond that gives their commitment its meaning.",
       "trailer": "https://www.youtube.com/watch?v=XBcpjKavW7Q",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118385",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118386",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118385",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118386",
           "luxx": false,
           "screen": "3",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -133,7 +336,7 @@
       "title": "Om Chapter 1: Udhiram The Blood Wood (Tamil)",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/117297.jpg",
       "cert": "TBC",
       "runtime": 176,
@@ -142,22 +345,22 @@
       "director": "Rajkumar Periasamy",
       "synopsis": "An emotional drama set in a gritty world where criminals and law enforcement operate side by side, and greed, power and poverty fuel violence and bloodshed.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "19:45"
+        "19:50"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118395",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118396",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118395",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "19:50",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118396",
           "luxx": false,
           "screen": "7",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -183,32 +386,32 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "16:10",
         "19:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118303",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118312",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "16:10",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118303",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118312",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118302",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118311",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -239,32 +442,47 @@
       "director": "Francis Lawrence",
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "13:20",
         "16:40",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118018",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118019",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118018",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:20",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118019",
           "luxx": true,
           "screen": "2",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118021",
+          "luxx": true,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118017",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118020",
           "luxx": true,
           "screen": "2",
           "threeD": false,
@@ -286,7 +504,7 @@
       "title": "You Can See Everything",
       "luxx": true,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
       "cert": "15A",
       "runtime": 174,
@@ -295,37 +513,37 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "16:10",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117992",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117994",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "16:10",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117992",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117994",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117991",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117993",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-lux"
           ]
@@ -338,12 +556,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Fri 20 Nov",
-      "url": "https://imc.ie/film-times/dundalk/20-11-2026#dateD",
-      "date": "2026-11-20",
-      "films": []
-    },
     {
       "label": "Sat 21 Nov",
       "url": "https://imc.ie/film-times/dundalk/21-11-2026#dateD",
@@ -366,26 +578,11 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-21",
           "times": [
-            "13:00",
             "15:35",
             "18:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118309",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118308",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118309",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -426,7 +623,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -437,42 +634,10 @@
           "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
           "date": "2026-11-21",
           "times": [
-            "12:10",
-            "13:45",
             "15:30"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118317",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118310",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:10",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118317",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118318",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -482,7 +647,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -511,27 +676,11 @@
           "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
           "date": "2026-11-21",
           "times": [
-            "12:15",
             "14:45",
             "17:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118315",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118305",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118315",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -554,48 +703,6 @@
               "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118306",
               "luxx": false,
               "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Forgotten Island -",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/116313.jpg",
-          "cert": "PG",
-          "runtime": 109,
-          "release": "October 23, 2026",
-          "releaseDate": "2026-10-23",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-11-21",
-          "times": [
-            "13:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118314",
-          "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:40",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118314",
-              "luxx": true,
-              "screen": "1",
               "threeD": false,
               "tags": [
                 "released",
@@ -765,26 +872,11 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "12:50",
             "16:10",
             "19:30"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118316",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118312",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:50",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118316",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -836,26 +928,11 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "13:20",
             "16:40",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118019",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118021",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:20",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118019",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -1030,7 +1107,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -1056,7 +1133,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1071,7 +1148,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1086,7 +1163,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1574,7 +1651,8 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-23",
           "times": [
-            "18:10"
+            "18:10",
+            "20:35"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118337",
           "sessions": [
@@ -1585,6 +1663,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118337",
               "luxx": false,
               "screen": "6",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 23 November",
+              "date": "2026-11-23",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118400",
+              "luxx": false,
+              "screen": "3",
               "threeD": false,
               "tags": [
                 "released",
@@ -1693,47 +1785,6 @@
           "slug": "i-play-rocky",
           "posterFile": "data/posters/i-play-rocky.jpg",
           "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "TBC",
-          "title": "Om Chapter 1: Udhiram The Blood Wood (Tamil)",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/117297.jpg",
-          "cert": "TBC",
-          "runtime": 176,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Rajkumar Periasamy",
-          "synopsis": "An emotional drama set in a gritty world where criminals and law enforcement operate side by side, and greed, power and poverty fuel violence and bloodshed.",
-          "trailer": null,
-          "date": "2026-11-23",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118399",
-          "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118399",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "om-chapter-1-udhiram-the-blood-wood-tamil",
-          "posterFile": "data/posters/om-chapter-1-udhiram-the-blood-wood-tamil.jpg",
-          "certIcon": "data/ratings/ifco-TBC.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -3089,6 +3140,226 @@
               "date": "2026-11-27",
               "time": "20:35",
               "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118043",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "hexed",
+          "posterFile": "data/posters/hexed.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sat 28 Nov",
+      "url": "https://imc.ie/film-times/dundalk/28-11-2026#dateD",
+      "date": "2026-11-28",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Buddy",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
+          "cert": "15A",
+          "runtime": 96,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Casper Kelly",
+          "synopsis": "A brave girl and her friends must escape a kids' television show.",
+          "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
+          "date": "2026-11-28",
+          "times": [
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118374",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118374",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "buddy",
+          "posterFile": "data/posters/buddy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-28",
+          "times": [
+            "13:15",
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117976",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117976",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117973",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117975",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117974",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Hexed",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
+          "cert": "PG",
+          "runtime": 109,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Jason Hand, Fawn Veerasunthorn",
+          "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+          "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
+          "date": "2026-11-28",
+          "times": [
+            "13:05",
+            "15:35",
+            "18:10",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118044",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:05",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118044",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118047",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118045",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118046",
               "luxx": false,
               "screen": "6",
               "threeD": false,
@@ -5283,7 +5554,7 @@
       "title": "Festive Fun with Peppa Cinema Experience",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
       "cert": "G",
       "runtime": 60,
@@ -5294,42 +5565,10 @@
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
       "date": "2026-11-21",
       "times": [
-        "12:10",
-        "13:45",
         "15:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118317",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118310",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:10",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118317",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "13:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118318",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -5339,7 +5578,7 @@
           "screen": "7",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -5354,7 +5593,7 @@
           "screen": "7",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -5369,7 +5608,7 @@
           "screen": "7",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -5384,7 +5623,7 @@
           "screen": "7",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -5413,27 +5652,11 @@
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
       "date": "2026-11-21",
       "times": [
-        "12:15",
         "14:45",
         "17:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118315",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118305",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118315",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -5530,27 +5753,12 @@
       "director": "Joel Crawford",
       "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "times": [
         "13:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118314",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118358",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "13:40",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118314",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sun 22 November",
           "date": "2026-11-22",
@@ -7020,23 +7228,21 @@
     }
   ],
   "log": [
-    "dundalk: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-20-11-2026-dated: 0 films parsed",
-    "day-21-11-2026-dated: 10 films parsed",
+    "today: 10 films parsed",
+    "day-21-11-2026-dated: 9 films parsed",
     "day-22-11-2026-dated: 10 films parsed",
-    "day-23-11-2026-dated: 7 films parsed",
+    "day-23-11-2026-dated: 6 films parsed",
     "day-24-11-2026-dated: 7 films parsed",
     "day-25-11-2026-dated: 6 films parsed",
     "day-26-11-2026-dated: 6 films parsed",
     "day-27-11-2026-dated: 3 films parsed",
+    "day-28-11-2026-dated: 3 films parsed",
     "advance: 12 films parsed",
     "kids: 3 films parsed",
     "luxx: 7 films parsed",
     "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 17 ticket types, 4 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -7507,7 +7713,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-20T23:12:54.173Z",
+    "checked": "2026-11-21T14:46:34.351Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -7518,7 +7724,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-11-20T23:13:09.015Z",
+  "checked": "2026-11-21T14:46:48.923Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

@@ -2,7 +2,7 @@
   "id": "mullingar",
   "cinema": "IMC Mullingar",
   "source": "https://imc.ie/mullingar",
-  "updated": "2026-11-20T23:16:05.771Z",
+  "updated": "2026-11-21T14:49:35.617Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -10,7 +10,7 @@
       "title": "EBENEZER",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
       "cert": "12A",
       "runtime": 120,
@@ -19,52 +19,52 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "16:35",
-        "18:10",
-        "20:45"
+        "13:45",
+        "15:35",
+        "16:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105238",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105245",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "16:35",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105238",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105245",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105236",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "new",
+            "released",
             "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105235",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105242",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:35",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105248",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
             "evening",
             "seating-standard"
           ]
@@ -73,6 +73,122 @@
       "slug": "ebenezer",
       "posterFile": "data/posters/ebenezer.jpg",
       "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-21",
+      "times": [
+        "13:05",
+        "14:55",
+        "16:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105251",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:05",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105251",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:55",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105249",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:45",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105250",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-21",
+      "times": [
+        "14:55"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105244",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:55",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105244",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -90,32 +206,32 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "17:25",
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105237",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105247",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "17:25",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105237",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105247",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105239",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105246",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -137,7 +253,7 @@
       "title": "NASZA REWOLUCJA",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/117319.jpg",
       "cert": "15A",
       "runtime": 125,
@@ -146,37 +262,22 @@
       "director": "Piotr Domalewski",
       "synopsis": "Jacek and Grayna Kuro believe that together they can change their country. As their home becomes a meeting place for Poland?s opposition, the fight for freedom puts their family and their love under growing pressure. Imprisonment keeps them apart, and martial law brings painful choices. Against a backdrop of political repression, they struggle to protect the bond that gives their commitment its meaning.",
       "trailer": "https://www.youtube.com/watch?v=XBcpjKavW7Q",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "17:15",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105307",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105305",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:15",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105307",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105306",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105305",
           "luxx": false,
           "screen": "7",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -193,7 +294,7 @@
       "title": "Om Chapter 1: Udhiram The Blood Wood (Tamil)",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/117297.jpg",
       "cert": "TBC",
       "runtime": 176,
@@ -202,22 +303,22 @@
       "director": "Rajkumar Periasamy",
       "synopsis": "An emotional drama set in a gritty world where criminals and law enforcement operate side by side, and greed, power and poverty fuel violence and bloodshed.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105302",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105301",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105302",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105301",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -243,32 +344,32 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "16:00",
         "19:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105176",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105180",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "16:00",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105176",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105180",
           "luxx": false,
           "screen": "3",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105177",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105181",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -290,7 +391,7 @@
       "title": "The Hunger Games: Sunrise On The Reaping -",
       "luxx": true,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
       "cert": "12A",
       "runtime": 158,
@@ -299,37 +400,52 @@
       "director": "Francis Lawrence",
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "13:45",
         "17:00",
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105174",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105182",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:00",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105174",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105182",
           "luxx": true,
           "screen": "2",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105175",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:00",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105178",
           "luxx": true,
           "screen": "2",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105179",
+          "luxx": true,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
             "evening",
             "seating-lux"
           ]
@@ -346,7 +462,7 @@
       "title": "You Can See Everything",
       "luxx": true,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
       "cert": "15A",
       "runtime": 174,
@@ -355,37 +471,37 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "16:10",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104833",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104834",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "16:10",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104833",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104834",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104832",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104835",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-lux"
           ]
@@ -398,12 +514,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Fri 20 Nov",
-      "url": "https://imc.ie/film-times/mullingar/20-11-2026#dateD",
-      "date": "2026-11-20",
-      "films": []
-    },
     {
       "label": "Sat 21 Nov",
       "url": "https://imc.ie/film-times/mullingar/21-11-2026#dateD",
@@ -426,41 +536,11 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-21",
           "times": [
-            "12:45",
-            "13:45",
             "15:35",
             "16:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105241",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105242",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:45",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105241",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:45",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105245",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -512,27 +592,11 @@
           "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
           "date": "2026-11-21",
           "times": [
-            "13:05",
             "14:55",
             "16:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105251",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105249",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:05",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105251",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -586,26 +650,10 @@
           "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
           "date": "2026-11-21",
           "times": [
-            "12:25",
             "14:55"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105243",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105244",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:25",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105243",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -782,26 +830,11 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "12:45",
             "16:00",
             "19:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105183",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105180",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:45",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105183",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -853,26 +886,11 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "13:45",
             "17:00",
             "20:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105182",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105178",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:45",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105182",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -924,26 +942,11 @@
           "trailer": null,
           "date": "2026-11-21",
           "times": [
-            "12:35",
             "16:10",
             "19:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105240",
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104834",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:35",
-              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105240",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -1471,7 +1474,7 @@
               "time": "13:45",
               "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105184",
               "luxx": true,
-              "screen": "2",
+              "screen": "1",
               "threeD": false,
               "tags": [
                 "new",
@@ -1485,7 +1488,7 @@
               "time": "17:00",
               "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105185",
               "luxx": true,
-              "screen": "2",
+              "screen": "1",
               "threeD": false,
               "tags": [
                 "new",
@@ -1499,7 +1502,7 @@
               "time": "20:15",
               "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105186",
               "luxx": true,
-              "screen": "2",
+              "screen": "1",
               "threeD": false,
               "tags": [
                 "new",
@@ -1542,7 +1545,7 @@
               "time": "12:35",
               "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105252",
               "luxx": true,
-              "screen": "1",
+              "screen": "2",
               "threeD": false,
               "tags": [
                 "new",
@@ -1556,7 +1559,7 @@
               "time": "16:10",
               "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104836",
               "luxx": true,
-              "screen": "1",
+              "screen": "2",
               "threeD": false,
               "tags": [
                 "new",
@@ -1570,7 +1573,7 @@
               "time": "19:45",
               "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104837",
               "luxx": true,
-              "screen": "1",
+              "screen": "2",
               "threeD": false,
               "tags": [
                 "new",
@@ -3109,6 +3112,140 @@
               "date": "2026-11-27",
               "time": "20:35",
               "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104847",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "hexed",
+          "posterFile": "data/posters/hexed.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sat 28 Nov",
+      "url": "https://imc.ie/film-times/mullingar/28-11-2026#dateD",
+      "date": "2026-11-28",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Buddy",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
+          "cert": "15A",
+          "runtime": 96,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Casper Kelly",
+          "synopsis": "A brave girl and her friends must escape a kids' television show.",
+          "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
+          "date": "2026-11-28",
+          "times": [
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105309",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105309",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "buddy",
+          "posterFile": "data/posters/buddy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Hexed",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
+          "cert": "PG",
+          "runtime": 109,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Jason Hand, Fawn Veerasunthorn",
+          "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+          "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
+          "date": "2026-11-28",
+          "times": [
+            "13:05",
+            "15:35",
+            "18:10",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104861",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:05",
+              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104861",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104860",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104848",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=104849",
               "luxx": false,
               "screen": "3",
               "threeD": false,
@@ -5305,27 +5442,11 @@
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
       "date": "2026-11-21",
       "times": [
-        "13:05",
         "14:55",
         "16:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105251",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105249",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "13:05",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105251",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -5424,26 +5545,10 @@
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
       "date": "2026-11-21",
       "times": [
-        "12:25",
         "14:55"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105243",
+      "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105244",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:25",
-          "book": "https://booking.imc.ie/booking/?cinema=mullingar&stage=tickets&perf=105243",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -6903,10 +7008,8 @@
     }
   ],
   "log": [
-    "mullingar: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-20-11-2026-dated: 0 films parsed",
+    "today: 9 films parsed",
     "day-21-11-2026-dated: 9 films parsed",
     "day-22-11-2026-dated: 9 films parsed",
     "day-23-11-2026-dated: 6 films parsed",
@@ -6914,12 +7017,12 @@
     "day-25-11-2026-dated: 5 films parsed",
     "day-26-11-2026-dated: 5 films parsed",
     "day-27-11-2026-dated: 2 films parsed",
+    "day-28-11-2026-dated: 2 films parsed",
     "advance: 10 films parsed",
     "kids: 2 films parsed",
     "luxx: 7 films parsed",
     "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 18 ticket types, 4 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -7400,7 +7503,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-20T23:16:32.198Z",
+    "checked": "2026-11-21T14:50:01.184Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -7411,7 +7514,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-11-20T23:16:46.652Z",
+  "checked": "2026-11-21T14:50:15.857Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

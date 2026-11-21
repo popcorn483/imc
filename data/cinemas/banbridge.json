@@ -2,7 +2,7 @@
   "id": "banbridge",
   "cinema": "IMC Banbridge",
   "source": "https://imc.ie/banbridge",
-  "updated": "2026-11-20T23:06:50.779Z",
+  "updated": "2026-11-21T14:40:41.437Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -10,7 +10,7 @@
       "title": "EBENEZER",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
       "cert": "12A",
       "runtime": 120,
@@ -19,37 +19,52 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "15:35",
         "18:10",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48693",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48708",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48693",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48708",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48694",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48709",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48710",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
             "evening",
             "seating-standard"
           ]
@@ -58,6 +73,48 @@
       "slug": "ebenezer",
       "posterFile": "data/posters/ebenezer.jpg",
       "certIcon": "data/ratings/bbfc-12A.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-21",
+      "times": [
+        "14:25"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48696",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:25",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48696",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/bbfc-G.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     },
     {
@@ -75,17 +132,47 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "14:35",
+        "17:25",
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48692",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48704",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:35",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48704",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:25",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48705",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48692",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48706",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -116,18 +203,35 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "13:20",
+        "15:55",
+        "16:40",
         "19:15",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48691",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48697",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48691",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:20",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48697",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:55",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48701",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -138,10 +242,38 @@
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48698",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "19:15",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48702",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48690",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48699",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -163,7 +295,7 @@
       "title": "You can see everything",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
       "cert": "15",
       "runtime": 176,
@@ -172,22 +304,37 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "16:10",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48479",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48480",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48479",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48480",
           "luxx": false,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48481",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -200,12 +347,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Fri 20 Nov",
-      "url": "https://imc.ie/film-times/banbridge/20-11-2026#dateD",
-      "date": "2026-11-20",
-      "films": []
-    },
     {
       "label": "Sat 21 Nov",
       "url": "https://imc.ie/film-times/banbridge/21-11-2026#dateD",
@@ -303,7 +444,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -314,27 +455,11 @@
           "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
           "date": "2026-11-21",
           "times": [
-            "12:40",
             "13:00",
             "14:25"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48695",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48749",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:40",
-              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48695",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -344,7 +469,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -359,7 +484,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -459,29 +584,14 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "12:15",
             "13:20",
             "15:55",
             "16:40",
             "19:15",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48700",
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48697",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48700",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -713,7 +823,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -739,7 +849,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -754,7 +864,7 @@
               "screen": "4",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -769,7 +879,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1516,6 +1626,99 @@
               "date": "2026-11-27",
               "time": "20:45",
               "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48487",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sat 28 Nov",
+      "url": "https://imc.ie/film-times/banbridge/28-11-2026#dateD",
+      "date": "2026-11-28",
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 25, 2026",
+          "releaseDate": "2026-11-25",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-28",
+          "times": [
+            "13:15",
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48491",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48491",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48490",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48488",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48489",
               "luxx": false,
               "screen": "1",
               "threeD": false,
@@ -2676,7 +2879,7 @@
       "title": "Festive Fun with Peppa Cinema Experience",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
       "cert": "G",
       "runtime": 60,
@@ -2687,42 +2890,10 @@
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
       "date": "2026-11-21",
       "times": [
-        "12:40",
-        "13:00",
         "14:25"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48695",
+      "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48696",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:40",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48695",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "13:00",
-          "book": "https://booking.imc.ie/booking/?cinema=banbridge&stage=tickets&perf=48749",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -2732,7 +2903,7 @@
           "screen": "1",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -2747,7 +2918,7 @@
           "screen": "1",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -2762,7 +2933,7 @@
           "screen": "4",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -2777,7 +2948,7 @@
           "screen": "1",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -2826,10 +2997,8 @@
     }
   ],
   "log": [
-    "banbridge: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-20-11-2026-dated: 0 films parsed",
+    "today: 5 films parsed",
     "day-21-11-2026-dated: 5 films parsed",
     "day-22-11-2026-dated: 5 films parsed",
     "day-23-11-2026-dated: 0 films parsed",
@@ -2837,12 +3006,12 @@
     "day-25-11-2026-dated: 4 films parsed",
     "day-26-11-2026-dated: 4 films parsed",
     "day-27-11-2026-dated: 1 films parsed",
+    "day-28-11-2026-dated: 1 films parsed",
     "advance: 7 films parsed",
     "kids: 1 films parsed",
     "luxx: 0 films parsed",
-    "booking pages read: 7 (Sat, Sun, Wed, Thu, Fri)",
+    "booking pages read: 8 (Sat, Sun, Wed, Thu, Fri)",
     "prices: 4 ticket types, 0 bundles, 8 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -2866,7 +3035,7 @@
         "name": "Kids Club",
         "price": "£3.40",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -2876,7 +3045,7 @@
         "name": "Kids Club Adult",
         "price": "£3.40",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -2886,7 +3055,7 @@
         "name": "Kids Club Meal Deal",
         "price": "£7.50",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -3040,7 +3209,7 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-20T23:07:21.352Z",
+    "checked": "2026-11-21T14:41:07.692Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -3049,7 +3218,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-11-20T23:07:31.284Z",
+  "checked": "2026-11-21T14:41:19.923Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

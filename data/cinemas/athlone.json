@@ -2,7 +2,7 @@
   "id": "athlone",
   "cinema": "IMC Athlone",
   "source": "https://imc.ie/athlone",
-  "updated": "2026-11-20T23:08:09.303Z",
+  "updated": "2026-11-21T14:41:57.397Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -10,7 +10,7 @@
       "title": "EBENEZER",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
       "cert": "12A",
       "runtime": 120,
@@ -19,37 +19,67 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "13:00",
+        "15:35",
         "18:10",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99888",
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99895",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99888",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:00",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99895",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99889",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99906",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99901",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99902",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
             "evening",
             "seating-standard"
           ]
@@ -58,6 +88,106 @@
       "slug": "ebenezer",
       "posterFile": "data/posters/ebenezer.jpg",
       "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-21",
+      "times": [
+        "14:15",
+        "16:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99897",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99897",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:00",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99898",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-21",
+      "times": [
+        "13:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99894",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99894",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -75,32 +205,47 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "14:40",
         "17:30",
         "20:20"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99891",
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99905",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99891",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:40",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99905",
           "luxx": false,
           "screen": "2",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99900",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:20",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99887",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99899",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -118,62 +263,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "16",
-      "title": "Primetime",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
-      "cert": "16",
-      "runtime": 109,
-      "release": "October 28, 2026",
-      "releaseDate": "2026-10-28",
-      "director": "Lance Oppenheim",
-      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
-      "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
-      "date": "2026-11-20",
-      "times": [
-        "18:15",
-        "20:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99890",
-      "sessions": [
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99890",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99892",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "primetime",
-      "posterFile": "data/posters/primetime.jpg",
-      "certIcon": "data/ratings/ifco-16.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "12A",
       "title": "The Hunger Games: Sunrise On The Reaping",
       "luxx": false,
@@ -187,32 +276,47 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "16:00",
+        "18:05",
         "19:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99734",
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99736",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "16:00",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99734",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99736",
           "luxx": false,
           "screen": "3",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:05",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99984",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99735",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99737",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -234,7 +338,7 @@
       "title": "The Hunger Games: Sunrise On The Reaping -",
       "luxx": true,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
       "cert": "12A",
       "runtime": 158,
@@ -243,39 +347,54 @@
       "director": "Francis Lawrence",
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "13:20",
         "16:40",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99628",
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99630",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99628",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:20",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99630",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
-            "seating-standard"
+            "new",
+            "evening",
+            "seating-lux"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99629",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99631",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
-            "seating-standard"
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99632",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
           ]
         }
       ],
@@ -290,7 +409,7 @@
       "title": "You can see everything",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
       "cert": "15A",
       "runtime": 176,
@@ -299,37 +418,37 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "16:10",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99498",
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99500",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "16:10",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99498",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99500",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99499",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99501",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -342,12 +461,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Fri 20 Nov",
-      "url": "https://imc.ie/film-times/athlone/20-11-2026#dateD",
-      "date": "2026-11-20",
-      "films": []
-    },
     {
       "label": "Sat 21 Nov",
       "url": "https://imc.ie/film-times/athlone/21-11-2026#dateD",
@@ -370,27 +483,12 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-21",
           "times": [
-            "13:00",
             "15:35",
             "18:10",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99895",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99906",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99895",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -437,49 +535,6 @@
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
           "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Festive Fun with Peppa - Sensory Screening",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
-          "cert": "G",
-          "runtime": 60,
-          "release": "November 21, 2026",
-          "releaseDate": "2026-11-21",
-          "director": null,
-          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families.",
-          "trailer": null,
-          "date": "2026-11-21",
-          "times": [
-            "12:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99896",
-          "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:30",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99896",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "kidsclub",
-                "seating-standard",
-                "sensory"
-              ]
-            }
-          ],
-          "slug": "festive-fun-with-peppa-sensory-screening",
-          "posterFile": "data/posters/festive-fun-with-peppa-sensory-screening.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -557,26 +612,10 @@
           "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
           "date": "2026-11-21",
           "times": [
-            "12:15",
             "13:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99893",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99894",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99893",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -686,27 +725,12 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "12:40",
             "16:00",
             "18:05",
             "19:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99738",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99736",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:40",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99738",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -772,26 +796,11 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "13:20",
             "16:40",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99630",
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99631",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:20",
-              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99630",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -981,7 +990,7 @@
           "title": "Festive Fun with Peppa - Sensory Screening",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
           "cert": "G",
           "runtime": 60,
@@ -1005,7 +1014,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "kidsclub",
                 "seating-standard",
@@ -2705,6 +2714,54 @@
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
+    },
+    {
+      "label": "Sat 28 Nov",
+      "url": "https://imc.ie/film-times/athlone/28-11-2026#dateD",
+      "date": "2026-11-28",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Buddy",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
+          "cert": "15A",
+          "runtime": 96,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Casper Kelly",
+          "synopsis": "A brave girl and her friends must escape a kids' television show.",
+          "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
+          "date": "2026-11-28",
+          "times": [
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99968",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99968",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "buddy",
+          "posterFile": "data/posters/buddy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -3715,65 +3772,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "G",
-      "title": "Festive Fun with Peppa - Sensory Screening",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
-      "cert": "G",
-      "runtime": 60,
-      "release": "November 21, 2026",
-      "releaseDate": "2026-11-21",
-      "director": null,
-      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families.",
-      "trailer": null,
-      "date": "2026-11-21",
-      "times": [
-        "12:30"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99896",
-      "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:30",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99896",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "kidsclub",
-            "seating-standard",
-            "sensory"
-          ]
-        },
-        {
-          "day": "Sun 22 November",
-          "date": "2026-11-22",
-          "time": "12:30",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99919",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "kidsclub",
-            "seating-standard",
-            "sensory"
-          ]
-        }
-      ],
-      "slug": "festive-fun-with-peppa-sensory-screening",
-      "posterFile": "data/posters/festive-fun-with-peppa-sensory-screening.jpg",
-      "certIcon": "data/ratings/ifco-G.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "12A",
       "title": "Focker-In-Law",
       "luxx": true,
@@ -4226,7 +4224,7 @@
       "title": "Festive Fun with Peppa - Sensory Screening",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/117136.jpg",
       "cert": "G",
       "runtime": 60,
@@ -4235,28 +4233,12 @@
       "director": null,
       "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families.",
       "trailer": null,
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "times": [
         "12:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99896",
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99919",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:30",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99896",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "kidsclub",
-            "seating-standard",
-            "sensory"
-          ]
-        },
         {
           "day": "Sun 22 November",
           "date": "2026-11-22",
@@ -4266,7 +4248,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "kidsclub",
             "seating-standard",
@@ -4296,26 +4278,10 @@
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
       "date": "2026-11-21",
       "times": [
-        "14:15",
         "16:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99897",
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99898",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "14:15",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99897",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -4382,43 +4348,13 @@
       "director": "Joel Crawford",
       "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "times": [
         "12:15",
         "13:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99893",
+      "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99910",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99893",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "13:45",
-          "book": "https://booking.imc.ie/booking/?cinema=athlone&stage=tickets&perf=99894",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sun 22 November",
           "date": "2026-11-22",
@@ -5024,23 +4960,21 @@
     }
   ],
   "log": [
-    "athlone: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-20-11-2026-dated: 0 films parsed",
-    "day-21-11-2026-dated: 8 films parsed",
+    "today: 7 films parsed",
+    "day-21-11-2026-dated: 7 films parsed",
     "day-22-11-2026-dated: 8 films parsed",
     "day-23-11-2026-dated: 5 films parsed",
     "day-24-11-2026-dated: 5 films parsed",
     "day-25-11-2026-dated: 5 films parsed",
     "day-26-11-2026-dated: 5 films parsed",
     "day-27-11-2026-dated: 1 films parsed",
-    "advance: 12 films parsed",
+    "day-28-11-2026-dated: 1 films parsed",
+    "advance: 11 films parsed",
     "kids: 3 films parsed",
     "luxx: 4 films parsed",
     "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 17 ticket types, 4 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -5511,7 +5445,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-20T23:08:35.810Z",
+    "checked": "2026-11-21T14:42:24.276Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -5522,7 +5456,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-11-20T23:08:50.066Z",
+  "checked": "2026-11-21T14:42:39.130Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

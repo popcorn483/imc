@@ -2,7 +2,7 @@
   "id": "clonmel",
   "cinema": "IMC Clonmel",
   "source": "https://imc.ie/clonmel",
-  "updated": "2026-11-20T23:11:45.918Z",
+  "updated": "2026-11-21T14:45:26.426Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -19,18 +19,19 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "15:35",
         "18:10",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75119",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75131",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75119",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75131",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -41,10 +42,24 @@
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75133",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75120",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75132",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -62,43 +77,44 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "15",
-      "title": "How to Rob a Bank",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/112802.jpg",
-      "cert": "15",
-      "runtime": 121,
-      "release": "November 13, 2026",
-      "releaseDate": "2026-11-13",
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
       "director": null,
-      "synopsis": "In How To Rob A Bank, a crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
-      "trailer": null,
-      "date": "2026-11-20",
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-21",
       "times": [
-        "17:30"
+        "14:20"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75116",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75124",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75116",
-          "luxx": true,
-          "screen": "1",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:20",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75124",
+          "luxx": false,
+          "screen": "3",
           "threeD": false,
           "tags": [
-            "new",
-            "matinee",
-            "seating-lux"
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
           ]
         }
       ],
-      "slug": "how-to-rob-a-bank",
-      "posterFile": "data/posters/how-to-rob-a-bank.jpg",
-      "certIcon": null,
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -116,17 +132,47 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "20:25"
+        "14:35",
+        "17:25",
+        "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75118",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75127",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:25",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75118",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:35",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75127",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:25",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75128",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75129",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -144,47 +190,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "Prima Facie",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/115295.jpg",
-      "cert": "15A",
-      "runtime": 109,
-      "release": "November 13, 2026",
-      "releaseDate": "2026-11-13",
-      "director": null,
-      "synopsis": "Tessa is a brilliant and ambitious defence barrister who has built her career successfully defending clients, including men accused of sexual assault. When she experiences sexual violence herself, her faith in the legal system she has dedicated her life to is profoundly challenged.",
-      "trailer": "https://www.youtube.com/watch?v=tnhynwj29Ew",
-      "date": "2026-11-20",
-      "times": [
-        "17:30"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75117",
-      "sessions": [
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:30",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75117",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "prima-facie",
-      "posterFile": "data/posters/prima-facie.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "12A",
       "title": "The Hunger Games: Sunrise On The Reaping",
       "luxx": false,
@@ -198,17 +203,32 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "16:40",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74898",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74901",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74901",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74898",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74899",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -239,17 +259,32 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
+        "16:10",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75121",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75122",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75122",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75121",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75123",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -267,12 +302,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Fri 20 Nov",
-      "url": "https://imc.ie/film-times/clonmel/20-11-2026#dateD",
-      "date": "2026-11-20",
-      "films": []
-    },
     {
       "label": "Sat 21 Nov",
       "url": "https://imc.ie/film-times/clonmel/21-11-2026#dateD",
@@ -295,27 +324,12 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-21",
           "times": [
-            "13:00",
             "15:35",
             "18:10",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75130",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75131",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75130",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -370,7 +384,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -381,26 +395,10 @@
           "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
           "date": "2026-11-21",
           "times": [
-            "12:15",
             "14:20"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75125",
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75124",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75125",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -410,7 +408,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -420,48 +418,6 @@
           "slug": "festive-fun-with-peppa-cinema-experience",
           "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
           "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-11-21",
-          "times": [
-            "12:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75126",
-          "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75126",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -761,7 +717,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -786,7 +742,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -801,7 +757,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1983,6 +1939,125 @@
               "date": "2026-11-27",
               "time": "20:45",
               "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74786",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sat 28 Nov",
+      "url": "https://imc.ie/film-times/clonmel/28-11-2026#dateD",
+      "date": "2026-11-28",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Buddy",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
+          "cert": "15A",
+          "runtime": 96,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Casper Kelly",
+          "synopsis": "A brave girl and her friends must escape a kids' television show.",
+          "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
+          "date": "2026-11-28",
+          "times": [
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75171",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75171",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "buddy",
+          "posterFile": "data/posters/buddy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 25, 2026",
+          "releaseDate": "2026-11-25",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-28",
+          "times": [
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74790",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74790",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74788",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=74789",
               "luxx": true,
               "screen": "1",
               "threeD": false,
@@ -3252,7 +3327,7 @@
       "title": "Festive Fun with Peppa Cinema Experience",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
       "cert": "G",
       "runtime": 60,
@@ -3261,43 +3336,13 @@
       "director": null,
       "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "times": [
         "12:15",
         "14:20"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75125",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75137",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75125",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "14:20",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75124",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sun 22 November",
           "date": "2026-11-22",
@@ -3307,7 +3352,7 @@
           "screen": "3",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -3322,7 +3367,7 @@
           "screen": "3",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -3349,27 +3394,12 @@
       "director": "Joel Crawford",
       "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "times": [
         "12:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75126",
+      "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75139",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=clonmel&stage=tickets&perf=75126",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sun 22 November",
           "date": "2026-11-22",
@@ -4167,23 +4197,21 @@
     }
   ],
   "log": [
-    "clonmel: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-20-11-2026-dated: 0 films parsed",
-    "day-21-11-2026-dated: 6 films parsed",
+    "today: 5 films parsed",
+    "day-21-11-2026-dated: 5 films parsed",
     "day-22-11-2026-dated: 6 films parsed",
     "day-23-11-2026-dated: 6 films parsed",
     "day-24-11-2026-dated: 6 films parsed",
     "day-25-11-2026-dated: 2 films parsed",
     "day-26-11-2026-dated: 4 films parsed",
     "day-27-11-2026-dated: 2 films parsed",
+    "day-28-11-2026-dated: 2 films parsed",
     "advance: 10 films parsed",
     "kids: 2 films parsed",
     "luxx: 6 films parsed",
     "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 17 ticket types, 4 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -4357,7 +4385,7 @@
         "name": "Kids Club",
         "price": "€5.00",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -4367,7 +4395,7 @@
         "name": "Kids Club Adult",
         "price": "€5.00",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -4377,7 +4405,7 @@
         "name": "Kids Club Meal Deal",
         "price": "€9.50",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -4662,7 +4690,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-20T23:12:12.559Z",
+    "checked": "2026-11-21T14:45:52.511Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -4673,7 +4701,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-11-20T23:12:27.078Z",
+  "checked": "2026-11-21T14:46:07.521Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

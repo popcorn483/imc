@@ -2,7 +2,7 @@
   "id": "tullamore",
   "cinema": "IMC Tullamore",
   "source": "https://imc.ie/tullamore",
-  "updated": "2026-11-20T23:18:57.546Z",
+  "updated": "2026-11-21T14:52:17.402Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -10,7 +10,7 @@
       "title": "EBENEZER",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
       "cert": "12A",
       "runtime": 120,
@@ -19,52 +19,82 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "17:20",
+        "15:00",
+        "15:35",
+        "17:30",
         "18:05",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91381",
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91400",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "17:20",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91381",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91400",
           "luxx": false,
           "screen": "7",
           "threeD": false,
           "tags": [
-            "new",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91373",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "new",
+            "released",
             "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91363",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91392",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91401",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "18:05",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91393",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91390",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
             "evening",
             "seating-standard"
           ]
@@ -73,6 +103,122 @@
       "slug": "ebenezer",
       "posterFile": "data/posters/ebenezer.jpg",
       "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-21",
+      "times": [
+        "14:00",
+        "15:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91397",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91397",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91398",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-21",
+      "times": [
+        "13:45",
+        "14:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91403",
+      "sessions": [
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91403",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91389",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -90,32 +236,32 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "17:25",
         "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91367",
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91386",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "17:25",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91367",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91386",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91368",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91387",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -146,48 +292,20 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "16:00",
-        "16:40",
+        "16:45",
         "19:15",
-        "20:00"
+        "20:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91365",
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91384",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "16:00",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91365",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91360",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "matinee",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91366",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91384",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -198,10 +316,38 @@
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91132",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "16:45",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91127",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "19:15",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91385",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:15",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91128",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -232,18 +378,18 @@
       "director": "Alex Huston Fischer, Eleanor Wilson",
       "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "18:05",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91374",
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91394",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91374",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91394",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -254,10 +400,10 @@
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91375",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91395",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -288,17 +434,17 @@
       "director": null,
       "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
       "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
-        "19:50"
+        "20:10"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91382",
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91402",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
-          "time": "19:50",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91382",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
+          "time": "20:10",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91402",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -320,7 +466,7 @@
       "title": "You can see everything",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
       "cert": "15A",
       "runtime": 176,
@@ -329,37 +475,37 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "times": [
         "16:10",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91361",
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=90881",
       "sessions": [
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "16:10",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91361",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=90881",
           "luxx": false,
           "screen": "2",
           "threeD": false,
           "tags": [
-            "advance",
-            "matinee",
+            "new",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 20 November",
-          "date": "2026-11-20",
+          "day": "Sat 21 November",
+          "date": "2026-11-21",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=90876",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=90882",
           "luxx": false,
           "screen": "2",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -372,12 +518,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Fri 20 Nov",
-      "url": "https://imc.ie/film-times/tullamore/20-11-2026#dateD",
-      "date": "2026-11-20",
-      "films": []
-    },
     {
       "label": "Sat 21 Nov",
       "url": "https://imc.ie/film-times/tullamore/21-11-2026#dateD",
@@ -505,7 +645,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -516,27 +656,11 @@
           "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
           "date": "2026-11-21",
           "times": [
-            "12:15",
             "14:00",
             "15:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91396",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91397",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:15",
-              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91396",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -546,7 +670,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -561,7 +685,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -689,48 +813,6 @@
         },
         {
           "certSystem": "ifco",
-          "certFile": "G",
-          "title": "Tad and the Magic Lamp",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-          "cert": "G",
-          "runtime": 94,
-          "release": "October 17, 2026",
-          "releaseDate": "2026-10-17",
-          "director": "Enrique Gato",
-          "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-          "trailer": null,
-          "date": "2026-11-21",
-          "times": [
-            "12:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91388",
-          "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:30",
-              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91388",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "tad-and-the-magic-lamp",
-          "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-          "certIcon": "data/ratings/ifco-G.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
           "certFile": "12A",
           "title": "The Hunger Games: Sunrise On The Reaping",
           "luxx": false,
@@ -746,29 +828,14 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-21",
           "times": [
-            "12:40",
             "13:20",
             "16:00",
             "16:45",
             "19:15",
             "20:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91383",
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91126",
           "sessions": [
-            {
-              "day": "Sat 21 November",
-              "date": "2026-11-21",
-              "time": "12:40",
-              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91383",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 21 November",
               "date": "2026-11-21",
@@ -1142,7 +1209,7 @@
           "title": "Festive Fun with Peppa Cinema Experience",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
           "cert": "G",
           "runtime": 60,
@@ -1168,7 +1235,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1183,7 +1250,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -1198,7 +1265,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "kidsclub",
                 "seating-standard"
@@ -3187,6 +3254,185 @@
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
+    },
+    {
+      "label": "Sat 28 Nov",
+      "url": "https://imc.ie/film-times/tullamore/28-11-2026#dateD",
+      "date": "2026-11-28",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 25, 2026",
+          "releaseDate": "2026-11-25",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-28",
+          "times": [
+            "13:15",
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=90964",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=90964",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=90963",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=90953",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=90954",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Hexed",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
+          "cert": "PG",
+          "runtime": 109,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Jason Hand, Fawn Veerasunthorn",
+          "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+          "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
+          "date": "2026-11-28",
+          "times": [
+            "13:05",
+            "15:35",
+            "18:10",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91102",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:05",
+              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91102",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91103",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91104",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91105",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "hexed",
+          "posterFile": "data/posters/hexed.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -5015,7 +5261,7 @@
       "title": "Festive Fun with Peppa Cinema Experience",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
       "cert": "G",
       "runtime": 60,
@@ -5026,42 +5272,10 @@
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
       "date": "2026-11-21",
       "times": [
-        "12:15",
-        "14:00",
         "15:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91396",
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91398",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91396",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "14:00",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91397",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -5071,7 +5285,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -5086,7 +5300,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -5101,7 +5315,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -5116,7 +5330,7 @@
           "screen": "6",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "kidsclub",
             "seating-standard"
@@ -5145,26 +5359,10 @@
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
       "date": "2026-11-21",
       "times": [
-        "13:45",
         "14:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91403",
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91389",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "13:45",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91403",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 21 November",
           "date": "2026-11-21",
@@ -5231,27 +5429,12 @@
       "director": "Enrique Gato",
       "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
       "trailer": null,
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "times": [
         "12:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91388",
+      "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91410",
       "sessions": [
-        {
-          "day": "Sat 21 November",
-          "date": "2026-11-21",
-          "time": "12:30",
-          "book": "https://booking.imc.ie/booking/?cinema=tullamore&stage=tickets&perf=91388",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sun 22 November",
           "date": "2026-11-22",
@@ -5310,23 +5493,21 @@
     }
   ],
   "log": [
-    "tullamore: no films on the film-times page",
     "home: 1 films parsed",
-    "today: 0 films parsed",
-    "day-20-11-2026-dated: 0 films parsed",
-    "day-21-11-2026-dated: 9 films parsed",
+    "today: 8 films parsed",
+    "day-21-11-2026-dated: 8 films parsed",
     "day-22-11-2026-dated: 9 films parsed",
     "day-23-11-2026-dated: 6 films parsed",
     "day-24-11-2026-dated: 6 films parsed",
     "day-25-11-2026-dated: 6 films parsed",
     "day-26-11-2026-dated: 6 films parsed",
     "day-27-11-2026-dated: 2 films parsed",
+    "day-28-11-2026-dated: 2 films parsed",
     "advance: 9 films parsed",
     "kids: 3 films parsed",
     "luxx: 0 films parsed",
     "booking pages read: 9 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
     "prices: 15 ticket types, 2 bundles, 9 products",
-    "kept previous today",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -5742,7 +5923,7 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-20T23:19:23.864Z",
+    "checked": "2026-11-21T14:52:44.536Z",
     "sampledDays": [
       "Sat",
       "Sun",
@@ -5753,7 +5934,7 @@
       "Fri"
     ]
   },
-  "checked": "2026-11-20T23:19:36.888Z",
+  "checked": "2026-11-21T14:52:57.221Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
