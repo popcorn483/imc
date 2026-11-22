@@ -95,8 +95,10 @@ jobs:
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=1280x720:rate=24 -f lavfi -i sine -t 4 -c:v libx264 -b:v 3M -c:a aac "$d\Hexed.mp4"; (Get-Item "$d\Hexed.mp4").LastWriteTime = (Get-Date).AddMinutes(-10)
           & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=720x576:rate=25 -t 3 -c:v mpeg2video -b:v 4M "$d\Hexed.mpg"
           Copy-Item "$d\Coco.mp4" "$d\Coco (foyer) (foyer).mp4"
+          & $ff -hide_banner -loglevel error -f lavfi -i testsrc=size=3840x2160:rate=60 -f lavfi -i sine -t 3 -c:v libx264 -preset ultrafast -c:a aac "$d\Jumanji (4K).mp4"; (Get-Item "$d\Jumanji (4K).mp4").LastWriteTime = (Get-Date).AddMinutes(-10)
           $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 | Out-String
-          $o += "Tidy run:"; $o += ($r -split "`n" | Where-Object { $_ -match "Already|repeated|half-made|Nothing|to convert" } | ForEach-Object { $_.TrimEnd() })
+          $o += "Tidy run:"; $o += ($r -split "`n" | Where-Object { $_ -match "Already|repeated|half-made|Nothing|to convert|Jumanji|Done|couldn" } | ForEach-Object { $_.TrimEnd() })
+          $o += "Picture sizes now:"; foreach ($f in Get-ChildItem $d -File -Recurse -Filter *.mp4) { $o += "  " + $f.Name + ": " + ((& $fp -v error -select_streams v:0 -show_entries stream=codec_name,width,height,avg_frame_rate -of csv=p=0 $f.FullName) -join " ") }
           $o += "Files now:"
           foreach ($f in Get-ChildItem $d -File -Recurse) { $c = & $fp -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $a = & $fp -v error -select_streams a:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $f.FullName; $o += "  " + $f.FullName.Substring($d.Length + 1) + "  video=" + $c + " audio=" + $a }
           $o | Set-Content setup\convert-test.txt

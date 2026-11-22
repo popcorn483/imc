@@ -117,6 +117,29 @@ function Video-Codec($path) {
   if (-not (Test-Path -LiteralPath $ffprobe)) { return "h264" }
   try { $c = & $ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 "$path" 2>$null; return ("" + $c).Trim().ToLower() } catch { return "" }
 }
+# what the picture is: codec, size, frames per second, colour depth, bit rate
+function Video-Info($path) {
+  $i = @{ codec = ""; w = 0; h = 0; fps = 0; pix = ""; kbps = 0 }
+  if (-not (Test-Path -LiteralPath $ffprobe)) { $i.codec = "h264"; return $i }
+  try {
+    $lines = & $ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,avg_frame_rate,r_frame_rate,pix_fmt,bit_rate -show_entries format=bit_rate -of default=nw=1 "$path" 2>$null
+    foreach ($l in $lines) { $k, $v = ("" + $l).Split("=", 2); if ($null -eq $v) { continue }; $v = $v.Trim()
+      switch ($k) { "codec_name" { $i.codec = $v.ToLower() } "width" { $i.w = [int]$v } "height" { $i.h = [int]$v } "pix_fmt" { $i.pix = $v }
+        "bit_rate" { if ($v -match '^\d+$' -and [int64]$v -gt $i.kbps * 1000) { $i.kbps = [int]([int64]$v / 1000) } }
+        { $_ -eq "avg_frame_rate" -or $_ -eq "r_frame_rate" } { if ($v -match '^(\d+)/(\d+)$' -and [int]$Matches[2] -gt 0) { $f = [double]$Matches[1] / [double]$Matches[2]; if ($f -gt $i.fps -and $f -lt 400) { $i.fps = $f } } } } }
+  } catch {}
+  return $i
+}
+# too much for an ordinary foyer PC to play smoothly in a browser (it jumps): not H.264, bigger than Full HD, over 30 frames a second, 10-bit colour or a very high bit rate
+function Too-Heavy($i) {
+  if (-not $i.codec) { return "" }
+  if ($i.codec -ne "h264") { return "not H.264 (" + $i.codec + ")" }
+  if ($i.w -gt 1920 -or $i.h -gt 1088) { return "bigger than Full HD (" + $i.w + "x" + $i.h + ")" }
+  if ($i.fps -gt 31) { return ([math]::Round($i.fps)).ToString() + " frames a second" }
+  if ($i.pix -and $i.pix -notmatch '^yuv(j)?420p$') { return "unusual colour format (" + $i.pix + ")" }
+  if ($i.kbps -gt 16000) { return "very high bit rate (" + [math]::Round($i.kbps / 1000) + " Mbps)" }
+  return ""
+}
 # old files go here when the Recycle Bin can't take them (Google Drive folders); folders starting with _ are never looked in
 $OLD = Join-Path $dir "_old trailers (converted)"
 function Put-Away($f, $why) {
@@ -137,7 +160,7 @@ if (Test-Path -LiteralPath $OLD) { foreach ($f in @(Get-ChildItem -LiteralPath $
 function Done-Mp4($f) {   # an MP4 of this trailer made already?
   $base = [IO.Path]::GetFileNameWithoutExtension($f.Name)
   foreach ($n in @(($base + ".mp4"), ($base + " (foyer).mp4"))) { $p = Join-Path $f.DirectoryName $n
-    if ($p -ne $f.FullName -and (Test-Path -LiteralPath $p)) { $g = Get-Item -LiteralPath $p; if ($g.Length -gt 200000 -and ((Get-Date) - $g.LastWriteTime).TotalMinutes -gt 2 -and (Video-Codec $p) -eq "h264") { return $true } } }
+    if ($p -ne $f.FullName -and (Test-Path -LiteralPath $p)) { $g = Get-Item -LiteralPath $p; if ($g.Length -gt 200000 -and ((Get-Date) - $g.LastWriteTime).TotalMinutes -gt 2 -and -not (Too-Heavy (Video-Info $p))) { return $true } } }
   return $false
 }
 $todo = @()
@@ -146,7 +169,7 @@ foreach ($f in (All-Files)) {
   if ($f.Name -match '\(foyer\)\.mp4$') { continue }
   if ($AUTO -and ((Get-Date) - $f.LastWriteTime).TotalMinutes -lt 3) { continue }   # still being copied in: next time
   $need = ($f.Name -match $CONVERT)
-  if (-not $need -and $f.Name -match $CHECK) { $c = Video-Codec $f.FullName; $need = ($c -and $c -ne "h264") }
+  if (-not $need -and $f.Name -match $CHECK) { $why = Too-Heavy (Video-Info $f.FullName); $need = [bool]$why; if ($why) { Log ("Needs converting (" + $why + "): " + $f.Name) } }
   if (-not $need) { continue }
   if (Done-Mp4 $f) { $r = Put-Away $f "done"; Say ("Already converted, so put the old one away: " + $f.Name) Cyan; continue }
   $todo += $f
@@ -170,10 +193,14 @@ foreach ($f in $todo) {
   $part = $out + ".part.mp4"
   Say ""
   Say ("[$n of $($todo.Count)]  " + $f.Name + "  ->  " + [IO.Path]::GetFileName($out)) Yellow
-  # H.264 + AAC MP4 that every browser plays; interlaced TV-style files are smoothed; fast start for quick playback
+  # H.264 + AAC MP4 that every browser plays; interlaced TV-style files are smoothed; fast start for quick playback.
+  # Made light enough for an ordinary PC: no bigger than Full HD and no more than 30 frames a second (60 -> 30, 50 -> 25), so it plays without jumping.
+  $vi = Video-Info $f.FullName
+  $vf = "yadif=deint=interlaced,scale='min(1920,iw)':'min(1080,ih)':force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2"
+  if ($vi.fps -gt 31) { $vf += ",fps=" + [math]::Round($vi.fps / 2, 3).ToString([Globalization.CultureInfo]::InvariantCulture) }
   $ffa = @("-hide_banner", "-loglevel", "error", "-stats", "-y", "-i", $f.FullName,
-            "-map", "0:v:0", "-map", "0:a:0?", "-vf", "yadif=deint=interlaced,scale=trunc(iw/2)*2:trunc(ih/2)*2",
-            "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-maxrate", "12M", "-bufsize", "24M", "-g", "50", "-pix_fmt", "yuv420p",
+            "-map", "0:v:0", "-map", "0:a:0?", "-vf", $vf,
+            "-c:v", "libx264", "-preset", "veryfast", "-crf", "21", "-maxrate", "8M", "-bufsize", "16M", "-g", "50", "-profile:v", "high", "-level", "4.1", "-pix_fmt", "yuv420p",
             "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-movflags", "+faststart", "-f", "mp4", $part)
   $ErrorActionPreference = "Continue"
   if ($AUTO) {   # in the background: quietly (this whole run is at low priority, so the PC stays quick)
