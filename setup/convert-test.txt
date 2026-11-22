@@ -12,26 +12,29 @@ Second run:
   Makes an MP4 of any trailer the TVs can't play.
   Keep this window open until it says Finished.
 Folder: D:\conv\IMC TRAILERS
-3 trailers to convert:
+4 trailers to convert:
+   Already fine.mp4
    Coco.mpg
    Shrek 5.wmv
    Dune 3.mov
 Each one takes about a minute (longer on an old PC).
-[1 of 3]  Coco.mpg  ->  Coco.mp4
-cmd.exe : frame=  150 fps=0.0 q=-1.0 Lsize=     235KiB time=00:00:06.00 bitrate= 320.3kbits/s speed=26.9x
-elapsed=0:00:00.22
-At D:\a\_temp\525b5bb9-e72c-4c62-bc76-01afa1412a98.ps1:18 char:6
+[1 of 4]  Already fine.mp4  ->  Already fine (foyer).mp4
+cmd.exe : frame=   72 fps=0.0 q=-1.0 Lsize=     118KiB time=00:00:03.00 bitrate= 321.4kbits/s speed=7.91x
+elapsed=0:00:00.37
+At D:\a\_temp\6568090f-bf44-4e47-931d-63d8358ff206.ps1:18 char:6
 + $r = cmd.exe /c "`"$PWD\setup\IMC-Convert-Trailers.bat`" `"$d`"" 2>&1 ...
 +      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (frame=  150 fps...=0:00:00.22    :String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (frame=   72 fps...=0:00:00.37    :String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
    Done. the old file is in the Recycle Bin.
-[2 of 3]  Shrek 5.wmv  ->  Shrek 5.mp4
+[2 of 4]  Coco.mpg  ->  Coco.mp4
    Done. the old file is in the Recycle Bin.
-[3 of 3]  Dune 3.mov  ->  Dune 3.mp4
+[3 of 4]  Shrek 5.wmv  ->  Shrek 5.mp4
+   Done. the old file is in the Recycle Bin.
+[4 of 4]  Dune 3.mov  ->  Dune 3.mp4
    Done. the old file is in the Recycle Bin.
   =====================================================
-  Finished: 3 converted
+  Finished: 4 converted
   =====================================================
   In the hub, click Check on the Trailers page to see them.
 Install: =====================================================
@@ -44,21 +47,40 @@ Automatic converting is on for D:\conv\IMC TRAILERS
 Scheduled task: registered, runs wscript.exe "C:\ProgramData\IMC\convert-hidden.vbs"
 Background script: Set s = CreateObject("WScript.Shell") / s.Environment("PROCESS")("IMC_NOPAUSE") = "1" / s.Run "cmd.exe /c ""C:\ProgramData\IMC\IMC-Convert-Trailers.bat"" /auto", 0, True
 convert.log:
-2026-11-12 16:47  Automatic converting switched on for D:\conv\IMC TRAILERS
-2026-11-12 16:47  1 trailer to convert:
-2026-11-12 16:47  [1 of 1]  George Michael.mpg  ->  George Michael.mp4
-2026-11-12 16:47  Done. the old file is in the Recycle Bin.
-2026-11-12 16:47  Finished: 1 converted
+2026-11-22 11:36  Needs converting (unusual colour format (yuv444p)): Already fine.mp4
+2026-11-22 11:36  Needs converting (not H.264 (mjpeg)): Dune 3.mov
+2026-11-22 11:36  Automatic converting switched on for D:\conv\IMC TRAILERS
+2026-11-22 11:36  1 trailer to convert:
+2026-11-22 11:36  [1 of 1]  George Michael.mpg  ->  George Michael.mp4
+2026-11-22 11:36  Done. the old file is in the Recycle Bin.
+2026-11-22 11:36  Finished: 1 converted
 Off: Automatic converting is off. task now gone
 Tidy run:
 Put away a repeated copy: Coco (foyer) (foyer).mp4
-Already converted, so put the old one away: Hexed.mpg
-1 trailer to convert:
+4 trailers to convert:
+   Jumanji (4K).mp4
+   Done. the old file is in the Recycle Bin.
+   Done. the old file is in the Recycle Bin.
+[3 of 4]  Jumanji (4K).mp4  ->  Jumanji (4K) (foyer).mp4
+   Done. the old file is in the Recycle Bin.
+   Done. the old file is in the Recycle Bin.
+Picture sizes now:
+  Already fine (foyer).mp4: h264,1280,720,24/1
+  Coco.mp4: h264,720,576,25/1
+  George Michael.mp4: h264,720,576,25/1
+  Hexed (foyer).mp4: h264,1280,720,24/1
+  Hexed.mp4: h264,720,576,25/1
+  Jumanji (4K) (foyer).mp4: h264,1920,1080,30/1
+  Just arrived.mp4: h264,720,576,25/1
+  Shrek 5.mp4: h264,640,360,25/1
+  Dune 3.mp4: h264,1280,720,24/1
 Files now:
-  Already fine.mp4  video=h264 audio=aac
+  Already fine (foyer).mp4  video=h264 audio=aac
   Coco.mp4  video=h264 audio=aac
   George Michael.mp4  video=h264 audio=aac
-  Hexed.mp4  video=h264 audio=aac
+  Hexed (foyer).mp4  video=h264 audio=aac
+  Hexed.mp4  video=h264 audio=
+  Jumanji (4K) (foyer).mp4  video=h264 audio=aac
   Just arrived.mp4  video=h264 audio=
   Shrek 5.mp4  video=h264 audio=
   November\Dune 3.mp4  video=h264 audio=aac
