@@ -2,7 +2,7 @@
   "id": "newtownards",
   "cinema": "IMC Newtownards",
   "source": "https://imc.ie/newtownards",
-  "updated": "2026-11-22T22:30:02.674Z",
+  "updated": "2026-11-23T18:08:38.332Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -393,12 +393,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Sun 22 Nov",
-      "url": "https://imc.ie/film-times/newtownards/22-11-2026#dateD",
-      "date": "2026-11-22",
-      "films": []
-    },
     {
       "label": "Mon 23 Nov",
       "url": "https://imc.ie/film-times/newtownards/23-11-2026#dateD",
@@ -922,6 +916,47 @@
         {
           "certSystem": "bbfc",
           "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-27",
+          "times": [
+            "18:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54415",
+          "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54415",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
           "title": "Focker-In-Law",
           "luxx": false,
           "sensory": false,
@@ -937,6 +972,7 @@
           "date": "2026-11-27",
           "times": [
             "18:15",
+            "20:00",
             "20:45"
           ],
           "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54355",
@@ -948,6 +984,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54355",
               "luxx": false,
               "screen": "01",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54414",
+              "luxx": false,
+              "screen": "05",
               "threeD": false,
               "tags": [
                 "advance",
@@ -1030,6 +1080,62 @@
           "posterFile": "data/posters/hexed.jpg",
           "certIcon": "data/ratings/bbfc-PG.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-27",
+          "times": [
+            "19:15",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54413",
+          "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54413",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54412",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
     },
@@ -1082,6 +1188,119 @@
         {
           "certSystem": "bbfc",
           "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-28",
+          "times": [
+            "13:00",
+            "15:30",
+            "18:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54434",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54434",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54435",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54436",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa Cinema Experience",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+          "date": "2026-11-28",
+          "times": [
+            "11:50"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54437",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "11:50",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54437",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-cinema-experience",
+          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+          "certIcon": "data/ratings/bbfc-G.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
           "title": "Focker-In-Law",
           "luxx": false,
           "sensory": false,
@@ -1096,13 +1315,31 @@
           "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
           "date": "2026-11-28",
           "times": [
+            "12:15",
             "13:15",
+            "14:45",
             "15:45",
+            "17:15",
             "18:15",
+            "19:45",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54367",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54430",
           "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54430",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -1110,6 +1347,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54367",
               "luxx": false,
               "screen": "01",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54431",
+              "luxx": false,
+              "screen": "05",
               "threeD": false,
               "tags": [
                 "advance",
@@ -1134,10 +1385,38 @@
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54432",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
               "time": "18:15",
               "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54368",
               "luxx": false,
               "screen": "01",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54433",
+              "luxx": false,
+              "screen": "05",
               "threeD": false,
               "tags": [
                 "advance",
@@ -1250,6 +1529,122 @@
           "posterFile": "data/posters/hexed.jpg",
           "certIcon": "data/ratings/bbfc-PG.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-28",
+          "times": [
+            "12:35",
+            "13:20",
+            "15:55",
+            "16:40",
+            "19:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54427",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "12:35",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54427",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:20",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54424",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:55",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54428",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "16:40",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54425",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54429",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54426",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
     },
@@ -1302,6 +1697,119 @@
         {
           "certSystem": "bbfc",
           "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-29",
+          "times": [
+            "13:00",
+            "15:30",
+            "18:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54449",
+          "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "13:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54449",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "15:30",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54450",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54451",
+              "luxx": false,
+              "screen": "06",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "G",
+          "title": "Festive Fun with Peppa Cinema Experience",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+          "cert": "G",
+          "runtime": 60,
+          "release": "November 14, 2026",
+          "releaseDate": "2026-11-14",
+          "director": null,
+          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+          "date": "2026-11-29",
+          "times": [
+            "11:50"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54438",
+          "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "11:50",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54438",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "festive-fun-with-peppa-cinema-experience",
+          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+          "certIcon": "data/ratings/bbfc-G.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
           "title": "Focker-In-Law",
           "luxx": false,
           "sensory": false,
@@ -1316,13 +1824,31 @@
           "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
           "date": "2026-11-29",
           "times": [
+            "12:15",
             "13:15",
+            "14:45",
             "15:45",
+            "17:15",
             "18:15",
+            "19:45",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54376",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54445",
           "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54445",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sun 29 November",
               "date": "2026-11-29",
@@ -1330,6 +1856,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54376",
               "luxx": false,
               "screen": "01",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54446",
+              "luxx": false,
+              "screen": "05",
               "threeD": false,
               "tags": [
                 "advance",
@@ -1354,10 +1894,38 @@
             {
               "day": "Sun 29 November",
               "date": "2026-11-29",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54447",
+              "luxx": false,
+              "screen": "05",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
               "time": "18:15",
               "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54378",
               "luxx": false,
               "screen": "01",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54448",
+              "luxx": false,
+              "screen": "05",
               "threeD": false,
               "tags": [
                 "advance",
@@ -1470,8 +2038,130 @@
           "posterFile": "data/posters/hexed.jpg",
           "certIcon": "data/ratings/bbfc-PG.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-29",
+          "times": [
+            "12:35",
+            "13:20",
+            "15:55",
+            "16:40",
+            "19:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54442",
+          "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "12:35",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54442",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "13:20",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54439",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "15:55",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54443",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "16:40",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54440",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54444",
+              "luxx": false,
+              "screen": "04",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54441",
+              "luxx": false,
+              "screen": "03",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
+    },
+    {
+      "label": "Mon 30 Nov",
+      "url": "https://imc.ie/film-times/newtownards/30-11-2026#dateD",
+      "date": "2026-11-30",
+      "films": []
     }
   ],
   "comingSoon": [
@@ -2551,6 +3241,20 @@
         {
           "day": "Fri 27 November",
           "date": "2026-11-27",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54414",
+          "luxx": false,
+          "screen": "05",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
           "time": "20:45",
           "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54351",
           "luxx": false,
@@ -2565,10 +3269,38 @@
         {
           "day": "Sat 28 November",
           "date": "2026-11-28",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54430",
+          "luxx": false,
+          "screen": "05",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "13:15",
           "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54367",
           "luxx": false,
           "screen": "01",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54431",
+          "luxx": false,
+          "screen": "05",
           "threeD": false,
           "tags": [
             "advance",
@@ -2593,10 +3325,38 @@
         {
           "day": "Sat 28 November",
           "date": "2026-11-28",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54432",
+          "luxx": false,
+          "screen": "05",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "18:15",
           "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54368",
           "luxx": false,
           "screen": "01",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54433",
+          "luxx": false,
+          "screen": "05",
           "threeD": false,
           "tags": [
             "advance",
@@ -2621,10 +3381,38 @@
         {
           "day": "Sun 29 November",
           "date": "2026-11-29",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54445",
+          "luxx": false,
+          "screen": "05",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
           "time": "13:15",
           "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54376",
           "luxx": false,
           "screen": "01",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54446",
+          "luxx": false,
+          "screen": "05",
           "threeD": false,
           "tags": [
             "advance",
@@ -2649,10 +3437,38 @@
         {
           "day": "Sun 29 November",
           "date": "2026-11-29",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54447",
+          "luxx": false,
+          "screen": "05",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
           "time": "18:15",
           "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54378",
           "luxx": false,
           "screen": "01",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54448",
+          "luxx": false,
+          "screen": "05",
           "threeD": false,
           "tags": [
             "advance",
@@ -2691,6 +3507,20 @@
         {
           "day": "Wed 2 December",
           "date": "2026-12-02",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54418",
+          "luxx": false,
+          "screen": "05",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 2 December",
+          "date": "2026-12-02",
           "time": "20:45",
           "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54357",
           "luxx": false,
@@ -2709,6 +3539,20 @@
           "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54361",
           "luxx": false,
           "screen": "01",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 3 December",
+          "date": "2026-12-03",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54421",
+          "luxx": false,
+          "screen": "05",
           "threeD": false,
           "tags": [
             "advance",
@@ -3436,19 +4280,34 @@
       "director": null,
       "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
-      "date": "2026-11-22",
+      "date": "2026-11-28",
       "times": [
-        "14:20"
+        "11:50"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54309",
+      "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54437",
       "sessions": [
         {
-          "day": "Sun 22 November",
-          "date": "2026-11-22",
-          "time": "14:20",
-          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54309",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "11:50",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54437",
           "luxx": false,
-          "screen": "02",
+          "screen": "03",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "kidsclub",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "11:50",
+          "book": "https://booking.imc.ie/booking/?cinema=newtownards&stage=tickets&perf=54438",
+          "luxx": false,
+          "screen": "03",
           "threeD": false,
           "tags": [
             "released",
@@ -3461,30 +4320,6 @@
       "slug": "festive-fun-with-peppa-cinema-experience",
       "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
       "certIcon": "data/ratings/bbfc-G.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "U",
-      "title": "Tad and the Magic Lamp",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-      "cert": "U",
-      "runtime": 94,
-      "release": "October 17, 2026",
-      "releaseDate": "2026-10-17",
-      "director": "Enrique Gato",
-      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-      "trailer": null,
-      "date": null,
-      "times": [],
-      "book": null,
-      "sessions": [],
-      "slug": "tad-and-the-magic-lamp",
-      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-      "certIcon": "data/ratings/bbfc-U.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     }
   ],
@@ -3527,21 +4362,20 @@
     "newtownards: no films on the film-times page",
     "home: 1 films parsed",
     "today: 0 films parsed",
-    "day-22-11-2026-dated: 0 films parsed",
     "day-23-11-2026-dated: 0 films parsed",
     "day-24-11-2026-dated: 0 films parsed",
     "day-25-11-2026-dated: 4 films parsed",
     "day-26-11-2026-dated: 4 films parsed",
-    "day-27-11-2026-dated: 3 films parsed",
-    "day-28-11-2026-dated: 3 films parsed",
-    "day-29-11-2026-dated: 3 films parsed",
+    "day-27-11-2026-dated: 5 films parsed",
+    "day-28-11-2026-dated: 6 films parsed",
+    "day-29-11-2026-dated: 6 films parsed",
+    "day-30-11-2026-dated: 0 films parsed",
     "advance: 10 films parsed",
-    "kids: 0 films parsed",
+    "kids: 1 films parsed",
     "luxx: 0 films parsed",
-    "booking pages read: 6 (Wed, Thu, Fri, Sat, Sun)",
-    "prices: 7 ticket types, 2 bundles, 8 products",
+    "booking pages read: 7 (Wed, Thu, Fri, Sat, Sun)",
+    "prices: 10 ticket types, 2 bundles, 8 products",
     "kept previous today",
-    "kept previous kidsClub",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -3645,6 +4479,36 @@
           "evening",
           "matinee"
         ]
+      },
+      {
+        "name": "Kids Club",
+        "price": "£3.40",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Adult",
+        "price": "£3.40",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Meal Deal",
+        "price": "£7.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
+        ]
       }
     ],
     "bundles": [
@@ -3698,7 +4562,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/flexi.jpg"
       },
@@ -3715,7 +4580,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/maltesers.jpg"
       },
@@ -3732,7 +4598,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/minstrels.jpg"
       },
@@ -3749,7 +4616,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/ttc.jpg"
       },
@@ -3766,7 +4634,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/combotest.jpg"
       },
@@ -3783,7 +4652,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/lccc.jpg"
       },
@@ -3800,7 +4670,8 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/onkt.jpg"
       },
@@ -3817,12 +4688,13 @@
         ],
         "seenOn": [
           "evening",
-          "matinee"
+          "matinee",
+          "kids"
         ],
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-22T22:30:27.376Z",
+    "checked": "2026-11-23T18:09:05.600Z",
     "sampledDays": [
       "Wed",
       "Thu",
@@ -3831,7 +4703,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-22T22:30:35.521Z",
+  "checked": "2026-11-23T18:09:15.557Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

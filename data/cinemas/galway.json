@@ -2,8 +2,49 @@
   "id": "galway",
   "cinema": "IMC Galway",
   "source": "https://imc.ie/galway-headford-road",
-  "updated": "2026-11-22T22:35:43.609Z",
+  "updated": "2026-11-23T18:14:51.042Z",
   "today": [
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "A TALENT FOR MURDER",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116791.jpg",
+      "cert": "15A",
+      "runtime": 106,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": "Anton Corbijn",
+      "synopsis": "A mysterious young man from a New York publisher is sent to Switzerland to persuade the renowned writer Patricia Highsmith to write one final instalment of the Ripley anthology.",
+      "trailer": "https://www.youtube.com/watch?v=IzFgGhFrx0o",
+      "date": "2026-11-23",
+      "times": [
+        "20:40"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178887",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "20:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178887",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "a-talent-for-murder",
+      "posterFile": "data/posters/a-talent-for-murder.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
     {
       "certSystem": "ifco",
       "certFile": "12A",
@@ -19,17 +60,32 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-22",
+      "date": "2026-11-23",
       "times": [
+        "18:05",
         "20:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178733",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178735",
       "sessions": [
         {
-          "day": "Sun 22 November",
-          "date": "2026-11-22",
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "18:05",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178735",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
           "time": "20:40",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178733",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178736",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -44,15 +100,438 @@
       "posterFile": "data/posters/ebenezer.jpg",
       "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "ENE Repeat",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/117444.jpg",
+      "cert": "15A",
+      "runtime": 155,
+      "release": "November 23, 2026",
+      "releaseDate": "2026-11-23",
+      "director": "Tharun Bhascker Dhaassyam",
+      "synopsis": "Vivek and his friends reunite years after their Goa misadventure for a new journey. As they navigate life challenges, impulsive plans, and unexpected escapades, chaos ensues once again.",
+      "trailer": "https://www.youtube.com/watch?v=Y4Zzy7SVLp4",
+      "date": "2026-11-23",
+      "times": [
+        "17:30",
+        "20:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178995",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178995",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178996",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ene-repeat",
+      "posterFile": "data/posters/ene-repeat.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Forgotten Island",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-23",
+      "times": [
+        "17:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178994",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178994",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "I Play Rocky",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+      "cert": "12A",
+      "runtime": 128,
+      "release": "November 11, 2026",
+      "releaseDate": "2026-11-11",
+      "director": "Peter Farrelly",
+      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+      "date": "2026-11-23",
+      "times": [
+        "17:45",
+        "20:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178753",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "17:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178753",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178807",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "i-play-rocky",
+      "posterFile": "data/posters/i-play-rocky.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Josephine",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/117277.jpg",
+      "cert": "16",
+      "runtime": 119,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": "Beth de Araújo",
+      "synopsis": "After eight-year-old Josephine witnesses a violent assault in San Francisco?s Golden Gate Park, the trauma begins to reshape her world, and her fear and confusion slowly unravel the household around her. Channing Tatum and Gemma Chan star as her parents in Beth de Araújo?s acclaimed drama, winner of both the Grand Jury Prize and the Audience Award at the 2026 Sundance Film Festival.",
+      "trailer": "https://www.youtube.com/watch?v=d7NLG3IfowQ",
+      "date": "2026-11-23",
+      "times": [
+        "17:50",
+        "20:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178888",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "17:50",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178888",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "new",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178875",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "josephine",
+      "posterFile": "data/posters/josephine.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "16",
+      "title": "Primetime",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/114209.jpg",
+      "cert": "16",
+      "runtime": 109,
+      "release": "October 28, 2026",
+      "releaseDate": "2026-10-28",
+      "director": "Lance Oppenheim",
+      "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
+      "date": "2026-11-23",
+      "times": [
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178765",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178765",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "primetime",
+      "posterFile": "data/posters/primetime.jpg",
+      "certIcon": "data/ratings/ifco-16.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "The Hunger Games: Sunrise On The Reaping",
+      "luxx": false,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+      "cert": "12A",
+      "runtime": 158,
+      "release": "November 18, 2026",
+      "releaseDate": "2026-11-18",
+      "director": null,
+      "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+      "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+      "date": "2026-11-23",
+      "times": [
+        "18:35",
+        "20:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178716",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "18:35",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178716",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178170",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "the-hunger-games-sunrise-on-the-reaping",
+      "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "The Hunger Games: Sunrise On The Reaping -",
+      "luxx": true,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
+      "cert": "12A",
+      "runtime": 158,
+      "release": "November 19, 2026",
+      "releaseDate": "2026-11-19",
+      "director": "Francis Lawrence",
+      "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+      "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+      "date": "2026-11-23",
+      "times": [
+        "19:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178702",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "19:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178702",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "the-hunger-games-sunrise-on-the-reaping",
+      "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Wildwood",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+      "cert": "12A",
+      "runtime": 131,
+      "release": "October 23, 2026",
+      "releaseDate": "2026-10-23",
+      "director": null,
+      "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+      "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+      "date": "2026-11-23",
+      "times": [
+        "18:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178764",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178764",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "wildwood",
+      "posterFile": "data/posters/wildwood.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "You Can See Everything",
+      "luxx": true,
+      "sensory": false,
+      "status": "New Release",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
+      "cert": "15A",
+      "runtime": 174,
+      "release": "November 20, 2026",
+      "releaseDate": "2026-11-20",
+      "director": "Nathan Fielder",
+      "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+      "trailer": null,
+      "date": "2026-11-23",
+      "times": [
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178822",
+      "sessions": [
+        {
+          "day": "Mon 23 November",
+          "date": "2026-11-23",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178822",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "you-can-see-everything",
+      "posterFile": "data/posters/you-can-see-everything.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "days": [
-    {
-      "label": "Sun 22 Nov",
-      "url": "https://imc.ie/film-times/galway-headford-road/22-11-2026#dateD",
-      "date": "2026-11-22",
-      "films": []
-    },
     {
       "label": "Mon 23 Nov",
       "url": "https://imc.ie/film-times/galway-headford-road/23-11-2026#dateD",
@@ -75,25 +554,10 @@
           "trailer": "https://www.youtube.com/watch?v=IzFgGhFrx0o",
           "date": "2026-11-23",
           "times": [
-            "15:00",
             "20:40"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178885",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178887",
           "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "15:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178885",
-              "luxx": false,
-              "screen": "9",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Mon 23 November",
               "date": "2026-11-23",
@@ -131,26 +595,11 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-23",
           "times": [
-            "15:30",
             "18:05",
             "20:40"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178734",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178735",
           "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "15:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178734",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Mon 23 November",
               "date": "2026-11-23",
@@ -258,25 +707,10 @@
           "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
           "date": "2026-11-23",
           "times": [
-            "15:00",
             "17:30"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178809",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178994",
           "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "15:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178809",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Mon 23 November",
               "date": "2026-11-23",
@@ -314,26 +748,11 @@
           "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
           "date": "2026-11-23",
           "times": [
-            "15:00",
             "17:45",
             "20:30"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178754",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178753",
           "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "15:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178754",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Mon 23 November",
               "date": "2026-11-23",
@@ -385,26 +804,11 @@
           "trailer": "https://www.youtube.com/watch?v=d7NLG3IfowQ",
           "date": "2026-11-23",
           "times": [
-            "15:10",
             "17:50",
             "20:30"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178889",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178888",
           "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "15:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178889",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Mon 23 November",
               "date": "2026-11-23",
@@ -456,25 +860,10 @@
           "trailer": "https://www.youtube.com/watch?v=v7Eh8szsr9k",
           "date": "2026-11-23",
           "times": [
-            "15:30",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178766",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178765",
           "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "15:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178766",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Mon 23 November",
               "date": "2026-11-23",
@@ -512,27 +901,12 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-23",
           "times": [
-            "15:10",
             "16:35",
             "18:35",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178717",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178169",
           "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "15:10",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178717",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Mon 23 November",
               "date": "2026-11-23",
@@ -598,25 +972,10 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-23",
           "times": [
-            "15:45",
             "19:15"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178703",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178702",
           "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "15:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178703",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Mon 23 November",
               "date": "2026-11-23",
@@ -874,7 +1233,7 @@
           "title": "ENE Repeat",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/117444.jpg",
           "cert": "15A",
           "runtime": 155,
@@ -898,7 +1257,7 @@
               "screen": "9",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "seating-standard"
               ]
@@ -2766,18 +3125,33 @@
           "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
           "date": "2026-11-27",
           "times": [
+            "14:15",
             "18:25",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178903",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179123",
           "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179123",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Fri 27 November",
               "date": "2026-11-27",
               "time": "18:25",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178903",
               "luxx": false,
-              "screen": "7",
+              "screen": "10",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2791,7 +3165,7 @@
               "time": "20:45",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178916",
               "luxx": false,
-              "screen": "7",
+              "screen": "10",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2803,6 +3177,77 @@
           "slug": "buddy",
           "posterFile": "data/posters/buddy.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-27",
+          "times": [
+            "13:45",
+            "14:45",
+            "17:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179062",
+          "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "13:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179062",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179057",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179080",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -2822,12 +3267,28 @@
           "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
           "date": "2026-11-27",
           "times": [
+            "13:45",
             "15:45",
+            "16:10",
             "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177914",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179054",
           "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "13:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179054",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Fri 27 November",
               "date": "2026-11-27",
@@ -2835,6 +3296,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177914",
               "luxx": false,
               "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179055",
+              "luxx": false,
+              "screen": "7",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2878,6 +3353,77 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-27",
+          "times": [
+            "14:45",
+            "17:15",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179020",
+          "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179020",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179019",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179018",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "PG",
           "title": "Hexed",
           "luxx": false,
@@ -2905,7 +3451,7 @@
               "time": "15:35",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178935",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2919,7 +3465,7 @@
               "time": "18:05",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178936",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2933,7 +3479,7 @@
               "time": "20:35",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178937",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2945,6 +3491,245 @@
           "slug": "hexed",
           "posterFile": "data/posters/hexed.jpg",
           "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-27",
+          "times": [
+            "15:05",
+            "16:35",
+            "18:35",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179063",
+          "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "15:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179063",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "16:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179022",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179056",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179021",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping -",
+          "luxx": true,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 19, 2026",
+          "releaseDate": "2026-11-19",
+          "director": "Francis Lawrence",
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-27",
+          "times": [
+            "15:45",
+            "19:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179058",
+          "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179058",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179059",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-11-27",
+          "times": [
+            "15:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179079",
+          "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "15:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179079",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "15A",
+          "runtime": 176,
+          "release": "November 21, 2026",
+          "releaseDate": "2026-11-21",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-27",
+          "times": [
+            "16:10",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179005",
+          "sessions": [
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179005",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 27 November",
+              "date": "2026-11-27",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179004",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -2974,15 +3759,15 @@
             "18:25",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178904",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179065",
           "sessions": [
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
               "time": "18:25",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178904",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179065",
               "luxx": false,
-              "screen": "7",
+              "screen": "10",
               "threeD": false,
               "tags": [
                 "advance",
@@ -2994,9 +3779,9 @@
               "day": "Sat 28 November",
               "date": "2026-11-28",
               "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178905",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179064",
               "luxx": false,
-              "screen": "7",
+              "screen": "10",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3008,6 +3793,92 @@
           "slug": "buddy",
           "posterFile": "data/posters/buddy.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-28",
+          "times": [
+            "12:00",
+            "12:55",
+            "14:45",
+            "17:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179132",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "12:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179132",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "12:55",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179137",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179081",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179082",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -3027,12 +3898,28 @@
           "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
           "date": "2026-11-28",
           "times": [
+            "13:45",
             "15:45",
+            "16:10",
             "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177898",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179105",
           "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179105",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -3040,6 +3927,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177898",
               "luxx": false,
               "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179106",
+              "luxx": false,
+              "screen": "7",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3083,6 +3984,134 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-28",
+          "times": [
+            "12:15",
+            "14:45",
+            "17:15",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179133",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179133",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179026",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179025",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179024",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Forgotten Island",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+          "cert": "PG",
+          "runtime": 108,
+          "release": "October 16, 2026",
+          "releaseDate": "2026-10-16",
+          "director": "Joel Crawford",
+          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+          "date": "2026-11-28",
+          "times": [
+            "13:40"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179131",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:40",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179131",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "kidsclub",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "forgotten-island",
+          "posterFile": "data/posters/forgotten-island.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "PG",
           "title": "Hexed",
           "luxx": false,
@@ -3098,19 +4127,49 @@
           "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
           "date": "2026-11-28",
           "times": [
+            "12:20",
+            "13:05",
             "15:35",
             "18:05",
             "20:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178920",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179138",
           "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "12:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179138",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179134",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
               "time": "15:35",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178920",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3124,7 +4183,7 @@
               "time": "18:05",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178921",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3138,7 +4197,7 @@
               "time": "20:35",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178922",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3150,6 +4209,275 @@
           "slug": "hexed",
           "posterFile": "data/posters/hexed.jpg",
           "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-28",
+          "times": [
+            "13:15",
+            "15:05",
+            "16:35",
+            "18:35",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179129",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179129",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179066",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "16:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179043",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179107",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179042",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping -",
+          "luxx": true,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 19, 2026",
+          "releaseDate": "2026-11-19",
+          "director": "Francis Lawrence",
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-28",
+          "times": [
+            "12:25",
+            "15:45",
+            "19:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179135",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "12:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179135",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179094",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179093",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Wildwood",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113504.jpg",
+          "cert": "12A",
+          "runtime": 131,
+          "release": "October 23, 2026",
+          "releaseDate": "2026-10-23",
+          "director": null,
+          "synopsis": "After her baby brother is abducted by a murder of crows, headstrong teenager Prue McKeel launches a desperate rescue mission into the Impassable Wilderness - an enchanted forest hidden just beyond Portland, Oregon. Joined by her hapless but loyal classmate Curtis Mehlberg, Prue navigates a world of talking animals, bandits, and powerful figures driven by grief and ambition. As the pair is drawn into a conflict threatening the balance of the forest itself, Prue must discover strength and belief she never knew she possessed. If she hopes to save her brother and protect Wildwood?s fragile future,",
+          "trailer": "https://www.youtube.com/watch?v=dtr5JL1zkiM",
+          "date": "2026-11-28",
+          "times": [
+            "15:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179136",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "15:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179136",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "wildwood",
+          "posterFile": "data/posters/wildwood.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "15A",
+          "runtime": 176,
+          "release": "November 21, 2026",
+          "releaseDate": "2026-11-21",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-28",
+          "times": [
+            "16:10",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179007",
+          "sessions": [
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179007",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 28 November",
+              "date": "2026-11-28",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179006",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -3179,15 +4507,15 @@
             "18:25",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178906",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179068",
           "sessions": [
             {
               "day": "Sun 29 November",
               "date": "2026-11-29",
               "time": "18:25",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178906",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179068",
               "luxx": false,
-              "screen": "7",
+              "screen": "10",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3199,9 +4527,9 @@
               "day": "Sun 29 November",
               "date": "2026-11-29",
               "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178907",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179067",
               "luxx": false,
-              "screen": "7",
+              "screen": "10",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3213,6 +4541,77 @@
           "slug": "buddy",
           "posterFile": "data/posters/buddy.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-29",
+          "times": [
+            "12:00",
+            "14:45",
+            "17:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179143",
+          "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "12:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179143",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179083",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179084",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         },
         {
@@ -3232,12 +4631,28 @@
           "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
           "date": "2026-11-29",
           "times": [
+            "13:45",
             "15:45",
+            "16:10",
             "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177901",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179108",
           "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "13:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179108",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sun 29 November",
               "date": "2026-11-29",
@@ -3245,6 +4660,20 @@
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177901",
               "luxx": false,
               "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179109",
+              "luxx": false,
+              "screen": "7",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3288,6 +4717,92 @@
         },
         {
           "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-29",
+          "times": [
+            "12:15",
+            "14:45",
+            "17:15",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179142",
+          "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179142",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179029",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179028",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179027",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
           "certFile": "PG",
           "title": "Hexed",
           "luxx": false,
@@ -3303,19 +4818,49 @@
           "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
           "date": "2026-11-29",
           "times": [
+            "12:20",
+            "13:05",
             "15:35",
             "18:05",
             "20:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178923",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179141",
           "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "12:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179141",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "13:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179140",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
             {
               "day": "Sun 29 November",
               "date": "2026-11-29",
               "time": "15:35",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178923",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3329,7 +4874,7 @@
               "time": "18:05",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178924",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3343,7 +4888,7 @@
               "time": "20:35",
               "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178925",
               "luxx": false,
-              "screen": "3",
+              "screen": "6",
               "threeD": false,
               "tags": [
                 "advance",
@@ -3355,6 +4900,809 @@
           "slug": "hexed",
           "posterFile": "data/posters/hexed.jpg",
           "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-29",
+          "times": [
+            "13:15",
+            "15:05",
+            "16:35",
+            "18:35",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179130",
+          "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179130",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "15:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179069",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "16:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179045",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179110",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179044",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping -",
+          "luxx": true,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 19, 2026",
+          "releaseDate": "2026-11-19",
+          "director": "Francis Lawrence",
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-29",
+          "times": [
+            "12:25",
+            "15:45",
+            "19:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179139",
+          "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "12:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179139",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179096",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179095",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "15A",
+          "runtime": 176,
+          "release": "November 21, 2026",
+          "releaseDate": "2026-11-21",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-29",
+          "times": [
+            "16:10",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179009",
+          "sessions": [
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179009",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sun 29 November",
+              "date": "2026-11-29",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179008",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Mon 30 Nov",
+      "url": "https://imc.ie/film-times/galway-headford-road/30-11-2026#dateD",
+      "date": "2026-11-30",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "Buddy",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
+          "cert": "15A",
+          "runtime": 96,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Casper Kelly",
+          "synopsis": "A brave girl and her friends must escape a kids' television show.",
+          "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
+          "date": "2026-11-30",
+          "times": [
+            "14:20",
+            "18:25",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179124",
+          "sessions": [
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "14:20",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179124",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "18:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179071",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179070",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "buddy",
+          "posterFile": "data/posters/buddy.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-11-30",
+          "times": [
+            "14:45",
+            "17:25"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179085",
+          "sessions": [
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179085",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179086",
+              "luxx": false,
+              "screen": "8",
+              "threeD": false,
+              "tags": [
+                "released",
+                "matinee",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 25, 2026",
+          "releaseDate": "2026-11-25",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-30",
+          "times": [
+            "13:45",
+            "15:45",
+            "16:10",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179111",
+          "sessions": [
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "13:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179111",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177904",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179112",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177903",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177902",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-11-30",
+          "times": [
+            "14:45",
+            "17:15",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179032",
+          "sessions": [
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179032",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179031",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179030",
+              "luxx": true,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Hexed",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
+          "cert": "PG",
+          "runtime": 109,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Jason Hand, Fawn Veerasunthorn",
+          "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+          "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
+          "date": "2026-11-30",
+          "times": [
+            "15:35",
+            "18:05",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178926",
+          "sessions": [
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "15:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178926",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "18:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178927",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178928",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "hexed",
+          "posterFile": "data/posters/hexed.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-30",
+          "times": [
+            "15:05",
+            "16:35",
+            "18:35",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179072",
+          "sessions": [
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "15:05",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179072",
+              "luxx": false,
+              "screen": "10",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "16:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179047",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "18:35",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179113",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179046",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping -",
+          "luxx": true,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 19, 2026",
+          "releaseDate": "2026-11-19",
+          "director": "Francis Lawrence",
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-11-30",
+          "times": [
+            "15:45",
+            "19:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179098",
+          "sessions": [
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179098",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179097",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "15A",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "15A",
+          "runtime": 176,
+          "release": "November 21, 2026",
+          "releaseDate": "2026-11-21",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-11-30",
+          "times": [
+            "16:10",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179011",
+          "sessions": [
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "16:10",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179011",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Mon 30 November",
+              "date": "2026-11-30",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179010",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/ifco-15A.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -3997,18 +6345,33 @@
       "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
       "date": "2026-11-27",
       "times": [
+        "14:15",
         "18:25",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178903",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179123",
       "sessions": [
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "14:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179123",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
         {
           "day": "Fri 27 November",
           "date": "2026-11-27",
           "time": "18:25",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178903",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4022,7 +6385,7 @@
           "time": "20:45",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178916",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4034,9 +6397,9 @@
           "day": "Sat 28 November",
           "date": "2026-11-28",
           "time": "18:25",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178904",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179065",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4048,9 +6411,9 @@
           "day": "Sat 28 November",
           "date": "2026-11-28",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178905",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179064",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4062,9 +6425,9 @@
           "day": "Sun 29 November",
           "date": "2026-11-29",
           "time": "18:25",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178906",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179068",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4076,9 +6439,9 @@
           "day": "Sun 29 November",
           "date": "2026-11-29",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178907",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179067",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4089,10 +6452,24 @@
         {
           "day": "Mon 30 November",
           "date": "2026-11-30",
-          "time": "18:25",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178908",
+          "time": "14:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179124",
           "luxx": false,
-          "screen": "7",
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 30 November",
+          "date": "2026-11-30",
+          "time": "18:25",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179071",
+          "luxx": false,
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4104,9 +6481,9 @@
           "day": "Mon 30 November",
           "date": "2026-11-30",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178909",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179070",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4117,10 +6494,24 @@
         {
           "day": "Tue 1 December",
           "date": "2026-12-01",
-          "time": "18:25",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178910",
+          "time": "14:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179125",
           "luxx": false,
-          "screen": "7",
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Tue 1 December",
+          "date": "2026-12-01",
+          "time": "18:25",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179074",
+          "luxx": false,
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4132,9 +6523,9 @@
           "day": "Tue 1 December",
           "date": "2026-12-01",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178911",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179073",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4145,10 +6536,24 @@
         {
           "day": "Wed 2 December",
           "date": "2026-12-02",
-          "time": "18:25",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178912",
+          "time": "14:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179126",
           "luxx": false,
-          "screen": "7",
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 2 December",
+          "date": "2026-12-02",
+          "time": "18:25",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179077",
+          "luxx": false,
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4160,9 +6565,9 @@
           "day": "Wed 2 December",
           "date": "2026-12-02",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178913",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179076",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4176,7 +6581,7 @@
           "time": "18:25",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178914",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4190,7 +6595,7 @@
           "time": "20:45",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178915",
           "luxx": false,
-          "screen": "7",
+          "screen": "10",
           "threeD": false,
           "tags": [
             "advance",
@@ -4679,10 +7084,38 @@
         {
           "day": "Fri 27 November",
           "date": "2026-11-27",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179054",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
           "time": "15:45",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177914",
           "luxx": false,
           "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179055",
+          "luxx": false,
+          "screen": "7",
           "threeD": false,
           "tags": [
             "advance",
@@ -4721,10 +7154,38 @@
         {
           "day": "Sat 28 November",
           "date": "2026-11-28",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179105",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "15:45",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177898",
           "luxx": false,
           "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179106",
+          "luxx": false,
+          "screen": "7",
           "threeD": false,
           "tags": [
             "advance",
@@ -4763,10 +7224,38 @@
         {
           "day": "Sun 29 November",
           "date": "2026-11-29",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179108",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
           "time": "15:45",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177901",
           "luxx": false,
           "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179109",
+          "luxx": false,
+          "screen": "7",
           "threeD": false,
           "tags": [
             "advance",
@@ -4805,10 +7294,38 @@
         {
           "day": "Mon 30 November",
           "date": "2026-11-30",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179111",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 30 November",
+          "date": "2026-11-30",
           "time": "15:45",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177904",
           "luxx": false,
           "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Mon 30 November",
+          "date": "2026-11-30",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179112",
+          "luxx": false,
+          "screen": "7",
           "threeD": false,
           "tags": [
             "advance",
@@ -4847,10 +7364,38 @@
         {
           "day": "Tue 1 December",
           "date": "2026-12-01",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179114",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Tue 1 December",
+          "date": "2026-12-01",
           "time": "15:45",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177907",
           "luxx": false,
           "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Tue 1 December",
+          "date": "2026-12-01",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179115",
+          "luxx": false,
+          "screen": "7",
           "threeD": false,
           "tags": [
             "advance",
@@ -4889,10 +7434,38 @@
         {
           "day": "Wed 2 December",
           "date": "2026-12-02",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179117",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 2 December",
+          "date": "2026-12-02",
           "time": "15:45",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177910",
           "luxx": false,
           "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 2 December",
+          "date": "2026-12-02",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179118",
+          "luxx": false,
+          "screen": "7",
           "threeD": false,
           "tags": [
             "advance",
@@ -4931,10 +7504,38 @@
         {
           "day": "Thu 3 December",
           "date": "2026-12-03",
+          "time": "13:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179120",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 3 December",
+          "date": "2026-12-03",
           "time": "15:45",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=177913",
           "luxx": false,
           "screen": "2",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Thu 3 December",
+          "date": "2026-12-03",
+          "time": "16:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179121",
+          "luxx": false,
+          "screen": "7",
           "threeD": false,
           "tags": [
             "advance",
@@ -4978,6 +7579,315 @@
     },
     {
       "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "Focker-In-Law",
+      "luxx": true,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
+      "cert": "12A",
+      "runtime": 106,
+      "release": "November 27, 2026",
+      "releaseDate": "2026-11-27",
+      "director": "John Hamburg",
+      "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+      "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+      "date": "2026-11-27",
+      "times": [
+        "14:45",
+        "17:15",
+        "19:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179020",
+      "sessions": [
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179020",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179019",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179018",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179133",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179026",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179025",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179024",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "12:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179142",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179029",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179028",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179027",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 30 November",
+          "date": "2026-11-30",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179032",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 30 November",
+          "date": "2026-11-30",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179031",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Mon 30 November",
+          "date": "2026-11-30",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179030",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Tue 1 December",
+          "date": "2026-12-01",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179035",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Tue 1 December",
+          "date": "2026-12-01",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179034",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Tue 1 December",
+          "date": "2026-12-01",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179033",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 2 December",
+          "date": "2026-12-02",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179038",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 2 December",
+          "date": "2026-12-02",
+          "time": "17:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179037",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Wed 2 December",
+          "date": "2026-12-02",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179036",
+          "luxx": true,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "focker-in-law",
+      "posterFile": "data/posters/focker-in-law.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
       "certFile": "PG",
       "title": "Hexed",
       "luxx": false,
@@ -5005,7 +7915,7 @@
           "time": "15:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178935",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5019,7 +7929,7 @@
           "time": "18:05",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178936",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5033,7 +7943,35 @@
           "time": "20:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178937",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "12:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179138",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "13:05",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179134",
+          "luxx": false,
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5047,7 +7985,7 @@
           "time": "15:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178920",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5061,7 +7999,7 @@
           "time": "18:05",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178921",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5075,7 +8013,35 @@
           "time": "20:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178922",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "12:20",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179141",
+          "luxx": false,
+          "screen": "10",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sun 29 November",
+          "date": "2026-11-29",
+          "time": "13:05",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179140",
+          "luxx": false,
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5089,7 +8055,7 @@
           "time": "15:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178923",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5103,7 +8069,7 @@
           "time": "18:05",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178924",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5117,7 +8083,7 @@
           "time": "20:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178925",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5131,7 +8097,7 @@
           "time": "15:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178926",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5145,7 +8111,7 @@
           "time": "18:05",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178927",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5159,7 +8125,7 @@
           "time": "20:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178928",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5173,7 +8139,7 @@
           "time": "15:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178929",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5187,7 +8153,7 @@
           "time": "18:05",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178930",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5201,7 +8167,7 @@
           "time": "20:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178931",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5215,7 +8181,7 @@
           "time": "15:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178932",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5229,7 +8195,7 @@
           "time": "18:05",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178933",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5243,7 +8209,7 @@
           "time": "20:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178934",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5257,7 +8223,7 @@
           "time": "15:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178917",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5271,7 +8237,7 @@
           "time": "18:05",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178918",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -5285,7 +8251,7 @@
           "time": "20:35",
           "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=178919",
           "luxx": false,
-          "screen": "3",
+          "screen": "6",
           "threeD": false,
           "tags": [
             "advance",
@@ -6018,50 +8984,44 @@
   "kidsClub": [
     {
       "certSystem": "ifco",
-      "certFile": "G",
-      "title": "Festive Fun with Peppa Cinema Experience",
+      "certFile": "PG",
+      "title": "Forgotten Island",
       "luxx": false,
       "sensory": false,
       "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
-      "cert": "G",
-      "runtime": 60,
-      "release": "November 14, 2026",
-      "releaseDate": "2026-11-14",
-      "director": null,
-      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
-      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
-      "date": null,
-      "times": [],
-      "book": null,
-      "sessions": [],
-      "slug": "festive-fun-with-peppa-cinema-experience",
-      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
-      "certIcon": "data/ratings/ifco-G.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "G",
-      "title": "Tad and the Magic Lamp",
-      "luxx": false,
-      "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/113947.jpg",
-      "cert": "G",
-      "runtime": 94,
-      "release": "October 17, 2026",
-      "releaseDate": "2026-10-17",
-      "director": "Enrique Gato",
-      "synopsis": "Tad, his girlfriend Sara and their friends Momia, Jeff and Belzoni embark on an adventure after Tadeo accidentally unleashes an ancient spell.",
-      "trailer": null,
-      "date": null,
-      "times": [],
-      "book": null,
-      "sessions": [],
-      "slug": "tad-and-the-magic-lamp",
-      "posterFile": "data/posters/tad-and-the-magic-lamp.jpg",
-      "certIcon": "data/ratings/ifco-G.svg",
+      "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
+      "cert": "PG",
+      "runtime": 108,
+      "release": "October 16, 2026",
+      "releaseDate": "2026-10-16",
+      "director": "Joel Crawford",
+      "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
+      "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
+      "date": "2026-11-28",
+      "times": [
+        "13:40"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179131",
+      "sessions": [
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "13:40",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayheadfordroad&stage=tickets&perf=179131",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "forgotten-island",
+      "posterFile": "data/posters/forgotten-island.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
@@ -7085,36 +10045,34 @@
   ],
   "log": [
     "home: 0 films parsed",
-    "today: 1 films parsed",
-    "day-22-11-2026-dated: 0 films parsed",
+    "today: 11 films parsed",
     "day-23-11-2026-dated: 11 films parsed",
     "day-24-11-2026-dated: 12 films parsed",
     "day-25-11-2026-dated: 10 films parsed",
     "day-26-11-2026-dated: 10 films parsed",
-    "day-27-11-2026-dated: 3 films parsed",
-    "day-28-11-2026-dated: 3 films parsed",
-    "day-29-11-2026-dated: 3 films parsed",
-    "advance: 10 films parsed",
-    "kids: 0 films parsed",
+    "day-27-11-2026-dated: 9 films parsed",
+    "day-28-11-2026-dated: 10 films parsed",
+    "day-29-11-2026-dated: 8 films parsed",
+    "day-30-11-2026-dated: 8 films parsed",
+    "advance: 11 films parsed",
+    "kids: 1 films parsed",
     "luxx: 5 films parsed",
-    "booking pages read: 9 (Mon, Tue, Wed, Thu, Fri, Sat, Sun)",
-    "prices: 15 ticket types, 4 bundles, 9 products",
-    "kept previous kidsClub",
+    "booking pages read: 10 (Mon, Tue, Wed, Thu, Fri, Sat, Sun)",
+    "prices: 18 ticket types, 4 bundles, 9 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
       {
-        "name": "Adult Matinee",
-        "price": "€11.50",
+        "name": "Adult Evening",
+        "price": "€13.00",
         "days": [
           "Mon",
-          "Tue",
-          "Wed"
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ]
       },
       {
@@ -7134,16 +10092,15 @@
         ]
       },
       {
-        "name": "Child Matinee",
-        "price": "€9.50",
+        "name": "Child Evening",
+        "price": "€10.50",
         "days": [
           "Mon",
-          "Tue",
-          "Wed"
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "evening"
         ]
       },
       {
@@ -7201,8 +10158,7 @@
           "Mon",
           "Tue",
           "Wed",
-          "Thu",
-          "Sun"
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -7216,7 +10172,34 @@
           "Tue"
         ],
         "seenOn": [
-          "evening"
+          "evening",
+          "matinee"
+        ]
+      },
+      {
+        "name": "Adult Matinee",
+        "price": "€11.50",
+        "days": [
+          "Tue",
+          "Wed",
+          "Fri"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
+      },
+      {
+        "name": "Child Matinee",
+        "price": "€9.50",
+        "days": [
+          "Tue",
+          "Wed",
+          "Fri"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -7240,27 +10223,33 @@
         ]
       },
       {
-        "name": "Adult Evening",
-        "price": "€13.00",
+        "name": "Kids Club",
+        "price": "€5.00",
         "days": [
-          "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
-          "evening"
+          "kids"
         ]
       },
       {
-        "name": "Child Evening",
-        "price": "€10.50",
+        "name": "Kids Club Adult",
+        "price": "€5.00",
         "days": [
-          "Fri",
-          "Sat",
-          "Sun"
+          "Sat"
         ],
         "seenOn": [
-          "evening"
+          "kids"
+        ]
+      },
+      {
+        "name": "Kids Club Meal Deal",
+        "price": "€9.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "kids"
         ]
       },
       {
@@ -7378,6 +10367,7 @@
         "seenOn": [
           "evening",
           "matinee",
+          "kids",
           "luxx"
         ],
         "file": "data/products/flexi.jpg"
@@ -7398,6 +10388,7 @@
         "seenOn": [
           "evening",
           "matinee",
+          "kids",
           "luxx"
         ],
         "file": "data/products/maltesers.jpg"
@@ -7418,6 +10409,7 @@
         "seenOn": [
           "evening",
           "matinee",
+          "kids",
           "luxx"
         ],
         "file": "data/products/minstrels.jpg"
@@ -7438,6 +10430,7 @@
         "seenOn": [
           "evening",
           "matinee",
+          "kids",
           "luxx"
         ],
         "file": "data/products/ttc.jpg"
@@ -7458,6 +10451,7 @@
         "seenOn": [
           "evening",
           "matinee",
+          "kids",
           "luxx"
         ],
         "file": "data/products/combotest.jpg"
@@ -7478,6 +10472,7 @@
         "seenOn": [
           "evening",
           "matinee",
+          "kids",
           "luxx"
         ],
         "file": "data/products/lccc.jpg"
@@ -7498,6 +10493,7 @@
         "seenOn": [
           "evening",
           "matinee",
+          "kids",
           "luxx"
         ],
         "file": "data/products/onkt.jpg"
@@ -7518,6 +10514,7 @@
         "seenOn": [
           "evening",
           "matinee",
+          "kids",
           "luxx"
         ],
         "file": "data/products/scon.jpg"
@@ -7538,12 +10535,13 @@
         "seenOn": [
           "evening",
           "matinee",
+          "kids",
           "luxx"
         ],
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-22T22:36:08.109Z",
+    "checked": "2026-11-23T18:15:17.877Z",
     "sampledDays": [
       "Mon",
       "Tue",
@@ -7554,7 +10552,7 @@
       "Sun"
     ]
   },
-  "checked": "2026-11-22T22:36:20.605Z",
+  "checked": "2026-11-23T18:15:32.663Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
