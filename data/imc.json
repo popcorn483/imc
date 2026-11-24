@@ -2,49 +2,8 @@
   "id": "enniskillen",
   "cinema": "IMC Enniskillen",
   "source": "https://imc.ie/enniskillen",
-  "updated": "2026-11-23T18:06:41.103Z",
+  "updated": "2026-11-24T17:43:39.112Z",
   "today": [
-    {
-      "certSystem": "bbfc",
-      "certFile": "TBC",
-      "title": "Bachelor Party D'eux (Malayalam)",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/117402.jpg",
-      "cert": "TBC",
-      "runtime": 132,
-      "release": "November 23, 2026",
-      "releaseDate": "2026-11-23",
-      "director": "Amal Neerad",
-      "synopsis": "When urban chaos erupts around them, a band of honor-bound thieves must pull off a dangerous escape together, refusing to abandon each other despite deadly obstacles in their path.",
-      "trailer": "https://www.youtube.com/watch?v=eJMQsl2a2Ds",
-      "date": "2026-11-23",
-      "times": [
-        "20:15"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121711",
-      "sessions": [
-        {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121711",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "bachelor-party-d-eux-malayalam",
-      "posterFile": "data/posters/bachelor-party-d-eux-malayalam.jpg",
-      "certIcon": "data/ratings/bbfc-TBC.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
     {
       "certSystem": "bbfc",
       "certFile": "12A",
@@ -60,18 +19,18 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "times": [
         "18:10",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121632",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121647",
       "sessions": [
         {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
           "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121632",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121647",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -82,10 +41,10 @@
           ]
         },
         {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121626",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121646",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -104,6 +63,47 @@
     {
       "certSystem": "bbfc",
       "certFile": "12A",
+      "title": "I Play Rocky",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+      "cert": "12A",
+      "runtime": 128,
+      "release": "November 11, 2026",
+      "releaseDate": "2026-11-11",
+      "director": "Peter Farrelly",
+      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
+      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
+      "date": "2026-11-24",
+      "times": [
+        "20:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121650",
+      "sessions": [
+        {
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
+          "time": "20:30",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121650",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "i-play-rocky",
+      "posterFile": "data/posters/i-play-rocky.jpg",
+      "certIcon": "data/ratings/bbfc-12A.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "12A",
       "title": "The Hunger Games: Sunrise On The Reaping",
       "luxx": false,
       "sensory": false,
@@ -116,18 +116,18 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "times": [
         "18:30",
         "19:15"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121642",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121649",
       "sessions": [
         {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
           "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121642",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121649",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -138,10 +138,10 @@
           ]
         },
         {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
           "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121634",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121648",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -172,17 +172,17 @@
       "director": "Francis Lawrence",
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "times": [
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121228",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121229",
       "sessions": [
         {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121228",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121229",
           "luxx": true,
           "screen": "1",
           "threeD": false,
@@ -213,18 +213,18 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "times": [
         "18:00",
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121714",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121715",
       "sessions": [
         {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
           "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121714",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121715",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -235,10 +235,10 @@
           ]
         },
         {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
+          "day": "Tue 24 November",
+          "date": "2026-11-24",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120867",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120868",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -256,263 +256,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Mon 23 Nov",
-      "url": "https://imc.ie/film-times/enniskillen/23-11-2026#dateD",
-      "date": "2026-11-23",
-      "films": [
-        {
-          "certSystem": "bbfc",
-          "certFile": "TBC",
-          "title": "Bachelor Party D'eux (Malayalam)",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/117402.jpg",
-          "cert": "TBC",
-          "runtime": 132,
-          "release": "November 23, 2026",
-          "releaseDate": "2026-11-23",
-          "director": "Amal Neerad",
-          "synopsis": "When urban chaos erupts around them, a band of honor-bound thieves must pull off a dangerous escape together, refusing to abandon each other despite deadly obstacles in their path.",
-          "trailer": "https://www.youtube.com/watch?v=eJMQsl2a2Ds",
-          "date": "2026-11-23",
-          "times": [
-            "20:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121711",
-          "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121711",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "bachelor-party-d-eux-malayalam",
-          "posterFile": "data/posters/bachelor-party-d-eux-malayalam.jpg",
-          "certIcon": "data/ratings/bbfc-TBC.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "EBENEZER",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "12A",
-          "runtime": 120,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Ti West",
-          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
-          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-          "date": "2026-11-23",
-          "times": [
-            "18:10",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121632",
-          "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121632",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121626",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ebenezer",
-          "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 18, 2026",
-          "releaseDate": "2026-11-18",
-          "director": null,
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-23",
-          "times": [
-            "18:30",
-            "19:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121642",
-          "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121642",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "19:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121634",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping -",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Francis Lawrence",
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-23",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121228",
-          "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121228",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "You can see everything",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
-          "cert": "15",
-          "runtime": 176,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Nathan Fielder",
-          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-          "trailer": null,
-          "date": "2026-11-23",
-          "times": [
-            "18:00",
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121714",
-          "sessions": [
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121714",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Mon 23 November",
-              "date": "2026-11-23",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120867",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "you-can-see-everything",
-          "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        }
-      ]
-    },
     {
       "label": "Tue 24 Nov",
       "url": "https://imc.ie/film-times/enniskillen/24-11-2026#dateD",
@@ -3173,6 +2916,360 @@
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
+    },
+    {
+      "label": "Tue 01 Dec",
+      "url": "https://imc.ie/film-times/enniskillen/01-12-2026#dateD",
+      "date": "2026-12-01",
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Buddy",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
+          "cert": "15",
+          "runtime": 96,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Casper Kelly",
+          "synopsis": "A brave girl and her friends must escape a kids' television show.",
+          "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
+          "date": "2026-12-01",
+          "times": [
+            "20:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121683",
+          "sessions": [
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "20:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121683",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "buddy",
+          "posterFile": "data/posters/buddy.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-12-01",
+          "times": [
+            "18:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121805",
+          "sessions": [
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121805",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 25, 2026",
+          "releaseDate": "2026-11-25",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-12-01",
+          "times": [
+            "17:45",
+            "20:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121807",
+          "sessions": [
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "17:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121807",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "matinee",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "20:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121806",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-12-01",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121211",
+          "sessions": [
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121211",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121210",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Hexed",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
+          "cert": "PG",
+          "runtime": 109,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Jason Hand, Fawn Veerasunthorn",
+          "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+          "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
+          "date": "2026-12-01",
+          "times": [
+            "18:00",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121403",
+          "sessions": [
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "18:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121403",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121404",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "hexed",
+          "posterFile": "data/posters/hexed.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-12-01",
+          "times": [
+            "19:00",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121803",
+          "sessions": [
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "19:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121803",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121804",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "15",
+          "runtime": 176,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-12-01",
+          "times": [
+            "19:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121802",
+          "sessions": [
+            {
+              "day": "Tue 1 December",
+              "date": "2026-12-01",
+              "time": "19:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121802",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -3891,47 +3988,6 @@
     },
     {
       "certSystem": "bbfc",
-      "certFile": "TBC",
-      "title": "Bachelor Party D'eux (Malayalam)",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/117402.jpg",
-      "cert": "TBC",
-      "runtime": 132,
-      "release": "November 23, 2026",
-      "releaseDate": "2026-11-23",
-      "director": "Amal Neerad",
-      "synopsis": "When urban chaos erupts around them, a band of honor-bound thieves must pull off a dangerous escape together, refusing to abandon each other despite deadly obstacles in their path.",
-      "trailer": "https://www.youtube.com/watch?v=eJMQsl2a2Ds",
-      "date": "2026-11-23",
-      "times": [
-        "20:15"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121711",
-      "sessions": [
-        {
-          "day": "Mon 23 November",
-          "date": "2026-11-23",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121711",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "bachelor-party-d-eux-malayalam",
-      "posterFile": "data/posters/bachelor-party-d-eux-malayalam.jpg",
-      "certIcon": "data/ratings/bbfc-TBC.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
       "certFile": "15",
       "title": "Buddy",
       "luxx": false,
@@ -4057,13 +4113,13 @@
     },
     {
       "certSystem": "bbfc",
-      "certFile": "TBC",
+      "certFile": "12A",
       "title": "Dune: Part Three",
       "luxx": false,
       "sensory": false,
       "status": "Coming Soon",
       "poster": "https://imc.ie/wp-content/uploads/posters/105951.jpg",
-      "cert": "TBC",
+      "cert": "12A",
       "runtime": 150,
       "release": "December 15, 2026",
       "releaseDate": "2026-12-15",
@@ -4318,7 +4374,7 @@
       ],
       "slug": "dune-part-three",
       "posterFile": "data/posters/dune-part-three.jpg",
-      "certIcon": "data/ratings/bbfc-TBC.svg",
+      "certIcon": "data/ratings/bbfc-12A.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     },
     {
@@ -7299,7 +7355,6 @@
   "log": [
     "home: 1 films parsed",
     "today: 5 films parsed",
-    "day-23-11-2026-dated: 5 films parsed",
     "day-24-11-2026-dated: 5 films parsed",
     "day-25-11-2026-dated: 5 films parsed",
     "day-26-11-2026-dated: 5 films parsed",
@@ -7307,10 +7362,11 @@
     "day-28-11-2026-dated: 8 films parsed",
     "day-29-11-2026-dated: 8 films parsed",
     "day-30-11-2026-dated: 7 films parsed",
-    "advance: 14 films parsed",
+    "day-01-12-2026-dated: 7 films parsed",
+    "advance: 13 films parsed",
     "kids: 1 films parsed",
     "luxx: 4 films parsed",
-    "booking pages read: 10 (Mon, Tue, Wed, Thu, Fri, Sat, Sun)",
+    "booking pages read: 10 (Tue, Wed, Thu, Fri, Sat, Sun, Mon)",
     "prices: 12 ticket types, 4 bundles, 8 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
@@ -7320,13 +7376,13 @@
         "name": "Adult",
         "price": "£9.00",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7337,29 +7393,13 @@
         "name": "Teen",
         "price": "£7.50",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Child",
-        "price": "£7.00",
-        "days": [
-          "Mon",
-          "Wed",
-          "Thu",
-          "Fri",
-          "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7370,29 +7410,13 @@
         "name": "Student",
         "price": "£7.50",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
-        ],
-        "seenOn": [
-          "evening",
-          "matinee"
-        ]
-      },
-      {
-        "name": "Family",
-        "price": "£26.00",
-        "days": [
-          "Mon",
-          "Wed",
-          "Thu",
-          "Fri",
-          "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7403,13 +7427,13 @@
         "name": "Senior",
         "price": "£7.50",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7424,6 +7448,38 @@
         ],
         "seenOn": [
           "evening"
+        ]
+      },
+      {
+        "name": "Child",
+        "price": "£7.00",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ]
+      },
+      {
+        "name": "Family",
+        "price": "£26.00",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
         ]
       },
       {
@@ -7460,7 +7516,7 @@
         "name": "LUXX Recliner",
         "price": "£13.00",
         "days": [
-          "Mon"
+          "Tue"
         ],
         "seenOn": [
           "luxx"
@@ -7470,7 +7526,7 @@
         "name": "LUXX Child/Student/OAP",
         "price": "£9.50",
         "days": [
-          "Mon"
+          "Tue"
         ],
         "seenOn": [
           "luxx"
@@ -7484,12 +7540,12 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCB.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7503,13 +7559,13 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCB.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7523,7 +7579,7 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCBLUXX.jpg",
         "days": [
-          "Mon"
+          "Tue"
         ],
         "seenOn": [
           "luxx"
@@ -7536,7 +7592,7 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCBLUXX.jpg",
         "days": [
-          "Mon"
+          "Tue"
         ],
         "seenOn": [
           "luxx"
@@ -7550,13 +7606,13 @@
         "price": "£0.80",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7571,13 +7627,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7592,13 +7648,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7613,13 +7669,13 @@
         "price": "£3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7634,13 +7690,13 @@
         "price": "£8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7655,13 +7711,13 @@
         "price": "£9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7676,13 +7732,13 @@
         "price": "£5.50",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7697,13 +7753,13 @@
         "price": "£13.50",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Mon",
           "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
-          "Sun"
+          "Sun",
+          "Mon"
         ],
         "seenOn": [
           "evening",
@@ -7714,18 +7770,18 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-23T18:07:08.293Z",
+    "checked": "2026-11-24T17:44:10.300Z",
     "sampledDays": [
-      "Mon",
       "Tue",
       "Wed",
       "Thu",
       "Fri",
       "Sat",
-      "Sun"
+      "Sun",
+      "Mon"
     ]
   },
-  "checked": "2026-11-23T18:07:22.957Z",
+  "checked": "2026-11-24T17:44:24.913Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
