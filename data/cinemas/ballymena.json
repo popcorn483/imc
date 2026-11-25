@@ -2,7 +2,7 @@
   "id": "ballymena",
   "cinema": "IMC Ballymena",
   "source": "https://imc.ie/ballymena",
-  "updated": "2026-11-24T17:44:24.917Z",
+  "updated": "2026-11-25T17:13:00.273Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -19,18 +19,18 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "times": [
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106626",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106630",
       "sessions": [
         {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
           "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106626",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106630",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -41,10 +41,10 @@
           ]
         },
         {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106625",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106629",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -63,41 +63,97 @@
     {
       "certSystem": "bbfc",
       "certFile": "12A",
-      "title": "I Play Rocky",
+      "title": "Focker-In-Law",
       "luxx": false,
       "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
       "cert": "12A",
-      "runtime": 128,
-      "release": "November 11, 2026",
-      "releaseDate": "2026-11-11",
-      "director": "Peter Farrelly",
-      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
-      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-24",
+      "runtime": 106,
+      "release": "November 25, 2026",
+      "releaseDate": "2026-11-25",
+      "director": "John Hamburg",
+      "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+      "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+      "date": "2026-11-25",
       "times": [
-        "20:30"
+        "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106621",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106632",
       "sessions": [
         {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106621",
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
+          "time": "19:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106632",
           "luxx": false,
-          "screen": "3",
+          "screen": "5",
           "threeD": false,
           "tags": [
-            "released",
+            "advance",
             "evening",
             "seating-standard"
           ]
         }
       ],
-      "slug": "i-play-rocky",
-      "posterFile": "data/posters/i-play-rocky.jpg",
+      "slug": "focker-in-law",
+      "posterFile": "data/posters/focker-in-law.jpg",
+      "certIcon": "data/ratings/bbfc-12A.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
+      "certFile": "12A",
+      "title": "Focker-In-Law - Galactic",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116626.jpg",
+      "cert": "12A",
+      "runtime": 106,
+      "release": "November 25, 2026",
+      "releaseDate": "2026-11-25",
+      "director": "John Hamburg",
+      "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+      "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+      "date": "2026-11-25",
+      "times": [
+        "18:15",
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106525",
+      "sessions": [
+        {
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106525",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106526",
+          "luxx": false,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "focker-in-law-galactic",
+      "posterFile": "data/posters/focker-in-law-galactic.jpg",
       "certIcon": "data/ratings/bbfc-12A.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     },
@@ -116,18 +172,19 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "times": [
         "18:30",
-        "19:15"
+        "19:15",
+        "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106627",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106631",
       "sessions": [
         {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
           "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106627",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106631",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -138,12 +195,26 @@
           ]
         },
         {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
           "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106623",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106628",
           "luxx": false,
           "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106285",
+          "luxx": false,
+          "screen": "3",
           "threeD": false,
           "tags": [
             "new",
@@ -155,129 +226,6 @@
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
       "certIcon": "data/ratings/bbfc-12A.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "12A",
-      "title": "The Hunger Games: Sunrise On The Reaping - Galactic",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116796.jpg",
-      "cert": "12A",
-      "runtime": 158,
-      "release": "November 20, 2026",
-      "releaseDate": "2026-11-20",
-      "director": "Francis Lawrence",
-      "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-      "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-24",
-      "times": [
-        "20:00"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106319",
-      "sessions": [
-        {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
-          "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106319",
-          "luxx": false,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "the-hunger-games-sunrise-on-the-reaping-galactic",
-      "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping-galactic.jpg",
-      "certIcon": "data/ratings/bbfc-12A.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "15",
-      "title": "Wicker",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-      "cert": "15",
-      "runtime": 100,
-      "release": "November 20, 2026",
-      "releaseDate": "2026-11-20",
-      "director": "Alex Huston Fischer, Eleanor Wilson",
-      "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-      "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-      "date": "2026-11-24",
-      "times": [
-        "18:05"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106622",
-      "sessions": [
-        {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
-          "time": "18:05",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106622",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "wicker",
-      "posterFile": "data/posters/wicker.jpg",
-      "certIcon": "data/ratings/bbfc-15.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "15",
-      "title": "You can see everything",
-      "luxx": false,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
-      "cert": "15",
-      "runtime": 176,
-      "release": "November 20, 2026",
-      "releaseDate": "2026-11-20",
-      "director": "Nathan Fielder",
-      "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-      "trailer": null,
-      "date": "2026-11-24",
-      "times": [
-        "19:00"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106624",
-      "sessions": [
-        {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
-          "time": "19:00",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106624",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "you-can-see-everything",
-      "posterFile": "data/posters/you-can-see-everything.jpg",
-      "certIcon": "data/ratings/bbfc-15.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     },
     {
@@ -295,24 +243,24 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "times": [
         "19:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106264",
+      "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106265",
       "sessions": [
         {
-          "day": "Tue 24 November",
-          "date": "2026-11-24",
+          "day": "Wed 25 November",
+          "date": "2026-11-25",
           "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106264",
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106265",
           "luxx": true,
           "screen": "2",
           "threeD": false,
           "tags": [
             "new",
             "evening",
-            "seating-standard"
+            "seating-lux"
           ]
         }
       ],
@@ -323,330 +271,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Tue 24 Nov",
-      "url": "https://imc.ie/film-times/ballymena/24-11-2026#dateD",
-      "date": "2026-11-24",
-      "films": [
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "EBENEZER",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "12A",
-          "runtime": 120,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Ti West",
-          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
-          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-          "date": "2026-11-24",
-          "times": [
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106626",
-          "sessions": [
-            {
-              "day": "Tue 24 November",
-              "date": "2026-11-24",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106626",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 24 November",
-              "date": "2026-11-24",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106625",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ebenezer",
-          "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "I Play Rocky",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "12A",
-          "runtime": 128,
-          "release": "November 11, 2026",
-          "releaseDate": "2026-11-11",
-          "director": "Peter Farrelly",
-          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
-          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-          "date": "2026-11-24",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106621",
-          "sessions": [
-            {
-              "day": "Tue 24 November",
-              "date": "2026-11-24",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106621",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "i-play-rocky",
-          "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 18, 2026",
-          "releaseDate": "2026-11-18",
-          "director": null,
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-24",
-          "times": [
-            "18:30",
-            "19:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106627",
-          "sessions": [
-            {
-              "day": "Tue 24 November",
-              "date": "2026-11-24",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106627",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Tue 24 November",
-              "date": "2026-11-24",
-              "time": "19:15",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106623",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping - Galactic",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116796.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Francis Lawrence",
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-24",
-          "times": [
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106319",
-          "sessions": [
-            {
-              "day": "Tue 24 November",
-              "date": "2026-11-24",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106319",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping-galactic",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping-galactic.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Wicker",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/113301.jpg",
-          "cert": "15",
-          "runtime": 100,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Alex Huston Fischer, Eleanor Wilson",
-          "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-          "trailer": "https://www.youtube.com/watch?v=UVAki9SGrlg",
-          "date": "2026-11-24",
-          "times": [
-            "18:05"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106622",
-          "sessions": [
-            {
-              "day": "Tue 24 November",
-              "date": "2026-11-24",
-              "time": "18:05",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106622",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "wicker",
-          "posterFile": "data/posters/wicker.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "You can see everything",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
-          "cert": "15",
-          "runtime": 176,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Nathan Fielder",
-          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-          "trailer": null,
-          "date": "2026-11-24",
-          "times": [
-            "19:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106624",
-          "sessions": [
-            {
-              "day": "Tue 24 November",
-              "date": "2026-11-24",
-              "time": "19:00",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106624",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "you-can-see-everything",
-          "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "You Can See Everything",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
-          "cert": "15",
-          "runtime": 174,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Nathan Fielder",
-          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-          "trailer": null,
-          "date": "2026-11-24",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106264",
-          "sessions": [
-            {
-              "day": "Tue 24 November",
-              "date": "2026-11-24",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106264",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "you-can-see-everything",
-          "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        }
-      ]
-    },
     {
       "label": "Wed 25 Nov",
       "url": "https://imc.ie/film-times/ballymena/25-11-2026#dateD",
@@ -3523,6 +3147,390 @@
               "date": "2026-12-01",
               "time": "19:45",
               "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106752",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "you-can-see-everything",
+          "posterFile": "data/posters/you-can-see-everything.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
+    },
+    {
+      "label": "Wed 02 Dec",
+      "url": "https://imc.ie/film-times/ballymena/02-12-2026#dateD",
+      "date": "2026-12-02",
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "Buddy",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
+          "cert": "15",
+          "runtime": 96,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Casper Kelly",
+          "synopsis": "A brave girl and her friends must escape a kids' television show.",
+          "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
+          "date": "2026-12-02",
+          "times": [
+            "17:25",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106759",
+          "sessions": [
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "17:25",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106759",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106553",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "buddy",
+          "posterFile": "data/posters/buddy.jpg",
+          "certIcon": "data/ratings/bbfc-15.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "EBENEZER",
+          "luxx": false,
+          "sensory": false,
+          "status": null,
+          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+          "cert": "12A",
+          "runtime": 120,
+          "release": "November 13, 2026",
+          "releaseDate": "2026-11-13",
+          "director": "Ti West",
+          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+          "date": "2026-12-02",
+          "times": [
+            "17:15",
+            "18:15"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106701",
+          "sessions": [
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106701",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106708",
+              "luxx": false,
+              "screen": "5",
+              "threeD": false,
+              "tags": [
+                "released",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "ebenezer",
+          "posterFile": "data/posters/ebenezer.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Focker-In-Law - Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116626.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 25, 2026",
+          "releaseDate": "2026-11-25",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-12-02",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106544",
+          "sessions": [
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106544",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106543",
+              "luxx": false,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "focker-in-law-galactic",
+          "posterFile": "data/posters/focker-in-law-galactic.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": true,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-12-02",
+          "times": [
+            "17:15",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106760",
+          "sessions": [
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106760",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106761",
+              "luxx": true,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Hexed",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
+          "cert": "PG",
+          "runtime": 109,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "Jason Hand, Fawn Veerasunthorn",
+          "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+          "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
+          "date": "2026-12-02",
+          "times": [
+            "18:10",
+            "20:35"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106756",
+          "sessions": [
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "18:10",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106756",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "20:35",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106757",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "hexed",
+          "posterFile": "data/posters/hexed.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "The Hunger Games: Sunrise On The Reaping",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
+          "cert": "12A",
+          "runtime": 158,
+          "release": "November 18, 2026",
+          "releaseDate": "2026-11-18",
+          "director": null,
+          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
+          "date": "2026-12-02",
+          "times": [
+            "19:15",
+            "20:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106705",
+          "sessions": [
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "19:15",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106705",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "20:00",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106702",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-hunger-games-sunrise-on-the-reaping",
+          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "15",
+          "title": "You can see everything",
+          "luxx": false,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
+          "cert": "15",
+          "runtime": 176,
+          "release": "November 20, 2026",
+          "releaseDate": "2026-11-20",
+          "director": "Nathan Fielder",
+          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "trailer": null,
+          "date": "2026-12-02",
+          "times": [
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106758",
+          "sessions": [
+            {
+              "day": "Wed 2 December",
+              "date": "2026-12-02",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=ballymena&stage=tickets&perf=106758",
               "luxx": false,
               "screen": "7",
               "threeD": false,
@@ -6782,8 +6790,7 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 7 films parsed",
-    "day-24-11-2026-dated: 7 films parsed",
+    "today: 5 films parsed",
     "day-25-11-2026-dated: 5 films parsed",
     "day-26-11-2026-dated: 5 films parsed",
     "day-27-11-2026-dated: 7 films parsed",
@@ -6791,25 +6798,16 @@
     "day-29-11-2026-dated: 8 films parsed",
     "day-30-11-2026-dated: 7 films parsed",
     "day-01-12-2026-dated: 7 films parsed",
+    "day-02-12-2026-dated: 7 films parsed",
     "advance: 14 films parsed",
     "kids: 1 films parsed",
     "luxx: 3 films parsed",
-    "booking pages read: 10 (Tue, Wed, Thu, Fri, Sat, Sun, Mon)",
-    "prices: 11 ticket types, 2 bundles, 8 products",
+    "booking pages read: 10 (Wed, Thu, Fri, Sat, Sun, Mon, Tue)",
+    "prices: 13 ticket types, 3 bundles, 8 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
-      {
-        "name": "Crazy Tuesday",
-        "price": "£5.00",
-        "days": [
-          "Tue"
-        ],
-        "seenOn": [
-          "evening"
-        ]
-      },
       {
         "name": "Meal Deal Wednesday",
         "price": "£12.50",
@@ -6901,6 +6899,16 @@
         ]
       },
       {
+        "name": "Crazy Tuesday",
+        "price": "£5.00",
+        "days": [
+          "Tue"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
         "name": "Kids Club",
         "price": "£5.00",
         "days": [
@@ -6931,10 +6939,30 @@
         ]
       },
       {
-        "name": "Crazy Tuesday Luxx",
-        "price": "£7.00",
+        "name": "Luxx Wednesday MDeal",
+        "price": "£15.50",
         "days": [
-          "Tue"
+          "Wed"
+        ],
+        "seenOn": [
+          "luxx"
+        ]
+      },
+      {
+        "name": "LUXX Recliner",
+        "price": "£12.00",
+        "days": [
+          "Wed"
+        ],
+        "seenOn": [
+          "luxx"
+        ]
+      },
+      {
+        "name": "LUXX Student/OAP",
+        "price": "£11.00",
+        "days": [
+          "Wed"
         ],
         "seenOn": [
           "luxx"
@@ -6943,17 +6971,37 @@
     ],
     "bundles": [
       {
+        "name": "Share Combo",
+        "price": "£23.00",
+        "details": "2 Adult Tickets + a Share Combo",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCB.jpg",
+        "days": [
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue"
+        ],
+        "seenOn": [
+          "evening",
+          "matinee"
+        ],
+        "file": "data/products/t2scb.jpg"
+      },
+      {
         "name": "Medium Combo",
         "price": "£14.00",
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCB.jpg",
         "days": [
-          "Tue",
           "Thu",
           "Fri",
           "Sat",
           "Sun",
-          "Mon"
+          "Mon",
+          "Tue"
         ],
         "seenOn": [
           "evening",
@@ -6962,24 +7010,17 @@
         "file": "data/products/t2mcb.jpg"
       },
       {
-        "name": "Share Combo",
-        "price": "£23.00",
+        "name": "Share Combo LUXX",
+        "price": "£31.00",
         "details": "2 Adult Tickets + a Share Combo",
-        "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCB.jpg",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCBLUXX.jpg",
         "days": [
-          "Tue",
-          "Wed",
-          "Thu",
-          "Fri",
-          "Sat",
-          "Sun",
-          "Mon"
+          "Wed"
         ],
         "seenOn": [
-          "evening",
-          "matinee"
+          "luxx"
         ],
-        "file": "data/products/t2scb.jpg"
+        "file": "data/products/t2scbluxx.jpg"
       }
     ],
     "products": [
@@ -6988,13 +7029,13 @@
         "price": "£0.80",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
           "Sun",
-          "Mon"
+          "Mon",
+          "Tue"
         ],
         "seenOn": [
           "evening",
@@ -7009,13 +7050,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
           "Sun",
-          "Mon"
+          "Mon",
+          "Tue"
         ],
         "seenOn": [
           "evening",
@@ -7030,13 +7071,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
           "Sun",
-          "Mon"
+          "Mon",
+          "Tue"
         ],
         "seenOn": [
           "evening",
@@ -7051,13 +7092,13 @@
         "price": "£3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
           "Sun",
-          "Mon"
+          "Mon",
+          "Tue"
         ],
         "seenOn": [
           "evening",
@@ -7072,13 +7113,13 @@
         "price": "£8.00",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
           "Sun",
-          "Mon"
+          "Mon",
+          "Tue"
         ],
         "seenOn": [
           "evening",
@@ -7093,13 +7134,13 @@
         "price": "£8.00",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
           "Sun",
-          "Mon"
+          "Mon",
+          "Tue"
         ],
         "seenOn": [
           "evening",
@@ -7114,13 +7155,13 @@
         "price": "£5.50",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
           "Sun",
-          "Mon"
+          "Mon",
+          "Tue"
         ],
         "seenOn": [
           "evening",
@@ -7135,13 +7176,13 @@
         "price": "£11.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Tue",
           "Wed",
           "Thu",
           "Fri",
           "Sat",
           "Sun",
-          "Mon"
+          "Mon",
+          "Tue"
         ],
         "seenOn": [
           "evening",
@@ -7152,18 +7193,18 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-24T17:44:53.200Z",
+    "checked": "2026-11-25T17:13:26.914Z",
     "sampledDays": [
-      "Tue",
       "Wed",
       "Thu",
       "Fri",
       "Sat",
       "Sun",
-      "Mon"
+      "Mon",
+      "Tue"
     ]
   },
-  "checked": "2026-11-24T17:45:07.850Z",
+  "checked": "2026-11-25T17:13:40.887Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
