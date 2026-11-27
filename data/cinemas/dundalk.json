@@ -2,8 +2,49 @@
   "id": "dundalk",
   "cinema": "IMC Dundalk",
   "source": "https://imc.ie/dundalk",
-  "updated": "2026-11-26T16:59:46.016Z",
+  "updated": "2026-11-27T01:06:50.038Z",
   "today": [
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Buddy",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
+      "cert": "15A",
+      "runtime": 96,
+      "release": "November 27, 2026",
+      "releaseDate": "2026-11-27",
+      "director": "Casper Kelly",
+      "synopsis": "A brave girl and her friends must escape a kids' television show.",
+      "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
+      "date": "2026-11-27",
+      "times": [
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118373",
+      "sessions": [
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118373",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "buddy",
+      "posterFile": "data/posters/buddy.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
     {
       "certSystem": "ifco",
       "certFile": "12A",
@@ -19,23 +60,38 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "times": [
-        "17:00"
+        "15:35",
+        "18:10"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118354",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118407",
       "sessions": [
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "17:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118354",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118407",
           "luxx": false,
-          "screen": "6",
+          "screen": "7",
           "threeD": false,
           "tags": [
             "released",
             "matinee",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118411",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
             "seating-standard"
           ]
         }
@@ -60,53 +116,23 @@
       "director": "John Hamburg",
       "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
       "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "times": [
-        "18:15",
-        "19:45",
-        "20:45"
+        "16:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118034",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118410",
       "sessions": [
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118034",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "16:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118410",
           "luxx": false,
           "screen": "3",
           "threeD": false,
           "tags": [
             "new",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118355",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118033",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
+            "matinee",
             "seating-standard"
           ]
         }
@@ -119,57 +145,143 @@
     {
       "certSystem": "ifco",
       "certFile": "12A",
-      "title": "I Play Rocky",
-      "luxx": false,
+      "title": "Focker-In-Law",
+      "luxx": true,
       "sensory": false,
-      "status": null,
-      "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
       "cert": "12A",
-      "runtime": 128,
-      "release": "November 11, 2026",
-      "releaseDate": "2026-11-11",
-      "director": "Peter Farrelly",
-      "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
-      "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-26",
+      "runtime": 106,
+      "release": "November 27, 2026",
+      "releaseDate": "2026-11-27",
+      "director": "John Hamburg",
+      "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+      "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+      "date": "2026-11-27",
       "times": [
-        "17:25",
-        "20:15"
+        "15:45",
+        "18:15",
+        "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118356",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118402",
       "sessions": [
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "17:25",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118356",
-          "luxx": false,
-          "screen": "7",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118402",
+          "luxx": true,
+          "screen": "1",
           "threeD": false,
           "tags": [
-            "released",
+            "advance",
+            "matinee",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117972",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=117971",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
+          ]
+        }
+      ],
+      "slug": "focker-in-law",
+      "posterFile": "data/posters/focker-in-law.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Hexed",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
+      "cert": "PG",
+      "runtime": 109,
+      "release": "November 27, 2026",
+      "releaseDate": "2026-11-27",
+      "director": "Jason Hand, Fawn Veerasunthorn",
+      "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+      "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
+      "date": "2026-11-27",
+      "times": [
+        "15:35",
+        "18:10",
+        "20:35"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118406",
+      "sessions": [
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "15:35",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118406",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "advance",
             "matinee",
             "seating-standard"
           ]
         },
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118357",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118042",
           "luxx": false,
-          "screen": "7",
+          "screen": "6",
           "threeD": false,
           "tags": [
-            "released",
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118043",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "advance",
             "evening",
             "seating-standard"
           ]
         }
       ],
-      "slug": "i-play-rocky",
-      "posterFile": "data/posters/i-play-rocky.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
+      "slug": "hexed",
+      "posterFile": "data/posters/hexed.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -187,18 +299,18 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "times": [
         "16:10",
         "19:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118353",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118404",
       "sessions": [
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
           "time": "16:10",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118353",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118404",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -209,10 +321,10 @@
           ]
         },
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
           "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118352",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118405",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -243,18 +355,18 @@
       "director": "Francis Lawrence",
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "times": [
         "16:40",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118032",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118408",
       "sessions": [
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
           "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118032",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118408",
           "luxx": true,
           "screen": "2",
           "threeD": false,
@@ -265,10 +377,10 @@
           ]
         },
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118031",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118403",
           "luxx": true,
           "screen": "2",
           "threeD": false,
@@ -287,51 +399,36 @@
     {
       "certSystem": "ifco",
       "certFile": "15A",
-      "title": "You Can See Everything",
-      "luxx": true,
+      "title": "You can see everything",
+      "luxx": false,
       "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
       "cert": "15A",
-      "runtime": 174,
-      "release": "November 20, 2026",
-      "releaseDate": "2026-11-20",
+      "runtime": 176,
+      "release": "November 27, 2026",
+      "releaseDate": "2026-11-27",
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "times": [
-        "16:10",
-        "19:45"
+        "19:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118004",
+      "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118409",
       "sessions": [
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "16:10",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118004",
-          "luxx": true,
-          "screen": "1",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "19:30",
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118409",
+          "luxx": false,
+          "screen": "3",
           "threeD": false,
           "tags": [
-            "new",
-            "matinee",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118003",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
+            "advance",
             "evening",
-            "seating-lux"
+            "seating-standard"
           ]
         }
       ],
@@ -342,319 +439,6 @@
     }
   ],
   "days": [
-    {
-      "label": "Thu 26 Nov",
-      "url": "https://imc.ie/film-times/dundalk/26-11-2026#dateD",
-      "date": "2026-11-26",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "EBENEZER",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "12A",
-          "runtime": 120,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Ti West",
-          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
-          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-          "date": "2026-11-26",
-          "times": [
-            "17:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118354",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "17:00",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118354",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ebenezer",
-          "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Focker-In-Law",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
-          "cert": "12A",
-          "runtime": 106,
-          "release": "November 25, 2026",
-          "releaseDate": "2026-11-25",
-          "director": "John Hamburg",
-          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
-          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-          "date": "2026-11-26",
-          "times": [
-            "18:15",
-            "19:45",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118034",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118034",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118355",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118033",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "focker-in-law",
-          "posterFile": "data/posters/focker-in-law.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "I Play Rocky",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "12A",
-          "runtime": 128,
-          "release": "November 11, 2026",
-          "releaseDate": "2026-11-11",
-          "director": "Peter Farrelly",
-          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
-          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-          "date": "2026-11-26",
-          "times": [
-            "17:25",
-            "20:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118356",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "17:25",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118356",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118357",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "i-play-rocky",
-          "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 18, 2026",
-          "releaseDate": "2026-11-18",
-          "director": null,
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-26",
-          "times": [
-            "19:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118352",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "19:30",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118352",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping -",
-          "luxx": true,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/116766.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 18, 2026",
-          "releaseDate": "2026-11-18",
-          "director": "Francis Lawrence",
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-26",
-          "times": [
-            "16:40",
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118032",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "16:40",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118032",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118031",
-              "luxx": true,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "You Can See Everything",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
-          "cert": "15A",
-          "runtime": 174,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Nathan Fielder",
-          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-          "trailer": null,
-          "date": "2026-11-26",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118003",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118003",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "you-can-see-everything",
-          "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
     {
       "label": "Fri 27 Nov",
       "url": "https://imc.ie/film-times/dundalk/27-11-2026#dateD",
@@ -3939,6 +3723,110 @@
           "slug": "you-can-see-everything",
           "posterFile": "data/posters/you-can-see-everything.jpg",
           "certIcon": "data/ratings/ifco-15A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Fri 04 Dec",
+      "url": "https://imc.ie/film-times/dundalk/04-12-2026#dateD",
+      "date": "2026-12-04",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "The Cat In The Hat",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116901.jpg",
+          "cert": "G",
+          "runtime": 125,
+          "release": "December 4, 2026",
+          "releaseDate": "2026-12-04",
+          "director": "Erica Rivinoja, Alessandro Carloni",
+          "synopsis": "Meet the Cat In The Hat you don?t know! In the wonderfully whimsical tradition of Dr Seuss, The Cat In The Hat comes to the big screen in his animated theatrical feature film debut, an all-new, epic adventure with an edge, where mischief, magic, and mayhem reign supreme.",
+          "trailer": "https://www.youtube.com/watch?v=Vuv0kqGWjno",
+          "date": "2026-12-04",
+          "times": [
+            "19:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118265",
+          "sessions": [
+            {
+              "day": "Fri 4 December",
+              "date": "2026-12-04",
+              "time": "19:30",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118265",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-cat-in-the-hat",
+          "posterFile": "data/posters/the-cat-in-the-hat.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Violent Night 2",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112570.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "December 4, 2026",
+          "releaseDate": "2026-12-04",
+          "director": "Tommy Wirkola",
+          "synopsis": "Violent Night 2 brings back the most unlikely action hero of the festive season as David Harbour returns as a battle-hardened Santa Claus with a surprisingly lethal skill set.",
+          "trailer": "https://www.youtube.com/watch?v=a53e4HHnx_s",
+          "date": "2026-12-04",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118360",
+          "sessions": [
+            {
+              "day": "Fri 4 December",
+              "date": "2026-12-04",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118360",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 4 December",
+              "date": "2026-12-04",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=dundalk&stage=tickets&perf=118359",
+              "luxx": false,
+              "screen": "7",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "violent-night-2",
+          "posterFile": "data/posters/violent-night-2.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -7815,8 +7703,7 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 6 films parsed",
-    "day-26-11-2026-dated: 6 films parsed",
+    "today: 8 films parsed",
     "day-27-11-2026-dated: 8 films parsed",
     "day-28-11-2026-dated: 9 films parsed",
     "day-29-11-2026-dated: 9 films parsed",
@@ -7824,39 +7711,16 @@
     "day-01-12-2026-dated: 8 films parsed",
     "day-02-12-2026-dated: 8 films parsed",
     "day-03-12-2026-dated: 7 films parsed",
+    "day-04-12-2026-dated: 2 films parsed",
     "advance: 13 films parsed",
     "kids: 1 films parsed",
     "luxx: 7 films parsed",
-    "booking pages read: 10 (Thu, Fri, Sat, Sun, Mon, Tue, Wed)",
+    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
     "prices: 17 ticket types, 4 bundles, 9 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
-      {
-        "name": "Crazy Thursday",
-        "price": "€7.50",
-        "days": [
-          "Thu"
-        ],
-        "seenOn": [
-          "evening"
-        ]
-      },
-      {
-        "name": "3 Plus 2 For 1Requires Voucher",
-        "price": "€10.00",
-        "days": [
-          "Thu",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening"
-        ]
-      },
       {
         "name": "Adult Peak",
         "price": "€12.00",
@@ -7952,6 +7816,20 @@
         ]
       },
       {
+        "name": "3 Plus 2 For 1Requires Voucher",
+        "price": "€10.00",
+        "days": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
         "name": "Student Meal Deal",
         "price": "€12.50",
         "days": [
@@ -7966,6 +7844,16 @@
         "price": "€12.50",
         "days": [
           "Wed"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Crazy Thursday",
+        "price": "€7.50",
+        "days": [
+          "Thu"
         ],
         "seenOn": [
           "evening"
@@ -8022,20 +7910,20 @@
         ]
       },
       {
-        "name": "Crazy Thursday LUXX",
-        "price": "€9.00",
+        "name": "LUXX Recliner",
+        "price": "€15.50",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
         ]
       },
       {
-        "name": "3 Plus 2 For 1 LUXXRequires Voucher",
-        "price": "€18.00",
+        "name": "LUXX Child/Student/OAP",
+        "price": "€12.50",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
@@ -8049,12 +7937,12 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
-          "Tue"
+          "Tue",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8068,13 +7956,13 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8088,7 +7976,7 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
@@ -8101,7 +7989,7 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
@@ -8115,13 +8003,13 @@
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8136,13 +8024,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8157,13 +8045,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8178,13 +8066,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8199,13 +8087,13 @@
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8220,13 +8108,13 @@
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8241,13 +8129,13 @@
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8262,13 +8150,13 @@
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8283,13 +8171,13 @@
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -8300,18 +8188,18 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-26T17:00:10.831Z",
+    "checked": "2026-11-27T01:07:14.975Z",
     "sampledDays": [
-      "Thu",
       "Fri",
       "Sat",
       "Sun",
       "Mon",
       "Tue",
-      "Wed"
+      "Wed",
+      "Thu"
     ]
   },
-  "checked": "2026-11-26T17:00:24.427Z",
+  "checked": "2026-11-27T01:07:28.883Z",
   "blocked": false,
   "ratings": {
     "bbfc": {

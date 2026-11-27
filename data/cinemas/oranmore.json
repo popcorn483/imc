@@ -2,41 +2,138 @@
   "id": "oranmore",
   "cinema": "IMC Oranmore",
   "source": "https://imc.ie/galway-oranmore",
-  "updated": "2026-11-26T17:01:42.514Z",
+  "updated": "2026-11-27T01:08:49.582Z",
   "today": [
+    {
+      "certSystem": "ifco",
+      "certFile": "15A",
+      "title": "Buddy",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
+      "cert": "15A",
+      "runtime": 96,
+      "release": "November 27, 2026",
+      "releaseDate": "2026-11-27",
+      "director": "Casper Kelly",
+      "synopsis": "A brave girl and her friends must escape a kids' television show.",
+      "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
+      "date": "2026-11-27",
+      "times": [
+        "20:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80650",
+      "sessions": [
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80650",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "buddy",
+      "posterFile": "data/posters/buddy.jpg",
+      "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "EBENEZER",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+      "cert": "12A",
+      "runtime": 120,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": "Ti West",
+      "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+      "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+      "date": "2026-11-27",
+      "times": [
+        "18:15"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80676",
+      "sessions": [
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80676",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ebenezer",
+      "posterFile": "data/posters/ebenezer.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
     {
       "certSystem": "ifco",
       "certFile": "12A",
       "title": "Focker-In-Law",
-      "luxx": false,
+      "luxx": true,
       "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
       "cert": "12A",
       "runtime": 106,
-      "release": "November 25, 2026",
-      "releaseDate": "2026-11-25",
+      "release": "November 27, 2026",
+      "releaseDate": "2026-11-27",
       "director": "John Hamburg",
       "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
       "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "times": [
-        "19:45"
+        "18:15",
+        "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80598",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80564",
       "sessions": [
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80598",
-          "luxx": false,
-          "screen": "3",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80564",
+          "luxx": true,
+          "screen": "1",
           "threeD": false,
           "tags": [
-            "new",
+            "advance",
             "evening",
-            "seating-standard"
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80565",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "seating-lux"
           ]
         }
       ],
@@ -47,58 +144,60 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "12A",
-      "title": "Focker-In-Law - Galactic",
+      "certFile": "G",
+      "title": "Hexed Galactic",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116626.jpg",
-      "cert": "12A",
-      "runtime": 106,
-      "release": "November 25, 2026",
-      "releaseDate": "2026-11-25",
-      "director": "John Hamburg",
-      "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
-      "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-      "date": "2026-11-26",
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/117701.jpg",
+      "cert": "G",
+      "runtime": 109,
+      "release": "November 27, 2026",
+      "releaseDate": "2026-11-27",
+      "director": "Jason Hand, Fawn Veerasunthorn",
+      "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+      "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
+      "date": "2026-11-27",
       "times": [
-        "18:15",
+        "18:10",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80563",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80717",
       "sessions": [
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80563",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "18:10",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80717",
           "luxx": false,
           "screen": "2",
           "threeD": false,
           "tags": [
-            "new",
+            "advance",
             "evening",
-            "seating-standard"
+            "seating-standard",
+            "screen-galactic"
           ]
         },
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
           "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80562",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80716",
           "luxx": false,
           "screen": "2",
           "threeD": false,
           "tags": [
-            "new",
+            "advance",
             "evening",
-            "seating-standard"
+            "seating-standard",
+            "screen-galactic"
           ]
         }
       ],
-      "slug": "focker-in-law-galactic",
-      "posterFile": "data/posters/focker-in-law-galactic.jpg",
-      "certIcon": "data/ratings/ifco-12A.svg",
+      "slug": "hexed-galactic",
+      "posterFile": "data/posters/hexed-galactic.jpg",
+      "certIcon": "data/ratings/ifco-G.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -116,18 +215,18 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "times": [
-        "18:30",
+        "19:00",
         "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80634",
+      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80688",
       "sessions": [
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80634",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
+          "time": "19:00",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80688",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -138,12 +237,12 @@
           ]
         },
         {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
+          "day": "Fri 27 November",
+          "date": "2026-11-27",
           "time": "20:00",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80314",
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80670",
           "luxx": false,
-          "screen": "5",
+          "screen": "3",
           "threeD": false,
           "tags": [
             "released",
@@ -156,251 +255,9 @@
       "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
       "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "You Can See Everything",
-      "luxx": true,
-      "sensory": false,
-      "status": "New Release",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
-      "cert": "15A",
-      "runtime": 174,
-      "release": "November 20, 2026",
-      "releaseDate": "2026-11-20",
-      "director": "Nathan Fielder",
-      "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-      "trailer": null,
-      "date": "2026-11-26",
-      "times": [
-        "19:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80281",
-      "sessions": [
-        {
-          "day": "Thu 26 November",
-          "date": "2026-11-26",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80281",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "new",
-            "evening",
-            "seating-lux"
-          ]
-        }
-      ],
-      "slug": "you-can-see-everything",
-      "posterFile": "data/posters/you-can-see-everything.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "days": [
-    {
-      "label": "Thu 26 Nov",
-      "url": "https://imc.ie/film-times/galway-oranmore/26-11-2026#dateD",
-      "date": "2026-11-26",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Focker-In-Law",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
-          "cert": "12A",
-          "runtime": 106,
-          "release": "November 25, 2026",
-          "releaseDate": "2026-11-25",
-          "director": "John Hamburg",
-          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
-          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-          "date": "2026-11-26",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80598",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80598",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "focker-in-law",
-          "posterFile": "data/posters/focker-in-law.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Focker-In-Law - Galactic",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116626.jpg",
-          "cert": "12A",
-          "runtime": 106,
-          "release": "November 25, 2026",
-          "releaseDate": "2026-11-25",
-          "director": "John Hamburg",
-          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
-          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-          "date": "2026-11-26",
-          "times": [
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80563",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80563",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80562",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "focker-in-law-galactic",
-          "posterFile": "data/posters/focker-in-law-galactic.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 18, 2026",
-          "releaseDate": "2026-11-18",
-          "director": null,
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-26",
-          "times": [
-            "18:30",
-            "20:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80634",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80634",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "20:00",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80314",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "You Can See Everything",
-          "luxx": true,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116601.jpg",
-          "cert": "15A",
-          "runtime": 174,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Nathan Fielder",
-          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-          "trailer": null,
-          "date": "2026-11-26",
-          "times": [
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80281",
-          "sessions": [
-            {
-              "day": "Thu 26 November",
-              "date": "2026-11-26",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80281",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "you-can-see-everything",
-          "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
     {
       "label": "Fri 27 Nov",
       "url": "https://imc.ie/film-times/galway-oranmore/27-11-2026#dateD",
@@ -2648,6 +2505,111 @@
           "slug": "the-hunger-games-sunrise-on-the-reaping",
           "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
           "certIcon": "data/ratings/ifco-12A.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
+    },
+    {
+      "label": "Fri 04 Dec",
+      "url": "https://imc.ie/film-times/galway-oranmore/04-12-2026#dateD",
+      "date": "2026-12-04",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "The Cat In The Hat - Galactic",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116938.jpg",
+          "cert": "G",
+          "runtime": 125,
+          "release": "December 4, 2026",
+          "releaseDate": "2026-12-04",
+          "director": "Erica Rivinoja, Alessandro Carloni",
+          "synopsis": "Meet the Cat In The Hat you don?t know! In the wonderfully whimsical tradition of Dr Seuss, The Cat In The Hat comes to the big screen in his animated theatrical feature film debut, an all-new, epic adventure with an edge, where mischief, magic, and mayhem reign supreme.",
+          "trailer": "https://www.youtube.com/watch?v=Vuv0kqGWjno",
+          "date": "2026-12-04",
+          "times": [
+            "19:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80448",
+          "sessions": [
+            {
+              "day": "Fri 4 December",
+              "date": "2026-12-04",
+              "time": "19:30",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80448",
+              "luxx": false,
+              "screen": "2",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard",
+                "screen-galactic"
+              ]
+            }
+          ],
+          "slug": "the-cat-in-the-hat-galactic",
+          "posterFile": "data/posters/the-cat-in-the-hat-galactic.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "TBC",
+          "title": "Violent Night 2",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112570.jpg",
+          "cert": "TBC",
+          "runtime": 100,
+          "release": "December 4, 2026",
+          "releaseDate": "2026-12-04",
+          "director": "Tommy Wirkola",
+          "synopsis": "Violent Night 2 brings back the most unlikely action hero of the festive season as David Harbour returns as a battle-hardened Santa Claus with a surprisingly lethal skill set.",
+          "trailer": "https://www.youtube.com/watch?v=a53e4HHnx_s",
+          "date": "2026-12-04",
+          "times": [
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80658",
+          "sessions": [
+            {
+              "day": "Fri 4 December",
+              "date": "2026-12-04",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80658",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Fri 4 December",
+              "date": "2026-12-04",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=galwayoranmore&stage=tickets&perf=80657",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "violent-night-2",
+          "posterFile": "data/posters/violent-night-2.jpg",
+          "certIcon": "data/ratings/ifco-TBC.svg",
           "certLogo": "data/ratings/ifco-IFCO.svg"
         }
       ]
@@ -5470,8 +5432,7 @@
   ],
   "log": [
     "home: 0 films parsed",
-    "today: 4 films parsed",
-    "day-26-11-2026-dated: 4 films parsed",
+    "today: 5 films parsed",
     "day-27-11-2026-dated: 5 films parsed",
     "day-28-11-2026-dated: 7 films parsed",
     "day-29-11-2026-dated: 7 films parsed",
@@ -5479,39 +5440,16 @@
     "day-01-12-2026-dated: 5 films parsed",
     "day-02-12-2026-dated: 5 films parsed",
     "day-03-12-2026-dated: 5 films parsed",
+    "day-04-12-2026-dated: 2 films parsed",
     "advance: 11 films parsed",
     "kids: 1 films parsed",
     "luxx: 5 films parsed",
-    "booking pages read: 10 (Thu, Fri, Sat, Sun, Mon, Tue, Wed)",
+    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
     "prices: 22 ticket types, 6 bundles, 9 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
-      {
-        "name": "Crazy Thursday Galactic",
-        "price": "€8.00",
-        "days": [
-          "Thu"
-        ],
-        "seenOn": [
-          "evening"
-        ]
-      },
-      {
-        "name": "3 Plus 2 For 1 GALACTICRequires Voucher",
-        "price": "€14.00",
-        "days": [
-          "Thu",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed"
-        ],
-        "seenOn": [
-          "evening"
-        ]
-      },
       {
         "name": "Galactic Adult",
         "price": "€14.00",
@@ -5616,6 +5554,20 @@
         }
       },
       {
+        "name": "3 Plus 2 For 1 GALACTICRequires Voucher",
+        "price": "€14.00",
+        "days": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
         "name": "Galactic Student Meal Deal",
         "price": "€14.50",
         "days": [
@@ -5630,6 +5582,16 @@
         "price": "€15.00",
         "days": [
           "Wed"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Crazy Thursday Galactic",
+        "price": "€8.00",
+        "days": [
+          "Thu"
         ],
         "seenOn": [
           "evening"
@@ -5726,20 +5688,20 @@
         ]
       },
       {
-        "name": "Crazy Thursday LUXX",
-        "price": "€9.00",
+        "name": "LUXX Recliner",
+        "price": "€15.50",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
         ]
       },
       {
-        "name": "3 Plus 2 For 1 LUXXRequires Voucher",
-        "price": "€18.00",
+        "name": "LUXX Child/Student/OAP",
+        "price": "€12.50",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
@@ -5752,12 +5714,12 @@
         "price": "€20.00",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBG.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
-          "Tue"
+          "Tue",
+          "Thu"
         ],
         "seenOn": [
           "evening"
@@ -5769,13 +5731,13 @@
         "price": "€33.00",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBG.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening"
@@ -5814,7 +5776,7 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBLUXX.jpg",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
@@ -5827,7 +5789,7 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBLUXX.jpg",
         "days": [
-          "Thu"
+          "Fri"
         ],
         "seenOn": [
           "luxx"
@@ -5841,13 +5803,13 @@
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -5862,13 +5824,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -5883,13 +5845,13 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -5904,13 +5866,13 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -5925,13 +5887,13 @@
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -5946,13 +5908,13 @@
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -5967,13 +5929,13 @@
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -5988,13 +5950,13 @@
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -6009,13 +5971,13 @@
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
         "days": [
-          "Thu",
           "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Wed"
+          "Wed",
+          "Thu"
         ],
         "seenOn": [
           "evening",
@@ -6026,18 +5988,18 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-26T17:02:08.151Z",
+    "checked": "2026-11-27T01:09:15.375Z",
     "sampledDays": [
-      "Thu",
       "Fri",
       "Sat",
       "Sun",
       "Mon",
       "Tue",
-      "Wed"
+      "Wed",
+      "Thu"
     ]
   },
-  "checked": "2026-11-26T17:02:22.206Z",
+  "checked": "2026-11-27T01:09:28.806Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
