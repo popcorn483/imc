@@ -7215,21 +7215,14 @@
     }
   ],
   "log": [
-    "home: 1 films parsed",
-    "today: 7 films parsed",
-    "day-27-11-2026-dated: 7 films parsed",
-    "day-28-11-2026-dated: 8 films parsed",
-    "day-29-11-2026-dated: 8 films parsed",
-    "day-30-11-2026-dated: 7 films parsed",
-    "day-01-12-2026-dated: 7 films parsed",
-    "day-02-12-2026-dated: 7 films parsed",
-    "day-03-12-2026-dated: 7 films parsed",
-    "day-04-12-2026-dated: 3 films parsed",
-    "advance: 12 films parsed",
-    "kids: 1 films parsed",
-    "luxx: 4 films parsed",
-    "booking pages read: 10 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
-    "prices: 12 ticket types, 4 bundles, 8 products",
+    "enniskillen: no films on the film-times page",
+    "imc.ie showed a browser check on home; stopping this run and keeping the previous listings",
+    "kept previous today",
+    "kept previous days",
+    "kept previous comingSoon",
+    "kept previous kidsClub",
+    "kept previous luxx",
+    "kept previous banners",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -7645,8 +7638,8 @@
       "Thu"
     ]
   },
-  "checked": "2026-11-27T16:39:42.144Z",
-  "blocked": false,
+  "checked": "2026-11-28T00:32:34.402Z",
+  "blocked": true,
   "ratings": {
     "bbfc": {
       "12": "data/ratings/bbfc-12.svg",
