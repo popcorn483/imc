@@ -2,7 +2,7 @@
   "id": "enniskillen",
   "cinema": "IMC Enniskillen",
   "source": "https://imc.ie/enniskillen",
-  "updated": "2026-11-27T16:39:01.545Z",
+  "updated": "2026-11-28T15:30:12.524Z",
   "today": [
     {
       "certSystem": "bbfc",
@@ -10,7 +10,7 @@
       "title": "Buddy",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
       "cert": "15",
       "runtime": 96,
@@ -19,22 +19,22 @@
       "director": "Casper Kelly",
       "synopsis": "A brave girl and her friends must escape a kids' television show.",
       "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121679",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121680",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121679",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121680",
           "luxx": false,
           "screen": "7",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -60,17 +60,32 @@
       "director": "Ti West",
       "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
       "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
+        "15:30",
         "18:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121746",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121727",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121727",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121746",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121726",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -88,6 +103,48 @@
     },
     {
       "certSystem": "bbfc",
+      "certFile": "G",
+      "title": "Festive Fun with Peppa Cinema Experience",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
+      "cert": "G",
+      "runtime": 60,
+      "release": "November 14, 2026",
+      "releaseDate": "2026-11-14",
+      "director": null,
+      "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
+      "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
+      "date": "2026-11-28",
+      "times": [
+        "14:00"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121821",
+      "sessions": [
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121821",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "kidsclub",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "festive-fun-with-peppa-cinema-experience",
+      "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
+      "certIcon": "data/ratings/bbfc-G.svg",
+      "certLogo": "data/ratings/bbfc-BBFC.svg"
+    },
+    {
+      "certSystem": "bbfc",
       "certFile": "12A",
       "title": "Focker-In-Law",
       "luxx": false,
@@ -101,32 +158,62 @@
       "director": "John Hamburg",
       "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
       "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
-        "17:45",
-        "20:15"
+        "15:00",
+        "16:45",
+        "17:30",
+        "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121744",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121723",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "17:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121744",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121723",
           "luxx": false,
           "screen": "4",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "20:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121743",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "16:45",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121731",
+          "luxx": false,
+          "screen": "3",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "17:30",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121722",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121721",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -148,7 +235,7 @@
       "title": "Focker-In-Law",
       "luxx": true,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
       "cert": "12A",
       "runtime": 106,
@@ -157,37 +244,52 @@
       "director": "John Hamburg",
       "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
       "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
+        "15:45",
         "18:15",
         "20:45"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121203",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121216",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121203",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "15:45",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121216",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-lux"
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121200",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "18:15",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121205",
           "luxx": true,
           "screen": "1",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
+            "evening",
+            "seating-lux"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "20:45",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121204",
+          "luxx": true,
+          "screen": "1",
+          "threeD": false,
+          "tags": [
+            "new",
             "evening",
             "seating-lux"
           ]
@@ -204,7 +306,7 @@
       "title": "Hexed",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
       "cert": "PG",
       "runtime": 109,
@@ -213,37 +315,67 @@
       "director": "Jason Hand, Fawn Veerasunthorn",
       "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
       "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
+        "14:00",
+        "15:20",
         "18:00",
         "20:35"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121409",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121770",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121409",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "14:00",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121770",
           "luxx": false,
-          "screen": "5",
+          "screen": "3",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121410",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "15:20",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121418",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121411",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "20:35",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121412",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
             "evening",
             "seating-standard"
           ]
@@ -269,18 +401,20 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
-        "19:00",
-        "19:45"
+        "15:30",
+        "16:30",
+        "18:45",
+        "20:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121737",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121725",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "19:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121737",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121725",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -291,10 +425,38 @@
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121739",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "16:30",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121718",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "18:45",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121724",
+          "luxx": false,
+          "screen": "6",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "20:00",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121717",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -316,7 +478,7 @@
       "title": "You can see everything",
       "luxx": false,
       "sensory": false,
-      "status": "New Release",
+      "status": null,
       "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
       "cert": "15",
       "runtime": 176,
@@ -325,22 +487,22 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
         "19:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121736",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121720",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121736",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121720",
           "luxx": false,
           "screen": "3",
           "threeD": false,
           "tags": [
-            "new",
+            "released",
             "evening",
             "seating-standard"
           ]
@@ -354,360 +516,6 @@
   ],
   "days": [
     {
-      "label": "Fri 27 Nov",
-      "url": "https://imc.ie/film-times/enniskillen/27-11-2026#dateD",
-      "date": "2026-11-27",
-      "films": [
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "Buddy",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
-          "cert": "15",
-          "runtime": 96,
-          "release": "November 27, 2026",
-          "releaseDate": "2026-11-27",
-          "director": "Casper Kelly",
-          "synopsis": "A brave girl and her friends must escape a kids' television show.",
-          "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
-          "date": "2026-11-27",
-          "times": [
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121679",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121679",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "buddy",
-          "posterFile": "data/posters/buddy.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "EBENEZER",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
-          "cert": "12A",
-          "runtime": 120,
-          "release": "November 13, 2026",
-          "releaseDate": "2026-11-13",
-          "director": "Ti West",
-          "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
-          "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
-          "date": "2026-11-27",
-          "times": [
-            "18:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121746",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121746",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "ebenezer",
-          "posterFile": "data/posters/ebenezer.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Focker-In-Law",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
-          "cert": "12A",
-          "runtime": 106,
-          "release": "November 25, 2026",
-          "releaseDate": "2026-11-25",
-          "director": "John Hamburg",
-          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
-          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-          "date": "2026-11-27",
-          "times": [
-            "17:45",
-            "20:15"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121744",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "17:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121744",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "20:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121743",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "focker-in-law",
-          "posterFile": "data/posters/focker-in-law.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "Focker-In-Law",
-          "luxx": true,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
-          "cert": "12A",
-          "runtime": 106,
-          "release": "November 27, 2026",
-          "releaseDate": "2026-11-27",
-          "director": "John Hamburg",
-          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
-          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-          "date": "2026-11-27",
-          "times": [
-            "18:15",
-            "20:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121203",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "18:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121203",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-lux"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "20:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121200",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-lux"
-              ]
-            }
-          ],
-          "slug": "focker-in-law",
-          "posterFile": "data/posters/focker-in-law.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "PG",
-          "title": "Hexed",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
-          "cert": "PG",
-          "runtime": 109,
-          "release": "November 27, 2026",
-          "releaseDate": "2026-11-27",
-          "director": "Jason Hand, Fawn Veerasunthorn",
-          "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
-          "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
-          "date": "2026-11-27",
-          "times": [
-            "18:00",
-            "20:35"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121409",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121409",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "20:35",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121410",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "hexed",
-          "posterFile": "data/posters/hexed.jpg",
-          "certIcon": "data/ratings/bbfc-PG.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 18, 2026",
-          "releaseDate": "2026-11-18",
-          "director": null,
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-27",
-          "times": [
-            "19:00",
-            "19:45"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121737",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "19:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121737",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "19:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121739",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
-          "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "15",
-          "title": "You can see everything",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
-          "cert": "15",
-          "runtime": 176,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Nathan Fielder",
-          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-          "trailer": null,
-          "date": "2026-11-27",
-          "times": [
-            "19:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121736",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "19:30",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121736",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "you-can-see-everything",
-          "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/bbfc-15.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        }
-      ]
-    },
-    {
       "label": "Sat 28 Nov",
       "url": "https://imc.ie/film-times/enniskillen/28-11-2026#dateD",
       "date": "2026-11-28",
@@ -718,7 +526,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15",
           "runtime": 96,
@@ -742,7 +550,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -770,26 +578,11 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-28",
           "times": [
-            "13:00",
             "15:30",
             "18:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121728",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121727",
           "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121728",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -822,64 +615,6 @@
           "slug": "ebenezer",
           "posterFile": "data/posters/ebenezer.jpg",
           "certIcon": "data/ratings/bbfc-12A.svg",
-          "certLogo": "data/ratings/bbfc-BBFC.svg"
-        },
-        {
-          "certSystem": "bbfc",
-          "certFile": "G",
-          "title": "Festive Fun with Peppa Cinema Experience",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/115582.jpg",
-          "cert": "G",
-          "runtime": 60,
-          "release": "November 14, 2026",
-          "releaseDate": "2026-11-14",
-          "director": null,
-          "synopsis": "Enjoy festive fun with Peppa in this 60-minute cinema experience for young children and families. Screening from Saturday 14 November 2026, with daytime and weekend screenings throughout the festive season.",
-          "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
-          "date": "2026-11-28",
-          "times": [
-            "13:15",
-            "14:00"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121729",
-          "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "13:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121729",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "14:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121821",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "festive-fun-with-peppa-cinema-experience",
-          "posterFile": "data/posters/festive-fun-with-peppa-cinema-experience.jpg",
-          "certIcon": "data/ratings/bbfc-G.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         },
         {
@@ -974,7 +709,7 @@
           "title": "Focker-In-Law",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
           "cert": "12A",
           "runtime": 106,
@@ -985,27 +720,12 @@
           "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
           "date": "2026-11-28",
           "times": [
-            "13:15",
             "15:45",
             "18:15",
             "20:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121716",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121216",
           "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "13:15",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121716",
-              "luxx": true,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-lux"
-              ]
-            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -1015,7 +735,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1029,7 +749,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1043,7 +763,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1060,7 +780,7 @@
           "title": "Hexed",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
           "cert": "PG",
           "runtime": 109,
@@ -1071,42 +791,12 @@
           "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
           "date": "2026-11-28",
           "times": [
-            "12:45",
-            "14:00",
             "15:20",
             "18:00",
             "20:35"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121417",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121418",
           "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "12:45",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121417",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "14:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121770",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -1116,7 +806,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1130,7 +820,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1144,7 +834,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1172,28 +862,13 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-28",
           "times": [
-            "13:00",
             "15:30",
             "16:30",
             "18:45",
             "20:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121719",
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121725",
           "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121719",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -1262,7 +937,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15",
           "runtime": 176,
@@ -1286,7 +961,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1310,7 +985,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15",
           "runtime": 96,
@@ -1334,7 +1009,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1566,7 +1241,7 @@
           "title": "Focker-In-Law",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
           "cert": "12A",
           "runtime": 106,
@@ -1593,7 +1268,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1607,7 +1282,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1621,7 +1296,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1635,7 +1310,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -1652,7 +1327,7 @@
           "title": "Hexed",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
           "cert": "PG",
           "runtime": 109,
@@ -1680,7 +1355,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1694,7 +1369,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1708,7 +1383,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1722,7 +1397,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1736,7 +1411,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -1854,7 +1529,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15",
           "runtime": 176,
@@ -1878,7 +1553,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -1902,7 +1577,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15",
           "runtime": 96,
@@ -1926,7 +1601,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2040,7 +1715,7 @@
           "title": "Focker-In-Law",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
           "cert": "12A",
           "runtime": 106,
@@ -2065,7 +1740,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2079,7 +1754,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2096,7 +1771,7 @@
           "title": "Hexed",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
           "cert": "PG",
           "runtime": 109,
@@ -2121,7 +1796,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2135,7 +1810,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2208,7 +1883,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15",
           "runtime": 176,
@@ -2232,7 +1907,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2256,7 +1931,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15",
           "runtime": 96,
@@ -2280,7 +1955,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2394,7 +2069,7 @@
           "title": "Focker-In-Law",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
           "cert": "12A",
           "runtime": 106,
@@ -2419,7 +2094,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2433,7 +2108,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2450,7 +2125,7 @@
           "title": "Hexed",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
           "cert": "PG",
           "runtime": 109,
@@ -2475,7 +2150,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2489,7 +2164,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2562,7 +2237,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15",
           "runtime": 176,
@@ -2586,7 +2261,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2610,7 +2285,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15",
           "runtime": 96,
@@ -2634,7 +2309,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2748,7 +2423,7 @@
           "title": "Focker-In-Law",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
           "cert": "12A",
           "runtime": 106,
@@ -2773,7 +2448,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2787,7 +2462,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -2804,7 +2479,7 @@
           "title": "Hexed",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
           "cert": "PG",
           "runtime": 109,
@@ -2829,7 +2504,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2843,7 +2518,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -2916,7 +2591,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15",
           "runtime": 176,
@@ -2940,7 +2615,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -2964,7 +2639,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15",
           "runtime": 96,
@@ -2988,7 +2663,7 @@
               "screen": "7",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3102,7 +2777,7 @@
           "title": "Focker-In-Law",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
           "cert": "12A",
           "runtime": 106,
@@ -3127,7 +2802,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3141,7 +2816,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3158,7 +2833,7 @@
           "title": "Hexed",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
           "cert": "PG",
           "runtime": 109,
@@ -3183,7 +2858,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3197,7 +2872,7 @@
               "screen": "5",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-standard"
               ]
@@ -3270,7 +2945,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15",
           "runtime": 176,
@@ -3294,7 +2969,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "seating-standard"
               ]
@@ -3318,7 +2993,7 @@
           "title": "Focker-In-Law",
           "luxx": true,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
           "cert": "12A",
           "runtime": 106,
@@ -3343,7 +3018,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3357,7 +3032,7 @@
               "screen": "1",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "seating-lux"
               ]
@@ -3374,7 +3049,7 @@
           "title": "The Cat In The Hat",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "%posterHeader%",
           "poster": "https://imc.ie/wp-content/uploads/posters/116901.jpg",
           "cert": "U",
           "runtime": 125,
@@ -3398,7 +3073,6 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "advance",
                 "evening",
                 "seating-standard"
               ]
@@ -3463,6 +3137,345 @@
           "slug": "violent-night-2",
           "posterFile": "data/posters/violent-night-2.jpg",
           "certIcon": "data/ratings/bbfc-TBC.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        }
+      ]
+    },
+    {
+      "label": "Sat 05 Dec",
+      "url": "https://imc.ie/film-times/enniskillen/05-12-2026#dateD",
+      "date": "2026-12-05",
+      "films": [
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Andre Rieu's Christmas Concert: Let It Snow",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112259.jpg",
+          "cert": "PG",
+          "runtime": 165,
+          "release": "December 5, 2026",
+          "releaseDate": "2026-12-05",
+          "director": null,
+          "synopsis": "André Rieu and his Johann Strauss Orchestra return with a brand-new Christmas concert, bringing a premium festive event to cinemas. Featuring the extraordinary voice of Emma Kok, renowned tenors and special guests, this production is designed to delight audiences and drive seasonal attendance.",
+          "trailer": null,
+          "date": "2026-12-05",
+          "times": [
+            "19:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=117711",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "19:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=117711",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "andre-rieu-s-christmas-concert-let-it-snow",
+          "posterFile": "data/posters/andre-rieu-s-christmas-concert-let-it-snow.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Elf - 2003",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/44796.jpg",
+          "cert": "PG",
+          "runtime": 92,
+          "release": "December 5, 2026",
+          "releaseDate": "2026-12-05",
+          "director": "Jon Favreau",
+          "synopsis": "For his sophomore stab at directing, actor/writer/director Jon Favreau (Swingers, Made), took on this holiday comedy starring Saturday Night Live-alum Will Ferrell. Ferrell stars as Buddy, a regular-sized man who was raised as an elf by Santa Claus (Edward Asner). When the news is finally broken to Buddy that he's not a real elf, he decides to head back to his place of birth, New York City, in search of his biological family. Elf also stars James Caan, Mary Steenburgen, Zooey Deschanel, and Bob Newhart.",
+          "trailer": null,
+          "date": "2026-12-05",
+          "times": [
+            "12:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121564",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "12:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121564",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "elf-2003",
+          "posterFile": "data/posters/elf-2003.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "12A",
+          "title": "Focker-In-Law",
+          "luxx": true,
+          "sensory": false,
+          "status": "New Release",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
+          "cert": "12A",
+          "runtime": 106,
+          "release": "November 27, 2026",
+          "releaseDate": "2026-11-27",
+          "director": "John Hamburg",
+          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
+          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
+          "date": "2026-12-05",
+          "times": [
+            "13:15",
+            "15:45",
+            "18:15",
+            "20:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121676",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "13:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121676",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "15:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121675",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "18:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121663",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            },
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "20:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121664",
+              "luxx": true,
+              "screen": "1",
+              "threeD": false,
+              "tags": [
+                "new",
+                "evening",
+                "seating-lux"
+              ]
+            }
+          ],
+          "slug": "focker-in-law",
+          "posterFile": "data/posters/focker-in-law.jpg",
+          "certIcon": "data/ratings/bbfc-12A.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Home Alone",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/64287.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "December 5, 2026",
+          "releaseDate": "2026-12-05",
+          "director": "Chris Columbus",
+          "synopsis": "When bratty 8-year-old Kevin McCallister (Macaulay Culkin) acts out the night before a family trip to Paris, his mother (Catherine O'Hara) makes him sleep in the attic. After the McCallisters mistakenly leave for the airport without Kevin, he awakens to an empty house and assumes his wish to have no family has come true. But his excitement sours when he realizes that two con men (Joe Pesci, Daniel Stern) plan to rob the McCallister residence, and that he alone must protect the family home.",
+          "trailer": "https://www.youtube.com/watch?v=dzdpqRGA1qc",
+          "date": "2026-12-05",
+          "times": [
+            "17:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120601",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "17:00",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=120601",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "home-alone",
+          "posterFile": "data/posters/home-alone.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "PG",
+          "title": "Home Alone 2: Lost In New York",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/585.jpg",
+          "cert": "PG",
+          "runtime": 120,
+          "release": "December 5, 2026",
+          "releaseDate": "2026-12-05",
+          "director": "Chris Colombus",
+          "synopsis": "The McCallister's go on holiday to Florida while Kevin accidentally gets on a plane to NYC with a bag full of money.",
+          "trailer": null,
+          "date": "2026-12-05",
+          "times": [
+            "14:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121357",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "14:30",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121357",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "home-alone-2-lost-in-new-york",
+          "posterFile": "data/posters/home-alone-2-lost-in-new-york.jpg",
+          "certIcon": "data/ratings/bbfc-PG.svg",
+          "certLogo": "data/ratings/bbfc-BBFC.svg"
+        },
+        {
+          "certSystem": "bbfc",
+          "certFile": "U",
+          "title": "The Cat In The Hat",
+          "luxx": false,
+          "sensory": false,
+          "status": "%posterHeader%",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116901.jpg",
+          "cert": "U",
+          "runtime": 125,
+          "release": "December 4, 2026",
+          "releaseDate": "2026-12-04",
+          "director": "Erica Rivinoja, Alessandro Carloni",
+          "synopsis": "Meet the Cat In The Hat you don?t know! In the wonderfully whimsical tradition of Dr Seuss, The Cat In The Hat comes to the big screen in his animated theatrical feature film debut, an all-new, epic adventure with an edge, where mischief, magic, and mayhem reign supreme.",
+          "trailer": "https://www.youtube.com/watch?v=Vuv0kqGWjno",
+          "date": "2026-12-05",
+          "times": [
+            "12:15",
+            "14:45",
+            "17:15",
+            "19:45"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121421",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "12:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121421",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "14:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121435",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "17:15",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121422",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "evening",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "19:45",
+              "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121423",
+              "luxx": false,
+              "screen": "6",
+              "threeD": false,
+              "tags": [
+                "evening",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-cat-in-the-hat",
+          "posterFile": "data/posters/the-cat-in-the-hat.jpg",
+          "certIcon": "data/ratings/bbfc-U.svg",
           "certLogo": "data/ratings/bbfc-BBFC.svg"
         }
       ]
@@ -4184,131 +4197,6 @@
     },
     {
       "certSystem": "bbfc",
-      "certFile": "15",
-      "title": "Buddy",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
-      "cert": "15",
-      "runtime": 96,
-      "release": "November 27, 2026",
-      "releaseDate": "2026-11-27",
-      "director": "Casper Kelly",
-      "synopsis": "A brave girl and her friends must escape a kids' television show.",
-      "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
-      "date": "2026-11-27",
-      "times": [
-        "20:30"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121679",
-      "sessions": [
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121679",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121680",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121776",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121682",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121683",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121684",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121685",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "buddy",
-      "posterFile": "data/posters/buddy.jpg",
-      "certIcon": "data/ratings/bbfc-15.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
       "certFile": "12A",
       "title": "Dune: Part Three",
       "luxx": false,
@@ -4644,846 +4532,6 @@
     },
     {
       "certSystem": "bbfc",
-      "certFile": "12A",
-      "title": "Focker-In-Law",
-      "luxx": true,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116593.jpg",
-      "cert": "12A",
-      "runtime": 106,
-      "release": "November 27, 2026",
-      "releaseDate": "2026-11-27",
-      "director": "John Hamburg",
-      "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
-      "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-      "date": "2026-11-27",
-      "times": [
-        "18:15",
-        "20:45"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121203",
-      "sessions": [
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121203",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121200",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "13:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121716",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121216",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121205",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121204",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "13:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121779",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121775",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121778",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121777",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121209",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121208",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121211",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121210",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121213",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121212",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121215",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121214",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Fri 4 December",
-          "date": "2026-12-04",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121661",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Fri 4 December",
-          "date": "2026-12-04",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121662",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "13:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121676",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121675",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121663",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121664",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "13:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121678",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121677",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121665",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121666",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Mon 7 December",
-          "date": "2026-12-07",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121667",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Mon 7 December",
-          "date": "2026-12-07",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121668",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Tue 8 December",
-          "date": "2026-12-08",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121669",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Tue 8 December",
-          "date": "2026-12-08",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121670",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Wed 9 December",
-          "date": "2026-12-09",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121671",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Wed 9 December",
-          "date": "2026-12-09",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121672",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Thu 10 December",
-          "date": "2026-12-10",
-          "time": "18:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121673",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        },
-        {
-          "day": "Thu 10 December",
-          "date": "2026-12-10",
-          "time": "20:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121674",
-          "luxx": true,
-          "screen": "1",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-lux"
-          ]
-        }
-      ],
-      "slug": "focker-in-law",
-      "posterFile": "data/posters/focker-in-law.jpg",
-      "certIcon": "data/ratings/bbfc-12A.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "PG",
-      "title": "Hexed",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
-      "cert": "PG",
-      "runtime": 109,
-      "release": "November 27, 2026",
-      "releaseDate": "2026-11-27",
-      "director": "Jason Hand, Fawn Veerasunthorn",
-      "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
-      "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
-      "date": "2026-11-27",
-      "times": [
-        "18:00",
-        "20:35"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121409",
-      "sessions": [
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121409",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121410",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "12:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121417",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "14:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121770",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "15:20",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121418",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121411",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121412",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "12:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121772",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "14:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121795",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "15:20",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121415",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121773",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121774",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121401",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121402",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121403",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121404",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121405",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121406",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121407",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "20:35",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121408",
-          "luxx": false,
-          "screen": "5",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "hexed",
-      "posterFile": "data/posters/hexed.jpg",
-      "certIcon": "data/ratings/bbfc-PG.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
       "certFile": "PG",
       "title": "Home Alone",
       "luxx": false,
@@ -5618,215 +4666,6 @@
       "slug": "home-alone-2-lost-in-new-york",
       "posterFile": "data/posters/home-alone-2-lost-in-new-york.jpg",
       "certIcon": "data/ratings/bbfc-PG.svg",
-      "certLogo": "data/ratings/bbfc-BBFC.svg"
-    },
-    {
-      "certSystem": "bbfc",
-      "certFile": "U",
-      "title": "The Cat In The Hat",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116901.jpg",
-      "cert": "U",
-      "runtime": 125,
-      "release": "December 4, 2026",
-      "releaseDate": "2026-12-04",
-      "director": "Erica Rivinoja, Alessandro Carloni",
-      "synopsis": "Meet the Cat In The Hat you don?t know! In the wonderfully whimsical tradition of Dr Seuss, The Cat In The Hat comes to the big screen in his animated theatrical feature film debut, an all-new, epic adventure with an edge, where mischief, magic, and mayhem reign supreme.",
-      "trailer": "https://www.youtube.com/watch?v=Vuv0kqGWjno",
-      "date": "2026-12-04",
-      "times": [
-        "19:30"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121420",
-      "sessions": [
-        {
-          "day": "Fri 4 December",
-          "date": "2026-12-04",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121420",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121421",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121435",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "17:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121422",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121423",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "12:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121431",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "14:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121424",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "17:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121425",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "19:45",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121426",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 7 December",
-          "date": "2026-12-07",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121427",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 8 December",
-          "date": "2026-12-08",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121428",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 9 December",
-          "date": "2026-12-09",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121429",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 10 December",
-          "date": "2026-12-10",
-          "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121430",
-          "luxx": false,
-          "screen": "6",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "the-cat-in-the-hat",
-      "posterFile": "data/posters/the-cat-in-the-hat.jpg",
-      "certIcon": "data/ratings/bbfc-U.svg",
       "certLogo": "data/ratings/bbfc-BBFC.svg"
     },
     {
@@ -6044,26 +4883,10 @@
       "trailer": "https://www.youtube.com/watch?v=HLvY51d7umU",
       "date": "2026-11-28",
       "times": [
-        "13:15",
         "14:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121729",
+      "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121821",
       "sessions": [
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "13:15",
-          "book": "https://booking.imc.ie/booking/?cinema=enniskillen&stage=tickets&perf=121729",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sat 28 November",
           "date": "2026-11-28",
@@ -7215,14 +6038,21 @@
     }
   ],
   "log": [
-    "enniskillen: no films on the film-times page",
-    "imc.ie showed a browser check on home; stopping this run and keeping the previous listings",
-    "kept previous today",
-    "kept previous days",
-    "kept previous comingSoon",
-    "kept previous kidsClub",
-    "kept previous luxx",
-    "kept previous banners",
+    "home: 1 films parsed",
+    "today: 8 films parsed",
+    "day-28-11-2026-dated: 7 films parsed",
+    "day-29-11-2026-dated: 8 films parsed",
+    "day-30-11-2026-dated: 7 films parsed",
+    "day-01-12-2026-dated: 7 films parsed",
+    "day-02-12-2026-dated: 7 films parsed",
+    "day-03-12-2026-dated: 7 films parsed",
+    "day-04-12-2026-dated: 3 films parsed",
+    "day-05-12-2026-dated: 6 films parsed",
+    "advance: 8 films parsed",
+    "kids: 1 films parsed",
+    "luxx: 4 films parsed",
+    "booking pages read: 10 (Sat, Sun, Mon, Tue, Wed, Thu, Fri)",
+    "prices: 12 ticket types, 4 bundles, 8 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC,G · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
@@ -7231,13 +6061,13 @@
         "name": "Adult",
         "price": "£9.00",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7248,13 +6078,13 @@
         "name": "Teen",
         "price": "£7.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7265,7 +6095,6 @@
         "name": "Child",
         "price": "£7.00",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7282,13 +6111,13 @@
         "name": "Student",
         "price": "£7.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7299,7 +6128,6 @@
         "name": "Family",
         "price": "£26.00",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7316,13 +6144,13 @@
         "name": "Senior",
         "price": "£7.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7343,7 +6171,7 @@
         "name": "Kids Club",
         "price": "£4.50",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -7353,7 +6181,7 @@
         "name": "Kids Club Adult",
         "price": "£4.50",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -7363,7 +6191,7 @@
         "name": "Kids Club Meal Deal",
         "price": "£7.50",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -7373,7 +6201,7 @@
         "name": "LUXX Recliner",
         "price": "£13.00",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7383,7 +6211,7 @@
         "name": "LUXX Child/Student/OAP",
         "price": "£9.50",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7397,12 +6225,12 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7416,13 +6244,13 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7436,7 +6264,7 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2MCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7449,7 +6277,7 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T2SCBLUXX.jpg",
         "days": [
-          "Fri"
+          "Sat"
         ],
         "seenOn": [
           "luxx"
@@ -7463,13 +6291,13 @@
         "price": "£0.80",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7484,13 +6312,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7505,13 +6333,13 @@
         "price": "£4.00",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7526,13 +6354,13 @@
         "price": "£3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7547,13 +6375,13 @@
         "price": "£8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7568,13 +6396,13 @@
         "price": "£9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7589,13 +6417,13 @@
         "price": "£5.50",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7610,13 +6438,13 @@
         "price": "£13.50",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
           "Tue",
           "Wed",
-          "Thu"
+          "Thu",
+          "Fri"
         ],
         "seenOn": [
           "evening",
@@ -7627,19 +6455,19 @@
         "file": "data/products/scon.jpg"
       }
     ],
-    "checked": "2026-11-27T16:39:27.333Z",
+    "checked": "2026-11-28T15:30:38.099Z",
     "sampledDays": [
-      "Fri",
       "Sat",
       "Sun",
       "Mon",
       "Tue",
       "Wed",
-      "Thu"
+      "Thu",
+      "Fri"
     ]
   },
-  "checked": "2026-11-28T00:32:34.402Z",
-  "blocked": true,
+  "checked": "2026-11-28T15:30:52.175Z",
+  "blocked": false,
   "ratings": {
     "bbfc": {
       "12": "data/ratings/bbfc-12.svg",

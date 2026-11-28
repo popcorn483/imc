@@ -2,7 +2,7 @@
   "id": "santry",
   "cinema": "IMC Santry",
   "source": "https://imc.ie/santry",
-  "updated": "2026-11-27T16:49:29.524Z",
+  "updated": "2026-11-28T15:40:22.905Z",
   "today": [
     {
       "certSystem": "ifco",
@@ -10,7 +10,7 @@
       "title": "Buddy",
       "luxx": false,
       "sensory": false,
-      "status": "Coming Soon",
+      "status": "New Release",
       "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
       "cert": "15A",
       "runtime": 96,
@@ -19,38 +19,22 @@
       "director": "Casper Kelly",
       "synopsis": "A brave girl and her friends must escape a kids' television show.",
       "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
-        "18:00",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210368",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210246",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210368",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210272",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210246",
           "luxx": false,
           "screen": "11",
           "threeD": false,
           "tags": [
-            "advance",
+            "new",
             "evening",
             "unallocated",
             "seating-standard"
@@ -60,6 +44,48 @@
       "slug": "buddy",
       "posterFile": "data/posters/buddy.jpg",
       "certIcon": "data/ratings/ifco-15A.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "12A",
+      "title": "EBENEZER",
+      "luxx": false,
+      "sensory": false,
+      "status": null,
+      "poster": "https://imc.ie/wp-content/uploads/posters/113257.jpg",
+      "cert": "12A",
+      "runtime": 120,
+      "release": "November 13, 2026",
+      "releaseDate": "2026-11-13",
+      "director": "Ti West",
+      "synopsis": "This November, Johnny Depp is Ebenezer Scrooge. The classic Christmas tale. Told like never before. From Ti West, Ebenezer also stars Rupert Grint, Andrea Riseborough, Sam Claflin, Daisy Ridley, Arthur Conti, Ellie Bamber, Henry Lloyd-Hughes, Charlie Murphy, with Tramell Tillman and Ian McKellen.",
+      "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
+      "date": "2026-11-28",
+      "times": [
+        "14:45"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210245",
+      "sessions": [
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "14:45",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210245",
+          "luxx": false,
+          "screen": "11",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "ebenezer",
+      "posterFile": "data/posters/ebenezer.jpg",
+      "certIcon": "data/ratings/ifco-12A.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
     },
     {
@@ -77,68 +103,84 @@
       "director": "John Hamburg",
       "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
       "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
+        "14:50",
         "15:45",
-        "16:40",
+        "16:30",
         "17:20",
         "18:10",
         "19:00",
         "19:40",
         "20:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210252",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210187",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "14:50",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210187",
+          "luxx": false,
+          "screen": "5",
+          "threeD": false,
+          "tags": [
+            "new",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "15:45",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210252",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209553",
           "luxx": false,
           "screen": "1",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "seating-standard",
             "screen-galactic"
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210269",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "16:30",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210206",
           "luxx": false,
           "screen": "10",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "17:20",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210259",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210186",
           "luxx": false,
           "screen": "5",
           "threeD": false,
           "tags": [
             "new",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "18:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210250",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209555",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -150,10 +192,10 @@
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "19:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210270",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210207",
           "luxx": false,
           "screen": "10",
           "threeD": false,
@@ -165,10 +207,10 @@
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "19:40",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210258",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210185",
           "luxx": false,
           "screen": "5",
           "threeD": false,
@@ -180,10 +222,10 @@
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210251",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209554",
           "luxx": false,
           "screen": "1",
           "threeD": false,
@@ -215,18 +257,18 @@
       "director": "Jason Hand, Fawn Veerasunthorn",
       "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
       "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
-        "18:00",
-        "20:30"
+        "15:30",
+        "18:00"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210275",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210183",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210275",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "15:30",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210183",
           "luxx": false,
           "screen": "3",
           "threeD": false,
@@ -238,12 +280,12 @@
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210274",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "18:00",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210182",
           "luxx": false,
-          "screen": "3",
+          "screen": "11",
           "threeD": false,
           "tags": [
             "new",
@@ -273,32 +315,47 @@
       "director": "Peter Farrelly",
       "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
       "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
+        "14:55",
         "17:35",
         "20:10"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210265",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210196",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "17:35",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210265",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "14:55",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210196",
           "luxx": false,
           "screen": "8",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "17:35",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210198",
+          "luxx": false,
+          "screen": "8",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "20:10",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210266",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210197",
           "luxx": false,
           "screen": "8",
           "threeD": false,
@@ -330,51 +387,22 @@
       "director": null,
       "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
       "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
+        "15:00",
         "16:00",
         "16:40",
         "18:30",
         "19:15",
         "19:50"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210263",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210191",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "16:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210263",
-          "luxx": false,
-          "screen": "7",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210253",
-          "luxx": false,
-          "screen": "2",
-          "threeD": false,
-          "tags": [
-            "released",
-            "matinee",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "18:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210256",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "15:00",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210191",
           "luxx": false,
           "screen": "4",
           "threeD": false,
@@ -386,10 +414,10 @@
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "19:15",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210264",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "16:00",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210202",
           "luxx": false,
           "screen": "7",
           "threeD": false,
@@ -401,10 +429,55 @@
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "16:40",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210176",
+          "luxx": false,
+          "screen": "2",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "18:30",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210190",
+          "luxx": false,
+          "screen": "4",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
+          "time": "19:15",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210203",
+          "luxx": false,
+          "screen": "7",
+          "threeD": false,
+          "tags": [
+            "released",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "19:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210254",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210175",
           "luxx": false,
           "screen": "2",
           "threeD": false,
@@ -436,33 +509,33 @@
       "director": "Nathan Fielder",
       "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
       "trailer": null,
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "times": [
         "16:00",
         "19:30"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210262",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210180",
       "sessions": [
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "16:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210262",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210180",
           "luxx": false,
           "screen": "6",
           "threeD": false,
           "tags": [
             "released",
-            "matinee",
+            "evening",
             "unallocated",
             "seating-standard"
           ]
         },
         {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
+          "day": "Sat 28 November",
+          "date": "2026-11-28",
           "time": "19:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210261",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210179",
           "luxx": false,
           "screen": "6",
           "threeD": false,
@@ -482,440 +555,6 @@
   ],
   "days": [
     {
-      "label": "Fri 27 Nov",
-      "url": "https://imc.ie/film-times/santry/27-11-2026#dateD",
-      "date": "2026-11-27",
-      "films": [
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "Buddy",
-          "luxx": false,
-          "sensory": false,
-          "status": "Coming Soon",
-          "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
-          "cert": "15A",
-          "runtime": 96,
-          "release": "November 27, 2026",
-          "releaseDate": "2026-11-27",
-          "director": "Casper Kelly",
-          "synopsis": "A brave girl and her friends must escape a kids' television show.",
-          "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
-          "date": "2026-11-27",
-          "times": [
-            "18:00",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210368",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210368",
-              "luxx": false,
-              "screen": "11",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210272",
-              "luxx": false,
-              "screen": "11",
-              "threeD": false,
-              "tags": [
-                "advance",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "buddy",
-          "posterFile": "data/posters/buddy.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "Focker-In-Law",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112607.jpg",
-          "cert": "12A",
-          "runtime": 106,
-          "release": "November 25, 2026",
-          "releaseDate": "2026-11-25",
-          "director": "John Hamburg",
-          "synopsis": "This November, comedy icon Ben Stiller and two-time Oscar-winner Robert De Niro reunite, joined by Grammy winner and Oscar-nominee Ariana Grande, in Focker-In-Law, a new chapter in the blockbuster Meet The Parents franchise.",
-          "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
-          "date": "2026-11-27",
-          "times": [
-            "16:40",
-            "17:20",
-            "18:10",
-            "19:00",
-            "19:40",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210269",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "16:40",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210269",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "17:20",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210259",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "matinee",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "18:10",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210250",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "19:00",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210270",
-              "luxx": false,
-              "screen": "10",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "19:40",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210258",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210251",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            }
-          ],
-          "slug": "focker-in-law",
-          "posterFile": "data/posters/focker-in-law.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
-          "title": "Hexed",
-          "luxx": false,
-          "sensory": false,
-          "status": "New Release",
-          "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
-          "cert": "PG",
-          "runtime": 109,
-          "release": "November 27, 2026",
-          "releaseDate": "2026-11-27",
-          "director": "Jason Hand, Fawn Veerasunthorn",
-          "synopsis": "In Walt Disney Animation Studios' all-new magical coming-of-age saga, Hexed, an impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-lled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
-          "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
-          "date": "2026-11-27",
-          "times": [
-            "18:00",
-            "20:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210275",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "18:00",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210275",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "20:30",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210274",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "hexed",
-          "posterFile": "data/posters/hexed.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "I Play Rocky",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/113217.jpg",
-          "cert": "12A",
-          "runtime": 128,
-          "release": "November 11, 2026",
-          "releaseDate": "2026-11-11",
-          "director": "Peter Farrelly",
-          "synopsis": "Sylvester Stallone, then a failing actor, writes the ultimate underdog story and must fight for his chance to play the role of a lifetime - Rocky Balboa.",
-          "trailer": "https://www.youtube.com/watch?v=V_g_Ut0jO-0",
-          "date": "2026-11-27",
-          "times": [
-            "17:35",
-            "20:10"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210265",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "17:35",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210265",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "20:10",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210266",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "i-play-rocky",
-          "posterFile": "data/posters/i-play-rocky.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "12A",
-          "title": "The Hunger Games: Sunrise On The Reaping",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/105537.jpg",
-          "cert": "12A",
-          "runtime": 158,
-          "release": "November 18, 2026",
-          "releaseDate": "2026-11-18",
-          "director": null,
-          "synopsis": "THE HUNGER GAMES: SUNRISE ON THE REAPING revisits the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-          "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
-          "date": "2026-11-27",
-          "times": [
-            "16:40",
-            "18:30",
-            "19:15",
-            "19:50"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210253",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "16:40",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210253",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "matinee",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "18:30",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210256",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "19:15",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210264",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "19:50",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210254",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "the-hunger-games-sunrise-on-the-reaping",
-          "posterFile": "data/posters/the-hunger-games-sunrise-on-the-reaping.jpg",
-          "certIcon": "data/ratings/ifco-12A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "15A",
-          "title": "You can see everything",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
-          "cert": "15A",
-          "runtime": 176,
-          "release": "November 20, 2026",
-          "releaseDate": "2026-11-20",
-          "director": "Nathan Fielder",
-          "synopsis": "Thirty-four days before she?s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-          "trailer": null,
-          "date": "2026-11-27",
-          "times": [
-            "19:30"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210261",
-          "sessions": [
-            {
-              "day": "Fri 27 November",
-              "date": "2026-11-27",
-              "time": "19:30",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210261",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "you-can-see-everything",
-          "posterFile": "data/posters/you-can-see-everything.jpg",
-          "certIcon": "data/ratings/ifco-15A.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        }
-      ]
-    },
-    {
       "label": "Sat 28 Nov",
       "url": "https://imc.ie/film-times/santry/28-11-2026#dateD",
       "date": "2026-11-28",
@@ -926,7 +565,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15A",
           "runtime": 96,
@@ -950,7 +589,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -979,26 +618,10 @@
           "trailer": "https://www.youtube.com/watch?v=A7lyvgnDuDE",
           "date": "2026-11-28",
           "times": [
-            "12:25",
             "14:45"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210192",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210245",
           "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "12:25",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210192",
-              "luxx": false,
-              "screen": "8",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "teenclub",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -1037,8 +660,6 @@
           "trailer": "https://www.youtube.com/watch?v=vyISuWUWcFs",
           "date": "2026-11-28",
           "times": [
-            "12:25",
-            "13:10",
             "14:10",
             "14:50",
             "15:45",
@@ -1049,38 +670,8 @@
             "19:40",
             "20:30"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210188",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210205",
           "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "12:25",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210188",
-              "luxx": false,
-              "screen": "5",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "13:10",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210189",
-              "luxx": false,
-              "screen": "1",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "seating-standard",
-                "screen-galactic"
-              ]
-            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -1225,49 +816,6 @@
         {
           "certSystem": "ifco",
           "certFile": "PG",
-          "title": "Forgotten Island",
-          "luxx": false,
-          "sensory": false,
-          "status": null,
-          "poster": "https://imc.ie/wp-content/uploads/posters/111616.jpg",
-          "cert": "PG",
-          "runtime": 108,
-          "release": "October 16, 2026",
-          "releaseDate": "2026-10-16",
-          "director": "Joel Crawford",
-          "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
-          "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-          "date": "2026-11-28",
-          "times": [
-            "12:40"
-          ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210199",
-          "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "12:40",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210199",
-              "luxx": false,
-              "screen": "4",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "kidsclub",
-                "seating-standard"
-              ]
-            }
-          ],
-          "slug": "forgotten-island",
-          "posterFile": "data/posters/forgotten-island.jpg",
-          "certIcon": "data/ratings/ifco-PG.svg",
-          "certLogo": "data/ratings/ifco-IFCO.svg"
-        },
-        {
-          "certSystem": "ifco",
-          "certFile": "PG",
           "title": "Hexed",
           "luxx": false,
           "sensory": false,
@@ -1282,27 +830,11 @@
           "trailer": "https://www.youtube.com/watch?v=mtC4sjABZNw",
           "date": "2026-11-28",
           "times": [
-            "13:00",
             "15:30",
             "18:00"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210184",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210183",
           "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "13:00",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210184",
-              "luxx": false,
-              "screen": "3",
-              "threeD": false,
-              "tags": [
-                "new",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -1428,8 +960,6 @@
           "trailer": "https://www.youtube.com/watch?v=MPjxijuBuSo",
           "date": "2026-11-28",
           "times": [
-            "12:50",
-            "13:20",
             "15:00",
             "16:00",
             "16:40",
@@ -1437,38 +967,8 @@
             "19:15",
             "19:50"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210201",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210191",
           "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "12:50",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210201",
-              "luxx": false,
-              "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "13:20",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210177",
-              "luxx": false,
-              "screen": "2",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -1582,27 +1082,11 @@
           "trailer": null,
           "date": "2026-11-28",
           "times": [
-            "12:35",
             "16:00",
             "19:30"
           ],
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210181",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210180",
           "sessions": [
-            {
-              "day": "Sat 28 November",
-              "date": "2026-11-28",
-              "time": "12:35",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210181",
-              "luxx": false,
-              "screen": "6",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
             {
               "day": "Sat 28 November",
               "date": "2026-11-28",
@@ -1652,7 +1136,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15A",
           "runtime": 96,
@@ -1677,7 +1161,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -1692,7 +1176,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2171,7 +1655,6 @@
           "date": "2026-11-29",
           "times": [
             "12:50",
-            "13:20",
             "15:00",
             "16:00",
             "16:40",
@@ -2188,21 +1671,6 @@
               "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210231",
               "luxx": false,
               "screen": "7",
-              "threeD": false,
-              "tags": [
-                "released",
-                "evening",
-                "unallocated",
-                "seating-standard"
-              ]
-            },
-            {
-              "day": "Sun 29 November",
-              "date": "2026-11-29",
-              "time": "13:20",
-              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210214",
-              "luxx": false,
-              "screen": "2",
               "threeD": false,
               "tags": [
                 "released",
@@ -2313,7 +1781,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15A",
           "runtime": 176,
@@ -2339,7 +1807,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2354,7 +1822,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2369,7 +1837,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2394,7 +1862,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15A",
           "runtime": 96,
@@ -2419,7 +1887,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2434,7 +1902,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2932,7 +2400,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15A",
           "runtime": 176,
@@ -2957,7 +2425,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -2972,7 +2440,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -2997,7 +2465,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15A",
           "runtime": 96,
@@ -3022,7 +2490,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3037,7 +2505,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3267,7 +2735,7 @@
           "title": "Hexed",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
           "cert": "PG",
           "runtime": 109,
@@ -3293,7 +2761,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -3308,7 +2776,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3323,7 +2791,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3535,7 +3003,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15A",
           "runtime": 176,
@@ -3560,7 +3028,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -3575,7 +3043,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3600,7 +3068,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15A",
           "runtime": 96,
@@ -3625,7 +3093,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3640,7 +3108,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3870,7 +3338,7 @@
           "title": "Hexed",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/112291.jpg",
           "cert": "PG",
           "runtime": 109,
@@ -3896,7 +3364,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -3911,7 +3379,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -3926,7 +3394,7 @@
               "screen": "3",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -4138,7 +3606,7 @@
           "title": "You can see everything",
           "luxx": false,
           "sensory": false,
-          "status": "New Release",
+          "status": null,
           "poster": "https://imc.ie/wp-content/uploads/posters/116405.jpg",
           "cert": "15A",
           "runtime": 176,
@@ -4163,7 +3631,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "matinee",
                 "unallocated",
                 "seating-standard"
@@ -4178,7 +3646,7 @@
               "screen": "6",
               "threeD": false,
               "tags": [
-                "new",
+                "released",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -4203,7 +3671,7 @@
           "title": "Buddy",
           "luxx": false,
           "sensory": false,
-          "status": "Coming Soon",
+          "status": "New Release",
           "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
           "cert": "15A",
           "runtime": 96,
@@ -4228,7 +3696,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -4243,7 +3711,7 @@
               "screen": "11",
               "threeD": false,
               "tags": [
-                "advance",
+                "new",
                 "evening",
                 "unallocated",
                 "seating-standard"
@@ -4797,6 +4265,267 @@
       "url": "https://imc.ie/film-times/santry/04-12-2026#dateD",
       "date": "2026-12-04",
       "films": []
+    },
+    {
+      "label": "Sat 05 Dec",
+      "url": "https://imc.ie/film-times/santry/05-12-2026#dateD",
+      "date": "2026-12-05",
+      "films": [
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Andre Rieu's Christmas Concert: Let It Snow",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/112259.jpg",
+          "cert": "PG",
+          "runtime": 165,
+          "release": "December 5, 2026",
+          "releaseDate": "2026-12-05",
+          "director": null,
+          "synopsis": "André Rieu and his Johann Strauss Orchestra return with a brand-new Christmas concert, bringing a premium festive event to cinemas. Featuring the extraordinary voice of Emma Kok, renowned tenors and special guests, this production is designed to delight audiences and drive seasonal attendance.",
+          "trailer": null,
+          "date": "2026-12-05",
+          "times": [
+            "17:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209975",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "17:00",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209975",
+              "luxx": false,
+              "screen": "4",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "andre-rieu-s-christmas-concert-let-it-snow",
+          "posterFile": "data/posters/andre-rieu-s-christmas-concert-let-it-snow.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Elf",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/2578.jpg",
+          "cert": "PG",
+          "runtime": 97,
+          "release": "December 19, 2014",
+          "releaseDate": "2014-12-19",
+          "director": "Jon Favreau",
+          "synopsis": "For his sophomore stab at directing, actor/writer/director Jon Favreau (Swingers, Made), took on this holiday comedy starring Saturday Night Live-alum Will Ferrell. Ferrell stars as Buddy, a regular-sized man who was raised as an elf by Santa Claus (Edward Asner). When the news is finally broken to Buddy that he's not a real elf, he decides to head back to his place of birth, New York City, in search of his biological family. Elf also stars James Caan, Mary Steenburgen, Zooey Deschanel, and Bob Newhart.",
+          "trailer": "https://www.youtube.com/watch?v=W4NIrWgRfrA",
+          "date": "2026-12-05",
+          "times": [
+            "12:05"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208616",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "12:05",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208616",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "elf",
+          "posterFile": "data/posters/elf.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Home Alone",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/64287.jpg",
+          "cert": "PG",
+          "runtime": 100,
+          "release": "December 5, 2015",
+          "releaseDate": "2015-12-05",
+          "director": "Chris Columbus",
+          "synopsis": "When bratty 8-year-old Kevin McCallister (Macaulay Culkin) acts out the night before a family trip to Paris, his mother (Catherine O'Hara) makes him sleep in the attic. After the McCallisters mistakenly leave for the airport without Kevin, he awakens to an empty house and assumes his wish to have no family has come true. But his excitement sours when he realizes that two con men (Joe Pesci, Daniel Stern) plan to rob the McCallister residence, and that he alone must protect the family home.",
+          "trailer": "https://www.youtube.com/watch?v=dzdpqRGA1qc",
+          "date": "2026-12-05",
+          "times": [
+            "14:30"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208615",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "14:30",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208615",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "home-alone",
+          "posterFile": "data/posters/home-alone.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "PG",
+          "title": "Home Alone 2: Lost In New York",
+          "luxx": false,
+          "sensory": false,
+          "status": "Coming Soon",
+          "poster": "https://imc.ie/wp-content/uploads/posters/585.jpg",
+          "cert": "PG",
+          "runtime": 120,
+          "release": "December 5, 2026",
+          "releaseDate": "2026-12-05",
+          "director": "Chris Colombus",
+          "synopsis": "The McCallister's go on holiday to Florida while Kevin accidentally gets on a plane to NYC with a bag full of money.",
+          "trailer": null,
+          "date": "2026-12-05",
+          "times": [
+            "17:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208280",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "17:00",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208280",
+              "luxx": false,
+              "screen": "9",
+              "threeD": false,
+              "tags": [
+                "advance",
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "home-alone-2-lost-in-new-york",
+          "posterFile": "data/posters/home-alone-2-lost-in-new-york.jpg",
+          "certIcon": "data/ratings/ifco-PG.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        },
+        {
+          "certSystem": "ifco",
+          "certFile": "G",
+          "title": "The Cat In The Hat",
+          "luxx": false,
+          "sensory": false,
+          "status": "%posterHeader%",
+          "poster": "https://imc.ie/wp-content/uploads/posters/116901.jpg",
+          "cert": "G",
+          "runtime": 125,
+          "release": "December 5, 2026",
+          "releaseDate": "2026-12-05",
+          "director": "Erica Rivinoja, Alessandro Carloni",
+          "synopsis": "Meet the Cat In The Hat you don?t know! In the wonderfully whimsical tradition of Dr Seuss, The Cat In The Hat comes to the big screen in his animated theatrical feature film debut, an all-new, epic adventure with an edge, where mischief, magic, and mayhem reign supreme.",
+          "trailer": "https://www.youtube.com/watch?v=Vuv0kqGWjno",
+          "date": "2026-12-05",
+          "times": [
+            "11:50",
+            "14:15",
+            "16:40",
+            "19:00"
+          ],
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209962",
+          "sessions": [
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "11:50",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209962",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "14:15",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209963",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "16:40",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209960",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            },
+            {
+              "day": "Sat 5 December",
+              "date": "2026-12-05",
+              "time": "19:00",
+              "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209961",
+              "luxx": false,
+              "screen": "3",
+              "threeD": false,
+              "tags": [
+                "evening",
+                "unallocated",
+                "seating-standard"
+              ]
+            }
+          ],
+          "slug": "the-cat-in-the-hat",
+          "posterFile": "data/posters/the-cat-in-the-hat.jpg",
+          "certIcon": "data/ratings/ifco-G.svg",
+          "certLogo": "data/ratings/ifco-IFCO.svg"
+        }
+      ]
     }
   ],
   "comingSoon": [
@@ -5820,229 +5549,6 @@
     },
     {
       "certSystem": "ifco",
-      "certFile": "15A",
-      "title": "Buddy",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116680.jpg",
-      "cert": "15A",
-      "runtime": 96,
-      "release": "November 27, 2026",
-      "releaseDate": "2026-11-27",
-      "director": "Casper Kelly",
-      "synopsis": "A brave girl and her friends must escape a kids' television show.",
-      "trailer": "https://www.youtube.com/watch?v=az5AtqmjovCOOmxb",
-      "date": "2026-11-27",
-      "times": [
-        "18:00",
-        "20:30"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210368",
-      "sessions": [
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210368",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Fri 27 November",
-          "date": "2026-11-27",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210272",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210246",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210243",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 29 November",
-          "date": "2026-11-29",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210242",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210371",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Mon 30 November",
-          "date": "2026-11-30",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210369",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210374",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Tue 1 December",
-          "date": "2026-12-01",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210372",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210377",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Wed 2 December",
-          "date": "2026-12-02",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210375",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "18:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210380",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Thu 3 December",
-          "date": "2026-12-03",
-          "time": "20:30",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210378",
-          "luxx": false,
-          "screen": "11",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "buddy",
-      "posterFile": "data/posters/buddy.jpg",
-      "certIcon": "data/ratings/ifco-15A.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
       "certFile": "12A",
       "title": "Dune: Part Three",
       "luxx": false,
@@ -7048,6 +6554,150 @@
     {
       "certSystem": "ifco",
       "certFile": "PG",
+      "title": "Elf",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/2578.jpg",
+      "cert": "PG",
+      "runtime": 97,
+      "release": "December 19, 2014",
+      "releaseDate": "2014-12-19",
+      "director": "Jon Favreau",
+      "synopsis": "For his sophomore stab at directing, actor/writer/director Jon Favreau (Swingers, Made), took on this holiday comedy starring Saturday Night Live-alum Will Ferrell. Ferrell stars as Buddy, a regular-sized man who was raised as an elf by Santa Claus (Edward Asner). When the news is finally broken to Buddy that he's not a real elf, he decides to head back to his place of birth, New York City, in search of his biological family. Elf also stars James Caan, Mary Steenburgen, Zooey Deschanel, and Bob Newhart.",
+      "trailer": "https://www.youtube.com/watch?v=W4NIrWgRfrA",
+      "date": "2026-12-05",
+      "times": [
+        "12:05"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208616",
+      "sessions": [
+        {
+          "day": "Sat 5 December",
+          "date": "2026-12-05",
+          "time": "12:05",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208616",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 12 December",
+          "date": "2026-12-12",
+          "time": "12:30",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208617",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 19 December",
+          "date": "2026-12-19",
+          "time": "12:30",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208620",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "elf",
+      "posterFile": "data/posters/elf.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
+      "title": "Home Alone",
+      "luxx": false,
+      "sensory": false,
+      "status": "Coming Soon",
+      "poster": "https://imc.ie/wp-content/uploads/posters/64287.jpg",
+      "cert": "PG",
+      "runtime": 100,
+      "release": "December 5, 2015",
+      "releaseDate": "2015-12-05",
+      "director": "Chris Columbus",
+      "synopsis": "When bratty 8-year-old Kevin McCallister (Macaulay Culkin) acts out the night before a family trip to Paris, his mother (Catherine O'Hara) makes him sleep in the attic. After the McCallisters mistakenly leave for the airport without Kevin, he awakens to an empty house and assumes his wish to have no family has come true. But his excitement sours when he realizes that two con men (Joe Pesci, Daniel Stern) plan to rob the McCallister residence, and that he alone must protect the family home.",
+      "trailer": "https://www.youtube.com/watch?v=dzdpqRGA1qc",
+      "date": "2026-12-05",
+      "times": [
+        "14:30"
+      ],
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208615",
+      "sessions": [
+        {
+          "day": "Sat 5 December",
+          "date": "2026-12-05",
+          "time": "14:30",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208615",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 12 December",
+          "date": "2026-12-12",
+          "time": "14:55",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208618",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        },
+        {
+          "day": "Sat 19 December",
+          "date": "2026-12-19",
+          "time": "14:55",
+          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=208619",
+          "luxx": false,
+          "screen": "9",
+          "threeD": false,
+          "tags": [
+            "advance",
+            "evening",
+            "unallocated",
+            "seating-standard"
+          ]
+        }
+      ],
+      "slug": "home-alone",
+      "posterFile": "data/posters/home-alone.jpg",
+      "certIcon": "data/ratings/ifco-PG.svg",
+      "certLogo": "data/ratings/ifco-IFCO.svg"
+    },
+    {
+      "certSystem": "ifco",
+      "certFile": "PG",
       "title": "Home Alone 2: Lost In New York",
       "luxx": false,
       "sensory": false,
@@ -7116,156 +6766,6 @@
       "posterFile": "data/posters/home-alone-2-lost-in-new-york.jpg",
       "certIcon": "data/ratings/ifco-PG.svg",
       "certLogo": "data/ratings/ifco-IFCO.svg"
-    },
-    {
-      "certSystem": "ifco",
-      "certFile": "G",
-      "title": "The Cat In The Hat",
-      "luxx": false,
-      "sensory": false,
-      "status": "Coming Soon",
-      "poster": "https://imc.ie/wp-content/uploads/posters/116901.jpg",
-      "cert": "G",
-      "runtime": 125,
-      "release": "December 5, 2026",
-      "releaseDate": "2026-12-05",
-      "director": "Erica Rivinoja, Alessandro Carloni",
-      "synopsis": "Meet the Cat In The Hat you don?t know! In the wonderfully whimsical tradition of Dr Seuss, The Cat In The Hat comes to the big screen in his animated theatrical feature film debut, an all-new, epic adventure with an edge, where mischief, magic, and mayhem reign supreme.",
-      "trailer": "https://www.youtube.com/watch?v=Vuv0kqGWjno",
-      "date": "2026-12-05",
-      "times": [
-        "11:50",
-        "14:15",
-        "16:40",
-        "19:00"
-      ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209962",
-      "sessions": [
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "11:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209962",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "14:15",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209963",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209960",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sat 5 December",
-          "date": "2026-12-05",
-          "time": "19:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209961",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "11:50",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209971",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "14:15",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209974",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "16:40",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209972",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        },
-        {
-          "day": "Sun 6 December",
-          "date": "2026-12-06",
-          "time": "19:00",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=209973",
-          "luxx": false,
-          "screen": "3",
-          "threeD": false,
-          "tags": [
-            "advance",
-            "evening",
-            "unallocated",
-            "seating-standard"
-          ]
-        }
-      ],
-      "slug": "the-cat-in-the-hat",
-      "posterFile": "data/posters/the-cat-in-the-hat.jpg",
-      "certIcon": "data/ratings/ifco-G.svg",
-      "certLogo": "data/ratings/ifco-IFCO.svg"
     }
   ],
   "kidsClub": [
@@ -7284,28 +6784,12 @@
       "director": "Joel Crawford",
       "synopsis": "Your best friendship is worth fighting for. DreamWorks Animation, the studio that brought you unforgettable bonds between a boy and a dragon in How To Train Your Dragon, an ogre and a donkey in Shrek, and a robot and a gosling in The Wild Robot, now welcomes a dazzling and emotional story about two lifelong best friends who must come together before they drift apart in Forgotten Island. The new original film is written and directed by Academy Award-nominee Joel Crawford and Januel Mercado and is produced by Academy Award-nominee Mark Swift, the filmmaking team behind Puss in Boots: The Last Wi",
       "trailer": "https://www.youtube.com/watch?v=a8RHqN93qfo",
-      "date": "2026-11-28",
+      "date": "2026-11-29",
       "times": [
         "12:40"
       ],
-      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210199",
+      "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210220",
       "sessions": [
-        {
-          "day": "Sat 28 November",
-          "date": "2026-11-28",
-          "time": "12:40",
-          "book": "https://booking.imc.ie/booking/?cinema=santry&stage=tickets&perf=210199",
-          "luxx": false,
-          "screen": "4",
-          "threeD": false,
-          "tags": [
-            "released",
-            "evening",
-            "unallocated",
-            "kidsclub",
-            "seating-standard"
-          ]
-        },
         {
           "day": "Sun 29 November",
           "date": "2026-11-29",
@@ -7366,32 +6850,30 @@
   ],
   "log": [
     "home: 1 films parsed",
-    "today: 6 films parsed",
-    "day-27-11-2026-dated: 6 films parsed",
-    "day-28-11-2026-dated: 8 films parsed",
+    "today: 7 films parsed",
+    "day-28-11-2026-dated: 7 films parsed",
     "day-29-11-2026-dated: 8 films parsed",
     "day-30-11-2026-dated: 7 films parsed",
     "day-01-12-2026-dated: 7 films parsed",
     "day-02-12-2026-dated: 7 films parsed",
     "day-03-12-2026-dated: 7 films parsed",
     "day-04-12-2026-dated: 0 films parsed",
+    "day-05-12-2026-dated: 5 films parsed",
     "advance: 6 films parsed",
     "kids: 1 films parsed",
     "luxx: 0 films parsed",
-    "booking pages read: 9 (Fri, Sat, Sun, Mon, Tue, Wed, Thu)",
-    "prices: 17 ticket types, 2 bundles, 9 products",
+    "booking pages read: 9 (Sat, Sun, Mon, Tue, Wed, Thu)",
+    "prices: 23 ticket types, 4 bundles, 9 products",
     "ratings: bbfc 12,15,18,U,PG,12A,R18,TBC,BBFC · ifco 16,18,G,PG,12A,15A,TBC,IFCO"
   ],
   "prices": {
     "tickets": [
       {
-        "name": "Adult Matinee",
-        "price": "€11.50",
+        "name": "Adult Evening",
+        "price": "€13.00",
         "days": [
-          "Fri",
-          "Mon",
-          "Tue",
-          "Wed"
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening"
@@ -7401,7 +6883,6 @@
         "name": "Teen",
         "price": "€10.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7413,13 +6894,11 @@
         ]
       },
       {
-        "name": "Child Matinee",
-        "price": "€9.50",
+        "name": "Child Evening",
+        "price": "€10.50",
         "days": [
-          "Fri",
-          "Mon",
-          "Tue",
-          "Wed"
+          "Sat",
+          "Sun"
         ],
         "seenOn": [
           "evening"
@@ -7429,7 +6908,6 @@
         "name": "Student",
         "price": "€11.00",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7444,7 +6922,6 @@
         "name": "Family",
         "price": "€35.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7459,7 +6936,6 @@
         "name": "OAP",
         "price": "€10.50",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7471,22 +6947,24 @@
         ]
       },
       {
-        "name": "Adult Evening",
-        "price": "€13.00",
+        "name": "Adult Matinee",
+        "price": "€11.50",
         "days": [
-          "Sat",
-          "Sun"
+          "Mon",
+          "Tue",
+          "Wed"
         ],
         "seenOn": [
           "evening"
         ]
       },
       {
-        "name": "Child Evening",
-        "price": "€10.50",
+        "name": "Child Matinee",
+        "price": "€9.50",
         "days": [
-          "Sat",
-          "Sun"
+          "Mon",
+          "Tue",
+          "Wed"
         ],
         "seenOn": [
           "evening"
@@ -7537,7 +7015,27 @@
       },
       {
         "name": "Adult",
-        "price": "€5.00",
+        "price": "€15.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Child",
+        "price": "€11.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "evening"
+        ]
+      },
+      {
+        "name": "Galactic Adult",
+        "price": "€14.00",
         "days": [
           "Sat"
         ],
@@ -7546,8 +7044,48 @@
         ]
       },
       {
-        "name": "Child",
-        "price": "€5.00",
+        "name": "Galactic Teen",
+        "price": "€11.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
+        "name": "Galactic Child",
+        "price": "€11.00",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
+        "name": "Galactic Student",
+        "price": "€11.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
+        "name": "Galactic Family",
+        "price": "€42.50",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ]
+      },
+      {
+        "name": "Galactic OAP",
+        "price": "€11.50",
         "days": [
           "Sat"
         ],
@@ -7559,7 +7097,7 @@
         "name": "Kids Club",
         "price": "€5.00",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -7569,7 +7107,7 @@
         "name": "Kids Club Adult",
         "price": "€5.00",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -7579,7 +7117,7 @@
         "name": "Kids Club Meal Deal",
         "price": "€9.50",
         "days": [
-          "Sat"
+          "Sun"
         ],
         "seenOn": [
           "kids"
@@ -7593,7 +7131,6 @@
         "details": "1 Adult Ticket + a Medium Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7611,7 +7148,6 @@
         "details": "2 Adult Tickets + a Share Combo",
         "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCB.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7623,6 +7159,30 @@
           "evening"
         ],
         "file": "data/products/t1scb.jpg"
+      },
+      {
+        "name": "Medium Combo Bundle GalacticDetails1 Adult Ticket + a Medium Combo",
+        "price": "€20.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1MCBG.jpg",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ],
+        "file": "data/products/t1mcbg.jpg"
+      },
+      {
+        "name": "Share Combo Bundle GalacticDetails2 Adult Tickets + a Share Combo",
+        "price": "€33.00",
+        "image": "https://booking.imc.ie/Booking/Images/tickets/T1SCBG.jpg",
+        "days": [
+          "Sat"
+        ],
+        "seenOn": [
+          "matinee"
+        ],
+        "file": "data/products/t1scbg.jpg"
       }
     ],
     "products": [
@@ -7631,7 +7191,6 @@
         "price": "€1.00",
         "image": "https://booking.imc.ie/Booking/Images/products/FLEXI.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7651,7 +7210,6 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MALTESERS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7671,7 +7229,6 @@
         "price": "€4.50",
         "image": "https://booking.imc.ie/Booking/Images/products/MINSTRELS.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7691,7 +7248,6 @@
         "price": "€3.00",
         "image": "https://booking.imc.ie/Booking/Images/products/TTC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7711,7 +7267,6 @@
         "price": "€9.50",
         "image": "https://booking.imc.ie/Booking/Images/products/COMBOTEST.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7731,7 +7286,6 @@
         "price": "€11.50",
         "image": "https://booking.imc.ie/Booking/Images/products/LCCC.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7751,7 +7305,6 @@
         "price": "€6.00",
         "image": "https://booking.imc.ie/Booking/Images/products/ONKT.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7771,7 +7324,6 @@
         "price": "€14.00",
         "image": "https://booking.imc.ie/Booking/Images/products/SCON.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7791,7 +7343,6 @@
         "price": "€8.50",
         "image": "https://booking.imc.ie/Booking/Images/products/NACHOLARGCHESE.jpg",
         "days": [
-          "Fri",
           "Sat",
           "Sun",
           "Mon",
@@ -7807,9 +7358,8 @@
         "file": "data/products/nacholargchese.jpg"
       }
     ],
-    "checked": "2026-11-27T16:49:53.980Z",
+    "checked": "2026-11-28T15:40:47.051Z",
     "sampledDays": [
-      "Fri",
       "Sat",
       "Sun",
       "Mon",
@@ -7818,7 +7368,7 @@
       "Thu"
     ]
   },
-  "checked": "2026-11-27T16:50:06.550Z",
+  "checked": "2026-11-28T15:40:59.634Z",
   "blocked": false,
   "ratings": {
     "bbfc": {
